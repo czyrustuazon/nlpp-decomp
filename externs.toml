@@ -8,3 +8,26 @@ _Z17IsValidBinaryFilePK16BinaryFileHeaderjjt = 0x00641CE0
 _Z18GetNextBlockHeaderPK16BinaryFileHeaderPK17BinaryBlockHeader = 0x00641D60
 # Static data block shared by GetText and TextResource::Lookup (see src/text_resource.cpp)
 g_TextSystem = 0x008AA7A4
+# nn::os (CTR SDK), used by src/nn_os_sem.cpp
+_Z8SyncWaitjPviiii = 0x00122A40
+_Z10SemReleaseP14LightSemaphorei = 0x0011B58C
+g_SyncHandle = 0x008B8500
+# DrawTextToPane callees and its function-local static (src/draw_text.cpp)
+_Z10FontHeightPv = 0x007419D0
+_Z14FontLineHeightPv = 0x007419E4
+_Z12GlyphAdvancePvj = 0x00741A70
+_Z12GlyphColumnsPKc = 0x006C0748
+_Z14TaggedStr_FreeP9TaggedStr = 0x006A1FD0
+_Z14TaggedStr_InitP9TaggedStr = 0x0069E380
+_Z15TaggedStr_ParseP9TaggedStrPKc = 0x0069DFC4
+_Z6MemcpyPvPKvj = 0x0030004C
+_Z6MemsetPvij = 0x002FDDD8
+_Z7MemcpyNPvPKvj = 0x0011026C
+_Z8DrawIconPviij = 0x006B2550
+_Z9DrawGlyphPviii = 0x006B2578
+_Z8Str_FreeP3Str = 0x006A2024
+_ZN3StrC1EPKc = 0x006A1EC8
+_ZGVZ6CharAtRK9TaggedStriE5empty = 0x008BFB60
+_ZZ6CharAtRK9TaggedStriE5empty = 0x008BFB64
+__cxa_guard_acquire = 0x00303D64
+__cxa_guard_release = 0x00303D64
