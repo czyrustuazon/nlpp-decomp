@@ -34,3 +34,21 @@ size = "e8"
 src = "src/str.cpp"
 symbol = "_ZN3StrC1EPKc"
 score = 8   # NONMATCHING: permuter result; scheduling only (see technical.md 6.1)
+
+[[function]]
+name = "IsValidBinaryFile"
+offset = "541ce0"
+size = "80"
+src = "src/nwut_binary.cpp"
+symbol = "_Z17IsValidBinaryFilePK16BinaryFileHeaderjjt"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "GetNextBlockHeader"
+offset = "541d60"
+size = "e0"
+src = "src/nwut_binary.cpp"
+symbol = "_Z18GetNextBlockHeaderPK16BinaryFileHeaderPK17BinaryBlockHeader"
+library = "nw4c"
+score = 51   # NONMATCHING: byte swap becomes rev/rev16 (see src/nwut_binary.cpp)
