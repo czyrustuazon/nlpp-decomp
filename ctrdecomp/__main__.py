@@ -8,6 +8,7 @@
   python -m ctrdecomp check [name ...]
   python -m ctrdecomp relink [-o build/code.bin]
   python -m ctrdecomp objdiff [--out build/objdiff]
+  python -m ctrdecomp permute <name> [--lines A-B] [--seconds N] [--jobs N]
   python -m ctrdecomp ghidra-decomp <out.c> <off> [...]
   python -m ctrdecomp ghidra-export <out.csv> [--own]
   python -m ctrdecomp ghidra-import <out.csv> [--log file]
@@ -134,6 +135,11 @@ def cmd_objdiff(cfg, a):
     print(f"wrote {path} ({len(units)} units)")
 
 
+def cmd_permute(cfg, a):
+    from .permute import run
+    return run(cfg, a.name, a.lines, a.seconds, a.jobs)
+
+
 def cmd_ghidra_decomp(cfg, a):
     from .ghidra import decompile
     print(decompile(cfg, a.out, a.offsets, a.own))
@@ -191,6 +197,8 @@ def main(argv=None):
     p = sub.add_parser("check"); p.add_argument("names", nargs="*"); p.set_defaults(fn=cmd_check)
     p = sub.add_parser("relink"); p.add_argument("-o"); p.set_defaults(fn=cmd_relink)
     p = sub.add_parser("objdiff"); p.add_argument("--out", default="build/objdiff"); p.set_defaults(fn=cmd_objdiff)
+    p = sub.add_parser("permute"); p.add_argument("name"); p.add_argument("--lines"); p.add_argument("--seconds", type=int, default=300)
+    p.add_argument("--jobs", type=int, default=max(1, (os.cpu_count() or 2) - 2)); p.set_defaults(fn=cmd_permute)
     p = sub.add_parser("ghidra-decomp"); p.add_argument("out"); p.add_argument("offsets", nargs="+", type=hexint)
     p.add_argument("--own", action="store_true", help="use this project's analysis, not the reference project"); p.set_defaults(fn=cmd_ghidra_decomp)
     p = sub.add_parser("ghidra-export"); p.add_argument("out"); p.add_argument("--own", action="store_true"); p.set_defaults(fn=cmd_ghidra_export)

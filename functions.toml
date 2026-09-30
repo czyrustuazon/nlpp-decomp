@@ -33,4 +33,4 @@ offset = "5a1ec8"
 size = "e8"
 src = "src/str.cpp"
 symbol = "_ZN3StrC1EPKc"
-score = 21  # NONMATCHING: register choice (r1/r2), ~6 instructions after alignment
+score = 8   # NONMATCHING: permuter result; scheduling only (see technical.md 6.1)

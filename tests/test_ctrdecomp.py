@@ -147,3 +147,24 @@ def test_objdiff_targets_reproduce_retail_bytes(cfg, tmp_path):
     r = subprocess.run(["python", "-m", "ctrdecomp", "objdiff", "--out", str(tmp_path)], cwd=ROOT, capture_output=True, text=True)
     assert r.returncode == 0, r.stdout + r.stderr
     assert (tmp_path / "lyt_clim.target.o").is_file()
+
+
+def test_permuter_mutations_produce_different_valid_looking_source():
+    import random
+    from ctrdecomp.permute import MUTATIONS, mutate, type_table
+    region = "\n".join([
+        "    u32 n = p->count;",
+        "    if (n > limit) {",
+        "        total += 1;",
+        "    }",
+        "    p->count = n - 1;",
+        "    q->x = q->y;",
+    ])
+    ctx = {"types": type_table("struct S { u32 count; };\nu32 total;\n"), "n": 0}
+    rng = random.Random(1)
+    seen = {mutate(region, rng, ctx) for _ in range(200)}
+    assert len(seen) > 20
+    # a statement inside the if block is never moved out of it
+    assert all("total += 1;" not in m.split("if (n > limit) {")[0] for m in seen if "if (n > limit) {" in m)
+    for fn in MUTATIONS:                      # none of them may raise on ordinary input
+        fn(region.split("\n"), rng, ctx)

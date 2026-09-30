@@ -297,4 +297,45 @@ Added 2026-09-29. Anything built here should make the next 3DS decomp cheaper, n
 Rules for this work:
 
 - Do not grow a parallel toolchain beyond what is missing. objdiff does the diff UI and progress reporting; use it (or asm-differ) rather than writing a viewer. 3DS-Decomp-Pipeline is not a dependency (no LICENSE, §5.2); `ctrdecomp relink` replaces its split/relink role for this project. Anything generally useful (the destination check, the build/flag sweep, pointer/prologue seeding and pool-aware sizing as a Ghidra script) stays in `ctrdecomp` for reuse on other 3DS games.
-- The next reusable tool worth building is a **permuter for ARMCC**: the three near-matches in §6.1 are all register-allocation misses that hand edits stopped moving. [decomp-permuter](https://github.com/simonlindholm/decomp-permuter) supports other compilers through a compile script; check whether an ARMCC backend is a small addition before writing one.
+- **Permuter (built 2026-09-30):** `python -m ctrdecomp permute <name> --lines A-B` (`ctrdecomp/permute.py`). It is our own hill-climber, not decomp-permuter: it rewrites a marked source region (statement order, temporaries including hoisted member loads, comparison direction, `x != 0` vs `x`, increment forms, local integer types, operand order), recompiles each variant with ARMCC (about 0.3 s each, 14 jobs ≈ 150 variants/s), and keeps a variant when `aligned diff lines + score/4` does not get worse. The positional term matters: without it the search accepts rewrites that change behavior. Anything that reaches score 0 is written to `build/permute/<name>/` and stops the run. First results: `Str::Str` 21 → 8 in about 4 minutes; `TextResource::Lookup` aligned diff 22 → 18, score still 9 (the sl/fp swap needs a rewrite the mutators do not make yet). Ideas not built: mutating types of struct members, inlining `Find`/`Reserve` differently, `for`/`while` swaps.
+
+---
+
+## 9. TODO: native port and frame rate (added 2026-09-30)
+
+Not started. This is the design intent for gap 7 (§5), recorded so the questions are not lost. Nothing here blocks matching.
+
+**Goal.** A native build (PC first, Android after) that runs the matched game logic with the `nn::` and PICA200 layers replaced, at 60fps. Android is the same port plus touch input, app pause/resume and packaging. The user supplies their own game dump; no Konami assets go in the repo or the app.
+
+**Frame-rate goals.**
+
+| Target | Goal | Status |
+|--------|------|--------|
+| Real 3DS | Stable 30fps in heroine scenes (now about 20fps), by disabling or cheapening specific render passes | Not started. Needs the renderer named first (gap 3) and hardware timing runs. |
+| Native port (PC, Android) | 60fps in heroine scenes with the full original visuals | Not started. Depends on questions 2 and 3 below. |
+| Native port (PC, Android) | 60fps everywhere | Not started. Same dependencies. |
+
+60fps in heroine scenes on a real 3DS is not a goal. Getting there would mean drawing about a third of what the game draws now, so it would no longer be the same game. 60fps in light scenes and menus on the 3DS is a possible stretch goal if the frame interval turns out to be a single tunable value (question 1).
+
+**3DS optimization notes.**
+
+- The GPU cost of a render pass cannot be measured in an emulator; Azahar runs PICA200 commands on the host GPU. Test each change on real hardware, one pass per build, and watch the frame rate.
+- Do not NOP a `bl` blindly. Skipping a call that returns a value or sets up state leaves garbage in registers and can crash on hardware. Make the function return immediately with a valid value, or branch past the call and its result handling.
+- The ARM NOP is `0xE320F000` (`0x00000000` is `andeq r0, r0, r0`, not a NOP). The Thumb NOP is `0xBF00`.
+- Because the game falls to the next vblank divisor when it misses a deadline, a small saving can move a scene from 20 to 30fps.
+
+**Observed frame rate (reported from play on hardware, not yet confirmed in code).** About 20fps while a heroine model is on screen, about 30fps when none is. Both are exact divisors of the 60Hz refresh (every 3rd and every 2nd vblank).
+
+**Hypothesis to test.** The game waits a set number of vblanks per frame and lengthens that interval when rendering is heavy. If so, the 20fps drop is a PICA200 load limit, not a design limit, and the interval is probably one tunable value.
+
+**Open questions, in order:**
+
+1. **Find the vblank wait / swap-interval code.** Look for the frame-end call into `nn::gx` (or the GSP wait-for-vblank event) in the main loop, and where its interval comes from. Check whether the interval is chosen per scene, per frame from measured load, or fixed.
+2. **How does logic and animation advance: per rendered frame, or per unit of time?** Per frame means the game runs slower at 20fps than at 30fps (visible as slowdown in heroine scenes) and 60fps needs a fixed logic tick with interpolated rendering. Per unit of time makes raising the frame rate much easier. Confirm on hardware or Azahar by timing a fixed scripted animation in both cases.
+3. **What is the authored rate of character animation data?** If it is 30fps keyframes, 60fps rendering needs interpolation between keyframes. This depends on the (still unspecified) mesh/skeleton format, gap 5.
+4. **How much of the matched code is portable?** Code that matched ARMCC output may assume 32-bit pointers, struct packing, and endianness of layouts. Compile one small matched module natively (`GetText`/`Lookup` is the smallest self-contained candidate) and record what breaks before committing to the port.
+5. **How much of rendering is PICA200-specific state?** If the renderer sets up shader, combiner and command-list state directly, the graphics layer is most of the work. Look at how Azahar's renderer consumes GPU command lists before choosing OpenGL ES or Vulkan.
+
+**Emulator caveat.** Azahar is not a reference for hardware behavior. Mods that ran there have crashed on real 3DS hardware (likely causes: memory limits, uninitialized memory, cache coherency, timing, lenient service emulation). Use the matched code as the reference for the port, and real hardware (Luma3DS GDB stub and crash dumps) for anything subtle.
+
+**Distribution note.** An app that asks the user for their own game files avoids shipping assets, but Play Store acceptance is not guaranteed; sideloading an APK is the dependable route. iOS distribution is much harder and is a later maybe.

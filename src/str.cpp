@@ -51,9 +51,9 @@ public:
     }
 };
 
-// FUN_005a1ec8. NONMATCHING, score 21 (about 6 instructions after alignment): retail loads
-// m_capacity into r2 rather than r1 before the compare, and holds m_buf in r2 so the
-// m_text/m_chars pair is stored with `add r1, r4, #4; stm r1, {r0, r2}` instead of strd.
+// FUN_005a1ec8. NONMATCHING, score 8 (found by `ctrdecomp permute`: `m_capacity + m_buf`, and `s` copied
+// to a temporary before Memcpy, which made the compiler use `stm`). Left: retail loads m_capacity into
+// r2 before the `add`/`str` of m_size, and the `mov r1, r5` for Memcpy lands one slot later here.
 // Reserve() must read m_size (a parameter caches it in a register), and the copy must sit
 // under if (Reserve()) so the failure path shares the epilogue.
 Str::Str(const char* s)
@@ -64,9 +64,10 @@ Str::Str(const char* s)
     if (s != 0) {
         m_size = Strlen(s) + 1;
         if (Reserve()) {
-            m_text  = (char*)(m_buf + m_capacity);
+            m_text  = (char*)(m_capacity + m_buf);
             m_chars = m_buf;
-            Memcpy(m_text, s, m_size);
+            const char* t3012 = s;
+            Memcpy(m_text, t3012, m_size);
             m_count = Decode();
         } else {
             Clear();
