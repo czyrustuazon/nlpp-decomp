@@ -1,0 +1,10 @@
+# Addresses (runtime VA = file offset + 0x100000) of symbols our sources reference but do not
+# define. `python -m ctrdecomp relink` resolves relocations from this table, so a wrong entry
+# makes the rebuilt image differ from retail. Keys are the ARMCC object-file symbol names.
+
+[symbols]
+# nw::ut (NintendoWare), file 0x541CE0 / 0x541D60 (library; not matched here)
+_Z17IsValidBinaryFilePK16BinaryFileHeaderjjt = 0x00641CE0
+_Z18GetNextBlockHeaderPK16BinaryFileHeaderPK17BinaryBlockHeader = 0x00641D60
+# Static data block shared by GetText and TextResource::Lookup (see src/text_resource.cpp)
+g_TextSystem = 0x008AA7A4

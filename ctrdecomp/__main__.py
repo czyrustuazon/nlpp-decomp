@@ -6,6 +6,7 @@
   python -m ctrdecomp sweep <src> <symbol> <off> <size> [--opts "-O3 -Otime" ...]
   python -m ctrdecomp asm <name> <off> <code_size> <pool_words> [--thumb] [-o out.s]
   python -m ctrdecomp check [name ...]
+  python -m ctrdecomp relink [-o build/code.bin]
   python -m ctrdecomp ghidra-decomp <out.c> <off> [...]
   python -m ctrdecomp ghidra-export <out.csv> [--own]
   python -m ctrdecomp ghidra-import <out.csv> [--log file]
@@ -119,6 +120,13 @@ def cmd_check(cfg, a):
     return 1 if bad else 0
 
 
+def cmd_relink(cfg, a):
+    from .relink import relink
+    r = relink(cfg, a.o)
+    print(json.dumps(r, indent=2))
+    return 0 if r["identical"] else 1
+
+
 def cmd_ghidra_decomp(cfg, a):
     from .ghidra import decompile
     print(decompile(cfg, a.out, a.offsets, a.own))
@@ -174,6 +182,7 @@ def main(argv=None):
     p.set_defaults(fn=cmd_asm)
 
     p = sub.add_parser("check"); p.add_argument("names", nargs="*"); p.set_defaults(fn=cmd_check)
+    p = sub.add_parser("relink"); p.add_argument("-o"); p.set_defaults(fn=cmd_relink)
     p = sub.add_parser("ghidra-decomp"); p.add_argument("out"); p.add_argument("offsets", nargs="+", type=hexint)
     p.add_argument("--own", action="store_true", help="use this project's analysis, not the reference project"); p.set_defaults(fn=cmd_ghidra_decomp)
     p = sub.add_parser("ghidra-export"); p.add_argument("out"); p.add_argument("--own", action="store_true"); p.set_defaults(fn=cmd_ghidra_export)

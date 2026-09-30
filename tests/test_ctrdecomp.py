@@ -84,3 +84,10 @@ def test_game_functions_still_match(cfg):
         pytest.skip("game code.bin not present")
     r = subprocess.run(["python", "-m", "ctrdecomp", "check"], cwd=ROOT, capture_output=True, text=True)
     assert r.returncode == 0, r.stdout + r.stderr
+
+
+def test_game_relink_is_byte_identical(cfg):
+    if not os.path.isfile(cfg.code_bin):
+        pytest.skip("game code.bin not present")
+    r = subprocess.run(["python", "-m", "ctrdecomp", "relink"], cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout + r.stderr

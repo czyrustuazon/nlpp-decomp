@@ -36,16 +36,16 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 - Vanilla confirmed: `extracted/exefs/code.bin` has SHA-256 `a83d349d0a000a127f93f743c038921903a2aae111b4b9005aadd446324ab890`, equal to `.code` BLZ-decompressed from the `.3ds` (ExeFS hashes verified). It differs from EngPatcher `release/name_input_code.bin` in 6,709 bytes.
 - Compiler: decomp.me's ARMCC builds, vendored into `tools/armcc/` (git-ignored) by `python -m ctrdecomp fetch-armcc`, hash-checked. They run natively on Windows. decomp.me's API is blocked by a Cloudflare challenge, so matching runs locally.
 - **Pinned flags:** ARMCC 4.1 ≥ b713, `--cpu=MPCore --arm -O3 -Otime`, on both NW4C and Konami code. The exact 4.1 build is not narrowed yet.
-- **Matched:** `FUN_00542c30` (`src/lyt_clim.cpp`, NW4C) and `FUN_005c0e7c` `GetText` (`src/text_resource.cpp`, game). **Near-matches:** `FUN_0056ed00` `TextResource::Lookup` (score 9) and `FUN_005a1ec8` `Str::Str` / MakeStr (score 21, about 6 instructions aligned), both register choice only. Relocation destinations are checked for all three. Details are in `technical.md` §4.3 and §6.1.
+- **Matched:** `FUN_00542c30` (`src/lyt_clim.cpp`, NW4C) and `FUN_005c0e7c` `GetText` (`src/text_resource.cpp`, game). **Near-matches:** `FUN_0056ed00` `TextResource::Lookup` (score 9) and `FUN_005a1ec8` `Str::Str` / MakeStr (score 21, about 6 instructions aligned), both register choice only. Relocation destinations are checked for all three. Details are in `technical.md` §4.3 and §6.1. Every rejected source attempt, with the score it got, is in `handoff_drafts/`. Read that folder before trying another shape on those two functions.
 - Ghidra 12.1.2; its install path is in `ctrdecomp.local.toml` (copy `ctrdecomp.local.toml.example` on a new machine). `python -m ctrdecomp ghidra-decomp` reads the EngPatcher project read-only; `ghidra-import` builds this folder's own project in `ghidra/`.
 - Tooling is the `ctrdecomp/` package (`technical.md` §4.3, §8). `python -m pytest` runs the tool tests and `check`, which re-verifies every function in `functions.toml`.
 - No CROs in RomFS. No `__FILE__`, mangled, or `nw::` strings in `code.bin` (`technical.md` §5 gap 4).
 - **Gap 2 filled:** `symbols/code.bin.csv` (3DS-Decomp-Pipeline format), 31,721 functions, 89.3% of `.text`. Rebuild steps and caveats are in `technical.md` §5.1. It has not been run through the pipeline yet.
-- This folder is still not a git repo. `.gitignore` excludes `tools/armcc/`, `ghidra/`, and `build/`.
+- This folder is a git repo. `origin` is `git@github.com:czyrustuazon/nlpp-decomp.git`, and the GitHub repo is private. `main` matches `origin/main` at `29089f1` (the user pushed that commit). New work goes on a branch, not `main`. Current work is on `gap6-pipeline-roundtrip`; keep using that one branch rather than making more. `.gitignore` excludes `tools/armcc/`, `ghidra/`, `build/`, and `ctrdecomp.local.toml`.
 
 ## Next job
 
-1. Run 3DS-Decomp-Pipeline on `symbols/code.bin.csv`: split and compare, then `--recreate-binaries` against the vanilla hash. That starts gap 6. It needs `ld`/`objcopy`. devkitARM is not installed; try LLVM's `ld.lld`/`llvm-objcopy` from the installed llvm-mingw first. It also needs a `cc.yaml` pointing at `tools/armcc/4.1/b1454/bin/armcc.exe` with the pinned flags. Record whether the split-and-relink round trip is byte-identical before writing more source.
+1. Gap 6 is started with our own tool: `python -m ctrdecomp relink` rebuilds the image from matched sources, byte-identical (`technical.md` §5.2). We deliberately do not use 3DS-Decomp-Pipeline (no LICENSE); do not vendor or depend on it. Grow `relink` as functions match: Thumb relocations, data objects, objdiff output. Each new source needs entries in `functions.toml` and any new externs in `externs.toml`.
 2. Gap 3: signature-match CTR SDK / NintendoWare functions in the new list (for example `nn::os` light semaphore `FUN_0001611c`/`FUN_00016288`, `nw::ut` `FUN_00541ce0`/`FUN_00541d60`), and start `lib/` (§8 item 2).
 3. The permuter for the register-allocation near-matches (§8).
 4. DrawTextToPane `FUN_0054b880`, after the permuter exists.
@@ -67,4 +67,17 @@ decomp.me, asm-differ, objdiff, 3DS-Decomp-Pipeline, Ghidra, Azahar. What each o
 
 ## When you finish
 
-Report the flag result in a few sentences, the scratch link if one exists, and the next gap that is actually unblocked. Do not commit unless the user asks. This folder is not a git repository yet.
+Report the flag result in a few sentences, the scratch link if one exists, and the next gap that is actually unblocked. Write the result into `technical.md` before stopping. Do not commit unless the user asks. Do not push unless the user asks. New commits go on a branch, not `main`.
+
+## User preferences
+
+Stated in the session that produced this handoff, and not already fixed by the decisions above:
+
+- Commit only when asked. They asked once ("let's commit what we have for now"). When asked "want me to push?", they pushed that commit themselves. Leave pushes to them unless they ask. The GitHub repo is private. Keep it that way.
+- New work goes on a branch, not `main`. They asked for this handoff to say so.
+- Machine paths stay out of tracked files. The vanilla `code.bin` path and the Ghidra install path live in git-ignored `ctrdecomp.local.toml`. Do not put Desktop paths, the username, or a drive letter back into `technical.md`, `AGENT_HANDOFF.md`, or `ctrdecomp.toml`.
+- Ghidra 12.1.2 PUBLIC is installed on the Desktop. Point the local config at it. Do not vendor Ghidra.
+- Third-party compiler binaries stay git-ignored. Recreate them with `python -m ctrdecomp fetch-armcc`. They asked for the ignore and the vendoring command together.
+- Reusable tooling for later 3DS games is a goal they asked to add (`technical.md` §8). Do not drop it to move faster on this title.
+- Thrown-away match attempts have to survive the session. The summary is `technical.md` §6.1. The sources are `handoff_drafts/`. They asked for those attempts to be written down, not left in a temp folder.
+- They switch agents to save tokens. A result that exists only in chat is lost.

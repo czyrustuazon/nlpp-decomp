@@ -32,6 +32,7 @@ class Config:
     ghidra_project_dir: str = ""
     ghidra_project_name: str = ""
     functions_file: str = ""
+    externs_file: str = ""
     rodata_offset: int = 0
     data_offset: int = 0
     ghidra_own_project_dir: str = ""
@@ -102,6 +103,7 @@ def load(path=None):
         ghidra_project_dir=rel(gh.get("project_dir", "")),
         ghidra_project_name=gh.get("project_name", ""),
         functions_file=rel(fn.get("file", "functions.toml")),
+        externs_file=rel(fn.get("externs", "externs.toml")),
         rodata_offset=int(tg.get("rodata_offset", 0)),
         data_offset=int(tg.get("data_offset", 0)),
         ghidra_own_project_dir=rel(gh.get("own_project_dir", "ghidra")),
