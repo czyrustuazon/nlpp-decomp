@@ -31,12 +31,12 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 - This folder does not patch `img.bin`, ship a CIA, or replace Azahar.
 - Localization bugs stay in the patcher. When a match explains a screen, add a short pointer in the patcher doc. Do not move patcher notes here.
 
-## State as of 2026-09-29 (after gap 1)
+## State as of 2026-09-30 (permuter built)
 
 - Vanilla confirmed: `extracted/exefs/code.bin` has SHA-256 `a83d349d0a000a127f93f743c038921903a2aae111b4b9005aadd446324ab890`, equal to `.code` BLZ-decompressed from the `.3ds` (ExeFS hashes verified). It differs from EngPatcher `release/name_input_code.bin` in 6,709 bytes.
 - Compiler: decomp.me's ARMCC builds, vendored into `tools/armcc/` (git-ignored) by `python -m ctrdecomp fetch-armcc`, hash-checked. They run natively on Windows. decomp.me's API is blocked by a Cloudflare challenge, so matching runs locally.
 - **Pinned flags:** ARMCC 4.1 ≥ b713, `--cpu=MPCore --arm -O3 -Otime`, on both NW4C and Konami code. The exact 4.1 build is not narrowed yet.
-- **Matched:** `FUN_00542c30` (`src/lyt_clim.cpp`, NW4C) and `FUN_005c0e7c` `GetText` (`src/text_resource.cpp`, game). **Near-matches:** `FUN_0056ed00` `TextResource::Lookup` (score 9) and `FUN_005a1ec8` `Str::Str` / MakeStr (score 21, about 6 instructions aligned), both register choice only. Relocation destinations are checked for all three. Details are in `technical.md` §4.3 and §6.1. Every rejected source attempt, with the score it got, is in `handoff_drafts/`. Read that folder before trying another shape on those two functions.
+- **Matched:** `FUN_00542c30` `ParseClim` (`src/lyt_clim.cpp`, NW4C) and `FUN_005c0e7c` `GetText` (`src/text_resource.cpp`, game). **Near-matches:** `FUN_0056ed00` `TextResource::Lookup` (score 9; retail keeps 1 in sl and &g_TextSystem in fp, swapped here) and `FUN_005a1ec8` `Str::Str` (score 8 after the permuter; retail loads `m_capacity` before the `add`/`str` of `m_size`, and `mov r1, r5` for Memcpy lands one slot later here). Both plateaued under the permuter (about 40k variants each, 2026-09-30). Relocation destinations are checked for all of them. Details are in `technical.md` §4.3, §6.1 and §8. Every rejected hand-written attempt, with its score, is in `handoff_drafts/`; permuter output is in git-ignored `build/permute/`.
 - Ghidra 12.1.2; its install path is in `ctrdecomp.local.toml` (copy `ctrdecomp.local.toml.example` on a new machine). `python -m ctrdecomp ghidra-decomp` reads the EngPatcher project read-only; `ghidra-import` builds this folder's own project in `ghidra/`.
 - Tooling is the `ctrdecomp/` package (`technical.md` §4.3, §8). `python -m pytest` runs the tool tests and `check`, which re-verifies every function in `functions.toml`.
 - No CROs in RomFS. No `__FILE__`, mangled, or `nw::` strings in `code.bin` (`technical.md` §5 gap 4).
@@ -47,8 +47,8 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 
 1. Gap 6: our own tool, `python -m ctrdecomp relink`, rebuilds the image from matched sources byte-identically; Thumb calls, `[[data]]` entries and `python -m ctrdecomp objdiff` exist (`technical.md` §5.2). Thumb and data are only synthetic-tested, so the next real Thumb function or data table is their first true check. We deliberately do not use 3DS-Decomp-Pipeline (no LICENSE); do not vendor or depend on it. New sources need entries in `functions.toml` and any new externs in `externs.toml`.
 2. Gap 3: signature-match CTR SDK / NintendoWare functions in the new list (for example `nn::os` light semaphore `FUN_0001611c`/`FUN_00016288`, `nw::ut` `FUN_00541ce0`/`FUN_00541d60`), and start `lib/` (§8 item 2).
-3. The permuter exists (`python -m ctrdecomp permute <name> --lines A-B`, `technical.md` §8). It took `Str::Str` from score 21 to 8 and then plateaued; `Lookup` stays at 9. Next for those two: add mutators (struct member types, inline/outline `Find` and `Reserve`, `for`/`while`) or try the remaining diff by hand from the `--align` output, then move on rather than sinking more time.
-4. DrawTextToPane `FUN_0054b880`, after the permuter exists.
+3. Permuter: built (`python -m ctrdecomp permute <name> --lines A-B`, `technical.md` §8). It has 14 mutators including if/else branch swap, `&&`/`||` order, compound assignment, and hoisting member loads. `Str::Str` 21 → 8; `Lookup` stays 9. Both are stuck; do not sink more time. Stop here unless a new idea appears (mutating which helper is inlined, or the `Find`/`Reserve` shapes by hand from `python -m ctrdecomp diff ... --align`).
+4. **Do this next:** DrawTextToPane `FUN_0054b880` (first-slice item 3), then gap 3 (SDK signature matching: `nn::os` `FUN_0001611c`/`FUN_00016288`, `nw::ut` `FUN_00541ce0`/`FUN_00541d60`). New functions: add to `functions.toml`, new externs to `externs.toml`, and check with `python -m ctrdecomp check` and `relink`.
 
 ## Original job (gap 1, done)
 

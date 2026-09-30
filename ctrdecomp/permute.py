@@ -191,7 +191,82 @@ def mut_type(lines, rng, ctx):
     return lines
 
 
-MUTATIONS = [mut_swap, mut_move, mut_hoist, mut_unhoist, mut_split_decl, mut_merge_decl, mut_cmp_flip,
+def mut_compound(lines, rng, ctx):
+    """`x = x + y;` <-> `x += y;` (also -, |, &, ^), and `a * 8` <-> `a << 3`."""
+    if rng.random() < 0.5:
+        rx = re.compile(r"^(\s*)(\w+(?:(?:->|\.)\w+)*)\s*=\s*\2\s*([+\-|&^])\s*(.+);\s*$")
+        idx = [i for i, l in enumerate(lines) if rx.match(l)]
+        if idx:
+            i = rng.choice(idx)
+            ind, v, op, e = rx.match(lines[i]).groups()
+            lines[i] = f"{ind}{v} {op}= {e};"
+            return lines
+        rx = re.compile(r"^(\s*)(\w+(?:(?:->|\.)\w+)*)\s*([+\-|&^])=\s*(.+);\s*$")
+        idx = [i for i, l in enumerate(lines) if rx.match(l)]
+        if not idx:
+            return None
+        i = rng.choice(idx)
+        ind, v, op, e = rx.match(lines[i]).groups()
+        lines[i] = f"{ind}{v} = {v} {op} {e};"
+        return lines
+    rx = re.compile(r"\b(\w+)\s*\*\s*(2|4|8|16)\b")
+    shift = {"2": 1, "4": 2, "8": 3, "16": 4}
+    return _regex_line(lines, rng, rx, lambda m: f"{m.group(1)} << {shift[m.group(2)]}")
+
+
+def mut_logic_order(lines, rng, ctx):
+    """Swap the operands of a two-term `&&` / `||`."""
+    rx = re.compile(rf"({TOKEN}(?:\s*(?:<=|>=|<|>|==|!=)\s*(?:{TOKEN}))?)\s*(&&|\|\|)\s*({TOKEN}(?:\s*(?:<=|>=|<|>|==|!=)\s*(?:{TOKEN}))?)")
+    return _regex_line(lines, rng, rx, lambda m: f"{m.group(3)} {m.group(2)} {m.group(1)}")
+
+
+NEGATE = {"<": ">=", ">": "<=", "<=": ">", ">=": "<", "==": "!=", "!=": "=="}
+
+
+def _negate(cond):
+    m = re.fullmatch(rf"\s*({TOKEN})\s*(<=|>=|<|>|==|!=)\s*({TOKEN})\s*", cond)
+    if m:
+        return f"{m.group(1)} {NEGATE[m.group(2)]} {m.group(3)}"
+    m = re.fullmatch(rf"\s*!\s*({TOKEN})\s*", cond)
+    if m:
+        return m.group(1)
+    m = re.fullmatch(rf"\s*({TOKEN})\s*", cond)
+    if m:
+        return f"!{m.group(1)}"
+    return None
+
+
+def mut_swap_branches(lines, rng, ctx):
+    """`if (c) {A} else {B}` -> `if (!c) {B} else {A}` for a simple condition."""
+    idx = [i for i, l in enumerate(lines) if re.match(r"^\s*if \((.+)\) \{\s*$", l)]
+    rng.shuffle(idx)
+    for i in idx:
+        cond = re.match(r"^\s*if \((.+)\) \{\s*$", lines[i]).group(1)
+        neg = _negate(cond)
+        if neg is None:
+            continue
+        depth, k = 1, i + 1
+        while k < len(lines) and depth:
+            depth += lines[k].count("{") - lines[k].count("}")
+            if depth == 1 and re.match(r"^\s*\}\s*else\s*\{\s*$", lines[k]):
+                break
+            k += 1
+        if k >= len(lines) or not re.match(r"^\s*\}\s*else\s*\{\s*$", lines[k]):
+            continue
+        depth, m = 1, k + 1
+        while m < len(lines) and depth:
+            depth += lines[m].count("{") - lines[m].count("}")
+            m += 1
+        if depth:
+            continue
+        a, b = lines[i + 1:k], lines[k + 1:m - 1]
+        head = re.match(r"^(\s*)", lines[i]).group(1)
+        lines[i:m] = [f"{head}if ({neg}) {{"] + b + [lines[k]] + a + [lines[m - 1]]
+        return lines
+    return None
+
+
+MUTATIONS = [mut_compound, mut_logic_order, mut_swap_branches, mut_swap, mut_move, mut_hoist, mut_unhoist, mut_split_decl, mut_merge_decl, mut_cmp_flip,
              mut_commute, mut_zero_cmp, mut_incr, mut_type]
 
 
