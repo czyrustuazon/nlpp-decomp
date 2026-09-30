@@ -1,0 +1,14 @@
+# Third-party ARMCC builds from decomp.me. Recreate with: python tools/fetch_armcc.py
+/tools/armcc/
+
+# Ghidra headless project and exports (regenerate from vanilla code.bin)
+/ghidra/
+
+# Build output and Python cache
+/build/
+*.o
+__pycache__/
+.pytest_cache/
+
+# Machine-specific ctrdecomp settings
+/ctrdecomp.local.toml

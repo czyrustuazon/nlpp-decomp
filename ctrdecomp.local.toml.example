@@ -1,0 +1,11 @@
+# Copy to ctrdecomp.local.toml (git-ignored) and point these at your own files.
+
+[target]
+# Vanilla code.bin. Build it with: python -m ctrdecomp extract <decrypted .3ds> <dir>
+code_bin = "path/to/extracted/exefs/code.bin"
+
+[ghidra]
+home = "path/to/ghidra_12.1.2_PUBLIC"
+# Optional reference project, opened read-only by ghidra-decomp / ghidra-export (without --own).
+# project_dir = "../NewLovePlusPlusEngPatcher/ghidra_nlpp"
+# project_name = "NLPP"

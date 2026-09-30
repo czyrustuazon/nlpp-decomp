@@ -1,0 +1,22 @@
+# ctrdecomp settings for New Love Plus+ (00040000000F4E00). Paths are relative to this file.
+# Machine-specific paths go in ctrdecomp.local.toml (git-ignored); see ctrdecomp.local.toml.example.
+
+[target]
+# code_bin (vanilla code.bin, SHA-256 a83d349d...ab890) is set in ctrdecomp.local.toml.
+load_base = 0x100000
+rodata_offset = 0x690000   # VA 0x00790000; .text ends at 0x68F7FC
+data_offset = 0x789000     # VA 0x00889000
+
+[compiler]
+armcc_root = "tools/armcc"          # python -m ctrdecomp fetch-armcc
+build = "4.1/b1454"                 # any 4.1 >= b713 matches so far (technical.md §4.3)
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections"]
+
+[ghidra]
+# home (the Ghidra install) is set in ctrdecomp.local.toml.
+project_dir = "../NewLovePlusPlusEngPatcher/ghidra_nlpp"   # opened -readOnly
+project_name = "NLPP"
+own_project_dir = "ghidra"   # git-ignored; built by: python -m ctrdecomp ghidra-import build/functions.csv
+
+[functions]
+file = "functions.toml"

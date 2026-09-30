@@ -1,0 +1,10 @@
+# Normalize text to LF in the repository; check out with the platform's native endings.
+* text=auto
+
+# Always LF: scripts and configs read by tools that may run on Linux (wibo, CI).
+*.py   text eol=lf
+*.sh   text eol=lf
+*.toml text eol=lf
+*.java text eol=lf
+*.s    text eol=lf
+*.csv  text eol=lf

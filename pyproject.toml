@@ -1,0 +1,21 @@
+[project]
+name = "ctrdecomp"
+version = "0.1.0"
+description = "Game-agnostic helpers for matching decompilation of 3DS (ARMCC) binaries"
+requires-python = ">=3.11"
+dependencies = ["capstone>=5", "pyelftools>=0.29"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+ctrdecomp = "ctrdecomp.__main__:main"
+
+[tool.setuptools]
+packages = ["ctrdecomp"]
+
+[tool.setuptools.package-data]
+ctrdecomp = ["ghidra_scripts/*.java"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

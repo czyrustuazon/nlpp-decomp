@@ -1,0 +1,36 @@
+# Every function with source in src/. `python -m ctrdecomp check` recompiles each one and
+# fails if its score differs from `score` (0 = match). Offsets and sizes are hex file
+# offsets into vanilla code.bin; size includes the literal pool. Details: technical.md §6.1.
+
+[[function]]
+name = "ParseClim"
+offset = "542c30"
+size = "dc"
+src = "src/lyt_clim.cpp"
+symbol = "_Z9ParseClimP12ClimResourcePKvj"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "GetText"
+offset = "5c0e7c"
+size = "4c"
+src = "src/text_resource.cpp"
+symbol = "_Z7GetTextPcjjj"
+score = 0
+
+[[function]]
+name = "TextResource::Lookup"
+offset = "56ed00"
+size = "288"
+src = "src/text_resource.cpp"
+symbol = "_ZN12TextResource6LookupEPcjjjjb"
+score = 9   # NONMATCHING: register choice only
+
+[[function]]
+name = "Str::Str (MakeStr)"
+offset = "5a1ec8"
+size = "e8"
+src = "src/str.cpp"
+symbol = "_ZN3StrC1EPKc"
+score = 21  # NONMATCHING: register choice (r1/r2), ~6 instructions after alignment
