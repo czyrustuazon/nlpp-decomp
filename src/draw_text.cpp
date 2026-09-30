@@ -34,6 +34,8 @@ s32  FontLineHeight(void* font);                      // FUN_006419e4
 void DrawIcon(void* font, s32 x, s32 y, u32 code);    // FUN_005b2550
 void DrawGlyph(void* font, s32 x, s32 y, s32 glyph);  // FUN_005b2578
 
+struct Lines { u32 count[32]; s32 cols[32]; s32 n; };
+
 struct Pane {
     u8   pad0[0x13C];
     struct { u8 pad[0x34]; struct { u8 pad[8]; u16 w; u16 h; }* rect; }* layout;   // +0x13C
@@ -54,9 +56,9 @@ inline const StrChar& CharAt(const TaggedStr& s, s32 i)
 }
 
 // Encode a decoded code point as up to 4 bytes, most significant non-zero byte first.
-inline void Encode(char* out, u32 code)
+inline void Encode(char* out, u32* tmp, u32 code)
 {
-    u32 tmp[2] = { 0, 0 };
+    tmp[0] = 0; tmp[1] = 0;
     char* p = (char*)tmp;
     if ((code >> 24) != 0)      { p[0] = code >> 24; p[1] = code >> 16; p[2] = code >> 8; p[3] = code; }
     else if ((code >> 16 & 0xFF) != 0) { p[0] = code >> 16; p[1] = code >> 8; p[2] = code; }
@@ -77,6 +79,8 @@ inline s32 AlignOffset(u8 align, s32 room, s32 lines, s32 width, s32 spacing, s3
 u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
 {
     u32 ok = 1;
+    char buf[8];
+    u32 tmp[2];
     if (maxLine == 0) maxLine = 10000;
 
     Str str((const char*)src[1]);
@@ -84,12 +88,10 @@ u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
     TaggedStr_Init(&ts);
     TaggedStr_Parse(&ts, (const char*)((s32*)&str)[5]);
 
-    u32 lineStart[32];
-    s32 lineWidth[32];
-    s32 lineWidth2[32], lineCount2[32];
-    s32 nLines = 0;
-    Memset(lineStart, 0, 0x80);
-    Memset(lineWidth, 0, 0x80);
+    Lines built;
+    built.n = 0;
+    Memset(built.count, 0, 0x80);
+    Memset(built.cols, 0, 0x80);
 
     s32 n = ts.m_count;
     u32 col = 0, next = 0;
@@ -98,20 +100,21 @@ u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
             u32 ch = CharAt(ts, i).code;
             if (ch == 0 || ch == 10 || col == maxLine) {
                 next = 0;
-                lineStart[nLines++] = col;
+                built.count[built.n++] = col;
             } else {
-                char buf[8];
-                Encode(buf, ch);
+                Encode(buf, tmp, ch);
                 next = col + 1;
-                lineWidth[nLines] += GlyphColumns(buf);
+                built.cols[built.n] += GlyphColumns(buf);
             }
             col = next;
         }
-        if (next != 0) lineStart[nLines++] = next;
+        if (next != 0) built.count[built.n++] = next;
     }
 
-    Memcpy(lineWidth2, lineStart, 0x104);
-    Memcpy(lineCount2, lineWidth, 0x104);
+    Lines ret, L;
+    Memcpy(&ret, &built, 0x104);
+    Memcpy(&L, &ret, 0x104);
+    s32 nLines = L.n;
 
     s32 paneW = pane->width, paneH = pane->height;
     s32 rectW = pane->layout->rect->w, rectH = pane->layout->rect->h;
@@ -120,7 +123,7 @@ u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
     s32 padX = (rectW - paneW) / 2;
 
     s32 line = 0;
-    s32 x = AlignOffset(pane->hAlign, paneW, lineCount2[0], lineWidth2[0], pane->charSpacing, cell) + x0 + padX;
+    s32 x = AlignOffset(pane->hAlign, paneW, L.count[0], L.cols[0], pane->charSpacing, cell) + x0 + padX;
     s32 y = (rectH - paneH) / 2 + AlignOffset(pane->vAlign, paneH, nLines, rowH, pane->lineSpacing, 1) + y0;
 
     s32 end = n;
@@ -133,15 +136,14 @@ u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
         if (ch == 10 || drawn == maxLine) {
             line++;
             drawn = 0;
-            x = AlignOffset(pane->hAlign, paneW, lineCount2[line], lineWidth2[line], pane->charSpacing, cell) + x0 + padX;
+            x = AlignOffset(pane->hAlign, paneW, L.count[line], L.cols[line], pane->charSpacing, cell) + x0 + padX;
             y += pane->lineSpacing + rowH;
             if (ch == 10) continue;
         }
         if (ok) ok = GlyphAdvance(pane->font, ch) != 0;
         if (CharAt(ts, i).kind == 1) DrawIcon(pane->font, x, y, CharAt(ts, i).code);
         else DrawGlyph(pane->font, x, y, GlyphAdvance(pane->font, CharAt(ts, i).code));
-        char buf[8];
-        Encode(buf, ch);
+        Encode(buf, tmp, ch);
         if (!icon) x += GlyphColumns(buf) * cell + pane->charSpacing;
         else       x += pane->charSpacing + FontHeight(pane->font);
         drawn++;

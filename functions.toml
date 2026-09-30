@@ -77,4 +77,4 @@ offset = "54b880"
 size = "7e8"
 src = "src/draw_text.cpp"
 symbol = "DrawTextToPane"
-score = 469   # NONMATCHING: first draft (452 vs 506 instructions); structure only
+score = 463   # NONMATCHING: draft (468 vs 506 instructions); Lines struct + shared encode buffers
