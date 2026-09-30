@@ -12,3 +12,4 @@ __pycache__/
 
 # Machine-specific ctrdecomp settings
 /ctrdecomp.local.toml
+/objdiff.json

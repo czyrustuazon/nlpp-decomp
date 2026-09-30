@@ -45,7 +45,7 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 
 ## Next job
 
-1. Gap 6 is started with our own tool: `python -m ctrdecomp relink` rebuilds the image from matched sources, byte-identical (`technical.md` §5.2). We deliberately do not use 3DS-Decomp-Pipeline (no LICENSE); do not vendor or depend on it. Grow `relink` as functions match: Thumb relocations, data objects, objdiff output. Each new source needs entries in `functions.toml` and any new externs in `externs.toml`.
+1. Gap 6: our own tool, `python -m ctrdecomp relink`, rebuilds the image from matched sources byte-identically; Thumb calls, `[[data]]` entries and `python -m ctrdecomp objdiff` exist (`technical.md` §5.2). Thumb and data are only synthetic-tested, so the next real Thumb function or data table is their first true check. We deliberately do not use 3DS-Decomp-Pipeline (no LICENSE); do not vendor or depend on it. New sources need entries in `functions.toml` and any new externs in `externs.toml`.
 2. Gap 3: signature-match CTR SDK / NintendoWare functions in the new list (for example `nn::os` light semaphore `FUN_0001611c`/`FUN_00016288`, `nw::ut` `FUN_00541ce0`/`FUN_00541d60`), and start `lib/` (§8 item 2).
 3. The permuter for the register-allocation near-matches (§8).
 4. DrawTextToPane `FUN_0054b880`, after the permuter exists.

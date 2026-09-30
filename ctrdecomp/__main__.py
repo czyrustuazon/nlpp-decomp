@@ -7,6 +7,7 @@
   python -m ctrdecomp asm <name> <off> <code_size> <pool_words> [--thumb] [-o out.s]
   python -m ctrdecomp check [name ...]
   python -m ctrdecomp relink [-o build/code.bin]
+  python -m ctrdecomp objdiff [--out build/objdiff]
   python -m ctrdecomp ghidra-decomp <out.c> <off> [...]
   python -m ctrdecomp ghidra-export <out.csv> [--own]
   python -m ctrdecomp ghidra-import <out.csv> [--log file]
@@ -127,6 +128,12 @@ def cmd_relink(cfg, a):
     return 0 if r["identical"] else 1
 
 
+def cmd_objdiff(cfg, a):
+    from .objdiff import export
+    path, units = export(cfg, os.path.join(cfg.root, a.out))
+    print(f"wrote {path} ({len(units)} units)")
+
+
 def cmd_ghidra_decomp(cfg, a):
     from .ghidra import decompile
     print(decompile(cfg, a.out, a.offsets, a.own))
@@ -183,6 +190,7 @@ def main(argv=None):
 
     p = sub.add_parser("check"); p.add_argument("names", nargs="*"); p.set_defaults(fn=cmd_check)
     p = sub.add_parser("relink"); p.add_argument("-o"); p.set_defaults(fn=cmd_relink)
+    p = sub.add_parser("objdiff"); p.add_argument("--out", default="build/objdiff"); p.set_defaults(fn=cmd_objdiff)
     p = sub.add_parser("ghidra-decomp"); p.add_argument("out"); p.add_argument("offsets", nargs="+", type=hexint)
     p.add_argument("--own", action="store_true", help="use this project's analysis, not the reference project"); p.set_defaults(fn=cmd_ghidra_decomp)
     p = sub.add_parser("ghidra-export"); p.add_argument("out"); p.add_argument("--own", action="store_true"); p.set_defaults(fn=cmd_ghidra_export)

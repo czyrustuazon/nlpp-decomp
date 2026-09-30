@@ -70,15 +70,37 @@ def read_function(obj, symbol):
         same_sec = sorted(s["st_value"] & ~1 for s in funcs if s["st_shndx"] == shndx)
         nxt = [v for v in same_sec if v > start]
         end = nxt[0] if nxt else len(data)   # include the literal pool up to the next function
-        relocs = {}
-        for rs in elf.iter_sections():
-            if isinstance(rs, RelocationSection) and rs["sh_info"] == shndx:
-                names = elf.get_section(rs["sh_link"])
-                for r in rs.iter_relocations():
-                    o = r["r_offset"]
-                    if start <= o < end:
-                        relocs[o - start] = (r.entry["r_info_type"], names.get_symbol(r["r_info_sym"]).name)
-        return Obj(data[start:end], bool(sym["st_value"] & 1), relocs)
+        return Obj(data[start:end], bool(sym["st_value"] & 1), _section_relocs(elf, shndx, start, end))
+
+
+def _section_relocs(elf, shndx, start, end):
+    relocs = {}
+    for rs in elf.iter_sections():
+        if isinstance(rs, RelocationSection) and rs["sh_info"] == shndx:
+            names = elf.get_section(rs["sh_link"])
+            for r in rs.iter_relocations():
+                o = r["r_offset"]
+                if start <= o < end:
+                    relocs[o - start] = (r.entry["r_info_type"], names.get_symbol(r["r_info_sym"]).name)
+    return relocs
+
+
+def read_data(obj, symbol):
+    """Return the named data object's initialized bytes (`st_size` of it) and its relocations.
+    `symbol` must match one defined object exactly."""
+    with open(obj, "rb") as f:
+        elf = ELFFile(f)
+        symtab = elf.get_section_by_name(".symtab")
+        hits = [s for s in symtab.iter_symbols()
+                if s.name == symbol and s["st_info"]["type"] == "STT_OBJECT" and s["st_shndx"] != "SHN_UNDEF"]
+        if len(hits) != 1:
+            raise RuntimeError(f"data symbol {symbol!r} matched {len(hits)} objects")
+        sym = hits[0]
+        sec = elf.get_section(sym["st_shndx"])
+        if sec["sh_type"] == "SHT_NOBITS":
+            raise RuntimeError(f"{symbol!r} is uninitialized (bss); declare its address in externs.toml")
+        start, end = sym["st_value"], sym["st_value"] + sym["st_size"]
+        return Obj(sec.data()[start:end], False, _section_relocs(elf, sym["st_shndx"], start, end))
 
 
 def _reloc_width(rtype):

@@ -91,3 +91,59 @@ def test_game_relink_is_byte_identical(cfg):
         pytest.skip("game code.bin not present")
     r = subprocess.run(["python", "-m", "ctrdecomp", "relink"], cwd=ROOT, capture_output=True, text=True)
     assert r.returncode == 0, r.stdout + r.stderr
+
+
+@pytest.mark.parametrize("thumb_target", [True, False])
+def test_relink_resolves_thumb_calls(cfg, thumb_target):
+    from ctrdecomp.relink import resolve_function
+    from ctrdecomp.compare import _thumb_bl_target
+    src = os.path.join(ROOT, "src", "lyt_clim.cpp")
+    obj = compile_obj(cfg, src, ["--cpu=MPCore", "--thumb", "-O3", "-Otime", "--split_sections"])
+    try:
+        fn = read_function(obj, "ParseClim")
+    finally:
+        os.unlink(obj)
+    place = 0x100000 + 0x1000
+    names = sorted({n for _, n in fn.relocs.values()})
+    addr = {n: 0x00200000 + 0x100 * i + int(thumb_target) for i, n in enumerate(names)}
+    data = resolve_function(fn, place, addr)
+    for o, (_, n) in fn.relocs.items():
+        w = struct.unpack_from("<I", data, o)[0]
+        got = _thumb_bl_target(w & 0xFFFF, w >> 16, place + o)
+        assert got == addr[n] & ~1
+        assert bool(w >> 28 & 1) == thumb_target      # bit 12 of hw2: BL vs BLX
+
+
+def test_relink_places_data_and_pointer_tables(cfg, tmp_path):
+    import dataclasses
+    from ctrdecomp.relink import relink
+    (tmp_path / "t.cpp").write_text(
+        "extern int Ext(int);\n"
+        "const int kTable[4] = {1, 2, 3, 0x11223344};\n"
+        "typedef int (*Fn)(int);\n"
+        "extern const Fn kFns[1]; const Fn kFns[1] = { Ext };\n"
+        "int Get(int i) { return kTable[i & 3] + Ext(i); }\n")
+    (tmp_path / "f.toml").write_text(
+        '[[function]]\nname="Get"\noffset="100"\nsize="0"\nsrc="t.cpp"\nsymbol="_Z3Geti"\nscore=99\n'
+        '[[data]]\nname="kTable"\noffset="2000"\nsize="10"\nsrc="t.cpp"\nsymbol="kTable"\n'
+        '[[data]]\nname="kFns"\noffset="2010"\nsize="4"\nsrc="t.cpp"\nsymbol="kFns"\n')
+    (tmp_path / "e.toml").write_text("[symbols]\n_Z3Exti = 0x00300000\n")
+    code = tmp_path / "code.bin"
+    code.write_bytes(bytes(0x3000))
+    c = dataclasses.replace(cfg, root=str(tmp_path), code_bin=str(code), functions_file=str(tmp_path / "f.toml"),
+                            externs_file=str(tmp_path / "e.toml"))
+    r = relink(c, str(tmp_path / "out.bin"))
+    assert not r["errors"], r
+    assert r["placed"] == ["kTable", "kFns"] and r["skipped"] == ["Get"]
+    out = (tmp_path / "out.bin").read_bytes()
+    assert struct.unpack_from("<4I", out, 0x2000) == (1, 2, 3, 0x11223344)
+    assert struct.unpack_from("<I", out, 0x2010)[0] == 0x00300000
+
+
+def test_objdiff_targets_reproduce_retail_bytes(cfg, tmp_path):
+    import shutil
+    if not os.path.isfile(cfg.code_bin) or not shutil.which("clang"):
+        pytest.skip("needs the game code.bin and clang")
+    r = subprocess.run(["python", "-m", "ctrdecomp", "objdiff", "--out", str(tmp_path)], cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert (tmp_path / "lyt_clim.target.o").is_file()
