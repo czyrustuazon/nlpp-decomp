@@ -59,3 +59,47 @@ g_UiContext = 0x008BFA40
 _Z16WeakTarget504cc4PvPKtS1_j = "weak"
 _Z16WeakTarget54a6e0PvPKtjj = "weak"
 _Z13Forward587748PKtj = 0x00687748
+# src/text_small.cpp, src/str_small.cpp, src/tagged_str.cpp (text/Str family leaves)
+_Z15FontRes_AdvanceP7FontResj = 0x0073FE8C
+_Z16FontRes_DrawIconP7FontRes = 0x0068E96C
+_Z17FontRes_DrawGlyphP7FontResiiij = 0x0068EEB0
+_Z12GlyphWidthOfPKc = 0x006C04BC
+_Z8HeapFreePvj = 0x00129ED4
+_Z4FreePv = 0x002FCD88
+__aeabi_vec_ctor_nocookie_nodtor = 0x001000AD
+_ZN7StrCharC1Ev = 0x0069E2E4
+_ZN3StrC1Ev = 0x006A1FB0
+_ZN3Str5ClearEv = 0x006A1EB0
+# src/float_small.cpp, src/misc_small.cpp
+_Z8SinIndexf = 0x006325B8
+_Z9Sink_SendP4Sinkjjf = 0x006A102C
+_Z6RetainPv = 0x0012ACC4
+g_NullResource = 0x009AB520
+_Z10HandleInitP4Node = 0x006A1618
+# src/factory_small.cpp (_ZTV6Widget + 8 = the derived vptr stored by Widget::Widget)
+_ZTV6Widget = 0x0082D9EC
+_ZN6Base20C1Ev = 0x00115490
+_Z10Chan_ApplyP4Chanif = 0x006A131C
+# src/ui_small.cpp
+_Z10Table_FindP9UiContextjj = 0x006C5CB0
+_Z10Entry_UseAP5Entry = 0x00319F74
+_Z10Entry_UseBP5Entry = 0x0031A054
+_Z10Entry_UseCP5Entryj = 0x002DA498
+_Z13Child_SetFlagP5Childj = 0x006A4EBC
+_Z4SinDd = 0x0069B56C
+# src/ui_small2.cpp
+_Z10Child_ShowP5Child = 0x006B0144
+# src/ui_small3.cpp
+_Z8GetText5Pcjjjj = 0x006C0E7C
+g_TextIds = 0x007BD472
+_Z10Entry_UseDP5Entryj = 0x007278E0
+_Z10Entry_UseEP5Entryj = 0x00727CE0
+_Z10Entry_UseFP5Entry = 0x00727B88
+_Z10Entry_UseGP5Entryjb = 0x00304970
+_Z10Entry_UseHP5Entryj = 0x0028B15C
+# src/tagged_str.cpp (Label vptr = _ZTV5Label + 8 = 0x0081C9EC; _ZdlPv = operator delete)
+_ZTV5Label = 0x0081C9E4
+_ZdlPv = 0x003024B0
+# src/inner.cpp, src/item.cpp (vptr = _ZTV4Item + 8 = 0x0082D994)
+_Z7Releasej = 0x00129B80
+_ZTV4Item = 0x0082D98C

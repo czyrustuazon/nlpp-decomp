@@ -34,15 +34,19 @@ void MSelMenu_Finish2(MSelMenu*);                           // FUN_005c7c28
 
 void BindMSelBtnIconAndText(MSelMenu* m, s32 index, const char* icon, const char* text)
 {
+    bool act = m->active;            // a named bool loaded first: 15 -> 13 (permuter, read and kept)
     PaneRef ref;
     char* base = (char*)m + index * 8;
-        UiContext_Begin(g_UiContext, m->active != 0, 0);
+    UiContext_Begin(g_UiContext, act, 0);
     PaneRef_Init(&ref);
     FindPane(((BtnSlot*)(base + 0x78))->layout->root, "Pic_Btn_Icon", &ref, 0);
     BindBclim(&ref, 0, g_UiContext->resource, icon);
     FindPane(((BtnSlot*)(base + 0x78))->layout->root, "Pic_Btn_Text", &ref, 0);
     BindBclim(&ref, 0, g_UiContext->resource, text);
-    UiContext_End(g_UiContext, m->active != 0);
+    // A named local for the context here (not at Begin or Bind) took this from 30 to 15: it fixes the
+    // epilogue (retail loads active straight into r1, `ldr r1,[r4,#4]; ldr r0,[r8]; cmp; movne`).
+    UiContext* ce = g_UiContext;
+    UiContext_End(ce, m->active != 0);
 }
 
 void OptionMenu_BindBtnTextures(MSelMenu* m)

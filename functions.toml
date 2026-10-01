@@ -242,7 +242,7 @@ offset = "20ad74"
 size = "e0"
 src = "src/menu_bind.cpp"
 symbol = "_Z22BindMSelBtnIconAndTextP8MSelMenuiPKcS2_"
-score = 30   # NONMATCHING: 57 vs 56 instructions; retail loads m->active into r3 first (moveq/movne), last call single movne; ours reverse
+score = 13   # NONMATCHING: 56 instructions both; epilogue now matches (named ctx local); only the prologue schedule differs (retail: mov r7,r3 before ldr r3,[r4,#4]; mov r3,#0 after add r1,pc in the FindPane setup)
 
 [[function]]
 name = "OptionMenu_BindBtnTextures"
@@ -323,3 +323,542 @@ size = "30"
 src = "src/utf16_wrappers.cpp"
 symbol = "_Z13IfLen8ForwardPKtj"
 score = 0
+
+# Text / Str / Font leaves (technical.md 6.1.3)
+[[function]]
+name = "FontHeight"
+offset = "6419d0"
+size = "14"
+src = "src/text_small.cpp"
+symbol = "_Z10FontHeightP4Font"
+score = 0
+
+[[function]]
+name = "FontLineHeight"
+offset = "6419e4"
+size = "14"
+src = "src/text_small.cpp"
+symbol = "_Z14FontLineHeightP4Font"
+score = 0
+
+[[function]]
+name = "GlyphAdvance"
+offset = "641a70"
+size = "14"
+src = "src/text_small.cpp"
+symbol = "_Z12GlyphAdvanceP4Fontj"
+score = 0
+
+[[function]]
+name = "DrawIcon"
+offset = "5b2550"
+size = "14"
+src = "src/text_small.cpp"
+symbol = "_Z8DrawIconP4Font"
+score = 0
+
+[[function]]
+name = "DrawGlyph"
+offset = "5b2578"
+size = "20"
+src = "src/text_small.cpp"
+symbol = "_Z9DrawGlyphP4Fontiii"
+score = 0
+
+[[function]]
+name = "GlyphColumns"
+offset = "5c0748"
+size = "18"
+src = "src/text_small.cpp"
+symbol = "_Z12GlyphColumnsPKc"
+score = 0
+
+[[function]]
+name = "StrChar_Ctor"
+offset = "59e2e4"
+size = "10"
+src = "src/str_small.cpp"
+symbol = "_ZN7StrCharC1Ev"
+score = 0
+
+[[function]]
+name = "Str_Clear"
+offset = "5a1eb0"
+size = "18"
+src = "src/str_small.cpp"
+symbol = "_ZN3Str5ClearEv"
+score = 0
+
+[[function]]
+name = "Str_Ctor"
+offset = "5a1fb0"
+size = "20"
+src = "src/str_small.cpp"
+symbol = "_ZN3StrC1Ev"
+score = 0
+
+[[function]]
+name = "Str_Dtor"
+offset = "5a2024"
+size = "30"
+src = "src/str_small.cpp"
+symbol = "_ZN3StrD1Ev"
+score = 0
+
+[[function]]
+name = "TaggedStr_Dtor"
+offset = "5a1fd0"
+size = "54"
+src = "src/tagged_str.cpp"
+symbol = "_ZN9TaggedStrD1Ev"
+score = 0   # tail `b Str::~Str` is branch-to-next; relink nops it (armlink --branchnop)
+
+[[function]]
+name = "TaggedStr_Ctor"
+offset = "59e380"
+size = "74"
+src = "src/tagged_str.cpp"
+symbol = "_ZN9TaggedStrC1Ev"
+score = 17   # NONMATCHING: retail rematerializes the flags 0 in r1 and loads r5=0 after the load of m_flags; ours keeps one r5
+
+# More text-family leaves (technical.md 6.1.3)
+
+[[function]]
+name = "Variant_SetCopy"
+offset = "5a0fe0"
+size = "14"
+src = "src/variant.cpp"
+symbol = "_ZN7Variant7SetCopyEPKj"
+score = 0
+
+[[function]]
+name = "Variant_SetBool"
+offset = "5a0ff4"
+size = "10"
+src = "src/variant.cpp"
+symbol = "_ZN7Variant7SetBoolEh"
+score = 0
+
+[[function]]
+name = "Variant_SetUInt"
+offset = "5a1004"
+size = "c"
+src = "src/variant.cpp"
+symbol = "_ZN7Variant7SetUIntEj"
+score = 0
+
+[[function]]
+name = "Variant_SetInt"
+offset = "5a1010"
+size = "c"
+src = "src/variant.cpp"
+symbol = "_ZN7Variant6SetIntEi"
+score = 0
+
+[[function]]
+name = "Variant_Clear"
+offset = "5a101c"
+size = "10"
+src = "src/variant.cpp"
+symbol = "_ZN7Variant5ClearEv"
+score = 0
+
+[[function]]
+name = "Ring_Init"
+offset = "5a2170"
+size = "20"
+src = "src/misc_small.cpp"
+symbol = "_ZN4Ring4InitEv"
+score = 0
+
+[[function]]
+name = "Block_Dtor"
+offset = "5a2190"
+size = "20"
+src = "src/misc_small.cpp"
+symbol = "_ZN5BlockD1Ev"
+score = 0
+
+[[function]]
+name = "EntryTable_SetEnabled"
+offset = "5a1aa8"
+size = "20"
+src = "src/misc_small.cpp"
+symbol = "_ZN10EntryTable10SetEnabledEbi"
+score = 0
+
+[[function]]
+name = "Fader_SetValue"
+offset = "5a14e4"
+size = "24"
+src = "src/misc_small.cpp"
+symbol = "_ZN5Fader8SetValueEf"
+score = 0
+
+[[function]]
+name = "Emitter_Send"
+offset = "5a150c"
+size = "18"
+src = "src/misc_small.cpp"
+symbol = "_ZN7Emitter4SendEjjjf"
+score = 0
+
+[[function]]
+name = "Handle_CopyCtor"
+offset = "5a221c"
+size = "1c"
+src = "src/misc_small.cpp"
+symbol = "_ZN6HandleC1ERKS_"
+score = 0
+
+[[function]]
+name = "Holder_Get20"
+offset = "5a0b28"
+size = "14"
+src = "src/misc_small.cpp"
+symbol = "_ZN6Holder5Get20Ev"
+score = 0
+
+[[function]]
+name = "Holder_Get1C"
+offset = "5a0c48"
+size = "14"
+src = "src/misc_small.cpp"
+symbol = "_ZN6Holder5Get1CEv"
+score = 0
+
+[[function]]
+name = "Node_Ctor"
+offset = "59f084"
+size = "24"
+src = "src/misc_small.cpp"
+symbol = "_ZN4NodeC1Ev"
+score = 0
+
+[[function]]
+name = "Clamp"
+offset = "59b5d0"
+size = "20"
+src = "src/float_small.cpp"
+symbol = "_Z5Clampfff"
+score = 0
+
+[[function]]
+name = "RadToSinIndex"
+offset = "59b5f0"
+size = "10"
+src = "src/float_small.cpp"
+symbol = "_Z13RadToSinIndexf"
+score = 0
+
+[[function]]
+name = "RefPtr_Dtor"
+offset = "59f0a8"
+size = "50"
+src = "src/refptr.cpp"
+symbol = "_ZN6RefPtrD1Ev"
+score = 0
+
+[[function]]
+name = "Widget_Ctor"
+offset = "5a0ce8"
+size = "34"
+src = "src/factory_small.cpp"
+symbol = "_ZN6WidgetC1Ev"
+score = 0
+
+[[function]]
+name = "Pair_Apply"
+offset = "5a1adc"
+size = "3c"
+src = "src/factory_small.cpp"
+symbol = "_ZN4Pair5ApplyEif"
+score = 0
+
+[[function]]
+name = "UiUseA"
+offset = "5c9624"
+size = "2c"
+src = "src/ui_small.cpp"
+symbol = "_Z6UiUseAPvj"
+score = 0
+
+[[function]]
+name = "UiUseB"
+offset = "5c9650"
+size = "2c"
+src = "src/ui_small.cpp"
+symbol = "_Z6UiUseBPvj"
+score = 0
+
+[[function]]
+name = "UiUseC"
+offset = "5c95ec"
+size = "38"
+src = "src/ui_small.cpp"
+symbol = "_Z6UiUseCPvjj"
+score = 0
+
+[[function]]
+name = "Switch_Off"
+offset = "5d646c"
+size = "30"
+src = "src/ui_small.cpp"
+symbol = "_ZN6Switch3OffEv"
+score = 0
+
+[[function]]
+name = "Switch_On"
+offset = "5d649c"
+size = "30"
+src = "src/ui_small.cpp"
+symbol = "_ZN6Switch2OnEv"
+score = 0
+
+[[function]]
+name = "Trio_ClearAll"
+offset = "5a4e8c"
+size = "30"
+src = "src/ui_small.cpp"
+symbol = "_ZN4Trio8ClearAllEv"
+score = 0
+
+[[function]]
+name = "ClearPair"
+offset = "5c2b5c"
+size = "30"
+src = "src/ui_small.cpp"
+symbol = "_Z9ClearPairPP5Childj"
+score = 0
+
+[[function]]
+name = "EaseSin"
+offset = "5d6d54"
+size = "40"
+src = "src/ui_small.cpp"
+symbol = "_Z7EaseSinf"
+score = 0
+
+[[function]]
+name = "FlagA_Set"
+offset = "164f84"
+size = "1c"
+src = "src/ui_small2.cpp"
+symbol = "_ZN5FlagA3SetEj"
+score = 0
+
+[[function]]
+name = "FlagB_Set"
+offset = "3558a0"
+size = "1c"
+src = "src/ui_small2.cpp"
+symbol = "_ZN5FlagB3SetEj"
+score = 0
+
+[[function]]
+name = "FlagC_Set"
+offset = "47ed78"
+size = "20"
+src = "src/ui_small2.cpp"
+symbol = "_ZN5FlagC3SetEj"
+score = 0
+
+[[function]]
+name = "Gate_Apply"
+offset = "215a94"
+size = "2c"
+src = "src/ui_small2.cpp"
+symbol = "_ZN4Gate5ApplyEb"
+score = 0
+
+[[function]]
+name = "Latch_Set"
+offset = "3544a8"
+size = "2c"
+src = "src/ui_small2.cpp"
+symbol = "_ZN5Latch3SetEj"
+score = 0
+
+[[function]]
+name = "Recs_SetAll"
+offset = "49a9a0"
+size = "2c"
+src = "src/ui_small2.cpp"
+symbol = "_ZN4Recs6SetAllEj"
+score = 4   # NONMATCHING: retail saves the flag in r5 and the loop end in r6; ours swaps them (every loop spelling tried scores 4 to 9)
+
+[[function]]
+name = "UiGetByte"
+offset = "37d4ac"
+size = "28"
+src = "src/ui_small2.cpp"
+symbol = "_Z9UiGetBytev"
+score = 0
+
+[[function]]
+name = "Fade_Update"
+offset = "5de4dc"
+size = "2c"
+src = "src/ui_small2.cpp"
+symbol = "_ZN4Fade6UpdateEv"
+score = 0
+
+[[function]]
+name = "GetTextIdx"
+offset = "187454"
+size = "38"
+src = "src/ui_small3.cpp"
+symbol = "_Z10GetTextIdxjjjPcj"
+score = 0
+
+[[function]]
+name = "HolderUseD"
+offset = "62d108"
+size = "30"
+src = "src/ui_small3.cpp"
+symbol = "_Z10HolderUseDP6Holderj"
+score = 2   # NONMATCHING: retail: mov r2,#1 before ldr r0,[r0]
+
+[[function]]
+name = "HolderUseE"
+offset = "62d140"
+size = "30"
+src = "src/ui_small3.cpp"
+symbol = "_Z10HolderUseEP6Holderj"
+score = 2   # NONMATCHING: same
+
+[[function]]
+name = "HolderUseF"
+offset = "62d178"
+size = "2c"
+src = "src/ui_small3.cpp"
+symbol = "_Z10HolderUseFP6Holder"
+score = 3   # NONMATCHING: same
+
+[[function]]
+name = "UiUseG"
+offset = "36ef8c"
+size = "3c"
+src = "src/ui_small3.cpp"
+symbol = "_Z6UiUseGPvjj"
+score = 0
+
+[[function]]
+name = "UiSync"
+offset = "4b0124"
+size = "3c"
+src = "src/ui_small3.cpp"
+symbol = "_Z6UiSyncP6Target"
+score = 0
+
+[[function]]
+name = "UiUseH"
+offset = "106acc"
+size = "40"
+src = "src/ui_small3.cpp"
+symbol = "_Z6UiUseHPvj"
+score = 0
+
+[[function]]
+name = "Wide_Set"
+offset = "13cc7c"
+size = "38"
+src = "src/ui_small3.cpp"
+symbol = "_ZN4Wide3SetEa"
+score = 0
+
+[[function]]
+name = "Eight_SetAll"
+offset = "5e425c"
+size = "38"
+src = "src/ui_small3.cpp"
+symbol = "_ZN5Eight6SetAllEj"
+score = 0
+
+[[function]]
+name = "Panel_SetSlot"
+offset = "61a664"
+size = "34"
+src = "src/ui_small3.cpp"
+symbol = "_ZN5Panel7SetSlotEjj"
+score = 12   # NONMATCHING: retail does not tail-call and keeps compares unpredicated
+
+[[function]]
+name = "Panel_SetFirst"
+offset = "61b364"
+size = "34"
+src = "src/ui_small3.cpp"
+symbol = "_ZN5Panel8SetFirstEjj"
+score = 12   # NONMATCHING: same
+
+[[function]]
+name = "Label_Ctor"
+offset = "2d5774"
+size = "34"
+src = "src/tagged_str.cpp"
+symbol = "_ZN5LabelC1Ev"
+score = 0
+
+[[function]]
+name = "Label_DeletingDtor"
+offset = "2d57a8"
+size = "20"
+src = "src/tagged_str.cpp"
+symbol = "_ZN5LabelD0Ev"
+score = 0
+
+[[function]]
+name = "Label_Dtor"
+offset = "2d57c8"
+size = "1c"
+src = "src/tagged_str.cpp"
+symbol = "_ZN5LabelD1Ev"
+score = 0
+
+[[function]]
+name = "Inner_Ctor"
+offset = "2a070"
+size = "c"
+src = "src/inner.cpp"
+symbol = "_ZN5InnerC1Ev"
+score = 0
+
+[[function]]
+name = "Inner_Dtor"
+offset = "2a080"
+size = "18"
+src = "src/inner.cpp"
+symbol = "_ZN5InnerD1Ev"
+score = 0
+
+[[function]]
+name = "Item_Ctor"
+offset = "5a051c"
+size = "1c"
+src = "src/item.cpp"
+symbol = "_ZN4ItemC1Ev"
+score = 0
+
+[[function]]
+name = "Item_Dtor"
+offset = "5a055c"
+size = "1c"
+src = "src/item.cpp"
+symbol = "_ZN4ItemD1Ev"
+score = 0
+
+[[function]]
+name = "Item_DeletingDtor"
+offset = "5a0538"
+size = "20"
+src = "src/item.cpp"
+symbol = "_ZN4ItemD0Ev"
+score = 0
+
+[[function]]
+name = "Utf8Decode"
+offset = "5c04bc"
+size = "154"
+src = "src/utf8.cpp"
+symbol = "_Z10Utf8DecodePKh"
+score = 70   # NONMATCHING: retail loads all continuation bytes early (push {r4,r5}), ours interleaves; 81 vs 85 instructions
