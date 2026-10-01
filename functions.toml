@@ -1120,3 +1120,19 @@ size = "1c"
 src = "src/ui_calls_low.cpp"
 symbol = "_Z10SetValue23P9Own47f660j"
 score = 0
+
+[[function]]
+name = "AdjustedCall"
+offset = "29f74"
+size = "14"
+src = "src/thunks_low.cpp"
+symbol = "_Z12AdjustedCallPc"
+score = 0
+
+[[function]]
+name = "ConstructSub"
+offset = "366a7c"
+size = "20"
+src = "src/thunks_low.cpp"
+symbol = "_Z12ConstructSubPcS_"
+score = 0

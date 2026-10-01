@@ -138,3 +138,7 @@ _Z8ZeroFillPvj = 0x002FDDD8
 # src/ui_calls_low.cpp: more tail-call targets
 _Z9Fwd3558a0Pv = 0x004558A0
 _Z9Fwd47ed78Pvj = 0x0057ED78
+# src/thunks_low.cpp
+_Z8Sub2a080Pc = 0x0012A080
+_Z9Sub5a221cPcS_ = 0x006A221C
+g_SubVtbl = 0x0082DF5C
