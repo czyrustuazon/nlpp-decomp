@@ -128,3 +128,10 @@ _Z6StrlenPKc = 0x00300E60
 _Z9HeapAllocjjj = 0x001152E0
 _Z12FUN_0001a4d4Pvj = 0x0011A4D4
 _Z9StrMemcpyPvPKvj = 0x001317DC
+# src/ui_calls_low.cpp callees (unmatched game code and CTR SDK)
+_Z10Pred5d65a4Pv = 0x006D65A4
+_Z9Act5d646cPv = 0x006D646C
+_Z9Act3544a8Pvj = 0x004544A8
+_Z11Reset5c2b5cPvj = 0x006C2B5C
+_Z16UiTailCall236084P5UiObjj = 0x00336084
+_Z8ZeroFillPvj = 0x002FDDD8

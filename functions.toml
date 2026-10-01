@@ -1049,3 +1049,58 @@ src = "src/setters_low.cpp"
 symbol = "_Z9SetFlag28P9Own47ea60b"
 score = 0
 
+[[function]]
+name = "SetValue5c"
+offset = "1393f8"
+size = "44"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z10SetValue5cP9Own1393f8j"
+score = 0
+
+[[function]]
+name = "ForwardUnlessMode4"
+offset = "139480"
+size = "44"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z18ForwardUnlessMode4P9Own139480j"
+score = 0
+
+[[function]]
+name = "SetValue64"
+offset = "13995c"
+size = "44"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z10SetValue64P9Own13995cj"
+score = 0
+
+[[function]]
+name = "ActIfReady"
+offset = "dd928"
+size = "30"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z10ActIfReadyP8Owndd928"
+score = 0
+
+[[function]]
+name = "ActIfReadyBool"
+offset = "dd958"
+size = "38"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z14ActIfReadyBoolP8Owndd928"
+score = 0
+
+[[function]]
+name = "SetFlag100"
+offset = "3579b4"
+size = "38"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z10SetFlag100P9Own3579b4b"
+score = 0
+
+[[function]]
+name = "ResetAll"
+offset = "29edc0"
+size = "3c"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z8ResetAllP9Own29edc0"
+score = 0
