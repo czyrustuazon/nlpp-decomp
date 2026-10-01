@@ -259,3 +259,43 @@ size = "240"
 src = "src/menu_bind.cpp"
 symbol = "_Z28OptionMenu_BindPlateTexturesP8MSelMenui"
 score = 120   # NONMATCHING: 191 vs 144 instructions; retail is a cmp/beq chain with per-case adr blocks and one Obj string, ours if-converts or duplicates strings
+
+[[function]]
+name = "GetSlotField"
+offset = "5c5cb0"
+size = "28"
+src = "src/slot_table.cpp"
+symbol = "_Z12GetSlotFieldP9SlotOwnerjj"
+score = 0
+
+[[function]]
+name = "GetSlotArrayItem"
+offset = "5c5e00"
+size = "38"
+src = "src/slot_table.cpp"
+symbol = "_Z16GetSlotArrayItemP9SlotOwnerjjj"
+score = 0
+
+[[function]]
+name = "FindSlotByKey"
+offset = "5c6e84"
+size = "68"
+src = "src/slot_table.cpp"
+symbol = "_Z13FindSlotByKeyP9SlotOwnerjj"
+score = 0
+
+[[function]]
+name = "SetChildFlagBit0"
+offset = "5e7d18"
+size = "20"
+src = "src/flag_setters.cpp"
+symbol = "_Z16SetChildFlagBit0P6Holderj"
+score = 0
+
+[[function]]
+name = "SetFlagBit1"
+offset = "5a4ebc"
+size = "20"
+src = "src/flag_setters.cpp"
+symbol = "_Z11SetFlagBit1P3Objb"
+score = 0
