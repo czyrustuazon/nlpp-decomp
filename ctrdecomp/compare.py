@@ -8,6 +8,7 @@ bytes differ after masking, plus the difference in instruction count.
 import difflib
 import os
 import re
+import shutil
 import subprocess
 import tempfile
 from dataclasses import dataclass, field
@@ -39,7 +40,15 @@ class Result:
 def compile_obj(cfg, src, flags=None, build=None):
     fd, obj = tempfile.mkstemp(suffix=".o")
     os.close(fd)
-    cmd = [cfg.armcc(build), "-c", *(cfg.flags if flags is None else flags), "-o", obj, src]
+    if src.endswith(".s"):
+        # Hand-written assembly (C runtime routines): assembled with clang, since armasm is not vendored.
+        clang = os.environ.get("CTRDECOMP_CLANG") or shutil.which("clang")
+        if not clang:
+            os.unlink(obj)
+            raise RuntimeError("clang not found (set CTRDECOMP_CLANG) for .s sources")
+        cmd = [clang, "--target=armv6k-none-eabi", "-c", "-x", "assembler", src, "-o", obj]
+    else:
+        cmd = [cfg.armcc(build), "-c", *(cfg.flags if flags is None else flags), "-o", obj, src]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode:
         os.unlink(obj)

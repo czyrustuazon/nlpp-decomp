@@ -3360,3 +3360,79 @@ size = "48"
 src = "src/wrappers_low3.cpp"
 symbol = "_Z8W_4c6b60jj"
 score = 0
+
+[[function]]
+name = "Vec3Copy"
+offset = "155e0"
+size = "1c"
+src = "src/core_small.cpp"
+symbol = "_Z8Vec3CopyP8Vec3BitsPKS_"
+score = 0
+
+[[function]]
+name = "Vec3Sub"
+offset = "154f8"
+size = "34"
+src = "src/core_small.cpp"
+symbol = "_Z7Vec3SubP4Vec3PKS_"
+score = 0
+
+[[function]]
+name = "Mtx34Copy"
+offset = "1a174"
+size = "20"
+src = "src/core_small.cpp"
+symbol = "_Z9Mtx34CopyP5Mtx34PKS_"
+score = 7   # NONMATCHING: retail loads both 6-float halves before storing (vldmia r1!, mov r2,r0)
+
+[[function]]
+name = "ArrayAtU"
+offset = "44d370"
+size = "1c"
+src = "src/core_small.cpp"
+symbol = "_Z8ArrayAtUP9PtrArrayUj"
+score = 0
+
+[[function]]
+name = "ArrayAtS"
+offset = "406894"
+size = "18"
+src = "src/core_small.cpp"
+symbol = "_Z8ArrayAtSP8PtrArrayi"
+score = 0
+
+[[function]]
+name = "MemZero"
+offset = "1fddd8"
+size = "54"
+src = "src/crt_asm.s"
+symbol = "MemZero"
+library = "crt"
+score = 0
+
+[[function]]
+name = "MemCopyAligned"
+offset = "20004c"
+size = "74"
+src = "src/crt_asm.s"
+symbol = "MemCopyAligned"
+library = "crt"
+score = 0
+
+[[function]]
+name = "MemCopy"
+offset = "202b20"
+size = "88"
+src = "src/crt_asm.s"
+symbol = "MemCopy"
+library = "crt"
+score = 0
+
+[[function]]
+name = "StrLen"
+offset = "200e60"
+size = "60"
+src = "src/crt_asm.s"
+symbol = "StrLen"
+library = "crt"
+score = 0
