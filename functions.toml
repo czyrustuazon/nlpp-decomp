@@ -910,3 +910,83 @@ size = "50"
 src = "src/static_strings.cpp"
 symbol = "_Z10GetStringCv"
 score = 0
+
+[[function]]
+name = "ForwardFlag"
+offset = "49e6b8"
+size = "8"
+src = "src/setters_low.cpp"
+symbol = "_Z11ForwardFlagP10Link49e6b8b"
+score = 0
+
+[[function]]
+name = "SetWidget24On"
+offset = "459fd4"
+size = "10"
+src = "src/setters_low.cpp"
+symbol = "_Z13SetWidget24OnP9Own459fd4P6Widget"
+score = 0
+
+[[function]]
+name = "SetWidget58On"
+offset = "45a26c"
+size = "10"
+src = "src/setters_low.cpp"
+symbol = "_Z13SetWidget58OnP9Own45a26cP6Widget"
+score = 0
+
+[[function]]
+name = "SetWidget3cOn"
+offset = "45a688"
+size = "10"
+src = "src/setters_low.cpp"
+symbol = "_Z13SetWidget3cOnP9Own45a688P6Widget"
+score = 0
+
+[[function]]
+name = "SetWidget54Off"
+offset = "45ab5c"
+size = "10"
+src = "src/setters_low.cpp"
+symbol = "_Z14SetWidget54OffP9Own45ab5cP6Widget"
+score = 0
+
+[[function]]
+name = "SetWidget70At"
+offset = "45a258"
+size = "14"
+src = "src/setters_low.cpp"
+symbol = "_Z13SetWidget70AtP9Own45a258jP6Widget"
+score = 0
+
+[[function]]
+name = "SetWidget40At"
+offset = "45b0f4"
+size = "14"
+src = "src/setters_low.cpp"
+symbol = "_Z13SetWidget40AtP9Own45b0f4jP6Widget"
+score = 0
+
+[[function]]
+name = "SetFlag48"
+offset = "370ba4"
+size = "1c"
+src = "src/setters_low.cpp"
+symbol = "_Z9SetFlag48P9Own370ba4b"
+score = 0
+
+[[function]]
+name = "SetFlag48B"
+offset = "37cc20"
+size = "1c"
+src = "src/setters_low.cpp"
+symbol = "_Z10SetFlag48BP9Own37cc20b"
+score = 0
+
+[[function]]
+name = "SetFlag28"
+offset = "47ea60"
+size = "1c"
+src = "src/setters_low.cpp"
+symbol = "_Z9SetFlag28P9Own47ea60b"
+score = 0
