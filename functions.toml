@@ -54,15 +54,6 @@ library = "nw4c"
 score = 51   # NONMATCHING: byte swap becomes rev/rev16 (see lib/nw4c/nwut_binary.cpp)
 
 [[function]]
-name = "LightSemaphore_Acquire"
-offset = "1611c"
-size = "b0"
-src = "lib/nnsdk/nn_os_sem.cpp"
-symbol = "_Z22LightSemaphore_AcquireP14LightSemaphore"
-library = "ctr-sdk"
-score = 33   # NONMATCHING: layout matches; retail's volatile strh spills of the atomic result are dropped
-
-[[function]]
 name = "LightSemaphore_Release"
 offset = "16288"
 size = "8"
@@ -3488,4 +3479,193 @@ offset = "642b98"
 size = "24"
 src = "src/misc_hi.cpp"
 symbol = "_Z10GetNodePosP8PosOwner"
+score = 0
+
+[[function]]
+name = "LightSemaphore_Acquire"
+offset = "1611c"
+size = "b4"
+src = "lib/nnsdk/nn_os_atomics.s"
+symbol = "_Z22LightSemaphore_AcquireP14LightSemaphore"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "LightSemaphore_Init"
+offset = "16290"
+size = "58"
+src = "lib/nnsdk/nn_os_atomics.s"
+symbol = "LightSemaphore_Init"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "AtomicSet1"
+offset = "1b4bc"
+size = "18"
+src = "lib/nnsdk/nn_os_atomics.s"
+symbol = "AtomicSet1"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "AtomicSetState"
+offset = "1b240"
+size = "34"
+src = "lib/nnsdk/nn_os_atomics.s"
+symbol = "AtomicSetState"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "AtomicTryNegate"
+offset = "4f4574"
+size = "30"
+src = "lib/nnsdk/nn_os_atomics.s"
+symbol = "AtomicTryNegate"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_025744"
+offset = "25744"
+size = "3c"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_025744"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_0162e8"
+offset = "162e8"
+size = "50"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_0162e8"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_024380"
+offset = "24380"
+size = "50"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_024380"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_0290dc"
+offset = "290dc"
+size = "60"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_0290dc"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_02913c"
+offset = "2913c"
+size = "60"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_02913c"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_01b58c"
+offset = "1b58c"
+size = "78"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_01b58c"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_025304"
+offset = "25304"
+size = "94"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_025304"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_4f54e4"
+offset = "4f54e4"
+size = "b4"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_4f54e4"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_4f6044"
+offset = "4f6044"
+size = "b0"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_4f6044"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_01b404"
+offset = "1b404"
+size = "b8"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_01b404"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_01b4d4"
+offset = "1b4d4"
+size = "b8"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_01b4d4"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_01b274"
+offset = "1b274"
+size = "c8"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_01b274"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_0243d0"
+offset = "243d0"
+size = "e4"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_0243d0"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_02a9a8"
+offset = "2a9a8"
+size = "f8"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_02a9a8"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_029340"
+offset = "29340"
+size = "158"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_029340"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_4f18b0"
+offset = "4f18b0"
+size = "1f8"
+src = "lib/nnsdk/nn_os_atomics2.s"
+symbol = "A_4f18b0"
+library = "ctr-sdk"
 score = 0
