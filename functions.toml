@@ -3481,3 +3481,11 @@ src = "src/crt_asm.s"
 symbol = "StrCmp"
 library = "crt"
 score = 0
+
+[[function]]
+name = "GetNodePos"
+offset = "642b98"
+size = "24"
+src = "src/misc_hi.cpp"
+symbol = "_Z10GetNodePosP8PosOwner"
+score = 0

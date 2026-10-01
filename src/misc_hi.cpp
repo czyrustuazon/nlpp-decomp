@@ -58,3 +58,16 @@ u32 DecodeOrDefault(const unsigned char* p)
     if ((r >> 16) == 0) d = (unsigned short)r;
     return d;
 }
+
+struct V3 { float x, y, z; };
+struct PosOwner { u32 f0; char* node; };
+
+// FUN_00642b98: returns the vec3 at +0x28 of the node (s0..s2), or zero. The zero is built with
+// z = y = x = 0.0f (other assignment orders swap the vmov operands).
+V3 GetNodePos(PosOwner* o)
+{
+    V3 r;
+    r.z = r.y = r.x = 0.0f;
+    if (o->node) r = *(V3*)(o->node + 0x28);
+    return r;
+}
