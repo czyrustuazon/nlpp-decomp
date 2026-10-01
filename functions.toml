@@ -1264,3 +1264,363 @@ size = "30"
 src = "src/misc_hi.cpp"
 symbol = "_Z8SetIfNotP1Bj"
 score = 0
+
+[[function]]
+name = "W_0e1384"
+offset = "e1384"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_0e1384Pv"
+score = 0
+
+[[function]]
+name = "W_0ffd2c"
+offset = "ffd2c"
+size = "4"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_0ffd2cv"
+score = 0
+
+[[function]]
+name = "W_1010b8"
+offset = "1010b8"
+size = "4"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1010b8v"
+score = 0
+
+[[function]]
+name = "W_12cb2c"
+offset = "12cb2c"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_12cb2cPv"
+score = 0
+
+[[function]]
+name = "W_199b84"
+offset = "199b84"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_199b84v"
+score = 0
+
+[[function]]
+name = "W_199c00"
+offset = "199c00"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_199c00v"
+score = 0
+
+[[function]]
+name = "W_1d4830"
+offset = "1d4830"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1d4830v"
+score = 0
+
+[[function]]
+name = "W_1e8394"
+offset = "1e8394"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1e8394v"
+score = 0
+
+[[function]]
+name = "W_1e83a8"
+offset = "1e83a8"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1e83a8v"
+score = 0
+
+[[function]]
+name = "W_1e844c"
+offset = "1e844c"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1e844cv"
+score = 0
+
+[[function]]
+name = "W_1e8460"
+offset = "1e8460"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1e8460v"
+score = 0
+
+[[function]]
+name = "W_1e8810"
+offset = "1e8810"
+size = "4"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1e8810v"
+score = 0
+
+[[function]]
+name = "W_1e9c5c"
+offset = "1e9c5c"
+size = "4"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1e9c5cv"
+score = 0
+
+[[function]]
+name = "W_1f57dc"
+offset = "1f57dc"
+size = "4"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_1f57dcv"
+score = 0
+
+[[function]]
+name = "W_22577c"
+offset = "22577c"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_22577cv"
+score = 0
+
+[[function]]
+name = "W_225aec"
+offset = "225aec"
+size = "14"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_225aecv"
+score = 0
+
+[[function]]
+name = "W_27b858"
+offset = "27b858"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_27b858v"
+score = 0
+
+[[function]]
+name = "W_29ec04"
+offset = "29ec04"
+size = "4"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_29ec04v"
+score = 0
+
+[[function]]
+name = "W_2ef51c"
+offset = "2ef51c"
+size = "8"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_2ef51cPc"
+score = 0
+
+[[function]]
+name = "W_2f46d8"
+offset = "2f46d8"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_2f46d8Pcj"
+score = 0
+
+[[function]]
+name = "W_33c824"
+offset = "33c824"
+size = "8"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_33c824Pc"
+score = 0
+
+[[function]]
+name = "W_377730"
+offset = "377730"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_377730Pcj"
+score = 0
+
+[[function]]
+name = "W_3837ac"
+offset = "3837ac"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3837acPc"
+score = 0
+
+[[function]]
+name = "W_3bd2ec"
+offset = "3bd2ec"
+size = "8"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3bd2ecPvS_"
+score = 0
+
+[[function]]
+name = "W_3d8b38"
+offset = "3d8b38"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3d8b38Pv"
+score = 0
+
+[[function]]
+name = "W_3ddf44"
+offset = "3ddf44"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3ddf44P7O3ddf44"
+score = 0
+
+[[function]]
+name = "W_3de7ac"
+offset = "3de7ac"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3de7acP7O3de7ac"
+score = 0
+
+[[function]]
+name = "W_3ef9f8"
+offset = "3ef9f8"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3ef9f8P7O3ef9f8"
+score = 0
+
+[[function]]
+name = "W_3f5be4"
+offset = "3f5be4"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_3f5be4P7O3f5be4"
+score = 0
+
+[[function]]
+name = "W_4016cc"
+offset = "4016cc"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_4016ccPcj"
+score = 0
+
+[[function]]
+name = "W_415a64"
+offset = "415a64"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_415a64Pcj"
+score = 0
+
+[[function]]
+name = "W_43ec58"
+offset = "43ec58"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_43ec58Pcj"
+score = 0
+
+[[function]]
+name = "W_45297c"
+offset = "45297c"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_45297cPc"
+score = 0
+
+[[function]]
+name = "W_480954"
+offset = "480954"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_480954P7O480954"
+score = 0
+
+[[function]]
+name = "W_486bd8"
+offset = "486bd8"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_486bd8P7O486bd8"
+score = 0
+
+[[function]]
+name = "W_486be4"
+offset = "486be4"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_486be4P7O486be4"
+score = 0
+
+[[function]]
+name = "W_487b28"
+offset = "487b28"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_487b28P7O487b28"
+score = 0
+
+[[function]]
+name = "W_487b34"
+offset = "487b34"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_487b34P7O487b34"
+score = 0
+
+[[function]]
+name = "W_48e4dc"
+offset = "48e4dc"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_48e4dcP7O48e4dc"
+score = 0
+
+[[function]]
+name = "W_48e4e8"
+offset = "48e4e8"
+size = "c"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_48e4e8P7O48e4e8"
+score = 0
+
+[[function]]
+name = "W_492e04"
+offset = "492e04"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_492e04Pc"
+score = 0
+
+[[function]]
+name = "W_4c3004"
+offset = "4c3004"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_4c3004v"
+score = 0
+
+[[function]]
+name = "W_4de72c"
+offset = "4de72c"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_4de72cPv"
+score = 0
+
+[[function]]
+name = "W_4e01f8"
+offset = "4e01f8"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_4e01f8Pc"
+score = 0
+
+[[function]]
+name = "W_4e0294"
+offset = "4e0294"
+size = "10"
+src = "src/wrappers_low1.cpp"
+symbol = "_Z8W_4e0294Pc"
+score = 0

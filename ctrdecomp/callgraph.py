@@ -57,7 +57,7 @@ def build(cfg, funcs):
     return graph
 
 
-def cmd_rank(cfg, symbols, top=25, min_size=0x18, max_size=0x100):
+def cmd_rank(cfg, symbols, top=25, min_size=0x18, max_size=0x100, ready_below=None):
     with open(cfg.functions_file, "rb") as f:
         handled = {int(fn["offset"], 16) for fn in tomllib.load(f).get("function", [])}
     funcs = load_symbols(cfg, symbols)
@@ -89,4 +89,10 @@ def cmd_rank(cfg, symbols, top=25, min_size=0x18, max_size=0x100):
                 cand[c] += 1
     for st, n in sorted(cand.items(), key=lambda x: (info[x[0]][1], x[0]))[:top]:
         print(f"  {st:06x} size={info[st][1]:#x} {'thumb' if info[st][2] else 'arm  '} handled-callees={n}")
+    if ready_below is not None:
+        print(f"\nReady functions below {ready_below:#x} (all callees are leaves or handled), smallest first:")
+        rows = sorted((s for s in ready if s < ready_below), key=lambda s: (info[s][1], s))
+        for st in rows[:top]:
+            print(f"  {st:06x} size={info[st][1]:#x} {'thumb' if info[st][2] else 'arm  '} callees={len(graph[st])} callers={len(callers.get(st, ()))}")
+        print(f"  ({len(rows)} total)")
     return 0
