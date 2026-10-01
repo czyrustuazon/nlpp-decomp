@@ -136,7 +136,9 @@ def export(cfg, outdir):
     conf = {"$schema": "https://raw.githubusercontent.com/encounter/objdiff/main/config.schema.json",
             "custom_make": "python", "custom_args": ["-m", "ctrdecomp", "objdiff"],
             "build_target": False, "build_base": True, "units": units}
-    path = os.path.join(cfg.root, "objdiff.json")
+    # Only the default output dir gets the root objdiff.json; a custom --out (tests) must not clobber it with temp paths.
+    default = os.path.normpath(os.path.join(cfg.root, "build", "objdiff"))
+    path = os.path.join(cfg.root if os.path.normpath(os.path.abspath(outdir)) == default else outdir, "objdiff.json")
     with open(path, "w") as f:
         json.dump(conf, f, indent=2)
     return path, units
