@@ -38,10 +38,27 @@ struct Pair {
     Chan* m_a;              // +0x14
     Chan* m_b;              // +0x18
     s32   Apply(s32 a, float f);
+    s32   ApplyScaled(s32 unused, s32 a, float raw);
 };
 
 s32 Pair::Apply(s32 a, float f)
 {
+    s32 r = Chan_Apply(m_a, a, f);
+    Chan_Apply(m_b, a, f);
+    return r;
+}
+
+// FUN_005a1a58: like Apply, but the first argument arrives in s0 as a raw u32 that is converted
+// (vcvt.f32.u32 in place) and scaled by 0.06 before it is passed to both channels. Retail never
+// touches r1; the integer was left in s0 by the caller, so the parameter is a float in the ABI
+// and reinterpreted here.
+union FloatBits { float f; u32 u; };
+
+s32 Pair::ApplyScaled(s32 unused, s32 a, float raw)
+{
+    FloatBits b;
+    b.f = raw;
+    float f = (float)b.u * 0.06f;
     s32 r = Chan_Apply(m_a, a, f);
     Chan_Apply(m_b, a, f);
     return r;

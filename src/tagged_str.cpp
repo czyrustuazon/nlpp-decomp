@@ -28,6 +28,8 @@ public:
     u32      m_pad;         // +0x224
 
     TaggedStr();            // FUN_0059e380
+    TaggedStr(const char* s);  // FUN_0059e2f4
+    bool Parse(const char* s); // FUN_0059dfc4
     ~TaggedStr();           // FUN_005a1fd0
 
     void Reset()
@@ -49,6 +51,14 @@ TaggedStr::TaggedStr()
 {
     m_flags = 0;
     Reset();
+}
+
+TaggedStr::TaggedStr(const char* s)
+{
+    m_flags = 0;
+    m_chars2 = 0;
+    Reset();
+    Parse(s);
 }
 
 // The tail `b Str::~Str` is a branch to the next instruction in retail (Str::~Str is linked

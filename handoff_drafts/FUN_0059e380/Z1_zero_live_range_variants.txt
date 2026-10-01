@@ -1,0 +1,5 @@
+TaggedStr ctor (FUN_0059e380, 17) and TaggedStr(const char*) (FUN_0059e2f4, 23). Retail zeroes the
+flags (and, in the second form, m_chars2) from r1 right after the vec-ctor call, then rematerializes
+the Reset() zero in r5 (r6 = r1 copy in the second form); ours keeps one callee-saved register for
+the whole range. All of these left the score unchanged: init-list `m_flags(0)`, swapping the
+`m_chars2 = m_inline; m_count2 = 0` stores, moving `m_chars2 = 0` out of the inner `if`, `m_flags &= 0`.

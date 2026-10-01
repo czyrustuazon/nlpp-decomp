@@ -112,3 +112,19 @@ g_BaseStringC = 0x008B8664
 g_StringBufA = 0x009B3B48
 g_StringBufB = 0x009B3B5E
 g_StringBufC = 0x009B3B74
+# src/str_decode.cpp, src/str_set.cpp, src/tagged_parse.cpp, src/tagged_str.cpp (Str family, TaggedStr::Parse)
+_Z7Utf8SeqPKci = 0x0066B06C
+_ZN3Str6DecodeEv = 0x006A1C98
+_ZN3Str3SetEPKc = 0x006A1DCC
+_ZN9TaggedStr5ParseEPKc = 0x0069DFC4
+_Z9PoolAllocjjj = 0x00121CA0
+# src/obj_init.cpp, src/handle_obj.cpp (Handle copy ctor is in src/misc_small.cpp; vptr = _ZTV + 8)
+_Z9InnerInitP5Inner = 0x0012A070
+_ZN6HandleC1ERKS_ = 0x006A221C
+_ZTV8CopyBase = 0x0082DF6C
+_ZTV11CopyDerived = 0x0082DF44
+# src/str_set.cpp (same callees as src/str.cpp; Memcpy there is FUN_000317dc, not 0x30004C)
+_Z6StrlenPKc = 0x00300E60
+_Z9HeapAllocjjj = 0x001152E0
+_Z12FUN_0001a4d4Pvj = 0x0011A4D4
+_Z9StrMemcpyPvPKvj = 0x001317DC

@@ -129,3 +129,14 @@ The first constructor, with the allocation written out in the body, scored 18 an
 | `FUN_0020bcc0/if_chain_direct_calls_goto_done.cpp` | if-chain, each branch calls `BindPlate(...)` then `goto done` (strings duplicated per branch) | 111 (212 ins) |
 | `FUN_0020bcc0` (kept in `src/`) | if-chain assigning `text`/`icon` locals, one shared call | 120 (191 vs 144 ins) |
 | `switch` on slot | dense switch | 143 (jump table `ldrlo pc,[pc,r1,lsl #2]`; retail has a `cmp`/`beq` chain) |
+
+## 2026-10-01 Str/TaggedStr family (kept sources in `src/`; scores in `functions.toml`)
+
+| File | What it changed | Score |
+|------|-----------------|-------|
+| `FUN_005a1ec8/X1_ctor_inline_set_early_return.cpp` | `Str::Str(const char*)` as `m_buf = 0; m_capacity = 0;` plus the matched `Set` body inlined with early return | 19 |
+| `FUN_0059dfc4/P1_inline_find_loop_explicit_null_check.cpp` | `Parse` with the `'>'` scan inline and `p = 0; if (mem) p = new ...` | about 168 |
+| `FUN_005b1ba8/H0_handle_as_member.cpp`, `H1_handle_member_one_level.cpp` | `Handle` as a member; word in the derived class | 9, 9 (kept: two-level base, 2) |
+| `FUN_005c04bc/U1_and_masks_named_locals.cpp` | notes on the Utf8Decode variants | 70, 68, 81 (kept 53) |
+| `FUN_0059e380/Z1_zero_live_range_variants.txt` | TaggedStr ctor zero-register variants | 17 / 23 unchanged |
+| `FUN_005a1a58/A1_float_reinterpret_variants.txt` | float reinterpret spellings | 11 |

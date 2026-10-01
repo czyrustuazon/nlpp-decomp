@@ -861,7 +861,7 @@ offset = "5c04bc"
 size = "154"
 src = "src/utf8.cpp"
 symbol = "_Z10Utf8DecodePKh"
-score = 70   # NONMATCHING: retail loads all continuation bytes early (push {r4,r5}), ours interleaves; 81 vs 85 instructions
+score = 53   # NONMATCHING: lead byte masked as lsl/lsr now; retail still schedules loads and ors differently (85 ins both)
 
 [[function]]
 name = "GetTextNoLog"
@@ -910,6 +910,64 @@ size = "50"
 src = "src/static_strings.cpp"
 symbol = "_Z10GetStringCv"
 score = 0
+
+# Str / TaggedStr family (technical.md 6.1.4)
+
+[[function]]
+name = "Str_Decode"
+offset = "5a1c98"
+size = "134"
+src = "src/str_decode.cpp"
+symbol = "_ZN3Str6DecodeEv"
+score = 0
+
+[[function]]
+name = "Str_Set"
+offset = "5a1dcc"
+size = "e4"
+src = "src/str_set.cpp"
+symbol = "_ZN3Str3SetEPKc"
+score = 0
+
+[[function]]
+name = "TaggedStr_Parse"
+offset = "59dfc4"
+size = "320"
+src = "src/tagged_parse.cpp"
+symbol = "_ZN9TaggedStr5ParseEPKc"
+score = 158   # NONMATCHING: see technical.md 6.1.4 (alloc/nop shape matches; loop and At() checks differ)
+
+[[function]]
+name = "TaggedStr_CtorStr"
+offset = "59e2f4"
+size = "8c"
+src = "src/tagged_str.cpp"
+symbol = "_ZN9TaggedStrC1EPKc"
+score = 23   # NONMATCHING: same zero-in-r1-then-r6 live-range split as TaggedStr_Ctor
+
+[[function]]
+name = "ObjInitFromInner"
+offset = "5a1408"
+size = "3c"
+src = "src/obj_init.cpp"
+symbol = "_Z16ObjInitFromInnerP5Inner"
+score = 0
+
+[[function]]
+name = "Pair_ApplyScaled"
+offset = "5a1a58"
+size = "50"
+src = "src/factory_small.cpp"
+symbol = "_ZN4Pair11ApplyScaledEiif"
+score = 11   # NONMATCHING: vcvt.f32.u32 of s0 is hoisted above vpush here; r5/r6 swapped
+
+[[function]]
+name = "CopyDerived_CopyCtor"
+offset = "5b1ba8"
+size = "38"
+src = "src/handle_obj.cpp"
+symbol = "_ZN11CopyDerivedC1ERKS_"
+score = 2   # NONMATCHING: retail adds r0,#4 before r1,#4
 
 [[function]]
 name = "ForwardFlag"
@@ -990,3 +1048,4 @@ size = "1c"
 src = "src/setters_low.cpp"
 symbol = "_Z9SetFlag28P9Own47ea60b"
 score = 0
+

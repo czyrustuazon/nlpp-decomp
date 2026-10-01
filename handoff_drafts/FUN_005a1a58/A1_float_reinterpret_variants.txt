@@ -1,0 +1,4 @@
+Pair::ApplyScaled (FUN_005a1a58, kept in src/factory_small.cpp at 11). Retail converts s0 with
+vcvt.f32.u32 *after* `vpush {d8}` and keeps `a` in r6, the result in r5. A union reinterpret, a
+pointer cast (`*(u32*)&raw`) and a helper returning the bits all gave 11 (the vcvt moves to the top
+and r5/r6 swap). Signature (s32 unused, s32 a, float raw): r1 is unused in retail, a is r2.
