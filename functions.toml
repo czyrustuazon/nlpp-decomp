@@ -862,3 +862,51 @@ size = "154"
 src = "src/utf8.cpp"
 symbol = "_Z10Utf8DecodePKh"
 score = 70   # NONMATCHING: retail loads all continuation bytes early (push {r4,r5}), ours interleaves; 81 vs 85 instructions
+
+[[function]]
+name = "GetTextNoLog"
+offset = "5c0a2c"
+size = "4c"
+src = "src/text_resource.cpp"
+symbol = "_Z12GetTextNoLogPcjjj"
+score = 0
+
+[[function]]
+name = "GetTextPacked"
+offset = "5c0ec8"
+size = "5c"
+src = "src/text_resource.cpp"
+symbol = "_Z13GetTextPackedPcjj"
+score = 0
+
+[[function]]
+name = "GetTextPackedNoLog"
+offset = "5c0a78"
+size = "5c"
+src = "src/text_resource.cpp"
+symbol = "_Z18GetTextPackedNoLogPcjj"
+score = 0
+
+[[function]]
+name = "GetStringA"
+offset = "5849d4"
+size = "50"
+src = "src/static_strings.cpp"
+symbol = "_Z10GetStringAv"
+score = 0
+
+[[function]]
+name = "GetStringB"
+offset = "58486c"
+size = "50"
+src = "src/static_strings.cpp"
+symbol = "_Z10GetStringBv"
+score = 0
+
+[[function]]
+name = "GetStringC"
+offset = "583d00"
+size = "50"
+src = "src/static_strings.cpp"
+symbol = "_Z10GetStringCv"
+score = 0

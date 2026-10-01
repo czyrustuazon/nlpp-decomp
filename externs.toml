@@ -103,3 +103,12 @@ _ZdlPv = 0x003024B0
 # src/inner.cpp, src/item.cpp (vptr = _ZTV4Item + 8 = 0x0082D994)
 _Z7Releasej = 0x00129B80
 _ZTV4Item = 0x0082D98C
+# src/static_strings.cpp: init flags, global string pointers, static buffers and the shared suffix
+g_StringInit = 0x008B86AC
+g_StringSuffix = 0x007EBE5C
+g_BaseStringA = 0x008B8680
+g_BaseStringB = 0x008B867C
+g_BaseStringC = 0x008B8664
+g_StringBufA = 0x009B3B48
+g_StringBufB = 0x009B3B5E
+g_StringBufC = 0x009B3B74

@@ -185,3 +185,23 @@ bool GetText(char* buf, u32 bufSize, u32 id, u32 index)
     }
     return false;
 }
+
+// FUN_005c0a2c: same as GetText but without logging.
+bool GetTextNoLog(char* buf, u32 bufSize, u32 id, u32 index)
+{
+    if (g_TextSystem.resource != 0) {
+        return g_TextSystem.resource->Lookup(buf, bufSize, (id & 0xFF00) >> 8, id & 0xFF, index, false);
+    }
+    return false;
+}
+
+// FUN_005c0ec8 / FUN_005c0a78: the id and index arrive packed in one word, id in the high half.
+bool GetTextPacked(char* buf, u32 bufSize, u32 packed)
+{
+    return GetText(buf, bufSize, packed >> 16, packed & 0xFFFF);
+}
+
+bool GetTextPackedNoLog(char* buf, u32 bufSize, u32 packed)
+{
+    return GetTextNoLog(buf, bufSize, packed >> 16, packed & 0xFFFF);
+}
