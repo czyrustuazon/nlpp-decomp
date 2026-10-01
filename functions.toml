@@ -3947,3 +3947,91 @@ size = "14"
 src = "src/calls_hi.cpp"
 symbol = "_Z9Fwd642a50PcS_"
 score = 0
+
+[[function]]
+name = "Copy5114dc"
+offset = "5114dc"
+size = "1c"
+src = "src/calls_hi2.cpp"
+symbol = "_Z10Copy5114dcPcS_j"
+score = 0
+
+[[function]]
+name = "Reset540650"
+offset = "540650"
+size = "24"
+src = "src/calls_hi2.cpp"
+symbol = "_Z11Reset540650v"
+score = 0
+
+[[function]]
+name = "GuardedCopy648e24"
+offset = "648e24"
+size = "1c"
+src = "src/calls_hi2.cpp"
+symbol = "_Z17GuardedCopy648e24PcS_j"
+score = 0
+
+[[function]]
+name = "SaveIfSet5d1470"
+offset = "5d1470"
+size = "28"
+src = "src/calls_hi2.cpp"
+symbol = "_Z15SaveIfSet5d1470Pc"
+score = 0
+
+[[function]]
+name = "GuardedCopy611360"
+offset = "611360"
+size = "18"
+src = "src/calls_hi2.cpp"
+symbol = "_Z17GuardedCopy611360PcS_"
+score = 0
+
+[[function]]
+name = "ZeroCtor51c978"
+offset = "51c978"
+size = "2c"
+src = "src/calls_hi2.cpp"
+symbol = "_Z14ZeroCtor51c978Pc"
+score = 0
+
+[[function]]
+name = "ZeroCtor51cc94"
+offset = "51cc94"
+size = "28"
+src = "src/calls_hi2.cpp"
+symbol = "_Z14ZeroCtor51cc94Pc"
+score = 0
+
+[[function]]
+name = "ZeroCtor5223b8"
+offset = "5223b8"
+size = "28"
+src = "src/calls_hi2.cpp"
+symbol = "_Z14ZeroCtor5223b8Pc"
+score = 0
+
+[[function]]
+name = "Init53140c"
+offset = "53140c"
+size = "24"
+src = "src/calls_hi2.cpp"
+symbol = "_Z10Init53140cPc"
+score = 0
+
+[[function]]
+name = "Clear5db894"
+offset = "5db894"
+size = "24"
+src = "src/calls_hi2.cpp"
+symbol = "_Z11Clear5db894Pc"
+score = 0
+
+[[function]]
+name = "NewZeroed5f0ef8"
+offset = "5f0ef8"
+size = "28"
+src = "src/calls_hi2.cpp"
+symbol = "_Z15NewZeroed5f0ef8Pc"
+score = 0
