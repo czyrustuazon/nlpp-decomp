@@ -117,3 +117,15 @@ The first constructor, with the allocation written out in the body, scored 18 an
 | `W2_ctor_init_list.cpp` | `W1` with `: m_buf(0), m_capacity(0)` | 18 aligned lines |
 | `W3_Set_returns_early_on_null.cpp` | `Set` returns on null instead of wrapping the body in `if (s != 0)` | 18 aligned lines |
 | `W4_byte_pointer_text_offset.cpp` | `m_text = (char*)m_buf + m_capacity * sizeof(StrChar)` | 18 aligned lines |
+
+## FUN_0020ad74 BindMSelBtnIconAndText and FUN_0020bcc0 OptionMenu_BindPlateTextures (kept: `src/menu_bind.cpp`)
+
+`FUN_001eb3dc` OptionMenu_BindBtnTextures (same file) is score 0 with the callees declared by address. The two below are not matches (ARMCC 4.1 b1454, `--cpu=MPCore --arm -O3 -Otime`).
+
+| File | What it changed | Score |
+|------|-----------------|-------|
+| `FUN_0020ad74/local_ctx_pointer.cpp` | `UiContext* c = g_UiContext;` for the first call | 30 (56 ins, count matches; retail loads `m_active` into r3 with `moveq/movne` first and the last call is a single `movne`, ours the reverse) |
+| `FUN_0020ad74` (kept in `src/`) | slot via `(char*)m + index*8 + 0x78` | 30 (57 vs 56 ins). Local bool, u32 flag args, hoisted flag, ternary: all 30. Permuter 8,868 variants: best 27 (`build/permute/`, git-ignored) |
+| `FUN_0020bcc0/if_chain_direct_calls_goto_done.cpp` | if-chain, each branch calls `BindPlate(...)` then `goto done` (strings duplicated per branch) | 111 (212 ins) |
+| `FUN_0020bcc0` (kept in `src/`) | if-chain assigning `text`/`icon` locals, one shared call | 120 (191 vs 144 ins) |
+| `switch` on slot | dense switch | 143 (jump table `ldrlo pc,[pc,r1,lsl #2]`; retail has a `cmp`/`beq` chain) |

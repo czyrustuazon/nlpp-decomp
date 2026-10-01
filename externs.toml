@@ -29,8 +29,8 @@ _Z8Str_FreeP3Str = 0x006A2024
 _ZN3StrC1EPKc = 0x006A1EC8
 _ZGVZ6CharAtRK9TaggedStriE5empty = 0x008BFB60
 _ZZ6CharAtRK9TaggedStriE5empty = 0x008BFB64
-__cxa_guard_acquire = 0x00303D64
-__cxa_guard_release = 0x00303D64
+__cxa_guard_acquire = 0x00303D65
+__cxa_guard_release = "weak"
 # Thumb-function callees (lib/crt/thumb_misc.cpp); both are ARM code
 _Z9CopyWordsPvPKvi = 0x002FE154
 _Z10CopyWords2PvPKvi = 0x00131848
@@ -44,3 +44,14 @@ FUN_00367190 = 0x00467190
 FUN_003671e4 = 0x004671E4
 # Thumb tolower on 16-bit chars (file 0x1FE260, bit 0 set), used by lib/crt/thumb_misc.cpp
 _Z7ToLoweri = 0x002FE261
+# Menu binders (src/menu_bind.cpp); callees are unmatched layout code, named by address only
+_Z16MSelMenu_PrepareP8MSelMenuj = 0x0030B160
+_Z22BindMSelBtnIconAndTextP8MSelMenuiPKcS2_ = 0x0030AD74
+_Z16MSelMenu_Finish1P8MSelMenujj = 0x006C760C
+_Z16MSelMenu_Finish2P8MSelMenu = 0x006C7C28
+_Z15UiContext_BeginP9UiContextbj = 0x006C6614
+_Z13UiContext_EndP9UiContextb = 0x006C67DC
+_Z12PaneRef_InitP7PaneRef = 0x006E8B54
+_Z8FindPanePvPKcP7PaneRefj = 0x006EBA00
+_Z9BindBclimP7PaneRefjPvPKc = 0x006E8720
+g_UiContext = 0x008BFA40

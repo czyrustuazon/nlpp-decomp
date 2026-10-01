@@ -235,3 +235,27 @@ thumb = true
 flags = ["--cpu=5TE", "--thumb", "-O2"]
 score = 0
 library = "ctr-sdk"
+
+[[function]]
+name = "BindMSelBtnIconAndText"
+offset = "20ad74"
+size = "e0"
+src = "src/menu_bind.cpp"
+symbol = "_Z22BindMSelBtnIconAndTextP8MSelMenuiPKcS2_"
+score = 30   # NONMATCHING: 57 vs 56 instructions; retail loads m->active into r3 first (moveq/movne), last call single movne; ours reverse
+
+[[function]]
+name = "OptionMenu_BindBtnTextures"
+offset = "1eb3dc"
+size = "19c"
+src = "src/menu_bind.cpp"
+symbol = "_Z26OptionMenu_BindBtnTexturesP8MSelMenu"
+score = 0
+
+[[function]]
+name = "OptionMenu_BindPlateTextures"
+offset = "20bcc0"
+size = "240"
+src = "src/menu_bind.cpp"
+symbol = "_Z28OptionMenu_BindPlateTexturesP8MSelMenui"
+score = 120   # NONMATCHING: 191 vs 144 instructions; retail is a cmp/beq chain with per-case adr blocks and one Obj string, ours if-converts or duplicates strings

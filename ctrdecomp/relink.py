@@ -27,7 +27,8 @@ def load_externs(cfg):
     if not os.path.isfile(cfg.externs_file):
         return {}
     with open(cfg.externs_file, "rb") as f:
-        return {k: int(str(v), 0) for k, v in tomllib.load(f).get("symbols", {}).items()}
+        # "weak" = unresolved weak reference: the ARM linker turns a BL to it into `mov r0, r0`.
+        return {k: (v if v == "weak" else int(str(v), 0)) for k, v in tomllib.load(f).get("symbols", {}).items()}
 
 
 def _thumb_call(word, place_va, target):
@@ -82,6 +83,9 @@ def resolve_function(mine, place_va, addr):
         if sym not in addr:
             raise RuntimeError(f"no address for {sym!r} (add it to externs.toml)")
         word = struct.unpack_from("<I", data, o)[0]
+        if addr[sym] == "weak" and rtype == R_ARM_CALL:
+            struct.pack_into("<I", data, o, 0xE1A00000)
+            continue
         struct.pack_into("<I", data, o, _resolve(word, rtype, place_va + o, addr[sym]))
     return bytes(data)
 
