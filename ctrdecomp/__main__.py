@@ -14,6 +14,7 @@
   python -m ctrdecomp ghidra-import <out.csv> [--log file]
   python -m ctrdecomp ghidra-seed <out.csv> [--log file]
   python -m ctrdecomp pipeline-symbols <functions.csv> <symbols/code.bin.csv>
+  python -m ctrdecomp rank [symbols.csv] [--top N]
 
 Offsets and sizes are hex file offsets into the configured code image.
 Game-specific settings live in ctrdecomp.toml (see ctrdecomp/config.py).
@@ -168,6 +169,11 @@ def cmd_pipeline_symbols(cfg, a):
     print(json.dumps(convert(cfg, a.inp, a.out), indent=2))
 
 
+def cmd_rank(cfg, a):
+    from .callgraph import cmd_rank as rank
+    return rank(cfg, os.path.join(cfg.root, a.symbols), a.top)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="ctrdecomp", description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -204,6 +210,7 @@ def main(argv=None):
     p = sub.add_parser("ghidra-export"); p.add_argument("out"); p.add_argument("--own", action="store_true"); p.set_defaults(fn=cmd_ghidra_export)
     p = sub.add_parser("ghidra-seed"); p.add_argument("out"); p.add_argument("--log", default="build/ghidra-seed.log"); p.set_defaults(fn=cmd_ghidra_seed)
     p = sub.add_parser("pipeline-symbols"); p.add_argument("inp"); p.add_argument("out"); p.set_defaults(fn=cmd_pipeline_symbols)
+    p = sub.add_parser("rank"); p.add_argument("symbols", nargs="?", default="symbols/code.bin.csv"); p.add_argument("--top", type=int, default=25); p.set_defaults(fn=cmd_rank)
     p = sub.add_parser("ghidra-import"); p.add_argument("out"); p.add_argument("--log", default="build/ghidra-import.log"); p.set_defaults(fn=cmd_ghidra_import)
 
     argv = list(sys.argv[1:] if argv is None else argv)

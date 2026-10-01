@@ -325,6 +325,18 @@ So no flag set fixes either. One real lead on `GetNextBlockHeader`: it does **no
 
 `LightSemaphore_Acquire`: flags, builds and `--no_inline` did not move it, so the two dropped `strh [sp]` spills are a source-shape problem (retail keeps a volatile temporary of the atomic result), not a flag.
 
+### 6.1.2 Menu binders (2026-10-01)
+
+Ghidra addresses are file offsets (VA = file + 0x100000); the EngPatcher doc's `001eb3dc` etc. are those. None of the three binders in EngPatcher section 12.4 calls `GetText`, `DrawTextToPane` or `ParseClim`: they bind BCLIM file names to layout panes by name and call unmatched layout code (all callees are declared by address only in `externs.toml`). Source: `src/menu_bind.cpp`.
+
+| Function | File off / size | Score | Notes |
+|----------|-----------------|-------|-------|
+| `OptionMenu_BindBtnTextures` (FUN_001eb3dc) | 1eb3dc / 19c | **0**, relinks byte-identical | Calls `MSelMenu_Prepare(m, 4)`, four `BindMSelBtnIconAndText`, `Finish1(m,0,0)`, tail `Finish2(m)`. The 8 BCLIM names sit after the code as inline `add rN, pc, #` string pool, so the size includes them. |
+| `BindMSelBtnIconAndText` (FUN_0020ad74) | 20ad74 / e0 | 30 (permuter best 27) | 56 target instructions. Differences are only the first `m->active` load (retail: `ldr r3` early, then `movne`/`moveq`; the last call is a single `movne` on a freshly loaded `r1`; ours is the reverse) and one extra instruction. Source-shape variants (local flag, u32 args, ternary, hoisting, `UiContext*` local) do not move it. |
+| `OptionMenu_BindPlateTextures` (FUN_0020bcc0) | 20bcc0 / 240 | 120 (111 with per-branch calls) | Retail: `cmp`/`beq` chain, one block per slot loading all three string addresses (the shared `Obj03_00_00` name appears once in the pool), pool placed mid-function. Ours: if-converted `addeq`, or duplicated Obj strings (191/212 vs 144 instructions); a `switch` becomes a jump table (143). |
+
+Struct findings (names are guesses): the menu object has `s32 active` at +4 and an array of 8-byte slots from +0x78 whose first word is a layout pointer with the pane root at +8. The global at VA 0x8BFA40 points to a UI context with a resource handle at +0xB2C. Lookups use a 16-byte `PaneRef` filled by `FUN_005e8b54`, then `FUN_005eba00(root, name, ref, 0)` and `FUN_005e8720(ref, 0, resource, file)` bind the BCLIM. `BindMSelBtnIconAndText` has 10 callers. Rejected attempts: `handoff_drafts/FUN_0020ad74`, `FUN_0020bcc0`.
+
 ## 7. Parallel with the patcher
 
 - Localization bugs stay in EngPatcher. This folder does not gain deploy scripts.
@@ -341,6 +353,7 @@ Added 2026-09-29. Anything built here should make the next 3DS decomp cheaper, n
 1. **A game-agnostic package.** `ctrdecomp/` (installable, see `pyproject.toml`) holds extraction, the build/flag sweep, the diff with relocation-destination check, asm export, the Ghidra bridge, and `check`. It takes a `ctrdecomp.toml` rather than hardcoded paths, and handles ARM and Thumb (Thumb is covered by a round-trip test, since this game has only 200 Thumb functions and none matched yet). **Status: done, v0.1.** Game-specific data (`ctrdecomp.toml`, `functions.toml`, `src/`, `asm/`) stays outside the package.
 2. **Library matches kept separate.** NintendoWare and CTR SDK functions go in their own source folder (`lib/nw4c/`, `lib/nnsdk/`) with their own function list, so another project can pull them in, or they can be contributed to the existing [nnsdk](https://github.com/3dsdecomp/nnsdk) and NW4C efforts. **Status: not started.** `lib/nw4c/lyt_clim.cpp` (NW4C) moves there when the second library function matches.
 3. **Findings written up for Decompedia’s 3DS page**: the ARMCC 4.1 `-O3 -Otime --cpu=MPCore` result, `nop` as a compiler scheduling filler, “shared static base literal = same translation unit”, and inline-helper boundaries mattering more than expressions. **Status: not started.** Write it after gap 2, when the claims have been tested on more than a handful of functions.
+4. **Match-order ranking (2026-10-01):** `python -m ctrdecomp rank [symbols.csv] [--top N]` (`ctrdecomp/callgraph.py`) builds a direct call graph from `symbols/code.bin.csv` (`bl`/`blx` and tail-call `b`; vtable and function-pointer calls are invisible, so a "leaf" may still call virtually) and lists what to match next. Result on the 31,721-function list with 23 handled: 10,158 leaves, and 4,004 more functions whose callees are all leaves or handled, so about 45% of the binary has nothing blocking it but itself. Highest fan-in small leaves: `0x5c6e84` (664 callers, table lookup by key), `0x5c5e00` (588) and `0x5c5cb0` (368), which index one structure (stride `0x1a4`, entries at `+0x104`, 40 bytes each, 32 slots) and are best matched together; `0x5e7d18` (310, sets bits in the flag byte at `+0xb7`); `0x1fddd8` (564, hand-written zero-fill, probably CTR SDK assembly and likely unmatchable from C like the `nn::os` atomics); `0x5eba00` (807, only indirect calls through vtable slot `+0x2c`). Cheap next steps: about 30 small callers of already-handled functions around `0x4ec0b0`-`0x4ec5e4`, `0x5849d4`-`0x585cb8`, `0x38be2c`-`0x38bec8`. Suggested order: the `0x5c5cb0` family, then those callers, then the 4,004 ready functions, with assembly leaves last. **Status: done.**
 
 Rules for this work:
 
