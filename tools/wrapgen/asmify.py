@@ -19,6 +19,7 @@ HEAD = """@ Generated from the retail image by tools/wrapgen/asmify.py ({tag}): 
         .syntax unified
         .arm
         .arch   armv6k
+        .fpu    vfpv2
         .text
 """
 text = HEAD.format(tag=tag); externs = {}; rows = []
@@ -29,7 +30,7 @@ for st, sz in specs:
     pool = set()
     for i in ins:
         m = re.match(r'(\w+), \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', i.op_str)
-        if i.mnemonic.startswith('ldr') and m:
+        if i.mnemonic.startswith(('ldr', 'vldr')) and m:
             pool.add(i.address + 8 + (int(m.group(2), 0) if m.group(2) else 0))
     if pool and max(pool) + 4 > end:                 # trailing literal pool is part of the function
         end = max(pool) + 4; sz = end - st
@@ -54,7 +55,7 @@ for st, sz in specs:
                 op = f'Fn_{t:06x}'; externs[op] = 0x100000 + t
         else:
             m2 = re.match(r'(\w+), \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', op)
-            if m2 and m.startswith('ldr'):
+            if m2 and m.startswith(('ldr', 'vldr')):
                 op = f'{m2.group(1)}, L{a + 8 + (int(m2.group(2), 0) if m2.group(2) else 0):x}'
         body.append(f'        {m:<7} {op}'.rstrip())
         a += 4

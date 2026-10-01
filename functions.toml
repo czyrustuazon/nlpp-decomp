@@ -3669,3 +3669,129 @@ src = "lib/nnsdk/nn_os_atomics2.s"
 symbol = "A_4f18b0"
 library = "ctr-sdk"
 score = 0
+
+[[function]]
+name = "A_64ec54"
+offset = "64ec54"
+size = "264"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_64ec54"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_669ddc"
+offset = "669ddc"
+size = "c8"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_669ddc"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_669ea4"
+offset = "669ea4"
+size = "cc"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_669ea4"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_669f70"
+offset = "669f70"
+size = "94"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_669f70"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_66a048"
+offset = "66a048"
+size = "d0"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_66a048"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_684ac4"
+offset = "684ac4"
+size = "c0"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_684ac4"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_684ca0"
+offset = "684ca0"
+size = "d0"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_684ca0"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_684d70"
+offset = "684d70"
+size = "c8"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_684d70"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_684e4c"
+offset = "684e4c"
+size = "cc"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_684e4c"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_684f70"
+offset = "684f70"
+size = "fc"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_684f70"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_68506c"
+offset = "68506c"
+size = "f4"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_68506c"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_685160"
+offset = "685160"
+size = "f4"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_685160"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_68b71c"
+offset = "68b71c"
+size = "94"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_68b71c"
+library = "ctr-sdk"
+score = 0
+
+[[function]]
+name = "A_68b7b0"
+offset = "68b7b0"
+size = "c0"
+src = "lib/nnsdk/nn_os_atomics3.s"
+symbol = "A_68b7b0"
+library = "ctr-sdk"
+score = 0
