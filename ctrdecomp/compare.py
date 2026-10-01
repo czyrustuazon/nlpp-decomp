@@ -143,14 +143,21 @@ def _thumb_bl_target(hw1, hw2, pc):
     return t & ~3 if not (hw2 & 0x1000) else t   # BLX targets are word-aligned
 
 
-def compare(cfg, src, symbol, off, size, flags=None, build=None):
+def compare(cfg, src, symbol, off, size, flags=None, build=None, cache=None):
     code = cfg.code()
     target = code[off:off + size]
-    obj = compile_obj(cfg, src, flags, build)
+    key = (src, tuple(flags or ()), build)
+    if cache is not None and key in cache:
+        obj = cache[key]
+    else:
+        obj = compile_obj(cfg, src, flags, build)
+        if cache is not None:
+            cache[key] = obj
     try:
         mine = read_function(obj, symbol)
     finally:
-        os.unlink(obj)
+        if cache is None:
+            os.unlink(obj)
     md = capstone.Cs(capstone.CS_ARCH_ARM, capstone.CS_MODE_THUMB if mine.thumb else capstone.CS_MODE_ARM)
 
     masked = set()

@@ -111,15 +111,19 @@ def cmd_check(cfg, a):
     with open(cfg.functions_file, "rb") as f:
         fns = tomllib.load(f).get("function", [])
     bad = 0
+    cache = {}                                   # one compile per source file, not per function
     for fn in fns:
         if a.names and fn["name"] not in a.names:
             continue
         r = compare(cfg, os.path.join(cfg.root, fn["src"]), fn["symbol"], int(fn["offset"], 16),
-                    int(fn["size"], 16), fn.get("flags") or None, fn.get("build"))
+                    int(fn["size"], 16), fn.get("flags") or None, fn.get("build"), cache)
         want = int(fn.get("score", 0))
         ok = r.score == want
         bad += not ok
         print(f"{'ok  ' if ok else 'FAIL'} {fn['name']:28s} {fn['offset']:>10s}  score {r.score} (expected {want})")
+    for obj in cache.values():
+        try: os.unlink(obj)
+        except OSError: pass
     return 1 if bad else 0
 
 
