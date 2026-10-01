@@ -46,3 +46,15 @@ bool SetIfNot(B* b, u32 v)
     if (r) b->fe0 = v;
     return r;
 }
+
+u32 Utf8Decode(const unsigned char* p);   // FUN_005c04bc (src/utf8.cpp)
+
+// FUN_005c032c: first UTF-8 character as a 16-bit code, or the replacement 0x25A0 (a square) when
+// the decoded value does not fit. The default is loaded before the call (push {r4, lr}).
+u32 DecodeOrDefault(const unsigned char* p)
+{
+    u32 d = 0x25A0;
+    u32 r = Utf8Decode(p);
+    if ((r >> 16) == 0) d = (unsigned short)r;
+    return d;
+}

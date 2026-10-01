@@ -1624,3 +1624,11 @@ size = "10"
 src = "src/wrappers_low1.cpp"
 symbol = "_Z8W_4e0294Pc"
 score = 0
+
+[[function]]
+name = "DecodeOrDefault"
+offset = "5c032c"
+size = "20"
+src = "src/misc_hi.cpp"
+symbol = "_Z15DecodeOrDefaultPKh"
+score = 0
