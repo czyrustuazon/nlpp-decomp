@@ -55,3 +55,7 @@ _Z12PaneRef_InitP7PaneRef = 0x006E8B54
 _Z8FindPanePvPKcP7PaneRefj = 0x006EBA00
 _Z9BindBclimP7PaneRefjPvPKc = 0x006E8720
 g_UiContext = 0x008BFA40
+# src/utf16_wrappers.cpp: tail calls to unresolved weak symbols (nop in retail) and FUN_00587748
+_Z16WeakTarget504cc4PvPKtS1_j = "weak"
+_Z16WeakTarget54a6e0PvPKtjj = "weak"
+_Z13Forward587748PKtj = 0x00687748

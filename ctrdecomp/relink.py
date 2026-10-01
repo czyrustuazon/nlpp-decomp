@@ -83,10 +83,15 @@ def resolve_function(mine, place_va, addr):
         if sym not in addr:
             raise RuntimeError(f"no address for {sym!r} (add it to externs.toml)")
         word = struct.unpack_from("<I", data, o)[0]
-        if addr[sym] == "weak" and rtype == R_ARM_CALL:
+        if addr[sym] == "weak" and rtype in (R_ARM_CALL, R_ARM_JUMP24):
             struct.pack_into("<I", data, o, 0xE1A00000)
             continue
-        struct.pack_into("<I", data, o, _resolve(word, rtype, place_va + o, addr[sym]))
+        target = addr[sym]
+        if rtype in (R_ARM_CALL, R_ARM_JUMP24) and word >> 24 == 0xEA and target == place_va + o + 4:
+            # armlink --branchnop: an unconditional B to the next instruction becomes `mov r0, r0`
+            struct.pack_into("<I", data, o, 0xE1A00000)
+            continue
+        struct.pack_into("<I", data, o, _resolve(word, rtype, place_va + o, target))
     return bytes(data)
 
 

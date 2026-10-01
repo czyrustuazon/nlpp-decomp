@@ -79,7 +79,11 @@ def _asm_function(fn, obj, code, off, size, mine):
                 o += 2
         else:
             w = struct.unpack_from("<I", data, o)[0]
-            if rel and rel[0] in (R_ARM_CALL, R_ARM_JUMP24):
+            if rel and rel[0] in (R_ARM_CALL, R_ARM_JUMP24) and w == 0xE1A00000:
+                lines.append(f".inst 0x{w:08x}")                # unresolved weak branch, `mov r0, r0`
+            elif rel and rel[0] in (R_ARM_CALL, R_ARM_JUMP24) and w >> 28 == 0xF:
+                lines.append(f"blx {rel[1]}")                  # ARM -> Thumb call
+            elif rel and rel[0] in (R_ARM_CALL, R_ARM_JUMP24):
                 op = "bl" if (w >> 24) & 1 else "b"
                 lines.append(f"{op}{CONDS[w >> 28]} {rel[1]}")
             else:

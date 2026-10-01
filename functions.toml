@@ -299,3 +299,27 @@ size = "20"
 src = "src/flag_setters.cpp"
 symbol = "_Z11SetFlagBit1P3Objb"
 score = 0
+
+[[function]]
+name = "WithLenArg3"
+offset = "504c98"
+size = "30"
+src = "src/utf16_wrappers.cpp"
+symbol = "_Z11WithLenArg3PvPKtS1_"
+score = 0
+
+[[function]]
+name = "WithLenArg2"
+offset = "54a6b4"
+size = "30"
+src = "src/utf16_wrappers.cpp"
+symbol = "_Z11WithLenArg2PvPKtj"
+score = 0
+
+[[function]]
+name = "IfLen8Forward"
+offset = "585ae8"
+size = "30"
+src = "src/utf16_wrappers.cpp"
+symbol = "_Z13IfLen8ForwardPKtj"
+score = 0
