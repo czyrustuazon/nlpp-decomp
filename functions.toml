@@ -1136,3 +1136,131 @@ size = "20"
 src = "src/thunks_low.cpp"
 symbol = "_Z12ConstructSubPcS_"
 score = 0
+
+[[function]]
+name = "AdjustedCall5b1be0"
+offset = "5b1be0"
+size = "14"
+src = "src/thunks_hi.cpp"
+symbol = "_Z18AdjustedCall5b1be0Pc"
+score = 0
+
+[[function]]
+name = "AdjustedCall5b2010"
+offset = "5b2010"
+size = "14"
+src = "src/thunks_hi.cpp"
+symbol = "_Z18AdjustedCall5b2010Pc"
+score = 0
+
+[[function]]
+name = "AdjustedCall5b28a8"
+offset = "5b28a8"
+size = "14"
+src = "src/thunks_hi.cpp"
+symbol = "_Z18AdjustedCall5b28a8Pc"
+score = 0
+
+[[function]]
+name = "AdjustedCall5b2ca0"
+offset = "5b2ca0"
+size = "14"
+src = "src/thunks_hi.cpp"
+symbol = "_Z18AdjustedCall5b2ca0Pc"
+score = 0
+
+[[function]]
+name = "AdjustedCall5b340c"
+offset = "5b340c"
+size = "14"
+src = "src/thunks_hi.cpp"
+symbol = "_Z18AdjustedCall5b340cPc"
+score = 0
+
+[[function]]
+name = "AdjustedCall5b5aac"
+offset = "5b5aac"
+size = "14"
+src = "src/thunks_hi.cpp"
+symbol = "_Z18AdjustedCall5b5aacPc"
+score = 0
+
+[[function]]
+name = "VptrCtor5b2bb0"
+offset = "5b2bb0"
+size = "18"
+src = "src/thunks_hi.cpp"
+symbol = "_Z14VptrCtor5b2bb0Pc"
+score = 0
+
+[[function]]
+name = "VptrCtor5b33f0"
+offset = "5b33f0"
+size = "1c"
+src = "src/thunks_hi.cpp"
+symbol = "_Z14VptrCtor5b33f0Pc"
+score = 0
+
+[[function]]
+name = "VptrCtor5b5ca0"
+offset = "5b5ca0"
+size = "1c"
+src = "src/thunks_hi.cpp"
+symbol = "_Z14VptrCtor5b5ca0Pc"
+score = 0
+
+[[function]]
+name = "CopyVec3"
+offset = "59cb38"
+size = "1c"
+src = "src/thunks_hi.cpp"
+symbol = "_Z8CopyVec3P4Vec3PKS_"
+score = 0
+
+[[function]]
+name = "SetNodePos"
+offset = "5e7d74"
+size = "24"
+src = "src/thunks_hi.cpp"
+symbol = "_Z10SetNodePosP9NodeOwnerfff"
+score = 0
+
+[[function]]
+name = "SetNodeScale"
+offset = "5e8254"
+size = "24"
+src = "src/thunks_hi.cpp"
+symbol = "_Z12SetNodeScaleP10NodeOwner2fff"
+score = 0
+
+[[function]]
+name = "PickByte"
+offset = "5bb940"
+size = "1c"
+src = "src/misc_hi.cpp"
+symbol = "_Z8PickByteP1W"
+score = 0
+
+[[function]]
+name = "BothFlags"
+offset = "6422f0"
+size = "24"
+src = "src/misc_hi.cpp"
+symbol = "_Z9BothFlagsP1X"
+score = 0
+
+[[function]]
+name = "TableEntry"
+offset = "5a2844"
+size = "44"
+src = "src/misc_hi.cpp"
+symbol = "_Z10TableEntryj"
+score = 0
+
+[[function]]
+name = "SetIfNot"
+offset = "610b80"
+size = "30"
+src = "src/misc_hi.cpp"
+symbol = "_Z8SetIfNotP1Bj"
+score = 0

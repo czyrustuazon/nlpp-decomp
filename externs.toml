@@ -142,3 +142,10 @@ _Z9Fwd47ed78Pvj = 0x0057ED78
 _Z8Sub2a080Pc = 0x0012A080
 _Z9Sub5a221cPcS_ = 0x006A221C
 g_SubVtbl = 0x0082DF5C
+# src/thunks_hi.cpp
+_Z8Sub2a070Pc = 0x0012A070
+g_Vtbl82DF84 = 0x0082DF84
+g_Vtbl82DFA4 = 0x0082DFA4
+g_Vtbl82DFC4 = 0x0082DFC4
+# src/misc_hi.cpp
+g_t9a4780 = 0x009A4780
