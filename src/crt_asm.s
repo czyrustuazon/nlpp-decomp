@@ -148,3 +148,62 @@ StrLen:
 5:
         .word   0x01010101
         .size   StrLen, . - StrLen
+
+@ FUN_001fe040: strcmp; r0 = a, r1 = b. Word-at-a-time when both are aligned, else byte loop.
+        .global StrCmp
+        .type   StrCmp, %function
+StrCmp:
+        tst     r0, #3
+        tsteq   r1, #3
+        bne     6f
+        stmdb   sp!, {lr}
+        ldr     lr, 7f
+1:
+        ldr     r2, [r0], #4
+        ldr     r3, [r1], #4
+        sub     ip, r2, lr
+        bic     ip, ip, r2
+        ands    ip, ip, lr, lsl #7
+        cmpeq   r2, r3
+        bne     2f
+        ldr     r2, [r0], #4
+        ldr     r3, [r1], #4
+        sub     ip, r2, lr
+        bic     ip, ip, r2
+        ands    ip, ip, lr, lsl #7
+        cmpeq   r2, r3
+        beq     1b
+2:
+        ldm     sp!, {lr}
+        lsl     r0, r3, #24
+        subs    r0, r0, r2, lsl #24
+        tsteq   ip, #0xff0
+        bne     5f
+        lsl     r0, r3, #16
+        subs    r0, r0, r2, lsl #16
+        tsteq   ip, #0xff00
+        bne     5f
+        lsl     r0, r3, #8
+        subs    r0, r0, r2, lsl #8
+        tsteq   ip, #0xff0000
+        subseq  r0, r3, r2
+5:
+        rrxne   r0, r0
+        bx      lr
+6:
+        ldrb    r2, [r0], #1
+        ldrb    r3, [r1], #1
+        cmp     r2, #1
+        cmphs   r2, r3
+        bne     8f
+        ldrb    r2, [r0], #1
+        ldrb    r3, [r1], #1
+        cmp     r2, #1
+        cmphs   r2, r3
+        beq     6b
+8:
+        sub     r0, r2, r3
+        bx      lr
+7:
+        .word   0x01010101
+        .size   StrCmp, . - StrCmp

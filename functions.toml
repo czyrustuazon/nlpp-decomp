@@ -3436,3 +3436,48 @@ src = "src/crt_asm.s"
 symbol = "StrLen"
 library = "crt"
 score = 0
+
+[[function]]
+name = "MemZero"
+offset = "1fddd8"
+size = "54"
+src = "src/crt_asm.s"
+symbol = "MemZero"
+library = "crt"
+score = 0
+
+[[function]]
+name = "MemCopyAligned"
+offset = "20004c"
+size = "74"
+src = "src/crt_asm.s"
+symbol = "MemCopyAligned"
+library = "crt"
+score = 0
+
+[[function]]
+name = "MemCopy"
+offset = "202b20"
+size = "88"
+src = "src/crt_asm.s"
+symbol = "MemCopy"
+library = "crt"
+score = 0
+
+[[function]]
+name = "StrLen"
+offset = "200e60"
+size = "60"
+src = "src/crt_asm.s"
+symbol = "StrLen"
+library = "crt"
+score = 0
+
+[[function]]
+name = "StrCmp"
+offset = "1fe040"
+size = "bc"
+src = "src/crt_asm.s"
+symbol = "StrCmp"
+library = "crt"
+score = 0
