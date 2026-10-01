@@ -6,9 +6,9 @@ Scores are differing instruction words against vanilla `code.bin`, ARMCC 4.1 b14
 
 `technical.md` §6.1 is the short version of what moved the score. This folder is the source those sentences came from.
 
-## FUN_00542c30 ParseClim (kept: `src/lyt_clim.cpp`, score 0)
+## FUN_00542c30 ParseClim (kept: `lib/nw4c/lyt_clim.cpp`, score 0)
 
-The `if (kind == …)` drafts are the shape §6.1 says lowers to `cmp` with the positive literal. Their individual word scores were not printed. The first source written into `src/` before these files existed scored 5. The `switch` drafts that fold `RoundUp` into the call score 1, on one `add` with the operands reversed (`add r5, r0, r8` instead of `add r5, r8, r0`). Naming the rounded size scores 0, and that file is what `src/lyt_clim.cpp` came from.
+The `if (kind == …)` drafts are the shape §6.1 says lowers to `cmp` with the positive literal. Their individual word scores were not printed. The first source written into `src/` before these files existed scored 5. The `switch` drafts that fold `RoundUp` into the call score 1, on one `add` with the operands reversed (`add r5, r0, r8` instead of `add r5, r8, r0`). Naming the rounded size scores 0, and that file is what `lib/nw4c/lyt_clim.cpp` came from.
 
 | File | What it changed | Score |
 |------|-----------------|-------|

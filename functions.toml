@@ -6,7 +6,7 @@
 name = "ParseClim"
 offset = "542c30"
 size = "dc"
-src = "src/lyt_clim.cpp"
+src = "lib/nw4c/lyt_clim.cpp"
 symbol = "_Z9ParseClimP12ClimResourcePKvj"
 library = "nw4c"
 score = 0
@@ -39,7 +39,7 @@ score = 8   # NONMATCHING: permuter result; scheduling only (see technical.md 6.
 name = "IsValidBinaryFile"
 offset = "541ce0"
 size = "80"
-src = "src/nwut_binary.cpp"
+src = "lib/nw4c/nwut_binary.cpp"
 symbol = "_Z17IsValidBinaryFilePK16BinaryFileHeaderjjt"
 library = "nw4c"
 score = 0
@@ -48,16 +48,16 @@ score = 0
 name = "GetNextBlockHeader"
 offset = "541d60"
 size = "e0"
-src = "src/nwut_binary.cpp"
+src = "lib/nw4c/nwut_binary.cpp"
 symbol = "_Z18GetNextBlockHeaderPK16BinaryFileHeaderPK17BinaryBlockHeader"
 library = "nw4c"
-score = 51   # NONMATCHING: byte swap becomes rev/rev16 (see src/nwut_binary.cpp)
+score = 51   # NONMATCHING: byte swap becomes rev/rev16 (see lib/nw4c/nwut_binary.cpp)
 
 [[function]]
 name = "LightSemaphore_Acquire"
 offset = "1611c"
 size = "b0"
-src = "src/nn_os_sem.cpp"
+src = "lib/nnsdk/nn_os_sem.cpp"
 symbol = "_Z22LightSemaphore_AcquireP14LightSemaphore"
 library = "ctr-sdk"
 score = 33   # NONMATCHING: layout matches; retail's volatile strh spills of the atomic result are dropped
@@ -66,7 +66,7 @@ score = 33   # NONMATCHING: layout matches; retail's volatile strh spills of the
 name = "LightSemaphore_Release"
 offset = "16288"
 size = "8"
-src = "src/nn_os_sem.cpp"
+src = "lib/nnsdk/nn_os_sem.cpp"
 symbol = "_Z22LightSemaphore_ReleaseP14LightSemaphore"
 library = "ctr-sdk"
 score = 0
@@ -76,5 +76,110 @@ name = "DrawTextToPane"
 offset = "54b880"
 size = "7e8"
 src = "src/draw_text.cpp"
-symbol = "DrawTextToPane"
+symbol = "_Z14DrawTextToPaneP4PaneiiPijj"
 score = 463   # NONMATCHING: draft (468 vs 506 instructions); Lines struct + shared encode buffers
+
+# Thumb functions (first real Thumb matches; technical.md 6.1). Flags differ from the ARM game code.
+
+[[function]]
+name = "Utf16Len"
+offset = "d0c"
+size = "12"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z8Utf16LenPKt"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "StrChr"
+offset = "b06"
+size = "16"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z6StrChrPKci"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "HasFlag80"
+offset = "6b0"
+size = "8"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z9HasFlag80PK6Obj6b0"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "IsNullOrEmpty"
+offset = "718"
+size = "12"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z13IsNullOrEmptyPKj"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "CopyU16"
+offset = "c10"
+size = "a"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z7CopyU16PvPKvi"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "CopyU16b"
+offset = "c1a"
+size = "a"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z8CopyU16bPvPKvi"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "StrNCat"
+offset = "b1c"
+size = "24"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z7StrNCatPcPKci"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "WcsCat"
+offset = "c24"
+size = "1c"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z6WcsCatPtPKt"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+# Initialized data: standard CRC-32 tables, .rodata (file offsets). Verified by `relink` only.
+[[data]]
+name = "g_Crc32TableA"
+offset = "6ed4dc"
+size = "400"
+src = "lib/crt/crc_table.cpp"
+symbol = "g_Crc32TableA"
+
+[[data]]
+name = "g_Crc32TableB"
+offset = "6ee810"
+size = "400"
+src = "lib/crt/crc_table.cpp"
+symbol = "g_Crc32TableB"

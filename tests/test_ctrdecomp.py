@@ -51,7 +51,7 @@ def cfg():
 
 
 def test_thumb_roundtrip_and_reloc_destinations(cfg, tmp_path):
-    src = os.path.join(ROOT, "src", "lyt_clim.cpp")
+    src = os.path.join(ROOT, "lib", "nw4c", "lyt_clim.cpp")
     flags = ["--cpu=MPCore", "--thumb", "-O3", "-Otime", "--split_sections"]
     obj = compile_obj(cfg, src, flags)
     try:
@@ -97,7 +97,7 @@ def test_game_relink_is_byte_identical(cfg):
 def test_relink_resolves_thumb_calls(cfg, thumb_target):
     from ctrdecomp.relink import resolve_function
     from ctrdecomp.compare import _thumb_bl_target
-    src = os.path.join(ROOT, "src", "lyt_clim.cpp")
+    src = os.path.join(ROOT, "lib", "nw4c", "lyt_clim.cpp")
     obj = compile_obj(cfg, src, ["--cpu=MPCore", "--thumb", "-O3", "-Otime", "--split_sections"])
     try:
         fn = read_function(obj, "ParseClim")

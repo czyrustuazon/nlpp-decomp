@@ -70,9 +70,11 @@ inline void Encode(char* out, u32* tmp, u32 code)
 inline s32 AlignOffset(u8 align, s32 room, s32 lines, s32 width, s32 spacing, s32 cell)
 {
     s32 used = (lines - 1) * spacing + cell * width;
-    if (align == 1) return (room - used) / 2;
-    if (align == 2) return room - used;
-    return 0;
+    switch (align) {
+    case 1: return (room - used) / 2;
+    case 2: return room - used;
+    default: return 0;
+    }
 }
 
 // FUN_0054b880
