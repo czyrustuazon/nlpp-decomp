@@ -183,3 +183,55 @@ offset = "6ee810"
 size = "400"
 src = "lib/crt/crc_table.cpp"
 symbol = "g_Crc32TableB"
+
+# Pointer table (seven ABS32 words) in .rodata; relocations resolved from externs.toml.
+[[data]]
+name = "g_Vtbl_79EDF0"
+offset = "69edf0"
+size = "1c"
+src = "src/vtable_data.cpp"
+symbol = "g_Vtbl_79EDF0"
+
+[[function]]
+name = "WcsCmp"
+offset = "c40"
+size = "1c"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z6WcsCmpPKtS0_"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O2"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "WcsNCmp"
+offset = "c5c"
+size = "28"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z7WcsNCmpPKtS0_i"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O2"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "WcsCpy"
+offset = "bf4"
+size = "12"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z6WcsCpyPtPKt"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O1"]
+score = 0
+library = "ctr-sdk"
+
+[[function]]
+name = "WcsICmp"
+offset = "d1e"
+size = "2a"
+src = "lib/crt/thumb_misc.cpp"
+symbol = "_Z7WcsICmpPKtS0_"
+thumb = true
+flags = ["--cpu=5TE", "--thumb", "-O2"]
+score = 0
+library = "ctr-sdk"

@@ -70,3 +70,54 @@ u16* WcsCat(u16* d, const u16* s)
     do { c = *s++; *d++ = c; } while (c);
     return r;
 }
+
+// ---- Added 2026-09-30 (second pass). -O2 on ARMCC 4.1 b713+ also matches the wide-string
+// routines below (WcsCmp needs -O2; the same text gives score 5 at -O1). WcsCpy is the reverse:
+// -O1 matches, -O2 gives 2. So the runtime is not one flag set (see technical.md §6.1.1).
+
+// FUN_00000c40: wcscmp for 16-bit characters
+int WcsCmp(const u16* a, const u16* b)
+{
+    while (*a != 0 && *a == *b) { a++; b++; }
+    return *a - *b;
+}
+
+// FUN_00000c5c: wcsncmp. The `goto` reproduces retail's loop layout (increment block first,
+// entered by a branch to the n == 0 test); every `while`/`for` spelling gives a bottom-tested loop.
+int WcsNCmp(const u16* a, const u16* b, int n)
+{
+    goto start;
+    for (;;) {
+        n--; a++; b++;
+    start:
+        if (n == 0) return 0;
+        if (*a == 0 || *a != *b) return *a - *b;
+    }
+}
+
+// FUN_00000bf4: wcscpy
+u16* WcsCpy(u16* d, const u16* s)
+{
+    u16* r = d; u16 c;
+    do { c = *s++; *d++ = c; } while (c != 0);
+    return r;
+}
+
+// FUN_00000d1e: case-insensitive wcscmp. FUN_001fe260 is a Thumb 16-bit-char tolower (a plain
+// `bl`, so `ToLower`'s address carries bit 0 in externs.toml). Retail copies `b` to a stack slot
+// (`push {r3,...}; str r1,[sp]`) and reloads it each pass; a volatile local reproduces that.
+extern int ToLower(int c);
+int WcsICmp(const u16* a, const u16* b)
+{
+    int i = 0; int d;
+    const u16* volatile bv = b;
+    goto start;
+    for (;;) {
+        i++;
+    start:
+        d = ToLower(a[i]) - ToLower(bv[i]);
+        if (d != 0) break;
+        if (a[i] == 0) break;
+    }
+    return d;
+}

@@ -34,3 +34,13 @@ __cxa_guard_release = 0x00303D64
 # Thumb-function callees (lib/crt/thumb_misc.cpp); both are ARM code
 _Z9CopyWordsPvPKvi = 0x002FE154
 _Z10CopyWords2PvPKvi = 0x00131848
+# Unmatched callees named only by address, used by the pointer table in src/vtable_data.cpp
+FUN_00572c24 = 0x00672C24
+FUN_003671d4 = 0x004671D4
+FUN_00367198 = 0x00467198
+FUN_00572bd4 = 0x00672BD4
+FUN_003671dc = 0x004671DC
+FUN_00367190 = 0x00467190
+FUN_003671e4 = 0x004671E4
+# Thumb tolower on 16-bit chars (file 0x1FE260, bit 0 set), used by lib/crt/thumb_misc.cpp
+_Z7ToLoweri = 0x002FE261
