@@ -3795,3 +3795,155 @@ src = "lib/nnsdk/nn_os_atomics3.s"
 symbol = "A_68b7b0"
 library = "ctr-sdk"
 score = 0
+
+[[function]]
+name = "Fwd55e330"
+offset = "55e330"
+size = "8"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd55e330Pc"
+score = 0
+
+[[function]]
+name = "Fwd562830"
+offset = "562830"
+size = "8"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd562830Pc"
+score = 0
+
+[[function]]
+name = "Fwd68560c"
+offset = "68560c"
+size = "8"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd68560cPc"
+score = 0
+
+[[function]]
+name = "FwdGlobal5d6e4c"
+offset = "5d6e4c"
+size = "c"
+src = "src/calls_hi.cpp"
+symbol = "_Z15FwdGlobal5d6e4cv"
+score = 0
+
+[[function]]
+name = "FwdGlobal5d6e58"
+offset = "5d6e58"
+size = "c"
+src = "src/calls_hi.cpp"
+symbol = "_Z15FwdGlobal5d6e58v"
+score = 0
+
+[[function]]
+name = "CopyIn5cb758"
+offset = "5cb758"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z12CopyIn5cb758Pc"
+score = 0
+
+[[function]]
+name = "CopyIn5cfee4"
+offset = "5cfee4"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z12CopyIn5cfee4Pc"
+score = 0
+
+[[function]]
+name = "CopyOut5cbd84"
+offset = "5cbd84"
+size = "18"
+src = "src/calls_hi.cpp"
+symbol = "_Z13CopyOut5cbd84Pc"
+score = 0
+
+[[function]]
+name = "CopyOut5d03f4"
+offset = "5d03f4"
+size = "18"
+src = "src/calls_hi.cpp"
+symbol = "_Z13CopyOut5d03f4Pc"
+score = 0
+
+[[function]]
+name = "CopyOut5d1690"
+offset = "5d1690"
+size = "18"
+src = "src/calls_hi.cpp"
+symbol = "_Z13CopyOut5d1690Pc"
+score = 0
+
+[[function]]
+name = "Clear5dbdf4"
+offset = "5dbdf4"
+size = "c"
+src = "src/calls_hi.cpp"
+symbol = "_Z11Clear5dbdf4Pc"
+score = 0
+
+[[function]]
+name = "Fwd62ec20"
+offset = "62ec20"
+size = "c"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd62ec20Pc"
+score = 0
+
+[[function]]
+name = "Fwd62ec38"
+offset = "62ec38"
+size = "c"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd62ec38Pc"
+score = 0
+
+[[function]]
+name = "ReturnThis59d1f4"
+offset = "59d1f4"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z16ReturnThis59d1f4Pc"
+score = 0
+
+[[function]]
+name = "VptrCtor5b1fdc"
+offset = "5b1fdc"
+size = "18"
+src = "src/calls_hi.cpp"
+symbol = "_Z14VptrCtor5b1fdcPc"
+score = 0
+
+[[function]]
+name = "Fwd5dd710"
+offset = "5dd710"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd5dd710Pc"
+score = 0
+
+[[function]]
+name = "TableEntry54"
+offset = "62f4b8"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z12TableEntry54v"
+score = 0
+
+[[function]]
+name = "Fwd632934"
+offset = "632934"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd632934PcS_"
+score = 0
+
+[[function]]
+name = "Fwd642a50"
+offset = "642a50"
+size = "14"
+src = "src/calls_hi.cpp"
+symbol = "_Z9Fwd642a50PcS_"
+score = 0
