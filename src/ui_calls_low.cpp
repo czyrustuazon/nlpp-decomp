@@ -91,3 +91,22 @@ void ResetAll(Own29edc0* a)
     }
     ZeroFill(a->buf, 0x200);
 }
+
+void Fwd3558a0(void*);                               // FUN_003558a0
+void Fwd47ed78(void*, u32);                          // FUN_0047ed78
+
+struct Own357c48 { char pad[0x78]; void* child; };
+// FUN_00357c48
+void ForwardChild(Own357c48* a)
+{
+    if (a->child) Fwd3558a0(a->child);
+}
+
+struct Own47f660 { char pad[0x23]; u8 value; char pad2[0x40 - 0x24]; void* child; };
+// FUN_0047f660
+void SetValue23(Own47f660* a, u32 v)
+{
+    void* c = a->child;
+    a->value = v;
+    if (c) Fwd47ed78(c, v);
+}

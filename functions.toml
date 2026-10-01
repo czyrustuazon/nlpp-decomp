@@ -1104,3 +1104,19 @@ size = "3c"
 src = "src/ui_calls_low.cpp"
 symbol = "_Z8ResetAllP9Own29edc0"
 score = 0
+
+[[function]]
+name = "ForwardChild"
+offset = "357c48"
+size = "14"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z12ForwardChildP9Own357c48"
+score = 0
+
+[[function]]
+name = "SetValue23"
+offset = "47f660"
+size = "1c"
+src = "src/ui_calls_low.cpp"
+symbol = "_Z10SetValue23P9Own47f660j"
+score = 0

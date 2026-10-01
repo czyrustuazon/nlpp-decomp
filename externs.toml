@@ -135,3 +135,6 @@ _Z9Act3544a8Pvj = 0x004544A8
 _Z11Reset5c2b5cPvj = 0x006C2B5C
 _Z16UiTailCall236084P5UiObjj = 0x00336084
 _Z8ZeroFillPvj = 0x002FDDD8
+# src/ui_calls_low.cpp: more tail-call targets
+_Z9Fwd3558a0Pv = 0x004558A0
+_Z9Fwd47ed78Pvj = 0x0057ED78
