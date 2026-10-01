@@ -9,6 +9,8 @@ char* Sub2a070(char* sub);      // FUN_0002a070
 extern const char g_Vtbl82DF84[];
 extern const char g_Vtbl82DFA4[];
 extern const char g_Vtbl82DFC4[];
+extern const char g_Vtbl82DF74[];
+extern const char g_Vtbl82DFB4[];
 
 // FUN_005b1be0, FUN_005b2010, FUN_005b28a8, FUN_005b2ca0, FUN_005b340c, FUN_005b5aac
 char* AdjustedCall5b1be0(char* p) { return Sub2a080(p + 4) - 4; }
@@ -80,4 +82,28 @@ void SetNodeScale(NodeOwner2* o, float x, float y, float z)
         u8 f = n->flags;
         n->flags = f & 0xcf;
     }
+}
+
+// FUN_005b2884, FUN_005b5a88: sub-object ctor that also zeroes the word after the sub-object
+char* VptrCtor5b2884(char* p)
+{
+    char* r = Sub2a070(p + 4);
+    *(u32*)(r + 4) = 0;
+    *(const char**)(r - 4) = g_Vtbl82DF74;
+    return r - 4;
+}
+char* VptrCtor5b5a88(char* p)
+{
+    char* r = Sub2a070(p + 4);
+    *(u32*)(r + 4) = 0;
+    *(const char**)(r - 4) = g_Vtbl82DFB4;
+    return r - 4;
+}
+
+// FUN_005b2788: two nested sub-object constructors, then a zeroed word at +8
+char* NestedCtor5b2788(char* p)
+{
+    char* r = Sub2a070(Sub2a070(p) + 4) - 4;
+    *(u32*)(r + 8) = 0;
+    return r;
 }

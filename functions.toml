@@ -4035,3 +4035,51 @@ size = "28"
 src = "src/calls_hi2.cpp"
 symbol = "_Z15NewZeroed5f0ef8Pc"
 score = 0
+
+[[function]]
+name = "VptrCtor5b2884"
+offset = "5b2884"
+size = "24"
+src = "src/thunks_hi.cpp"
+symbol = "_Z14VptrCtor5b2884Pc"
+score = 0
+
+[[function]]
+name = "VptrCtor5b5a88"
+offset = "5b5a88"
+size = "24"
+src = "src/thunks_hi.cpp"
+symbol = "_Z14VptrCtor5b5a88Pc"
+score = 0
+
+[[function]]
+name = "NestedCtor5b2788"
+offset = "5b2788"
+size = "20"
+src = "src/thunks_hi.cpp"
+symbol = "_Z16NestedCtor5b2788Pc"
+score = 0
+
+[[function]]
+name = "StaticInit64d08c"
+offset = "64d08c"
+size = "38"
+src = "src/atexit_hi.cpp"
+symbol = "_Z16StaticInit64d08cv"
+score = 0
+
+[[function]]
+name = "StaticInit64fab0"
+offset = "64fab0"
+size = "38"
+src = "src/atexit_hi.cpp"
+symbol = "_Z16StaticInit64fab0v"
+score = 0
+
+[[function]]
+name = "StaticInit65276c"
+offset = "65276c"
+size = "38"
+src = "src/atexit_hi.cpp"
+symbol = "_Z16StaticInit65276cv"
+score = 0
