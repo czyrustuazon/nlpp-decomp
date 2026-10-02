@@ -6,7 +6,9 @@ import re
 REG = {'sp': None, 'lr': None, 'pc': None, 'ip': 12, 'fp': 11, 'sl': 10, 'sb': 9}
 CONDS = ('eq', 'ne', 'hs', 'cs', 'lo', 'cc', 'mi', 'pl', 'hi', 'ls', 'ge', 'lt', 'gt', 'le')
 BASES = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'cmp', 'cmn', 'tst',
-         'ldr', 'ldrb', 'ldrh', 'ldrsb', 'ldrsh', 'str', 'strb', 'strh', 'bl', 'blx', 'bx', 'b', 'nop', 'push', 'pop', 'orn')
+         'ldr', 'ldrb', 'ldrh', 'ldrsb', 'ldrsh', 'str', 'strb', 'strh', 'bl', 'blx', 'bx', 'b', 'nop', 'push', 'pop', 'orn',
+         'uxth', 'sxth', 'uxtb', 'sxtb', 'mla', 'ldm', 'stm')
+SETS = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'orn', 'mla')
 
 def split_mn(m):
     """-> (base, cond, setflags) or None"""
@@ -15,8 +17,8 @@ def split_mn(m):
         if m.startswith(b):
             rest = m[len(b):]
             s = False
-            if rest.startswith('s') and b not in ('cmp', 'cmn', 'tst') and rest[1:] in ('',) + CONDS: s, rest = True, rest[1:]
-            elif rest[-1:] == 's' and rest[:-1] in CONDS and b not in ('cmp', 'cmn', 'tst'): s, rest = True, rest[:-1]
+            if rest.startswith('s') and b in SETS and rest[1:] in ('',) + CONDS: s, rest = True, rest[1:]
+            elif rest[-1:] == 's' and rest[:-1] in CONDS and b in SETS: s, rest = True, rest[:-1]
             if rest == '': return b, None, s
             if rest in CONDS: return b, rest, s
     return None
@@ -61,9 +63,9 @@ def lift(I, word, fname, variants=True):
         if s.startswith('#'):
             v = int(s[1:], 0)
             return str(v & 0xffffffff) + 'u'
-        mm = re.fullmatch(r'(\w+), (lsl|lsr|asr) #(\d+)', s)
+        mm = re.fullmatch(r'(\w+), (lsl|lsr|asr) #(0x[0-9a-f]+|\d+)', s)
         if mm:
-            r = rd(mm.group(1)); sh = int(mm.group(3))
+            r = rd(mm.group(1)); sh = int(mm.group(3), 0)
             if mm.group(2) == 'lsl': return f'({r} << {sh})'
             if mm.group(2) == 'lsr': return f'({r} >> {sh})'
             return f'((u32)((int){r} >> {sh}))'
@@ -86,13 +88,23 @@ def lift(I, word, fname, variants=True):
         return tab[c]
 
     def mem(o):
-        mm = re.fullmatch(r'(\w+), \[(\w+)(?:, #(-?(?:0x[0-9a-f]+|\d+)))?\]', o)
+        """-> (reg, address expr, pre stmt, post stmt)"""
+        NUM = r'-?(?:0x[0-9a-f]+|\d+)'
+        mm = re.fullmatch(r'(\w+), \[(\w+)(?:, #(%s))?\](!)?(?:, #(%s))?' % (NUM, NUM), o)
         if mm:
-            off = int(mm.group(3), 0) if mm.group(3) else 0
             b = rd(mm.group(2))
-            return mm.group(1), (f'{b} + {off}' if off > 0 else f'{b} - {-off}' if off < 0 else b)
-        mm = re.fullmatch(r'(\w+), \[(\w+), (\w+)\]', o)
-        if mm: return mm.group(1), f'{rd(mm.group(2))} + {rd(mm.group(3))}'
+            if mm.group(5) is not None:       # post-indexed
+                k = int(mm.group(5), 0)
+                return mm.group(1), b, '', f'{b} = {b} + {k}u;'
+            off = int(mm.group(3), 0) if mm.group(3) else 0
+            if mm.group(4):                   # pre-indexed writeback
+                return mm.group(1), b, f'{b} = {b} + {off & 0xffffffff}u;', ''
+            return mm.group(1), (f'{b} + {off}' if off > 0 else f'{b} - {-off}' if off < 0 else b), '', ''
+        mm = re.fullmatch(r'(\w+), \[(\w+), (-?)(\w+)(?:, (lsl) #(\d+))?\]', o)
+        if mm:
+            idx = rd(mm.group(4))
+            if mm.group(5): idx = f'({idx} << {mm.group(6)})'
+            return mm.group(1), f'{rd(mm.group(2))} {"-" if mm.group(3) else "+"} {idx}', '', ''
         raise ValueError('mem ' + o)
 
     def call_args(extra=None):
@@ -106,6 +118,7 @@ def lift(I, word, fname, variants=True):
 
     emitted_ret = []
     def emit(line, c=None):
+        if c and line.count(';') > 1: line = '{ ' + line + ' }'
         out.append(f'if ({c}) {line}' if c else line)
 
     pending_label = None
@@ -119,6 +132,11 @@ def lift(I, word, fname, variants=True):
         if b == 'pop':
             if 'pc' not in o: continue
             out.append(f'{"if (" + cs + ") " if cs else ""}{{RET}}'); continue
+        if b == 'bx' and o.strip() != 'lr' and re.fullmatch(r'r\d+', o.strip()):
+            fp = rd(o.strip()); args = call_args()
+            if fp in args: args = args[:args.index(fp)]
+            sig = ', '.join(['u32'] * len(args))
+            out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL ((u32(*)({sig})){fp})({", ".join(args)})}}'); continue
         if b == 'bx':
             if o.strip() != 'lr': raise ValueError('bx ' + o)
             out.append(f'{"if (" + cs + ") " if cs else ""}{{RET}}'); continue
@@ -131,9 +149,16 @@ def lift(I, word, fname, variants=True):
             if s: flags[0] = ('nz', 'r%d' % R(d))
             continue
         if b in ('lsl', 'lsr', 'asr'):
-            mm = re.fullmatch(r'(\w+), (\w+), #(\d+)', o)
-            if not mm: raise ValueError('shift ' + o)
-            x = rd(mm.group(2)); sh = int(mm.group(3))
+            mm = re.fullmatch(r'(\w+), (\w+), #(0x[0-9a-f]+|\d+)', o)
+            if not mm:
+                mm = re.fullmatch(r'(\w+), (\w+), (r\d+)', o)
+                if not mm: raise ValueError('shift ' + o)
+                x = rd(mm.group(2)); sh = f'({rd(mm.group(3))} & 255)'
+                v = {'lsl': f'{x} << {sh}', 'lsr': f'{x} >> {sh}', 'asr': f'(u32)((int){x} >> {sh})'}[b]
+                emit(f'{wr(mm.group(1))} = {v};', cs)
+                if s: flags[0] = ('nz', 'r%d' % R(mm.group(1)))
+                continue
+            x = rd(mm.group(2)); sh = int(mm.group(3), 0)
             v = {'lsl': f'{x} << {sh}', 'lsr': f'{x} >> {sh}', 'asr': f'(u32)((int){x} >> {sh})'}[b]
             emit(f'{wr(mm.group(1))} = {v};', cs)
             if s: flags[0] = ('nz', 'r%d' % R(mm.group(1)))
@@ -158,7 +183,10 @@ def lift(I, word, fname, variants=True):
             mm = re.fullmatch(r'(\w+), (.+)', o)
             if not mm: raise ValueError('cmp ' + o)
             X = rd(mm.group(1)); Y = op2(mm.group(2))
-            if cs: raise ValueError('predicated cmp')
+            if cs:
+                if b != 'cmp' or flags[0] is None: raise ValueError('predicated cmp')
+                if flags[0][0] == 'nz': out.append(f'fa = {flags[0][1]}; fb = 0;')
+                out.append(f'if ({cs}) {{ fa = {X}; fb = {Y}; }}'); flags[0] = ('cmp', 'fa', 'fb'); continue
             if b == 'cmp': flags[0] = ('cmp', 'fa', 'fb'); out.append(f'fa = {X}; fb = {Y};')
             elif b == 'tst': out.append(f'fx = {X} & {Y};'); flags[0] = ('nz', 'fx')
             else: out.append(f'fx = {X} + {Y};'); flags[0] = ('nz', 'fx')
@@ -172,13 +200,36 @@ def lift(I, word, fname, variants=True):
                     decls.add(f'extern char g_{w:08x}[];'); v = f'(u32)g_{w:08x}'
                 else: v = f'{w}u'
                 emit(f'{wr(mm.group(1))} = {v};', cs); continue
-            d, addr = mem(o)
+            d, addr, pre, post = mem(o)
             ty = {'ldr': 'u32', 'ldrb': 'u8', 'ldrh': 'u16', 'ldrsb': 'signed char', 'ldrsh': 'short'}[b]
-            emit(f'{wr(d)} = *({ty}*)({addr});', cs); continue
+            emit(f'{pre} {wr(d)} = *({ty}*)({addr}); {post}'.replace('  ', ' ').strip(), cs); continue
         if b in ('str', 'strb', 'strh'):
-            d, addr = mem(o)
+            d, addr, pre, post = mem(o)
             ty = {'str': 'u32', 'strb': 'u8', 'strh': 'u16'}[b]
-            emit(f'*({ty}*)({addr}) = {rd(d)};', cs); continue
+            emit(f'{pre} *({ty}*)({addr}) = {rd(d)}; {post}'.replace('  ', ' ').strip(), cs); continue
+        if b in ('uxth', 'sxth', 'uxtb', 'sxtb'):
+            mm = re.fullmatch(r'(\w+), (\w+)', o)
+            if not mm: raise ValueError('ext ' + o)
+            x = rd(mm.group(2))
+            v = {'uxth': f'(u16){x}', 'uxtb': f'(u8){x}', 'sxth': f'(u32)(short){x}', 'sxtb': f'(u32)(signed char){x}'}[b]
+            emit(f'{wr(mm.group(1))} = {v};', cs); continue
+        if b == 'mla':
+            r = [x.strip() for x in o.split(',')]
+            if len(r) != 4: raise ValueError('mla')
+            v = f'{rd(r[1])} * {rd(r[2])} + {rd(r[3])}'
+            emit(f'{wr(r[0])} = {v};', cs)
+            if s: flags[0] = ('nz', 'r%d' % R(r[0]))
+            continue
+        if b in ('ldm', 'stm'):
+            mm = re.fullmatch(r'(\w+)(!)?, \{(.*)\}', o)
+            if not mm: raise ValueError('ldm ' + o)
+            base = rd(mm.group(1)); regs = [x.strip() for x in mm.group(3).split(',')]
+            st = []
+            for k, r in enumerate(regs):
+                if b == 'ldm': st.append(f'{wr(r)} = *(u32*)({base} + {4 * k});')
+                else: st.append(f'*(u32*)({base} + {4 * k}) = {rd(r)};')
+            if mm.group(2): st.append(f'{base} = {base} + {4 * len(regs)};')
+            emit(' '.join(st), cs); continue
         if b == 'blx' and re.fullmatch(r'r\d+', o.strip()):
             fp = rd(o.strip()); args = [x for x in call_args()]
             if fp in args: args = args[:args.index(fp)]
