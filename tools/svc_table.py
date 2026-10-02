@@ -30,6 +30,23 @@ def session_service(off, cmd):
     if 0x51a000 <= off < 0x51c000: return 'nwm::UDS (session, inferred)'
     if 0x51f000 <= off < 0x523000: return 'boss (session, inferred)'
     return ''
+# fs:USER command names (3dbrew table; verified by header shape against the stubs: id 0x802 OpenFile = 7 normal/2 translate,
+# 0x804 DeleteFile 5/2, 0x808 CreateFile 8/2, 0x80c OpenArchive 3/2, 0x84c FormatSaveData 9/2, 0x851 CreateExtSaveData 9/2).
+# Real id = table position + 0x801 (the table omits the dummy at 0x801); 0x861 is Initialize (1/2), 0x862 SetPriority, 0x863 GetPriority.
+FS_NAMES = {0x802 + i: n for i, n in enumerate("OpenFile OpenFileDirectly DeleteFile RenameFile DeleteDirectory DeleteDirectoryRecursively CreateFile CreateDirectory RenameDirectory OpenDirectory OpenArchive ControlArchive CloseArchive Obsoleted_2_0_FormatThisUserSaveData Obsoleted_3_0_CreateSystemSaveData Obsoleted_3_0_DeleteSystemSaveData GetFreeBytes GetCardType GetSdmcArchiveResource GetNandArchiveResource GetSdmcFatfsError IsSdmcDetected IsSdmcWritable GetSdmcCid GetNandCid GetSdmcSpeedInfo GetNandSpeedInfo GetSdmcLog GetNandLog ClearSdmcLog ClearNandLog CardSlotIsInserted CardSlotPowerOn CardSlotPowerOff CardSlotGetCardIFPowerStatus CardNorDirectCommand CardNorDirectCommandWithAddress CardNorDirectRead CardNorDirectReadWithAddress CardNorDirectWrite CardNorDirectWriteWithAddress CardNorDirectRead_4xIO CardNorDirectCpuWriteWithoutVerify CardNorDirectSectorEraseWithoutVerify GetProductInfo GetProgramLaunchInfo Obsoleted_3_0_CreateExtSaveData Obsoleted_3_0_CreateSharedExtSaveData Obsoleted_3_0_ReadExtSaveDataIcon Obsoleted_3_0_EnumerateExtSaveData Obsoleted_3_0_EnumerateSharedExtSaveData Obsoleted_3_0_DeleteExtSaveData Obsoleted_3_0_DeleteSharedExtSaveData SetCardSpiBaudRate SetCardSpiBusMode SendInitializeInfoTo9 GetSpecialContentIndex GetLegacyRomHeader GetLegacyBannerData CheckAuthorityToAccessExtSaveData QueryTotalQuotaSize Obsoleted_3_0_GetExtDataBlockSize AbnegateAccessRight DeleteSdmcRoot DeleteAllExtSaveDataOnNand InitializeCtrFileSystem CreateSeed GetFormatInfo GetLegacyRomHeader2 Obsoleted_2_0_FormatCtrCardUserSaveData GetSdmcCtrRootPath GetArchiveResource ExportIntegrityVerificationSeed ImportIntegrityVerificationSeed FormatSaveData GetLegacySubBannerData UpdateSha256Context ReadSpecialFile GetSpecialFileSize CreateExtSaveData DeleteExtSaveData ReadExtSaveDataIcon GetExtDataBlockSize EnumerateExtSaveData CreateSystemSaveData DeleteSystemSaveData StartDeviceMoveAsSource StartDeviceMoveAsDestination SetArchivePriority GetArchivePriority SetCtrCardLatencyParameter SetFsCompatibilityInfo ResetCardCompatibilityParameter SwitchCleanupInvalidSaveData EnumerateSystemSaveData InitializeWithSdkVersion SetPriority GetPriority".split()[:96])}
+FS_NAMES.update({0x861: 'Initialize', 0x862: 'SetPriority', 0x863: 'GetPriority'})
+FS_FILE = {0x802: 'Read', 0x803: 'Write', 0x804: 'GetSize', 0x805: 'SetSize', 0x806: 'GetAttributes', 0x807: 'SetAttributes',
+           0x808: 'Close', 0x809: 'Flush', 0x80a: 'SetPriority', 0x80b: 'GetPriority', 0x80c: 'OpenLinkFile'}
+FS_FILE_SHAPE = {0x802: (3, 2), 0x803: (4, 2), 0x804: (0, 0), 0x808: (0, 0), 0x80a: (1, 0), 0x80b: (0, 0), 0x80c: (0, 0)}
+_file_seen = set()
+def fs_command(off, cmd, normal, translate):
+    """File-session methods sit in the 0x4ef3a4-0x4ef6ff run; take one stub per (id, shape), the rest of the run is other
+    handle classes (directory) and stays unnamed. Everything else is an fs:USER service command."""
+    if 0x4ef3a4 <= off < 0x4ef700 and off != 0x4ef574 and off != 0x4ef330 and cmd in FS_FILE:
+        if FS_FILE_SHAPE.get(cmd) == (normal, translate) and cmd not in _file_seen:
+            _file_seen.add(cmd); return 'File::' + FS_FILE[cmd]
+        return ''
+    return FS_NAMES.get(cmd, '')
 rows = []
 for f in funcs:
     if f.get('library') != 'ctrsvc': continue
@@ -57,8 +74,10 @@ for f in funcs:
             for j in ins[:k]:
                 m = re.match(rx + r', \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', j.op_str)
                 if j.mnemonic == 'ldr' and m: handle = '%08x' % struct.unpack_from('<I', code, j.address + 8 + (int(m.group(1), 0) if m.group(1) else 0))[0]
-    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '') or ('' if handle else session_service(st, hdr >> 16))))
+    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '') or ('' if handle else session_service(st, hdr >> 16)), ''))
+rows.sort()
+rows = [r[:8] + ((fs_command(int(r[4], 16), r[0], r[1], r[2]) if r[7].startswith('fs:USER') else ''),) for r in sorted(rows, key=lambda r: int(r[4], 16))]
 rows.sort()
 with open(sys.argv[1], 'w', newline='') as o:
-    w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global', 'service']); w.writerows(rows)
+    w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global', 'service', 'command']); w.writerows(rows)
 print(len(rows), 'wrappers,', len({r[:3] for r in rows}), 'distinct headers')
