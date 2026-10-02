@@ -22,6 +22,14 @@ SERVICE = {'008aab70': 'cam:u', '008aaeb4': 'y2r:u', '008b8778': 'cecd:u', '008b
            '008b7ccc': 'frd:u', '008b8790': 'frd:a', '008ab930': 'APT:U',
            '008b850c': 'ptm:u', '008b851c': 'ptm:s', '008b8514': 'ptm:sysm', '008b8510': 'ptm:play', '008b8518': 'ptm:gets',
            '008b7d20': 'hid:USER (hid:SPVR shares the init)', '008bb628': 'cfg:i', '008bb62c': 'cfg:i (copy)', '008b878c': 'cfg:i (copy)'}
+# stubs that take a session-handle pointer (no global): attributed by the service init their address cluster follows and by
+# command-id range (fs:USER ids 0x8xx; dsp ids < 0x40; nwm::UDS and boss follow their init strings). Inferred, so tagged.
+def session_service(off, cmd):
+    if 0x4ed000 <= off < 0x4f0000 or (off < 0x400000 and 0x800 <= cmd < 0x900): return 'fs:USER (session, inferred)'
+    if 0x501000 <= off < 0x502000 or (off < 0x400000 and cmd < 0x40): return 'dsp::DSP (session, inferred)'
+    if 0x51a000 <= off < 0x51c000: return 'nwm::UDS (session, inferred)'
+    if 0x51f000 <= off < 0x523000: return 'boss (session, inferred)'
+    return ''
 rows = []
 for f in funcs:
     if f.get('library') != 'ctrsvc': continue
@@ -49,7 +57,7 @@ for f in funcs:
             for j in ins[:k]:
                 m = re.match(rx + r', \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', j.op_str)
                 if j.mnemonic == 'ldr' and m: handle = '%08x' % struct.unpack_from('<I', code, j.address + 8 + (int(m.group(1), 0) if m.group(1) else 0))[0]
-    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '')))
+    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '') or ('' if handle else session_service(st, hdr >> 16))))
 rows.sort()
 with open(sys.argv[1], 'w', newline='') as o:
     w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global', 'service']); w.writerows(rows)
