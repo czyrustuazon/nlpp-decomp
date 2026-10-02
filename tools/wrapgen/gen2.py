@@ -7,6 +7,7 @@ import gen as G
 from ctrdecomp.compare import compile_obj, compare, read_function
 from elftools.elf.elffile import ELFFile
 import lift as L
+import lift2 as L2
 lo, hi, mx, part, nparts = [int(x, 16) if i < 3 else int(x) for i, x in enumerate(sys.argv[1:6])]
 tag = sys.argv[6] if len(sys.argv) > 6 else 'x'
 S = G.S; NL = G.NL; PRE = G.PRE
@@ -43,9 +44,18 @@ for k, st in enumerate(cands):
         if r: res.append(r)
         continue
     try: vs = L.lift(G.ins_of(st, sz), G.word, f'W_{st:06x}')
-    except Exception: continue
+    except Exception:
+        try: vs = L2.lift(G.ins_of(st, sz), G.word, f'W_{st:06x}')
+        except Exception: continue
+    done = False
     for decls, body, calls in vs:
         r = attempt(st, sz, NL.join(decls), body)
-        if r: res.append(r); break
+        if r: res.append(r); done = True; break
+    if not done:
+        try: vs = L2.lift(G.ins_of(st, sz), G.word, f'W_{st:06x}')
+        except Exception: continue
+        for decls, body, calls in vs:
+            r = attempt(st, sz, NL.join(decls), body)
+            if r: res.append(r); break
 json.dump(res, open(f'{S}/gen2_{tag}_{part}.json', 'w'))
 print(f'part {part}: tried {tried}, matched {len(res)}')
