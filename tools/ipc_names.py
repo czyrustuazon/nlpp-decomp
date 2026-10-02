@@ -188,3 +188,23 @@ DSP = parse("""
 0x00210000 GetIsDspOccupied
 """)
 BY_SERVICE = {'boss': BOSS, 'nwm::UDS': NWM, 'dsp::DSP': DSP}
+
+# Global-handle services (ac, cfg, ptm, APT, frd, cam, mic, ir, cecd, ndm, hid): tools/ipc_tables_global.txt, "## KEY" sections.
+def _load_global():
+    import os, re
+    d, key = {}, None
+    for line in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ipc_tables_global.txt'), encoding='utf-8'):
+        line = line.strip()
+        if line.startswith('## '): key = line[3:]; d[key] = {}
+        elif key and re.match(r'0x[0-9A-Fa-f]{8} ', line):
+            h, n = line.split(None, 1); h = int(h, 16); d[key][(h >> 16, (h >> 6) & 0x3f, h & 0x3f)] = n.strip()
+    return d
+GLOBAL = _load_global()
+def table_for(service):
+    """CSV service name (e.g. 'ptm:sysm', 'APT:U', 'ir:USER') -> command table, or None."""
+    n = service.split(' (')[0]
+    if n in BY_SERVICE: return BY_SERVICE[n]
+    for pre, key in (('ac', 'AC'), ('cfg', 'CFG'), ('ptm', 'PTM'), ('APT', 'APT'), ('frd', 'FRD'), ('cam', 'CAM'), ('mic', 'MIC'),
+                     ('ir:', 'IR'), ('cecd', 'CECD'), ('ndm', 'NDM'), ('hid', 'HID')):
+        if n.startswith(pre): return GLOBAL[key]
+    return None

@@ -77,7 +77,7 @@ for f in funcs:
                 if j.mnemonic == 'ldr' and m: handle = '%08x' % struct.unpack_from('<I', code, j.address + 8 + (int(m.group(1), 0) if m.group(1) else 0))[0]
     rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '') or ('' if handle else session_service(st, hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f)), ''))
 rows.sort()
-rows = [r[:8] + ((fs_command(int(r[4], 16), r[0], r[1], r[2]) if r[7].startswith('fs:USER') else NM.BY_SERVICE.get(r[7].split(' (')[0], {}).get((r[0], r[1], r[2]), '')),) for r in sorted(rows, key=lambda r: int(r[4], 16))]
+rows = [r[:8] + ((fs_command(int(r[4], 16), r[0], r[1], r[2]) if r[7].startswith('fs:USER') else (NM.table_for(r[7]) or {}).get((r[0], r[1], r[2]), '')),) for r in sorted(rows, key=lambda r: int(r[4], 16))]
 rows.sort()
 with open(sys.argv[1], 'w', newline='') as o:
     w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global', 'service', 'command']); w.writerows(rows)

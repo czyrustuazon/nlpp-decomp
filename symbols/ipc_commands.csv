@@ -1,841 +1,841 @@
 cmd_id,normal,translate,name,offset,callers,handle_global,service,command
-1,0,0,A_4e3d00,4e3d00,0,008b8764,ac:i,
-1,0,0,A_53b600,53b600,0,008b8790,frd:a,
-1,0,0,A_540878,540878,3,008b7ccc,frd:u,
+1,0,0,A_4e3d00,4e3d00,0,008b8764,ac:i,CreateDefaultConfig
+1,0,0,A_53b600,53b600,0,008b8790,frd:a,HasLoggedIn
+1,0,0,A_540878,540878,3,008b7ccc,frd:u,HasLoggedIn
 1,0,2,A_011c18,11c18,1,008b85f4,srv:pm,
 1,0,2,A_517e70,517e70,0,008bb4e0,srv:pm,
 1,0,2,A_5219e0,5219e0,1,,"boss (session, inferred)",
 1,1,0,A_51c024,51c024,1,008aaeb4,y2r:u,
-1,1,0,A_539668,539668,1,008aab70,cam:u,
-1,1,2,A_503cf0,503cf0,1,008b7d48,mic:u,
-1,1,2,A_504350,504350,7,008b8818,ndm:u,
-1,2,2,A_024670,24670,13,008b878c,cfg:i (copy),
-1,2,2,A_4fdd44,4fdd44,0,008bb62c,cfg:i (copy),
-1,2,2,A_4fe898,4fe898,0,008bb628,cfg:i,
-1,6,2,A_4f3ef4,4f3ef4,0,008bf998,ir:USER,
+1,1,0,A_539668,539668,1,008aab70,cam:u,StartCapture
+1,1,2,A_503cf0,503cf0,1,008b7d48,mic:u,MapSharedMem
+1,1,2,A_504350,504350,7,008b8818,ndm:u,EnterExclusiveState
+1,2,2,A_024670,24670,13,008b878c,cfg:i (copy),GetConfigInfoBlk2
+1,2,2,A_4fdd44,4fdd44,0,008bb62c,cfg:i (copy),GetConfigInfoBlk2
+1,2,2,A_4fe898,4fe898,0,008bb628,cfg:i,GetConfigInfoBlk2
+1,6,2,A_4f3ef4,4f3ef4,0,008bf998,ir:USER,InitializeIrnop
 1,8,0,A_502e18,502e18,0,008b7d20,hid:USER (hid:SPVR shares the init),
 2,0,0,A_008bac,8bac,1,008b85f4,srv:pm,
-2,0,0,A_4f3d78,4f3d78,1,008bf998,ir:USER,
-2,0,0,A_4fdd90,4fdd90,0,008bb62c,cfg:i (copy),
-2,0,0,A_4fe8e4,4fe8e4,0,008bb628,cfg:i,
-2,0,0,A_4fea1c,4fea1c,1,008b878c,cfg:i (copy),
+2,0,0,A_4f3d78,4f3d78,1,008bf998,ir:USER,FinalizeIrnop
+2,0,0,A_4fdd90,4fdd90,0,008bb62c,cfg:i (copy),SecureInfoGetRegion
+2,0,0,A_4fe8e4,4fe8e4,0,008bb628,cfg:i,SecureInfoGetRegion
+2,0,0,A_4fea1c,4fea1c,1,008b878c,cfg:i (copy),SecureInfoGetRegion
 2,0,0,A_50300c,50300c,0,008b7d20,hid:USER (hid:SPVR shares the init),
-2,0,0,A_503b40,503b40,3,008b7d48,mic:u,
+2,0,0,A_503b40,503b40,3,008b7d48,mic:u,UnmapSharedMem
 2,0,0,A_51812c,51812c,0,008bb4e0,srv:pm,
 2,0,0,A_51bfe8,51bfe8,0,008aaeb4,y2r:u,
-2,0,0,A_53cb70,53cb70,0,008b8790,frd:a,
-2,0,0,A_541970,541970,1,008b7ccc,frd:u,
-2,0,2,A_504394,504394,14,008b8818,ndm:u,
-2,1,0,A_5394ec,5394ec,1,008aab70,cam:u,
-2,1,2,A_4e1f40,4e1f40,0,008ab858,ac (copy of the ac:i handle),
-2,1,2,A_4e345c,4e345c,0,008b8764,ac:i,
+2,0,0,A_53cb70,53cb70,0,008b8790,frd:a,IsOnline
+2,0,0,A_541970,541970,1,008b7ccc,frd:u,IsOnline
+2,0,2,A_504394,504394,14,008b8818,ndm:u,LeaveExclusiveState
+2,1,0,A_5394ec,5394ec,1,008aab70,cam:u,StopCapture
+2,1,2,A_4e1f40,4e1f40,0,008ab858,ac (copy of the ac:i handle),DebugSetApType
+2,1,2,A_4e345c,4e345c,0,008b8764,ac:i,DebugSetApType
 2,1,2,A_501998,501998,1,,"dsp::DSP (session, inferred)",
-2,2,0,A_00919c,919c,1,008ab930,APT:U,
-2,2,0,A_50c6ac,50c6ac,0,008b8514,ptm:sysm,
-2,2,0,A_50d21c,50d21c,0,008b851c,ptm:s,
-2,2,0,A_50d7c0,50d7c0,0,008b8518,ptm:gets,
-2,2,0,A_50dba4,50dba4,0,008b8510,ptm:play,
-2,2,0,A_50e320,50e320,0,008b850c,ptm:u,
+2,2,0,A_00919c,919c,1,008ab930,APT:U,Initialize
+2,2,0,A_50c6ac,50c6ac,0,008b8514,ptm:sysm,SetRtcAlarm
+2,2,0,A_50d21c,50d21c,0,008b851c,ptm:s,SetRtcAlarm
+2,2,0,A_50d7c0,50d7c0,0,008b8518,ptm:gets,SetRtcAlarm
+2,2,0,A_50dba4,50dba4,0,008b8510,ptm:play,SetRtcAlarm
+2,2,0,A_50e320,50e320,0,008b850c,ptm:u,SetRtcAlarm
 2,2,4,A_02585c,2585c,1,,,
 2,4,0,A_51f728,51f728,1,,"boss (session, inferred)",SetStorageInfo
 2,4,0,A_521f0c,521f0c,1,,"boss (session, inferred)",SetStorageInfo
-3,0,0,A_4f4060,4f4060,1,008bf998,ir:USER,
+3,0,0,A_4f4060,4f4060,1,008bf998,ir:USER,ClearReceiveBuffer
 3,0,0,A_50303c,50303c,0,008b7d20,hid:USER (hid:SPVR shares the init),
-3,0,0,A_504314,504314,0,008b8818,ndm:u,
-3,0,0,A_50c638,50c638,0,008b8514,ptm:sysm,
-3,0,0,A_50d1a8,50d1a8,0,008b851c,ptm:s,
-3,0,0,A_50d784,50d784,0,008b8518,ptm:gets,
-3,0,0,A_50db68,50db68,0,008b8510,ptm:play,
-3,0,0,A_50e2e4,50e2e4,0,008b850c,ptm:u,
+3,0,0,A_504314,504314,0,008b8818,ndm:u,QueryExclusiveMode
+3,0,0,A_50c638,50c638,0,008b8514,ptm:sysm,GetRtcAlarm
+3,0,0,A_50d1a8,50d1a8,0,008b851c,ptm:s,GetRtcAlarm
+3,0,0,A_50d784,50d784,0,008b8518,ptm:gets,GetRtcAlarm
+3,0,0,A_50db68,50db68,0,008b8510,ptm:play,GetRtcAlarm
+3,0,0,A_50e2e4,50e2e4,0,008b850c,ptm:u,GetRtcAlarm
 3,0,0,A_51b738,51b738,1,,"nwm::UDS (session, inferred)",Finalize
-3,1,0,A_0092d8,92d8,1,008ab930,APT:U,
-3,1,0,A_4fdb30,4fdb30,0,008bb62c,cfg:i (copy),
-3,1,0,A_4fe0e0,4fe0e0,0,008bb628,cfg:i,
-3,1,0,A_4fe95c,4fe95c,1,008b878c,cfg:i (copy),
+3,1,0,A_0092d8,92d8,1,008ab930,APT:U,Enable
+3,1,0,A_4fdb30,4fdb30,0,008bb62c,cfg:i (copy),GenHashConsoleUnique
+3,1,0,A_4fe0e0,4fe0e0,0,008bb628,cfg:i,GenHashConsoleUnique
+3,1,0,A_4fe95c,4fe95c,1,008b878c,cfg:i (copy),GenHashConsoleUnique
 3,1,0,A_51c0cc,51c0cc,1,008aaeb4,y2r:u,
-3,1,0,A_53a3d4,53a3d4,1,008aab70,cam:u,
-3,1,2,A_4e3d50,4e3d50,0,008b8764,ac:i,
+3,1,0,A_53a3d4,53a3d4,1,008aab70,cam:u,IsBusy
+3,1,2,A_4e3d50,4e3d50,0,008b8764,ac:i,DebugSetNetworkArea
 3,2,0,A_5015ac,5015ac,0,,"dsp::DSP (session, inferred)",SendData
-3,4,4,A_4fb3b0,4fb3b0,1,008b8778,cecd:u,
-3,4,4,A_4fbc0c,4fbc0c,1,008b877c,cecd:s,
-3,5,0,A_503c60,503c60,1,008b7d48,mic:u,
-4,0,0,A_4f3e88,4f3e88,1,008bf998,ir:USER,
-4,0,0,A_4fdbb0,4fdbb0,0,008bb62c,cfg:i (copy),
-4,0,0,A_4fe1dc,4fe1dc,0,008bb628,cfg:i,
-4,0,0,A_4fe9e0,4fe9e0,0,008b878c,cfg:i (copy),
-4,0,0,A_50c80c,50c80c,0,008b8514,ptm:sysm,
-4,0,0,A_50d344,50d344,0,008b851c,ptm:s,
-4,0,0,A_50d874,50d874,0,008b8518,ptm:gets,
-4,0,0,A_50dc18,50dc18,0,008b8510,ptm:play,
-4,0,0,A_50e394,50e394,0,008b850c,ptm:u,
+3,4,4,A_4fb3b0,4fb3b0,1,008b8778,cecd:u,ReadMessage
+3,4,4,A_4fbc0c,4fbc0c,1,008b877c,cecd:s,ReadMessage
+3,5,0,A_503c60,503c60,1,008b7d48,mic:u,StartSampling
+4,0,0,A_4f3e88,4f3e88,1,008bf998,ir:USER,ClearSendBuffer
+4,0,0,A_4fdbb0,4fdbb0,0,008bb62c,cfg:i (copy),GetRegionCanadaUSA
+4,0,0,A_4fe1dc,4fe1dc,0,008bb628,cfg:i,GetRegionCanadaUSA
+4,0,0,A_4fe9e0,4fe9e0,0,008b878c,cfg:i (copy),GetRegionCanadaUSA
+4,0,0,A_50c80c,50c80c,0,008b8514,ptm:sysm,CancelRtcAlarm
+4,0,0,A_50d344,50d344,0,008b851c,ptm:s,CancelRtcAlarm
+4,0,0,A_50d874,50d874,0,008b8518,ptm:gets,CancelRtcAlarm
+4,0,0,A_50dc18,50dc18,0,008b8510,ptm:play,CancelRtcAlarm
+4,0,0,A_50e394,50e394,0,008b850c,ptm:u,CancelRtcAlarm
 4,0,0,A_51c090,51c090,0,008aaeb4,y2r:u,
 4,0,0,A_51f650,51f650,1,,"boss (session, inferred)",GetStorageInfo
 4,0,0,A_521e34,521e34,1,,"boss (session, inferred)",GetStorageInfo
-4,0,0,A_53cafc,53cafc,0,008b8790,frd:a,
-4,0,2,A_504514,504514,0,008b8818,ndm:u,
-4,0,6,A_4e1de0,4e1de0,1,008ab858,ac (copy of the ac:i handle),
-4,0,6,A_4e32fc,4e32fc,0,008b8764,ac:i,
+4,0,0,A_53cafc,53cafc,0,008b8790,frd:a,Logout
+4,0,2,A_504514,504514,0,008b8818,ndm:u,LockState
+4,0,6,A_4e1de0,4e1de0,1,008ab858,ac (copy of the ac:i handle),ConnectAsync
+4,0,6,A_4e32fc,4e32fc,0,008b8764,ac:i,ConnectAsync
 4,1,0,A_5011c0,5011c0,0,,"dsp::DSP (session, inferred)",SendDataIsEmpty
-4,1,0,A_503cb4,503cb4,1,008b7d48,mic:u,
-4,1,0,A_538068,538068,2,008ab930,APT:U,
-4,1,0,A_539330,539330,1,008aab70,cam:u,
+4,1,0,A_503cb4,503cb4,1,008b7d48,mic:u,AdjustSampling
+4,1,0,A_538068,538068,2,008ab930,APT:U,Finalize
+4,1,0,A_539330,539330,1,008aab70,cam:u,ClearBuffer
 4,3,0,A_5030c8,5030c8,0,008b7d20,hid:USER (hid:SPVR shares the init),
-5,0,0,A_4fd9a4,4fd9a4,0,008bb62c,cfg:i (copy),
-5,0,0,A_4fde40,4fde40,0,008bb628,cfg:i,
-5,0,0,A_4fe920,4fe920,0,008b878c,cfg:i (copy),
+5,0,0,A_4fd9a4,4fd9a4,0,008bb62c,cfg:i (copy),GetSystemModel
+5,0,0,A_4fde40,4fde40,0,008bb628,cfg:i,GetSystemModel
+5,0,0,A_4fe920,4fe920,0,008b878c,cfg:i (copy),GetSystemModel
 5,0,0,A_503174,503174,0,008b7d20,hid:USER (hid:SPVR shares the init),
-5,0,0,A_503c30,503c30,2,008b7d48,mic:u,
-5,0,0,A_50c9f0,50c9f0,0,008b8514,ptm:sysm,
-5,0,0,A_50d410,50d410,0,008b851c,ptm:s,
-5,0,0,A_50d8f0,50d8f0,0,008b8518,ptm:gets,
-5,0,0,A_50dcec,50dcec,0,008b8510,ptm:play,
-5,0,0,A_50e410,50e410,0,008b850c,ptm:u,
-5,0,0,A_53b900,53b900,0,008b8790,frd:a,
-5,0,0,A_540aec,540aec,2,008b7ccc,frd:u,
-5,0,2,A_4e2280,4e2280,1,008ab858,ac (copy of the ac:i handle),
-5,0,2,A_4e379c,4e379c,0,008b8764,ac:i,
-5,0,2,A_504098,504098,0,008b8818,ndm:u,
+5,0,0,A_503c30,503c30,2,008b7d48,mic:u,StopSampling
+5,0,0,A_50c9f0,50c9f0,0,008b8514,ptm:sysm,GetAdapterState
+5,0,0,A_50d410,50d410,0,008b851c,ptm:s,GetAdapterState
+5,0,0,A_50d8f0,50d8f0,0,008b8518,ptm:gets,GetAdapterState
+5,0,0,A_50dcec,50dcec,0,008b8510,ptm:play,GetAdapterState
+5,0,0,A_50e410,50e410,0,008b850c,ptm:u,GetAdapterState
+5,0,0,A_53b900,53b900,0,008b8790,frd:a,GetMyFriendKey
+5,0,0,A_540aec,540aec,2,008b7ccc,frd:u,GetMyFriendKey
+5,0,2,A_4e2280,4e2280,1,008ab858,ac (copy of the ac:i handle),GetConnectResult
+5,0,2,A_4e379c,4e379c,0,008b8764,ac:i,GetConnectResult
+5,0,2,A_504098,504098,0,008b8818,ndm:u,UnlockState
 5,1,0,A_51b018,51b018,1,,"nwm::UDS (session, inferred)",EjectClient
 5,1,0,A_51bd38,51bd38,1,008aaeb4,y2r:u,
-5,1,0,A_537144,537144,3,008ab930,APT:U,
-5,1,0,A_539dc8,539dc8,1,008aab70,cam:u,
-5,1,2,A_4fb944,4fb944,0,008b8778,cecd:u,
-5,1,2,A_4fc5bc,4fc5bc,0,008b877c,cecd:s,
-5,3,0,A_4f3e44,4f3e44,2,008bf998,ir:USER,
-6,0,0,A_4fdb74,4fdb74,0,008bb62c,cfg:i (copy),
-6,0,0,A_4fe1a0,4fe1a0,0,008bb628,cfg:i,
-6,0,0,A_4fe9a4,4fe9a4,0,008b878c,cfg:i (copy),
+5,1,0,A_537144,537144,3,008ab930,APT:U,GetAppletManInfo
+5,1,0,A_539dc8,539dc8,1,008aab70,cam:u,GetVsyncInterruptEvent
+5,1,2,A_4fb944,4fb944,0,008b8778,cecd:u,Write/WriteRawFile
+5,1,2,A_4fc5bc,4fc5bc,0,008b877c,cecd:s,Write/WriteRawFile
+5,3,0,A_4f3e44,4f3e44,2,008bf998,ir:USER,WaitConnection
+6,0,0,A_4fdb74,4fdb74,0,008bb62c,cfg:i (copy),GetModelNintendo2DS
+6,0,0,A_4fe1a0,4fe1a0,0,008bb628,cfg:i,GetModelNintendo2DS
+6,0,0,A_4fe9a4,4fe9a4,0,008b878c,cfg:i (copy),GetModelNintendo2DS
 6,0,0,A_5031a4,5031a4,0,008b7d20,hid:USER (hid:SPVR shares the init),
-6,0,0,A_503bb0,503bb0,3,008b7d48,mic:u,
-6,0,0,A_50c750,50c750,0,008b8514,ptm:sysm,
-6,0,0,A_50d288,50d288,0,008b851c,ptm:s,
-6,0,0,A_50d7f8,50d7f8,0,008b8518,ptm:gets,
-6,0,0,A_50dbdc,50dbdc,0,008b8510,ptm:play,
-6,0,0,A_50e358,50e358,0,008b850c,ptm:u,
+6,0,0,A_503bb0,503bb0,3,008b7d48,mic:u,IsSampling
+6,0,0,A_50c750,50c750,0,008b8514,ptm:sysm,GetShellState
+6,0,0,A_50d288,50d288,0,008b851c,ptm:s,GetShellState
+6,0,0,A_50d7f8,50d7f8,0,008b8518,ptm:gets,GetShellState
+6,0,0,A_50dbdc,50dbdc,0,008b8510,ptm:play,GetShellState
+6,0,0,A_50e358,50e358,0,008b850c,ptm:u,GetShellState
 6,0,0,A_51b104,51b104,1,,"nwm::UDS (session, inferred)",EjectSpectator
 6,0,0,A_51bcc0,51bcc0,0,008aaeb4,y2r:u,
 6,0,0,A_521a14,521a14,1,,"boss (session, inferred)",
-6,0,0,A_53ba88,53ba88,0,008b8790,frd:a,
-6,0,0,A_540c30,540c30,2,008b7ccc,frd:u,
-6,1,0,A_4f4024,4f4024,1,008bf998,ir:USER,
-6,1,0,A_536dd8,536dd8,1,008ab930,APT:U,
-6,1,0,A_53a040,53a040,1,008aab70,cam:u,
-6,3,6,A_4e2d28,4e2d28,0,008ab858,ac (copy of the ac:i handle),
-6,3,6,A_4e43a8,4e43a8,0,008b8764,ac:i,
-6,4,4,A_4fb46c,4fb46c,1,008b8778,cecd:u,
-6,4,4,A_4fbdec,4fbdec,1,008b877c,cecd:s,
-7,0,0,A_503db8,503db8,0,008b7d48,mic:u,
-7,0,0,A_50ca2c,50ca2c,0,008b8514,ptm:sysm,
-7,0,0,A_50d44c,50d44c,0,008b851c,ptm:s,
-7,0,0,A_50d92c,50d92c,0,008b8518,ptm:gets,
-7,0,0,A_50dd28,50dd28,0,008b8510,ptm:play,
-7,0,0,A_50e44c,50e44c,0,008b850c,ptm:u,
+6,0,0,A_53ba88,53ba88,0,008b8790,frd:a,GetMyPreference
+6,0,0,A_540c30,540c30,2,008b7ccc,frd:u,GetMyPreference
+6,1,0,A_4f4024,4f4024,1,008bf998,ir:USER,RequireConnection
+6,1,0,A_536dd8,536dd8,1,008ab930,APT:U,GetAppletInfo
+6,1,0,A_53a040,53a040,1,008aab70,cam:u,GetBufferErrorInterruptEvent
+6,3,6,A_4e2d28,4e2d28,0,008ab858,ac (copy of the ac:i handle),DebugSetNetworkSetting1
+6,3,6,A_4e43a8,4e43a8,0,008b8764,ac:i,DebugSetNetworkSetting1
+6,4,4,A_4fb46c,4fb46c,1,008b8778,cecd:u,WriteMessage
+6,4,4,A_4fbdec,4fbdec,1,008b877c,cecd:s,WriteMessage
+7,0,0,A_503db8,503db8,0,008b7d48,mic:u,GetEventHandle
+7,0,0,A_50ca2c,50ca2c,0,008b8514,ptm:sysm,GetBatteryLevel
+7,0,0,A_50d44c,50d44c,0,008b851c,ptm:s,GetBatteryLevel
+7,0,0,A_50d92c,50d92c,0,008b8518,ptm:gets,GetBatteryLevel
+7,0,0,A_50dd28,50dd28,0,008b8510,ptm:play,GetBatteryLevel
+7,0,0,A_50e44c,50e44c,0,008b850c,ptm:u,GetBatteryLevel
 7,0,0,A_51f8a0,51f8a0,1,,"boss (session, inferred)",GetNewArrivalFlag
 7,0,0,A_522004,522004,1,,"boss (session, inferred)",GetNewArrivalFlag
-7,0,0,A_53794c,53794c,0,008ab930,APT:U,
-7,0,0,A_53b6dc,53b6dc,0,008b8790,frd:a,
-7,0,2,A_4e3b9c,4e3b9c,0,008b8764,ac:i,
+7,0,0,A_53794c,53794c,0,008ab930,APT:U,GetLastSignaledAppletId
+7,0,0,A_53b6dc,53b6dc,0,008b8790,frd:a,GetMyProfile
+7,0,2,A_4e3b9c,4e3b9c,0,008b8764,ac:i,CancelConnectAsync
 7,1,0,A_51c21c,51c21c,1,008aaeb4,y2r:u,
 7,2,0,A_51b510,51b510,3,,"nwm::UDS (session, inferred)",UpdateNetworkAttribute
-7,4,2,A_5395b8,5395b8,1,008aab70,cam:u,
-7,4,6,A_4fb73c,4fb73c,1,008b8778,cecd:u,
-7,4,6,A_4fc2b4,4fc2b4,1,008b877c,cecd:s,
+7,4,2,A_5395b8,5395b8,1,008aab70,cam:u,SetReceiving
+7,4,6,A_4fb73c,4fb73c,1,008b8778,cecd:u,WriteMessageWithHMAC
+7,4,6,A_4fc2b4,4fc2b4,1,008b877c,cecd:s,WriteMessageWithHMAC
 7,5,0,A_50306c,50306c,0,008b7d20,hid:USER (hid:SPVR shares the init),
-7,11,0,A_4f3da8,4f3da8,2,008bf998,ir:USER,
-8,0,0,A_4f3d48,4f3d48,1,008bf998,ir:USER,
+7,11,0,A_4f3da8,4f3da8,2,008bf998,ir:USER,AutoConnection
+8,0,0,A_4f3d48,4f3d48,1,008bf998,ir:USER,AnyConnection
 8,0,0,A_501018,501018,0,,"dsp::DSP (session, inferred)",GetSemaphore
 8,0,0,A_503114,503114,0,008b7d20,hid:USER (hid:SPVR shares the init),
-8,0,0,A_50cee0,50cee0,0,008b8514,ptm:sysm,
-8,0,0,A_50d660,50d660,0,008b851c,ptm:s,
-8,0,0,A_50dab8,50dab8,0,008b8518,ptm:gets,
-8,0,0,A_50df78,50df78,0,008b8510,ptm:play,
-8,0,0,A_50e5d8,50e5d8,0,008b850c,ptm:u,
+8,0,0,A_50cee0,50cee0,0,008b8514,ptm:sysm,GetBatteryChargeState
+8,0,0,A_50d660,50d660,0,008b851c,ptm:s,GetBatteryChargeState
+8,0,0,A_50dab8,50dab8,0,008b8518,ptm:gets,GetBatteryChargeState
+8,0,0,A_50df78,50df78,0,008b8510,ptm:play,GetBatteryChargeState
+8,0,0,A_50e5d8,50e5d8,0,008b850c,ptm:u,GetBatteryChargeState
 8,0,0,A_51b0dc,51b0dc,1,,"nwm::UDS (session, inferred)",DestroyNetwork
-8,0,0,A_537800,537800,0,008ab930,APT:U,
-8,0,0,A_53b830,53b830,0,008b8790,frd:a,
-8,0,0,A_540a60,540a60,3,008b7ccc,frd:u,
-8,0,4,A_4e1d4c,4e1d4c,1,008ab858,ac (copy of the ac:i handle),
-8,0,4,A_4e3268,4e3268,0,008b8764,ac:i,
-8,1,0,A_503e68,503e68,2,008b7d48,mic:u,
-8,1,0,A_50429c,50429c,0,008b8818,ndm:u,
-8,1,0,A_539c1c,539c1c,0,008aab70,cam:u,
-8,4,2,A_4fb98c,4fb98c,0,008b8778,cecd:u,
-8,4,2,A_4fc604,4fc604,1,008b877c,cecd:s,
-9,0,0,A_4f3c68,4f3c68,1,008bf998,ir:USER,
+8,0,0,A_537800,537800,0,008ab930,APT:U,CountRegisteredApplet
+8,0,0,A_53b830,53b830,0,008b8790,frd:a,GetMyPresence
+8,0,0,A_540a60,540a60,3,008b7ccc,frd:u,GetMyPresence
+8,0,4,A_4e1d4c,4e1d4c,1,008ab858,ac (copy of the ac:i handle),CloseAsync
+8,0,4,A_4e3268,4e3268,0,008b8764,ac:i,CloseAsync
+8,1,0,A_503e68,503e68,2,008b7d48,mic:u,SetGain
+8,1,0,A_50429c,50429c,0,008b8818,ndm:u,SuspendScheduler
+8,1,0,A_539c1c,539c1c,0,008aab70,cam:u,IsFinishedReceiving
+8,4,2,A_4fb98c,4fb98c,0,008b8778,cecd:u,Delete
+8,4,2,A_4fc604,4fc604,1,008b877c,cecd:s,Delete
+9,0,0,A_4f3c68,4f3c68,1,008bf998,ir:USER,Disconnect
 9,0,0,A_503144,503144,0,008b7d20,hid:USER (hid:SPVR shares the init),
-9,0,0,A_503e2c,503e2c,0,008b7d48,mic:u,
-9,0,0,A_5041c0,5041c0,0,008b8818,ndm:u,
-9,0,0,A_50cc24,50cc24,0,008b8514,ptm:sysm,
-9,0,0,A_50d510,50d510,0,008b851c,ptm:s,
-9,0,0,A_50d968,50d968,0,008b8518,ptm:gets,
-9,0,0,A_50dd64,50dd64,0,008b8510,ptm:play,
-9,0,0,A_50e488,50e488,0,008b850c,ptm:u,
-9,0,2,A_4e2030,4e2030,1,008ab858,ac (copy of the ac:i handle),
-9,0,2,A_4e354c,4e354c,0,008b8764,ac:i,
-9,1,0,A_013260,13260,4,008ab930,APT:U,
+9,0,0,A_503e2c,503e2c,0,008b7d48,mic:u,GetGain
+9,0,0,A_5041c0,5041c0,0,008b8818,ndm:u,ResumeScheduler
+9,0,0,A_50cc24,50cc24,0,008b8514,ptm:sysm,GetPedometerState
+9,0,0,A_50d510,50d510,0,008b851c,ptm:s,GetPedometerState
+9,0,0,A_50d968,50d968,0,008b8518,ptm:gets,GetPedometerState
+9,0,0,A_50dd64,50dd64,0,008b8510,ptm:play,GetPedometerState
+9,0,0,A_50e488,50e488,0,008b850c,ptm:u,GetPedometerState
+9,0,2,A_4e2030,4e2030,1,008ab858,ac (copy of the ac:i handle),GetCloseResult
+9,0,2,A_4e354c,4e354c,0,008b8764,ac:i,GetCloseResult
+9,1,0,A_013260,13260,4,008ab930,APT:U,IsRegistered
 9,1,0,A_5010bc,5010bc,0,,"dsp::DSP (session, inferred)",ClearSemaphore
 9,1,0,A_51828c,51828c,0,008bb4e0,srv:pm,
 9,1,0,A_5185a4,5185a4,7,008b85f4,srv:pm,
 9,1,0,A_51c48c,51c48c,0,008aaeb4,y2r:u,
 9,1,0,A_51f618,51f618,1,,"boss (session, inferred)",SetOptoutFlag
 9,1,0,A_521dfc,521dfc,1,,"boss (session, inferred)",SetOptoutFlag
-9,4,0,A_539a14,539a14,1,008aab70,cam:u,
-10,0,0,A_0088b8,88b8,1,008b7d20,hid:USER (hid:SPVR shares the init),
-10,0,0,A_4e3828,4e3828,0,008b8764,ac:i,
-10,0,0,A_4f3eb8,4f3eb8,1,008bf998,ir:USER,
-10,0,0,A_504148,504148,0,008b8818,ndm:u,
+9,4,0,A_539a14,539a14,1,008aab70,cam:u,SetTransferLines
+10,0,0,A_0088b8,88b8,1,008b7d20,hid:USER (hid:SPVR shares the init),GetIPCHandles
+10,0,0,A_4e3828,4e3828,0,008b8764,ac:i,GetLastErrorCode
+10,0,0,A_4f3eb8,4f3eb8,1,008bf998,ir:USER,GetReceiveEvent
+10,0,0,A_504148,504148,0,008b8818,ndm:u,GetCurrentState
 10,0,0,A_51b268,51b268,1,,"nwm::UDS (session, inferred)",DisconnectNetwork
 10,0,0,A_51c390,51c390,0,008aaeb4,y2r:u,
 10,0,0,A_51f47c,51f47c,1,,"boss (session, inferred)",GetOptoutFlag
 10,0,0,A_521ca0,521ca0,1,,"boss (session, inferred)",GetOptoutFlag
 10,1,0,A_501084,501084,0,,"dsp::DSP (session, inferred)",MaskSemaphore
-10,1,0,A_503bec,503bec,2,008b7d48,mic:u,
+10,1,0,A_503bec,503bec,2,008b7d48,mic:u,SetPower
 10,1,0,A_517d9c,517d9c,0,008bb4e0,srv:pm,
 10,1,0,A_5182c4,5182c4,4,008b85f4,srv:pm,
-10,1,0,A_536d50,536d50,0,008ab930,APT:U,
-10,1,2,A_50cda0,50cda0,0,008b8514,ptm:sysm,
-10,1,2,A_50d5d8,50d5d8,0,008b851c,ptm:s,
-10,1,2,A_50da30,50da30,0,008b8518,ptm:gets,
-10,1,2,A_50de6c,50de6c,0,008b8510,ptm:play,
-10,1,2,A_50e550,50e550,0,008b850c,ptm:u,
-10,2,0,A_5393c0,5393c0,1,008aab70,cam:u,
-10,3,4,A_4fba30,4fba30,0,008b8778,cecd:u,
-10,3,4,A_4fc6a8,4fc6a8,1,008b877c,cecd:s,
+10,1,0,A_536d50,536d50,0,008ab930,APT:U,GetAttribute
+10,1,2,A_50cda0,50cda0,0,008b8514,ptm:sysm,GetStepHistoryEntry
+10,1,2,A_50d5d8,50d5d8,0,008b851c,ptm:s,GetStepHistoryEntry
+10,1,2,A_50da30,50da30,0,008b8518,ptm:gets,GetStepHistoryEntry
+10,1,2,A_50de6c,50de6c,0,008b8510,ptm:play,GetStepHistoryEntry
+10,1,2,A_50e550,50e550,0,008b850c,ptm:u,GetStepHistoryEntry
+10,2,0,A_5393c0,5393c0,1,008aab70,cam:u,GetMaxLines
+10,3,4,A_4fba30,4fba30,0,008b8778,cecd:u,ReadData/GetSystemInfo
+10,3,4,A_4fc6a8,4fc6a8,1,008b877c,cecd:s,ReadData/GetSystemInfo
 11,0,0,A_011cb0,11cb0,2,008b85f4,srv:pm,
-11,0,0,A_4e2bf4,4e2bf4,0,008ab858,ac (copy of the ac:i handle),
-11,0,0,A_4e4274,4e4274,0,008b8764,ac:i,
-11,0,0,A_4f3c98,4f3c98,1,008bf998,ir:USER,
+11,0,0,A_4e2bf4,4e2bf4,0,008ab858,ac (copy of the ac:i handle),GetLastDetailErrorCode
+11,0,0,A_4e4274,4e4274,0,008b8764,ac:i,GetLastDetailErrorCode
+11,0,0,A_4f3c98,4f3c98,1,008bf998,ir:USER,GetSendEvent
 11,0,0,A_501488,501488,0,,"dsp::DSP (session, inferred)",CheckSemaphoreRequest
-11,0,0,A_502e90,502e90,0,008b7d20,hid:USER (hid:SPVR shares the init),
-11,0,0,A_503b70,503b70,0,008b7d48,mic:u,
-11,0,0,A_50410c,50410c,0,008b8818,ndm:u,
+11,0,0,A_502e90,502e90,0,008b7d20,hid:USER (hid:SPVR shares the init),StartAnalogStickCalibration
+11,0,0,A_503b70,503b70,0,008b7d48,mic:u,GetPower
+11,0,0,A_50410c,50410c,0,008b8818,ndm:u,GetTargetState
 11,0,0,A_5181f8,5181f8,0,008bb4e0,srv:pm,
 11,0,0,A_51b3bc,51b3bc,1,,"nwm::UDS (session, inferred)",GetConnectionStatus
-11,0,0,A_53c1fc,53c1fc,0,008b8790,frd:a,
-11,0,0,A_5410ec,5410ec,1,008b7ccc,frd:u,
-11,1,0,A_01d88c,1d88c,1,008ab930,APT:U,
+11,0,0,A_53c1fc,53c1fc,0,008b8790,frd:a,GetMyLocalAccountId
+11,0,0,A_5410ec,5410ec,1,008b7ccc,frd:u,GetMyLocalAccountId
+11,1,0,A_01d88c,1d88c,1,008ab930,APT:U,InquireNotification
 11,1,0,A_51c5e8,51c5e8,0,008aaeb4,y2r:u,
 11,1,0,A_5338e0,5338e0,1,,,
-11,3,2,A_50c958,50c958,0,008b8514,ptm:sysm,
-11,3,2,A_50d3c4,50d3c4,0,008b851c,ptm:s,
-11,3,2,A_50d8a4,50d8a4,0,008b8518,ptm:gets,
-11,3,2,A_50dca0,50dca0,0,008b8510,ptm:play,
-11,3,2,A_50e3c4,50e3c4,1,008b850c,ptm:u,
+11,3,2,A_50c958,50c958,0,008b8514,ptm:sysm,GetStepHistory
+11,3,2,A_50d3c4,50d3c4,0,008b851c,ptm:s,GetStepHistory
+11,3,2,A_50d8a4,50d8a4,0,008b8518,ptm:gets,GetStepHistory
+11,3,2,A_50dca0,50dca0,0,008b8510,ptm:play,GetStepHistory
+11,3,2,A_50e3c4,50e3c4,1,008b850c,ptm:u,GetStepHistory
 11,3,2,A_51f3dc,51f3dc,1,,"boss (session, inferred)",RegisterTask
 11,3,2,A_521c00,521c00,1,,"boss (session, inferred)",RegisterTask
-11,4,0,A_5399c0,5399c0,1,008aab70,cam:u,
+11,4,0,A_5399c0,5399c0,1,008aab70,cam:u,SetTransferBytes
 12,0,0,A_02af84,2af84,1,,,
-12,0,0,A_4e322c,4e322c,1,008ab858,ac (copy of the ac:i handle),
-12,0,0,A_4e7398,4e7398,0,008b8764,ac:i,
-12,0,0,A_4f41bc,4f41bc,1,008bf998,ir:USER,
+12,0,0,A_4e322c,4e322c,1,008ab858,ac (copy of the ac:i handle),GetStatus
+12,0,0,A_4e7398,4e7398,0,008b8764,ac:i,GetStatus
+12,0,0,A_4f41bc,4f41bc,1,008bf998,ir:USER,GetConnectionStatusEvent
 12,0,0,A_504404,504404,0,008b8818,ndm:u,
-12,0,0,A_50ccb0,50ccb0,0,008b8514,ptm:sysm,
-12,0,0,A_50d59c,50d59c,0,008b851c,ptm:s,
-12,0,0,A_50d9f4,50d9f4,0,008b8518,ptm:gets,
-12,0,0,A_50ddf0,50ddf0,0,008b8510,ptm:play,
-12,0,0,A_50e514,50e514,1,008b850c,ptm:u,
+12,0,0,A_50ccb0,50ccb0,0,008b8514,ptm:sysm,GetTotalStepCount
+12,0,0,A_50d59c,50d59c,0,008b851c,ptm:s,GetTotalStepCount
+12,0,0,A_50d9f4,50d9f4,0,008b8518,ptm:gets,GetTotalStepCount
+12,0,0,A_50ddf0,50ddf0,0,008b8510,ptm:play,GetTotalStepCount
+12,0,0,A_50e514,50e514,1,008b850c,ptm:u,GetTotalStepCount
 12,0,0,A_51c51c,51c51c,0,008aaeb4,y2r:u,
-12,0,0,A_53bc60,53bc60,0,008b8790,frd:a,
+12,0,0,A_53bc60,53bc60,0,008b8790,frd:a,GetMyPlayingGame
 12,1,0,A_50152c,50152c,1,,"dsp::DSP (session, inferred)",ConvertProcessAddressFromDspDram
 12,1,0,A_502ddc,502ddc,0,008b7d20,hid:USER (hid:SPVR shares the init),
-12,1,0,A_539938,539938,1,008aab70,cam:u,
-12,1,2,A_503d34,503d34,3,008b7d48,mic:u,
+12,1,0,A_539938,539938,1,008aab70,cam:u,GetTransferBytes
+12,1,2,A_503d34,503d34,3,008b7d48,mic:u,SetIirFilterMic
 12,2,0,A_5181c0,5181c0,0,008bb4e0,srv:pm,
 12,2,0,A_518514,518514,6,008b85f4,srv:pm,
 12,2,2,A_51f684,51f684,1,,"boss (session, inferred)",UnregisterTask
 12,2,2,A_521e68,521e68,1,,"boss (session, inferred)",UnregisterTask
-12,4,4,A_025a3c,25a3c,1,008ab930,APT:U,
-13,0,0,A_4e3dec,4e3dec,0,008b8764,ac:i,
-13,0,0,A_53be98,53be98,0,008b8790,frd:a,
-13,1,0,A_503ee4,503ee4,0,008b7d48,mic:u,
-13,1,0,A_50404c,50404c,0,008b8818,ndm:u,
-13,1,0,A_50d008,50d008,0,008b8514,ptm:sysm,
-13,1,0,A_50d6d8,50d6d8,0,008b851c,ptm:s,
-13,1,0,A_50db30,50db30,0,008b8518,ptm:gets,
-13,1,0,A_50dff0,50dff0,0,008b8510,ptm:play,
-13,1,0,A_50e650,50e650,0,008b850c,ptm:u,
+12,4,4,A_025a3c,25a3c,1,008ab930,APT:U,SendParameter
+13,0,0,A_4e3dec,4e3dec,0,008b8764,ac:i,GetWifiStatus
+13,0,0,A_53be98,53be98,0,008b8790,frd:a,GetMyFavoriteGame
+13,1,0,A_503ee4,503ee4,0,008b7d48,mic:u,SetClamp
+13,1,0,A_50404c,50404c,0,008b8818,ndm:u,QueryStatus
+13,1,0,A_50d008,50d008,0,008b8514,ptm:sysm,SetPedometerRecordingMode
+13,1,0,A_50d6d8,50d6d8,0,008b851c,ptm:s,SetPedometerRecordingMode
+13,1,0,A_50db30,50db30,0,008b8518,ptm:gets,SetPedometerRecordingMode
+13,1,0,A_50dff0,50dff0,0,008b8510,ptm:play,SetPedometerRecordingMode
+13,1,0,A_50e650,50e650,0,008b850c,ptm:u,SetPedometerRecordingMode
 13,1,0,A_51b328,51b328,2,,"nwm::UDS (session, inferred)",GetNodeInformation
 13,1,0,A_51c69c,51c69c,0,008aaeb4,y2r:u,
-13,1,2,A_4f432c,4f432c,1,008bf998,ir:USER,
-13,2,0,A_53936c,53936c,0,008aab70,cam:u,
-13,2,2,A_4fb54c,4fb54c,0,008b8778,cecd:u,
-13,2,2,A_4fc020,4fc020,0,008b877c,cecd:s,
+13,1,2,A_4f432c,4f432c,1,008bf998,ir:USER,SendIrnop
+13,2,0,A_53936c,53936c,0,008aab70,cam:u,GetMaxBytes
+13,2,2,A_4fb54c,4fb54c,0,008b8778,cecd:u,GetCecInfoBuffer
+13,2,2,A_4fc020,4fc020,0,008b877c,cecd:s,GetCecInfoBuffer
 13,7,0,A_502f64,502f64,0,008b7d20,hid:USER (hid:SPVR shares the init),
-14,0,0,A_502ec0,502ec0,0,008b7d20,hid:USER (hid:SPVR shares the init),
-14,0,0,A_503ea8,503ea8,0,008b7d48,mic:u,
-14,0,0,A_50cf94,50cf94,0,008b8514,ptm:sysm,
-14,0,0,A_50d69c,50d69c,0,008b851c,ptm:s,
-14,0,0,A_50daf4,50daf4,0,008b8518,ptm:gets,
-14,0,0,A_50dfb4,50dfb4,0,008b8510,ptm:play,
-14,0,0,A_50e614,50e614,0,008b850c,ptm:u,
+14,0,0,A_502ec0,502ec0,0,008b7d20,hid:USER (hid:SPVR shares the init),GetAnalogStickCalibrateParam
+14,0,0,A_503ea8,503ea8,0,008b7d48,mic:u,GetClamp
+14,0,0,A_50cf94,50cf94,0,008b8514,ptm:sysm,GetPedometerRecordingMode
+14,0,0,A_50d69c,50d69c,0,008b851c,ptm:s,GetPedometerRecordingMode
+14,0,0,A_50daf4,50daf4,0,008b8518,ptm:gets,GetPedometerRecordingMode
+14,0,0,A_50dfb4,50dfb4,0,008b8510,ptm:play,GetPedometerRecordingMode
+14,0,0,A_50e614,50e614,0,008b850c,ptm:u,GetPedometerRecordingMode
 14,0,0,A_51c660,51c660,0,008aaeb4,y2r:u,
 14,0,0,A_51f530,51f530,1,,"boss (session, inferred)",GetTaskIdList
 14,0,0,A_521d14,521d14,1,,"boss (session, inferred)",GetTaskIdList
-14,0,0,A_53c03c,53c03c,0,008b8790,frd:a,
-14,1,0,A_504440,504440,0,008b8818,ndm:u,
-14,1,2,A_4e2e28,4e2e28,0,008ab858,ac (copy of the ac:i handle),
-14,1,2,A_4e44a8,4e44a8,0,008b8764,ac:i,
-14,1,2,A_4f3dfc,4f3dfc,1,008bf998,ir:USER,
-14,2,0,A_5394a4,5394a4,1,008aab70,cam:u,
-15,0,0,A_4e2f68,4e2f68,0,008ab858,ac (copy of the ac:i handle),
-15,0,0,A_4e4664,4e4664,0,008b8764,ac:i,
-15,0,0,A_4fb7bc,4fb7bc,0,008b8778,cecd:u,
-15,0,0,A_4fc39c,4fc39c,0,008b877c,cecd:s,
-15,0,0,A_5044cc,5044cc,0,008b8818,ndm:u,
+14,0,0,A_53c03c,53c03c,0,008b8790,frd:a,GetMyNcPrincipalId
+14,1,0,A_504440,504440,0,008b8818,ndm:u,GetDaemonDisableCount
+14,1,2,A_4e2e28,4e2e28,0,008ab858,ac (copy of the ac:i handle),GetCurrentAPInfo
+14,1,2,A_4e44a8,4e44a8,0,008b8764,ac:i,GetCurrentAPInfo
+14,1,2,A_4f3dfc,4f3dfc,1,008bf998,ir:USER,SendIrnopLarge
+14,2,0,A_5394a4,5394a4,1,008aab70,cam:u,SetTrimming
+15,0,0,A_4e2f68,4e2f68,0,008ab858,ac (copy of the ac:i handle),GetConnectingInfraPriority
+15,0,0,A_4e4664,4e4664,0,008b8764,ac:i,GetConnectingInfraPriority
+15,0,0,A_4fb7bc,4fb7bc,0,008b8778,cecd:u,GetCecInfoEventHandle
+15,0,0,A_4fc39c,4fc39c,0,008b877c,cecd:s,GetCecInfoEventHandle
+15,0,0,A_5044cc,5044cc,0,008b8818,ndm:u,GetSchedulerDisableCount
 15,0,0,A_51c3cc,51c3cc,1,008aaeb4,y2r:u,
-15,1,0,A_4f3cd4,4f3cd4,0,008bf998,ir:USER,
-15,1,0,A_503d7c,503d7c,0,008b7d48,mic:u,
-15,1,0,A_5392e4,5392e4,0,008aab70,cam:u,
+15,1,0,A_4f3cd4,4f3cd4,0,008bf998,ir:USER,ReceiveIrnop
+15,1,0,A_503d7c,503d7c,0,008b7d48,mic:u,SetAllowShellClosed
+15,1,0,A_5392e4,5392e4,0,008aab70,cam:u,IsTrimming
 15,1,2,A_51f4f0,51f4f0,1,,"boss (session, inferred)",GetStepIdList
 15,1,2,A_521cd4,521cd4,1,,"boss (session, inferred)",GetStepIdList
-15,2,4,A_50cc60,50cc60,0,008b8514,ptm:sysm,
-15,2,4,A_50d54c,50d54c,0,008b851c,ptm:s,
-15,2,4,A_50d9a4,50d9a4,0,008b8518,ptm:gets,
-15,2,4,A_50dda0,50dda0,0,008b8510,ptm:play,
-15,2,4,A_50e4c4,50e4c4,0,008b850c,ptm:u,
+15,2,4,A_50cc60,50cc60,0,008b8514,ptm:sysm,GetStepHistoryAll
+15,2,4,A_50d54c,50d54c,0,008b851c,ptm:s,GetStepHistoryAll
+15,2,4,A_50d9a4,50d9a4,0,008b8518,ptm:gets,GetStepHistoryAll
+15,2,4,A_50dda0,50dda0,0,008b8510,ptm:play,GetStepHistoryAll
+15,2,4,A_50e4c4,50e4c4,0,008b850c,ptm:u,GetStepHistoryAll
 15,3,0,A_502fbc,502fbc,0,008b7d20,hid:USER (hid:SPVR shares the init),
-15,4,0,A_025a94,25a94,1,008ab930,APT:U,
+15,4,0,A_025a94,25a94,1,008ab930,APT:U,CancelParameter
 16,0,0,A_502f10,502f10,0,008b7d20,hid:USER (hid:SPVR shares the init),
 16,1,0,A_503df4,503df4,2,008b7d48,mic:u,
-16,1,0,A_5041f0,5041f0,0,008b8818,ndm:u,
-16,1,0,A_53b7d4,53b7d4,0,008b8790,frd:a,
-16,1,2,A_4e311c,4e311c,0,008ab858,ac (copy of the ac:i handle),
-16,1,2,A_4e4c28,4e4c28,0,008b8764,ac:i,
-16,1,2,A_4f3fc4,4f3fc4,0,008bf998,ir:USER,
+16,1,0,A_5041f0,5041f0,0,008b8818,ndm:u,SetScanInterval
+16,1,0,A_53b7d4,53b7d4,0,008b8790,frd:a,GetMyPassword
+16,1,2,A_4e311c,4e311c,0,008ab858,ac (copy of the ac:i handle),GetCurrentNZoneInfo
+16,1,2,A_4e4c28,4e4c28,0,008b8764,ac:i,GetCurrentNZoneInfo
+16,1,2,A_4f3fc4,4f3fc4,0,008bf998,ir:USER,ReceiveIrnopLarge
 16,1,2,A_51b378,51b378,1,,"nwm::UDS (session, inferred)",SetApplicationData
 16,3,0,A_5013e4,5013e4,1,,"dsp::DSP (session, inferred)",ReadPipeIfPossible
-16,3,2,A_5380a0,5380a0,0,008ab930,APT:U,
+16,3,2,A_5380a0,5380a0,0,008ab930,APT:U,DebugFunc
 16,4,2,A_51be2c,51be2c,1,008aaeb4,y2r:u,
-16,5,0,A_539b70,539b70,0,008aab70,cam:u,
-17,0,0,A_011ad4,11ad4,1,008b7d20,hid:USER (hid:SPVR shares the init),
-17,0,0,A_504184,504184,0,008b8818,ndm:u,
+16,5,0,A_539b70,539b70,0,008aab70,cam:u,SetTrimmingParams
+17,0,0,A_011ad4,11ad4,1,008b7d20,hid:USER (hid:SPVR shares the init),EnableAccelerometer
+17,0,0,A_504184,504184,0,008b8818,ndm:u,GetScanInterval
 17,1,0,A_4f42e0,4f42e0,1,008bf998,ir:USER,
 17,1,0,A_51b2c8,51b2c8,1,,"nwm::UDS (session, inferred)",GetApplicationData
-17,1,0,A_539abc,539abc,0,008aab70,cam:u,
-17,1,2,A_4e52b8,4e52b8,0,008b8764,ac:i,
-17,2,0,A_53bb8c,53bb8c,0,008b8790,frd:a,
-17,3,0,A_53778c,53778c,0,008ab930,APT:U,
+17,1,0,A_539abc,539abc,0,008aab70,cam:u,GetTrimmingParams
+17,1,2,A_4e52b8,4e52b8,0,008b8764,ac:i,GetNZoneApNumService
+17,2,0,A_53bb8c,53bb8c,0,008b8790,frd:a,GetFriendKeyList
+17,3,0,A_53778c,53778c,0,008ab930,APT:U,MapProgramIdForDebug
 17,3,2,A_028ec4,28ec4,4,,"dsp::DSP (session, inferred)",LoadComponent
 17,4,2,A_51bd74,51bd74,1,008aaeb4,y2r:u,
-17,4,4,A_4fb5d0,4fb5d0,0,008b8778,cecd:u,
-17,4,4,A_4fc0a4,4fc0a4,1,008b877c,cecd:s,
-18,0,0,A_01c6a4,1c6a4,1,008b7d20,hid:USER (hid:SPVR shares the init),
+17,4,4,A_4fb5d0,4fb5d0,0,008b8778,cecd:u,OpenAndWrite
+17,4,4,A_4fc0a4,4fc0a4,1,008b877c,cecd:s,OpenAndWrite
+18,0,0,A_01c6a4,1c6a4,1,008b7d20,hid:USER (hid:SPVR shares the init),DisableAccelerometer
 18,0,0,A_028f24,28f24,4,,"dsp::DSP (session, inferred)",UnloadComponent
 18,1,0,A_4f41f8,4f41f8,1,008bf998,ir:USER,
-18,1,0,A_504264,504264,0,008b8818,ndm:u,
-18,1,0,A_537d0c,537d0c,0,008ab930,APT:U,
-18,1,2,A_4e289c,4e289c,0,008ab858,ac (copy of the ac:i handle),
-18,1,2,A_4e3e28,4e3e28,0,008b8764,ac:i,
-18,1,2,A_53be28,53be28,0,008b8790,frd:a,
+18,1,0,A_504264,504264,0,008b8818,ndm:u,SetRetryInterval
+18,1,0,A_537d0c,537d0c,0,008ab930,APT:U,SetHomeMenuAppletIdForDebug
+18,1,2,A_4e289c,4e289c,0,008ab858,ac (copy of the ac:i handle),GetConnectingHotspot
+18,1,2,A_4e3e28,4e3e28,0,008b8764,ac:i,GetConnectingHotspot
+18,1,2,A_53be28,53be28,0,008b8790,frd:a,GetFriendPresence
 18,4,2,A_51bdd0,51bdd0,1,008aaeb4,y2r:u,
 18,4,2,A_51fba4,51fba4,1,,"boss (session, inferred)",GetNsDataIdList2
 18,4,2,A_52217c,52217c,1,,"boss (session, inferred)",GetNsDataIdList2
-18,4,4,A_4fb4dc,4fb4dc,1,008b8778,cecd:u,
-18,4,4,A_4fbfb0,4fbfb0,1,008b877c,cecd:s,
-18,5,0,A_539e5c,539e5c,1,008aab70,cam:u,
-19,0,0,A_011a74,11a74,1,008b7d20,hid:USER (hid:SPVR shares the init),
+18,4,4,A_4fb4dc,4fb4dc,1,008b8778,cecd:u,OpenAndRead
+18,4,4,A_4fbfb0,4fbfb0,1,008b877c,cecd:s,OpenAndRead
+18,5,0,A_539e5c,539e5c,1,008aab70,cam:u,SetTrimmingParamsCenter
+19,0,0,A_011a74,11a74,1,008b7d20,hid:USER (hid:SPVR shares the init),EnableGyroscopeLow
 19,0,0,A_4f4090,4f4090,0,008bf998,ir:USER,
-19,0,0,A_504228,504228,0,008b8818,ndm:u,
-19,0,0,A_5375a4,5375a4,0,008ab930,APT:U,
-19,1,0,A_025d38,25d38,3,008aab70,cam:u,
+19,0,0,A_504228,504228,0,008b8818,ndm:u,GetRetryInterval
+19,0,0,A_5375a4,5375a4,0,008ab930,APT:U,GetPreparationState
+19,1,0,A_025d38,25d38,3,008aab70,cam:u,Activate
 19,1,0,A_51b6f0,51b6f0,1,,"nwm::UDS (session, inferred)",Unbind
 19,1,2,A_029594,29594,1,,,
-19,1,2,A_4e2f04,4e2f04,0,008ab858,ac (copy of the ac:i handle),
-19,1,2,A_4e4600,4e4600,0,008b8764,ac:i,
+19,1,2,A_4e2f04,4e2f04,0,008ab858,ac (copy of the ac:i handle),GetConnectingHotspotSubset
+19,1,2,A_4e4600,4e4600,0,008b8764,ac:i,GetConnectingHotspotSubset
 19,4,2,A_51bf5c,51bf5c,1,008aaeb4,y2r:u,
-20,0,0,A_011aa4,11aa4,1,008b7d20,hid:USER (hid:SPVR shares the init),
+20,0,0,A_011aa4,11aa4,1,008b7d20,hid:USER (hid:SPVR shares the init),DisableGyroscopeLow
 20,0,0,A_0295e4,295e4,1,,,
 20,0,0,A_4f4244,4f4244,0,008bf998,ir:USER,
 20,0,0,A_51c558,51c558,0,008aaeb4,y2r:u,
-20,0,2,A_4e2a24,4e2a24,0,008ab858,ac (copy of the ac:i handle),
-20,0,2,A_4e4028,4e4028,0,008b8764,ac:i,
-20,1,0,A_011b40,11b40,1,008b8818,ndm:u,
-20,1,0,A_537664,537664,0,008ab930,APT:U,
-20,1,4,A_53b63c,53b63c,0,008b8790,frd:a,
-20,1,4,A_5408b4,5408b4,1,008b7ccc,frd:u,
-20,2,0,A_53971c,53971c,0,008aab70,cam:u,
+20,0,2,A_4e2a24,4e2a24,0,008ab858,ac (copy of the ac:i handle),GetConnectingLocation
+20,0,2,A_4e4028,4e4028,0,008b8764,ac:i,GetConnectingLocation
+20,1,0,A_011b40,11b40,1,008b8818,ndm:u,OverrideDefaultDaemons
+20,1,0,A_537664,537664,0,008ab930,APT:U,SetPreparationState
+20,1,4,A_53b63c,53b63c,0,008b8790,frd:a,GetFriendMii
+20,1,4,A_5408b4,5408b4,1,008b7ccc,frd:u,GetFriendMii
+20,2,0,A_53971c,53971c,0,008aab70,cam:u,SwitchContext
 20,2,2,A_50144c,50144c,0,,"dsp::DSP (session, inferred)",InvalidateDCache
 20,2,2,A_51f430,51f430,2,,"boss (session, inferred)",SendProperty
 20,2,2,A_521c54,521c54,1,,"boss (session, inferred)",SendProperty
 20,3,0,A_51afac,51afac,1,,"nwm::UDS (session, inferred)",PullPacket
-21,0,0,A_0250b4,250b4,1,008b7d20,hid:USER (hid:SPVR shares the init),
+21,0,0,A_0250b4,250b4,1,008b7d20,hid:USER (hid:SPVR shares the init),GetGyroscopeLowRawToDpsCoefficient
 21,0,0,A_4f4280,4f4280,0,008bf998,ir:USER,
-21,0,0,A_5043d4,5043d4,0,008b8818,ndm:u,
+21,0,0,A_5043d4,5043d4,0,008b8818,ndm:u,ResetDefaultDaemons
 21,0,0,A_51c30c,51c30c,0,008aaeb4,y2r:u,
 21,0,2,A_5338a8,5338a8,1,,,
 21,0,4,A_4e1fa0,4e1fa0,1,008ab858,ac (copy of the ac:i handle),
 21,0,4,A_4e34bc,4e34bc,0,008b8764,ac:i,
 21,1,2,A_51f914,51f914,1,,"boss (session, inferred)",SendPropertyHandle
 21,1,2,A_522070,522070,1,,"boss (session, inferred)",SendPropertyHandle
-21,1,2,A_53bbf4,53bbf4,0,008b8790,frd:a,
-21,1,2,A_540d9c,540d9c,1,008b7ccc,frd:u,
-21,2,0,A_53945c,53945c,0,008aab70,cam:u,
+21,1,2,A_53bbf4,53bbf4,0,008b8790,frd:a,GetFriendProfile
+21,1,2,A_540d9c,540d9c,1,008b7ccc,frd:u,GetFriendProfile
+21,2,0,A_53945c,53945c,0,008aab70,cam:u,SetExposure
 21,2,2,A_5014f0,5014f0,2,,"dsp::DSP (session, inferred)",RegisterInterruptEvents
-21,5,0,A_537a80,537a80,1,008ab930,APT:U,
-22,0,0,A_025058,25058,1,008b7d20,hid:USER (hid:SPVR shares the init),
+21,5,0,A_537a80,537a80,1,008ab930,APT:U,PrepareToStartApplication
+22,0,0,A_025058,25058,1,008b7d20,hid:USER (hid:SPVR shares the init),GetGyroscopeLowCalibrateParam
 22,0,0,A_4f415c,4f415c,0,008bf998,ir:USER,
-22,0,0,A_5042d8,5042d8,0,008b8818,ndm:u,
+22,0,0,A_5042d8,5042d8,0,008b8818,ndm:u,GetDefaultDaemons
 22,0,0,A_51c294,51c294,0,008aaeb4,y2r:u,
-22,0,2,A_4e26bc,4e26bc,1,008ab858,ac (copy of the ac:i handle),
-22,0,2,A_4e3bd8,4e3bd8,0,008b8764,ac:i,
-22,1,0,A_5377c8,5377c8,0,008ab930,APT:U,
+22,0,2,A_4e26bc,4e26bc,1,008ab858,ac (copy of the ac:i handle),GetExclusiveResult
+22,0,2,A_4e3bd8,4e3bd8,0,008b8764,ac:i,GetExclusiveResult
+22,1,0,A_5377c8,5377c8,0,008ab930,APT:U,PreloadLibraryApplet
 22,1,2,A_0257c8,257c8,2,,,
-22,1,2,A_53c4d4,53c4d4,0,008b8790,frd:a,
-22,1,2,A_54138c,54138c,1,008b7ccc,frd:u,
-22,2,0,A_5398c0,5398c0,0,008aab70,cam:u,
+22,1,2,A_53c4d4,53c4d4,0,008b8790,frd:a,GetFriendRelationship
+22,1,2,A_54138c,54138c,1,008b7ccc,frd:u,GetFriendRelationship
+22,2,0,A_5398c0,5398c0,0,008aab70,cam:u,SetWhiteBalance
 22,2,2,A_51f6d0,51f6d0,2,,"boss (session, inferred)",ReceiveProperty
 22,2,2,A_521eb4,521eb4,1,,"boss (session, inferred)",ReceiveProperty
 23,0,0,A_02580c,2580c,1,,,
 23,0,0,A_4f3f88,4f3f88,0,008bf998,ir:USER,
-23,0,0,A_502da0,502da0,0,008b7d20,hid:USER (hid:SPVR shares the init),
-23,0,0,A_504498,504498,1,008b8818,ndm:u,
+23,0,0,A_502da0,502da0,0,008b7d20,hid:USER (hid:SPVR shares the init),GetSoundVolume
+23,0,0,A_504498,504498,1,008b8818,ndm:u,ClearHalfAwakeMacFilter
 23,0,0,A_51c2d0,51c2d0,0,008aaeb4,y2r:u,
-23,0,4,A_4e2568,4e2568,1,008ab858,ac (copy of the ac:i handle),
-23,0,4,A_4e3a84,4e3a84,0,008b8764,ac:i,
-23,1,0,A_537de8,537de8,0,008ab930,APT:U,
-23,1,2,A_53c800,53c800,0,008b8790,frd:a,
-23,1,2,A_541634,541634,2,008b7ccc,frd:u,
-23,2,0,A_53a0c8,53a0c8,0,008aab70,cam:u,
+23,0,4,A_4e2568,4e2568,1,008ab858,ac (copy of the ac:i handle),UnExclusiveAsync
+23,0,4,A_4e3a84,4e3a84,0,008b8764,ac:i,UnExclusiveAsync
+23,1,0,A_537de8,537de8,0,008ab930,APT:U,FinishPreloadingLibraryApplet
+23,1,2,A_53c800,53c800,0,008b8790,frd:a,GetFriendAttributeFlags
+23,1,2,A_541634,541634,2,008b7ccc,frd:u,GetFriendAttributeFlags
+23,2,0,A_53a0c8,53a0c8,0,008aab70,cam:u,SetWhiteBalanceWithoutBaseUp
 23,6,2,A_51b67c,51b67c,1,,"nwm::UDS (session, inferred)",SendTo
 24,0,0,A_533954,533954,1,,,
-24,0,2,A_4e29ac,4e29ac,1,008ab858,ac (copy of the ac:i handle),
-24,0,2,A_4e3f38,4e3f38,0,008b8764,ac:i,
+24,0,2,A_4e29ac,4e29ac,1,008ab858,ac (copy of the ac:i handle),GetUnExcusiveResult
+24,0,2,A_4e3f38,4e3f38,0,008b8764,ac:i,GetUnExcusiveResult
 24,1,0,A_51b290,51b290,1,,"nwm::UDS (session, inferred)",
-24,1,0,A_537c90,537c90,0,008ab930,APT:U,
-24,1,4,A_541218,541218,1,008b7ccc,frd:u,
-24,2,0,A_539620,539620,0,008aab70,cam:u,
+24,1,0,A_537c90,537c90,0,008ab930,APT:U,PrepareToStartLibraryApplet
+24,1,4,A_541218,541218,1,008b7ccc,frd:u,GetFriendPlayingGame
+24,2,0,A_539620,539620,0,008aab70,cam:u,SetSharpness
 24,2,2,A_51f768,51f768,1,,"boss (session, inferred)",UpdateTaskCount
 24,2,2,A_521f4c,521f4c,1,,"boss (session, inferred)",UpdateTaskCount
 24,4,2,A_51be88,51be88,1,008aaeb4,y2r:u,
-24,6,2,A_4f4104,4f4104,1,008bf998,ir:USER,
+24,6,2,A_4f4104,4f4104,1,008bf998,ir:USER,InitializeIrnopShared
 25,0,0,A_51c408,51c408,0,008aaeb4,y2r:u,
-25,0,4,A_4e1e98,4e1e98,1,008ab858,ac (copy of the ac:i handle),
-25,0,4,A_4e33b4,4e33b4,0,008b8764,ac:i,
-25,1,0,A_4f40cc,4f40cc,3,008bf998,ir:USER,
+25,0,4,A_4e1e98,4e1e98,1,008ab858,ac (copy of the ac:i handle),CloseAllASync
+25,0,4,A_4e33b4,4e33b4,0,008b8764,ac:i,CloseAllASync
+25,1,0,A_4f40cc,4f40cc,3,008bf998,ir:USER,ReleaseReceivedData
 25,1,0,A_51b190,51b190,1,,"nwm::UDS (session, inferred)",
-25,1,0,A_537bd0,537bd0,1,008ab930,APT:U,
-25,1,2,A_53c470,53c470,0,008b8790,frd:a,
-25,1,2,A_541328,541328,1,008b7ccc,frd:u,
-25,2,0,A_539828,539828,1,008aab70,cam:u,
+25,1,0,A_537bd0,537bd0,1,008ab930,APT:U,PrepareToStartSystemApplet
+25,1,2,A_53c470,53c470,0,008b8790,frd:a,GetFriendFavoriteGame
+25,1,2,A_541328,541328,1,008b7ccc,frd:u,GetFriendFavoriteGame
+25,2,0,A_539828,539828,1,008aab70,cam:u,SetAutoExposure
 26,0,0,A_51af78,51af78,1,,"nwm::UDS (session, inferred)",GetChannel
-26,0,0,A_537d80,537d80,0,008ab930,APT:U,
-26,0,2,A_4e25b0,4e25b0,1,008ab858,ac (copy of the ac:i handle),
-26,0,2,A_4e3acc,4e3acc,0,008b8764,ac:i,
-26,1,0,A_4f3f4c,4f3f4c,0,008bf998,ir:USER,
+26,0,0,A_537d80,537d80,0,008ab930,APT:U,PrepareToStartNewestHomeMenu
+26,0,2,A_4e25b0,4e25b0,1,008ab858,ac (copy of the ac:i handle),GetCloseAllResult
+26,0,2,A_4e3acc,4e3acc,0,008b8764,ac:i,GetCloseAllResult
+26,1,0,A_4f3f4c,4f3f4c,0,008bf998,ir:USER,SetOwnMachineId
 26,1,0,A_51c258,51c258,1,008aaeb4,y2r:u,
-26,1,0,A_539794,539794,0,008aab70,cam:u,
+26,1,0,A_539794,539794,0,008aab70,cam:u,IsAutoExposure
 26,1,2,A_501238,501238,0,,"dsp::DSP (session, inferred)",SetIirFilterI2S1
 26,1,2,A_51f33c,51f33c,1,,"boss (session, inferred)",GetTaskCount
 26,1,2,A_521b60,521b60,1,,"boss (session, inferred)",GetTaskCount
-26,3,4,A_53b760,53b760,0,008b8790,frd:a,
-26,3,4,A_540990,540990,2,008b7ccc,frd:u,
+26,3,4,A_53b760,53b760,0,008b8790,frd:a,GetFriendInfo
+26,3,4,A_540990,540990,2,008b7ccc,frd:u,GetFriendInfo
 27,0,0,A_51c1e0,51c1e0,0,008aaeb4,y2r:u,
-27,0,4,A_4e26f8,4e26f8,1,008ab858,ac (copy of the ac:i handle),
-27,0,4,A_4e3c50,4e3c50,0,008b8764,ac:i,
+27,0,4,A_4e26f8,4e26f8,1,008ab858,ac (copy of the ac:i handle),LogoutHotspotAsync
+27,0,4,A_4e3c50,4e3c50,0,008b8764,ac:i,LogoutHotspotAsync
 27,1,2,A_501278,501278,0,,"dsp::DSP (session, inferred)",SetIirFilterI2S2
-27,2,0,A_539c68,539c68,1,008aab70,cam:u,
-27,3,4,A_5371b4,5371b4,1,008ab930,APT:U,
+27,2,0,A_539c68,539c68,1,008aab70,cam:u,SetAutoWhiteBalance
+27,3,4,A_5371b4,5371b4,1,008ab930,APT:U,StartApplication
 27,12,2,A_51b454,51b454,1,,"nwm::UDS (session, inferred)",InitializeWithVersion
-28,0,0,A_537434,537434,1,008ab930,APT:U,
-28,0,2,A_4e2c30,4e2c30,1,008ab858,ac (copy of the ac:i handle),
-28,0,2,A_4e42b0,4e42b0,0,008b8764,ac:i,
+28,0,0,A_537434,537434,1,008ab930,APT:U,WakeupApplication
+28,0,2,A_4e2c30,4e2c30,1,008ab858,ac (copy of the ac:i handle),GetLogoutHotspotResult
+28,0,2,A_4e42b0,4e42b0,0,008b8764,ac:i,GetLogoutHotspotResult
 28,1,0,A_51b050,51b050,1,,"nwm::UDS (session, inferred)",
 28,1,0,A_51bf20,51bf20,1,008aaeb4,y2r:u,
-28,1,0,A_539bd0,539bd0,0,008aab70,cam:u,
+28,1,0,A_539bd0,539bd0,0,008aab70,cam:u,IsAutoWhiteBalance
 28,1,2,A_51fff0,51fff0,1,,"boss (session, inferred)",StartTask
 28,1,2,A_5221e8,5221e8,1,,"boss (session, inferred)",StartTask
-28,1,2,A_53c9d0,53c9d0,0,008b8790,frd:a,
+28,1,2,A_53c9d0,53c9d0,0,008b8790,frd:a,UnscrambleLocalFriendCode
 29,0,0,A_51bee4,51bee4,0,008aaeb4,y2r:u,
-29,0,0,A_537220,537220,0,008ab930,APT:U,
-29,0,2,A_53ca44,53ca44,0,008b8790,frd:a,
-29,1,2,A_4e220c,4e220c,1,008ab858,ac (copy of the ac:i handle),
-29,1,2,A_4e3728,4e3728,0,008b8764,ac:i,
+29,0,0,A_537220,537220,0,008ab930,APT:U,CancelApplication
+29,0,2,A_53ca44,53ca44,0,008b8790,frd:a,UpdateGameModeDescription
+29,1,2,A_4e220c,4e220c,1,008ab858,ac (copy of the ac:i handle),ScanAPs
+29,1,2,A_4e3728,4e3728,0,008b8764,ac:i,ScanAPs
 29,1,2,A_51f998,51f998,1,,"boss (session, inferred)",StartTaskImmediate
 29,1,2,A_5220b4,5220b4,1,,"boss (session, inferred)",StartTaskImmediate
 29,1,4,A_51b088,51b088,1,,"nwm::UDS (session, inferred)",CreateNetwork2
-29,3,0,A_53a470,53a470,0,008aab70,cam:u,
-30,1,2,A_4e2398,4e2398,1,008ab858,ac (copy of the ac:i handle),
-30,1,2,A_4e38b4,4e38b4,0,008b8764,ac:i,
+29,3,0,A_53a470,53a470,0,008aab70,cam:u,FlipImage
+30,1,2,A_4e2398,4e2398,1,008ab858,ac (copy of the ac:i handle),ScanNintendoZone
+30,1,2,A_4e38b4,4e38b4,0,008b8764,ac:i,ScanNintendoZone
 30,1,2,A_51f1f8,51f1f8,1,,"boss (session, inferred)",CancelTask
 30,1,2,A_521a48,521a48,1,,"boss (session, inferred)",CancelTask
 30,2,4,A_51b12c,51b12c,1,,"nwm::UDS (session, inferred)",ConnectNetwork2
-30,2,4,A_537554,537554,1,008ab930,APT:U,
+30,2,4,A_537554,537554,1,008ab930,APT:U,StartLibraryApplet
 30,4,0,A_51c594,51c594,0,008aaeb4,y2r:u,
-30,8,0,A_5396a4,5396a4,0,008aab70,cam:u,
-30,11,2,A_53b9e8,53b9e8,0,008b8790,frd:a,
-30,11,2,A_540bd4,540bd4,2,008b7ccc,frd:u,
-31,0,0,A_4fb594,4fb594,0,008b8778,cecd:u,
-31,0,0,A_4fc068,4fc068,0,008b877c,cecd:s,
+30,8,0,A_5396a4,5396a4,0,008aab70,cam:u,SetDetailSize
+30,11,2,A_53b9e8,53b9e8,0,008b8790,frd:a,UpdateMyPresence
+30,11,2,A_540bd4,540bd4,2,008b7ccc,frd:u,UpdateMyPresence
+31,0,0,A_4fb594,4fb594,0,008b8778,cecd:u,GetEventLogStart
+31,0,0,A_4fc068,4fc068,0,008b877c,cecd:s,GetEventLogStart
 31,0,0,A_501374,501374,0,,"dsp::DSP (session, inferred)",GetHeadphoneStatus
 31,0,0,A_51c4c8,51c4c8,0,008aaeb4,y2r:u,
 31,0,0,A_51fa2c,51fa2c,2,,"boss (session, inferred)",GetTaskFinishHandle
 31,0,0,A_522148,522148,2,,"boss (session, inferred)",GetTaskFinishHandle
 31,0,6,A_51b550,51b550,1,,"nwm::UDS (session, inferred)",GetNodeInformationList2
-31,1,2,A_4e2c6c,4e2c6c,1,008ab858,ac (copy of the ac:i handle),
-31,1,2,A_4e42ec,4e42ec,0,008b8764,ac:i,
-31,1,2,A_53b99c,53b99c,0,008b8790,frd:a,
-31,1,2,A_540b88,540b88,1,008b7ccc,frd:u,
-31,2,4,A_5373e4,5373e4,1,008ab930,APT:U,
-31,3,0,A_53a420,53a420,1,008aab70,cam:u,
-32,0,0,A_4fb66c,4fb66c,0,008b8778,cecd:u,
-32,0,0,A_4fc140,4fc140,0,008b877c,cecd:s,
-32,0,5,A_4e2ce0,4e2ce0,0,008ab858,ac (copy of the ac:i handle),
-32,0,5,A_4e4360,4e4360,0,008b8764,ac:i,
+31,1,2,A_4e2c6c,4e2c6c,1,008ab858,ac (copy of the ac:i handle),ScanNintendoZoneSubset
+31,1,2,A_4e42ec,4e42ec,0,008b8764,ac:i,ScanNintendoZoneSubset
+31,1,2,A_53b99c,53b99c,0,008b8790,frd:a,SendInvitation
+31,1,2,A_540b88,540b88,1,008b7ccc,frd:u,SendInvitation
+31,2,4,A_5373e4,5373e4,1,008ab930,APT:U,StartSystemApplet
+31,3,0,A_53a420,53a420,1,008aab70,cam:u,SetSize
+32,0,0,A_4fb66c,4fb66c,0,008b8778,cecd:u,GetEventLogEntryCount
+32,0,0,A_4fc140,4fc140,0,008b877c,cecd:s,GetEventLogEntryCount
+32,0,5,A_4e2ce0,4e2ce0,0,008ab858,ac (copy of the ac:i handle),BeginScanUsbAccessPoint
+32,0,5,A_4e4360,4e4360,0,008b8764,ac:i,BeginScanUsbAccessPoint
 32,1,0,A_51b644,51b644,1,,"nwm::UDS (session, inferred)",Flush
 32,1,0,A_51c624,51c624,1,008aaeb4,y2r:u,
-32,1,4,A_5376a0,5376a0,1,008ab930,APT:U,
-32,2,0,A_539528,539528,1,008aab70,cam:u,
+32,1,4,A_5376a0,5376a0,1,008ab930,APT:U,StartNewestHomeMenu
+32,2,0,A_539528,539528,1,008aab70,cam:u,SetFrameRate
 33,0,0,A_501204,501204,0,,"dsp::DSP (session, inferred)",GetIsDspOccupied
-33,0,0,A_537988,537988,0,008ab930,APT:U,
-33,0,2,A_4e29e8,4e29e8,0,008ab858,ac (copy of the ac:i handle),
-33,0,2,A_4e3fec,4e3fec,0,008b8764,ac:i,
+33,0,0,A_537988,537988,0,008ab930,APT:U,OrderToCloseApplication
+33,0,2,A_4e29e8,4e29e8,0,008ab858,ac (copy of the ac:i handle),EndScanUsbAccessPoint
+33,0,2,A_4e3fec,4e3fec,0,008b8764,ac:i,EndScanUsbAccessPoint
 33,1,0,A_51c760,51c760,0,008aaeb4,y2r:u,
-33,1,0,A_53c278,53c278,0,008b8790,frd:a,
+33,1,0,A_53c278,53c278,0,008b8790,frd:a,SetNotificationMask
 33,1,2,A_51f558,51f558,1,,"boss (session, inferred)",GetTaskResult
 33,1,2,A_521d3c,521d3c,1,,"boss (session, inferred)",GetTaskResult
 33,2,0,A_51b4c8,51b4c8,1,,"nwm::UDS (session, inferred)",SetProbeResponseParam
-33,2,0,A_539570,539570,0,008aab70,cam:u,
-34,1,0,A_00929c,929c,2,008ab930,APT:U,
+33,2,0,A_539570,539570,0,008aab70,cam:u,SetPhotoMode
+34,1,0,A_00929c,929c,2,008ab930,APT:U,PrepareToCloseApplication
 34,1,0,A_51c800,51c800,1,008aaeb4,y2r:u,
-34,1,0,A_5411a0,5411a0,1,008b7ccc,frd:u,
-34,1,2,A_4e206c,4e206c,0,008ab858,ac (copy of the ac:i handle),
-34,1,2,A_4e3588,4e3588,0,008b8764,ac:i,
-34,3,0,A_53a4c0,53a4c0,0,008aab70,cam:u,
+34,1,0,A_5411a0,5411a0,1,008b7ccc,frd:u,GetEventNotification
+34,1,2,A_4e206c,4e206c,0,008ab858,ac (copy of the ac:i handle),SetAllowApType
+34,1,2,A_4e3588,4e3588,0,008b8764,ac:i,SetAllowApType
+34,3,0,A_53a4c0,53a4c0,0,008aab70,cam:u,SetEffect
 34,16,2,A_51b1f0,51b1f0,2,,"nwm::UDS (session, inferred)",ScanOnConnection
 35,0,0,A_51b5c4,51b5c4,4,,"nwm::UDS (session, inferred)",
 35,0,0,A_51c7c4,51c7c4,0,008aaeb4,y2r:u,
-35,0,0,A_53c540,53c540,0,008b8790,frd:a,
-35,1,0,A_537b94,537b94,1,008ab930,APT:U,
-35,1,2,A_4e1ee0,4e1ee0,0,008ab858,ac (copy of the ac:i handle),
-35,1,2,A_4e33fc,4e33fc,0,008b8764,ac:i,
-35,2,0,A_539414,539414,0,008aab70,cam:u,
+35,0,0,A_53c540,53c540,0,008b8790,frd:a,GetLastResponseResult
+35,1,0,A_537b94,537b94,1,008ab930,APT:U,PrepareToJumpToApplication
+35,1,2,A_4e1ee0,4e1ee0,0,008ab858,ac (copy of the ac:i handle),AddAllowApType
+35,1,2,A_4e33fc,4e33fc,0,008b8764,ac:i,AddAllowApType
+35,2,0,A_539414,539414,0,008aab70,cam:u,SetContrast
 35,3,2,A_51f5b8,51f5b8,1,,"boss (session, inferred)",GetTaskStatus
 35,3,2,A_521d9c,521d9c,1,,"boss (session, inferred)",GetTaskStatus
-36,1,2,A_4e1e38,4e1e38,1,008ab858,ac (copy of the ac:i handle),
-36,1,2,A_4e3354,4e3354,0,008b8764,ac:i,
-36,1,4,A_537308,537308,1,008ab930,APT:U,
-36,2,0,A_539b28,539b28,0,008aab70,cam:u,
+36,1,2,A_4e1e38,4e1e38,1,008ab858,ac (copy of the ac:i handle),AddDenyApType
+36,1,2,A_4e3354,4e3354,0,008b8764,ac:i,AddDenyApType
+36,1,4,A_537308,537308,1,008ab930,APT:U,JumpToApplication
+36,2,0,A_539b28,539b28,0,008aab70,cam:u,SetLensCorrection
 36,2,2,A_51f388,51f388,1,,"boss (session, inferred)",GetTaskError
 36,2,2,A_521bac,521bac,1,,"boss (session, inferred)",GetTaskError
-37,1,2,A_4e21a4,4e21a4,0,008ab858,ac (copy of the ac:i handle),
-37,1,2,A_4e36c0,4e36c0,0,008b8764,ac:i,
-37,3,0,A_537c40,537c40,0,008ab930,APT:U,
-37,3,0,A_539870,539870,0,008aab70,cam:u,
+37,1,2,A_4e21a4,4e21a4,0,008ab858,ac (copy of the ac:i handle),SetNetworkArea
+37,1,2,A_4e36c0,4e36c0,0,008b8764,ac:i,SetNetworkArea
+37,3,0,A_537c40,537c40,0,008ab930,APT:U,PrepareToCloseLibraryApplet
+37,3,0,A_539870,539870,0,008aab70,cam:u,SetOutputFormat
 38,0,0,A_51c108,51c108,1,008aaeb4,y2r:u,
-38,0,0,A_537b18,537b18,0,008ab930,APT:U,
+38,0,0,A_537b18,537b18,0,008ab930,APT:U,PrepareToCloseSystemApplet
 38,1,0,A_51f29c,51f29c,1,,"boss (session, inferred)",DeleteNsData
 38,1,0,A_521aec,521aec,1,,"boss (session, inferred)",DeleteNsData
-38,1,2,A_4e244c,4e244c,0,008ab858,ac (copy of the ac:i handle),
-38,1,2,A_4e3968,4e3968,0,008b8764,ac:i,
-38,5,0,A_539d68,539d68,0,008aab70,cam:u,
+38,1,2,A_4e244c,4e244c,0,008ab858,ac (copy of the ac:i handle),SetInfraPriority
+38,1,2,A_4e3968,4e3968,0,008b8764,ac:i,SetInfraPriority
+38,5,0,A_539d68,539d68,0,008aab70,cam:u,SetAutoExposureWindow
 39,0,0,A_51c060,51c060,1,008aaeb4,y2r:u,
-39,0,2,A_4e22bc,4e22bc,1,008ab858,ac (copy of the ac:i handle),
-39,0,2,A_4e37d8,4e37d8,0,008b8764,ac:i,
-39,1,4,A_009248,9248,1,008ab930,APT:U,
+39,0,2,A_4e22bc,4e22bc,1,008ab858,ac (copy of the ac:i handle),GetInfraPriority
+39,0,2,A_4e37d8,4e37d8,0,008b8764,ac:i,GetInfraPriority
+39,1,4,A_009248,9248,1,008ab930,APT:U,CloseApplication
 39,3,2,A_51f9d8,51f9d8,1,,"boss (session, inferred)",GetNsDataHeaderInfo
 39,3,2,A_5220f4,5220f4,1,,"boss (session, inferred)",GetNsDataHeaderInfo
-39,5,0,A_539f8c,539f8c,0,008aab70,cam:u,
+39,5,0,A_539f8c,539f8c,0,008aab70,cam:u,SetAutoWhiteBalanceWindow
 40,0,0,A_51c168,51c168,1,008aaeb4,y2r:u,
-40,1,2,A_4e24b4,4e24b4,0,008ab858,ac (copy of the ac:i handle),
-40,1,2,A_4e39d0,4e39d0,0,008b8764,ac:i,
-40,1,4,A_537464,537464,2,008ab930,APT:U,
-40,2,0,A_5397e0,5397e0,0,008aab70,cam:u,
+40,1,2,A_4e24b4,4e24b4,0,008ab858,ac (copy of the ac:i handle),SetPowerSaveMode
+40,1,2,A_4e39d0,4e39d0,0,008b8764,ac:i,SetPowerSaveMode
+40,1,4,A_537464,537464,2,008ab930,APT:U,CloseLibraryApplet
+40,2,0,A_5397e0,5397e0,0,008aab70,cam:u,SetNoiseFilter
 40,4,2,A_51f238,51f238,1,,"boss (session, inferred)",ReadNsData
 40,4,2,A_521a88,521a88,1,,"boss (session, inferred)",ReadNsData
-41,0,0,A_53c8f0,53c8f0,0,008b8790,frd:a,
-41,0,2,A_4e2348,4e2348,0,008ab858,ac (copy of the ac:i handle),
-41,0,2,A_4e3864,4e3864,0,008b8764,ac:i,
-41,1,4,A_537250,537250,1,008ab930,APT:U,
-41,2,0,A_539e14,539e14,0,008aab70,cam:u,
+41,0,0,A_53c8f0,53c8f0,0,008b8790,frd:a,GetGameAuthenticationData
+41,0,2,A_4e2348,4e2348,0,008ab858,ac (copy of the ac:i handle),GetPowerSaveMode
+41,0,2,A_4e3864,4e3864,0,008b8764,ac:i,GetPowerSaveMode
+41,1,4,A_537250,537250,1,008ab930,APT:U,CloseSystemApplet
+41,2,0,A_539e14,539e14,0,008aab70,cam:u,SynchronizeVsyncTiming
 41,7,0,A_51c444,51c444,0,008aaeb4,y2r:u,
 42,0,0,A_51bcfc,51bcfc,0,008aaeb4,y2r:u,
-42,0,0,A_5379e8,5379e8,0,008ab930,APT:U,
-42,0,4,A_4e2138,4e2138,0,008ab858,ac (copy of the ac:i handle),
-42,0,4,A_4e3654,4e3654,0,008b8764,ac:i,
-42,2,0,A_539d00,539d00,0,008aab70,cam:u,
+42,0,0,A_5379e8,5379e8,0,008ab930,APT:U,OrderToCloseSystemApplet
+42,0,4,A_4e2138,4e2138,0,008ab858,ac (copy of the ac:i handle),SetBssidFilter
+42,0,4,A_4e3654,4e3654,0,008b8764,ac:i,SetBssidFilter
+42,2,0,A_539d00,539d00,0,008aab70,cam:u,GetLatestVsyncTiming
 43,0,0,A_51c138,51c138,1,008aaeb4,y2r:u,
-43,0,0,A_5379b8,5379b8,1,008ab930,APT:U,
-43,0,0,A_53a174,53a174,0,008aab70,cam:u,
-43,0,0,A_53c5ac,53c5ac,0,008b8790,frd:a,
-43,0,4,A_4e35e8,4e35e8,0,008b8764,ac:i,
+43,0,0,A_5379b8,5379b8,1,008ab930,APT:U,PrepareToJumpToHomeMenu
+43,0,0,A_53a174,53a174,0,008aab70,cam:u,GetStereoCameraCalibrationData
+43,0,0,A_53c5ac,53c5ac,0,008b8790,frd:a,GetServiceLocatorData
+43,0,4,A_4e35e8,4e35e8,0,008b8764,ac:i,SetApNumFilter
 43,2,0,A_51f824,51f824,1,,"boss (session, inferred)",SetNsDataNewFlag
 43,2,0,A_521fc8,521fc8,1,,"boss (session, inferred)",SetNsDataNewFlag
 44,0,0,A_51bfb8,51bfb8,1,008aaeb4,y2r:u,
 44,1,0,A_51f7a8,51f7a8,1,,"boss (session, inferred)",GetNsDataNewFlag
 44,1,0,A_521f8c,521f8c,1,,"boss (session, inferred)",GetNsDataNewFlag
-44,1,2,A_4e2740,4e2740,0,008ab858,ac (copy of the ac:i handle),
-44,1,2,A_4e3c98,4e3c98,0,008b8764,ac:i,
-44,1,4,A_536fe4,536fe4,1,008ab930,APT:U,
-44,16,0,A_53a284,53a284,0,008aab70,cam:u,
+44,1,2,A_4e2740,4e2740,0,008ab858,ac (copy of the ac:i handle),SetFromApplication
+44,1,2,A_4e3c98,4e3c98,0,008b8764,ac:i,SetFromApplication
+44,1,4,A_536fe4,536fe4,1,008ab930,APT:U,JumpToHomeMenu
+44,16,0,A_53a284,53a284,0,008aab70,cam:u,SetStereoCameraCalibrationData
 45,0,0,A_51c348,51c348,0,008aaeb4,y2r:u,
-45,0,0,A_53791c,53791c,1,008ab930,APT:U,
-45,0,0,A_53bca8,53bca8,0,008b8790,frd:a,
-45,2,2,A_4e2a80,4e2a80,1,008ab858,ac (copy of the ac:i handle),
-45,2,2,A_4e4100,4e4100,0,008b8764,ac:i,
-45,3,0,A_539a6c,539a6c,0,008aab70,cam:u,
-46,0,0,A_53c570,53c570,0,008b8790,frd:a,
+45,0,0,A_53791c,53791c,1,008ab930,APT:U,PrepareToLeaveHomeMenu
+45,0,0,A_53bca8,53bca8,0,008b8790,frd:a,GetNatProperties
+45,2,2,A_4e2a80,4e2a80,1,008ab858,ac (copy of the ac:i handle),SetRequestEulaVersion
+45,2,2,A_4e4100,4e4100,0,008b8764,ac:i,SetRequestEulaVersion
+45,3,0,A_539a6c,539a6c,0,008aab70,cam:u,WriteRegisterI2c
+46,0,0,A_53c570,53c570,0,008b8790,frd:a,GetServerTimeDifference
 46,1,0,A_51f2f8,51f2f8,1,,"boss (session, inferred)",GetErrorCode
 46,1,0,A_521b1c,521b1c,1,,"boss (session, inferred)",GetErrorCode
-46,1,4,A_536e90,536e90,1,008ab930,APT:U,
-46,3,0,A_539cb0,539cb0,0,008aab70,cam:u,
-46,3,4,A_4e2af0,4e2af0,0,008ab858,ac (copy of the ac:i handle),
-46,3,4,A_4e4170,4e4170,0,008b8764,ac:i,
-47,0,4,A_4e3180,4e3180,0,008ab858,ac (copy of the ac:i handle),
-47,0,4,A_4e50a0,4e50a0,0,008b8764,ac:i,
-47,1,0,A_537d44,537d44,0,008ab930,APT:U,
-47,1,0,A_53b8c4,53b8c4,0,008b8790,frd:a,
-47,2,0,A_539f38,539f38,0,008aab70,cam:u,
-48,0,0,A_53b948,53b948,0,008b8790,frd:a,
-48,0,4,A_4e2de0,4e2de0,0,008ab858,ac (copy of the ac:i handle),
-48,0,4,A_4e4460,4e4460,0,008b8764,ac:i,
-48,1,4,A_5375e0,5375e0,1,008ab930,APT:U,
-48,2,0,A_539fec,539fec,0,008aab70,cam:u,
-49,0,2,A_4e2964,4e2964,0,008ab858,ac (copy of the ac:i handle),
-49,0,2,A_4e3ef0,4e3ef0,0,008b8764,ac:i,
-49,2,2,A_53bb20,53bb20,0,008b8790,frd:a,
-49,2,2,A_540cc8,540cc8,1,008b7ccc,frd:u,
-49,4,0,A_537b48,537b48,1,008ab930,APT:U,
-49,6,0,A_53a1dc,53a1dc,0,008aab70,cam:u,
-50,0,0,A_53a110,53a110,0,008aab70,cam:u,
-50,1,2,A_4e263c,4e263c,0,008ab858,ac (copy of the ac:i handle),
-50,1,2,A_4e3b58,4e3b58,0,008b8764,ac:i,
-50,1,2,A_53c238,53c238,0,008b8790,frd:a,
-50,1,2,A_541128,541128,2,008b7ccc,frd:u,
-50,2,4,A_5372a4,5372a4,1,008ab930,APT:U,
-51,0,0,A_4e2ec8,4e2ec8,0,008ab858,ac (copy of the ac:i handle),
-51,0,0,A_4e4548,4e4548,0,008b8764,ac:i,
-51,0,0,A_537e20,537e20,0,008ab930,APT:U,
-51,0,0,A_53c3bc,53c3bc,0,008b8790,frd:a,
-51,0,0,A_541274,541274,2,008b7ccc,frd:u,
-51,11,0,A_53a328,53a328,0,008aab70,cam:u,
-52,0,0,A_4e25ec,4e25ec,0,008ab858,ac (copy of the ac:i handle),
-52,0,0,A_4e3b08,4e3b08,0,008b8764,ac:i,
-52,1,6,A_53c40c,53c40c,0,008b8790,frd:a,
-52,1,6,A_5412c4,5412c4,1,008b7ccc,frd:u,
-52,2,4,A_537094,537094,0,008ab930,APT:U,
-53,0,0,A_4e2da4,4e2da4,0,008ab858,ac (copy of the ac:i handle),
-53,0,0,A_4e4424,4e4424,0,008b8764,ac:i,
-53,2,0,A_53735c,53735c,1,008ab930,APT:U,
-53,2,2,A_53c680,53c680,0,008b8790,frd:a,
-53,2,2,A_541538,541538,3,008b7ccc,frd:u,
-53,7,0,A_53a380,53a380,0,008aab70,cam:u,
-54,0,0,A_4e2e8c,4e2e8c,0,008ab858,ac (copy of the ac:i handle),
-54,0,0,A_4e450c,4e450c,0,008b8764,ac:i,
-54,0,0,A_53a2ec,53a2ec,1,008aab70,cam:u,
-54,1,0,A_537038,537038,0,008ab930,APT:U,
-55,0,0,A_4e2fa4,4e2fa4,0,008ab858,ac (copy of the ac:i handle),
-55,0,0,A_4e46a0,4e46a0,0,008b8764,ac:i,
-55,1,2,A_5370f8,5370f8,0,008ab930,APT:U,
-55,8,2,A_539ebc,539ebc,0,008aab70,cam:u,
-56,0,0,A_4e2bb8,4e2bb8,0,008ab858,ac (copy of the ac:i handle),
-56,0,0,A_4e4238,4e4238,0,008b8764,ac:i,
-56,1,0,A_537898,537898,0,008ab930,APT:U,
-56,1,0,A_539984,539984,1,008aab70,cam:u,
-57,0,0,A_4e2b68,4e2b68,0,008ab858,ac (copy of the ac:i handle),
-57,0,0,A_4e41e8,4e41e8,0,008b8764,ac:i,
-57,0,0,A_539908,539908,1,008aab70,cam:u,
-57,1,0,A_537db0,537db0,0,008ab930,APT:U,
-58,0,0,A_4e3030,4e3030,0,008ab858,ac (copy of the ac:i handle),
-58,0,0,A_4e472c,4e472c,0,008b8764,ac:i,
-58,0,0,A_539764,539764,1,008aab70,cam:u,
-58,1,4,A_5376f4,5376f4,1,008ab930,APT:U,
-59,0,0,A_025cfc,25cfc,1,008aab70,cam:u,
-59,0,0,A_4e2fe0,4e2fe0,0,008ab858,ac (copy of the ac:i handle),
-59,0,0,A_4e46dc,4e46dc,0,008b8764,ac:i,
-59,1,0,A_0132a4,132a4,1,008ab930,APT:U,
-60,0,0,A_025c84,25c84,1,008aab70,cam:u,
-60,1,2,A_4e1fe8,4e1fe8,0,008ab858,ac (copy of the ac:i handle),
-60,1,2,A_4e3504,4e3504,0,008b8764,ac:i,
-60,1,2,A_536d94,536d94,0,008ab930,APT:U,
-61,1,0,A_025cc0,25cc0,0,008aab70,cam:u,
-61,1,2,A_4e251c,4e251c,0,008ab858,ac (copy of the ac:i handle),
-61,1,2,A_4e3a38,4e3a38,0,008b8764,ac:i,
-61,1,2,A_536ee4,536ee4,0,008ab930,APT:U,
-62,1,0,A_53a08c,53a08c,0,008aab70,cam:u,
-62,1,2,A_4e1d94,4e1d94,4,008ab858,ac (copy of the ac:i handle),
-62,1,2,A_4e32b0,4e32b0,0,008b8764,ac:i,
-62,2,0,A_025b7c,25b7c,1,008ab930,APT:U,
-63,1,0,A_025c4c,25c4c,1,008ab930,APT:U,
-63,1,0,A_4e2900,4e2900,0,008ab858,ac (copy of the ac:i handle),
-63,1,0,A_4e3e8c,4e3e8c,0,008b8764,ac:i,
-64,1,2,A_4e240c,4e240c,1,008ab858,ac (copy of the ac:i handle),
-64,1,2,A_4e3928,4e3928,1,008b8764,ac:i,
-64,1,2,A_5378d0,5378d0,1,008ab930,APT:U,
-65,1,0,A_537a18,537a18,0,008ab930,APT:U,
-66,2,0,A_01d81c,1d81c,1,008ab930,APT:U,
-67,1,0,A_01d854,1d854,1,008ab930,APT:U,
-68,0,0,A_536e48,536e48,0,008ab930,APT:U,
-69,1,0,A_53783c,53783c,0,008ab930,APT:U,
-70,4,4,A_537e80,537e80,0,008ab930,APT:U,
-71,4,4,A_537fa0,537fa0,0,008ab930,APT:U,
-72,4,0,A_536f84,536f84,0,008ab930,APT:U,
-73,6,0,A_537f48,537f48,0,008ab930,APT:U,
-74,1,0,A_536f28,536f28,0,008ab930,APT:U,
-75,3,2,A_0259c0,259c0,1,008ab930,APT:U,
-76,0,0,A_537634,537634,0,008ab930,APT:U,
-77,2,0,A_537748,537748,0,008ab930,APT:U,
-78,0,0,A_537524,537524,0,008ab930,APT:U,
-79,2,0,A_537c08,537c08,0,008ab930,APT:U,
-81,2,0,A_5374b8,5374b8,0,008ab930,APT:U,
-82,4,4,A_537ee4,537ee4,0,008ab930,APT:U,
-83,4,4,A_538004,538004,0,008ab930,APT:U,
+46,1,4,A_536e90,536e90,1,008ab930,APT:U,LeaveHomeMenu
+46,3,0,A_539cb0,539cb0,0,008aab70,cam:u,WriteMcuVariableI2c
+46,3,4,A_4e2af0,4e2af0,0,008ab858,ac (copy of the ac:i handle),ConvertPassphraseToPsk
+46,3,4,A_4e4170,4e4170,0,008b8764,ac:i,ConvertPassphraseToPsk
+47,0,4,A_4e3180,4e3180,0,008ab858,ac (copy of the ac:i handle),GetNZoneBeaconNotFoundEvent
+47,0,4,A_4e50a0,4e50a0,0,008b8764,ac:i,GetNZoneBeaconNotFoundEvent
+47,1,0,A_537d44,537d44,0,008ab930,APT:U,PrepareToLeaveResidentApplet
+47,1,0,A_53b8c4,53b8c4,0,008b8790,frd:a,AllowHalfAwake
+47,2,0,A_539f38,539f38,0,008aab70,cam:u,ReadRegisterI2cExclusive
+48,0,0,A_53b948,53b948,0,008b8790,frd:a,GetServerTypes
+48,0,4,A_4e2de0,4e2de0,0,008ab858,ac (copy of the ac:i handle),RegisterDisconnectEvent
+48,0,4,A_4e4460,4e4460,0,008b8764,ac:i,RegisterDisconnectEvent
+48,1,4,A_5375e0,5375e0,1,008ab930,APT:U,LeaveResidentApplet
+48,2,0,A_539fec,539fec,0,008aab70,cam:u,ReadMcuVariableI2cExclusive
+49,0,2,A_4e2964,4e2964,0,008ab858,ac (copy of the ac:i handle),GetStatusChangeEvent
+49,0,2,A_4e3ef0,4e3ef0,0,008b8764,ac:i,GetStatusChangeEvent
+49,2,2,A_53bb20,53bb20,0,008b8790,frd:a,GetFriendComment
+49,2,2,A_540cc8,540cc8,1,008b7ccc,frd:u,GetFriendComment
+49,4,0,A_537b48,537b48,1,008ab930,APT:U,PrepareToDoApplicationJump
+49,6,0,A_53a1dc,53a1dc,0,008aab70,cam:u,SetImageQualityCalibrationData
+50,0,0,A_53a110,53a110,0,008aab70,cam:u,GetImageQualityCalibrationData
+50,1,2,A_4e263c,4e263c,0,008ab858,ac (copy of the ac:i handle),SetAuthServerType
+50,1,2,A_4e3b58,4e3b58,0,008b8764,ac:i,SetAuthServerType
+50,1,2,A_53c238,53c238,0,008b8790,frd:a,SetClientSdkVersion
+50,1,2,A_541128,541128,2,008b7ccc,frd:u,SetClientSdkVersion
+50,2,4,A_5372a4,5372a4,1,008ab930,APT:U,DoApplicationJump
+51,0,0,A_4e2ec8,4e2ec8,0,008ab858,ac (copy of the ac:i handle),GetConnectingSecurityMode
+51,0,0,A_4e4548,4e4548,0,008b8764,ac:i,GetConnectingSecurityMode
+51,0,0,A_537e20,537e20,0,008ab930,APT:U,GetProgramIdOnApplicationJump
+51,0,0,A_53c3bc,53c3bc,0,008b8790,frd:a,GetMyApproachContext
+51,0,0,A_541274,541274,2,008b7ccc,frd:u,GetMyApproachContext
+51,11,0,A_53a328,53a328,0,008aab70,cam:u,SetPackageParameterWithoutContext
+52,0,0,A_4e25ec,4e25ec,0,008ab858,ac (copy of the ac:i handle),GetConnectingSsid
+52,0,0,A_4e3b08,4e3b08,0,008b8764,ac:i,GetConnectingSsid
+52,1,6,A_53c40c,53c40c,0,008b8790,frd:a,AddFriendWithApproach
+52,1,6,A_5412c4,5412c4,1,008b7ccc,frd:u,AddFriendWithApproach
+52,2,4,A_537094,537094,0,008ab930,APT:U,SendDeliverArg
+53,0,0,A_4e2da4,4e2da4,0,008ab858,ac (copy of the ac:i handle),GetConnectingSsidLength
+53,0,0,A_4e4424,4e4424,0,008b8764,ac:i,GetConnectingSsidLength
+53,2,0,A_53735c,53735c,1,008ab930,APT:U,ReceiveDeliverArg
+53,2,2,A_53c680,53c680,0,008b8790,frd:a,DecryptApproachContext
+53,2,2,A_541538,541538,3,008b7ccc,frd:u,DecryptApproachContext
+53,7,0,A_53a380,53a380,0,008aab70,cam:u,SetPackageParameterWithContextDetail
+54,0,0,A_4e2e8c,4e2e8c,0,008ab858,ac (copy of the ac:i handle),GetConnectingProxyEnable
+54,0,0,A_4e450c,4e450c,0,008b8764,ac:i,GetConnectingProxyEnable
+54,0,0,A_53a2ec,53a2ec,1,008aab70,cam:u,GetSuitableY2rStandardCoefficient
+54,1,0,A_537038,537038,0,008ab930,APT:U,LoadSysMenuArg
+55,0,0,A_4e2fa4,4e2fa4,0,008ab858,ac (copy of the ac:i handle),GetConnectingProxyAuthType
+55,0,0,A_4e46a0,4e46a0,0,008b8764,ac:i,GetConnectingProxyAuthType
+55,1,2,A_5370f8,5370f8,0,008ab930,APT:U,StoreSysMenuArg
+55,8,2,A_539ebc,539ebc,0,008aab70,cam:u,PlayShutterSoundWithWave
+56,0,0,A_4e2bb8,4e2bb8,0,008ab858,ac (copy of the ac:i handle),GetConnectingProxyPort
+56,0,0,A_4e4238,4e4238,0,008b8764,ac:i,GetConnectingProxyPort
+56,1,0,A_537898,537898,0,008ab930,APT:U,PreloadResidentApplet
+56,1,0,A_539984,539984,1,008aab70,cam:u,PlayShutterSound
+57,0,0,A_4e2b68,4e2b68,0,008ab858,ac (copy of the ac:i handle),GetConnectingProxyHost
+57,0,0,A_4e41e8,4e41e8,0,008b8764,ac:i,GetConnectingProxyHost
+57,0,0,A_539908,539908,1,008aab70,cam:u,DriverInitialize
+57,1,0,A_537db0,537db0,0,008ab930,APT:U,PrepareToStartResidentApplet
+58,0,0,A_4e3030,4e3030,0,008ab858,ac (copy of the ac:i handle),GetConnectingProxyUserName
+58,0,0,A_4e472c,4e472c,0,008b8764,ac:i,GetConnectingProxyUserName
+58,0,0,A_539764,539764,1,008aab70,cam:u,DriverFinalize
+58,1,4,A_5376f4,5376f4,1,008ab930,APT:U,StartResidentApplet
+59,0,0,A_025cfc,25cfc,1,008aab70,cam:u,GetActivatedCamera
+59,0,0,A_4e2fe0,4e2fe0,0,008ab858,ac (copy of the ac:i handle),GetConnectingProxyPassword
+59,0,0,A_4e46dc,4e46dc,0,008b8764,ac:i,GetConnectingProxyPassword
+59,1,0,A_0132a4,132a4,1,008ab930,APT:U,CancelLibraryApplet
+60,0,0,A_025c84,25c84,1,008aab70,cam:u,GetSleepCamera
+60,1,2,A_4e1fe8,4e1fe8,0,008ab858,ac (copy of the ac:i handle),GetAPSSIDList
+60,1,2,A_4e3504,4e3504,0,008b8764,ac:i,GetAPSSIDList
+60,1,2,A_536d94,536d94,0,008ab930,APT:U,SendDspSleep
+61,1,0,A_025cc0,25cc0,0,008aab70,cam:u,SetSleepCamera
+61,1,2,A_4e251c,4e251c,0,008ab858,ac (copy of the ac:i handle),SetZoneMacFilter
+61,1,2,A_4e3a38,4e3a38,0,008b8764,ac:i,SetZoneMacFilter
+61,1,2,A_536ee4,536ee4,0,008ab930,APT:U,SendDspWakeUp
+62,1,0,A_53a08c,53a08c,0,008aab70,cam:u,SetBrightnessSynchronization
+62,1,2,A_4e1d94,4e1d94,4,008ab858,ac (copy of the ac:i handle),IsConnected
+62,1,2,A_4e32b0,4e32b0,0,008b8764,ac:i,IsConnected
+62,2,0,A_025b7c,25b7c,1,008ab930,APT:U,ReplySleepQuery
+63,1,0,A_025c4c,25c4c,1,008ab930,APT:U,ReplySleepNotificationComplete
+63,1,0,A_4e2900,4e2900,0,008ab858,ac (copy of the ac:i handle),GetNotAwakeMacFilter
+63,1,0,A_4e3e8c,4e3e8c,0,008b8764,ac:i,GetNotAwakeMacFilter
+64,1,2,A_4e240c,4e240c,1,008ab858,ac (copy of the ac:i handle),SetClientVersion
+64,1,2,A_4e3928,4e3928,1,008b8764,ac:i,SetClientVersion
+64,1,2,A_5378d0,5378d0,1,008ab930,APT:U,SendCaptureBufferInfo
+65,1,0,A_537a18,537a18,0,008ab930,APT:U,ReceiveCaptureBufferInfo
+66,2,0,A_01d81c,1d81c,1,008ab930,APT:U,SleepSystem
+67,1,0,A_01d854,1d854,1,008ab930,APT:U,NotifyToWait
+68,0,0,A_536e48,536e48,0,008ab930,APT:U,GetSharedFont
+69,1,0,A_53783c,53783c,0,008ab930,APT:U,GetWirelessRebootInfo
+70,4,4,A_537e80,537e80,0,008ab930,APT:U,Wrap
+71,4,4,A_537fa0,537fa0,0,008ab930,APT:U,Unwrap
+72,4,0,A_536f84,536f84,0,008ab930,APT:U,GetProgramInfo
+73,6,0,A_537f48,537f48,0,008ab930,APT:U,Reboot
+74,1,0,A_536f28,536f28,0,008ab930,APT:U,GetCaptureInfo
+75,3,2,A_0259c0,259c0,1,008ab930,APT:U,AppletUtility
+76,0,0,A_537634,537634,0,008ab930,APT:U,SetFatalErrDispMode
+77,2,0,A_537748,537748,0,008ab930,APT:U,GetAppletProgramInfo
+78,0,0,A_537524,537524,0,008ab930,APT:U,HardwareResetAsync
+79,2,0,A_537c08,537c08,0,008ab930,APT:U,SetApplicationCpuTimeLimit
+81,2,0,A_5374b8,5374b8,0,008ab930,APT:U,GetStartupArgument
+82,4,4,A_537ee4,537ee4,0,008ab930,APT:U,Wrap1
+83,4,4,A_538004,538004,0,008ab930,APT:U,Unwrap1
 1025,0,0,A_50d834,50d834,0,008b8518,ptm:gets,
-1025,1,0,A_4e3c14,4e3c14,0,008b8764,ac:i,
+1025,1,0,A_4e3c14,4e3c14,0,008b8764,ac:i,LoadNetworkSetting
 1025,1,0,A_4fbf74,4fbf74,0,008b877c,cecd:s,
 1025,1,2,A_518008,518008,0,008bb4e0,srv:pm,
-1025,2,2,A_4fd9e0,4fd9e0,0,008bb62c,cfg:i (copy),
-1025,2,2,A_4fde7c,4fde7c,0,008bb628,cfg:i,
-1025,3,0,A_50c78c,50c78c,0,008b8514,ptm:sysm,
-1025,3,0,A_50d2c4,50d2c4,0,008b851c,ptm:s,
-1025,4,0,A_53bfb0,53bfb0,0,008b8790,frd:a,
-1026,0,2,A_4fc3d8,4fc3d8,0,008b877c,cecd:s,
-1026,1,0,A_4e3fb0,4e3fb0,0,008b8764,ac:i,
+1025,2,2,A_4fd9e0,4fd9e0,0,008bb62c,cfg:i (copy),GetConfigInfoBlk8
+1025,2,2,A_4fde7c,4fde7c,0,008bb628,cfg:i,GetConfigInfoBlk8
+1025,3,0,A_50c78c,50c78c,0,008b8514,ptm:sysm,SetRtcAlarmEx
+1025,3,0,A_50d2c4,50d2c4,0,008b851c,ptm:s,SetRtcAlarmEx
+1025,4,0,A_53bfb0,53bfb0,0,008b8790,frd:a,CreateLocalAccount
+1026,0,2,A_4fc3d8,4fc3d8,0,008b877c,cecd:s,GetCecInfoEventHandleSys
+1026,1,0,A_4e3fb0,4e3fb0,0,008b8764,ac:i,UpdateNetworkSetting
 1026,1,0,A_517dd4,517dd4,0,008bb4e0,srv:pm,
-1026,1,0,A_53c000,53c000,0,008b8790,frd:a,
-1026,1,2,A_50cab4,50cab4,0,008b8514,ptm:sysm,
-1026,1,2,A_50d488,50d488,0,008b851c,ptm:s,
-1026,2,2,A_4fda6c,4fda6c,0,008bb62c,cfg:i (copy),
-1026,2,2,A_4fdf48,4fdf48,0,008bb628,cfg:i,
-1027,0,0,A_4fdab4,4fdab4,0,008bb62c,cfg:i (copy),
-1027,0,0,A_4fe064,4fe064,0,008bb628,cfg:i,
-1027,1,0,A_4e3f74,4e3f74,0,008b8764,ac:i,
-1027,1,0,A_53bcf0,53bcf0,0,008b8790,frd:a,
-1027,1,2,A_50d0bc,50d0bc,0,008b8514,ptm:sysm,
-1027,1,2,A_50d710,50d710,0,008b851c,ptm:s,
+1026,1,0,A_53c000,53c000,0,008b8790,frd:a,DeleteLocalAccount
+1026,1,2,A_50cab4,50cab4,0,008b8514,ptm:sysm,ReplySleepQuery
+1026,1,2,A_50d488,50d488,0,008b851c,ptm:s,ReplySleepQuery
+1026,2,2,A_4fda6c,4fda6c,0,008bb62c,cfg:i (copy),SetConfigInfoBlk4
+1026,2,2,A_4fdf48,4fdf48,0,008bb628,cfg:i,SetConfigInfoBlk4
+1027,0,0,A_4fdab4,4fdab4,0,008bb62c,cfg:i (copy),UpdateConfigNANDSavegame
+1027,0,0,A_4fe064,4fe064,0,008bb628,cfg:i,UpdateConfigNANDSavegame
+1027,1,0,A_4e3f74,4e3f74,0,008b8764,ac:i,RemoveNetworkSetting
+1027,1,0,A_53bcf0,53bcf0,0,008b8790,frd:a,LoadLocalAccount
+1027,1,2,A_50d0bc,50d0bc,0,008b8514,ptm:sysm,NotifySleepPreparationComplete
+1027,1,2,A_50d710,50d710,0,008b851c,ptm:s,NotifySleepPreparationComplete
 1027,2,2,A_517f04,517f04,0,008bb4e0,srv:pm,
-1028,0,0,A_4e3db8,4e3db8,0,008b8764,ac:i,
-1028,0,0,A_53c0a8,53c0a8,0,008b8790,frd:a,
+1028,0,0,A_4e3db8,4e3db8,0,008b8764,ac:i,FlushNetworkSetting
+1028,0,0,A_53c0a8,53c0a8,0,008b8790,frd:a,UnloadLocalAccount
 1028,1,0,A_5180a0,5180a0,0,008bb4e0,srv:pm,
-1028,1,2,A_4fdcfc,4fdcfc,0,008bb62c,cfg:i (copy),
-1028,1,2,A_4fe808,4fe808,0,008bb628,cfg:i,
-1028,4,2,A_50cbe0,50cbe0,0,008b8514,ptm:sysm,
-1028,4,2,A_50d4cc,50d4cc,0,008b851c,ptm:s,
-1029,0,0,A_4fdc20,4fdc20,0,008bb62c,cfg:i (copy),
-1029,0,0,A_4fe4c0,4fe4c0,0,008bb628,cfg:i,
-1029,0,0,A_50c870,50c870,0,008b8514,ptm:sysm,
-1029,0,0,A_50d374,50d374,0,008b851c,ptm:s,
-1029,2,4,A_4e4818,4e4818,0,008b8764,ac:i,
-1030,0,0,A_4fda2c,4fda2c,0,008bb62c,cfg:i (copy),
-1030,0,0,A_4fdf08,4fdf08,0,008bb628,cfg:i,
-1030,0,0,A_50c71c,50c71c,0,008b8514,ptm:sysm,
-1030,0,0,A_50d254,50d254,0,008b851c,ptm:s,
-1030,1,0,A_4e48b4,4e48b4,0,008b8764,ac:i,
-1030,1,2,A_53ba44,53ba44,0,008b8790,frd:a,
-1031,0,0,A_4e4584,4e4584,0,008b8764,ac:i,
-1031,0,0,A_4fd964,4fd964,0,008bb62c,cfg:i (copy),
-1031,0,0,A_4fde00,4fde00,0,008bb628,cfg:i,
-1031,3,0,A_50c7d0,50c7d0,0,008b8514,ptm:sysm,
-1031,3,0,A_50d308,50d308,0,008b851c,ptm:s,
-1032,0,0,A_50d0fc,50d0fc,0,008b8514,ptm:sysm,
-1032,0,0,A_50d750,50d750,0,008b851c,ptm:s,
-1032,1,0,A_4e45c4,4e45c4,0,008b8764,ac:i,
-1032,1,2,A_4fdae8,4fdae8,0,008bb62c,cfg:i (copy),
-1032,1,2,A_4fe098,4fe098,0,008bb628,cfg:i,
-1033,0,0,A_4e4084,4e4084,0,008b8764,ac:i,
-1033,0,0,A_4fdcc8,4fdcc8,0,008bb62c,cfg:i (copy),
-1033,0,0,A_4fe78c,4fe78c,0,008bb628,cfg:i,
-1033,2,0,A_50c674,50c674,0,008b8514,ptm:sysm,
-1033,2,0,A_50d1e4,50d1e4,0,008b851c,ptm:s,
-1033,4,0,A_53b718,53b718,0,008b8790,frd:a,
+1028,1,2,A_4fdcfc,4fdcfc,0,008bb62c,cfg:i (copy),GetLocalFriendCodeSeedData
+1028,1,2,A_4fe808,4fe808,0,008bb628,cfg:i,GetLocalFriendCodeSeedData
+1028,4,2,A_50cbe0,50cbe0,0,008b8514,ptm:sysm,SetWakeupTrigger
+1028,4,2,A_50d4cc,50d4cc,0,008b851c,ptm:s,SetWakeupTrigger
+1029,0,0,A_4fdc20,4fdc20,0,008bb62c,cfg:i (copy),GetLocalFriendCodeSeed
+1029,0,0,A_4fe4c0,4fe4c0,0,008bb628,cfg:i,GetLocalFriendCodeSeed
+1029,0,0,A_50c870,50c870,0,008b8514,ptm:sysm,GetAwakeReason
+1029,0,0,A_50d374,50d374,0,008b851c,ptm:s,GetAwakeReason
+1029,2,4,A_4e4818,4e4818,0,008b8764,ac:i,ConvertNetworkSettingNdsTo3ds
+1030,0,0,A_4fda2c,4fda2c,0,008bb62c,cfg:i (copy),SecureInfoGetRegion
+1030,0,0,A_4fdf08,4fdf08,0,008bb628,cfg:i,SecureInfoGetRegion
+1030,0,0,A_50c71c,50c71c,0,008b8514,ptm:sysm,RequestSleep
+1030,0,0,A_50d254,50d254,0,008b851c,ptm:s,RequestSleep
+1030,1,0,A_4e48b4,4e48b4,0,008b8764,ac:i,InitializeNetworkSetting
+1030,1,2,A_53ba44,53ba44,0,008b8790,frd:a,AddFriendOnline
+1031,0,0,A_4e4584,4e4584,0,008b8764,ac:i,GetNetworkSettingVersion
+1031,0,0,A_4fd964,4fd964,0,008bb62c,cfg:i (copy),SecureInfoGetByte101
+1031,0,0,A_4fde00,4fde00,0,008bb628,cfg:i,SecureInfoGetByte101
+1031,3,0,A_50c7d0,50c7d0,0,008b8514,ptm:sysm,ShutdownAsync
+1031,3,0,A_50d308,50d308,0,008b851c,ptm:s,ShutdownAsync
+1032,0,0,A_50d0fc,50d0fc,0,008b8514,ptm:sysm,Awake
+1032,0,0,A_50d750,50d750,0,008b851c,ptm:s,Awake
+1032,1,0,A_4e45c4,4e45c4,0,008b8764,ac:i,SetNetworkSettingVersion
+1032,1,2,A_4fdae8,4fdae8,0,008bb62c,cfg:i (copy),SecureInfoGetSerialNo
+1032,1,2,A_4fe098,4fe098,0,008bb628,cfg:i,SecureInfoGetSerialNo
+1033,0,0,A_4e4084,4e4084,0,008b8764,ac:i,GetNetworkSetting_Crc
+1033,0,0,A_4fdcc8,4fdcc8,0,008bb62c,cfg:i (copy),UpdateConfigBlk00040003
+1033,0,0,A_4fe78c,4fe78c,0,008bb628,cfg:i,UpdateConfigBlk00040003
+1033,2,0,A_50c674,50c674,0,008b8514,ptm:sysm,RebootAsync
+1033,2,0,A_50d1e4,50d1e4,0,008b851c,ptm:s,RebootAsync
+1033,4,0,A_53b718,53b718,0,008b8790,frd:a,RemoveFriend
 1033,4,2,A_51fd24,51fd24,1,,"boss (session, inferred)",UnregisterTaskPrivileged
-1034,0,0,A_4fbe5c,4fbe5c,0,008b877c,cecd:s,
+1034,0,0,A_4fbe5c,4fbe5c,0,008b877c,cecd:s,SprCreate
 1034,0,0,A_4fdbec,4fdbec,0,008bb62c,cfg:i (copy),
 1034,0,0,A_4fe360,4fe360,0,008bb628,cfg:i,
 1034,0,0,A_51f2cc,51f2cc,1,,"boss (session, inferred)",GetAppIdList
-1034,1,0,A_4e40c4,4e40c4,0,008b8764,ac:i,
-1034,4,0,A_53bf68,53bf68,0,008b8790,frd:a,
-1035,0,0,A_4e4fa0,4e4fa0,0,008b8764,ac:i,
-1035,0,0,A_4fc250,4fc250,0,008b877c,cecd:s,
+1034,1,0,A_4e40c4,4e40c4,0,008b8764,ac:i,SetNetworkSetting_Crc
+1034,4,0,A_53bf68,53bf68,0,008b8790,frd:a,UpdatePlayingGame
+1035,0,0,A_4e4fa0,4e4fa0,0,008b8764,ac:i,GetNetworkWirelessEnable
+1035,0,0,A_4fc250,4fc250,0,008b877c,cecd:s,SprInitialise
 1035,0,0,A_4fdc60,4fdc60,0,008bb62c,cfg:i (copy),
 1035,0,0,A_4fe500,4fe500,0,008bb628,cfg:i,
-1035,3,0,A_53bd2c,53bd2c,0,008b8790,frd:a,
+1035,3,0,A_53bd2c,53bd2c,0,008b8790,frd:a,UpdatePreference
 1036,0,0,A_4fdc94,4fdc94,0,008bb62c,cfg:i (copy),
 1036,0,0,A_4fe69c,4fe69c,0,008bb628,cfg:i,
-1036,1,0,A_4e5024,4e5024,0,008b8764,ac:i,
-1036,1,2,A_4fbc8c,4fbc8c,0,008b877c,cecd:s,
+1036,1,0,A_4e5024,4e5024,0,008b8764,ac:i,SetNetworkWirelessEnable
+1036,1,2,A_4fbc8c,4fbc8c,0,008b877c,cecd:s,SprGetSendSlotsMetadata
 1036,3,2,A_51fc74,51fc74,1,,"boss (session, inferred)",GetStepIdListPrivileged
-1037,0,0,A_4e599c,4e599c,0,008b8764,ac:i,
-1037,2,2,A_4fbd5c,4fbd5c,0,008b877c,cecd:s,
-1037,4,0,A_53c0dc,53c0dc,0,008b8790,frd:a,
-1038,1,0,A_4e59dc,4e59dc,0,008b8764,ac:i,
-1038,1,0,A_53c2b0,53c2b0,0,008b8790,frd:a,
-1038,2,0,A_4fbe9c,4fbe9c,0,008b877c,cecd:s,
-1039,0,0,A_4e5888,4e5888,0,008b8764,ac:i,
-1039,0,0,A_4fc334,4fc334,0,008b877c,cecd:s,
-1040,0,0,A_4fc284,4fc284,0,008b877c,cecd:s,
-1040,0,0,A_53c078,53c078,0,008b8790,frd:a,
-1040,0,2,A_4e58dc,4e58dc,0,008b8764,ac:i,
-1041,0,0,A_4e6024,4e6024,0,008b8764,ac:i,
-1041,1,2,A_4fbda4,4fbda4,0,008b877c,cecd:s,
-1042,1,0,A_4e60a8,4e60a8,0,008b8764,ac:i,
-1042,3,2,A_4fbee0,4fbee0,0,008b877c,cecd:s,
-1043,0,0,A_4e6124,4e6124,0,008b8764,ac:i,
-1043,0,0,A_4fc368,4fc368,0,008b877c,cecd:s,
-1044,1,0,A_4e6164,4e6164,0,008b8764,ac:i,
-1044,1,0,A_4fbf38,4fbf38,0,008b877c,cecd:s,
-1045,0,0,A_4e5fd0,4e5fd0,0,008b8764,ac:i,
-1045,0,0,A_4fbd1c,4fbd1c,0,008b877c,cecd:s,
+1037,0,0,A_4e599c,4e599c,0,008b8764,ac:i,GetNetworkWirelessEditableEssidSecurity
+1037,2,2,A_4fbd5c,4fbd5c,0,008b877c,cecd:s,SprGetSlot
+1037,4,0,A_53c0dc,53c0dc,0,008b8790,frd:a,UpdateFavoriteGame
+1038,1,0,A_4e59dc,4e59dc,0,008b8764,ac:i,SetNetworkWirelessEditableEssidSecurity
+1038,1,0,A_53c2b0,53c2b0,0,008b8790,frd:a,SetNcPrincipalId
+1038,2,0,A_4fbe9c,4fbe9c,0,008b877c,cecd:s,SprSetTitleSent
+1039,0,0,A_4e5888,4e5888,0,008b8764,ac:i,GetNetworkWirelessEssidSecuritySsid
+1039,0,0,A_4fc334,4fc334,0,008b877c,cecd:s,SprFinaliseSend
+1040,0,0,A_4fc284,4fc284,0,008b877c,cecd:s,SprStartRecv
+1040,0,0,A_53c078,53c078,0,008b8790,frd:a,IncrementMoveCount
+1040,0,2,A_4e58dc,4e58dc,0,008b8764,ac:i,SetNetworkWirelessEssidSecuritySsid
+1041,0,0,A_4e6024,4e6024,0,008b8764,ac:i,GetNetworkWireleesEssidSsidLength
+1041,1,2,A_4fbda4,4fbda4,0,008b877c,cecd:s,SprSetRecvSlotsMetadata
+1042,1,0,A_4e60a8,4e60a8,0,008b8764,ac:i,SetNetworkWirelessEssidSsidLength
+1042,3,2,A_4fbee0,4fbee0,0,008b877c,cecd:s,SprAddSlot
+1043,0,0,A_4e6124,4e6124,0,008b8764,ac:i,GetNetworkWirelessEssidSecurityMode
+1043,0,0,A_4fc368,4fc368,0,008b877c,cecd:s,SprFinaliseRecv
+1044,1,0,A_4e6164,4e6164,0,008b8764,ac:i,SetNetworkWirelessEssidSecurityMode
+1044,1,0,A_4fbf38,4fbf38,0,008b877c,cecd:s,SprDone
+1045,0,0,A_4e5fd0,4e5fd0,0,008b8764,ac:i,GetNetworkWirelessEssidPassphrase
+1045,0,0,A_4fbd1c,4fbd1c,0,008b877c,cecd:s,GenHashConsoleUnique
 1045,3,0,A_51fb6c,51fb6c,1,,"boss (session, inferred)",DeleteNsDataPrivileged
-1046,0,2,A_4e6064,4e6064,0,008b8764,ac:i,
+1046,0,2,A_4e6064,4e6064,0,008b8764,ac:i,SetNetworkWirelessEssidPassphrase
 1046,0,2,A_4fc45c,4fc45c,0,008b877c,cecd:s,
 1046,5,2,A_51feb8,51feb8,1,,"boss (session, inferred)",GetNsDataHeaderInfoPrivileged
-1047,0,0,A_4e5760,4e5760,0,008b8764,ac:i,
+1047,0,0,A_4e5760,4e5760,0,008b8764,ac:i,GetNetworkWirelessEssidSecurityKey
 1047,0,0,A_4fc210,4fc210,0,008b877c,cecd:s,
 1047,6,2,A_51faf8,51faf8,1,,"boss (session, inferred)",ReadNsDataPrivileged
-1048,0,2,A_4e57b4,4e57b4,0,008b8764,ac:i,
-1049,0,0,A_4e56a4,4e56a4,0,008b8764,ac:i,
-1050,1,0,A_4e56e4,4e56e4,0,008b8764,ac:i,
+1048,0,2,A_4e57b4,4e57b4,0,008b8764,ac:i,SetNetworkWirelessEssidSecurityKey
+1049,0,0,A_4e56a4,4e56a4,0,008b8764,ac:i,GetNetworkMultiSSIDEnable
+1050,1,0,A_4e56e4,4e56e4,0,008b8764,ac:i,SetNetworkMultiSSIDEnable
 1050,4,0,A_51fdf4,51fdf4,1,,"boss (session, inferred)",SetNsDataNewFlagPrivileged
-1051,0,0,A_4e5cf4,4e5cf4,0,008b8764,ac:i,
+1051,0,0,A_4e5cf4,4e5cf4,0,008b8764,ac:i,GetNetworkWirelesMultiSsidMultiSsidType
 1051,3,0,A_51fdb0,51fdb0,1,,"boss (session, inferred)",GetNsDataNewFlagPrivileged
-1052,1,0,A_4e5e84,4e5e84,0,008b8764,ac:i,
-1053,0,0,A_4e5920,4e5920,0,008b8764,ac:i,
+1052,1,0,A_4e5e84,4e5e84,0,008b8764,ac:i,SetNetworkWirelesMultiSsidMultiSsidType
+1053,0,0,A_4e5920,4e5920,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSettingNum
 1054,0,0,A_51fd78,51fd78,1,,"boss (session, inferred)",
-1054,1,0,A_4e5960,4e5960,0,008b8764,ac:i,
-1055,0,0,A_4e5d34,4e5d34,0,008b8764,ac:i,
+1054,1,0,A_4e5960,4e5960,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSettingNum
+1055,0,0,A_4e5d34,4e5d34,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting0Ssid
 1056,0,0,A_51fcf0,51fcf0,1,,"boss (session, inferred)",GetTestModeAvailability
-1056,0,2,A_4e5ec0,4e5ec0,0,008b8764,ac:i,
-1057,0,0,A_4e6334,4e6334,0,008b8764,ac:i,
+1056,0,2,A_4e5ec0,4e5ec0,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting0Ssid
+1057,0,0,A_4e6334,4e6334,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting0SsidLength
 1058,1,0,A_4e6574,4e6574,0,008b8764,ac:i,
 1059,0,0,A_4e67f0,4e67f0,0,008b8764,ac:i,
 1060,1,0,A_4e692c,4e692c,0,008b8764,ac:i,
-1061,0,0,A_4e62e0,4e62e0,0,008b8764,ac:i,
+1061,0,0,A_4e62e0,4e62e0,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting0PassPhrase
 1061,1,2,A_51f958,51f958,1,,"boss (session, inferred)",SetPolicyListEnvId
 1062,0,2,A_4e6530,4e6530,0,008b8764,ac:i,
 1062,1,2,A_51f8d4,51f8d4,1,,"boss (session, inferred)",GetPolicyListEnvId
-1063,0,0,A_4e5a58,4e5a58,0,008b8764,ac:i,
+1063,0,0,A_4e5a58,4e5a58,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting0Key
 1063,1,2,A_51f860,51f860,1,,"boss (session, inferred)",SetPolicyListUrl
-1064,0,2,A_4e5be4,4e5be4,0,008b8764,ac:i,
+1064,0,2,A_4e5be4,4e5be4,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting0Key
 1064,1,2,A_51f7e4,51f7e4,1,,"boss (session, inferred)",GetPolicyListUrl
-1065,0,0,A_4e5d88,4e5d88,0,008b8764,ac:i,
+1065,0,0,A_4e5d88,4e5d88,0,008b8764,ac:i,GetNetworkMultiSsidSetting1Ssid
 1065,0,2,A_51ff14,51ff14,1,,"boss (session, inferred)",
-1066,0,2,A_4e5f04,4e5f04,0,008b8764,ac:i,
-1067,0,0,A_4e63c8,4e63c8,0,008b8764,ac:i,
+1066,0,2,A_4e5f04,4e5f04,0,008b8764,ac:i,SetNetworkMultiSsidSetting1Ssid
+1067,0,0,A_4e63c8,4e63c8,0,008b8764,ac:i,GetNetworkMultiSsidSetting1SsidLength
 1068,1,0,A_4e65f4,4e65f4,0,008b8764,ac:i,
 1069,0,0,A_4e6830,4e6830,0,008b8764,ac:i,
 1070,1,0,A_4e6968,4e6968,0,008b8764,ac:i,
 1070,3,2,A_51fa60,51fa60,1,,"boss (session, inferred)",StartTaskPrivileged
-1071,0,0,A_4e6374,4e6374,0,008b8764,ac:i,
+1071,0,0,A_4e6374,4e6374,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting1PassPhrase
 1071,3,2,A_51fe6c,51fe6c,1,,"boss (session, inferred)",StartTaskImmediatePrivileged
 1072,0,2,A_4e65b0,4e65b0,0,008b8764,ac:i,
 1072,3,2,A_51faac,51faac,1,,"boss (session, inferred)",CancelTaskPrivileged
-1073,0,0,A_4e5aac,4e5aac,0,008b8764,ac:i,
-1074,0,2,A_4e5c28,4e5c28,0,008b8764,ac:i,
-1075,0,0,A_4e5ddc,4e5ddc,0,008b8764,ac:i,
-1076,0,2,A_4e5f48,4e5f48,0,008b8764,ac:i,
+1073,0,0,A_4e5aac,4e5aac,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting1Key
+1074,0,2,A_4e5c28,4e5c28,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting1Key
+1075,0,0,A_4e5ddc,4e5ddc,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting2Ssid
+1076,0,2,A_4e5f48,4e5f48,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting2Ssid
 1076,3,2,A_51ff4c,51ff4c,1,,"boss (session, inferred)",StartBgImmediatePrivileged
 1077,0,0,A_4e645c,4e645c,0,008b8764,ac:i,
 1078,1,0,A_4e6674,4e6674,0,008b8764,ac:i,
 1079,0,0,A_4e6870,4e6870,0,008b8764,ac:i,
 1079,3,2,A_51ff98,51ff98,1,,"boss (session, inferred)",GetTaskPriorityPrivileged
 1080,1,0,A_4e69a4,4e69a4,0,008b8764,ac:i,
-1081,0,0,A_4e6408,4e6408,0,008b8764,ac:i,
+1081,0,0,A_4e6408,4e6408,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting2Passphrase
 1081,4,4,A_51fc10,51fc10,1,,"boss (session, inferred)",GetTaskQueryPrivileged
 1082,0,2,A_4e6630,4e6630,0,008b8764,ac:i,
-1083,0,0,A_4e5b00,4e5b00,0,008b8764,ac:i,
-1084,0,2,A_4e5c6c,4e5c6c,0,008b8764,ac:i,
-1085,0,0,A_4e5e30,4e5e30,0,008b8764,ac:i,
-1086,0,2,A_4e5f8c,4e5f8c,0,008b8764,ac:i,
+1083,0,0,A_4e5b00,4e5b00,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting2Key
+1084,0,2,A_4e5c6c,4e5c6c,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting2Key
+1085,0,0,A_4e5e30,4e5e30,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting3Ssid
+1086,0,2,A_4e5f8c,4e5f8c,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting3Ssid
 1087,0,0,A_4e64f0,4e64f0,0,008b8764,ac:i,
 1087,1,2,A_51f4b0,51f4b0,1,,"boss (session, inferred)",GetSprelayUrl
 1088,1,0,A_4e66f4,4e66f4,0,008b8764,ac:i,
@@ -843,22 +843,22 @@ cmd_id,normal,translate,name,offset,callers,handle_global,service,command
 1090,1,0,A_4e69e0,4e69e0,0,008b8764,ac:i,
 1091,0,0,A_4e649c,4e649c,0,008b8764,ac:i,
 1092,0,2,A_4e66b0,4e66b0,0,008b8764,ac:i,
-1093,0,0,A_4e5b54,4e5b54,0,008b8764,ac:i,
-1094,0,2,A_4e5cb0,4e5cb0,0,008b8764,ac:i,
-1096,1,0,A_4e4d20,4e4d20,0,008b8764,ac:i,
-1097,0,0,A_4e5164,4e5164,0,008b8764,ac:i,
-1099,0,0,A_4e4ad8,4e4ad8,0,008b8764,ac:i,
-1100,0,2,A_4e4b6c,4e4b6c,0,008b8764,ac:i,
-1101,0,0,A_4e51a4,4e51a4,0,008b8764,ac:i,
-1102,0,2,A_4e5234,4e5234,0,008b8764,ac:i,
-1103,0,0,A_4e492c,4e492c,0,008b8764,ac:i,
-1104,0,2,A_4e4a14,4e4a14,0,008b8764,ac:i,
-1105,0,0,A_4e4ccc,4e4ccc,0,008b8764,ac:i,
-1106,0,2,A_4e4d5c,4e4d5c,0,008b8764,ac:i,
-1107,0,0,A_4e4f4c,4e4f4c,0,008b8764,ac:i,
-1108,0,2,A_4e4fe0,4e4fe0,0,008b8764,ac:i,
-1109,0,0,A_4e5a18,4e5a18,0,008b8764,ac:i,
-1110,1,0,A_4e5ba8,4e5ba8,0,008b8764,ac:i,
+1093,0,0,A_4e5b54,4e5b54,0,008b8764,ac:i,GetNetworkWirelessMultiSsidSetting3Key
+1094,0,2,A_4e5cb0,4e5cb0,0,008b8764,ac:i,SetNetworkWirelessMultiSsidSetting3Key
+1096,1,0,A_4e4d20,4e4d20,0,008b8764,ac:i,SetNetworkIpEnableDHCP
+1097,0,0,A_4e5164,4e5164,0,008b8764,ac:i,GetNetworkAutoDNSSetting
+1099,0,0,A_4e4ad8,4e4ad8,0,008b8764,ac:i,GetNetworkIpAddress
+1100,0,2,A_4e4b6c,4e4b6c,0,008b8764,ac:i,SetNetworkIpAddress
+1101,0,0,A_4e51a4,4e51a4,0,008b8764,ac:i,GetNetworkDefaultGateway
+1102,0,2,A_4e5234,4e5234,0,008b8764,ac:i,SetNetworkDefaultGateway
+1103,0,0,A_4e492c,4e492c,0,008b8764,ac:i,GetNetworkIpNetmask
+1104,0,2,A_4e4a14,4e4a14,0,008b8764,ac:i,SetNetworkIpNetMask
+1105,0,0,A_4e4ccc,4e4ccc,0,008b8764,ac:i,GetNetworkIpPrimaryDNS
+1106,0,2,A_4e4d5c,4e4d5c,0,008b8764,ac:i,SetNetworkIpPrimaryDNS
+1107,0,0,A_4e4f4c,4e4f4c,0,008b8764,ac:i,GetNetworkIpSecondaryDNS
+1108,0,2,A_4e4fe0,4e4fe0,0,008b8764,ac:i,SetNetworkIpSecondaryDNS
+1109,0,0,A_4e5a18,4e5a18,0,008b8764,ac:i,GetNetworkIpScanlessConnectHasConnected
+1110,1,0,A_4e5ba8,4e5ba8,0,008b8764,ac:i,SetNetworkIpScanlessConnectHasConnected
 1111,0,0,A_4e6bac,4e6bac,0,008b8764,ac:i,
 1112,0,2,A_4e6c00,4e6c00,0,008b8764,ac:i,
 1113,0,0,A_4e6248,4e6248,0,008b8764,ac:i,
@@ -866,32 +866,32 @@ cmd_id,normal,translate,name,offset,callers,handle_global,service,command
 1115,0,0,A_4e67b0,4e67b0,0,008b8764,ac:i,
 1116,1,0,A_4e68f0,4e68f0,0,008b8764,ac:i,
 1117,0,0,A_4e7148,4e7148,0,008b8764,ac:i,
-1119,0,0,A_4e4b2c,4e4b2c,0,008b8764,ac:i,
-1120,1,0,A_4e4bb0,4e4bb0,0,008b8764,ac:i,
-1121,0,0,A_4e4da0,4e4da0,0,008b8764,ac:i,
-1122,1,0,A_4e4e88,4e4e88,0,008b8764,ac:i,
-1123,0,0,A_4e49d4,4e49d4,0,008b8764,ac:i,
-1124,1,0,A_4e4a9c,4e4a9c,0,008b8764,ac:i,
-1125,0,0,A_4e4980,4e4980,0,008b8764,ac:i,
-1126,0,2,A_4e4a58,4e4a58,0,008b8764,ac:i,
-1127,0,0,A_4e4e34,4e4e34,0,008b8764,ac:i,
-1128,0,2,A_4e4f08,4e4f08,0,008b8764,ac:i,
-1129,0,0,A_4e4de0,4e4de0,0,008b8764,ac:i,
-1130,0,2,A_4e4ec4,4e4ec4,0,008b8764,ac:i,
-1131,0,0,A_4e5060,4e5060,0,008b8764,ac:i,
-1132,1,0,A_4e50e8,4e50e8,0,008b8764,ac:i,
-1133,0,0,A_4e4874,4e4874,0,008b8764,ac:i,
-1134,1,0,A_4e48f0,4e48f0,0,008b8764,ac:i,
-1135,0,0,A_4e5124,4e5124,0,008b8764,ac:i,
-1136,0,0,A_4e4bec,4e4bec,0,008b8764,ac:i,
-1137,0,0,A_4e5664,4e5664,0,008b8764,ac:i,
+1119,0,0,A_4e4b2c,4e4b2c,0,008b8764,ac:i,GetNetworkProxyEnable
+1120,1,0,A_4e4bb0,4e4bb0,0,008b8764,ac:i,SetNetworkProxyEnable
+1121,0,0,A_4e4da0,4e4da0,0,008b8764,ac:i,GetNetworkProxyAuthType
+1122,1,0,A_4e4e88,4e4e88,0,008b8764,ac:i,SetNetworkProxyAuthType
+1123,0,0,A_4e49d4,4e49d4,0,008b8764,ac:i,GetNetworkProxyPort
+1124,1,0,A_4e4a9c,4e4a9c,0,008b8764,ac:i,SetNetworkProxyPort
+1125,0,0,A_4e4980,4e4980,0,008b8764,ac:i,GetNetworkProxyHost
+1126,0,2,A_4e4a58,4e4a58,0,008b8764,ac:i,SetNetworkProxyHost
+1127,0,0,A_4e4e34,4e4e34,0,008b8764,ac:i,GetNetworkSettingProxyUserName
+1128,0,2,A_4e4f08,4e4f08,0,008b8764,ac:i,SetNetworkSettingProxyUserName
+1129,0,0,A_4e4de0,4e4de0,0,008b8764,ac:i,GetNetworkSettingProxyPassword
+1130,0,2,A_4e4ec4,4e4ec4,0,008b8764,ac:i,SetNetworkSettingProxyPassword
+1131,0,0,A_4e5060,4e5060,0,008b8764,ac:i,GetNetworkEnableUPnP
+1132,1,0,A_4e50e8,4e50e8,0,008b8764,ac:i,SetNetworkEnableUPnP
+1133,0,0,A_4e4874,4e4874,0,008b8764,ac:i,GetNetworkOtherMtu
+1134,1,0,A_4e48f0,4e48f0,0,008b8764,ac:i,SetNetworkOtherMtu
+1135,0,0,A_4e5124,4e5124,0,008b8764,ac:i,GetConnectingNetworkSettingVersion
+1136,0,0,A_4e4bec,4e4bec,0,008b8764,ac:i,GetConnectingNetworkCrc
+1137,0,0,A_4e5664,4e5664,0,008b8764,ac:i,GetConnectingNetworkWirelessEnable
 1138,0,0,A_4e6770,4e6770,0,008b8764,ac:i,
-1139,0,0,A_4e61f4,4e61f4,0,008b8764,ac:i,
+1139,0,0,A_4e61f4,4e61f4,0,008b8764,ac:i,GetConnectingNetworkWirelessEssidSsid
 1140,0,0,A_4e6e24,4e6e24,0,008b8764,ac:i,
 1141,0,0,A_4e6e64,4e6e64,0,008b8764,ac:i,
 1142,0,0,A_4e6dd0,4e6dd0,0,008b8764,ac:i,
-1143,0,0,A_4e61a0,4e61a0,0,008b8764,ac:i,
-1144,0,0,A_4e60e4,4e60e4,0,008b8764,ac:i,
+1143,0,0,A_4e61a0,4e61a0,0,008b8764,ac:i,GetConnectingNetworkWirelessEssidSecurityKey
+1144,0,0,A_4e60e4,4e60e4,0,008b8764,ac:i,GetConnectingNetworkMultiSsidEnable
 1145,0,0,A_4e6c44,4e6c44,0,008b8764,ac:i,
 1146,0,0,A_4e6730,4e6730,0,008b8764,ac:i,
 1147,0,0,A_4e6c84,4e6c84,0,008b8764,ac:i,
@@ -914,96 +914,96 @@ cmd_id,normal,translate,name,offset,callers,handle_global,service,command
 1164,0,0,A_4e72c4,4e72c4,0,008b8764,ac:i,
 1165,0,0,A_4e70b4,4e70b4,0,008b8764,ac:i,
 1166,0,0,A_4e6b58,4e6b58,0,008b8764,ac:i,
-1167,0,0,A_4e5498,4e5498,0,008b8764,ac:i,
-1168,0,0,A_4e57f8,4e57f8,0,008b8764,ac:i,
-1169,0,0,A_4e5404,4e5404,0,008b8764,ac:i,
-1170,0,0,A_4e5834,4e5834,0,008b8764,ac:i,
-1171,0,0,A_4e531c,4e531c,0,008b8764,ac:i,
-1172,0,0,A_4e54d8,4e54d8,0,008b8764,ac:i,
-1173,0,0,A_4e5610,4e5610,0,008b8764,ac:i,
+1167,0,0,A_4e5498,4e5498,0,008b8764,ac:i,GetConnectingNetworkEnableDHCP
+1168,0,0,A_4e57f8,4e57f8,0,008b8764,ac:i,GetConnectingNetworkIpAutoDNSSetting
+1169,0,0,A_4e5404,4e5404,0,008b8764,ac:i,GetConnectingNetworkIpAddress
+1170,0,0,A_4e5834,4e5834,0,008b8764,ac:i,GetConnectingNetworkIpDefaultGateway
+1171,0,0,A_4e531c,4e531c,0,008b8764,ac:i,GetConnectingNetworkIpNetmask
+1172,0,0,A_4e54d8,4e54d8,0,008b8764,ac:i,GetConnectingNetworkPrimaryDNS
+1173,0,0,A_4e5610,4e5610,0,008b8764,ac:i,GetConnectingNetworkSecondaryDNS
 1174,0,0,A_4e6a1c,4e6a1c,0,008b8764,ac:i,
 1175,0,0,A_4e7304,4e7304,0,008b8764,ac:i,
 1176,0,0,A_4e6ea4,4e6ea4,0,008b8764,ac:i,
 1177,0,0,A_4e71c4,4e71c4,0,008b8764,ac:i,
 1178,0,0,A_4e7358,4e7358,0,008b8764,ac:i,
-1179,0,0,A_4e5458,4e5458,0,008b8764,ac:i,
-1180,0,0,A_4e552c,4e552c,0,008b8764,ac:i,
-1181,0,0,A_4e53c4,4e53c4,0,008b8764,ac:i,
-1182,0,0,A_4e5370,4e5370,0,008b8764,ac:i,
-1183,0,0,A_4e55bc,4e55bc,0,008b8764,ac:i,
-1184,0,0,A_4e556c,4e556c,0,008b8764,ac:i,
-1185,0,0,A_4e5720,4e5720,0,008b8764,ac:i,
-1186,0,0,A_4e5278,4e5278,0,008b8764,ac:i,
-2049,2,2,A_4fdf90,4fdf90,0,008bb628,cfg:i,
+1179,0,0,A_4e5458,4e5458,0,008b8764,ac:i,GetConnectingNetworkProxyEnable
+1180,0,0,A_4e552c,4e552c,0,008b8764,ac:i,GetConnectingNetworkProxyAuthType
+1181,0,0,A_4e53c4,4e53c4,0,008b8764,ac:i,GetConnectingNetworkProxyPort
+1182,0,0,A_4e5370,4e5370,0,008b8764,ac:i,GetConnectingNetworkProxyHost
+1183,0,0,A_4e55bc,4e55bc,0,008b8764,ac:i,GetConnectingNetworkProxyUserName
+1184,0,0,A_4e556c,4e556c,0,008b8764,ac:i,GetConnectingNetworkProxyPassword
+1185,0,0,A_4e5720,4e5720,0,008b8764,ac:i,GetConnectingNetworkEnableUPnP
+1186,0,0,A_4e5278,4e5278,0,008b8764,ac:i,GetConnectingNetworkMtu
+2049,2,2,A_4fdf90,4fdf90,0,008bb628,cfg:i,GetConfigInfoBlk8
 2049,4,0,A_4ef3dc,4ef3dc,1,,"fs:USER (session, inferred)",
 2050,0,0,A_4ef6e4,4ef6e4,1,,"fs:USER (session, inferred)",
-2050,1,0,A_50cf1c,50cf1c,0,008b8514,ptm:sysm,
-2050,2,2,A_4fe01c,4fe01c,0,008bb628,cfg:i,
+2050,1,0,A_50cf1c,50cf1c,0,008b8514,ptm:sysm,SetInfoLEDPatternHeader
+2050,2,2,A_4fe01c,4fe01c,0,008bb628,cfg:i,SetConfigInfoBlk4
 2050,3,2,A_4ef490,4ef490,4,,"fs:USER (session, inferred)",File::Read
 2050,7,2,A_4ef330,4ef330,1,,"fs:USER (session, inferred)",OpenFile
-2051,0,0,A_4fe124,4fe124,0,008bb628,cfg:i,
-2051,0,0,A_50cb60,50cb60,0,008b8514,ptm:sysm,
+2051,0,0,A_4fe124,4fe124,0,008bb628,cfg:i,UpdateConfigNANDSavegame
+2051,0,0,A_50cb60,50cb60,0,008b8514,ptm:sysm,GetInfoLEDStatus
 2051,1,0,A_4ef660,4ef660,1,,"fs:USER (session, inferred)",
 2051,4,2,A_4ef514,4ef514,2,,"fs:USER (session, inferred)",File::Write
 2052,0,0,A_4ef5c0,4ef5c0,1,,"fs:USER (session, inferred)",File::GetSize
 2052,0,0,A_4ef628,4ef628,1,,"fs:USER (session, inferred)",
-2052,1,0,A_50cfd0,50cfd0,0,008b8514,ptm:sysm,
-2052,3,2,A_4fe218,4fe218,0,008bb628,cfg:i,
+2052,1,0,A_50cfd0,50cfd0,0,008b8514,ptm:sysm,SetBatteryEmptyLEDPattern
+2052,3,2,A_4fe218,4fe218,0,008bb628,cfg:i,CreateConfigInfoBlk
 2052,5,2,A_4edbe0,4edbe0,1,,"fs:USER (session, inferred)",DeleteFile
-2053,0,0,A_4fe2f8,4fe2f8,0,008bb628,cfg:i,
-2053,0,0,A_50cb2c,50cb2c,0,008b8514,ptm:sysm,
-2054,0,0,A_4fe26c,4fe26c,0,008bb628,cfg:i,
-2054,3,2,A_50c9a4,50c9a4,0,008b8514,ptm:sysm,
+2053,0,0,A_4fe2f8,4fe2f8,0,008bb628,cfg:i,DeleteConfigNANDSavefile
+2053,0,0,A_50cb2c,50cb2c,0,008b8514,ptm:sysm,ClearStepHistory
+2054,0,0,A_4fe26c,4fe26c,0,008bb628,cfg:i,FormatConfig
+2054,3,2,A_50c9a4,50c9a4,0,008b8514,ptm:sysm,SetStepHistory
 2054,5,2,A_4ee2b8,4ee2b8,1,,"fs:USER (session, inferred)",DeleteDirectory
 2055,0,0,A_4fddcc,4fddcc,0,008bb628,cfg:i,
 2055,5,2,A_4ef010,4ef010,1,,"fs:USER (session, inferred)",DeleteDirectoryRecursively
 2056,0,0,A_4ef4e8,4ef4e8,3,,"fs:USER (session, inferred)",File::Close
 2056,0,0,A_4fe32c,4fe32c,0,008bb628,cfg:i,
-2056,0,0,A_50cd60,50cd60,0,008b8514,ptm:sysm,
-2056,0,0,A_50de2c,50de2c,0,008b8510,ptm:play,
+2056,0,0,A_50cd60,50cd60,0,008b8514,ptm:sysm,GetPlayHistoryStart
+2056,0,0,A_50de2c,50de2c,0,008b8510,ptm:play,GetPlayHistoryStart
 2056,8,2,A_4edb58,4edb58,1,,"fs:USER (session, inferred)",CreateFile
 2057,0,0,A_4fe5b8,4fe5b8,0,008bb628,cfg:i,
-2057,0,0,A_50ce6c,50ce6c,0,008b8514,ptm:sysm,
-2057,0,0,A_50df38,50df38,0,008b8510,ptm:play,
+2057,0,0,A_50ce6c,50ce6c,0,008b8514,ptm:sysm,GetPlayHistoryLength
+2057,0,0,A_50df38,50df38,0,008b8510,ptm:play,GetPlayHistoryLength
 2057,6,2,A_4ee264,4ee264,1,,"fs:USER (session, inferred)",CreateDirectory
-2058,0,0,A_4fe724,4fe724,0,008bb628,cfg:i,
-2058,0,0,A_50caf8,50caf8,0,008b8514,ptm:sysm,
+2058,0,0,A_4fe724,4fe724,0,008bb628,cfg:i,ResetAnalogStickCalibrationParam
+2058,0,0,A_50caf8,50caf8,0,008b8514,ptm:sysm,ClearPlayHistory
 2058,1,0,A_4ef428,4ef428,1,,"fs:USER (session, inferred)",File::SetPriority
 2059,0,0,A_4ef3a4,4ef3a4,1,,"fs:USER (session, inferred)",File::GetPriority
-2059,2,2,A_4fe6d0,4fe6d0,0,008bb628,cfg:i,
+2059,2,2,A_4fe6d0,4fe6d0,0,008bb628,cfg:i,SetGetLocalFriendCodeSeedData
 2059,4,2,A_4ee028,4ee028,1,,"fs:USER (session, inferred)",OpenDirectory
 2060,0,0,A_4ef458,4ef458,1,,"fs:USER (session, inferred)",File::OpenLinkFile
-2060,1,2,A_4fe7c0,4fe7c0,0,008bb628,cfg:i,
-2060,2,0,A_50c6e4,50c6e4,0,008b8514,ptm:sysm,
+2060,1,2,A_4fe7c0,4fe7c0,0,008bb628,cfg:i,SetLocalFriendCodeSeedSignature
+2060,2,0,A_50c6e4,50c6e4,0,008b8514,ptm:sysm,SetUserTime
 2060,3,2,A_4eddf8,4eddf8,11,,"fs:USER (session, inferred)",OpenArchive
-2061,0,0,A_4fe620,4fe620,0,008bb628,cfg:i,
-2061,0,0,A_50ceac,50ceac,0,008b8514,ptm:sysm,
+2061,0,0,A_4fe620,4fe620,0,008bb628,cfg:i,DeleteCreateNANDLocalFriendCodeSeed
+2061,0,0,A_50ceac,50ceac,0,008b8514,ptm:sysm,InvalidateSystemTime
 2061,5,4,A_4ee08c,4ee08c,5,,"fs:USER (session, inferred)",ControlArchive
-2062,0,0,A_4fe758,4fe758,0,008bb628,cfg:i,
-2062,5,0,A_50ca68,50ca68,0,008b8514,ptm:sysm,
-2063,0,0,A_50cba0,50cba0,0,008b8514,ptm:sysm,
-2063,1,2,A_4fe850,4fe850,0,008bb628,cfg:i,
-2064,0,0,A_4fe534,4fe534,0,008bb628,cfg:i,
-2064,0,0,A_50cd30,50cd30,0,008b8514,ptm:sysm,
-2065,0,0,A_50c918,50c918,0,008b8514,ptm:sysm,
-2065,2,4,A_4fe2a0,4fe2a0,0,008bb628,cfg:i,
-2066,0,0,A_4fe394,4fe394,0,008bb628,cfg:i,
-2066,0,0,A_50cf54,50cf54,0,008b8514,ptm:sysm,
+2062,0,0,A_4fe758,4fe758,0,008bb628,cfg:i,VerifySigLocalFriendCodeSeed
+2062,5,0,A_50ca68,50ca68,0,008b8514,ptm:sysm,NotifyPlayEvent
+2063,0,0,A_50cba0,50cba0,0,008b8514,ptm:sysm,GetSoftwareClosedFlag
+2063,1,2,A_4fe850,4fe850,0,008bb628,cfg:i,GetLocalFriendCodeSeedData
+2064,0,0,A_4fe534,4fe534,0,008bb628,cfg:i,GetLocalFriendCodeSeed
+2064,0,0,A_50cd30,50cd30,0,008b8514,ptm:sysm,ClearSoftwareClosedFlag
+2065,0,0,A_50c918,50c918,0,008b8514,ptm:sysm,GetShellStatus
+2065,2,4,A_4fe2a0,4fe2a0,0,008bb628,cfg:i,SetSecureInfo
+2066,0,0,A_4fe394,4fe394,0,008bb628,cfg:i,DeleteCreateNANDSecureInfo
+2066,0,0,A_50cf54,50cf54,0,008b8514,ptm:sysm,IsShutdownByBatteryEmpty
 2067,0,0,A_4eddc0,4eddc0,1,,"fs:USER (session, inferred)",GetCardType
-2067,0,0,A_4fe444,4fe444,0,008bb628,cfg:i,
-2067,0,0,A_50c83c,50c83c,0,008b8514,ptm:sysm,
-2068,0,0,A_50d040,50d040,0,008b8514,ptm:sysm,
-2068,1,2,A_4fe3fc,4fe3fc,0,008bb628,cfg:i,
-2069,1,0,A_50d080,50d080,0,008b8514,ptm:sysm,
-2069,1,2,A_4fe570,4fe570,0,008bb628,cfg:i,
+2067,0,0,A_4fe444,4fe444,0,008bb628,cfg:i,VerifySigSecureInfo
+2067,0,0,A_50c83c,50c83c,0,008b8514,ptm:sysm,FormatSavedata
+2068,0,0,A_50d040,50d040,0,008b8514,ptm:sysm,GetLegacyJumpProhibitedFlag
+2068,1,2,A_4fe3fc,4fe3fc,0,008bb628,cfg:i,SecureInfoGetData
+2069,1,0,A_50d080,50d080,0,008b8514,ptm:sysm,SetPlayHistoryRecordingMode
+2069,1,2,A_4fe570,4fe570,0,008bb628,cfg:i,SecureInfoGetSignature
 2070,0,0,A_4ee580,4ee580,1,,"fs:USER (session, inferred)",GetSdmcFatfsError
-2070,0,0,A_4fdfdc,4fdfdc,0,008bb628,cfg:i,
+2070,0,0,A_4fdfdc,4fdfdc,0,008bb628,cfg:i,SecureInfoGetRegion
 2070,0,0,A_50d130,50d130,0,008b8514,ptm:sysm,
 2071,0,0,A_4ee17c,4ee17c,1,,"fs:USER (session, inferred)",IsSdmcDetected
-2071,0,0,A_4fdec8,4fdec8,0,008bb628,cfg:i,
+2071,0,0,A_4fdec8,4fdec8,0,008bb628,cfg:i,SecureInfoGetByte101
 2071,2,0,A_50d170,50d170,0,008b8514,ptm:sysm,
 2072,0,0,A_4ee1b4,4ee1b4,1,,"fs:USER (session, inferred)",IsSdmcWritable
-2072,1,2,A_4fe158,4fe158,0,008bb628,cfg:i,
+2072,1,2,A_4fe158,4fe158,0,008bb628,cfg:i,SecureInfoGetSerialNo
 2073,0,0,A_4fe3c8,4fe3c8,0,008bb628,cfg:i,
 2073,1,2,A_4edcb0,4edcb0,1,,"fs:USER (session, inferred)",GetSdmcCid
 2074,1,2,A_4edc30,4edc30,1,,"fs:USER (session, inferred)",GetNandCid
