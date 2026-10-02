@@ -15,6 +15,9 @@ for t in range(0, len(code) - 3, 4):
         off = w & 0xffffff
         if off & 0x800000: off -= 1 << 24
         callers[t + 8 + off * 4] += 1
+# handle global -> service, from the init function that passes the service-name string (see technical.md section 8 item 7)
+SERVICE = {'008aab70': 'cam:u', '008aaeb4': 'y2r:u', '008b8778': 'cecd:u', '008b877c': 'cecd:s', '008b7d48': 'mic:u',
+           '008b85f4': 'srv:pm', '008b8818': 'ndm:u', '008bf998': 'ir:USER (likely)', '008ab858': 'ac:u/ac:i (ambiguous)'}
 rows = []
 for f in funcs:
     if f.get('library') != 'ctrsvc': continue
@@ -42,8 +45,8 @@ for f in funcs:
             for j in ins[:k]:
                 m = re.match(rx + r', \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', j.op_str)
                 if j.mnemonic == 'ldr' and m: handle = '%08x' % struct.unpack_from('<I', code, j.address + 8 + (int(m.group(1), 0) if m.group(1) else 0))[0]
-    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle))
+    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '')))
 rows.sort()
 with open(sys.argv[1], 'w', newline='') as o:
-    w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global']); w.writerows(rows)
+    w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global', 'service']); w.writerows(rows)
 print(len(rows), 'wrappers,', len({r[:3] for r in rows}), 'distinct headers')
