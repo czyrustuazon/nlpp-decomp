@@ -17,7 +17,11 @@ for t in range(0, len(code) - 3, 4):
         callers[t + 8 + off * 4] += 1
 # handle global -> service, from the init function that passes the service-name string (see technical.md section 8 item 7)
 SERVICE = {'008aab70': 'cam:u', '008aaeb4': 'y2r:u', '008b8778': 'cecd:u', '008b877c': 'cecd:s', '008b7d48': 'mic:u',
-           '008b85f4': 'srv:pm', '008b8818': 'ndm:u', '008bf998': 'ir:USER (likely)', '008ab858': 'ac:u/ac:i (ambiguous)'}
+           '008b85f4': 'srv:pm', '008bb4e0': 'srv:pm', '008b8818': 'ndm:u', '008bf998': 'ir:USER',
+           '008b8764': 'ac:i', '008ab858': 'ac (copy of the ac:i handle)',
+           '008b7ccc': 'frd:u', '008b8790': 'frd:a', '008ab930': 'APT:U',
+           '008b850c': 'ptm:u', '008b851c': 'ptm:s', '008b8514': 'ptm:sysm', '008b8510': 'ptm:play', '008b8518': 'ptm:gets',
+           '008b7d20': 'hid:USER (hid:SPVR shares the init)', '008bb628': 'cfg:i', '008bb62c': 'cfg:i (copy)', '008b878c': 'cfg:i (copy)'}
 rows = []
 for f in funcs:
     if f.get('library') != 'ctrsvc': continue
