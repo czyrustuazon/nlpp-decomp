@@ -33,7 +33,9 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 
 ## State as of 2026-10-01 (rewritten; per-pass update notes folded in, details are in `technical.md` §6.1 to §6.1.4)
 
-**Numbers.** `python -m ctrdecomp check`: 129 entries, 110 at score 0, none drifting. `relink` rebuilds `code.bin` byte-identically (SHA-256 `a83d349d0a000a127f93f743c038921903a2aae111b4b9005aadd446324ab890`). `python -m pytest -q`: 10 passed.
+**Numbers.** `functions.toml` has 6,705 entries (129 at the start of 2026-10-01); 5,021 are generated placeholders. `relink` rebuilds `code.bin` byte-identically (SHA-256 `a83d349d0a000a127f93f743c038921903a2aae111b4b9005aadd446324ab890`); run it after every mass pass because `check` score 0 hides branch cond/link bits. `check` and `relink` now take many minutes: run them in the background and write output to a file. Generated entries live in `src/gen/*.cpp` (`W_<offset>`, `generated = true`, from `tools/wrapgen/gen2.py`); 1,191 kernel `svc` stubs are assembly in `lib/ctrsvc/svc_wrappers.s`. Details: `technical.md` section 8 items 5 to 7.
+
+**New this session.** `symbols/ipc_commands.csv` (from `tools/svc_table.py`) lists 1,071 IPC stubs with command header, caller count, handle global and, for 269, the service name (cam:u, y2r:u, cecd, mic:u, srv:pm, ndm:u, ir:USER, ac). Unnamed: the 223 stubs on handle `0x8b8764` and 217 that take the handle as an argument. Mass-pass yield: 1,089 (up to 0x40 bytes, above 0x500000) and 277 (up to 0x100 bytes). The lifter (`tools/wrapgen/lift.py`) only does straight-line code with `cmp #0; beq`, so the roughly 9,000 remaining 0x20-0x80 byte functions with real branches need lifter work (cmp reg,reg, conditional branches, loops, predicated ops) or hand matching. A tail call to a never-returning callee needs `__attribute__((noreturn))`, else ARMCC emits `b` instead of `bl`.
 
 **Fixed facts.**
 - Vanilla `extracted/exefs/code.bin` equals `.code` BLZ-decompressed from the `.3ds`. It differs from EngPatcher `release/name_input_code.bin` in 6,709 bytes; never match the patched one.
@@ -58,11 +60,10 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 
 ## Next job
 
-1. **Close `TaggedStr::Parse` (158; two more spellings tried 2026-10-01 without gain, see the `technical.md` §6.1.4 batch note; consider leaving it)**, then revisit `DrawTextToPane`, then the `TaggedStr` ctors (17/23).
-2. **Menu binders** (`src/menu_bind.cpp`): `OptionMenu_BindPlateTextures` (120; retail is a cmp/beq chain with one shared `Obj` string and the string pool mid-function), `BindMSelBtnIconAndText` (13, prologue scheduling), then the other 9 callers of `BindMSelBtnIconAndText`, MultiWin header bind `FUN_00255a18`, and the layout callees `FUN_005eba00`/`FUN_005e8720`.
-3. **Breadth:** run `python -m ctrdecomp rank` before picking a batch. The `FUN_005a4ebc` ("set flag") callers number in the dozens; many tiny setters remain. More function-pointer/vtable `[[data]]` (3,707 candidate runs). Remaining Thumb near-misses: strstr (0xb40, 19), bsearch (0xa82, 5), strcoll-like (0xad0, 5), strrchr (0xbdc, 2), memcmp (0xb68) and 0xc84 not attempted.
-4. **Gap 3:** keep signature-matching `nn::`/`nw::` into `lib/`; there is no per-library function list yet (`library` tags in `functions.toml` stand in).
-5. Do not start gap 7 (native port). Do not sink more time in the `ldrex` family or in permuting big functions.
+1. **Name the rest of the IPC surface:** identify handle `0x8b8764` (223 stubs), the argument-handle stubs and the `fs`/`dsp`/`gsp`/`hid` globals (`FUN_0068f668` holds the service-name table); confirm the 269 named ones against command-id ranges. Then join callers to find which game systems use which service.
+2. **Extend the lifter** (`tools/wrapgen/lift.py`) to branching 0x20-0x80 byte functions, then rerun `gen2.py`, `apply2.py` and `relink` (see `tools/wrapgen/README.md`).
+3. **Leftover near-misses and binders:** `TaggedStr::Parse` (158), `DrawTextToPane` (463, parked), `OptionMenu_BindPlateTextures` (120), `BindMSelBtnIconAndText` (13), then `rank`-driven breadth.
+4. Do not start gap 7 (native port). Do not sink more time in the `ldrex` family or in permuting big functions.
 
 **Parallel work convention (several Claude sessions share this working tree).** Another session ("nlpp-decomp-c3") owns file offsets below 0x500000 (leaves/callers, low SDK) and committed `slot_table.cpp`, `flag_setters.cpp`, `utf16_wrappers.cpp`, `static_strings.cpp`, `setters_low.cpp`, `ui_calls_low.cpp`. A session working above 0x500000 keeps the Str/TaggedStr/utf8/font/UI-binder families; the menu binders in `src/menu_bind.cpp` are also ours. Rules: new source file per family; never `git add -A`, stage only your own paths; append-only edits to `functions.toml`/`externs.toml`, and when committing, stage a toml built from HEAD plus only your own entries (via `git hash-object` + `git update-index --cacheinfo`) so each commit holds its sources next to its toml entries; re-read the toml before editing.
 
