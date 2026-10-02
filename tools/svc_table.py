@@ -1,7 +1,7 @@
 """svc_table.py OUT.csv: tabulate the IPC command header of every svc 0x32 wrapper in lib/ctrsvc.
 Header = cmd_id<<16 | normal_params<<6 | translate_params. Callers come from the call-graph ranker."""
-import re, sys, csv, struct, tomllib, collections
-sys.path.insert(0, '.')
+import os, re, sys, csv, struct, tomllib, collections
+sys.path.insert(0, '.'); sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ctrdecomp import config as c, callgraph as cg
 from capstone import *
 cfg = c.load(); code = cfg.code(); md = Cs(CS_ARCH_ARM, CS_MODE_ARM)
@@ -24,9 +24,10 @@ SERVICE = {'008aab70': 'cam:u', '008aaeb4': 'y2r:u', '008b8778': 'cecd:u', '008b
            '008b7d20': 'hid:USER (hid:SPVR shares the init)', '008bb628': 'cfg:i', '008bb62c': 'cfg:i (copy)', '008b878c': 'cfg:i (copy)'}
 # stubs that take a session-handle pointer (no global): attributed by the service init their address cluster follows and by
 # command-id range (fs:USER ids 0x8xx; dsp ids < 0x40; nwm::UDS and boss follow their init strings). Inferred, so tagged.
-def session_service(off, cmd):
+import ipc_names as NM
+def session_service(off, cmd, normal=-1, translate=-1):
     if 0x4ed000 <= off < 0x4f0000 or (off < 0x400000 and 0x800 <= cmd < 0x900): return 'fs:USER (session, inferred)'
-    if 0x501000 <= off < 0x502000 or (off < 0x400000 and cmd < 0x40): return 'dsp::DSP (session, inferred)'
+    if 0x501000 <= off < 0x502000 or (off < 0x400000 and (cmd, normal, translate) in NM.DSP): return 'dsp::DSP (session, inferred)'
     if 0x51a000 <= off < 0x51c000: return 'nwm::UDS (session, inferred)'
     if 0x51f000 <= off < 0x523000: return 'boss (session, inferred)'
     return ''
@@ -74,9 +75,9 @@ for f in funcs:
             for j in ins[:k]:
                 m = re.match(rx + r', \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', j.op_str)
                 if j.mnemonic == 'ldr' and m: handle = '%08x' % struct.unpack_from('<I', code, j.address + 8 + (int(m.group(1), 0) if m.group(1) else 0))[0]
-    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '') or ('' if handle else session_service(st, hdr >> 16)), ''))
+    rows.append((hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f, f['name'], f['offset'], callers[st], handle, SERVICE.get(handle, '') or ('' if handle else session_service(st, hdr >> 16, (hdr >> 6) & 0x3f, hdr & 0x3f)), ''))
 rows.sort()
-rows = [r[:8] + ((fs_command(int(r[4], 16), r[0], r[1], r[2]) if r[7].startswith('fs:USER') else ''),) for r in sorted(rows, key=lambda r: int(r[4], 16))]
+rows = [r[:8] + ((fs_command(int(r[4], 16), r[0], r[1], r[2]) if r[7].startswith('fs:USER') else NM.BY_SERVICE.get(r[7].split(' (')[0], {}).get((r[0], r[1], r[2]), '')),) for r in sorted(rows, key=lambda r: int(r[4], 16))]
 rows.sort()
 with open(sys.argv[1], 'w', newline='') as o:
     w = csv.writer(o); w.writerow(['cmd_id', 'normal', 'translate', 'name', 'offset', 'callers', 'handle_global', 'service', 'command']); w.writerows(rows)
