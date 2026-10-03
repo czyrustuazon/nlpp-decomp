@@ -82067,3 +82067,35 @@ src = "src/gen/ipc_0.cpp"
 symbol = "_Z31fs_USER_File_GetPriority_631644jj"
 generated = true
 score = 0
+
+[[function]]
+name = "DispatchLookup"
+offset = "5eba00"
+size = "bc"
+src = "src/dispatch_lookup.cpp"
+symbol = "_Z14DispatchLookupP5OwnerjP4Sinkj"
+score = 0
+
+[[function]]
+name = "SetMode"
+offset = "5bc6c0"
+size = "58"
+src = "src/mode_floats.cpp"
+symbol = "_Z7SetModeP4Modej"
+score = 0
+
+[[function]]
+name = "CallGlobal"
+offset = "5db4b4"
+size = "34"
+src = "src/lookup_fwd.cpp"
+symbol = "_Z10CallGlobaljjj"
+score = 0
+
+[[function]]
+name = "InitRec"
+offset = "6111ec"
+size = "48"
+src = "src/lookup_fwd.cpp"
+symbol = "_Z7InitRecP4Pooljj"
+score = 5   # NONMATCHING: zero constant lands in r3 not ip; mov #8 early
