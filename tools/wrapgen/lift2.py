@@ -7,7 +7,7 @@ REG = {'sp': None, 'lr': None, 'pc': None, 'ip': 12, 'fp': 11, 'sl': 10, 'sb': 9
 CONDS = ('eq', 'ne', 'hs', 'cs', 'lo', 'cc', 'mi', 'pl', 'hi', 'ls', 'ge', 'lt', 'gt', 'le')
 BASES = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'cmp', 'cmn', 'tst',
          'ldr', 'ldrb', 'ldrh', 'ldrsb', 'ldrsh', 'str', 'strb', 'strh', 'bl', 'blx', 'bx', 'b', 'nop', 'push', 'pop', 'orn',
-         'uxth', 'sxth', 'uxtb', 'sxtb', 'mla', 'ldm', 'stm')
+         'uxth', 'sxth', 'uxtb', 'sxtb', 'mla', 'ldm', 'stm', 'ldrd', 'strd')
 SETS = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'orn', 'mla')
 
 def split_mn(m):
@@ -23,14 +23,33 @@ def split_mn(m):
             if rest in CONDS: return b, rest, s
     return None
 
+def fconst(w):
+    """float literal for the 32-bit pattern w (decimal with 9 digits round-trips); u2f() for NaN/inf/-0"""
+    import struct, math
+    f = struct.unpack('<f', struct.pack('<I', w))[0]
+    if math.isnan(f) or math.isinf(f) or (f == 0 and w != 0): return f'u2f({w}u)'
+    t = '%.9g' % f
+    if not any(ch in t for ch in '.eE'): t += '.0'
+    return t + 'f'
+
 def lift(I, word, fname, variants=True):
     """SSA-style variants first (a fresh variable per register write, straight-line code only), then the register-variable form."""
     res = []
-    try: res += _lift(I, word, fname, True)
-    except ValueError: pass
-    return res + _lift(I, word, fname, False)
+    for p64 in (False, True):
+        try: res += _lift(I, word, fname, True, p64)
+        except ValueError: pass
+    for p64 in (False, True):
+        try: res += _lift(I, word, fname, False, p64)
+        except ValueError:
+            if not p64 and not res: raise
+    return res
 
-def _lift(I, word, fname, ssa):
+def _lift(I, word, fname, ssa, p64=False):
+    pool = set()   # literal-pool words decode as bogus instructions; drop them
+    for m, o, a in I:
+        mm = re.fullmatch(r'\w+, \[pc(?:, #(0x[0-9a-f]+|\d+))?\]', o)
+        if mm and m.startswith('ldr'): pool.add(a + 8 + (int(mm.group(1), 0) if mm.group(1) else 0))
+    if pool: I = [x for x in I if x[2] not in pool]
     n = len(I)
     if n == 0: raise ValueError('empty')
     start, end_addr = I[0][2], I[-1][2] + 4
@@ -42,7 +61,7 @@ def _lift(I, word, fname, ssa):
             t = int(o[1:], 0)
             if start <= t < end_addr: targets.add(t)
             elif t != end_addr and not (start <= t < end_addr): pass
-    defined = set(); params = set(); decls = set(); calls = []; out = []
+    defined = set(); params = set(); decls = set(); calls = []; out = []; fregs = set(); fdef = set(); fparams = set(); fret = [False]; fcur = {}; fver = {}; fnew = []
     flags = [None]   # None | ('cmp', a, b) | ('nz', x)
     cur = {}; ver = {}; newvars = []; curpred = [None]
     if ssa and targets: raise ValueError('ssa labels')
@@ -87,6 +106,12 @@ def _lift(I, word, fname, ssa):
             if mm.group(2) == 'lsl': return f'({r} << {sh})'
             if mm.group(2) == 'lsr': return f'({r} >> {sh})'
             return f'((u32)((int){r} >> {sh}))'
+        mm = re.fullmatch(r'(\w+), (lsl|lsr|asr) (r\d+|ip)', s)
+        if mm:
+            r = rd(mm.group(1)); sh = f'({rd(mm.group(3))} & 255)'
+            if mm.group(2) == 'lsl': return f'({r} << {sh})'
+            if mm.group(2) == 'lsr': return f'({r} >> {sh})'
+            return f'((u32)((int){r} >> {sh}))'
         if ',' in s: raise ValueError('op2 ' + s)
         return rd(s)
 
@@ -99,6 +124,12 @@ def _lift(I, word, fname, ssa):
                    'cc': f'{a} < {b}', 'hi': f'{a} > {b}', 'ls': f'{a} <= {b}',
                    'ge': f'(int){a} >= (int){b}', 'lt': f'(int){a} < (int){b}', 'gt': f'(int){a} > (int){b}',
                    'le': f'(int){a} <= (int){b}', 'mi': f'(int)({a} - {b}) < 0', 'pl': f'(int)({a} - {b}) >= 0'}
+            return tab[c]
+        if flags[0][0] == 'fcmp':
+            a, b = flags[0][1:]
+            tab = {'eq': f'{a} == {b}', 'ne': f'{a} != {b}', 'hs': f'{a} >= {b}', 'cs': f'{a} >= {b}', 'lo': f'{a} < {b}',
+                   'cc': f'{a} < {b}', 'hi': f'{a} > {b}', 'ls': f'{a} <= {b}', 'ge': f'{a} >= {b}', 'lt': f'{a} < {b}',
+                   'gt': f'{a} > {b}', 'le': f'{a} <= {b}', 'mi': f'{a} < {b}', 'pl': f'{a} >= {b}'}
             return tab[c]
         x = flags[0][1]
         tab = {'eq': f'{x} == 0', 'ne': f'{x} != 0', 'mi': f'(int){x} < 0', 'pl': f'(int){x} >= 0'}
@@ -119,10 +150,12 @@ def _lift(I, word, fname, ssa):
             if mm.group(4):                   # pre-indexed writeback
                 return mm.group(1), b, f'{b} = {b} + {off & 0xffffffff}u;', ''
             return mm.group(1), (f'{b} + {off}' if off > 0 else f'{b} - {-off}' if off < 0 else b), '', ''
-        mm = re.fullmatch(r'(\w+), \[(\w+), (-?)(\w+)(?:, (lsl) #(\d+))?\]', o)
+        mm = re.fullmatch(r'(\w+), \[(\w+), (-?)(\w+)(?:, (lsl|lsr|asr) #(\d+))?\]', o)
         if mm:
             idx = rd(mm.group(4))
-            if mm.group(5): idx = f'({idx} << {mm.group(6)})'
+            if mm.group(5) == 'lsl': idx = f'({idx} << {mm.group(6)})'
+            elif mm.group(5) == 'lsr': idx = f'({idx} >> {mm.group(6)})'
+            elif mm.group(5) == 'asr': idx = f'((u32)((int){idx} >> {mm.group(6)}))'
             return mm.group(1), f'{rd(mm.group(2))} {"-" if mm.group(3) else "+"} {idx}', '', ''
         raise ValueError('mem ' + o)
 
@@ -135,6 +168,11 @@ def _lift(I, word, fname, ssa):
         # unread param r0 at function start counts as an argument only if some contiguous reg is defined
         return a
 
+    def fargs():
+        ks = sorted(k for k in fdef if k < 16)
+        if ks != list(range(len(ks))): raise ValueError('float arg gap')
+        return [fcur.get(k, f'f{k}') if ssa else f'f{k}' for k in ks]
+
     emitted_ret = []
     def emit(line, c=None):
         if c and line.count(';') > 1: line = '{ ' + line + ' }'
@@ -143,6 +181,73 @@ def _lift(I, word, fname, ssa):
     pending_label = None
     for i, (m, o, a) in enumerate(I):
         if a in targets: out.append(f'L_{a:x}:;')
+        if m.startswith('v'):
+            vm = re.fullmatch(r'(vldr|vstr|vmov|vadd|vsub|vmul|vdiv|vmla|vmls|vnmls|vneg|vabs|vsqrt|vcmpe|vcmp|vcvt|vmrs)(eq|ne|hs|cs|lo|cc|mi|pl|hi|ls|ge|lt|gt|le)?(\.[\w.]+)?', m)
+            if not vm: raise ValueError('vop ' + m)
+            vb, vc, vt = vm.groups()
+            if vt and ('f64' in vt): raise ValueError('f64')
+            vcs = cond(vc) if vc else None
+            curpred[0] = vcs
+            def F(x, w=False):
+                mm_ = re.fullmatch(r's(\d+)', x.strip())
+                if not mm_: raise ValueError('freg ' + x)
+                k_ = int(mm_.group(1)); fregs.add(k_)
+                if w:
+                    fdef.add(k_)
+                    if ssa:
+                        if curpred[0]: raise ValueError('ssa predicated')
+                        fver[k_] = fver.get(k_, 0) + 1; fcur[k_] = f'f{k_}_{fver[k_]}'; fnew.append(fcur[k_])
+                        return fcur[k_]
+                elif k_ not in fdef:
+                    if k_ >= 16 or (k_ == 0 and fret[0]): raise ValueError('uninit float')
+                    fparams.add(k_); fdef.add(k_)
+                return fcur.get(k_, 'f' + mm_.group(1)) if ssa else 'f' + mm_.group(1)
+            def FW(x): return F(x, True)
+            ops = [x.strip() for x in o.split(',')] if vb not in ('vldr', 'vstr') else None
+            if vb in ('vldr', 'vstr'):
+                mm_ = re.fullmatch(r'(s\d+), \[pc(?:, #(0x[0-9a-f]+|\d+))?\]', o)
+                if mm_ and vb == 'vldr':
+                    w = word(a + 8 + (int(mm_.group(2), 0) if mm_.group(2) else 0))
+                    emit(f'{FW(mm_.group(1))} = {fconst(w)};', vcs); continue
+                d, addr, pre, post = mem(o)
+                if ssa and (pre or post): raise ValueError('ssa writeback')
+                if vb == 'vldr': emit(f'{pre} {FW(d)} = *(float*)({addr}); {post}'.replace('  ', ' ').strip(), vcs)
+                else: emit(f'{pre} *(float*)({addr}) = {F(d)}; {post}'.replace('  ', ' ').strip(), vcs)
+                continue
+            if vb == 'vmrs':
+                if flags[0] is None or flags[0][0] != 'fcmp': raise ValueError('vmrs flags')
+                continue
+            if vb in ('vcmp', 'vcmpe'):
+                out.append(f'ffa = {F(ops[0])}; ffb = {F(ops[1]) if ops[1] != "#0.0" else "0.0f"};'); flags[0] = ('fcmp', 'ffa', 'ffb'); continue
+            if vb == 'vmov':
+                x, y = ops
+                if x.startswith('s') and y.startswith('s'): yy_ = F(y); emit(f'{FW(x)} = {yy_};', vcs)
+                elif x.startswith('s'): emit(f'{FW(x)} = u2f({rd(y)});', vcs)
+                elif y.startswith('s'): emit(f'{wr(x)} = f2u({F(y)});', vcs)
+                else: raise ValueError('vmov')
+                continue
+            if vb in ('vadd', 'vsub', 'vmul', 'vdiv'):
+                if len(ops) != 3: raise ValueError('varith')
+                sym = {'vadd': '+', 'vsub': '-', 'vmul': '*', 'vdiv': '/'}[vb]
+                y1_, y2_ = F(ops[1]), F(ops[2]); emit(f'{FW(ops[0])} = {y1_} {sym} {y2_};', vcs); continue
+            if vb in ('vmla', 'vmls', 'vnmls'):
+                d_, x_, y_ = F(ops[0]), F(ops[1]), F(ops[2]); FW(ops[0])
+                v_ = {'vmla': f'{d_} + {x_} * {y_}', 'vmls': f'{d_} - {x_} * {y_}', 'vnmls': f'{x_} * {y_} - {d_}'}[vb]
+                emit(f'{d_} = {v_};', vcs); continue
+            if vb in ('vneg', 'vabs', 'vsqrt'):
+                x_ = F(ops[1])
+                v_ = {'vneg': f'-{x_}', 'vabs': f'({x_} < 0 ? -{x_} : {x_})', 'vsqrt': f'__sqrtf({x_})'}[vb]
+                if vb == 'vsqrt': decls.add('extern "C" float __sqrtf(float);')
+                emit(f'{FW(ops[0])} = {v_};', vcs); continue
+            if vb == 'vcvt':
+                kinds = vt.split('.')[1:]
+                if len(kinds) != 2: raise ValueError('vcvt')
+                dk, sk = kinds; S_ = F(ops[1]); D_ = FW(ops[0])
+                if dk == 'f32' and sk in ('s32', 'u32'): ty_ = 'int' if sk == 's32' else 'u32'; emit(f'{D_} = (float)({ty_})f2u({S_});', vcs)
+                elif sk == 'f32' and dk in ('s32', 'u32'): ty_ = 'int' if dk == 's32' else 'u32'; emit(f'{D_} = u2f((u32)({ty_}){S_});', vcs)
+                else: raise ValueError('vcvt kind')
+                continue
+            raise ValueError('vop2 ' + m)
         sm = split_mn(m)
         if not sm: raise ValueError('op ' + m)
         b, c, s = sm
@@ -160,11 +265,11 @@ def _lift(I, word, fname, ssa):
         if b == 'pop':
             if 'pc' not in o: continue
             out.append(f'{"if (" + cs + ") " if cs else ""}{{RET {cur.get(0, 'r0')}}}'); continue
-        if b == 'bx' and o.strip() != 'lr' and re.fullmatch(r'r\d+', o.strip()):
+        if b == 'bx' and o.strip() != 'lr' and re.fullmatch(r'(r\d+|ip|fp|sl|sb)', o.strip()):
             fp = rd(o.strip()); args = call_args()
             if fp in args: args = args[:args.index(fp)]
-            sig = ', '.join(['u32'] * len(args))
-            out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL ((u32(*)({sig})){fp})({", ".join(args)})}}'); continue
+            fa_ = fargs(); sig = ', '.join(['u32'] * len(args) + ['float'] * len(fa_))
+            out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL ((u32(*)({sig})){fp})({", ".join(args + fa_)})}}'); continue
         if b == 'bx':
             if o.strip() != 'lr': raise ValueError('bx ' + o)
             out.append(f'{"if (" + cs + ") " if cs else ""}{{RET {cur.get(0, 'r0')}}}'); continue
@@ -220,6 +325,23 @@ def _lift(I, word, fname, ssa):
             elif b == 'tst': out.append(f'fx = {X} & {Y};'); flags[0] = ('nz', 'fx')
             else: out.append(f'fx = {X} + {Y};'); flags[0] = ('nz', 'fx')
             continue
+        if b in ('ldrd', 'strd'):
+            mm = re.fullmatch(r'(\w+), (\w+), (\[.*)', o)
+            if not mm: raise ValueError('ldrd ' + o)
+            ra, rb = mm.group(1), mm.group(2)
+            if R(rb) != R(ra) + 1: raise ValueError('ldrd pair')
+            d, addr, pre, post = mem(f'{ra}, {mm.group(3)}')
+            if ssa and (pre or post): raise ValueError('ssa writeback')
+            if b == 'ldrd':
+                if p64:
+                    t = 'u64 t64'
+                    emit(f'{pre} {t} = *(u64*)({addr}); {wr(ra)} = (u32)t64; {wr(rb)} = (u32)(t64 >> 32); {post}'.replace('  ', ' ').strip(), cs)
+                else:
+                    emit(f'{pre} {wr(ra)} = *(u32*)({addr}); {wr(rb)} = *(u32*)({addr} + 4); {post}'.replace('  ', ' ').strip(), cs)
+            else:
+                if p64: emit(f'{pre} *(u64*)({addr}) = (u64){rd(ra)} | ((u64){rd(rb)} << 32); {post}'.replace('  ', ' ').strip(), cs)
+                else: emit(f'{pre} *(u32*)({addr}) = {rd(ra)}; *(u32*)({addr} + 4) = {rd(rb)}; {post}'.replace('  ', ' ').strip(), cs)
+            continue
         if b in ('ldr', 'ldrb', 'ldrh', 'ldrsb', 'ldrsh'):
             mm = re.fullmatch(r'(\w+), \[pc(?:, #(0x[0-9a-f]+|\d+))?\]', o)
             if mm:
@@ -261,19 +383,21 @@ def _lift(I, word, fname, ssa):
                 else: st.append(f'*(u32*)({base} + {4 * k}) = {rd(r)};')
             if mm.group(2): st.append(f'{base} = {base} + {4 * len(regs)};')
             emit(' '.join(st), cs); continue
-        if b == 'blx' and re.fullmatch(r'r\d+', o.strip()):
+        if b == 'blx' and re.fullmatch(r'(r\d+|ip|fp|sl|sb)', o.strip()):
             fp = rd(o.strip()); args = [x for x in call_args()]
             if fp in args: args = args[:args.index(fp)]
-            sig = ', '.join(['u32'] * len(args))
-            emit(f'{wr("r0")} = ((u32(*)({sig})){fp})({", ".join(args)});', cs)
+            fa_ = fargs(); sig = ', '.join(['u32'] * len(args) + ['float'] * len(fa_))
+            emit(f'{wr("r0")} = ((u32(*)({sig})){fp})({", ".join(args + fa_)});', cs)
+            fdef.clear(); fret[0] = True
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b in ('bl', 'blx') and o.startswith('#'):
             t = int(o[1:], 0)
-            args = call_args()
-            nm_ = f'Fn_{t:06x}_{len(args)}'
-            decls.add(f'u32 {nm_}({", ".join(["u32"] * len(args))});'); calls.append((nm_, t))
-            emit(f'{wr("r0")} = {nm_}({", ".join(args)});', cs)
+            args = call_args(); fa_ = fargs()
+            nm_ = f'Fn_{t:06x}_{len(args)}' + (f'f{len(fa_)}' if fa_ else '')
+            decls.add(f'u32 {nm_}({", ".join(["u32"] * len(args) + ["float"] * len(fa_))});'); calls.append((nm_, t))
+            emit(f'{wr("r0")} = {nm_}({", ".join(args + fa_)});', cs)
+            fdef.clear(); fret[0] = True
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b == 'b' and o.startswith('#'):
@@ -281,16 +405,20 @@ def _lift(I, word, fname, ssa):
             if t in targets:
                 emit(f'goto L_{t:x};', cs); continue
             if t == end_addr: raise ValueError('b end')
-            args = call_args()
-            nm = f'Fn_{t:06x}_{len(args)}'
-            decls.add(f'u32 {nm}({", ".join(["u32"] * len(args))});'); calls.append((nm, t))
+            args = call_args(); fa_ = fargs()
+            nm = f'Fn_{t:06x}_{len(args)}' + (f'f{len(fa_)}' if fa_ else '')
+            decls.add(f'u32 {nm}({", ".join(["u32"] * len(args) + ["float"] * len(fa_))});'); calls.append((nm, t))
             for k in args: rd(k)
-            out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL {nm}({", ".join(args)})}}'); continue
+            out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL {nm}({", ".join(args + fa_)})}}'); continue
         raise ValueError('op ' + m + ' ' + o)
     if I[-1][0] not in ('pop', 'bx', 'b') and not re.match(r'(pop|bx|b|ldr)', I[-1][0]): raise ValueError('falls off')
-    pl = ', '.join(f'u32 a{k}' for k in range(max(params) + 1)) if params else ''
+    if sorted(fparams) != list(range(len(fparams))): raise ValueError('float param gap')
+    pl = ', '.join([f'u32 a{k}' for k in range(max(params) + 1)] if params else []) 
+    if fparams: pl += (', ' if pl else '') + ', '.join(f'float p{k}' for k in sorted(fparams))
     pre = ''.join(f'    u32 r{k}{" = a%d" % k if k in params else ""};\n' for k in range(13) if True) if False else ''
     regdecl = ', '.join(f'r{k}' + (f' = a{k}' if k in params else '') for k in range(13)) + ", fa, fb, fx"
+    fdecl = ('    float ' + ', '.join([f'f{k}' + (f' = p{k}' if k in fparams else '') for k in sorted(fregs)] + fnew) + ', ffa, ffb;' + chr(10)) if fregs else ''
+    fl_ret = bool(fregs)
     if newvars: regdecl += ', ' + ', '.join(newvars)
     if frame[0] == 4:   # one slot: a scalar local schedules like a source-level `u32 v; f(&v)`
         regdecl += ', stk'; out = [l.replace('*(u32*)((u32)stk)', 'stk').replace('(u32)stk', '(u32)&stk') for l in out]
@@ -307,13 +435,14 @@ def _lift(I, word, fname, ssa):
     elif frame[0]: regdecl += f', stk[{(frame[0] + 3) // 4}]'
     body = '\n'.join('    ' + l for l in out)
     res = []
-    for ty in ('void', 'u32'):
+    for ty in ('void', 'u32') + (('float',) if fl_ret else ()):
         txt = body
-        txt = re.sub(r'\{RET (\w+)\}', (lambda m: 'return;') if ty == 'void' else (lambda m: 'return %s;' % m.group(1)), txt)
+        txt = re.sub(r'\{RET (\w+)\}', (lambda m: 'return;') if ty == 'void' else (lambda m: 'return %s;' % m.group(1)) if ty == 'u32' else (lambda m: ('return %s;' % fcur.get(0, 'f0') if 0 in fregs else 'return u2f(%s);' % m.group(1))), txt)
         if ty == 'void': txt = re.sub(r'\{TAIL (.*?)\}$', r'{ \1; return; }', txt, flags=re.M)
-        else: txt = re.sub(r'\{TAIL (.*?)\}$', r'return \1;', txt, flags=re.M)
+        elif ty == 'u32': txt = re.sub(r'\{TAIL (.*?)\}$', r'return \1;', txt, flags=re.M)
+        else: txt = re.sub(r'\{TAIL (.*?)\}$', r'return u2f(\1);', txt, flags=re.M)
         # TAIL under an if needs braces in both forms
-        txt = re.sub(r'if \((.*)\) (return Fn_[^;]*;)', r'if (\1) { \2 }', txt)
+        txt = re.sub(r'if \((.*)\) (return (?:u2f\()?Fn_[^;]*;)', r'if (\1) { \2 }', txt)
         if ty == 'void': txt = txt.replace('{ { ', '{ ').replace('; return; } }', '; return; }') if False else txt
-        res.append((sorted(decls), f'{ty} {fname}({pl}) {{\n    u32 {regdecl};\n{txt}\n}}', calls))
+        res.append((sorted(decls), f'{ty} {fname}({pl}) {{\n    u32 {regdecl};\n{fdecl}{txt}\n}}', calls))
     return res

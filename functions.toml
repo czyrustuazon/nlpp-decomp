@@ -82107,3 +82107,885 @@ size = "5c"
 src = "src/cmdbuf_misc.cpp"
 symbol = "_Z8BeginCmdP6CmdBufjt"
 score = 13   # NONMATCHING: wrap branch computes cur+4 as a separate add; next/rec stores pair up as stm
+
+[[function]]
+name = "W_01852c"
+offset = "1852c"
+size = "74"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_01852cj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_05a0a8"
+offset = "5a0a8"
+size = "84"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_05a0a8jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_0d706c"
+offset = "d706c"
+size = "5c"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_0d706cj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_0e4a10"
+offset = "e4a10"
+size = "30"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_0e4a10jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_13de7c"
+offset = "13de7c"
+size = "44"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_13de7cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_1a12b0"
+offset = "1a12b0"
+size = "64"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_1a12b0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_1bb8ec"
+offset = "1bb8ec"
+size = "48"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_1bb8ecjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_207c00"
+offset = "207c00"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_207c00jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2575c4"
+offset = "2575c4"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_2575c4jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_258100"
+offset = "258100"
+size = "28"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_258100j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2648b0"
+offset = "2648b0"
+size = "48"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_2648b0jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_276d00"
+offset = "276d00"
+size = "44"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_276d00jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2a4274"
+offset = "2a4274"
+size = "3c"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_2a4274jjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2bc630"
+offset = "2bc630"
+size = "44"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_2bc630j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2bee38"
+offset = "2bee38"
+size = "44"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_2bee38j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2da430"
+offset = "2da430"
+size = "60"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_2da430jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_327d68"
+offset = "327d68"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_327d68jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_327d9c"
+offset = "327d9c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_327d9cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_327dd0"
+offset = "327dd0"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_327dd0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_327e04"
+offset = "327e04"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_327e04jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_327e38"
+offset = "327e38"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_327e38jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_327e6c"
+offset = "327e6c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_327e6cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32c368"
+offset = "32c368"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32c368jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32c39c"
+offset = "32c39c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32c39cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32c3d0"
+offset = "32c3d0"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32c3d0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32c404"
+offset = "32c404"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32c404jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32c438"
+offset = "32c438"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32c438jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32c46c"
+offset = "32c46c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32c46cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32fc44"
+offset = "32fc44"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32fc44jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32fc78"
+offset = "32fc78"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32fc78jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32fcac"
+offset = "32fcac"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32fcacjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32fce0"
+offset = "32fce0"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32fce0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32fd14"
+offset = "32fd14"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32fd14jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_32fd48"
+offset = "32fd48"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_32fd48jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33342c"
+offset = "33342c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_33342cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333460"
+offset = "333460"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333460jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333494"
+offset = "333494"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333494jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3334c8"
+offset = "3334c8"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_3334c8jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3334fc"
+offset = "3334fc"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_3334fcjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333530"
+offset = "333530"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333530jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333d80"
+offset = "333d80"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333d80jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333db4"
+offset = "333db4"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333db4jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333de8"
+offset = "333de8"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333de8jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333e1c"
+offset = "333e1c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333e1cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333e50"
+offset = "333e50"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333e50jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_333e84"
+offset = "333e84"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_333e84jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33a2d0"
+offset = "33a2d0"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_33a2d0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33a304"
+offset = "33a304"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_33a304jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33a338"
+offset = "33a338"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_33a338jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33a36c"
+offset = "33a36c"
+size = "34"
+src = "src/gen/r5_0.cpp"
+symbol = "_Z8W_33a36cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33a3a0"
+offset = "33a3a0"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_33a3a0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_33a3d4"
+offset = "33a3d4"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_33a3d4jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_35d714"
+offset = "35d714"
+size = "44"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_35d714j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_361544"
+offset = "361544"
+size = "78"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_361544j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_365de4"
+offset = "365de4"
+size = "50"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_365de4jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3663cc"
+offset = "3663cc"
+size = "5c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_3663ccj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_366f40"
+offset = "366f40"
+size = "7c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_366f40j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_384a9c"
+offset = "384a9c"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_384a9cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_384ad0"
+offset = "384ad0"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_384ad0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_384ea0"
+offset = "384ea0"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_384ea0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_384fc4"
+offset = "384fc4"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_384fc4jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_38899c"
+offset = "38899c"
+size = "2c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_38899cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_39c648"
+offset = "39c648"
+size = "20"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_39c648jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_39d050"
+offset = "39d050"
+size = "24"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_39d050jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3a5888"
+offset = "3a5888"
+size = "44"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_3a5888jjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3ee870"
+offset = "3ee870"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_3ee870j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3ff854"
+offset = "3ff854"
+size = "7c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_3ff854jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_3ff9f8"
+offset = "3ff9f8"
+size = "7c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_3ff9f8jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_403c60"
+offset = "403c60"
+size = "6c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_403c60jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_403ccc"
+offset = "403ccc"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_403cccj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_403f80"
+offset = "403f80"
+size = "24"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_403f80jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_448254"
+offset = "448254"
+size = "58"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_448254j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_452520"
+offset = "452520"
+size = "2c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_452520j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_464730"
+offset = "464730"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_464730j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_464768"
+offset = "464768"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_464768j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_471a6c"
+offset = "471a6c"
+size = "28"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_471a6cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_472320"
+offset = "472320"
+size = "28"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_472320jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_496594"
+offset = "496594"
+size = "6c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_496594jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4989ec"
+offset = "4989ec"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4989ecj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_49afcc"
+offset = "49afcc"
+size = "3c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_49afccj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_49b008"
+offset = "49b008"
+size = "38"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_49b008j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4a0aa8"
+offset = "4a0aa8"
+size = "60"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4a0aa8jjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4a0c48"
+offset = "4a0c48"
+size = "74"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4a0c48j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4afff4"
+offset = "4afff4"
+size = "44"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4afff4j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4bf3fc"
+offset = "4bf3fc"
+size = "44"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4bf3fcj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e9194"
+offset = "4e9194"
+size = "2c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4e9194j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4efe0c"
+offset = "4efe0c"
+size = "28"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_4efe0cj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_542ed4"
+offset = "542ed4"
+size = "74"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_542ed4j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_555888"
+offset = "555888"
+size = "28"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_555888jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_566c40"
+offset = "566c40"
+size = "48"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_566c40j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_5e72dc"
+offset = "5e72dc"
+size = "5c"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_5e72dcjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_61dcd0"
+offset = "61dcd0"
+size = "20"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_61dcd0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_628398"
+offset = "628398"
+size = "58"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_628398jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_62e714"
+offset = "62e714"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_62e714jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_62e748"
+offset = "62e748"
+size = "48"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_62e748jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_62e790"
+offset = "62e790"
+size = "48"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_62e790jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_62e82c"
+offset = "62e82c"
+size = "48"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_62e82cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_62e874"
+offset = "62e874"
+size = "34"
+src = "src/gen/r5_1.cpp"
+symbol = "_Z8W_62e874jj"
+generated = true
+score = 0

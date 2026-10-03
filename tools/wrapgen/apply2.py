@@ -16,7 +16,7 @@ have = {int(f['offset'], 16) for f in tomllib.load(open('functions.toml', 'rb'))
 res = [r for r in res if r['st'] not in have]
 thumb_at = lambda t: next((f[2] for f in funcs if f[0] <= t < f[0] + f[1]), False)
 NL = chr(10)
-PRE = NL.join(['typedef unsigned char u8;', 'typedef unsigned short u16;', 'typedef unsigned u32;']) + NL
+PRE = NL.join(['typedef unsigned char u8;', 'typedef unsigned short u16;', 'typedef unsigned u32;', 'typedef unsigned long long u64;', 'static inline float u2f(u32 v) { union { u32 u; float f; } x; x.u = v; return x.f; }', 'static inline u32 f2u(float f) { union { u32 u; float f; } x; x.f = f; return x.u; }']) + NL
 toml = []; ext_rows = {}
 for n in range(0, len(res), chunk):
     part = res[n:n + chunk]; path = f'{prefix}_{n // chunk}.cpp'

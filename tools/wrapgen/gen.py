@@ -66,7 +66,7 @@ def gen(st,sz):
     return None
 
 NL = chr(10)
-PRE = NL.join(['typedef unsigned char u8;', 'typedef unsigned short u16;', 'typedef unsigned u32;']) + NL
+PRE = NL.join(['typedef unsigned char u8;', 'typedef unsigned short u16;', 'typedef unsigned u32;', 'typedef unsigned long long u64;', 'static inline float u2f(u32 v) { union { u32 u; float f; } x; x.u = v; return x.f; }', 'static inline u32 f2u(float f) { union { u32 u; float f; } x; x.f = f; return x.u; }']) + NL
 sys.path.insert(0, S)
 import lift as L
 def attempt(st, sz, decl, body):
