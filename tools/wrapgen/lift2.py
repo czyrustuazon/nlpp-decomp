@@ -61,7 +61,7 @@ def _lift(I, word, fname, ssa, p64=False):
             t = int(o[1:], 0)
             if start <= t < end_addr: targets.add(t)
             elif t != end_addr and not (start <= t < end_addr): pass
-    defined = set(); params = set(); decls = set(); calls = []; out = []; fregs = set(); fdef = set(); fparams = set(); fret = [False]; fcur = {}; fver = {}; fnew = []
+    defined = set(); params = set(); decls = set(); calls = []; out = []; fregs = set(); fdef = set(); fparams = set(); fret = [False]; fcur = {}; fver = {}; fnew = []; lastcall = [None]
     flags = [None]   # None | ('cmp', a, b) | ('nz', x)
     cur = {}; ver = {}; newvars = []; curpred = [None]
     if ssa and targets: raise ValueError('ssa labels')
@@ -182,7 +182,8 @@ def _lift(I, word, fname, ssa, p64=False):
     for i, (m, o, a) in enumerate(I):
         if a in targets: out.append(f'L_{a:x}:;')
         if m.startswith('v'):
-            vm = re.fullmatch(r'(vldr|vstr|vmov|vadd|vsub|vmul|vdiv|vmla|vmls|vnmls|vneg|vabs|vsqrt|vcmpe|vcmp|vcvt|vmrs)(eq|ne|hs|cs|lo|cc|mi|pl|hi|ls|ge|lt|gt|le)?(\.[\w.]+)?', m)
+            if re.fullmatch(r'(vpush|vpop)', m) and re.fullmatch(r'\{d\d+(, d\d+)*\}', o.strip()): continue   # callee-saved d8.. spill: not source
+            vm = re.fullmatch(r'(vldr|vstr|vldmia|vstmia|vmov|vadd|vsub|vmul|vdiv|vmla|vmls|vnmls|vneg|vabs|vsqrt|vcmpe|vcmp|vcvt|vmrs)(eq|ne|hs|cs|lo|cc|mi|pl|hi|ls|ge|lt|gt|le)?(\.[\w.]+)?', m)
             if not vm: raise ValueError('vop ' + m)
             vb, vc, vt = vm.groups()
             if vt and ('f64' in vt): raise ValueError('f64')
@@ -199,6 +200,12 @@ def _lift(I, word, fname, ssa, p64=False):
                         fver[k_] = fver.get(k_, 0) + 1; fcur[k_] = f'f{k_}_{fver[k_]}'; fnew.append(fcur[k_])
                         return fcur[k_]
                 elif k_ not in fdef:
+                    if k_ == 0 and lastcall[0] and not curpred[0]:   # s0 right after a call: the callee returns float
+                        idx_, nm__, expr_, argsig_ = lastcall[0]; lastcall[0] = None
+                        v_ = F('s0', True); out[idx_] = f'{v_} = {expr_};'
+                        decls.discard(f'u32 {nm__}({argsig_});'); decls.add(f'float {nm__}({argsig_});')
+                        defined.discard(0); fret[0] = False
+                        return v_
                     if k_ >= 16 or (k_ == 0 and fret[0]): raise ValueError('uninit float')
                     fparams.add(k_); fdef.add(k_)
                 return fcur.get(k_, 'f' + mm_.group(1)) if ssa else 'f' + mm_.group(1)
@@ -213,6 +220,16 @@ def _lift(I, word, fname, ssa, p64=False):
                 if ssa and (pre or post): raise ValueError('ssa writeback')
                 if vb == 'vldr': emit(f'{pre} {FW(d)} = *(float*)({addr}); {post}'.replace('  ', ' ').strip(), vcs)
                 else: emit(f'{pre} *(float*)({addr}) = {F(d)}; {post}'.replace('  ', ' ').strip(), vcs)
+                continue
+            if vb in ('vldmia', 'vstmia'):
+                mm_ = re.fullmatch(r'(\w+)(!?), \{(s\d+(?:, s\d+)*)\}', o.strip())
+                if not mm_ or mm_.group(2): raise ValueError('vop ' + m)
+                regs_ = [int(x[1:]) for x in mm_.group(3).split(', ')]
+                if regs_ != list(range(regs_[0], regs_[0] + len(regs_))): raise ValueError('vop ' + m)
+                base_ = rd(mm_.group(1))
+                for j_, k_ in enumerate(regs_):
+                    if vb == 'vldmia': emit(f'{FW("s%d" % k_)} = *(float*)({base_} + {4 * j_});', vcs)
+                    else: emit(f'*(float*)({base_} + {4 * j_}) = {F("s%d" % k_)};', vcs)
                 continue
             if vb == 'vmrs':
                 if flags[0] is None or flags[0][0] != 'fcmp': raise ValueError('vmrs flags')
@@ -279,8 +296,11 @@ def _lift(I, word, fname, ssa, p64=False):
             args = call_args(); fa_ = fargs()
             nm_ = f'WeakCall{len(args)}' + (f'f{len(fa_)}' if fa_ else '')
             decls.add(f'u32 {nm_}({", ".join(["u32"] * len(args) + ["float"] * len(fa_))});')
+            if i == len(I) - 1:   # last instruction: a `b` tail call to the weak symbol
+                for k in args: rd(k)
+                out.append(f'{{TAIL {nm_}({", ".join(args + fa_)})}}'); continue
             emit(f'{wr("r0")} = {nm_}({", ".join(args + fa_)});', cs)
-            fdef.clear(); fret[0] = True
+            fdef.intersection_update(range(16, 32)); fret[0] = True
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b in ('mov', 'mvn'):
@@ -397,7 +417,7 @@ def _lift(I, word, fname, ssa, p64=False):
             if fp in args: args = args[:args.index(fp)]
             fa_ = fargs(); sig = ', '.join(['u32'] * len(args) + ['float'] * len(fa_))
             emit(f'{wr("r0")} = ((u32(*)({sig})){fp})({", ".join(args + fa_)});', cs)
-            fdef.clear(); fret[0] = True
+            fdef.intersection_update(range(16, 32)); fret[0] = True
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b in ('bl', 'blx') and o.startswith('#'):
@@ -406,7 +426,8 @@ def _lift(I, word, fname, ssa, p64=False):
             nm_ = f'Fn_{t:06x}_{len(args)}' + (f'f{len(fa_)}' if fa_ else '')
             decls.add(f'u32 {nm_}({", ".join(["u32"] * len(args) + ["float"] * len(fa_))});'); calls.append((nm_, t))
             emit(f'{wr("r0")} = {nm_}({", ".join(args + fa_)});', cs)
-            fdef.clear(); fret[0] = True
+            if not cs: lastcall[0] = (len(out) - 1, nm_, f'{nm_}({", ".join(args + fa_)})', ", ".join(["u32"] * len(args) + ["float"] * len(fa_)))
+            fdef.intersection_update(range(16, 32)); fret[0] = True
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b == 'b' and o.startswith('#'):
@@ -420,7 +441,7 @@ def _lift(I, word, fname, ssa, p64=False):
             for k in args: rd(k)
             out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL {nm}({", ".join(args + fa_)})}}'); continue
         raise ValueError('op ' + m + ' ' + o)
-    if I[-1][0] not in ('pop', 'bx', 'b') and not re.match(r'(pop|bx|b|ldr)', I[-1][0]): raise ValueError('falls off')
+    if not (I[-1][0] == 'mov' and I[-1][1].strip() == 'r0, r0') and I[-1][0] not in ('pop', 'bx', 'b') and not re.match(r'(pop|bx|b|ldr)', I[-1][0]): raise ValueError('falls off')
     if sorted(fparams) != list(range(len(fparams))): raise ValueError('float param gap')
     pl = ', '.join([f'u32 a{k}' for k in range(max(params) + 1)] if params else []) 
     if fparams: pl += (', ' if pl else '') + ', '.join(f'float p{k}' for k in sorted(fparams))
