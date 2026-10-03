@@ -37,7 +37,9 @@ struct Elem { char b[0x98]; };
 Elem* TableElem(TblOwner* o)
 {
     TblHdr* h = o->box->hdr;
-    return (Elem*)((char*)h + h->off) + o->index;
+    u32 i = o->index;
+    char* base = (char*)h + h->off;
+    return (Elem*)(base + i * 0x98);
 }
 
 // FUN_005cd99c: global flag (non-null pointer at +0x34 of the object at 0x89a330)

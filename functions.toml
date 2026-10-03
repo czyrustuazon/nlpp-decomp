@@ -84031,7 +84031,7 @@ offset = "63e2cc"
 size = "24"
 src = "src/hand_misc7.cpp"
 symbol = "_Z9TableElemP8TblOwner"
-score = 8   # NONMATCHING: retail loads box then index with plain offsets; ARMCC uses a writeback load and a different register order
+score = 5   # NONMATCHING: retail loads box then index with plain offsets; ARMCC uses a writeback load and a different register order
 
 [[function]]
 name = "HasPtr"
@@ -84159,7 +84159,7 @@ offset = "629064"
 size = "1c"
 src = "src/hand_misc12.cpp"
 symbol = "_Z9SlotValueP8SlotHostj"
-score = 2   # NONMATCHING: retail predicates mvnhs before ldrlo
+score = 0
 
 [[function]]
 name = "LimitIndex"
@@ -84176,3 +84176,243 @@ size = "24"
 src = "src/hand_misc12.cpp"
 symbol = "_Z11SetFlagBit1P9FlagOwnerj"
 score = 7   # NONMATCHING: retail computes b << 1 before loading the flag byte
+
+[[function]]
+name = "Dot3"
+offset = "640720"
+size = "28"
+src = "src/hand_misc13.cpp"
+symbol = "_Z4Dot3PK3V3dS1_"
+score = 0
+
+[[function]]
+name = "GetVec2"
+offset = "642de0"
+size = "20"
+src = "src/hand_misc13.cpp"
+symbol = "_Z7GetVec2P8V2Holder"
+score = 0
+
+[[function]]
+name = "SetValue"
+offset = "1c7e34"
+size = "1c"
+src = "src/hand_misc13.cpp"
+symbol = "_Z8SetValueP6Notifyjj"
+score = 0
+
+[[function]]
+name = "GoKid"
+offset = "403294"
+size = "1c"
+src = "src/hand_misc13.cpp"
+symbol = "_Z5GoKidP6Parentj"
+score = 0
+
+[[function]]
+name = "EntryValue"
+offset = "44afc8"
+size = "1c"
+src = "src/hand_misc13.cpp"
+symbol = "_Z10EntryValueP9TableHostj"
+score = 0
+
+[[function]]
+name = "ListHead_ctor"
+offset = "4178c8"
+size = "28"
+src = "src/hand_ctors.cpp"
+symbol = "_ZN8ListHeadC1Ej"
+score = 0
+
+[[function]]
+name = "CbObj_ctor"
+offset = "15c5d0"
+size = "28"
+src = "src/hand_ctors.cpp"
+symbol = "_ZN5CbObjC1Ev"
+score = 5   # NONMATCHING: retail loads the callback pointer first and stores flag, callback, vptr, x; ARMCC loads the vptr first
+
+[[function]]
+name = "FlagPair_ctor"
+offset = "4445f8"
+size = "24"
+src = "src/hand_ctors.cpp"
+symbol = "_ZN8FlagPairC1Ev"
+score = 0
+
+[[function]]
+name = "NearlyEqual"
+offset = "59cf74"
+size = "3c"
+src = "src/hand_misc14.cpp"
+symbol = "_Z11NearlyEqualff"
+score = 9   # NONMATCHING: retail does vsub before the vabs and compares d <= tol with ls/hi; ARMCC emits vabs first and ge/lt
+
+[[function]]
+name = "Owned_ctor"
+offset = "44dfc0"
+size = "30"
+src = "src/hand_misc14.cpp"
+symbol = "_ZN5OwnedC1Ej"
+score = 0
+
+[[function]]
+name = "ClearRun"
+offset = "50992c"
+size = "34"
+src = "src/hand_misc14.cpp"
+symbol = "_Z8ClearRunP7ByteMapPhj"
+score = 8   # NONMATCHING: register allocation (retail reuses r3 for the zero, r2 for the end)
+
+[[function]]
+name = "TableElemB"
+offset = "63e2a0"
+size = "2c"
+src = "src/hand_misc14.cpp"
+symbol = "_Z10TableElemBP6OwnerB"
+score = 0
+
+[[function]]
+name = "OnlyA"
+offset = "5ca954"
+size = "2c"
+src = "src/hand_misc14.cpp"
+symbol = "_Z5OnlyAv"
+score = 0
+
+[[function]]
+name = "ItemValue"
+offset = "6411e4"
+size = "28"
+src = "src/hand_misc14.cpp"
+symbol = "_Z9ItemValueP9ItemsHostj"
+score = 0
+
+[[function]]
+name = "FillSlot"
+offset = "2783b8"
+size = "20"
+src = "src/hand_misc15.cpp"
+symbol = "_Z8FillSlotP8TwoSlotsi"
+score = 0
+
+[[function]]
+name = "ItemAt"
+offset = "5df344"
+size = "28"
+src = "src/hand_misc15.cpp"
+symbol = "_Z6ItemAtP9ListOwneri"
+score = 0
+
+[[function]]
+name = "FirstValue"
+offset = "5ca7cc"
+size = "30"
+src = "src/hand_misc15.cpp"
+symbol = "_Z10FirstValuev"
+score = 10   # NONMATCHING: retail keeps the result in r0 (init 0) and loads the slot pointer into r2
+
+[[function]]
+name = "RunHook"
+offset = "6242d8"
+size = "34"
+src = "src/hand_misc15.cpp"
+symbol = "_Z7RunHookj"
+score = 2   # NONMATCHING
+
+[[function]]
+name = "StrNLen"
+offset = "522228"
+size = "20"
+src = "src/hand_misc15.cpp"
+symbol = "_Z7StrNLenPKhj"
+score = 0
+
+[[function]]
+name = "Zeroed_ctor"
+offset = "58d5b8"
+size = "54"
+src = "src/hand_misc15.cpp"
+symbol = "_ZN6ZeroedC1Ev"
+score = 0
+
+[[function]]
+name = "ReleaseIfUnset"
+offset = "4b1170"
+size = "24"
+src = "src/hand_misc16.cpp"
+symbol = "_Z14ReleaseIfUnsetP6IdHostjjj"
+score = 0
+
+[[function]]
+name = "SetW3"
+offset = "4c6f24"
+size = "1c"
+src = "src/hand_misc16.cpp"
+symbol = "_Z5SetW3P6W3HostPK2W3"
+score = 5   # NONMATCHING: retail copies the odd word before the pair store and returns &h->p
+
+[[function]]
+name = "SetIdentity"
+offset = "59b51c"
+size = "24"
+src = "src/hand_misc16.cpp"
+symbol = "_Z11SetIdentityP4Quat"
+score = 0
+
+[[function]]
+name = "GatherW3"
+offset = "5bcc90"
+size = "1c"
+src = "src/hand_misc16.cpp"
+symbol = "_Z8GatherW3P6Gather"
+score = 0
+
+[[function]]
+name = "AnySet"
+offset = "630e20"
+size = "24"
+src = "src/hand_misc16.cpp"
+symbol = "_Z6AnySetP8TwoFHost"
+score = 7   # NONMATCHING: retail keeps r0 = p through the chained compare
+
+[[function]]
+name = "ByteAtIndex"
+offset = "12d4b4"
+size = "24"
+src = "src/hand_misc16.cpp"
+symbol = "_Z11ByteAtIndexPc"
+score = 0
+
+[[function]]
+name = "MgrOrFallback"
+offset = "48fa64"
+size = "2c"
+src = "src/hand_misc16.cpp"
+symbol = "_Z13MgrOrFallbackP7MgrHost"
+score = 7   # NONMATCHING: retail keeps h in r0 and the manager in r1
+
+[[function]]
+name = "MoveEmb"
+offset = "16aaf8"
+size = "20"
+src = "src/hand_misc16.cpp"
+symbol = "_Z7MoveEmbP7EmbHosts"
+score = 8   # NONMATCHING: retail is not a tail call (push r4/lr, blx, pop pc); ARMCC emits bx
+
+[[function]]
+name = "TimedState_ctor"
+offset = "3938d8"
+size = "68"
+src = "src/hand_ctor2.cpp"
+symbol = "_ZN10TimedStateC1Ev"
+score = 5   # NONMATCHING: same store-order issue as CbObj_ctor (retail stores flag, callback, then the vptr)
+
+[[function]]
+name = "UnlinkAll"
+offset = "542154"
+size = "4c"
+src = "src/hand_misc17.cpp"
+symbol = "_Z9UnlinkAllP6LList2P6LNode2"
+score = 9   # NONMATCHING: register assignment (retail keeps the zero in r4 and the temporaries in ip)

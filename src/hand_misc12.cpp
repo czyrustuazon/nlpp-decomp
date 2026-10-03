@@ -42,6 +42,6 @@ struct SlotHost { char p0[0xc]; u32 v[5]; u32 cur; };
 u32 SlotValue(SlotHost* h, u32 idx)
 {
     if (idx == 5) idx = h->cur;
-    if (idx < 5) return h->v[idx];
-    return (u32)-1;
+    if (idx >= 5) return (u32)-1;
+    return h->v[idx];
 }
