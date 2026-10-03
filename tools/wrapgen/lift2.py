@@ -274,6 +274,15 @@ def _lift(I, word, fname, ssa, p64=False):
             if o.strip() != 'lr': raise ValueError('bx ' + o)
             out.append(f'{"if (" + cs + ") " if cs else ""}{{RET {cur.get(0, 'r0')}}}'); continue
         if b == 'ldr' and o.startswith('pc,'): raise ValueError('ldrpc')
+        if b == 'mov' and c is None and o.strip() == 'r0, r0':
+            # `mov r0, r0` is a BL to an unresolved weak symbol that the linker turned into a nop
+            args = call_args(); fa_ = fargs()
+            nm_ = f'WeakCall{len(args)}' + (f'f{len(fa_)}' if fa_ else '')
+            decls.add(f'u32 {nm_}({", ".join(["u32"] * len(args) + ["float"] * len(fa_))});')
+            emit(f'{wr("r0")} = {nm_}({", ".join(args + fa_)});', cs)
+            fdef.clear(); fret[0] = True
+            for k in (1, 2, 3, 12): defined.discard(k)
+            defined.add(0); continue
         if b in ('mov', 'mvn'):
             d, src = [x.strip() for x in o.split(',', 1)]
             v = op2(src)

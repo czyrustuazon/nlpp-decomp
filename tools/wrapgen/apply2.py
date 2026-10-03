@@ -27,6 +27,8 @@ for n in range(0, len(res), chunk):
         bodies.append(f"// FUN_{r['st']:08x}" + NL + r['body'])
         toml.append(f'{NL}[[function]]{NL}name = "W_{r["st"]:06x}"{NL}offset = "{r["st"]:x}"{NL}size = "{r["size"]:x}"{NL}src = "{path}"{NL}symbol = "{r["sym"]}"{NL}generated = true{NL}score = 0{NL}')
         for u in r['und']:
+            if re.search(r'WeakCall\d', u):
+                ext_rows[u] = 'weak'; continue
             m = re.search(r'Fn_([0-9a-f]{6})', u)
             if m:
                 t = int(m.group(1), 16); ext_rows[u] = 0x100000 + t + (1 if thumb_at(t) else 0)
@@ -42,5 +44,5 @@ with open('functions.toml', 'a', encoding='utf-8', newline='') as f: f.write(''.
 with open('externs.toml', 'a', encoding='utf-8', newline='') as f:
     f.write(f'{NL}# {prefix}_*.cpp callees and globals{NL}')
     for k, v in sorted(ext_rows.items()):
-        if k not in ext: f.write(f'{k} = 0x{v:08X}{NL}')
+        if k not in ext: f.write(f'{k} = "weak"{NL}' if v == 'weak' else f'{k} = 0x{v:08X}{NL}')
 print(len(res), 'functions in', (len(res) + chunk - 1) // chunk, 'files;', len(ext_rows), 'externs')
