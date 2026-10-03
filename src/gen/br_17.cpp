@@ -861,7 +861,7 @@ u32 W_65bb0c() {
 }
 
 // FUN_00668cf8
-void W_668cf8() {
+void ndm_u_LeaveExclusiveState_668cf8() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r4 = (u32)g_008aab30;
     r0 = *(u8*)(r4);
@@ -876,7 +876,7 @@ void W_668cf8() {
 }
 
 // FUN_00668dac
-void W_668dac() {
+void ac_Multi2_668dac() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r4 = (u32)g_008aab30;
     r0 = *(u8*)(r4);

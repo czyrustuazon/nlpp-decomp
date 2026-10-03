@@ -121,7 +121,7 @@ u32 W_4fd0f0(u32 a0, u32 a1) {
 }
 
 // FUN_00500a4c
-u32 W_500a4c() {
+u32 dsp__DSP_Multi3_500a4c() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r4 = (u32)g_008aabb0;
     r0 = 0u;
@@ -139,7 +139,7 @@ u32 W_500a4c() {
 }
 
 // FUN_00500ce4
-u32 W_500ce4() {
+u32 dsp__DSP_UnloadComponent_500ce4() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r4 = (u32)g_008aabb0;
     r0 = 0u;

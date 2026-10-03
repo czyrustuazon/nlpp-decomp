@@ -205,6 +205,6 @@ def table_for(service):
     n = service.split(' (')[0]
     if n in BY_SERVICE: return BY_SERVICE[n]
     for pre, key in (('ac', 'AC'), ('cfg', 'CFG'), ('ptm', 'PTM'), ('APT', 'APT'), ('frd', 'FRD'), ('cam', 'CAM'), ('mic', 'MIC'),
-                     ('ir:', 'IR'), ('cecd', 'CECD'), ('ndm', 'NDM'), ('hid', 'HID')):
+                     ('ir:', 'IR'), ('cecd', 'CECD'), ('ndm', 'NDM'), ('hid', 'HID'), ('y2r', 'Y2R'), ('srv', 'SRV')):
         if n.startswith(pre): return GLOBAL[key]
     return None

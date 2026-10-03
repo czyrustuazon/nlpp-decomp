@@ -12,6 +12,7 @@ is extended to the end of its body, capped at the next function's start, so the 
 the continuation stay in the same split object.
 """
 import csv
+import os
 import re
 import tomllib
 
@@ -26,6 +27,11 @@ def load_functions(path):
 def convert(cfg, in_csv, out_csv):
     rows = sorted(csv.DictReader(open(in_csv, newline="")), key=lambda r: int(r["start"], 16))
     known = {int(fn["offset"], 16): fn["symbol"] for fn in load_functions(cfg.functions_file)}
+    overlay = {}  # symbols/names.csv: offset,name for functions without source (tools/apply_ipc_names.py)
+    try:
+        overlay = {int(r["offset"], 16): r["name"] for r in csv.DictReader(open(os.path.join(cfg.root, "symbols", "names.csv"), newline=""))}
+    except FileNotFoundError:
+        pass
     text_end = cfg.rodata_offset or None
 
     out, seen, stats = [], set(), {"functions": 0, "renamed": 0, "from_source": 0, "split_bodies": 0,
@@ -50,6 +56,8 @@ def convert(cfg, in_csv, out_csv):
         name = known.get(start)
         if name:
             stats["from_source"] += 1
+        elif start in overlay and overlay[start] not in seen:
+            name = overlay[start]
         else:
             name = r["name"]
             if _GENERIC.match(name) or name in seen:

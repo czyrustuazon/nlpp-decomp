@@ -34,6 +34,10 @@ def attempt(st, sz, decl, body):
 d = __import__('tomllib').load(open('functions.toml', 'rb'))
 handled = {int(f['offset'], 16) for f in d['function']}
 cands = [st for st, sz, th, n in G.funcs if not th and st not in handled and lo <= st < hi and sz <= mx]
+if os.environ.get('ONLY'):   # ONLY=<csv with an `offset` column (hex)>: restrict to those functions
+    import csv
+    only = {int(r['offset'], 16) for r in csv.DictReader(open(os.environ['ONLY']))}
+    cands = [st for st in cands if st in only]
 res = []; tried = 0
 for k, st in enumerate(cands):
     if k % nparts != part: continue

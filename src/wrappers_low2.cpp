@@ -175,7 +175,7 @@ u32 W_00e380(u32 a0) {
 }
 
 // FUN_00011a60
-u32 W_011a60(u32 a0) {
+u32 hid_USER_DisableAccelerometer(u32 a0) {
     u32 t1 = Fn_01c6a4_1(a0);
     return a0;
 }

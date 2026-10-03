@@ -742,7 +742,7 @@ void W_4f6544(u32 a0) {
 }
 
 // FUN_004f6784
-void W_4f6784() {
+void ptm_u_GetStepHistory() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_50e3c4_0();
     r0 = r0 >> 31;
@@ -803,7 +803,7 @@ void W_4fd058(u32 a0) {
 }
 
 // FUN_00500fa8
-void W_500fa8() {
+void dsp__DSP_UnloadComponent_500fa8() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r6 = (u32)g_008aabb0;
     r0 = *(signed char*)(r6 + 1);
@@ -947,7 +947,7 @@ u32 W_514e14(u32 a0, u32 a1) {
 }
 
 // FUN_0051b8cc
-void W_51b8cc() {
+void y2r_u_cmd5() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51bd38_0();
     r0 = r0 >> 31;
@@ -958,7 +958,7 @@ void W_51b8cc() {
 }
 
 // FUN_0051ba14
-void W_51ba14() {
+void y2r_u_cmd1c() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51bf20_0();
     r0 = r0 >> 31;
@@ -969,7 +969,7 @@ void W_51ba14() {
 }
 
 // FUN_0051bb14
-void W_51bb14() {
+void y2r_u_cmd1() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c024_0();
     r0 = r0 >> 31;
@@ -980,7 +980,7 @@ void W_51bb14() {
 }
 
 // FUN_0051bb30
-void W_51bb30() {
+void y2r_u_cmd27() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c060_0();
     r0 = r0 >> 31;
@@ -991,7 +991,7 @@ void W_51bb30() {
 }
 
 // FUN_0051bb4c
-void W_51bb4c() {
+void y2r_u_cmd3() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c0cc_0();
     r0 = r0 >> 31;
@@ -1002,7 +1002,7 @@ void W_51bb4c() {
 }
 
 // FUN_0051bb68
-u32 W_51bb68() {
+u32 y2r_u_cmd26() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c108_0();
     r1 = 3376435201u;
@@ -1016,7 +1016,7 @@ u32 W_51bb68() {
 }
 
 // FUN_0051bbac
-void W_51bbac() {
+void y2r_u_cmd7() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c21c_0();
     r0 = r0 >> 31;
@@ -1027,7 +1027,7 @@ void W_51bbac() {
 }
 
 // FUN_0051bbc8
-void W_51bbc8() {
+void y2r_u_cmd1a() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c258_0();
     r0 = r0 >> 31;
@@ -1038,7 +1038,7 @@ void W_51bbc8() {
 }
 
 // FUN_0051bca4
-void W_51bca4() {
+void y2r_u_cmd20() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c624_0();
     r0 = r0 >> 31;
@@ -1049,7 +1049,7 @@ void W_51bca4() {
 }
 
 // FUN_0051c83c
-void W_51c83c() {
+void y2r_u_cmd22() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_51c800_0();
     r0 = r0 >> 31;
@@ -1149,7 +1149,7 @@ void W_5342f4() {
 }
 
 // FUN_00538574
-void W_538574() {
+void cam_u_ClearBuffer() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_539330_0();
     r0 = r0 >> 31;
@@ -1160,7 +1160,7 @@ void W_538574() {
 }
 
 // FUN_005385b4
-void W_5385b4() {
+void cam_u_SetTrimming() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_5394a4_0();
     r0 = r0 >> 31;
@@ -1171,7 +1171,7 @@ void W_5385b4() {
 }
 
 // FUN_005385d0
-void W_5385d0() {
+void cam_u_StopCapture() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_5394ec_0();
     r0 = r0 >> 31;
@@ -1182,7 +1182,7 @@ void W_5385d0() {
 }
 
 // FUN_00538718
-void W_538718() {
+void cam_u_StartCapture() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_539668_0();
     r0 = r0 >> 31;
@@ -1193,7 +1193,7 @@ void W_538718() {
 }
 
 // FUN_005389b4
-void W_5389b4() {
+void cam_u_SetTransferBytes() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_5399c0_0();
     r0 = r0 >> 31;
@@ -1204,7 +1204,7 @@ void W_5389b4() {
 }
 
 // FUN_005389d0
-void W_5389d0() {
+void cam_u_SetTransferLines() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = Fn_539a14_0();
     r0 = r0 >> 31;

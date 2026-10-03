@@ -1501,9 +1501,9 @@ L40687c:
         .size   A_40685c, . - A_40685c
 
 @ FUN_004e1d4c
-        .global A_4e1d4c
-        .type   A_4e1d4c, %function
-A_4e1d4c:
+        .global ac_CloseAsync
+        .type   ac_CloseAsync, %function
+ac_CloseAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e1d8c
@@ -1524,12 +1524,12 @@ L4e1d8c:
         .word   0x00080004
 L4e1d90:
         .word   0x008ab858
-        .size   A_4e1d4c, . - A_4e1d4c
+        .size   ac_CloseAsync, . - ac_CloseAsync
 
 @ FUN_004e1d94
-        .global A_4e1d94
-        .type   A_4e1d94, %function
-A_4e1d94:
+        .global ac_IsConnected
+        .type   ac_IsConnected, %function
+ac_IsConnected:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -1552,12 +1552,12 @@ L4e1dd8:
         .word   0x003e0042
 L4e1ddc:
         .word   0x008ab858
-        .size   A_4e1d94, . - A_4e1d94
+        .size   ac_IsConnected, . - ac_IsConnected
 
 @ FUN_004e1de0
-        .global A_4e1de0
-        .type   A_4e1de0, %function
-A_4e1de0:
+        .global ac_ConnectAsync
+        .type   ac_ConnectAsync, %function
+ac_ConnectAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e1e2c
@@ -1583,12 +1583,12 @@ L4e1e30:
         .word   0x00800402
 L4e1e34:
         .word   0x008ab858
-        .size   A_4e1de0, . - A_4e1de0
+        .size   ac_ConnectAsync, . - ac_ConnectAsync
 
 @ FUN_004e1e38
-        .global A_4e1e38
-        .type   A_4e1e38, %function
-A_4e1e38:
+        .global ac_AddDenyApType
+        .type   ac_AddDenyApType, %function
+ac_AddDenyApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e1e8c
@@ -1616,12 +1616,12 @@ L4e1e90:
         .word   0x00800002
 L4e1e94:
         .word   0x008ab858
-        .size   A_4e1e38, . - A_4e1e38
+        .size   ac_AddDenyApType, . - ac_AddDenyApType
 
 @ FUN_004e1e98
-        .global A_4e1e98
-        .type   A_4e1e98, %function
-A_4e1e98:
+        .global ac_CloseAllASync
+        .type   ac_CloseAllASync, %function
+ac_CloseAllASync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e1ed8
@@ -1642,12 +1642,12 @@ L4e1ed8:
         .word   0x00190004
 L4e1edc:
         .word   0x008ab858
-        .size   A_4e1e98, . - A_4e1e98
+        .size   ac_CloseAllASync, . - ac_CloseAllASync
 
 @ FUN_004e1ee0
-        .global A_4e1ee0
-        .type   A_4e1ee0, %function
-A_4e1ee0:
+        .global ac_AddAllowApType
+        .type   ac_AddAllowApType, %function
+ac_AddAllowApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e1f34
@@ -1675,12 +1675,12 @@ L4e1f38:
         .word   0x00800002
 L4e1f3c:
         .word   0x008ab858
-        .size   A_4e1ee0, . - A_4e1ee0
+        .size   ac_AddAllowApType, . - ac_AddAllowApType
 
 @ FUN_004e1f40
-        .global A_4e1f40
-        .type   A_4e1f40, %function
-A_4e1f40:
+        .global ac_DebugSetApType
+        .type   ac_DebugSetApType, %function
+ac_DebugSetApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e1f94
@@ -1708,7 +1708,7 @@ L4e1f98:
         .word   0x00800002
 L4e1f9c:
         .word   0x008ab858
-        .size   A_4e1f40, . - A_4e1f40
+        .size   ac_DebugSetApType, . - ac_DebugSetApType
 
 @ FUN_004e1fa0
         .global A_4e1fa0
@@ -1737,9 +1737,9 @@ L4e1fe4:
         .size   A_4e1fa0, . - A_4e1fa0
 
 @ FUN_004e1fe8
-        .global A_4e1fe8
-        .type   A_4e1fe8, %function
-A_4e1fe8:
+        .global ac_GetAPSSIDList
+        .type   ac_GetAPSSIDList, %function
+ac_GetAPSSIDList:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2028
@@ -1760,12 +1760,12 @@ L4e2028:
         .word   0x003c0042
 L4e202c:
         .word   0x008ab858
-        .size   A_4e1fe8, . - A_4e1fe8
+        .size   ac_GetAPSSIDList, . - ac_GetAPSSIDList
 
 @ FUN_004e2030
-        .global A_4e2030
-        .type   A_4e2030, %function
-A_4e2030:
+        .global ac_GetCloseResult
+        .type   ac_GetCloseResult, %function
+ac_GetCloseResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e2064
@@ -1783,12 +1783,12 @@ L4e2064:
         .word   0x00090002
 L4e2068:
         .word   0x008ab858
-        .size   A_4e2030, . - A_4e2030
+        .size   ac_GetCloseResult, . - ac_GetCloseResult
 
 @ FUN_004e206c
-        .global A_4e206c
-        .type   A_4e206c, %function
-A_4e206c:
+        .global ac_SetAllowApType
+        .type   ac_SetAllowApType, %function
+ac_SetAllowApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e20c0
@@ -1816,12 +1816,12 @@ L4e20c4:
         .word   0x00800002
 L4e20c8:
         .word   0x008ab858
-        .size   A_4e206c, . - A_4e206c
+        .size   ac_SetAllowApType, . - ac_SetAllowApType
 
 @ FUN_004e2138
-        .global A_4e2138
-        .type   A_4e2138, %function
-A_4e2138:
+        .global ac_SetBssidFilter
+        .type   ac_SetBssidFilter, %function
+ac_SetBssidFilter:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e2194
@@ -1853,12 +1853,12 @@ L4e219c:
         .word   0x00019002
 L4e21a0:
         .word   0x008ab858
-        .size   A_4e2138, . - A_4e2138
+        .size   ac_SetBssidFilter, . - ac_SetBssidFilter
 
 @ FUN_004e21a4
-        .global A_4e21a4
-        .type   A_4e21a4, %function
-A_4e21a4:
+        .global ac_SetNetworkArea
+        .type   ac_SetNetworkArea, %function
+ac_SetNetworkArea:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2200
@@ -1888,12 +1888,12 @@ L4e2204:
         .word   0x00800002
 L4e2208:
         .word   0x008ab858
-        .size   A_4e21a4, . - A_4e21a4
+        .size   ac_SetNetworkArea, . - ac_SetNetworkArea
 
 @ FUN_004e220c
-        .global A_4e220c
-        .type   A_4e220c, %function
-A_4e220c:
+        .global ac_ScanAPs
+        .type   ac_ScanAPs, %function
+ac_ScanAPs:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r6, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -1926,12 +1926,12 @@ L4e2278:
         .word   0x001d0042
 L4e227c:
         .word   0x008ab858
-        .size   A_4e220c, . - A_4e220c
+        .size   ac_ScanAPs, . - ac_ScanAPs
 
 @ FUN_004e2280
-        .global A_4e2280
-        .type   A_4e2280, %function
-A_4e2280:
+        .global ac_GetConnectResult
+        .type   ac_GetConnectResult, %function
+ac_GetConnectResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e22b4
@@ -1949,12 +1949,12 @@ L4e22b4:
         .word   0x00050002
 L4e22b8:
         .word   0x008ab858
-        .size   A_4e2280, . - A_4e2280
+        .size   ac_GetConnectResult, . - ac_GetConnectResult
 
 @ FUN_004e22bc
-        .global A_4e22bc
-        .type   A_4e22bc, %function
-A_4e22bc:
+        .global ac_GetInfraPriority
+        .type   ac_GetInfraPriority, %function
+ac_GetInfraPriority:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -1979,12 +1979,12 @@ L4e2304:
         .word   0x00800402
 L4e2308:
         .word   0x008ab858
-        .size   A_4e22bc, . - A_4e22bc
+        .size   ac_GetInfraPriority, . - ac_GetInfraPriority
 
 @ FUN_004e2348
-        .global A_4e2348
-        .type   A_4e2348, %function
-A_4e2348:
+        .global ac_GetPowerSaveMode
+        .type   ac_GetPowerSaveMode, %function
+ac_GetPowerSaveMode:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -2009,12 +2009,12 @@ L4e2390:
         .word   0x00800402
 L4e2394:
         .word   0x008ab858
-        .size   A_4e2348, . - A_4e2348
+        .size   ac_GetPowerSaveMode, . - ac_GetPowerSaveMode
 
 @ FUN_004e2398
-        .global A_4e2398
-        .type   A_4e2398, %function
-A_4e2398:
+        .global ac_ScanNintendoZone
+        .type   ac_ScanNintendoZone, %function
+ac_ScanNintendoZone:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r6, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2047,12 +2047,12 @@ L4e2404:
         .word   0x001e0042
 L4e2408:
         .word   0x008ab858
-        .size   A_4e2398, . - A_4e2398
+        .size   ac_ScanNintendoZone, . - ac_ScanNintendoZone
 
 @ FUN_004e240c
-        .global A_4e240c
-        .type   A_4e240c, %function
-A_4e240c:
+        .global ac_SetClientVersion
+        .type   ac_SetClientVersion, %function
+ac_SetClientVersion:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e2444
@@ -2071,12 +2071,12 @@ L4e2444:
         .word   0x00400042
 L4e2448:
         .word   0x008ab858
-        .size   A_4e240c, . - A_4e240c
+        .size   ac_SetClientVersion, . - ac_SetClientVersion
 
 @ FUN_004e244c
-        .global A_4e244c
-        .type   A_4e244c, %function
-A_4e244c:
+        .global ac_SetInfraPriority
+        .type   ac_SetInfraPriority, %function
+ac_SetInfraPriority:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e24a8
@@ -2106,12 +2106,12 @@ L4e24ac:
         .word   0x00800002
 L4e24b0:
         .word   0x008ab858
-        .size   A_4e244c, . - A_4e244c
+        .size   ac_SetInfraPriority, . - ac_SetInfraPriority
 
 @ FUN_004e24b4
-        .global A_4e24b4
-        .type   A_4e24b4, %function
-A_4e24b4:
+        .global ac_SetPowerSaveMode
+        .type   ac_SetPowerSaveMode, %function
+ac_SetPowerSaveMode:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2510
@@ -2141,12 +2141,12 @@ L4e2514:
         .word   0x00800002
 L4e2518:
         .word   0x008ab858
-        .size   A_4e24b4, . - A_4e24b4
+        .size   ac_SetPowerSaveMode, . - ac_SetPowerSaveMode
 
 @ FUN_004e251c
-        .global A_4e251c
-        .type   A_4e251c, %function
-A_4e251c:
+        .global ac_SetZoneMacFilter
+        .type   ac_SetZoneMacFilter, %function
+ac_SetZoneMacFilter:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2560
@@ -2168,12 +2168,12 @@ L4e2560:
         .word   0x003d0042
 L4e2564:
         .word   0x008ab858
-        .size   A_4e251c, . - A_4e251c
+        .size   ac_SetZoneMacFilter, . - ac_SetZoneMacFilter
 
 @ FUN_004e2568
-        .global A_4e2568
-        .type   A_4e2568, %function
-A_4e2568:
+        .global ac_UnExclusiveAsync
+        .type   ac_UnExclusiveAsync, %function
+ac_UnExclusiveAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e25a8
@@ -2194,12 +2194,12 @@ L4e25a8:
         .word   0x00170004
 L4e25ac:
         .word   0x008ab858
-        .size   A_4e2568, . - A_4e2568
+        .size   ac_UnExclusiveAsync, . - ac_UnExclusiveAsync
 
 @ FUN_004e25b0
-        .global A_4e25b0
-        .type   A_4e25b0, %function
-A_4e25b0:
+        .global ac_GetCloseAllResult
+        .type   ac_GetCloseAllResult, %function
+ac_GetCloseAllResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e25e4
@@ -2217,12 +2217,12 @@ L4e25e4:
         .word   0x001a0002
 L4e25e8:
         .word   0x008ab858
-        .size   A_4e25b0, . - A_4e25b0
+        .size   ac_GetCloseAllResult, . - ac_GetCloseAllResult
 
 @ FUN_004e25ec
-        .global A_4e25ec
-        .type   A_4e25ec, %function
-A_4e25ec:
+        .global ac_GetConnectingSsid
+        .type   ac_GetConnectingSsid, %function
+ac_GetConnectingSsid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x340000
@@ -2245,12 +2245,12 @@ L4e2634:
         .word   0x00080002
 L4e2638:
         .word   0x008ab858
-        .size   A_4e25ec, . - A_4e25ec
+        .size   ac_GetConnectingSsid, . - ac_GetConnectingSsid
 
 @ FUN_004e263c
-        .global A_4e263c
-        .type   A_4e263c, %function
-A_4e263c:
+        .global ac_SetAuthServerType
+        .type   ac_SetAuthServerType, %function
+ac_SetAuthServerType:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e2678
@@ -2270,12 +2270,12 @@ L4e2678:
         .word   0x00320042
 L4e267c:
         .word   0x008ab858
-        .size   A_4e263c, . - A_4e263c
+        .size   ac_SetAuthServerType, . - ac_SetAuthServerType
 
 @ FUN_004e26bc
-        .global A_4e26bc
-        .type   A_4e26bc, %function
-A_4e26bc:
+        .global ac_GetExclusiveResult
+        .type   ac_GetExclusiveResult, %function
+ac_GetExclusiveResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e26f0
@@ -2293,12 +2293,12 @@ L4e26f0:
         .word   0x00160002
 L4e26f4:
         .word   0x008ab858
-        .size   A_4e26bc, . - A_4e26bc
+        .size   ac_GetExclusiveResult, . - ac_GetExclusiveResult
 
 @ FUN_004e26f8
-        .global A_4e26f8
-        .type   A_4e26f8, %function
-A_4e26f8:
+        .global ac_LogoutHotspotAsync
+        .type   ac_LogoutHotspotAsync, %function
+ac_LogoutHotspotAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2738
@@ -2319,12 +2319,12 @@ L4e2738:
         .word   0x001b0004
 L4e273c:
         .word   0x008ab858
-        .size   A_4e26f8, . - A_4e26f8
+        .size   ac_LogoutHotspotAsync, . - ac_LogoutHotspotAsync
 
 @ FUN_004e2740
-        .global A_4e2740
-        .type   A_4e2740, %function
-A_4e2740:
+        .global ac_SetFromApplication
+        .type   ac_SetFromApplication, %function
+ac_SetFromApplication:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e279c
@@ -2354,12 +2354,12 @@ L4e27a0:
         .word   0x00800002
 L4e27a4:
         .word   0x008ab858
-        .size   A_4e2740, . - A_4e2740
+        .size   ac_SetFromApplication, . - ac_SetFromApplication
 
 @ FUN_004e289c
-        .global A_4e289c
-        .type   A_4e289c, %function
-A_4e289c:
+        .global ac_GetConnectingHotspot
+        .type   ac_GetConnectingHotspot, %function
+ac_GetConnectingHotspot:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e28f8
@@ -2387,12 +2387,12 @@ L4e28f8:
         .word   0x00120042
 L4e28fc:
         .word   0x008ab858
-        .size   A_4e289c, . - A_4e289c
+        .size   ac_GetConnectingHotspot, . - ac_GetConnectingHotspot
 
 @ FUN_004e2900
-        .global A_4e2900
-        .type   A_4e2900, %function
-A_4e2900:
+        .global ac_GetNotAwakeMacFilter
+        .type   ac_GetNotAwakeMacFilter, %function
+ac_GetNotAwakeMacFilter:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r0
         mrc     p15, #0, r5, c13, c0, #3
@@ -2421,12 +2421,12 @@ L4e295c:
         .word   0x003f0040
 L4e2960:
         .word   0x008ab858
-        .size   A_4e2900, . - A_4e2900
+        .size   ac_GetNotAwakeMacFilter, . - ac_GetNotAwakeMacFilter
 
 @ FUN_004e2964
-        .global A_4e2964
-        .type   A_4e2964, %function
-A_4e2964:
+        .global ac_GetStatusChangeEvent
+        .type   ac_GetStatusChangeEvent, %function
+ac_GetStatusChangeEvent:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2448,12 +2448,12 @@ L4e29a4:
         .word   0x00310002
 L4e29a8:
         .word   0x008ab858
-        .size   A_4e2964, . - A_4e2964
+        .size   ac_GetStatusChangeEvent, . - ac_GetStatusChangeEvent
 
 @ FUN_004e29ac
-        .global A_4e29ac
-        .type   A_4e29ac, %function
-A_4e29ac:
+        .global ac_GetUnExcusiveResult
+        .type   ac_GetUnExcusiveResult, %function
+ac_GetUnExcusiveResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e29e0
@@ -2471,12 +2471,12 @@ L4e29e0:
         .word   0x00180002
 L4e29e4:
         .word   0x008ab858
-        .size   A_4e29ac, . - A_4e29ac
+        .size   ac_GetUnExcusiveResult, . - ac_GetUnExcusiveResult
 
 @ FUN_004e29e8
-        .global A_4e29e8
-        .type   A_4e29e8, %function
-A_4e29e8:
+        .global ac_EndScanUsbAccessPoint
+        .type   ac_EndScanUsbAccessPoint, %function
+ac_EndScanUsbAccessPoint:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e2a1c
@@ -2494,12 +2494,12 @@ L4e2a1c:
         .word   0x00210002
 L4e2a20:
         .word   0x008ab858
-        .size   A_4e29e8, . - A_4e29e8
+        .size   ac_EndScanUsbAccessPoint, . - ac_EndScanUsbAccessPoint
 
 @ FUN_004e2a24
-        .global A_4e2a24
-        .type   A_4e2a24, %function
-A_4e2a24:
+        .global ac_GetConnectingLocation
+        .type   ac_GetConnectingLocation, %function
+ac_GetConnectingLocation:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e2a74
@@ -2526,12 +2526,12 @@ L4e2a78:
         .word   0x0002c002
 L4e2a7c:
         .word   0x008ab858
-        .size   A_4e2a24, . - A_4e2a24
+        .size   ac_GetConnectingLocation, . - ac_GetConnectingLocation
 
 @ FUN_004e2a80
-        .global A_4e2a80
-        .type   A_4e2a80, %function
-A_4e2a80:
+        .global ac_SetRequestEulaVersion
+        .type   ac_SetRequestEulaVersion, %function
+ac_SetRequestEulaVersion:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2ae4
@@ -2563,12 +2563,12 @@ L4e2ae8:
         .word   0x00800002
 L4e2aec:
         .word   0x008ab858
-        .size   A_4e2a80, . - A_4e2a80
+        .size   ac_SetRequestEulaVersion, . - ac_SetRequestEulaVersion
 
 @ FUN_004e2af0
-        .global A_4e2af0
-        .type   A_4e2af0, %function
-A_4e2af0:
+        .global ac_ConvertPassphraseToPsk
+        .type   ac_ConvertPassphraseToPsk, %function
+ac_ConvertPassphraseToPsk:
         push    {r4, r5, r6, r7, r8, lr}
         ldr     r5, [sp, #0x1c]
         ldr     ip, [sp, #0x18]
@@ -2602,12 +2602,12 @@ L4e2b60:
         .word   0x00101802
 L4e2b64:
         .word   0x008ab858
-        .size   A_4e2af0, . - A_4e2af0
+        .size   ac_ConvertPassphraseToPsk, . - ac_ConvertPassphraseToPsk
 
 @ FUN_004e2b68
-        .global A_4e2b68
-        .type   A_4e2b68, %function
-A_4e2b68:
+        .global ac_GetConnectingProxyHost
+        .type   ac_GetConnectingProxyHost, %function
+ac_GetConnectingProxyHost:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x390000
@@ -2630,12 +2630,12 @@ L4e2bb0:
         .word   0x00190002
 L4e2bb4:
         .word   0x008ab858
-        .size   A_4e2b68, . - A_4e2b68
+        .size   ac_GetConnectingProxyHost, . - ac_GetConnectingProxyHost
 
 @ FUN_004e2bb8
-        .global A_4e2bb8
-        .type   A_4e2bb8, %function
-A_4e2bb8:
+        .global ac_GetConnectingProxyPort
+        .type   ac_GetConnectingProxyPort, %function
+ac_GetConnectingProxyPort:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2653,12 +2653,12 @@ L4e2bec:
         pop     {r4, r5, r6, pc}
 L4e2bf0:
         .word   0x008ab858
-        .size   A_4e2bb8, . - A_4e2bb8
+        .size   ac_GetConnectingProxyPort, . - ac_GetConnectingProxyPort
 
 @ FUN_004e2bf4
-        .global A_4e2bf4
-        .type   A_4e2bf4, %function
-A_4e2bf4:
+        .global ac_GetLastDetailErrorCode
+        .type   ac_GetLastDetailErrorCode, %function
+ac_GetLastDetailErrorCode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2676,12 +2676,12 @@ L4e2c28:
         pop     {r4, r5, r6, pc}
 L4e2c2c:
         .word   0x008ab858
-        .size   A_4e2bf4, . - A_4e2bf4
+        .size   ac_GetLastDetailErrorCode, . - ac_GetLastDetailErrorCode
 
 @ FUN_004e2c30
-        .global A_4e2c30
-        .type   A_4e2c30, %function
-A_4e2c30:
+        .global ac_GetLogoutHotspotResult
+        .type   ac_GetLogoutHotspotResult, %function
+ac_GetLogoutHotspotResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e2c64
@@ -2699,12 +2699,12 @@ L4e2c64:
         .word   0x001c0002
 L4e2c68:
         .word   0x008ab858
-        .size   A_4e2c30, . - A_4e2c30
+        .size   ac_GetLogoutHotspotResult, . - ac_GetLogoutHotspotResult
 
 @ FUN_004e2c6c
-        .global A_4e2c6c
-        .type   A_4e2c6c, %function
-A_4e2c6c:
+        .global ac_ScanNintendoZoneSubset
+        .type   ac_ScanNintendoZoneSubset, %function
+ac_ScanNintendoZoneSubset:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r6, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2737,12 +2737,12 @@ L4e2cd8:
         .word   0x001f0042
 L4e2cdc:
         .word   0x008ab858
-        .size   A_4e2c6c, . - A_4e2c6c
+        .size   ac_ScanNintendoZoneSubset, . - ac_ScanNintendoZoneSubset
 
 @ FUN_004e2ce0
-        .global A_4e2ce0
-        .type   A_4e2ce0, %function
-A_4e2ce0:
+        .global ac_BeginScanUsbAccessPoint
+        .type   ac_BeginScanUsbAccessPoint, %function
+ac_BeginScanUsbAccessPoint:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2d20
@@ -2763,12 +2763,12 @@ L4e2d20:
         .word   0x00200005
 L4e2d24:
         .word   0x008ab858
-        .size   A_4e2ce0, . - A_4e2ce0
+        .size   ac_BeginScanUsbAccessPoint, . - ac_BeginScanUsbAccessPoint
 
 @ FUN_004e2d28
-        .global A_4e2d28
-        .type   A_4e2d28, %function
-A_4e2d28:
+        .global ac_DebugSetNetworkSetting1
+        .type   ac_DebugSetNetworkSetting1, %function
+ac_DebugSetNetworkSetting1:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r2, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -2802,12 +2802,12 @@ L4e2d9c:
         .word   0x000600c6
 L4e2da0:
         .word   0x008ab858
-        .size   A_4e2d28, . - A_4e2d28
+        .size   ac_DebugSetNetworkSetting1, . - ac_DebugSetNetworkSetting1
 
 @ FUN_004e2da4
-        .global A_4e2da4
-        .type   A_4e2da4, %function
-A_4e2da4:
+        .global ac_GetConnectingSsidLength
+        .type   ac_GetConnectingSsidLength, %function
+ac_GetConnectingSsidLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2825,12 +2825,12 @@ L4e2dd8:
         pop     {r4, r5, r6, pc}
 L4e2ddc:
         .word   0x008ab858
-        .size   A_4e2da4, . - A_4e2da4
+        .size   ac_GetConnectingSsidLength, . - ac_GetConnectingSsidLength
 
 @ FUN_004e2de0
-        .global A_4e2de0
-        .type   A_4e2de0, %function
-A_4e2de0:
+        .global ac_RegisterDisconnectEvent
+        .type   ac_RegisterDisconnectEvent, %function
+ac_RegisterDisconnectEvent:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e2e20
@@ -2851,12 +2851,12 @@ L4e2e20:
         .word   0x00300004
 L4e2e24:
         .word   0x008ab858
-        .size   A_4e2de0, . - A_4e2de0
+        .size   ac_RegisterDisconnectEvent, . - ac_RegisterDisconnectEvent
 
 @ FUN_004e2e28
-        .global A_4e2e28
-        .type   A_4e2e28, %function
-A_4e2e28:
+        .global ac_GetCurrentAPInfo
+        .type   ac_GetCurrentAPInfo, %function
+ac_GetCurrentAPInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e2e84
@@ -2884,12 +2884,12 @@ L4e2e84:
         .word   0x000e0042
 L4e2e88:
         .word   0x008ab858
-        .size   A_4e2e28, . - A_4e2e28
+        .size   ac_GetCurrentAPInfo, . - ac_GetCurrentAPInfo
 
 @ FUN_004e2e8c
-        .global A_4e2e8c
-        .type   A_4e2e8c, %function
-A_4e2e8c:
+        .global ac_GetConnectingProxyEnable
+        .type   ac_GetConnectingProxyEnable, %function
+ac_GetConnectingProxyEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2907,12 +2907,12 @@ L4e2ec0:
         pop     {r4, r5, r6, pc}
 L4e2ec4:
         .word   0x008ab858
-        .size   A_4e2e8c, . - A_4e2e8c
+        .size   ac_GetConnectingProxyEnable, . - ac_GetConnectingProxyEnable
 
 @ FUN_004e2ec8
-        .global A_4e2ec8
-        .type   A_4e2ec8, %function
-A_4e2ec8:
+        .global ac_GetConnectingSecurityMode
+        .type   ac_GetConnectingSecurityMode, %function
+ac_GetConnectingSecurityMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2930,12 +2930,12 @@ L4e2efc:
         pop     {r4, r5, r6, pc}
 L4e2f00:
         .word   0x008ab858
-        .size   A_4e2ec8, . - A_4e2ec8
+        .size   ac_GetConnectingSecurityMode, . - ac_GetConnectingSecurityMode
 
 @ FUN_004e2f04
-        .global A_4e2f04
-        .type   A_4e2f04, %function
-A_4e2f04:
+        .global ac_GetConnectingHotspotSubset
+        .type   ac_GetConnectingHotspotSubset, %function
+ac_GetConnectingHotspotSubset:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e2f60
@@ -2963,12 +2963,12 @@ L4e2f60:
         .word   0x00130042
 L4e2f64:
         .word   0x008ab858
-        .size   A_4e2f04, . - A_4e2f04
+        .size   ac_GetConnectingHotspotSubset, . - ac_GetConnectingHotspotSubset
 
 @ FUN_004e2f68
-        .global A_4e2f68
-        .type   A_4e2f68, %function
-A_4e2f68:
+        .global ac_GetConnectingInfraPriority
+        .type   ac_GetConnectingInfraPriority, %function
+ac_GetConnectingInfraPriority:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -2986,12 +2986,12 @@ L4e2f9c:
         pop     {r4, r5, r6, pc}
 L4e2fa0:
         .word   0x008ab858
-        .size   A_4e2f68, . - A_4e2f68
+        .size   ac_GetConnectingInfraPriority, . - ac_GetConnectingInfraPriority
 
 @ FUN_004e2fa4
-        .global A_4e2fa4
-        .type   A_4e2fa4, %function
-A_4e2fa4:
+        .global ac_GetConnectingProxyAuthType
+        .type   ac_GetConnectingProxyAuthType, %function
+ac_GetConnectingProxyAuthType:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -3009,12 +3009,12 @@ L4e2fd8:
         pop     {r4, r5, r6, pc}
 L4e2fdc:
         .word   0x008ab858
-        .size   A_4e2fa4, . - A_4e2fa4
+        .size   ac_GetConnectingProxyAuthType, . - ac_GetConnectingProxyAuthType
 
 @ FUN_004e2fe0
-        .global A_4e2fe0
-        .type   A_4e2fe0, %function
-A_4e2fe0:
+        .global ac_GetConnectingProxyPassword
+        .type   ac_GetConnectingProxyPassword, %function
+ac_GetConnectingProxyPassword:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x3b0000
@@ -3037,12 +3037,12 @@ L4e3028:
         .word   0x00080002
 L4e302c:
         .word   0x008ab858
-        .size   A_4e2fe0, . - A_4e2fe0
+        .size   ac_GetConnectingProxyPassword, . - ac_GetConnectingProxyPassword
 
 @ FUN_004e3030
-        .global A_4e3030
-        .type   A_4e3030, %function
-A_4e3030:
+        .global ac_GetConnectingProxyUserName
+        .type   ac_GetConnectingProxyUserName, %function
+ac_GetConnectingProxyUserName:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x3a0000
@@ -3065,12 +3065,12 @@ L4e3078:
         .word   0x00080002
 L4e307c:
         .word   0x008ab858
-        .size   A_4e3030, . - A_4e3030
+        .size   ac_GetConnectingProxyUserName, . - ac_GetConnectingProxyUserName
 
 @ FUN_004e311c
-        .global A_4e311c
-        .type   A_4e311c, %function
-A_4e311c:
+        .global ac_GetCurrentNZoneInfo
+        .type   ac_GetCurrentNZoneInfo, %function
+ac_GetCurrentNZoneInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e3178
@@ -3098,12 +3098,12 @@ L4e3178:
         .word   0x00100042
 L4e317c:
         .word   0x008ab858
-        .size   A_4e311c, . - A_4e311c
+        .size   ac_GetCurrentNZoneInfo, . - ac_GetCurrentNZoneInfo
 
 @ FUN_004e3180
-        .global A_4e3180
-        .type   A_4e3180, %function
-A_4e3180:
+        .global ac_GetNZoneBeaconNotFoundEvent
+        .type   ac_GetNZoneBeaconNotFoundEvent, %function
+ac_GetNZoneBeaconNotFoundEvent:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e31c0
@@ -3124,12 +3124,12 @@ L4e31c0:
         .word   0x002f0004
 L4e31c4:
         .word   0x008ab858
-        .size   A_4e3180, . - A_4e3180
+        .size   ac_GetNZoneBeaconNotFoundEvent, . - ac_GetNZoneBeaconNotFoundEvent
 
 @ FUN_004e322c
-        .global A_4e322c
-        .type   A_4e322c, %function
-A_4e322c:
+        .global ac_GetStatus
+        .type   ac_GetStatus, %function
+ac_GetStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -3147,12 +3147,12 @@ L4e3260:
         pop     {r4, r5, r6, pc}
 L4e3264:
         .word   0x008ab858
-        .size   A_4e322c, . - A_4e322c
+        .size   ac_GetStatus, . - ac_GetStatus
 
 @ FUN_004e3268
-        .global A_4e3268
-        .type   A_4e3268, %function
-A_4e3268:
+        .global ac_i_CloseAsync
+        .type   ac_i_CloseAsync, %function
+ac_i_CloseAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e32a8
@@ -3173,12 +3173,12 @@ L4e32a8:
         .word   0x00080004
 L4e32ac:
         .word   0x008b8764
-        .size   A_4e3268, . - A_4e3268
+        .size   ac_i_CloseAsync, . - ac_i_CloseAsync
 
 @ FUN_004e32b0
-        .global A_4e32b0
-        .type   A_4e32b0, %function
-A_4e32b0:
+        .global ac_i_IsConnected
+        .type   ac_i_IsConnected, %function
+ac_i_IsConnected:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -3201,12 +3201,12 @@ L4e32f4:
         .word   0x003e0042
 L4e32f8:
         .word   0x008b8764
-        .size   A_4e32b0, . - A_4e32b0
+        .size   ac_i_IsConnected, . - ac_i_IsConnected
 
 @ FUN_004e32fc
-        .global A_4e32fc
-        .type   A_4e32fc, %function
-A_4e32fc:
+        .global ac_i_ConnectAsync
+        .type   ac_i_ConnectAsync, %function
+ac_i_ConnectAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e3348
@@ -3232,12 +3232,12 @@ L4e334c:
         .word   0x00800402
 L4e3350:
         .word   0x008b8764
-        .size   A_4e32fc, . - A_4e32fc
+        .size   ac_i_ConnectAsync, . - ac_i_ConnectAsync
 
 @ FUN_004e3354
-        .global A_4e3354
-        .type   A_4e3354, %function
-A_4e3354:
+        .global ac_i_AddDenyApType
+        .type   ac_i_AddDenyApType, %function
+ac_i_AddDenyApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e33a8
@@ -3265,12 +3265,12 @@ L4e33ac:
         .word   0x00800002
 L4e33b0:
         .word   0x008b8764
-        .size   A_4e3354, . - A_4e3354
+        .size   ac_i_AddDenyApType, . - ac_i_AddDenyApType
 
 @ FUN_004e33b4
-        .global A_4e33b4
-        .type   A_4e33b4, %function
-A_4e33b4:
+        .global ac_i_CloseAllASync
+        .type   ac_i_CloseAllASync, %function
+ac_i_CloseAllASync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e33f4
@@ -3291,12 +3291,12 @@ L4e33f4:
         .word   0x00190004
 L4e33f8:
         .word   0x008b8764
-        .size   A_4e33b4, . - A_4e33b4
+        .size   ac_i_CloseAllASync, . - ac_i_CloseAllASync
 
 @ FUN_004e33fc
-        .global A_4e33fc
-        .type   A_4e33fc, %function
-A_4e33fc:
+        .global ac_i_AddAllowApType
+        .type   ac_i_AddAllowApType, %function
+ac_i_AddAllowApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e3450
@@ -3324,12 +3324,12 @@ L4e3454:
         .word   0x00800002
 L4e3458:
         .word   0x008b8764
-        .size   A_4e33fc, . - A_4e33fc
+        .size   ac_i_AddAllowApType, . - ac_i_AddAllowApType
 
 @ FUN_004e345c
-        .global A_4e345c
-        .type   A_4e345c, %function
-A_4e345c:
+        .global ac_i_DebugSetApType
+        .type   ac_i_DebugSetApType, %function
+ac_i_DebugSetApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e34b0
@@ -3357,7 +3357,7 @@ L4e34b4:
         .word   0x00800002
 L4e34b8:
         .word   0x008b8764
-        .size   A_4e345c, . - A_4e345c
+        .size   ac_i_DebugSetApType, . - ac_i_DebugSetApType
 
 @ FUN_004e34bc
         .global A_4e34bc
@@ -3386,9 +3386,9 @@ L4e3500:
         .size   A_4e34bc, . - A_4e34bc
 
 @ FUN_004e3504
-        .global A_4e3504
-        .type   A_4e3504, %function
-A_4e3504:
+        .global ac_i_GetAPSSIDList
+        .type   ac_i_GetAPSSIDList, %function
+ac_i_GetAPSSIDList:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3544
@@ -3409,12 +3409,12 @@ L4e3544:
         .word   0x003c0042
 L4e3548:
         .word   0x008b8764
-        .size   A_4e3504, . - A_4e3504
+        .size   ac_i_GetAPSSIDList, . - ac_i_GetAPSSIDList
 
 @ FUN_004e354c
-        .global A_4e354c
-        .type   A_4e354c, %function
-A_4e354c:
+        .global ac_i_GetCloseResult
+        .type   ac_i_GetCloseResult, %function
+ac_i_GetCloseResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3580
@@ -3432,12 +3432,12 @@ L4e3580:
         .word   0x00090002
 L4e3584:
         .word   0x008b8764
-        .size   A_4e354c, . - A_4e354c
+        .size   ac_i_GetCloseResult, . - ac_i_GetCloseResult
 
 @ FUN_004e3588
-        .global A_4e3588
-        .type   A_4e3588, %function
-A_4e3588:
+        .global ac_i_SetAllowApType
+        .type   ac_i_SetAllowApType, %function
+ac_i_SetAllowApType:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e35dc
@@ -3465,12 +3465,12 @@ L4e35e0:
         .word   0x00800002
 L4e35e4:
         .word   0x008b8764
-        .size   A_4e3588, . - A_4e3588
+        .size   ac_i_SetAllowApType, . - ac_i_SetAllowApType
 
 @ FUN_004e35e8
-        .global A_4e35e8
-        .type   A_4e35e8, %function
-A_4e35e8:
+        .global ac_i_SetApNumFilter
+        .type   ac_i_SetApNumFilter, %function
+ac_i_SetApNumFilter:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e3644
@@ -3502,12 +3502,12 @@ L4e364c:
         .word   0x00029402
 L4e3650:
         .word   0x008b8764
-        .size   A_4e35e8, . - A_4e35e8
+        .size   ac_i_SetApNumFilter, . - ac_i_SetApNumFilter
 
 @ FUN_004e3654
-        .global A_4e3654
-        .type   A_4e3654, %function
-A_4e3654:
+        .global ac_i_SetBssidFilter
+        .type   ac_i_SetBssidFilter, %function
+ac_i_SetBssidFilter:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4e36b0
@@ -3539,12 +3539,12 @@ L4e36b8:
         .word   0x00019002
 L4e36bc:
         .word   0x008b8764
-        .size   A_4e3654, . - A_4e3654
+        .size   ac_i_SetBssidFilter, . - ac_i_SetBssidFilter
 
 @ FUN_004e36c0
-        .global A_4e36c0
-        .type   A_4e36c0, %function
-A_4e36c0:
+        .global ac_i_SetNetworkArea
+        .type   ac_i_SetNetworkArea, %function
+ac_i_SetNetworkArea:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e371c
@@ -3574,12 +3574,12 @@ L4e3720:
         .word   0x00800002
 L4e3724:
         .word   0x008b8764
-        .size   A_4e36c0, . - A_4e36c0
+        .size   ac_i_SetNetworkArea, . - ac_i_SetNetworkArea
 
 @ FUN_004e3728
-        .global A_4e3728
-        .type   A_4e3728, %function
-A_4e3728:
+        .global ac_i_ScanAPs
+        .type   ac_i_ScanAPs, %function
+ac_i_ScanAPs:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r6, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -3612,12 +3612,12 @@ L4e3794:
         .word   0x001d0042
 L4e3798:
         .word   0x008b8764
-        .size   A_4e3728, . - A_4e3728
+        .size   ac_i_ScanAPs, . - ac_i_ScanAPs
 
 @ FUN_004e379c
-        .global A_4e379c
-        .type   A_4e379c, %function
-A_4e379c:
+        .global ac_i_GetConnectResult
+        .type   ac_i_GetConnectResult, %function
+ac_i_GetConnectResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e37d0
@@ -3635,12 +3635,12 @@ L4e37d0:
         .word   0x00050002
 L4e37d4:
         .word   0x008b8764
-        .size   A_4e379c, . - A_4e379c
+        .size   ac_i_GetConnectResult, . - ac_i_GetConnectResult
 
 @ FUN_004e37d8
-        .global A_4e37d8
-        .type   A_4e37d8, %function
-A_4e37d8:
+        .global ac_i_GetInfraPriority
+        .type   ac_i_GetInfraPriority, %function
+ac_i_GetInfraPriority:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -3665,12 +3665,12 @@ L4e3820:
         .word   0x00800402
 L4e3824:
         .word   0x008b8764
-        .size   A_4e37d8, . - A_4e37d8
+        .size   ac_i_GetInfraPriority, . - ac_i_GetInfraPriority
 
 @ FUN_004e3828
-        .global A_4e3828
-        .type   A_4e3828, %function
-A_4e3828:
+        .global ac_i_GetLastErrorCode
+        .type   ac_i_GetLastErrorCode, %function
+ac_i_GetLastErrorCode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -3688,12 +3688,12 @@ L4e385c:
         pop     {r4, r5, r6, pc}
 L4e3860:
         .word   0x008b8764
-        .size   A_4e3828, . - A_4e3828
+        .size   ac_i_GetLastErrorCode, . - ac_i_GetLastErrorCode
 
 @ FUN_004e3864
-        .global A_4e3864
-        .type   A_4e3864, %function
-A_4e3864:
+        .global ac_i_GetPowerSaveMode
+        .type   ac_i_GetPowerSaveMode, %function
+ac_i_GetPowerSaveMode:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -3718,12 +3718,12 @@ L4e38ac:
         .word   0x00800402
 L4e38b0:
         .word   0x008b8764
-        .size   A_4e3864, . - A_4e3864
+        .size   ac_i_GetPowerSaveMode, . - ac_i_GetPowerSaveMode
 
 @ FUN_004e38b4
-        .global A_4e38b4
-        .type   A_4e38b4, %function
-A_4e38b4:
+        .global ac_i_ScanNintendoZone
+        .type   ac_i_ScanNintendoZone, %function
+ac_i_ScanNintendoZone:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r6, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -3756,12 +3756,12 @@ L4e3920:
         .word   0x001e0042
 L4e3924:
         .word   0x008b8764
-        .size   A_4e38b4, . - A_4e38b4
+        .size   ac_i_ScanNintendoZone, . - ac_i_ScanNintendoZone
 
 @ FUN_004e3928
-        .global A_4e3928
-        .type   A_4e3928, %function
-A_4e3928:
+        .global ac_i_SetClientVersion
+        .type   ac_i_SetClientVersion, %function
+ac_i_SetClientVersion:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e3960
@@ -3780,12 +3780,12 @@ L4e3960:
         .word   0x00400042
 L4e3964:
         .word   0x008b8764
-        .size   A_4e3928, . - A_4e3928
+        .size   ac_i_SetClientVersion, . - ac_i_SetClientVersion
 
 @ FUN_004e3968
-        .global A_4e3968
-        .type   A_4e3968, %function
-A_4e3968:
+        .global ac_i_SetInfraPriority
+        .type   ac_i_SetInfraPriority, %function
+ac_i_SetInfraPriority:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e39c4
@@ -3815,12 +3815,12 @@ L4e39c8:
         .word   0x00800002
 L4e39cc:
         .word   0x008b8764
-        .size   A_4e3968, . - A_4e3968
+        .size   ac_i_SetInfraPriority, . - ac_i_SetInfraPriority
 
 @ FUN_004e39d0
-        .global A_4e39d0
-        .type   A_4e39d0, %function
-A_4e39d0:
+        .global ac_i_SetPowerSaveMode
+        .type   ac_i_SetPowerSaveMode, %function
+ac_i_SetPowerSaveMode:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3a2c
@@ -3850,12 +3850,12 @@ L4e3a30:
         .word   0x00800002
 L4e3a34:
         .word   0x008b8764
-        .size   A_4e39d0, . - A_4e39d0
+        .size   ac_i_SetPowerSaveMode, . - ac_i_SetPowerSaveMode
 
 @ FUN_004e3a38
-        .global A_4e3a38
-        .type   A_4e3a38, %function
-A_4e3a38:
+        .global ac_i_SetZoneMacFilter
+        .type   ac_i_SetZoneMacFilter, %function
+ac_i_SetZoneMacFilter:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3a7c
@@ -3877,12 +3877,12 @@ L4e3a7c:
         .word   0x003d0042
 L4e3a80:
         .word   0x008b8764
-        .size   A_4e3a38, . - A_4e3a38
+        .size   ac_i_SetZoneMacFilter, . - ac_i_SetZoneMacFilter
 
 @ FUN_004e3a84
-        .global A_4e3a84
-        .type   A_4e3a84, %function
-A_4e3a84:
+        .global ac_i_UnExclusiveAsync
+        .type   ac_i_UnExclusiveAsync, %function
+ac_i_UnExclusiveAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3ac4
@@ -3903,12 +3903,12 @@ L4e3ac4:
         .word   0x00170004
 L4e3ac8:
         .word   0x008b8764
-        .size   A_4e3a84, . - A_4e3a84
+        .size   ac_i_UnExclusiveAsync, . - ac_i_UnExclusiveAsync
 
 @ FUN_004e3acc
-        .global A_4e3acc
-        .type   A_4e3acc, %function
-A_4e3acc:
+        .global ac_i_GetCloseAllResult
+        .type   ac_i_GetCloseAllResult, %function
+ac_i_GetCloseAllResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3b00
@@ -3926,12 +3926,12 @@ L4e3b00:
         .word   0x001a0002
 L4e3b04:
         .word   0x008b8764
-        .size   A_4e3acc, . - A_4e3acc
+        .size   ac_i_GetCloseAllResult, . - ac_i_GetCloseAllResult
 
 @ FUN_004e3b08
-        .global A_4e3b08
-        .type   A_4e3b08, %function
-A_4e3b08:
+        .global ac_i_GetConnectingSsid
+        .type   ac_i_GetConnectingSsid, %function
+ac_i_GetConnectingSsid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x340000
@@ -3954,12 +3954,12 @@ L4e3b50:
         .word   0x00080002
 L4e3b54:
         .word   0x008b8764
-        .size   A_4e3b08, . - A_4e3b08
+        .size   ac_i_GetConnectingSsid, . - ac_i_GetConnectingSsid
 
 @ FUN_004e3b58
-        .global A_4e3b58
-        .type   A_4e3b58, %function
-A_4e3b58:
+        .global ac_i_SetAuthServerType
+        .type   ac_i_SetAuthServerType, %function
+ac_i_SetAuthServerType:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3b94
@@ -3979,12 +3979,12 @@ L4e3b94:
         .word   0x00320042
 L4e3b98:
         .word   0x008b8764
-        .size   A_4e3b58, . - A_4e3b58
+        .size   ac_i_SetAuthServerType, . - ac_i_SetAuthServerType
 
 @ FUN_004e3b9c
-        .global A_4e3b9c
-        .type   A_4e3b9c, %function
-A_4e3b9c:
+        .global ac_i_CancelConnectAsync
+        .type   ac_i_CancelConnectAsync, %function
+ac_i_CancelConnectAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3bd0
@@ -4002,12 +4002,12 @@ L4e3bd0:
         .word   0x00070002
 L4e3bd4:
         .word   0x008b8764
-        .size   A_4e3b9c, . - A_4e3b9c
+        .size   ac_i_CancelConnectAsync, . - ac_i_CancelConnectAsync
 
 @ FUN_004e3bd8
-        .global A_4e3bd8
-        .type   A_4e3bd8, %function
-A_4e3bd8:
+        .global ac_i_GetExclusiveResult
+        .type   ac_i_GetExclusiveResult, %function
+ac_i_GetExclusiveResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3c0c
@@ -4025,12 +4025,12 @@ L4e3c0c:
         .word   0x00160002
 L4e3c10:
         .word   0x008b8764
-        .size   A_4e3bd8, . - A_4e3bd8
+        .size   ac_i_GetExclusiveResult, . - ac_i_GetExclusiveResult
 
 @ FUN_004e3c14
-        .global A_4e3c14
-        .type   A_4e3c14, %function
-A_4e3c14:
+        .global ac_i_LoadNetworkSetting
+        .type   ac_i_LoadNetworkSetting, %function
+ac_i_LoadNetworkSetting:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3c48
@@ -4048,12 +4048,12 @@ L4e3c48:
         .word   0x04010040
 L4e3c4c:
         .word   0x008b8764
-        .size   A_4e3c14, . - A_4e3c14
+        .size   ac_i_LoadNetworkSetting, . - ac_i_LoadNetworkSetting
 
 @ FUN_004e3c50
-        .global A_4e3c50
-        .type   A_4e3c50, %function
-A_4e3c50:
+        .global ac_i_LogoutHotspotAsync
+        .type   ac_i_LogoutHotspotAsync, %function
+ac_i_LogoutHotspotAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3c90
@@ -4074,12 +4074,12 @@ L4e3c90:
         .word   0x001b0004
 L4e3c94:
         .word   0x008b8764
-        .size   A_4e3c50, . - A_4e3c50
+        .size   ac_i_LogoutHotspotAsync, . - ac_i_LogoutHotspotAsync
 
 @ FUN_004e3c98
-        .global A_4e3c98
-        .type   A_4e3c98, %function
-A_4e3c98:
+        .global ac_i_SetFromApplication
+        .type   ac_i_SetFromApplication, %function
+ac_i_SetFromApplication:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3cf4
@@ -4109,12 +4109,12 @@ L4e3cf8:
         .word   0x00800002
 L4e3cfc:
         .word   0x008b8764
-        .size   A_4e3c98, . - A_4e3c98
+        .size   ac_i_SetFromApplication, . - ac_i_SetFromApplication
 
 @ FUN_004e3d00
-        .global A_4e3d00
-        .type   A_4e3d00, %function
-A_4e3d00:
+        .global ac_i_CreateDefaultConfig
+        .type   ac_i_CreateDefaultConfig, %function
+ac_i_CreateDefaultConfig:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x10000
@@ -4137,12 +4137,12 @@ L4e3d48:
         .word   0x00800002
 L4e3d4c:
         .word   0x008b8764
-        .size   A_4e3d00, . - A_4e3d00
+        .size   ac_i_CreateDefaultConfig, . - ac_i_CreateDefaultConfig
 
 @ FUN_004e3d50
-        .global A_4e3d50
-        .type   A_4e3d50, %function
-A_4e3d50:
+        .global ac_i_DebugSetNetworkArea
+        .type   ac_i_DebugSetNetworkArea, %function
+ac_i_DebugSetNetworkArea:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e3dac
@@ -4172,12 +4172,12 @@ L4e3db0:
         .word   0x00800002
 L4e3db4:
         .word   0x008b8764
-        .size   A_4e3d50, . - A_4e3d50
+        .size   ac_i_DebugSetNetworkArea, . - ac_i_DebugSetNetworkArea
 
 @ FUN_004e3db8
-        .global A_4e3db8
-        .type   A_4e3db8, %function
-A_4e3db8:
+        .global ac_i_FlushNetworkSetting
+        .type   ac_i_FlushNetworkSetting, %function
+ac_i_FlushNetworkSetting:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3de4
@@ -4193,12 +4193,12 @@ L4e3de4:
         .word   0x04040000
 L4e3de8:
         .word   0x008b8764
-        .size   A_4e3db8, . - A_4e3db8
+        .size   ac_i_FlushNetworkSetting, . - ac_i_FlushNetworkSetting
 
 @ FUN_004e3dec
-        .global A_4e3dec
-        .type   A_4e3dec, %function
-A_4e3dec:
+        .global ac_i_GetWifiStatus
+        .type   ac_i_GetWifiStatus, %function
+ac_i_GetWifiStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4216,12 +4216,12 @@ L4e3e20:
         pop     {r4, r5, r6, pc}
 L4e3e24:
         .word   0x008b8764
-        .size   A_4e3dec, . - A_4e3dec
+        .size   ac_i_GetWifiStatus, . - ac_i_GetWifiStatus
 
 @ FUN_004e3e28
-        .global A_4e3e28
-        .type   A_4e3e28, %function
-A_4e3e28:
+        .global ac_i_GetConnectingHotspot
+        .type   ac_i_GetConnectingHotspot, %function
+ac_i_GetConnectingHotspot:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e3e84
@@ -4249,12 +4249,12 @@ L4e3e84:
         .word   0x00120042
 L4e3e88:
         .word   0x008b8764
-        .size   A_4e3e28, . - A_4e3e28
+        .size   ac_i_GetConnectingHotspot, . - ac_i_GetConnectingHotspot
 
 @ FUN_004e3e8c
-        .global A_4e3e8c
-        .type   A_4e3e8c, %function
-A_4e3e8c:
+        .global ac_i_GetNotAwakeMacFilter
+        .type   ac_i_GetNotAwakeMacFilter, %function
+ac_i_GetNotAwakeMacFilter:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r0
         mrc     p15, #0, r5, c13, c0, #3
@@ -4283,12 +4283,12 @@ L4e3ee8:
         .word   0x003f0040
 L4e3eec:
         .word   0x008b8764
-        .size   A_4e3e8c, . - A_4e3e8c
+        .size   ac_i_GetNotAwakeMacFilter, . - ac_i_GetNotAwakeMacFilter
 
 @ FUN_004e3ef0
-        .global A_4e3ef0
-        .type   A_4e3ef0, %function
-A_4e3ef0:
+        .global ac_i_GetStatusChangeEvent
+        .type   ac_i_GetStatusChangeEvent, %function
+ac_i_GetStatusChangeEvent:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4310,12 +4310,12 @@ L4e3f30:
         .word   0x00310002
 L4e3f34:
         .word   0x008b8764
-        .size   A_4e3ef0, . - A_4e3ef0
+        .size   ac_i_GetStatusChangeEvent, . - ac_i_GetStatusChangeEvent
 
 @ FUN_004e3f38
-        .global A_4e3f38
-        .type   A_4e3f38, %function
-A_4e3f38:
+        .global ac_i_GetUnExcusiveResult
+        .type   ac_i_GetUnExcusiveResult, %function
+ac_i_GetUnExcusiveResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3f6c
@@ -4333,12 +4333,12 @@ L4e3f6c:
         .word   0x00180002
 L4e3f70:
         .word   0x008b8764
-        .size   A_4e3f38, . - A_4e3f38
+        .size   ac_i_GetUnExcusiveResult, . - ac_i_GetUnExcusiveResult
 
 @ FUN_004e3f74
-        .global A_4e3f74
-        .type   A_4e3f74, %function
-A_4e3f74:
+        .global ac_i_RemoveNetworkSetting
+        .type   ac_i_RemoveNetworkSetting, %function
+ac_i_RemoveNetworkSetting:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3fa8
@@ -4356,12 +4356,12 @@ L4e3fa8:
         .word   0x04030040
 L4e3fac:
         .word   0x008b8764
-        .size   A_4e3f74, . - A_4e3f74
+        .size   ac_i_RemoveNetworkSetting, . - ac_i_RemoveNetworkSetting
 
 @ FUN_004e3fb0
-        .global A_4e3fb0
-        .type   A_4e3fb0, %function
-A_4e3fb0:
+        .global ac_i_UpdateNetworkSetting
+        .type   ac_i_UpdateNetworkSetting, %function
+ac_i_UpdateNetworkSetting:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e3fe4
@@ -4379,12 +4379,12 @@ L4e3fe4:
         .word   0x04020040
 L4e3fe8:
         .word   0x008b8764
-        .size   A_4e3fb0, . - A_4e3fb0
+        .size   ac_i_UpdateNetworkSetting, . - ac_i_UpdateNetworkSetting
 
 @ FUN_004e3fec
-        .global A_4e3fec
-        .type   A_4e3fec, %function
-A_4e3fec:
+        .global ac_i_EndScanUsbAccessPoint
+        .type   ac_i_EndScanUsbAccessPoint, %function
+ac_i_EndScanUsbAccessPoint:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e4020
@@ -4402,12 +4402,12 @@ L4e4020:
         .word   0x00210002
 L4e4024:
         .word   0x008b8764
-        .size   A_4e3fec, . - A_4e3fec
+        .size   ac_i_EndScanUsbAccessPoint, . - ac_i_EndScanUsbAccessPoint
 
 @ FUN_004e4028
-        .global A_4e4028
-        .type   A_4e4028, %function
-A_4e4028:
+        .global ac_i_GetConnectingLocation
+        .type   ac_i_GetConnectingLocation, %function
+ac_i_GetConnectingLocation:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4078
@@ -4434,12 +4434,12 @@ L4e407c:
         .word   0x0002c002
 L4e4080:
         .word   0x008b8764
-        .size   A_4e4028, . - A_4e4028
+        .size   ac_i_GetConnectingLocation, . - ac_i_GetConnectingLocation
 
 @ FUN_004e4084
-        .global A_4e4084
-        .type   A_4e4084, %function
-A_4e4084:
+        .global ac_i_GetNetworkSetting_Crc
+        .type   ac_i_GetNetworkSetting_Crc, %function
+ac_i_GetNetworkSetting_Crc:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4459,12 +4459,12 @@ L4e40bc:
         .word   0x04090000
 L4e40c0:
         .word   0x008b8764
-        .size   A_4e4084, . - A_4e4084
+        .size   ac_i_GetNetworkSetting_Crc, . - ac_i_GetNetworkSetting_Crc
 
 @ FUN_004e40c4
-        .global A_4e40c4
-        .type   A_4e40c4, %function
-A_4e40c4:
+        .global ac_i_SetNetworkSetting_Crc
+        .type   ac_i_SetNetworkSetting_Crc, %function
+ac_i_SetNetworkSetting_Crc:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e40f8
@@ -4482,12 +4482,12 @@ L4e40f8:
         .word   0x040a0040
 L4e40fc:
         .word   0x008b8764
-        .size   A_4e40c4, . - A_4e40c4
+        .size   ac_i_SetNetworkSetting_Crc, . - ac_i_SetNetworkSetting_Crc
 
 @ FUN_004e4100
-        .global A_4e4100
-        .type   A_4e4100, %function
-A_4e4100:
+        .global ac_i_SetRequestEulaVersion
+        .type   ac_i_SetRequestEulaVersion, %function
+ac_i_SetRequestEulaVersion:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e4164
@@ -4519,12 +4519,12 @@ L4e4168:
         .word   0x00800002
 L4e416c:
         .word   0x008b8764
-        .size   A_4e4100, . - A_4e4100
+        .size   ac_i_SetRequestEulaVersion, . - ac_i_SetRequestEulaVersion
 
 @ FUN_004e4170
-        .global A_4e4170
-        .type   A_4e4170, %function
-A_4e4170:
+        .global ac_i_ConvertPassphraseToPsk
+        .type   ac_i_ConvertPassphraseToPsk, %function
+ac_i_ConvertPassphraseToPsk:
         push    {r4, r5, r6, r7, r8, lr}
         ldr     r5, [sp, #0x1c]
         ldr     ip, [sp, #0x18]
@@ -4558,12 +4558,12 @@ L4e41e0:
         .word   0x00101802
 L4e41e4:
         .word   0x008b8764
-        .size   A_4e4170, . - A_4e4170
+        .size   ac_i_ConvertPassphraseToPsk, . - ac_i_ConvertPassphraseToPsk
 
 @ FUN_004e41e8
-        .global A_4e41e8
-        .type   A_4e41e8, %function
-A_4e41e8:
+        .global ac_i_GetConnectingProxyHost
+        .type   ac_i_GetConnectingProxyHost, %function
+ac_i_GetConnectingProxyHost:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x390000
@@ -4586,12 +4586,12 @@ L4e4230:
         .word   0x00190002
 L4e4234:
         .word   0x008b8764
-        .size   A_4e41e8, . - A_4e41e8
+        .size   ac_i_GetConnectingProxyHost, . - ac_i_GetConnectingProxyHost
 
 @ FUN_004e4238
-        .global A_4e4238
-        .type   A_4e4238, %function
-A_4e4238:
+        .global ac_i_GetConnectingProxyPort
+        .type   ac_i_GetConnectingProxyPort, %function
+ac_i_GetConnectingProxyPort:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4609,12 +4609,12 @@ L4e426c:
         pop     {r4, r5, r6, pc}
 L4e4270:
         .word   0x008b8764
-        .size   A_4e4238, . - A_4e4238
+        .size   ac_i_GetConnectingProxyPort, . - ac_i_GetConnectingProxyPort
 
 @ FUN_004e4274
-        .global A_4e4274
-        .type   A_4e4274, %function
-A_4e4274:
+        .global ac_i_GetLastDetailErrorCode
+        .type   ac_i_GetLastDetailErrorCode, %function
+ac_i_GetLastDetailErrorCode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4632,12 +4632,12 @@ L4e42a8:
         pop     {r4, r5, r6, pc}
 L4e42ac:
         .word   0x008b8764
-        .size   A_4e4274, . - A_4e4274
+        .size   ac_i_GetLastDetailErrorCode, . - ac_i_GetLastDetailErrorCode
 
 @ FUN_004e42b0
-        .global A_4e42b0
-        .type   A_4e42b0, %function
-A_4e42b0:
+        .global ac_i_GetLogoutHotspotResult
+        .type   ac_i_GetLogoutHotspotResult, %function
+ac_i_GetLogoutHotspotResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e42e4
@@ -4655,12 +4655,12 @@ L4e42e4:
         .word   0x001c0002
 L4e42e8:
         .word   0x008b8764
-        .size   A_4e42b0, . - A_4e42b0
+        .size   ac_i_GetLogoutHotspotResult, . - ac_i_GetLogoutHotspotResult
 
 @ FUN_004e42ec
-        .global A_4e42ec
-        .type   A_4e42ec, %function
-A_4e42ec:
+        .global ac_i_ScanNintendoZoneSubset
+        .type   ac_i_ScanNintendoZoneSubset, %function
+ac_i_ScanNintendoZoneSubset:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r6, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4693,12 +4693,12 @@ L4e4358:
         .word   0x001f0042
 L4e435c:
         .word   0x008b8764
-        .size   A_4e42ec, . - A_4e42ec
+        .size   ac_i_ScanNintendoZoneSubset, . - ac_i_ScanNintendoZoneSubset
 
 @ FUN_004e4360
-        .global A_4e4360
-        .type   A_4e4360, %function
-A_4e4360:
+        .global ac_i_BeginScanUsbAccessPoint
+        .type   ac_i_BeginScanUsbAccessPoint, %function
+ac_i_BeginScanUsbAccessPoint:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e43a0
@@ -4719,12 +4719,12 @@ L4e43a0:
         .word   0x00200005
 L4e43a4:
         .word   0x008b8764
-        .size   A_4e4360, . - A_4e4360
+        .size   ac_i_BeginScanUsbAccessPoint, . - ac_i_BeginScanUsbAccessPoint
 
 @ FUN_004e43a8
-        .global A_4e43a8
-        .type   A_4e43a8, %function
-A_4e43a8:
+        .global ac_i_DebugSetNetworkSetting1
+        .type   ac_i_DebugSetNetworkSetting1, %function
+ac_i_DebugSetNetworkSetting1:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r2, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -4758,12 +4758,12 @@ L4e441c:
         .word   0x000600c6
 L4e4420:
         .word   0x008b8764
-        .size   A_4e43a8, . - A_4e43a8
+        .size   ac_i_DebugSetNetworkSetting1, . - ac_i_DebugSetNetworkSetting1
 
 @ FUN_004e4424
-        .global A_4e4424
-        .type   A_4e4424, %function
-A_4e4424:
+        .global ac_i_GetConnectingSsidLength
+        .type   ac_i_GetConnectingSsidLength, %function
+ac_i_GetConnectingSsidLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4781,12 +4781,12 @@ L4e4458:
         pop     {r4, r5, r6, pc}
 L4e445c:
         .word   0x008b8764
-        .size   A_4e4424, . - A_4e4424
+        .size   ac_i_GetConnectingSsidLength, . - ac_i_GetConnectingSsidLength
 
 @ FUN_004e4460
-        .global A_4e4460
-        .type   A_4e4460, %function
-A_4e4460:
+        .global ac_i_RegisterDisconnectEvent
+        .type   ac_i_RegisterDisconnectEvent, %function
+ac_i_RegisterDisconnectEvent:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e44a0
@@ -4807,12 +4807,12 @@ L4e44a0:
         .word   0x00300004
 L4e44a4:
         .word   0x008b8764
-        .size   A_4e4460, . - A_4e4460
+        .size   ac_i_RegisterDisconnectEvent, . - ac_i_RegisterDisconnectEvent
 
 @ FUN_004e44a8
-        .global A_4e44a8
-        .type   A_4e44a8, %function
-A_4e44a8:
+        .global ac_i_GetCurrentAPInfo
+        .type   ac_i_GetCurrentAPInfo, %function
+ac_i_GetCurrentAPInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e4504
@@ -4840,12 +4840,12 @@ L4e4504:
         .word   0x000e0042
 L4e4508:
         .word   0x008b8764
-        .size   A_4e44a8, . - A_4e44a8
+        .size   ac_i_GetCurrentAPInfo, . - ac_i_GetCurrentAPInfo
 
 @ FUN_004e450c
-        .global A_4e450c
-        .type   A_4e450c, %function
-A_4e450c:
+        .global ac_i_GetConnectingProxyEnable
+        .type   ac_i_GetConnectingProxyEnable, %function
+ac_i_GetConnectingProxyEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4863,12 +4863,12 @@ L4e4540:
         pop     {r4, r5, r6, pc}
 L4e4544:
         .word   0x008b8764
-        .size   A_4e450c, . - A_4e450c
+        .size   ac_i_GetConnectingProxyEnable, . - ac_i_GetConnectingProxyEnable
 
 @ FUN_004e4548
-        .global A_4e4548
-        .type   A_4e4548, %function
-A_4e4548:
+        .global ac_i_GetConnectingSecurityMode
+        .type   ac_i_GetConnectingSecurityMode, %function
+ac_i_GetConnectingSecurityMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4886,12 +4886,12 @@ L4e457c:
         pop     {r4, r5, r6, pc}
 L4e4580:
         .word   0x008b8764
-        .size   A_4e4548, . - A_4e4548
+        .size   ac_i_GetConnectingSecurityMode, . - ac_i_GetConnectingSecurityMode
 
 @ FUN_004e4584
-        .global A_4e4584
-        .type   A_4e4584, %function
-A_4e4584:
+        .global ac_i_GetNetworkSettingVersion
+        .type   ac_i_GetNetworkSettingVersion, %function
+ac_i_GetNetworkSettingVersion:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4911,12 +4911,12 @@ L4e45bc:
         .word   0x04070000
 L4e45c0:
         .word   0x008b8764
-        .size   A_4e4584, . - A_4e4584
+        .size   ac_i_GetNetworkSettingVersion, . - ac_i_GetNetworkSettingVersion
 
 @ FUN_004e45c4
-        .global A_4e45c4
-        .type   A_4e45c4, %function
-A_4e45c4:
+        .global ac_i_SetNetworkSettingVersion
+        .type   ac_i_SetNetworkSettingVersion, %function
+ac_i_SetNetworkSettingVersion:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e45f8
@@ -4934,12 +4934,12 @@ L4e45f8:
         .word   0x04080040
 L4e45fc:
         .word   0x008b8764
-        .size   A_4e45c4, . - A_4e45c4
+        .size   ac_i_SetNetworkSettingVersion, . - ac_i_SetNetworkSettingVersion
 
 @ FUN_004e4600
-        .global A_4e4600
-        .type   A_4e4600, %function
-A_4e4600:
+        .global ac_i_GetConnectingHotspotSubset
+        .type   ac_i_GetConnectingHotspotSubset, %function
+ac_i_GetConnectingHotspotSubset:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e465c
@@ -4967,12 +4967,12 @@ L4e465c:
         .word   0x00130042
 L4e4660:
         .word   0x008b8764
-        .size   A_4e4600, . - A_4e4600
+        .size   ac_i_GetConnectingHotspotSubset, . - ac_i_GetConnectingHotspotSubset
 
 @ FUN_004e4664
-        .global A_4e4664
-        .type   A_4e4664, %function
-A_4e4664:
+        .global ac_i_GetConnectingInfraPriority
+        .type   ac_i_GetConnectingInfraPriority, %function
+ac_i_GetConnectingInfraPriority:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -4990,12 +4990,12 @@ L4e4698:
         pop     {r4, r5, r6, pc}
 L4e469c:
         .word   0x008b8764
-        .size   A_4e4664, . - A_4e4664
+        .size   ac_i_GetConnectingInfraPriority, . - ac_i_GetConnectingInfraPriority
 
 @ FUN_004e46a0
-        .global A_4e46a0
-        .type   A_4e46a0, %function
-A_4e46a0:
+        .global ac_i_GetConnectingProxyAuthType
+        .type   ac_i_GetConnectingProxyAuthType, %function
+ac_i_GetConnectingProxyAuthType:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5013,12 +5013,12 @@ L4e46d4:
         pop     {r4, r5, r6, pc}
 L4e46d8:
         .word   0x008b8764
-        .size   A_4e46a0, . - A_4e46a0
+        .size   ac_i_GetConnectingProxyAuthType, . - ac_i_GetConnectingProxyAuthType
 
 @ FUN_004e46dc
-        .global A_4e46dc
-        .type   A_4e46dc, %function
-A_4e46dc:
+        .global ac_i_GetConnectingProxyPassword
+        .type   ac_i_GetConnectingProxyPassword, %function
+ac_i_GetConnectingProxyPassword:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x3b0000
@@ -5041,12 +5041,12 @@ L4e4724:
         .word   0x00080002
 L4e4728:
         .word   0x008b8764
-        .size   A_4e46dc, . - A_4e46dc
+        .size   ac_i_GetConnectingProxyPassword, . - ac_i_GetConnectingProxyPassword
 
 @ FUN_004e472c
-        .global A_4e472c
-        .type   A_4e472c, %function
-A_4e472c:
+        .global ac_i_GetConnectingProxyUserName
+        .type   ac_i_GetConnectingProxyUserName, %function
+ac_i_GetConnectingProxyUserName:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x3a0000
@@ -5069,12 +5069,12 @@ L4e4774:
         .word   0x00080002
 L4e4778:
         .word   0x008b8764
-        .size   A_4e472c, . - A_4e472c
+        .size   ac_i_GetConnectingProxyUserName, . - ac_i_GetConnectingProxyUserName
 
 @ FUN_004e4818
-        .global A_4e4818
-        .type   A_4e4818, %function
-A_4e4818:
+        .global ac_i_ConvertNetworkSettingNdsTo3ds
+        .type   ac_i_ConvertNetworkSettingNdsTo3ds, %function
+ac_i_ConvertNetworkSettingNdsTo3ds:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L4e486c
@@ -5100,12 +5100,12 @@ L4e486c:
         .word   0x04050084
 L4e4870:
         .word   0x008b8764
-        .size   A_4e4818, . - A_4e4818
+        .size   ac_i_ConvertNetworkSettingNdsTo3ds, . - ac_i_ConvertNetworkSettingNdsTo3ds
 
 @ FUN_004e4874
-        .global A_4e4874
-        .type   A_4e4874, %function
-A_4e4874:
+        .global ac_i_GetNetworkOtherMtu
+        .type   ac_i_GetNetworkOtherMtu, %function
+ac_i_GetNetworkOtherMtu:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5125,12 +5125,12 @@ L4e48ac:
         .word   0x046d0000
 L4e48b0:
         .word   0x008b8764
-        .size   A_4e4874, . - A_4e4874
+        .size   ac_i_GetNetworkOtherMtu, . - ac_i_GetNetworkOtherMtu
 
 @ FUN_004e48b4
-        .global A_4e48b4
-        .type   A_4e48b4, %function
-A_4e48b4:
+        .global ac_i_InitializeNetworkSetting
+        .type   ac_i_InitializeNetworkSetting, %function
+ac_i_InitializeNetworkSetting:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e48e8
@@ -5148,12 +5148,12 @@ L4e48e8:
         .word   0x04060040
 L4e48ec:
         .word   0x008b8764
-        .size   A_4e48b4, . - A_4e48b4
+        .size   ac_i_InitializeNetworkSetting, . - ac_i_InitializeNetworkSetting
 
 @ FUN_004e48f0
-        .global A_4e48f0
-        .type   A_4e48f0, %function
-A_4e48f0:
+        .global ac_i_SetNetworkOtherMtu
+        .type   ac_i_SetNetworkOtherMtu, %function
+ac_i_SetNetworkOtherMtu:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e4924
@@ -5171,12 +5171,12 @@ L4e4924:
         .word   0x046e0040
 L4e4928:
         .word   0x008b8764
-        .size   A_4e48f0, . - A_4e48f0
+        .size   ac_i_SetNetworkOtherMtu, . - ac_i_SetNetworkOtherMtu
 
 @ FUN_004e492c
-        .global A_4e492c
-        .type   A_4e492c, %function
-A_4e492c:
+        .global ac_i_GetNetworkIpNetmask
+        .type   ac_i_GetNetworkIpNetmask, %function
+ac_i_GetNetworkIpNetmask:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4974
@@ -5201,12 +5201,12 @@ L4e4978:
         .word   0x00010002
 L4e497c:
         .word   0x008b8764
-        .size   A_4e492c, . - A_4e492c
+        .size   ac_i_GetNetworkIpNetmask, . - ac_i_GetNetworkIpNetmask
 
 @ FUN_004e4980
-        .global A_4e4980
-        .type   A_4e4980, %function
-A_4e4980:
+        .global ac_i_GetNetworkProxyHost
+        .type   ac_i_GetNetworkProxyHost, %function
+ac_i_GetNetworkProxyHost:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e49c8
@@ -5231,12 +5231,12 @@ L4e49cc:
         .word   0x00190002
 L4e49d0:
         .word   0x008b8764
-        .size   A_4e4980, . - A_4e4980
+        .size   ac_i_GetNetworkProxyHost, . - ac_i_GetNetworkProxyHost
 
 @ FUN_004e49d4
-        .global A_4e49d4
-        .type   A_4e49d4, %function
-A_4e49d4:
+        .global ac_i_GetNetworkProxyPort
+        .type   ac_i_GetNetworkProxyPort, %function
+ac_i_GetNetworkProxyPort:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5256,12 +5256,12 @@ L4e4a0c:
         .word   0x04630000
 L4e4a10:
         .word   0x008b8764
-        .size   A_4e49d4, . - A_4e49d4
+        .size   ac_i_GetNetworkProxyPort, . - ac_i_GetNetworkProxyPort
 
 @ FUN_004e4a14
-        .global A_4e4a14
-        .type   A_4e4a14, %function
-A_4e4a14:
+        .global ac_i_SetNetworkIpNetMask
+        .type   ac_i_SetNetworkIpNetMask, %function
+ac_i_SetNetworkIpNetMask:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e4a4c
@@ -5282,12 +5282,12 @@ L4e4a50:
         .word   0x00012c02
 L4e4a54:
         .word   0x008b8764
-        .size   A_4e4a14, . - A_4e4a14
+        .size   ac_i_SetNetworkIpNetMask, . - ac_i_SetNetworkIpNetMask
 
 @ FUN_004e4a58
-        .global A_4e4a58
-        .type   A_4e4a58, %function
-A_4e4a58:
+        .global ac_i_SetNetworkProxyHost
+        .type   ac_i_SetNetworkProxyHost, %function
+ac_i_SetNetworkProxyHost:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e4a90
@@ -5308,12 +5308,12 @@ L4e4a94:
         .word   0x00193402
 L4e4a98:
         .word   0x008b8764
-        .size   A_4e4a58, . - A_4e4a58
+        .size   ac_i_SetNetworkProxyHost, . - ac_i_SetNetworkProxyHost
 
 @ FUN_004e4a9c
-        .global A_4e4a9c
-        .type   A_4e4a9c, %function
-A_4e4a9c:
+        .global ac_i_SetNetworkProxyPort
+        .type   ac_i_SetNetworkProxyPort, %function
+ac_i_SetNetworkProxyPort:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e4ad0
@@ -5331,12 +5331,12 @@ L4e4ad0:
         .word   0x04640040
 L4e4ad4:
         .word   0x008b8764
-        .size   A_4e4a9c, . - A_4e4a9c
+        .size   ac_i_SetNetworkProxyPort, . - ac_i_SetNetworkProxyPort
 
 @ FUN_004e4ad8
-        .global A_4e4ad8
-        .type   A_4e4ad8, %function
-A_4e4ad8:
+        .global ac_i_GetNetworkIpAddress
+        .type   ac_i_GetNetworkIpAddress, %function
+ac_i_GetNetworkIpAddress:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4b20
@@ -5361,12 +5361,12 @@ L4e4b24:
         .word   0x00010002
 L4e4b28:
         .word   0x008b8764
-        .size   A_4e4ad8, . - A_4e4ad8
+        .size   ac_i_GetNetworkIpAddress, . - ac_i_GetNetworkIpAddress
 
 @ FUN_004e4b2c
-        .global A_4e4b2c
-        .type   A_4e4b2c, %function
-A_4e4b2c:
+        .global ac_i_GetNetworkProxyEnable
+        .type   ac_i_GetNetworkProxyEnable, %function
+ac_i_GetNetworkProxyEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5386,12 +5386,12 @@ L4e4b64:
         .word   0x045f0000
 L4e4b68:
         .word   0x008b8764
-        .size   A_4e4b2c, . - A_4e4b2c
+        .size   ac_i_GetNetworkProxyEnable, . - ac_i_GetNetworkProxyEnable
 
 @ FUN_004e4b6c
-        .global A_4e4b6c
-        .type   A_4e4b6c, %function
-A_4e4b6c:
+        .global ac_i_SetNetworkIpAddress
+        .type   ac_i_SetNetworkIpAddress, %function
+ac_i_SetNetworkIpAddress:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e4ba4
@@ -5412,12 +5412,12 @@ L4e4ba8:
         .word   0x00012402
 L4e4bac:
         .word   0x008b8764
-        .size   A_4e4b6c, . - A_4e4b6c
+        .size   ac_i_SetNetworkIpAddress, . - ac_i_SetNetworkIpAddress
 
 @ FUN_004e4bb0
-        .global A_4e4bb0
-        .type   A_4e4bb0, %function
-A_4e4bb0:
+        .global ac_i_SetNetworkProxyEnable
+        .type   ac_i_SetNetworkProxyEnable, %function
+ac_i_SetNetworkProxyEnable:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e4be4
@@ -5435,12 +5435,12 @@ L4e4be4:
         .word   0x04600040
 L4e4be8:
         .word   0x008b8764
-        .size   A_4e4bb0, . - A_4e4bb0
+        .size   ac_i_SetNetworkProxyEnable, . - ac_i_SetNetworkProxyEnable
 
 @ FUN_004e4bec
-        .global A_4e4bec
-        .type   A_4e4bec, %function
-A_4e4bec:
+        .global ac_i_GetConnectingNetworkCrc
+        .type   ac_i_GetConnectingNetworkCrc, %function
+ac_i_GetConnectingNetworkCrc:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5458,12 +5458,12 @@ L4e4c20:
         pop     {r4, r5, r6, pc}
 L4e4c24:
         .word   0x008b8764
-        .size   A_4e4bec, . - A_4e4bec
+        .size   ac_i_GetConnectingNetworkCrc, . - ac_i_GetConnectingNetworkCrc
 
 @ FUN_004e4c28
-        .global A_4e4c28
-        .type   A_4e4c28, %function
-A_4e4c28:
+        .global ac_i_GetCurrentNZoneInfo
+        .type   ac_i_GetCurrentNZoneInfo, %function
+ac_i_GetCurrentNZoneInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e4c84
@@ -5491,12 +5491,12 @@ L4e4c84:
         .word   0x00100042
 L4e4c88:
         .word   0x008b8764
-        .size   A_4e4c28, . - A_4e4c28
+        .size   ac_i_GetCurrentNZoneInfo, . - ac_i_GetCurrentNZoneInfo
 
 @ FUN_004e4ccc
-        .global A_4e4ccc
-        .type   A_4e4ccc, %function
-A_4e4ccc:
+        .global ac_i_GetNetworkIpPrimaryDNS
+        .type   ac_i_GetNetworkIpPrimaryDNS, %function
+ac_i_GetNetworkIpPrimaryDNS:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4d14
@@ -5521,12 +5521,12 @@ L4e4d18:
         .word   0x00010002
 L4e4d1c:
         .word   0x008b8764
-        .size   A_4e4ccc, . - A_4e4ccc
+        .size   ac_i_GetNetworkIpPrimaryDNS, . - ac_i_GetNetworkIpPrimaryDNS
 
 @ FUN_004e4d20
-        .global A_4e4d20
-        .type   A_4e4d20, %function
-A_4e4d20:
+        .global ac_i_SetNetworkIpEnableDHCP
+        .type   ac_i_SetNetworkIpEnableDHCP, %function
+ac_i_SetNetworkIpEnableDHCP:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e4d54
@@ -5544,12 +5544,12 @@ L4e4d54:
         .word   0x04480040
 L4e4d58:
         .word   0x008b8764
-        .size   A_4e4d20, . - A_4e4d20
+        .size   ac_i_SetNetworkIpEnableDHCP, . - ac_i_SetNetworkIpEnableDHCP
 
 @ FUN_004e4d5c
-        .global A_4e4d5c
-        .type   A_4e4d5c, %function
-A_4e4d5c:
+        .global ac_i_SetNetworkIpPrimaryDNS
+        .type   ac_i_SetNetworkIpPrimaryDNS, %function
+ac_i_SetNetworkIpPrimaryDNS:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e4d94
@@ -5570,12 +5570,12 @@ L4e4d98:
         .word   0x00013002
 L4e4d9c:
         .word   0x008b8764
-        .size   A_4e4d5c, . - A_4e4d5c
+        .size   ac_i_SetNetworkIpPrimaryDNS, . - ac_i_SetNetworkIpPrimaryDNS
 
 @ FUN_004e4da0
-        .global A_4e4da0
-        .type   A_4e4da0, %function
-A_4e4da0:
+        .global ac_i_GetNetworkProxyAuthType
+        .type   ac_i_GetNetworkProxyAuthType, %function
+ac_i_GetNetworkProxyAuthType:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5595,12 +5595,12 @@ L4e4dd8:
         .word   0x04610000
 L4e4ddc:
         .word   0x008b8764
-        .size   A_4e4da0, . - A_4e4da0
+        .size   ac_i_GetNetworkProxyAuthType, . - ac_i_GetNetworkProxyAuthType
 
 @ FUN_004e4de0
-        .global A_4e4de0
-        .type   A_4e4de0, %function
-A_4e4de0:
+        .global ac_i_GetNetworkSettingProxyPassword
+        .type   ac_i_GetNetworkSettingProxyPassword, %function
+ac_i_GetNetworkSettingProxyPassword:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4e28
@@ -5625,12 +5625,12 @@ L4e4e2c:
         .word   0x00080002
 L4e4e30:
         .word   0x008b8764
-        .size   A_4e4de0, . - A_4e4de0
+        .size   ac_i_GetNetworkSettingProxyPassword, . - ac_i_GetNetworkSettingProxyPassword
 
 @ FUN_004e4e34
-        .global A_4e4e34
-        .type   A_4e4e34, %function
-A_4e4e34:
+        .global ac_i_GetNetworkSettingProxyUserName
+        .type   ac_i_GetNetworkSettingProxyUserName, %function
+ac_i_GetNetworkSettingProxyUserName:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4e7c
@@ -5655,12 +5655,12 @@ L4e4e80:
         .word   0x00080002
 L4e4e84:
         .word   0x008b8764
-        .size   A_4e4e34, . - A_4e4e34
+        .size   ac_i_GetNetworkSettingProxyUserName, . - ac_i_GetNetworkSettingProxyUserName
 
 @ FUN_004e4e88
-        .global A_4e4e88
-        .type   A_4e4e88, %function
-A_4e4e88:
+        .global ac_i_SetNetworkProxyAuthType
+        .type   ac_i_SetNetworkProxyAuthType, %function
+ac_i_SetNetworkProxyAuthType:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e4ebc
@@ -5678,12 +5678,12 @@ L4e4ebc:
         .word   0x04620040
 L4e4ec0:
         .word   0x008b8764
-        .size   A_4e4e88, . - A_4e4e88
+        .size   ac_i_SetNetworkProxyAuthType, . - ac_i_SetNetworkProxyAuthType
 
 @ FUN_004e4ec4
-        .global A_4e4ec4
-        .type   A_4e4ec4, %function
-A_4e4ec4:
+        .global ac_i_SetNetworkSettingProxyPassword
+        .type   ac_i_SetNetworkSettingProxyPassword, %function
+ac_i_SetNetworkSettingProxyPassword:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e4efc
@@ -5704,12 +5704,12 @@ L4e4f00:
         .word   0x00083c02
 L4e4f04:
         .word   0x008b8764
-        .size   A_4e4ec4, . - A_4e4ec4
+        .size   ac_i_SetNetworkSettingProxyPassword, . - ac_i_SetNetworkSettingProxyPassword
 
 @ FUN_004e4f08
-        .global A_4e4f08
-        .type   A_4e4f08, %function
-A_4e4f08:
+        .global ac_i_SetNetworkSettingProxyUserName
+        .type   ac_i_SetNetworkSettingProxyUserName, %function
+ac_i_SetNetworkSettingProxyUserName:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e4f40
@@ -5730,12 +5730,12 @@ L4e4f44:
         .word   0x00083802
 L4e4f48:
         .word   0x008b8764
-        .size   A_4e4f08, . - A_4e4f08
+        .size   ac_i_SetNetworkSettingProxyUserName, . - ac_i_SetNetworkSettingProxyUserName
 
 @ FUN_004e4f4c
-        .global A_4e4f4c
-        .type   A_4e4f4c, %function
-A_4e4f4c:
+        .global ac_i_GetNetworkIpSecondaryDNS
+        .type   ac_i_GetNetworkIpSecondaryDNS, %function
+ac_i_GetNetworkIpSecondaryDNS:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e4f94
@@ -5760,12 +5760,12 @@ L4e4f98:
         .word   0x00010002
 L4e4f9c:
         .word   0x008b8764
-        .size   A_4e4f4c, . - A_4e4f4c
+        .size   ac_i_GetNetworkIpSecondaryDNS, . - ac_i_GetNetworkIpSecondaryDNS
 
 @ FUN_004e4fa0
-        .global A_4e4fa0
-        .type   A_4e4fa0, %function
-A_4e4fa0:
+        .global ac_i_GetNetworkWirelessEnable
+        .type   ac_i_GetNetworkWirelessEnable, %function
+ac_i_GetNetworkWirelessEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5785,12 +5785,12 @@ L4e4fd8:
         .word   0x040b0000
 L4e4fdc:
         .word   0x008b8764
-        .size   A_4e4fa0, . - A_4e4fa0
+        .size   ac_i_GetNetworkWirelessEnable, . - ac_i_GetNetworkWirelessEnable
 
 @ FUN_004e4fe0
-        .global A_4e4fe0
-        .type   A_4e4fe0, %function
-A_4e4fe0:
+        .global ac_i_SetNetworkIpSecondaryDNS
+        .type   ac_i_SetNetworkIpSecondaryDNS, %function
+ac_i_SetNetworkIpSecondaryDNS:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5018
@@ -5811,12 +5811,12 @@ L4e501c:
         .word   0x00013002
 L4e5020:
         .word   0x008b8764
-        .size   A_4e4fe0, . - A_4e4fe0
+        .size   ac_i_SetNetworkIpSecondaryDNS, . - ac_i_SetNetworkIpSecondaryDNS
 
 @ FUN_004e5024
-        .global A_4e5024
-        .type   A_4e5024, %function
-A_4e5024:
+        .global ac_i_SetNetworkWirelessEnable
+        .type   ac_i_SetNetworkWirelessEnable, %function
+ac_i_SetNetworkWirelessEnable:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e5058
@@ -5834,12 +5834,12 @@ L4e5058:
         .word   0x040c0040
 L4e505c:
         .word   0x008b8764
-        .size   A_4e5024, . - A_4e5024
+        .size   ac_i_SetNetworkWirelessEnable, . - ac_i_SetNetworkWirelessEnable
 
 @ FUN_004e5060
-        .global A_4e5060
-        .type   A_4e5060, %function
-A_4e5060:
+        .global ac_i_GetNetworkEnableUPnP
+        .type   ac_i_GetNetworkEnableUPnP, %function
+ac_i_GetNetworkEnableUPnP:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5859,12 +5859,12 @@ L4e5098:
         .word   0x046b0000
 L4e509c:
         .word   0x008b8764
-        .size   A_4e5060, . - A_4e5060
+        .size   ac_i_GetNetworkEnableUPnP, . - ac_i_GetNetworkEnableUPnP
 
 @ FUN_004e50a0
-        .global A_4e50a0
-        .type   A_4e50a0, %function
-A_4e50a0:
+        .global ac_i_GetNZoneBeaconNotFoundEvent
+        .type   ac_i_GetNZoneBeaconNotFoundEvent, %function
+ac_i_GetNZoneBeaconNotFoundEvent:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4e50e0
@@ -5885,12 +5885,12 @@ L4e50e0:
         .word   0x002f0004
 L4e50e4:
         .word   0x008b8764
-        .size   A_4e50a0, . - A_4e50a0
+        .size   ac_i_GetNZoneBeaconNotFoundEvent, . - ac_i_GetNZoneBeaconNotFoundEvent
 
 @ FUN_004e50e8
-        .global A_4e50e8
-        .type   A_4e50e8, %function
-A_4e50e8:
+        .global ac_i_SetNetworkEnableUPnP
+        .type   ac_i_SetNetworkEnableUPnP, %function
+ac_i_SetNetworkEnableUPnP:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e511c
@@ -5908,12 +5908,12 @@ L4e511c:
         .word   0x046c0040
 L4e5120:
         .word   0x008b8764
-        .size   A_4e50e8, . - A_4e50e8
+        .size   ac_i_SetNetworkEnableUPnP, . - ac_i_SetNetworkEnableUPnP
 
 @ FUN_004e5124
-        .global A_4e5124
-        .type   A_4e5124, %function
-A_4e5124:
+        .global ac_i_GetConnectingNetworkSettingVersion
+        .type   ac_i_GetConnectingNetworkSettingVersion, %function
+ac_i_GetConnectingNetworkSettingVersion:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5933,12 +5933,12 @@ L4e515c:
         .word   0x046f0000
 L4e5160:
         .word   0x008b8764
-        .size   A_4e5124, . - A_4e5124
+        .size   ac_i_GetConnectingNetworkSettingVersion, . - ac_i_GetConnectingNetworkSettingVersion
 
 @ FUN_004e5164
-        .global A_4e5164
-        .type   A_4e5164, %function
-A_4e5164:
+        .global ac_i_GetNetworkAutoDNSSetting
+        .type   ac_i_GetNetworkAutoDNSSetting, %function
+ac_i_GetNetworkAutoDNSSetting:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -5958,12 +5958,12 @@ L4e519c:
         .word   0x04490000
 L4e51a0:
         .word   0x008b8764
-        .size   A_4e5164, . - A_4e5164
+        .size   ac_i_GetNetworkAutoDNSSetting, . - ac_i_GetNetworkAutoDNSSetting
 
 @ FUN_004e51a4
-        .global A_4e51a4
-        .type   A_4e51a4, %function
-A_4e51a4:
+        .global ac_i_GetNetworkDefaultGateway
+        .type   ac_i_GetNetworkDefaultGateway, %function
+ac_i_GetNetworkDefaultGateway:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e51ec
@@ -5988,12 +5988,12 @@ L4e51f0:
         .word   0x00010002
 L4e51f4:
         .word   0x008b8764
-        .size   A_4e51a4, . - A_4e51a4
+        .size   ac_i_GetNetworkDefaultGateway, . - ac_i_GetNetworkDefaultGateway
 
 @ FUN_004e5234
-        .global A_4e5234
-        .type   A_4e5234, %function
-A_4e5234:
+        .global ac_i_SetNetworkDefaultGateway
+        .type   ac_i_SetNetworkDefaultGateway, %function
+ac_i_SetNetworkDefaultGateway:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e526c
@@ -6014,12 +6014,12 @@ L4e5270:
         .word   0x00012802
 L4e5274:
         .word   0x008b8764
-        .size   A_4e5234, . - A_4e5234
+        .size   ac_i_SetNetworkDefaultGateway, . - ac_i_SetNetworkDefaultGateway
 
 @ FUN_004e5278
-        .global A_4e5278
-        .type   A_4e5278, %function
-A_4e5278:
+        .global ac_i_GetConnectingNetworkMtu
+        .type   ac_i_GetConnectingNetworkMtu, %function
+ac_i_GetConnectingNetworkMtu:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6039,12 +6039,12 @@ L4e52b0:
         .word   0x04a20000
 L4e52b4:
         .word   0x008b8764
-        .size   A_4e5278, . - A_4e5278
+        .size   ac_i_GetConnectingNetworkMtu, . - ac_i_GetConnectingNetworkMtu
 
 @ FUN_004e52b8
-        .global A_4e52b8
-        .type   A_4e52b8, %function
-A_4e52b8:
+        .global ac_i_GetNZoneApNumService
+        .type   ac_i_GetNZoneApNumService, %function
+ac_i_GetNZoneApNumService:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L4e5314
@@ -6072,12 +6072,12 @@ L4e5314:
         .word   0x00110042
 L4e5318:
         .word   0x008b8764
-        .size   A_4e52b8, . - A_4e52b8
+        .size   ac_i_GetNZoneApNumService, . - ac_i_GetNZoneApNumService
 
 @ FUN_004e531c
-        .global A_4e531c
-        .type   A_4e531c, %function
-A_4e531c:
+        .global ac_i_GetConnectingNetworkIpNetmask
+        .type   ac_i_GetConnectingNetworkIpNetmask, %function
+ac_i_GetConnectingNetworkIpNetmask:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5364
@@ -6102,12 +6102,12 @@ L4e5368:
         .word   0x00010002
 L4e536c:
         .word   0x008b8764
-        .size   A_4e531c, . - A_4e531c
+        .size   ac_i_GetConnectingNetworkIpNetmask, . - ac_i_GetConnectingNetworkIpNetmask
 
 @ FUN_004e5370
-        .global A_4e5370
-        .type   A_4e5370, %function
-A_4e5370:
+        .global ac_i_GetConnectingNetworkProxyHost
+        .type   ac_i_GetConnectingNetworkProxyHost, %function
+ac_i_GetConnectingNetworkProxyHost:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e53b8
@@ -6132,12 +6132,12 @@ L4e53bc:
         .word   0x00190002
 L4e53c0:
         .word   0x008b8764
-        .size   A_4e5370, . - A_4e5370
+        .size   ac_i_GetConnectingNetworkProxyHost, . - ac_i_GetConnectingNetworkProxyHost
 
 @ FUN_004e53c4
-        .global A_4e53c4
-        .type   A_4e53c4, %function
-A_4e53c4:
+        .global ac_i_GetConnectingNetworkProxyPort
+        .type   ac_i_GetConnectingNetworkProxyPort, %function
+ac_i_GetConnectingNetworkProxyPort:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6157,12 +6157,12 @@ L4e53fc:
         .word   0x049d0000
 L4e5400:
         .word   0x008b8764
-        .size   A_4e53c4, . - A_4e53c4
+        .size   ac_i_GetConnectingNetworkProxyPort, . - ac_i_GetConnectingNetworkProxyPort
 
 @ FUN_004e5404
-        .global A_4e5404
-        .type   A_4e5404, %function
-A_4e5404:
+        .global ac_i_GetConnectingNetworkIpAddress
+        .type   ac_i_GetConnectingNetworkIpAddress, %function
+ac_i_GetConnectingNetworkIpAddress:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e544c
@@ -6187,12 +6187,12 @@ L4e5450:
         .word   0x00010002
 L4e5454:
         .word   0x008b8764
-        .size   A_4e5404, . - A_4e5404
+        .size   ac_i_GetConnectingNetworkIpAddress, . - ac_i_GetConnectingNetworkIpAddress
 
 @ FUN_004e5458
-        .global A_4e5458
-        .type   A_4e5458, %function
-A_4e5458:
+        .global ac_i_GetConnectingNetworkProxyEnable
+        .type   ac_i_GetConnectingNetworkProxyEnable, %function
+ac_i_GetConnectingNetworkProxyEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6212,12 +6212,12 @@ L4e5490:
         .word   0x049b0000
 L4e5494:
         .word   0x008b8764
-        .size   A_4e5458, . - A_4e5458
+        .size   ac_i_GetConnectingNetworkProxyEnable, . - ac_i_GetConnectingNetworkProxyEnable
 
 @ FUN_004e5498
-        .global A_4e5498
-        .type   A_4e5498, %function
-A_4e5498:
+        .global ac_i_GetConnectingNetworkEnableDHCP
+        .type   ac_i_GetConnectingNetworkEnableDHCP, %function
+ac_i_GetConnectingNetworkEnableDHCP:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6237,12 +6237,12 @@ L4e54d0:
         .word   0x048f0000
 L4e54d4:
         .word   0x008b8764
-        .size   A_4e5498, . - A_4e5498
+        .size   ac_i_GetConnectingNetworkEnableDHCP, . - ac_i_GetConnectingNetworkEnableDHCP
 
 @ FUN_004e54d8
-        .global A_4e54d8
-        .type   A_4e54d8, %function
-A_4e54d8:
+        .global ac_i_GetConnectingNetworkPrimaryDNS
+        .type   ac_i_GetConnectingNetworkPrimaryDNS, %function
+ac_i_GetConnectingNetworkPrimaryDNS:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5520
@@ -6267,12 +6267,12 @@ L4e5524:
         .word   0x00010002
 L4e5528:
         .word   0x008b8764
-        .size   A_4e54d8, . - A_4e54d8
+        .size   ac_i_GetConnectingNetworkPrimaryDNS, . - ac_i_GetConnectingNetworkPrimaryDNS
 
 @ FUN_004e552c
-        .global A_4e552c
-        .type   A_4e552c, %function
-A_4e552c:
+        .global ac_i_GetConnectingNetworkProxyAuthType
+        .type   ac_i_GetConnectingNetworkProxyAuthType, %function
+ac_i_GetConnectingNetworkProxyAuthType:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6292,12 +6292,12 @@ L4e5564:
         .word   0x049c0000
 L4e5568:
         .word   0x008b8764
-        .size   A_4e552c, . - A_4e552c
+        .size   ac_i_GetConnectingNetworkProxyAuthType, . - ac_i_GetConnectingNetworkProxyAuthType
 
 @ FUN_004e556c
-        .global A_4e556c
-        .type   A_4e556c, %function
-A_4e556c:
+        .global ac_i_GetConnectingNetworkProxyPassword
+        .type   ac_i_GetConnectingNetworkProxyPassword, %function
+ac_i_GetConnectingNetworkProxyPassword:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x4a00000
@@ -6320,12 +6320,12 @@ L4e55b4:
         .word   0x00080002
 L4e55b8:
         .word   0x008b8764
-        .size   A_4e556c, . - A_4e556c
+        .size   ac_i_GetConnectingNetworkProxyPassword, . - ac_i_GetConnectingNetworkProxyPassword
 
 @ FUN_004e55bc
-        .global A_4e55bc
-        .type   A_4e55bc, %function
-A_4e55bc:
+        .global ac_i_GetConnectingNetworkProxyUserName
+        .type   ac_i_GetConnectingNetworkProxyUserName, %function
+ac_i_GetConnectingNetworkProxyUserName:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5604
@@ -6350,12 +6350,12 @@ L4e5608:
         .word   0x00080002
 L4e560c:
         .word   0x008b8764
-        .size   A_4e55bc, . - A_4e55bc
+        .size   ac_i_GetConnectingNetworkProxyUserName, . - ac_i_GetConnectingNetworkProxyUserName
 
 @ FUN_004e5610
-        .global A_4e5610
-        .type   A_4e5610, %function
-A_4e5610:
+        .global ac_i_GetConnectingNetworkSecondaryDNS
+        .type   ac_i_GetConnectingNetworkSecondaryDNS, %function
+ac_i_GetConnectingNetworkSecondaryDNS:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5658
@@ -6380,12 +6380,12 @@ L4e565c:
         .word   0x00010002
 L4e5660:
         .word   0x008b8764
-        .size   A_4e5610, . - A_4e5610
+        .size   ac_i_GetConnectingNetworkSecondaryDNS, . - ac_i_GetConnectingNetworkSecondaryDNS
 
 @ FUN_004e5664
-        .global A_4e5664
-        .type   A_4e5664, %function
-A_4e5664:
+        .global ac_i_GetConnectingNetworkWirelessEnable
+        .type   ac_i_GetConnectingNetworkWirelessEnable, %function
+ac_i_GetConnectingNetworkWirelessEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6405,12 +6405,12 @@ L4e569c:
         .word   0x04710000
 L4e56a0:
         .word   0x008b8764
-        .size   A_4e5664, . - A_4e5664
+        .size   ac_i_GetConnectingNetworkWirelessEnable, . - ac_i_GetConnectingNetworkWirelessEnable
 
 @ FUN_004e56a4
-        .global A_4e56a4
-        .type   A_4e56a4, %function
-A_4e56a4:
+        .global ac_i_GetNetworkMultiSSIDEnable
+        .type   ac_i_GetNetworkMultiSSIDEnable, %function
+ac_i_GetNetworkMultiSSIDEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6430,12 +6430,12 @@ L4e56dc:
         .word   0x04190000
 L4e56e0:
         .word   0x008b8764
-        .size   A_4e56a4, . - A_4e56a4
+        .size   ac_i_GetNetworkMultiSSIDEnable, . - ac_i_GetNetworkMultiSSIDEnable
 
 @ FUN_004e56e4
-        .global A_4e56e4
-        .type   A_4e56e4, %function
-A_4e56e4:
+        .global ac_i_SetNetworkMultiSSIDEnable
+        .type   ac_i_SetNetworkMultiSSIDEnable, %function
+ac_i_SetNetworkMultiSSIDEnable:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e5718
@@ -6453,12 +6453,12 @@ L4e5718:
         .word   0x041a0040
 L4e571c:
         .word   0x008b8764
-        .size   A_4e56e4, . - A_4e56e4
+        .size   ac_i_SetNetworkMultiSSIDEnable, . - ac_i_SetNetworkMultiSSIDEnable
 
 @ FUN_004e5720
-        .global A_4e5720
-        .type   A_4e5720, %function
-A_4e5720:
+        .global ac_i_GetConnectingNetworkEnableUPnP
+        .type   ac_i_GetConnectingNetworkEnableUPnP, %function
+ac_i_GetConnectingNetworkEnableUPnP:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6478,12 +6478,12 @@ L4e5758:
         .word   0x04a10000
 L4e575c:
         .word   0x008b8764
-        .size   A_4e5720, . - A_4e5720
+        .size   ac_i_GetConnectingNetworkEnableUPnP, . - ac_i_GetConnectingNetworkEnableUPnP
 
 @ FUN_004e5760
-        .global A_4e5760
-        .type   A_4e5760, %function
-A_4e5760:
+        .global ac_i_GetNetworkWirelessEssidSecurityKey
+        .type   ac_i_GetNetworkWirelessEssidSecurityKey, %function
+ac_i_GetNetworkWirelessEssidSecurityKey:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e57a8
@@ -6508,12 +6508,12 @@ L4e57ac:
         .word   0x00100002
 L4e57b0:
         .word   0x008b8764
-        .size   A_4e5760, . - A_4e5760
+        .size   ac_i_GetNetworkWirelessEssidSecurityKey, . - ac_i_GetNetworkWirelessEssidSecurityKey
 
 @ FUN_004e57b4
-        .global A_4e57b4
-        .type   A_4e57b4, %function
-A_4e57b4:
+        .global ac_i_SetNetworkWirelessEssidSecurityKey
+        .type   ac_i_SetNetworkWirelessEssidSecurityKey, %function
+ac_i_SetNetworkWirelessEssidSecurityKey:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e57ec
@@ -6534,12 +6534,12 @@ L4e57f0:
         .word   0x00100c02
 L4e57f4:
         .word   0x008b8764
-        .size   A_4e57b4, . - A_4e57b4
+        .size   ac_i_SetNetworkWirelessEssidSecurityKey, . - ac_i_SetNetworkWirelessEssidSecurityKey
 
 @ FUN_004e57f8
-        .global A_4e57f8
-        .type   A_4e57f8, %function
-A_4e57f8:
+        .global ac_i_GetConnectingNetworkIpAutoDNSSetting
+        .type   ac_i_GetConnectingNetworkIpAutoDNSSetting, %function
+ac_i_GetConnectingNetworkIpAutoDNSSetting:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6557,12 +6557,12 @@ L4e582c:
         pop     {r4, r5, r6, pc}
 L4e5830:
         .word   0x008b8764
-        .size   A_4e57f8, . - A_4e57f8
+        .size   ac_i_GetConnectingNetworkIpAutoDNSSetting, . - ac_i_GetConnectingNetworkIpAutoDNSSetting
 
 @ FUN_004e5834
-        .global A_4e5834
-        .type   A_4e5834, %function
-A_4e5834:
+        .global ac_i_GetConnectingNetworkIpDefaultGateway
+        .type   ac_i_GetConnectingNetworkIpDefaultGateway, %function
+ac_i_GetConnectingNetworkIpDefaultGateway:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e587c
@@ -6587,12 +6587,12 @@ L4e5880:
         .word   0x00010002
 L4e5884:
         .word   0x008b8764
-        .size   A_4e5834, . - A_4e5834
+        .size   ac_i_GetConnectingNetworkIpDefaultGateway, . - ac_i_GetConnectingNetworkIpDefaultGateway
 
 @ FUN_004e5888
-        .global A_4e5888
-        .type   A_4e5888, %function
-A_4e5888:
+        .global ac_i_GetNetworkWirelessEssidSecuritySsid
+        .type   ac_i_GetNetworkWirelessEssidSecuritySsid, %function
+ac_i_GetNetworkWirelessEssidSecuritySsid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e58d0
@@ -6617,12 +6617,12 @@ L4e58d4:
         .word   0x00080002
 L4e58d8:
         .word   0x008b8764
-        .size   A_4e5888, . - A_4e5888
+        .size   ac_i_GetNetworkWirelessEssidSecuritySsid, . - ac_i_GetNetworkWirelessEssidSecuritySsid
 
 @ FUN_004e58dc
-        .global A_4e58dc
-        .type   A_4e58dc, %function
-A_4e58dc:
+        .global ac_i_SetNetworkWirelessEssidSecuritySsid
+        .type   ac_i_SetNetworkWirelessEssidSecuritySsid, %function
+ac_i_SetNetworkWirelessEssidSecuritySsid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5914
@@ -6643,12 +6643,12 @@ L4e5918:
         .word   0x00080802
 L4e591c:
         .word   0x008b8764
-        .size   A_4e58dc, . - A_4e58dc
+        .size   ac_i_SetNetworkWirelessEssidSecuritySsid, . - ac_i_SetNetworkWirelessEssidSecuritySsid
 
 @ FUN_004e5920
-        .global A_4e5920
-        .type   A_4e5920, %function
-A_4e5920:
+        .global ac_i_GetNetworkWirelessMultiSsidSettingNum
+        .type   ac_i_GetNetworkWirelessMultiSsidSettingNum, %function
+ac_i_GetNetworkWirelessMultiSsidSettingNum:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6668,12 +6668,12 @@ L4e5958:
         .word   0x041d0000
 L4e595c:
         .word   0x008b8764
-        .size   A_4e5920, . - A_4e5920
+        .size   ac_i_GetNetworkWirelessMultiSsidSettingNum, . - ac_i_GetNetworkWirelessMultiSsidSettingNum
 
 @ FUN_004e5960
-        .global A_4e5960
-        .type   A_4e5960, %function
-A_4e5960:
+        .global ac_i_SetNetworkWirelessMultiSsidSettingNum
+        .type   ac_i_SetNetworkWirelessMultiSsidSettingNum, %function
+ac_i_SetNetworkWirelessMultiSsidSettingNum:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e5994
@@ -6691,12 +6691,12 @@ L4e5994:
         .word   0x041e0040
 L4e5998:
         .word   0x008b8764
-        .size   A_4e5960, . - A_4e5960
+        .size   ac_i_SetNetworkWirelessMultiSsidSettingNum, . - ac_i_SetNetworkWirelessMultiSsidSettingNum
 
 @ FUN_004e599c
-        .global A_4e599c
-        .type   A_4e599c, %function
-A_4e599c:
+        .global ac_i_GetNetworkWirelessEditableEssidSecurity
+        .type   ac_i_GetNetworkWirelessEditableEssidSecurity, %function
+ac_i_GetNetworkWirelessEditableEssidSecurity:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6716,12 +6716,12 @@ L4e59d4:
         .word   0x040d0000
 L4e59d8:
         .word   0x008b8764
-        .size   A_4e599c, . - A_4e599c
+        .size   ac_i_GetNetworkWirelessEditableEssidSecurity, . - ac_i_GetNetworkWirelessEditableEssidSecurity
 
 @ FUN_004e59dc
-        .global A_4e59dc
-        .type   A_4e59dc, %function
-A_4e59dc:
+        .global ac_i_SetNetworkWirelessEditableEssidSecurity
+        .type   ac_i_SetNetworkWirelessEditableEssidSecurity, %function
+ac_i_SetNetworkWirelessEditableEssidSecurity:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e5a10
@@ -6739,12 +6739,12 @@ L4e5a10:
         .word   0x040e0040
 L4e5a14:
         .word   0x008b8764
-        .size   A_4e59dc, . - A_4e59dc
+        .size   ac_i_SetNetworkWirelessEditableEssidSecurity, . - ac_i_SetNetworkWirelessEditableEssidSecurity
 
 @ FUN_004e5a18
-        .global A_4e5a18
-        .type   A_4e5a18, %function
-A_4e5a18:
+        .global ac_i_GetNetworkIpScanlessConnectHasConnected
+        .type   ac_i_GetNetworkIpScanlessConnectHasConnected, %function
+ac_i_GetNetworkIpScanlessConnectHasConnected:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -6764,12 +6764,12 @@ L4e5a50:
         .word   0x04550000
 L4e5a54:
         .word   0x008b8764
-        .size   A_4e5a18, . - A_4e5a18
+        .size   ac_i_GetNetworkIpScanlessConnectHasConnected, . - ac_i_GetNetworkIpScanlessConnectHasConnected
 
 @ FUN_004e5a58
-        .global A_4e5a58
-        .type   A_4e5a58, %function
-A_4e5a58:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting0Key
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting0Key, %function
+ac_i_GetNetworkWirelessMultiSsidSetting0Key:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5aa0
@@ -6794,12 +6794,12 @@ L4e5aa4:
         .word   0x00100002
 L4e5aa8:
         .word   0x008b8764
-        .size   A_4e5a58, . - A_4e5a58
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting0Key, . - ac_i_GetNetworkWirelessMultiSsidSetting0Key
 
 @ FUN_004e5aac
-        .global A_4e5aac
-        .type   A_4e5aac, %function
-A_4e5aac:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting1Key
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting1Key, %function
+ac_i_GetNetworkWirelessMultiSsidSetting1Key:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5af4
@@ -6824,12 +6824,12 @@ L4e5af8:
         .word   0x00100002
 L4e5afc:
         .word   0x008b8764
-        .size   A_4e5aac, . - A_4e5aac
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting1Key, . - ac_i_GetNetworkWirelessMultiSsidSetting1Key
 
 @ FUN_004e5b00
-        .global A_4e5b00
-        .type   A_4e5b00, %function
-A_4e5b00:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting2Key
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting2Key, %function
+ac_i_GetNetworkWirelessMultiSsidSetting2Key:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5b48
@@ -6854,12 +6854,12 @@ L4e5b4c:
         .word   0x00100002
 L4e5b50:
         .word   0x008b8764
-        .size   A_4e5b00, . - A_4e5b00
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting2Key, . - ac_i_GetNetworkWirelessMultiSsidSetting2Key
 
 @ FUN_004e5b54
-        .global A_4e5b54
-        .type   A_4e5b54, %function
-A_4e5b54:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting3Key
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting3Key, %function
+ac_i_GetNetworkWirelessMultiSsidSetting3Key:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5b9c
@@ -6884,12 +6884,12 @@ L4e5ba0:
         .word   0x00100002
 L4e5ba4:
         .word   0x008b8764
-        .size   A_4e5b54, . - A_4e5b54
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting3Key, . - ac_i_GetNetworkWirelessMultiSsidSetting3Key
 
 @ FUN_004e5ba8
-        .global A_4e5ba8
-        .type   A_4e5ba8, %function
-A_4e5ba8:
+        .global ac_i_SetNetworkIpScanlessConnectHasConnected
+        .type   ac_i_SetNetworkIpScanlessConnectHasConnected, %function
+ac_i_SetNetworkIpScanlessConnectHasConnected:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e5bdc
@@ -6907,12 +6907,12 @@ L4e5bdc:
         .word   0x04560040
 L4e5be0:
         .word   0x008b8764
-        .size   A_4e5ba8, . - A_4e5ba8
+        .size   ac_i_SetNetworkIpScanlessConnectHasConnected, . - ac_i_SetNetworkIpScanlessConnectHasConnected
 
 @ FUN_004e5be4
-        .global A_4e5be4
-        .type   A_4e5be4, %function
-A_4e5be4:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting0Key
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting0Key, %function
+ac_i_SetNetworkWirelessMultiSsidSetting0Key:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5c1c
@@ -6933,12 +6933,12 @@ L4e5c20:
         .word   0x00100c02
 L4e5c24:
         .word   0x008b8764
-        .size   A_4e5be4, . - A_4e5be4
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting0Key, . - ac_i_SetNetworkWirelessMultiSsidSetting0Key
 
 @ FUN_004e5c28
-        .global A_4e5c28
-        .type   A_4e5c28, %function
-A_4e5c28:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting1Key
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting1Key, %function
+ac_i_SetNetworkWirelessMultiSsidSetting1Key:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5c60
@@ -6959,12 +6959,12 @@ L4e5c64:
         .word   0x00100c02
 L4e5c68:
         .word   0x008b8764
-        .size   A_4e5c28, . - A_4e5c28
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting1Key, . - ac_i_SetNetworkWirelessMultiSsidSetting1Key
 
 @ FUN_004e5c6c
-        .global A_4e5c6c
-        .type   A_4e5c6c, %function
-A_4e5c6c:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting2Key
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting2Key, %function
+ac_i_SetNetworkWirelessMultiSsidSetting2Key:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5ca4
@@ -6985,12 +6985,12 @@ L4e5ca8:
         .word   0x00100c02
 L4e5cac:
         .word   0x008b8764
-        .size   A_4e5c6c, . - A_4e5c6c
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting2Key, . - ac_i_SetNetworkWirelessMultiSsidSetting2Key
 
 @ FUN_004e5cb0
-        .global A_4e5cb0
-        .type   A_4e5cb0, %function
-A_4e5cb0:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting3Key
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting3Key, %function
+ac_i_SetNetworkWirelessMultiSsidSetting3Key:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5ce8
@@ -7011,12 +7011,12 @@ L4e5cec:
         .word   0x00100c02
 L4e5cf0:
         .word   0x008b8764
-        .size   A_4e5cb0, . - A_4e5cb0
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting3Key, . - ac_i_SetNetworkWirelessMultiSsidSetting3Key
 
 @ FUN_004e5cf4
-        .global A_4e5cf4
-        .type   A_4e5cf4, %function
-A_4e5cf4:
+        .global ac_i_GetNetworkWirelesMultiSsidMultiSsidType
+        .type   ac_i_GetNetworkWirelesMultiSsidMultiSsidType, %function
+ac_i_GetNetworkWirelesMultiSsidMultiSsidType:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -7036,12 +7036,12 @@ L4e5d2c:
         .word   0x041b0000
 L4e5d30:
         .word   0x008b8764
-        .size   A_4e5cf4, . - A_4e5cf4
+        .size   ac_i_GetNetworkWirelesMultiSsidMultiSsidType, . - ac_i_GetNetworkWirelesMultiSsidMultiSsidType
 
 @ FUN_004e5d34
-        .global A_4e5d34
-        .type   A_4e5d34, %function
-A_4e5d34:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting0Ssid
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting0Ssid, %function
+ac_i_GetNetworkWirelessMultiSsidSetting0Ssid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5d7c
@@ -7066,12 +7066,12 @@ L4e5d80:
         .word   0x00080002
 L4e5d84:
         .word   0x008b8764
-        .size   A_4e5d34, . - A_4e5d34
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting0Ssid, . - ac_i_GetNetworkWirelessMultiSsidSetting0Ssid
 
 @ FUN_004e5d88
-        .global A_4e5d88
-        .type   A_4e5d88, %function
-A_4e5d88:
+        .global ac_i_GetNetworkMultiSsidSetting1Ssid
+        .type   ac_i_GetNetworkMultiSsidSetting1Ssid, %function
+ac_i_GetNetworkMultiSsidSetting1Ssid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5dd0
@@ -7096,12 +7096,12 @@ L4e5dd4:
         .word   0x00080002
 L4e5dd8:
         .word   0x008b8764
-        .size   A_4e5d88, . - A_4e5d88
+        .size   ac_i_GetNetworkMultiSsidSetting1Ssid, . - ac_i_GetNetworkMultiSsidSetting1Ssid
 
 @ FUN_004e5ddc
-        .global A_4e5ddc
-        .type   A_4e5ddc, %function
-A_4e5ddc:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting2Ssid
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting2Ssid, %function
+ac_i_GetNetworkWirelessMultiSsidSetting2Ssid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5e24
@@ -7126,12 +7126,12 @@ L4e5e28:
         .word   0x00080002
 L4e5e2c:
         .word   0x008b8764
-        .size   A_4e5ddc, . - A_4e5ddc
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting2Ssid, . - ac_i_GetNetworkWirelessMultiSsidSetting2Ssid
 
 @ FUN_004e5e30
-        .global A_4e5e30
-        .type   A_4e5e30, %function
-A_4e5e30:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting3Ssid
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting3Ssid, %function
+ac_i_GetNetworkWirelessMultiSsidSetting3Ssid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e5e78
@@ -7156,12 +7156,12 @@ L4e5e7c:
         .word   0x00080002
 L4e5e80:
         .word   0x008b8764
-        .size   A_4e5e30, . - A_4e5e30
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting3Ssid, . - ac_i_GetNetworkWirelessMultiSsidSetting3Ssid
 
 @ FUN_004e5e84
-        .global A_4e5e84
-        .type   A_4e5e84, %function
-A_4e5e84:
+        .global ac_i_SetNetworkWirelesMultiSsidMultiSsidType
+        .type   ac_i_SetNetworkWirelesMultiSsidMultiSsidType, %function
+ac_i_SetNetworkWirelesMultiSsidMultiSsidType:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e5eb8
@@ -7179,12 +7179,12 @@ L4e5eb8:
         .word   0x041c0040
 L4e5ebc:
         .word   0x008b8764
-        .size   A_4e5e84, . - A_4e5e84
+        .size   ac_i_SetNetworkWirelesMultiSsidMultiSsidType, . - ac_i_SetNetworkWirelesMultiSsidMultiSsidType
 
 @ FUN_004e5ec0
-        .global A_4e5ec0
-        .type   A_4e5ec0, %function
-A_4e5ec0:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting0Ssid
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting0Ssid, %function
+ac_i_SetNetworkWirelessMultiSsidSetting0Ssid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5ef8
@@ -7205,12 +7205,12 @@ L4e5efc:
         .word   0x00080802
 L4e5f00:
         .word   0x008b8764
-        .size   A_4e5ec0, . - A_4e5ec0
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting0Ssid, . - ac_i_SetNetworkWirelessMultiSsidSetting0Ssid
 
 @ FUN_004e5f04
-        .global A_4e5f04
-        .type   A_4e5f04, %function
-A_4e5f04:
+        .global ac_i_SetNetworkMultiSsidSetting1Ssid
+        .type   ac_i_SetNetworkMultiSsidSetting1Ssid, %function
+ac_i_SetNetworkMultiSsidSetting1Ssid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5f3c
@@ -7231,12 +7231,12 @@ L4e5f40:
         .word   0x00080802
 L4e5f44:
         .word   0x008b8764
-        .size   A_4e5f04, . - A_4e5f04
+        .size   ac_i_SetNetworkMultiSsidSetting1Ssid, . - ac_i_SetNetworkMultiSsidSetting1Ssid
 
 @ FUN_004e5f48
-        .global A_4e5f48
-        .type   A_4e5f48, %function
-A_4e5f48:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting2Ssid
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting2Ssid, %function
+ac_i_SetNetworkWirelessMultiSsidSetting2Ssid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5f80
@@ -7257,12 +7257,12 @@ L4e5f84:
         .word   0x00080802
 L4e5f88:
         .word   0x008b8764
-        .size   A_4e5f48, . - A_4e5f48
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting2Ssid, . - ac_i_SetNetworkWirelessMultiSsidSetting2Ssid
 
 @ FUN_004e5f8c
-        .global A_4e5f8c
-        .type   A_4e5f8c, %function
-A_4e5f8c:
+        .global ac_i_SetNetworkWirelessMultiSsidSetting3Ssid
+        .type   ac_i_SetNetworkWirelessMultiSsidSetting3Ssid, %function
+ac_i_SetNetworkWirelessMultiSsidSetting3Ssid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e5fc4
@@ -7283,12 +7283,12 @@ L4e5fc8:
         .word   0x00080802
 L4e5fcc:
         .word   0x008b8764
-        .size   A_4e5f8c, . - A_4e5f8c
+        .size   ac_i_SetNetworkWirelessMultiSsidSetting3Ssid, . - ac_i_SetNetworkWirelessMultiSsidSetting3Ssid
 
 @ FUN_004e5fd0
-        .global A_4e5fd0
-        .type   A_4e5fd0, %function
-A_4e5fd0:
+        .global ac_i_GetNetworkWirelessEssidPassphrase
+        .type   ac_i_GetNetworkWirelessEssidPassphrase, %function
+ac_i_GetNetworkWirelessEssidPassphrase:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e6018
@@ -7313,12 +7313,12 @@ L4e601c:
         .word   0x00100002
 L4e6020:
         .word   0x008b8764
-        .size   A_4e5fd0, . - A_4e5fd0
+        .size   ac_i_GetNetworkWirelessEssidPassphrase, . - ac_i_GetNetworkWirelessEssidPassphrase
 
 @ FUN_004e6024
-        .global A_4e6024
-        .type   A_4e6024, %function
-A_4e6024:
+        .global ac_i_GetNetworkWireleesEssidSsidLength
+        .type   ac_i_GetNetworkWireleesEssidSsidLength, %function
+ac_i_GetNetworkWireleesEssidSsidLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -7338,12 +7338,12 @@ L4e605c:
         .word   0x04110000
 L4e6060:
         .word   0x008b8764
-        .size   A_4e6024, . - A_4e6024
+        .size   ac_i_GetNetworkWireleesEssidSsidLength, . - ac_i_GetNetworkWireleesEssidSsidLength
 
 @ FUN_004e6064
-        .global A_4e6064
-        .type   A_4e6064, %function
-A_4e6064:
+        .global ac_i_SetNetworkWirelessEssidPassphrase
+        .type   ac_i_SetNetworkWirelessEssidPassphrase, %function
+ac_i_SetNetworkWirelessEssidPassphrase:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4e609c
@@ -7364,12 +7364,12 @@ L4e60a0:
         .word   0x00102002
 L4e60a4:
         .word   0x008b8764
-        .size   A_4e6064, . - A_4e6064
+        .size   ac_i_SetNetworkWirelessEssidPassphrase, . - ac_i_SetNetworkWirelessEssidPassphrase
 
 @ FUN_004e60a8
-        .global A_4e60a8
-        .type   A_4e60a8, %function
-A_4e60a8:
+        .global ac_i_SetNetworkWirelessEssidSsidLength
+        .type   ac_i_SetNetworkWirelessEssidSsidLength, %function
+ac_i_SetNetworkWirelessEssidSsidLength:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e60dc
@@ -7387,12 +7387,12 @@ L4e60dc:
         .word   0x04120040
 L4e60e0:
         .word   0x008b8764
-        .size   A_4e60a8, . - A_4e60a8
+        .size   ac_i_SetNetworkWirelessEssidSsidLength, . - ac_i_SetNetworkWirelessEssidSsidLength
 
 @ FUN_004e60e4
-        .global A_4e60e4
-        .type   A_4e60e4, %function
-A_4e60e4:
+        .global ac_i_GetConnectingNetworkMultiSsidEnable
+        .type   ac_i_GetConnectingNetworkMultiSsidEnable, %function
+ac_i_GetConnectingNetworkMultiSsidEnable:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -7412,12 +7412,12 @@ L4e611c:
         .word   0x04780000
 L4e6120:
         .word   0x008b8764
-        .size   A_4e60e4, . - A_4e60e4
+        .size   ac_i_GetConnectingNetworkMultiSsidEnable, . - ac_i_GetConnectingNetworkMultiSsidEnable
 
 @ FUN_004e6124
-        .global A_4e6124
-        .type   A_4e6124, %function
-A_4e6124:
+        .global ac_i_GetNetworkWirelessEssidSecurityMode
+        .type   ac_i_GetNetworkWirelessEssidSecurityMode, %function
+ac_i_GetNetworkWirelessEssidSecurityMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -7437,12 +7437,12 @@ L4e615c:
         .word   0x04130000
 L4e6160:
         .word   0x008b8764
-        .size   A_4e6124, . - A_4e6124
+        .size   ac_i_GetNetworkWirelessEssidSecurityMode, . - ac_i_GetNetworkWirelessEssidSecurityMode
 
 @ FUN_004e6164
-        .global A_4e6164
-        .type   A_4e6164, %function
-A_4e6164:
+        .global ac_i_SetNetworkWirelessEssidSecurityMode
+        .type   ac_i_SetNetworkWirelessEssidSecurityMode, %function
+ac_i_SetNetworkWirelessEssidSecurityMode:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4e6198
@@ -7460,12 +7460,12 @@ L4e6198:
         .word   0x04140040
 L4e619c:
         .word   0x008b8764
-        .size   A_4e6164, . - A_4e6164
+        .size   ac_i_SetNetworkWirelessEssidSecurityMode, . - ac_i_SetNetworkWirelessEssidSecurityMode
 
 @ FUN_004e61a0
-        .global A_4e61a0
-        .type   A_4e61a0, %function
-A_4e61a0:
+        .global ac_i_GetConnectingNetworkWirelessEssidSecurityKey
+        .type   ac_i_GetConnectingNetworkWirelessEssidSecurityKey, %function
+ac_i_GetConnectingNetworkWirelessEssidSecurityKey:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e61e8
@@ -7490,12 +7490,12 @@ L4e61ec:
         .word   0x00100002
 L4e61f0:
         .word   0x008b8764
-        .size   A_4e61a0, . - A_4e61a0
+        .size   ac_i_GetConnectingNetworkWirelessEssidSecurityKey, . - ac_i_GetConnectingNetworkWirelessEssidSecurityKey
 
 @ FUN_004e61f4
-        .global A_4e61f4
-        .type   A_4e61f4, %function
-A_4e61f4:
+        .global ac_i_GetConnectingNetworkWirelessEssidSsid
+        .type   ac_i_GetConnectingNetworkWirelessEssidSsid, %function
+ac_i_GetConnectingNetworkWirelessEssidSsid:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e623c
@@ -7520,7 +7520,7 @@ L4e6240:
         .word   0x00080002
 L4e6244:
         .word   0x008b8764
-        .size   A_4e61f4, . - A_4e61f4
+        .size   ac_i_GetConnectingNetworkWirelessEssidSsid, . - ac_i_GetConnectingNetworkWirelessEssidSsid
 
 @ FUN_004e6248
         .global A_4e6248
@@ -7579,9 +7579,9 @@ L4e62dc:
         .size   A_4e629c, . - A_4e629c
 
 @ FUN_004e62e0
-        .global A_4e62e0
-        .type   A_4e62e0, %function
-A_4e62e0:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting0PassPhrase
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting0PassPhrase, %function
+ac_i_GetNetworkWirelessMultiSsidSetting0PassPhrase:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e6328
@@ -7606,12 +7606,12 @@ L4e632c:
         .word   0x00100002
 L4e6330:
         .word   0x008b8764
-        .size   A_4e62e0, . - A_4e62e0
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting0PassPhrase, . - ac_i_GetNetworkWirelessMultiSsidSetting0PassPhrase
 
 @ FUN_004e6334
-        .global A_4e6334
-        .type   A_4e6334, %function
-A_4e6334:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting0SsidLength
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting0SsidLength, %function
+ac_i_GetNetworkWirelessMultiSsidSetting0SsidLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -7631,12 +7631,12 @@ L4e636c:
         .word   0x04210000
 L4e6370:
         .word   0x008b8764
-        .size   A_4e6334, . - A_4e6334
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting0SsidLength, . - ac_i_GetNetworkWirelessMultiSsidSetting0SsidLength
 
 @ FUN_004e6374
-        .global A_4e6374
-        .type   A_4e6374, %function
-A_4e6374:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting1PassPhrase
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting1PassPhrase, %function
+ac_i_GetNetworkWirelessMultiSsidSetting1PassPhrase:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e63bc
@@ -7661,12 +7661,12 @@ L4e63c0:
         .word   0x00100002
 L4e63c4:
         .word   0x008b8764
-        .size   A_4e6374, . - A_4e6374
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting1PassPhrase, . - ac_i_GetNetworkWirelessMultiSsidSetting1PassPhrase
 
 @ FUN_004e63c8
-        .global A_4e63c8
-        .type   A_4e63c8, %function
-A_4e63c8:
+        .global ac_i_GetNetworkMultiSsidSetting1SsidLength
+        .type   ac_i_GetNetworkMultiSsidSetting1SsidLength, %function
+ac_i_GetNetworkMultiSsidSetting1SsidLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -7686,12 +7686,12 @@ L4e6400:
         .word   0x042b0000
 L4e6404:
         .word   0x008b8764
-        .size   A_4e63c8, . - A_4e63c8
+        .size   ac_i_GetNetworkMultiSsidSetting1SsidLength, . - ac_i_GetNetworkMultiSsidSetting1SsidLength
 
 @ FUN_004e6408
-        .global A_4e6408
-        .type   A_4e6408, %function
-A_4e6408:
+        .global ac_i_GetNetworkWirelessMultiSsidSetting2Passphrase
+        .type   ac_i_GetNetworkWirelessMultiSsidSetting2Passphrase, %function
+ac_i_GetNetworkWirelessMultiSsidSetting2Passphrase:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r1, L4e6450
@@ -7716,7 +7716,7 @@ L4e6454:
         .word   0x00100002
 L4e6458:
         .word   0x008b8764
-        .size   A_4e6408, . - A_4e6408
+        .size   ac_i_GetNetworkWirelessMultiSsidSetting2Passphrase, . - ac_i_GetNetworkWirelessMultiSsidSetting2Passphrase
 
 @ FUN_004e645c
         .global A_4e645c
@@ -9164,9 +9164,9 @@ L4e7394:
         .size   A_4e7358, . - A_4e7358
 
 @ FUN_004e7398
-        .global A_4e7398
-        .type   A_4e7398, %function
-A_4e7398:
+        .global ac_i_GetStatus
+        .type   ac_i_GetStatus, %function
+ac_i_GetStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -9184,7 +9184,7 @@ L4e73cc:
         pop     {r4, r5, r6, pc}
 L4e73d0:
         .word   0x008b8764
-        .size   A_4e7398, . - A_4e7398
+        .size   ac_i_GetStatus, . - ac_i_GetStatus
 
 @ FUN_004ed124
         .global A_4ed124
@@ -9221,9 +9221,9 @@ L4ed31c:
         .size   A_4ed2fc, . - A_4ed2fc
 
 @ FUN_004edb58
-        .global A_4edb58
-        .type   A_4edb58, %function
-A_4edb58:
+        .global fs_USER_CreateFile
+        .type   fs_USER_CreateFile, %function
+fs_USER_CreateFile:
         push    {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr}
         add     r4, sp, #0x28
         ldm     r4, {r5, r6, r7, r8, sb, ip}
@@ -9248,12 +9248,12 @@ A_4edb58:
         pop     {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc}
 L4edbb0:
         .word   0x08080202
-        .size   A_4edb58, . - A_4edb58
+        .size   fs_USER_CreateFile, . - fs_USER_CreateFile
 
 @ FUN_004edbb4
-        .global A_4edbb4
-        .type   A_4edbb4, %function
-A_4edbb4:
+        .global fs_USER_CreateSeed
+        .type   fs_USER_CreateSeed, %function
+fs_USER_CreateSeed:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4edbdc
@@ -9266,12 +9266,12 @@ A_4edbb4:
         pop     {r4, pc}
 L4edbdc:
         .word   0x08440000
-        .size   A_4edbb4, . - A_4edbb4
+        .size   fs_USER_CreateSeed, . - fs_USER_CreateSeed
 
 @ FUN_004edbe0
-        .global A_4edbe0
-        .type   A_4edbe0, %function
-A_4edbe0:
+        .global fs_USER_DeleteFile
+        .type   fs_USER_DeleteFile, %function
+fs_USER_DeleteFile:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         ldm     r4, {r5, r7, ip}
@@ -9293,12 +9293,12 @@ A_4edbe0:
         pop     {r4, r5, r6, r7, r8, pc}
 L4edc2c:
         .word   0x08040142
-        .size   A_4edbe0, . - A_4edbe0
+        .size   fs_USER_DeleteFile, . - fs_USER_DeleteFile
 
 @ FUN_004edc30
-        .global A_4edc30
-        .type   A_4edc30, %function
-A_4edc30:
+        .global fs_USER_GetNandCid
+        .type   fs_USER_GetNandCid, %function
+fs_USER_GetNandCid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4edc6c
@@ -9316,12 +9316,12 @@ A_4edc30:
         pop     {r4, pc}
 L4edc6c:
         .word   0x081a0042
-        .size   A_4edc30, . - A_4edc30
+        .size   fs_USER_GetNandCid, . - fs_USER_GetNandCid
 
 @ FUN_004edc70
-        .global A_4edc70
-        .type   A_4edc70, %function
-A_4edc70:
+        .global fs_USER_GetNandLog
+        .type   fs_USER_GetNandLog, %function
+fs_USER_GetNandLog:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4edcac
@@ -9339,12 +9339,12 @@ A_4edc70:
         pop     {r4, pc}
 L4edcac:
         .word   0x081e0042
-        .size   A_4edc70, . - A_4edc70
+        .size   fs_USER_GetNandLog, . - fs_USER_GetNandLog
 
 @ FUN_004edcb0
-        .global A_4edcb0
-        .type   A_4edcb0, %function
-A_4edcb0:
+        .global fs_USER_GetSdmcCid
+        .type   fs_USER_GetSdmcCid, %function
+fs_USER_GetSdmcCid:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4edcec
@@ -9362,12 +9362,12 @@ A_4edcb0:
         pop     {r4, pc}
 L4edcec:
         .word   0x08190042
-        .size   A_4edcb0, . - A_4edcb0
+        .size   fs_USER_GetSdmcCid, . - fs_USER_GetSdmcCid
 
 @ FUN_004edcf0
-        .global A_4edcf0
-        .type   A_4edcf0, %function
-A_4edcf0:
+        .global fs_USER_GetSdmcLog
+        .type   fs_USER_GetSdmcLog, %function
+fs_USER_GetSdmcLog:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4edd2c
@@ -9385,12 +9385,12 @@ A_4edcf0:
         pop     {r4, pc}
 L4edd2c:
         .word   0x081d0042
-        .size   A_4edcf0, . - A_4edcf0
+        .size   fs_USER_GetSdmcLog, . - fs_USER_GetSdmcLog
 
 @ FUN_004eddc0
-        .global A_4eddc0
-        .type   A_4eddc0, %function
-A_4eddc0:
+        .global fs_USER_GetCardType
+        .type   fs_USER_GetCardType, %function
+fs_USER_GetCardType:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9407,12 +9407,12 @@ L4eddf0:
         pop     {r4, r5, r6, pc}
 L4eddf4:
         .word   0x08130000
-        .size   A_4eddc0, . - A_4eddc0
+        .size   fs_USER_GetCardType, . - fs_USER_GetCardType
 
 @ FUN_004eddf8
-        .global A_4eddf8
-        .type   A_4eddf8, %function
-A_4eddf8:
+        .global fs_USER_OpenArchive
+        .type   fs_USER_OpenArchive, %function
+fs_USER_OpenArchive:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r1
         ldr     r1, [sp, #0x1c]
@@ -9439,7 +9439,7 @@ L4ede50:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ede54:
         .word   0x080c00c2
-        .size   A_4eddf8, . - A_4eddf8
+        .size   fs_USER_OpenArchive, . - fs_USER_OpenArchive
 
 @ FUN_004ede58
         .global A_4ede58
@@ -9468,9 +9468,9 @@ L4edea0:
         .size   A_4ede58, . - A_4ede58
 
 @ FUN_004edea4
-        .global A_4edea4
-        .type   A_4edea4, %function
-A_4edea4:
+        .global fs_USER_ClearNandLog
+        .type   fs_USER_ClearNandLog, %function
+fs_USER_ClearNandLog:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0x8200000
@@ -9481,12 +9481,12 @@ A_4edea4:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_4edea4, . - A_4edea4
+        .size   fs_USER_ClearNandLog, . - fs_USER_ClearNandLog
 
 @ FUN_004edecc
-        .global A_4edecc
-        .type   A_4edecc, %function
-A_4edecc:
+        .global fs_USER_ClearSdmcLog
+        .type   fs_USER_ClearSdmcLog, %function
+fs_USER_ClearSdmcLog:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4edef4
@@ -9499,7 +9499,7 @@ A_4edecc:
         pop     {r4, pc}
 L4edef4:
         .word   0x081f0000
-        .size   A_4edecc, . - A_4edecc
+        .size   fs_USER_ClearSdmcLog, . - fs_USER_ClearSdmcLog
 
 @ FUN_004edef8
         .global A_4edef8
@@ -9566,9 +9566,9 @@ L4edf98:
         .size   A_4edf64, . - A_4edf64
 
 @ FUN_004ee028
-        .global A_4ee028
-        .type   A_4ee028, %function
-A_4ee028:
+        .global fs_USER_OpenDirectory
+        .type   fs_USER_OpenDirectory, %function
+fs_USER_OpenDirectory:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         mov     r5, r1
@@ -9596,12 +9596,12 @@ L4ee084:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ee088:
         .word   0x080b0102
-        .size   A_4ee028, . - A_4ee028
+        .size   fs_USER_OpenDirectory, . - fs_USER_OpenDirectory
 
 @ FUN_004ee08c
-        .global A_4ee08c
-        .type   A_4ee08c, %function
-A_4ee08c:
+        .global fs_USER_ControlArchive
+        .type   fs_USER_ControlArchive, %function
+fs_USER_ControlArchive:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x20
         ldm     r4, {r1, r6, ip}
@@ -9630,12 +9630,12 @@ A_4ee08c:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ee0f4:
         .word   0x080d0144
-        .size   A_4ee08c, . - A_4ee08c
+        .size   fs_USER_ControlArchive, . - fs_USER_ControlArchive
 
 @ FUN_004ee0f8
-        .global A_4ee0f8
-        .type   A_4ee0f8, %function
-A_4ee0f8:
+        .global fs_USER_DeleteSdmcRoot
+        .type   fs_USER_DeleteSdmcRoot, %function
+fs_USER_DeleteSdmcRoot:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ee120
@@ -9648,12 +9648,12 @@ A_4ee0f8:
         pop     {r4, pc}
 L4ee120:
         .word   0x08410000
-        .size   A_4ee0f8, . - A_4ee0f8
+        .size   fs_USER_DeleteSdmcRoot, . - fs_USER_DeleteSdmcRoot
 
 @ FUN_004ee124
-        .global A_4ee124
-        .type   A_4ee124, %function
-A_4ee124:
+        .global fs_USER_FormatSaveData
+        .type   fs_USER_FormatSaveData, %function
+fs_USER_FormatSaveData:
         push    {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr}
         add     r4, sp, #0x28
         ldm     r4, {r5, r6, r7, r8, sb, ip}
@@ -9677,12 +9677,12 @@ A_4ee124:
         pop     {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc}
 L4ee178:
         .word   0x084c0242
-        .size   A_4ee124, . - A_4ee124
+        .size   fs_USER_FormatSaveData, . - fs_USER_FormatSaveData
 
 @ FUN_004ee17c
-        .global A_4ee17c
-        .type   A_4ee17c, %function
-A_4ee17c:
+        .global fs_USER_IsSdmcDetected
+        .type   fs_USER_IsSdmcDetected, %function
+fs_USER_IsSdmcDetected:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9699,12 +9699,12 @@ L4ee1ac:
         pop     {r4, r5, r6, pc}
 L4ee1b0:
         .word   0x08170000
-        .size   A_4ee17c, . - A_4ee17c
+        .size   fs_USER_IsSdmcDetected, . - fs_USER_IsSdmcDetected
 
 @ FUN_004ee1b4
-        .global A_4ee1b4
-        .type   A_4ee1b4, %function
-A_4ee1b4:
+        .global fs_USER_IsSdmcWritable
+        .type   fs_USER_IsSdmcWritable, %function
+fs_USER_IsSdmcWritable:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9721,7 +9721,7 @@ L4ee1e4:
         pop     {r4, r5, r6, pc}
 L4ee1e8:
         .word   0x08180000
-        .size   A_4ee1b4, . - A_4ee1b4
+        .size   fs_USER_IsSdmcWritable, . - fs_USER_IsSdmcWritable
 
 @ FUN_004ee1ec
         .global A_4ee1ec
@@ -9747,9 +9747,9 @@ L4ee228:
         .size   A_4ee1ec, . - A_4ee1ec
 
 @ FUN_004ee22c
-        .global A_4ee22c
-        .type   A_4ee22c, %function
-A_4ee22c:
+        .global fs_USER_CardSlotPowerOn
+        .type   fs_USER_CardSlotPowerOn, %function
+fs_USER_CardSlotPowerOn:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9766,12 +9766,12 @@ L4ee25c:
         pop     {r4, r5, r6, pc}
 L4ee260:
         .word   0x08220000
-        .size   A_4ee22c, . - A_4ee22c
+        .size   fs_USER_CardSlotPowerOn, . - fs_USER_CardSlotPowerOn
 
 @ FUN_004ee264
-        .global A_4ee264
-        .type   A_4ee264, %function
-A_4ee264:
+        .global fs_USER_CreateDirectory
+        .type   fs_USER_CreateDirectory, %function
+fs_USER_CreateDirectory:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, r6, r7, ip}
@@ -9794,12 +9794,12 @@ A_4ee264:
         pop     {r4, r5, r6, r7, r8, sb, sl, pc}
 L4ee2b4:
         .word   0x08090182
-        .size   A_4ee264, . - A_4ee264
+        .size   fs_USER_CreateDirectory, . - fs_USER_CreateDirectory
 
 @ FUN_004ee2b8
-        .global A_4ee2b8
-        .type   A_4ee2b8, %function
-A_4ee2b8:
+        .global fs_USER_DeleteDirectory
+        .type   fs_USER_DeleteDirectory, %function
+fs_USER_DeleteDirectory:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         ldm     r4, {r5, r7, ip}
@@ -9821,12 +9821,12 @@ A_4ee2b8:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ee304:
         .word   0x08060142
-        .size   A_4ee2b8, . - A_4ee2b8
+        .size   fs_USER_DeleteDirectory, . - fs_USER_DeleteDirectory
 
 @ FUN_004ee308
-        .global A_4ee308
-        .type   A_4ee308, %function
-A_4ee308:
+        .global fs_USER_ReadSpecialFile
+        .type   fs_USER_ReadSpecialFile, %function
+fs_USER_ReadSpecialFile:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         mov     r5, r1
@@ -9852,12 +9852,12 @@ L4ee35c:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ee360:
         .word   0x084f0102
-        .size   A_4ee308, . - A_4ee308
+        .size   fs_USER_ReadSpecialFile, . - fs_USER_ReadSpecialFile
 
 @ FUN_004ee3f4
-        .global A_4ee3f4
-        .type   A_4ee3f4, %function
-A_4ee3f4:
+        .global fs_USER_CardSlotPowerOff
+        .type   fs_USER_CardSlotPowerOff, %function
+fs_USER_CardSlotPowerOff:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9874,12 +9874,12 @@ L4ee424:
         pop     {r4, r5, r6, pc}
 L4ee428:
         .word   0x08230000
-        .size   A_4ee3f4, . - A_4ee3f4
+        .size   fs_USER_CardSlotPowerOff, . - fs_USER_CardSlotPowerOff
 
 @ FUN_004ee42c
-        .global A_4ee42c
-        .type   A_4ee42c, %function
-A_4ee42c:
+        .global fs_USER_GetNandSpeedInfo
+        .type   fs_USER_GetNandSpeedInfo, %function
+fs_USER_GetNandSpeedInfo:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9896,12 +9896,12 @@ L4ee45c:
         pop     {r4, r5, r6, pc}
 L4ee460:
         .word   0x081c0000
-        .size   A_4ee42c, . - A_4ee42c
+        .size   fs_USER_GetNandSpeedInfo, . - fs_USER_GetNandSpeedInfo
 
 @ FUN_004ee464
-        .global A_4ee464
-        .type   A_4ee464, %function
-A_4ee464:
+        .global fs_USER_GetSdmcSpeedInfo
+        .type   fs_USER_GetSdmcSpeedInfo, %function
+fs_USER_GetSdmcSpeedInfo:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -9918,12 +9918,12 @@ L4ee494:
         pop     {r4, r5, r6, pc}
 L4ee498:
         .word   0x081b0000
-        .size   A_4ee464, . - A_4ee464
+        .size   fs_USER_GetSdmcSpeedInfo, . - fs_USER_GetSdmcSpeedInfo
 
 @ FUN_004ee49c
-        .global A_4ee49c
-        .type   A_4ee49c, %function
-A_4ee49c:
+        .global fs_USER_CardNorDirectRead
+        .type   fs_USER_CardNorDirectRead, %function
+fs_USER_CardNorDirectRead:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ee4e4
@@ -9944,12 +9944,12 @@ A_4ee49c:
         pop     {r4, pc}
 L4ee4e4:
         .word   0x08270082
-        .size   A_4ee49c, . - A_4ee49c
+        .size   fs_USER_CardNorDirectRead, . - fs_USER_CardNorDirectRead
 
 @ FUN_004ee4e8
-        .global A_4ee4e8
-        .type   A_4ee4e8, %function
-A_4ee4e8:
+        .global fs_USER_CreateExtSaveData
+        .type   fs_USER_CreateExtSaveData, %function
+fs_USER_CreateExtSaveData:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, r6, r7, ip}
@@ -9974,12 +9974,12 @@ A_4ee4e8:
         pop     {r4, r5, r6, r7, r8, sb, sl, pc}
 L4ee540:
         .word   0x08510242
-        .size   A_4ee4e8, . - A_4ee4e8
+        .size   fs_USER_CreateExtSaveData, . - fs_USER_CreateExtSaveData
 
 @ FUN_004ee544
-        .global A_4ee544
-        .type   A_4ee544, %function
-A_4ee544:
+        .global fs_USER_DeleteExtSaveData
+        .type   fs_USER_DeleteExtSaveData, %function
+fs_USER_DeleteExtSaveData:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4ee57c
@@ -9996,12 +9996,12 @@ A_4ee544:
         pop     {r4, pc}
 L4ee57c:
         .word   0x08520100
-        .size   A_4ee544, . - A_4ee544
+        .size   fs_USER_DeleteExtSaveData, . - fs_USER_DeleteExtSaveData
 
 @ FUN_004ee580
-        .global A_4ee580
-        .type   A_4ee580, %function
-A_4ee580:
+        .global fs_USER_GetSdmcFatfsError
+        .type   fs_USER_GetSdmcFatfsError, %function
+fs_USER_GetSdmcFatfsError:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -10018,12 +10018,12 @@ L4ee5b0:
         pop     {r4, r5, r6, pc}
 L4ee5b4:
         .word   0x08160000
-        .size   A_4ee580, . - A_4ee580
+        .size   fs_USER_GetSdmcFatfsError, . - fs_USER_GetSdmcFatfsError
 
 @ FUN_004ee5b8
-        .global A_4ee5b8
-        .type   A_4ee5b8, %function
-A_4ee5b8:
+        .global fs_USER_SetCardSpiBusMode
+        .type   fs_USER_SetCardSpiBusMode, %function
+fs_USER_SetCardSpiBusMode:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ee5ec
@@ -10039,7 +10039,7 @@ A_4ee5b8:
         pop     {r4, pc}
 L4ee5ec:
         .word   0x08380040
-        .size   A_4ee5b8, . - A_4ee5b8
+        .size   fs_USER_SetCardSpiBusMode, . - fs_USER_SetCardSpiBusMode
 
 @ FUN_004ee5f0
         .global A_4ee5f0
@@ -10065,9 +10065,9 @@ L4ee628:
         .size   A_4ee5f0, . - A_4ee5f0
 
 @ FUN_004ee62c
-        .global A_4ee62c
-        .type   A_4ee62c, %function
-A_4ee62c:
+        .global fs_USER_CardNorDirectWrite
+        .type   fs_USER_CardNorDirectWrite, %function
+fs_USER_CardNorDirectWrite:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ee674
@@ -10088,12 +10088,12 @@ A_4ee62c:
         pop     {r4, pc}
 L4ee674:
         .word   0x08290082
-        .size   A_4ee62c, . - A_4ee62c
+        .size   fs_USER_CardNorDirectWrite, . - fs_USER_CardNorDirectWrite
 
 @ FUN_004ee678
-        .global A_4ee678
-        .type   A_4ee678, %function
-A_4ee678:
+        .global fs_USER_CardSlotIsInserted
+        .type   fs_USER_CardSlotIsInserted, %function
+fs_USER_CardSlotIsInserted:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -10110,7 +10110,7 @@ L4ee6a8:
         pop     {r4, r5, r6, pc}
 L4ee6ac:
         .word   0x08210000
-        .size   A_4ee678, . - A_4ee678
+        .size   fs_USER_CardSlotIsInserted, . - fs_USER_CardSlotIsInserted
 
 @ FUN_004ee6b0
         .global A_4ee6b0
@@ -10136,9 +10136,9 @@ L4ee6e8:
         .size   A_4ee6b0, . - A_4ee6b0
 
 @ FUN_004ee6ec
-        .global A_4ee6ec
-        .type   A_4ee6ec, %function
-A_4ee6ec:
+        .global fs_USER_GetArchiveResource
+        .type   fs_USER_GetArchiveResource, %function
+fs_USER_GetArchiveResource:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -10161,12 +10161,12 @@ L4ee730:
         pop     {r4, r5, pc}
 L4ee738:
         .word   0x08490040
-        .size   A_4ee6ec, . - A_4ee6ec
+        .size   fs_USER_GetArchiveResource, . - fs_USER_GetArchiveResource
 
 @ FUN_004ee73c
-        .global A_4ee73c
-        .type   A_4ee73c, %function
-A_4ee73c:
+        .global fs_USER_GetLegacyRomHeader
+        .type   fs_USER_GetLegacyRomHeader, %function
+fs_USER_GetLegacyRomHeader:
         push    {r0, r1, r2, r3, r4, lr}
         ldrd    r2, r3, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -10189,12 +10189,12 @@ L4ee784:
         .word   0x083b00c2
 L4ee788:
         .word   0x00003b4c
-        .size   A_4ee73c, . - A_4ee73c
+        .size   fs_USER_GetLegacyRomHeader, . - fs_USER_GetLegacyRomHeader
 
 @ FUN_004ee78c
-        .global A_4ee78c
-        .type   A_4ee78c, %function
-A_4ee78c:
+        .global fs_USER_GetSdmcCtrRootPath
+        .type   fs_USER_GetSdmcCtrRootPath, %function
+fs_USER_GetSdmcCtrRootPath:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4ee7c8
@@ -10212,7 +10212,7 @@ A_4ee78c:
         pop     {r4, pc}
 L4ee7c8:
         .word   0x08480042
-        .size   A_4ee78c, . - A_4ee78c
+        .size   fs_USER_GetSdmcCtrRootPath, . - fs_USER_GetSdmcCtrRootPath
 
 @ FUN_004ee7cc
         .global A_4ee7cc
@@ -10239,9 +10239,9 @@ L4ee808:
         .size   A_4ee7cc, . - A_4ee7cc
 
 @ FUN_004ee80c
-        .global A_4ee80c
-        .type   A_4ee80c, %function
-A_4ee80c:
+        .global fs_USER_SetArchivePriority
+        .type   fs_USER_SetArchivePriority, %function
+fs_USER_SetArchivePriority:
         push    {r4, lr}
         ldr     r1, [sp, #8]
         mrc     p15, #0, r4, c13, c0, #3
@@ -10257,12 +10257,12 @@ A_4ee80c:
         pop     {r4, pc}
 L4ee840:
         .word   0x085a00c0
-        .size   A_4ee80c, . - A_4ee80c
+        .size   fs_USER_SetArchivePriority, . - fs_USER_SetArchivePriority
 
 @ FUN_004ee844
-        .global A_4ee844
-        .type   A_4ee844, %function
-A_4ee844:
+        .global fs_USER_SetCardSpiBaudRate
+        .type   fs_USER_SetCardSpiBaudRate, %function
+fs_USER_SetCardSpiBaudRate:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ee878
@@ -10278,12 +10278,12 @@ A_4ee844:
         pop     {r4, pc}
 L4ee878:
         .word   0x08370040
-        .size   A_4ee844, . - A_4ee844
+        .size   fs_USER_SetCardSpiBaudRate, . - fs_USER_SetCardSpiBaudRate
 
 @ FUN_004ee87c
-        .global A_4ee87c
-        .type   A_4ee87c, %function
-A_4ee87c:
+        .global fs_USER_AbnegateAccessRight
+        .type   fs_USER_AbnegateAccessRight, %function
+fs_USER_AbnegateAccessRight:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4ee8a8
@@ -10297,12 +10297,12 @@ A_4ee87c:
         pop     {r4, pc}
 L4ee8a8:
         .word   0x08400040
-        .size   A_4ee87c, . - A_4ee87c
+        .size   fs_USER_AbnegateAccessRight, . - fs_USER_AbnegateAccessRight
 
 @ FUN_004ee8ac
-        .global A_4ee8ac
-        .type   A_4ee8ac, %function
-A_4ee8ac:
+        .global fs_USER_GetExtDataBlockSize
+        .type   fs_USER_GetExtDataBlockSize, %function
+fs_USER_GetExtDataBlockSize:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r1
         mov     r7, r2
@@ -10332,12 +10332,12 @@ L4ee910:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ee914:
         .word   0x08540100
-        .size   A_4ee8ac, . - A_4ee8ac
+        .size   fs_USER_GetExtDataBlockSize, . - fs_USER_GetExtDataBlockSize
 
 @ FUN_004ee918
-        .global A_4ee918
-        .type   A_4ee918, %function
-A_4ee918:
+        .global fs_USER_GetLegacyBannerData
+        .type   fs_USER_GetLegacyBannerData, %function
+fs_USER_GetLegacyBannerData:
         push    {r0, r1, r2, r3, r4, lr}
         ldrd    r2, r3, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -10360,12 +10360,12 @@ L4ee960:
         .word   0x083c00c2
 L4ee964:
         .word   0x00023c0c
-        .size   A_4ee918, . - A_4ee918
+        .size   fs_USER_GetLegacyBannerData, . - fs_USER_GetLegacyBannerData
 
 @ FUN_004ee968
-        .global A_4ee968
-        .type   A_4ee968, %function
-A_4ee968:
+        .global fs_USER_GetLegacyRomHeader2
+        .type   fs_USER_GetLegacyRomHeader2, %function
+fs_USER_GetLegacyRomHeader2:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r3, ip}
@@ -10390,12 +10390,12 @@ A_4ee968:
         pop     {r4, r5, r6, pc}
 L4ee9c0:
         .word   0x08460102
-        .size   A_4ee968, . - A_4ee968
+        .size   fs_USER_GetLegacyRomHeader2, . - fs_USER_GetLegacyRomHeader2
 
 @ FUN_004ee9c4
-        .global A_4ee9c4
-        .type   A_4ee9c4, %function
-A_4ee9c4:
+        .global fs_USER_QueryTotalQuotaSize
+        .type   fs_USER_QueryTotalQuotaSize, %function
+fs_USER_QueryTotalQuotaSize:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         mov     r5, r1
@@ -10420,12 +10420,12 @@ L4eea14:
         pop     {r4, r5, r6, pc}
 L4eea18:
         .word   0x083e00c2
-        .size   A_4ee9c4, . - A_4ee9c4
+        .size   fs_USER_QueryTotalQuotaSize, . - fs_USER_QueryTotalQuotaSize
 
 @ FUN_004eea1c
-        .global A_4eea1c
-        .type   A_4eea1c, %function
-A_4eea1c:
+        .global fs_USER_ReadExtSaveDataIcon
+        .type   fs_USER_ReadExtSaveDataIcon, %function
+fs_USER_ReadExtSaveDataIcon:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         ldr     r1, [sp, #0x10]
@@ -10454,12 +10454,12 @@ L4eea7c:
         pop     {r4, r5, r6, pc}
 L4eea80:
         .word   0x08530142
-        .size   A_4eea1c, . - A_4eea1c
+        .size   fs_USER_ReadExtSaveDataIcon, . - fs_USER_ReadExtSaveDataIcon
 
 @ FUN_004eeb08
-        .global A_4eeb08
-        .type   A_4eeb08, %function
-A_4eeb08:
+        .global fs_USER_CardNorDirectCommand
+        .type   fs_USER_CardNorDirectCommand, %function
+fs_USER_CardNorDirectCommand:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4eeb3c
@@ -10475,12 +10475,12 @@ A_4eeb08:
         pop     {r4, pc}
 L4eeb3c:
         .word   0x08250040
-        .size   A_4eeb08, . - A_4eeb08
+        .size   fs_USER_CardNorDirectCommand, . - fs_USER_CardNorDirectCommand
 
 @ FUN_004eeb40
-        .global A_4eeb40
-        .type   A_4eeb40, %function
-A_4eeb40:
+        .global fs_USER_CreateSystemSaveData
+        .type   fs_USER_CreateSystemSaveData, %function
+fs_USER_CreateSystemSaveData:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         ldm     r4, {r5, r6, r7, ip}
@@ -10502,12 +10502,12 @@ A_4eeb40:
         pop     {r4, r5, r6, r7, r8, pc}
 L4eeb8c:
         .word   0x08560240
-        .size   A_4eeb40, . - A_4eeb40
+        .size   fs_USER_CreateSystemSaveData, . - fs_USER_CreateSystemSaveData
 
 @ FUN_004eeb90
-        .global A_4eeb90
-        .type   A_4eeb90, %function
-A_4eeb90:
+        .global fs_USER_DeleteSystemSaveData
+        .type   fs_USER_DeleteSystemSaveData, %function
+fs_USER_DeleteSystemSaveData:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4eebc0
@@ -10522,12 +10522,12 @@ A_4eeb90:
         pop     {r4, pc}
 L4eebc0:
         .word   0x08570080
-        .size   A_4eeb90, . - A_4eeb90
+        .size   fs_USER_DeleteSystemSaveData, . - fs_USER_DeleteSystemSaveData
 
 @ FUN_004eebc4
-        .global A_4eebc4
-        .type   A_4eebc4, %function
-A_4eebc4:
+        .global fs_USER_EnumerateExtSaveData
+        .type   fs_USER_EnumerateExtSaveData, %function
+fs_USER_EnumerateExtSaveData:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         mov     r5, r1
@@ -10555,7 +10555,7 @@ L4eec20:
         pop     {r4, r5, r6, pc}
 L4eec24:
         .word   0x08550102
-        .size   A_4eebc4, . - A_4eebc4
+        .size   fs_USER_EnumerateExtSaveData, . - fs_USER_EnumerateExtSaveData
 
 @ FUN_004eec28
         .global A_4eec28
@@ -10608,9 +10608,9 @@ L4eecb4:
         .size   A_4eec8c, . - A_4eec8c
 
 @ FUN_004eecb8
-        .global A_4eecb8
-        .type   A_4eecb8, %function
-A_4eecb8:
+        .global fs_USER_SendInitializeInfoTo9
+        .type   fs_USER_SendInitializeInfoTo9, %function
+fs_USER_SendInitializeInfoTo9:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4eece0
@@ -10623,12 +10623,12 @@ A_4eecb8:
         pop     {r4, pc}
 L4eece0:
         .word   0x08390000
-        .size   A_4eecb8, . - A_4eecb8
+        .size   fs_USER_SendInitializeInfoTo9, . - fs_USER_SendInitializeInfoTo9
 
 @ FUN_004eece4
-        .global A_4eece4
-        .type   A_4eece4, %function
-A_4eece4:
+        .global fs_USER_CardNorDirectRead_4xIO
+        .type   fs_USER_CardNorDirectRead_4xIO, %function
+fs_USER_CardNorDirectRead_4xIO:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r1, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -10651,12 +10651,12 @@ A_4eece4:
         pop     {r4, pc}
 L4eed34:
         .word   0x082b00c2
-        .size   A_4eece4, . - A_4eece4
+        .size   fs_USER_CardNorDirectRead_4xIO, . - fs_USER_CardNorDirectRead_4xIO
 
 @ FUN_004eed38
-        .global A_4eed38
-        .type   A_4eed38, %function
-A_4eed38:
+        .global fs_USER_GetLegacySubBannerData
+        .type   fs_USER_GetLegacySubBannerData, %function
+fs_USER_GetLegacySubBannerData:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r3, ip}
@@ -10681,7 +10681,7 @@ A_4eed38:
         pop     {r4, r5, r6, pc}
 L4eed90:
         .word   0x084d0102
-        .size   A_4eed38, . - A_4eed38
+        .size   fs_USER_GetLegacySubBannerData, . - fs_USER_GetLegacySubBannerData
 
 @ FUN_004eed94
         .global A_4eed94
@@ -10741,9 +10741,9 @@ L4eee38:
         .size   A_4eedf4, . - A_4eedf4
 
 @ FUN_004eee3c
-        .global A_4eee3c
-        .type   A_4eee3c, %function
-A_4eee3c:
+        .global fs_USER_SetFsCompatibilityInfo
+        .type   fs_USER_SetFsCompatibilityInfo, %function
+fs_USER_SetFsCompatibilityInfo:
         push    {r4, lr}
         ldr     r1, [sp, #0xc]
         mrc     p15, #0, r4, c13, c0, #3
@@ -10767,7 +10767,7 @@ A_4eee3c:
         pop     {r4, pc}
 L4eee90:
         .word   0x085d01c0
-        .size   A_4eee3c, . - A_4eee3c
+        .size   fs_USER_SetFsCompatibilityInfo, . - fs_USER_SetFsCompatibilityInfo
 
 @ FUN_004eee94
         .global A_4eee94
@@ -10848,9 +10848,9 @@ L4eef70:
         .size   A_4eef28, . - A_4eef28
 
 @ FUN_004eef74
-        .global A_4eef74
-        .type   A_4eef74, %function
-A_4eef74:
+        .global fs_USER_InitializeCtrFileSystem
+        .type   fs_USER_InitializeCtrFileSystem, %function
+fs_USER_InitializeCtrFileSystem:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4eef9c
@@ -10863,12 +10863,12 @@ A_4eef74:
         pop     {r4, pc}
 L4eef9c:
         .word   0x08430000
-        .size   A_4eef74, . - A_4eef74
+        .size   fs_USER_InitializeCtrFileSystem, . - fs_USER_InitializeCtrFileSystem
 
 @ FUN_004eefe0
-        .global A_4eefe0
-        .type   A_4eefe0, %function
-A_4eefe0:
+        .global fs_USER_DeleteAllExtSaveDataOnNand
+        .type   fs_USER_DeleteAllExtSaveDataOnNand, %function
+fs_USER_DeleteAllExtSaveDataOnNand:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4ef00c
@@ -10882,12 +10882,12 @@ A_4eefe0:
         pop     {r4, pc}
 L4ef00c:
         .word   0x08420040
-        .size   A_4eefe0, . - A_4eefe0
+        .size   fs_USER_DeleteAllExtSaveDataOnNand, . - fs_USER_DeleteAllExtSaveDataOnNand
 
 @ FUN_004ef010
-        .global A_4ef010
-        .type   A_4ef010, %function
-A_4ef010:
+        .global fs_USER_DeleteDirectoryRecursively
+        .type   fs_USER_DeleteDirectoryRecursively, %function
+fs_USER_DeleteDirectoryRecursively:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         ldm     r4, {r5, r7, ip}
@@ -10909,7 +10909,7 @@ A_4ef010:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ef05c:
         .word   0x08070142
-        .size   A_4ef010, . - A_4ef010
+        .size   fs_USER_DeleteDirectoryRecursively, . - fs_USER_DeleteDirectoryRecursively
 
 @ FUN_004ef060
         .global A_4ef060
@@ -10933,9 +10933,9 @@ L4ef094:
         .size   A_4ef060, . - A_4ef060
 
 @ FUN_004ef098
-        .global A_4ef098
-        .type   A_4ef098, %function
-A_4ef098:
+        .global fs_USER_CardNorDirectReadWithAddress
+        .type   fs_USER_CardNorDirectReadWithAddress, %function
+fs_USER_CardNorDirectReadWithAddress:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r1, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -10958,12 +10958,12 @@ A_4ef098:
         pop     {r4, pc}
 L4ef0e8:
         .word   0x082800c2
-        .size   A_4ef098, . - A_4ef098
+        .size   fs_USER_CardNorDirectReadWithAddress, . - fs_USER_CardNorDirectReadWithAddress
 
 @ FUN_004ef0ec
-        .global A_4ef0ec
-        .type   A_4ef0ec, %function
-A_4ef0ec:
+        .global fs_USER_CardSlotGetCardIFPowerStatus
+        .type   fs_USER_CardSlotGetCardIFPowerStatus, %function
+fs_USER_CardSlotGetCardIFPowerStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -10980,12 +10980,12 @@ L4ef11c:
         pop     {r4, r5, r6, pc}
 L4ef120:
         .word   0x08240000
-        .size   A_4ef0ec, . - A_4ef0ec
+        .size   fs_USER_CardSlotGetCardIFPowerStatus, . - fs_USER_CardSlotGetCardIFPowerStatus
 
 @ FUN_004ef16c
-        .global A_4ef16c
-        .type   A_4ef16c, %function
-A_4ef16c:
+        .global fs_USER_SwitchCleanupInvalidSaveData
+        .type   fs_USER_SwitchCleanupInvalidSaveData, %function
+fs_USER_SwitchCleanupInvalidSaveData:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ef1a0
@@ -11001,12 +11001,12 @@ A_4ef16c:
         pop     {r4, pc}
 L4ef1a0:
         .word   0x085f0040
-        .size   A_4ef16c, . - A_4ef16c
+        .size   fs_USER_SwitchCleanupInvalidSaveData, . - fs_USER_SwitchCleanupInvalidSaveData
 
 @ FUN_004ef1a4
-        .global A_4ef1a4
-        .type   A_4ef1a4, %function
-A_4ef1a4:
+        .global fs_USER_CardNorDirectWriteWithAddress
+        .type   fs_USER_CardNorDirectWriteWithAddress, %function
+fs_USER_CardNorDirectWriteWithAddress:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r1, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -11029,12 +11029,12 @@ A_4ef1a4:
         pop     {r4, pc}
 L4ef1f4:
         .word   0x082a00c2
-        .size   A_4ef1a4, . - A_4ef1a4
+        .size   fs_USER_CardNorDirectWriteWithAddress, . - fs_USER_CardNorDirectWriteWithAddress
 
 @ FUN_004ef1f8
-        .global A_4ef1f8
-        .type   A_4ef1f8, %function
-A_4ef1f8:
+        .global fs_USER_CardNorDirectCommandWithAddress
+        .type   fs_USER_CardNorDirectCommandWithAddress, %function
+fs_USER_CardNorDirectCommandWithAddress:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ef230
@@ -11051,12 +11051,12 @@ A_4ef1f8:
         pop     {r4, r5, pc}
 L4ef230:
         .word   0x08260080
-        .size   A_4ef1f8, . - A_4ef1f8
+        .size   fs_USER_CardNorDirectCommandWithAddress, . - fs_USER_CardNorDirectCommandWithAddress
 
 @ FUN_004ef234
-        .global A_4ef234
-        .type   A_4ef234, %function
-A_4ef234:
+        .global fs_USER_ResetCardCompatibilityParameter
+        .type   fs_USER_ResetCardCompatibilityParameter, %function
+fs_USER_ResetCardCompatibilityParameter:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ef268
@@ -11072,12 +11072,12 @@ A_4ef234:
         pop     {r4, pc}
 L4ef268:
         .word   0x085e0040
-        .size   A_4ef234, . - A_4ef234
+        .size   fs_USER_ResetCardCompatibilityParameter, . - fs_USER_ResetCardCompatibilityParameter
 
 @ FUN_004ef26c
-        .global A_4ef26c
-        .type   A_4ef26c, %function
-A_4ef26c:
+        .global fs_USER_CheckAuthorityToAccessExtSaveData
+        .type   fs_USER_CheckAuthorityToAccessExtSaveData, %function
+fs_USER_CheckAuthorityToAccessExtSaveData:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         mov     r5, r1
@@ -11101,12 +11101,12 @@ L4ef2b4:
         pop     {r4, r5, r6, pc}
 L4ef2bc:
         .word   0x083d0100
-        .size   A_4ef26c, . - A_4ef26c
+        .size   fs_USER_CheckAuthorityToAccessExtSaveData, . - fs_USER_CheckAuthorityToAccessExtSaveData
 
 @ FUN_004ef2c0
-        .global A_4ef2c0
-        .type   A_4ef2c0, %function
-A_4ef2c0:
+        .global fs_USER_CardNorDirectCpuWriteWithoutVerify
+        .type   fs_USER_CardNorDirectCpuWriteWithoutVerify, %function
+fs_USER_CardNorDirectCpuWriteWithoutVerify:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L4ef2fc
@@ -11124,12 +11124,12 @@ A_4ef2c0:
         pop     {r4, pc}
 L4ef2fc:
         .word   0x082c0082
-        .size   A_4ef2c0, . - A_4ef2c0
+        .size   fs_USER_CardNorDirectCpuWriteWithoutVerify, . - fs_USER_CardNorDirectCpuWriteWithoutVerify
 
 @ FUN_004ef300
-        .global A_4ef300
-        .type   A_4ef300, %function
-A_4ef300:
+        .global fs_USER_CardNorDirectSectorEraseWithoutVerify
+        .type   fs_USER_CardNorDirectSectorEraseWithoutVerify, %function
+fs_USER_CardNorDirectSectorEraseWithoutVerify:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4ef32c
@@ -11143,12 +11143,12 @@ A_4ef300:
         pop     {r4, pc}
 L4ef32c:
         .word   0x082d0040
-        .size   A_4ef300, . - A_4ef300
+        .size   fs_USER_CardNorDirectSectorEraseWithoutVerify, . - fs_USER_CardNorDirectSectorEraseWithoutVerify
 
 @ FUN_004ef330
-        .global A_4ef330
-        .type   A_4ef330, %function
-A_4ef330:
+        .global fs_USER_OpenFile
+        .type   fs_USER_OpenFile, %function
+fs_USER_OpenFile:
         push    {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr}
         add     r4, sp, #0x28
         mov     r5, r1
@@ -11180,12 +11180,12 @@ L4ef39c:
         pop     {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc}
 L4ef3a0:
         .word   0x080201c2
-        .size   A_4ef330, . - A_4ef330
+        .size   fs_USER_OpenFile, . - fs_USER_OpenFile
 
 @ FUN_004ef3a4
-        .global A_4ef3a4
-        .type   A_4ef3a4, %function
-A_4ef3a4:
+        .global fs_USER_File_GetPriority
+        .type   fs_USER_File_GetPriority, %function
+fs_USER_File_GetPriority:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -11202,7 +11202,7 @@ L4ef3d4:
         pop     {r4, r5, r6, pc}
 L4ef3d8:
         .word   0x080b0000
-        .size   A_4ef3a4, . - A_4ef3a4
+        .size   fs_USER_File_GetPriority, . - fs_USER_File_GetPriority
 
 @ FUN_004ef3dc
         .global A_4ef3dc
@@ -11232,9 +11232,9 @@ L4ef424:
         .size   A_4ef3dc, . - A_4ef3dc
 
 @ FUN_004ef428
-        .global A_4ef428
-        .type   A_4ef428, %function
-A_4ef428:
+        .global fs_USER_File_SetPriority
+        .type   fs_USER_File_SetPriority, %function
+fs_USER_File_SetPriority:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4ef454
@@ -11248,12 +11248,12 @@ A_4ef428:
         pop     {r4, pc}
 L4ef454:
         .word   0x080a0040
-        .size   A_4ef428, . - A_4ef428
+        .size   fs_USER_File_SetPriority, . - fs_USER_File_SetPriority
 
 @ FUN_004ef458
-        .global A_4ef458
-        .type   A_4ef458, %function
-A_4ef458:
+        .global fs_USER_File_OpenLinkFile
+        .type   fs_USER_File_OpenLinkFile, %function
+fs_USER_File_OpenLinkFile:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -11270,12 +11270,12 @@ L4ef488:
         pop     {r4, r5, r6, pc}
 L4ef48c:
         .word   0x080c0000
-        .size   A_4ef458, . - A_4ef458
+        .size   fs_USER_File_OpenLinkFile, . - fs_USER_File_OpenLinkFile
 
 @ FUN_004ef490
-        .global A_4ef490
-        .type   A_4ef490, %function
-A_4ef490:
+        .global fs_USER_File_Read
+        .type   fs_USER_File_Read, %function
+fs_USER_File_Read:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         mov     r5, r1
@@ -11300,12 +11300,12 @@ L4ef4e0:
         pop     {r4, r5, r6, pc}
 L4ef4e4:
         .word   0x080200c2
-        .size   A_4ef490, . - A_4ef490
+        .size   fs_USER_File_Read, . - fs_USER_File_Read
 
 @ FUN_004ef4e8
-        .global A_4ef4e8
-        .type   A_4ef4e8, %function
-A_4ef4e8:
+        .global fs_USER_File_Close
+        .type   fs_USER_File_Close, %function
+fs_USER_File_Close:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4ef510
@@ -11318,12 +11318,12 @@ A_4ef4e8:
         pop     {r4, pc}
 L4ef510:
         .word   0x08080000
-        .size   A_4ef4e8, . - A_4ef4e8
+        .size   fs_USER_File_Close, . - fs_USER_File_Close
 
 @ FUN_004ef514
-        .global A_4ef514
-        .type   A_4ef514, %function
-A_4ef514:
+        .global fs_USER_File_Write
+        .type   fs_USER_File_Write, %function
+fs_USER_File_Write:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x1c
         mov     r5, r1
@@ -11350,7 +11350,7 @@ L4ef56c:
         pop     {r4, r5, r6, r7, r8, pc}
 L4ef570:
         .word   0x08030102
-        .size   A_4ef514, . - A_4ef514
+        .size   fs_USER_File_Write, . - fs_USER_File_Write
 
 @ FUN_004ef574
         .global A_4ef574
@@ -11380,9 +11380,9 @@ L4ef5bc:
         .size   A_4ef574, . - A_4ef574
 
 @ FUN_004ef5c0
-        .global A_4ef5c0
-        .type   A_4ef5c0, %function
-A_4ef5c0:
+        .global fs_USER_File_GetSize
+        .type   fs_USER_File_GetSize, %function
+fs_USER_File_GetSize:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -11399,7 +11399,7 @@ L4ef5f0:
         pop     {r4, r5, r6, pc}
 L4ef5f4:
         .word   0x08040000
-        .size   A_4ef5c0, . - A_4ef5c0
+        .size   fs_USER_File_GetSize, . - fs_USER_File_GetSize
 
 @ FUN_004ef5f8
         .global A_4ef5f8
@@ -11509,9 +11509,9 @@ L4ef70c:
         .size   A_4ef6e4, . - A_4ef6e4
 
 @ FUN_004f3c68
-        .global A_4f3c68
-        .type   A_4f3c68, %function
-A_4f3c68:
+        .global ir_USER_Disconnect
+        .type   ir_USER_Disconnect, %function
+ir_USER_Disconnect:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x90000
@@ -11525,12 +11525,12 @@ A_4f3c68:
         pop     {r4, pc}
 L4f3c94:
         .word   0x008bf998
-        .size   A_4f3c68, . - A_4f3c68
+        .size   ir_USER_Disconnect, . - ir_USER_Disconnect
 
 @ FUN_004f3c98
-        .global A_4f3c98
-        .type   A_4f3c98, %function
-A_4f3c98:
+        .global ir_USER_GetSendEvent
+        .type   ir_USER_GetSendEvent, %function
+ir_USER_GetSendEvent:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -11548,12 +11548,12 @@ L4f3ccc:
         pop     {r4, r5, r6, pc}
 L4f3cd0:
         .word   0x008bf998
-        .size   A_4f3c98, . - A_4f3c98
+        .size   ir_USER_GetSendEvent, . - ir_USER_GetSendEvent
 
 @ FUN_004f3cd4
-        .global A_4f3cd4
-        .type   A_4f3cd4, %function
-A_4f3cd4:
+        .global ir_USER_ReceiveIrnop
+        .type   ir_USER_ReceiveIrnop, %function
+ir_USER_ReceiveIrnop:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mov     r6, r2
         mov     r7, r3
@@ -11586,12 +11586,12 @@ L4f3d40:
         .word   0x000f0040
 L4f3d44:
         .word   0x008bf998
-        .size   A_4f3cd4, . - A_4f3cd4
+        .size   ir_USER_ReceiveIrnop, . - ir_USER_ReceiveIrnop
 
 @ FUN_004f3d48
-        .global A_4f3d48
-        .type   A_4f3d48, %function
-A_4f3d48:
+        .global ir_USER_AnyConnection
+        .type   ir_USER_AnyConnection, %function
+ir_USER_AnyConnection:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x80000
@@ -11605,12 +11605,12 @@ A_4f3d48:
         pop     {r4, pc}
 L4f3d74:
         .word   0x008bf998
-        .size   A_4f3d48, . - A_4f3d48
+        .size   ir_USER_AnyConnection, . - ir_USER_AnyConnection
 
 @ FUN_004f3d78
-        .global A_4f3d78
-        .type   A_4f3d78, %function
-A_4f3d78:
+        .global ir_USER_FinalizeIrnop
+        .type   ir_USER_FinalizeIrnop, %function
+ir_USER_FinalizeIrnop:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x20000
@@ -11624,12 +11624,12 @@ A_4f3d78:
         pop     {r4, pc}
 L4f3da4:
         .word   0x008bf998
-        .size   A_4f3d78, . - A_4f3d78
+        .size   ir_USER_FinalizeIrnop, . - ir_USER_FinalizeIrnop
 
 @ FUN_004f3da8
-        .global A_4f3da8
-        .type   A_4f3da8, %function
-A_4f3da8:
+        .global ir_USER_AutoConnection
+        .type   ir_USER_AutoConnection, %function
+ir_USER_AutoConnection:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, sb, sl, lr}
         add     r4, sp, #0x30
         ldm     r4, {r0, r1, r5, r6, r7, r8, sb, ip}
@@ -11653,12 +11653,12 @@ L4f3df4:
         .word   0x000702c0
 L4f3df8:
         .word   0x008bf998
-        .size   A_4f3da8, . - A_4f3da8
+        .size   ir_USER_AutoConnection, . - ir_USER_AutoConnection
 
 @ FUN_004f3dfc
-        .global A_4f3dfc
-        .type   A_4f3dfc, %function
-A_4f3dfc:
+        .global ir_USER_SendIrnopLarge
+        .type   ir_USER_SendIrnopLarge, %function
+ir_USER_SendIrnopLarge:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4f3e3c
@@ -11679,12 +11679,12 @@ L4f3e3c:
         .word   0x000e0042
 L4f3e40:
         .word   0x008bf998
-        .size   A_4f3dfc, . - A_4f3dfc
+        .size   ir_USER_SendIrnopLarge, . - ir_USER_SendIrnopLarge
 
 @ FUN_004f3e44
-        .global A_4f3e44
-        .type   A_4f3e44, %function
-A_4f3e44:
+        .global ir_USER_WaitConnection
+        .type   ir_USER_WaitConnection, %function
+ir_USER_WaitConnection:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4f3e80
@@ -11704,12 +11704,12 @@ L4f3e80:
         .word   0x000500c0
 L4f3e84:
         .word   0x008bf998
-        .size   A_4f3e44, . - A_4f3e44
+        .size   ir_USER_WaitConnection, . - ir_USER_WaitConnection
 
 @ FUN_004f3e88
-        .global A_4f3e88
-        .type   A_4f3e88, %function
-A_4f3e88:
+        .global ir_USER_ClearSendBuffer
+        .type   ir_USER_ClearSendBuffer, %function
+ir_USER_ClearSendBuffer:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -11723,12 +11723,12 @@ A_4f3e88:
         pop     {r4, pc}
 L4f3eb4:
         .word   0x008bf998
-        .size   A_4f3e88, . - A_4f3e88
+        .size   ir_USER_ClearSendBuffer, . - ir_USER_ClearSendBuffer
 
 @ FUN_004f3eb8
-        .global A_4f3eb8
-        .type   A_4f3eb8, %function
-A_4f3eb8:
+        .global ir_USER_GetReceiveEvent
+        .type   ir_USER_GetReceiveEvent, %function
+ir_USER_GetReceiveEvent:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -11746,12 +11746,12 @@ L4f3eec:
         pop     {r4, r5, r6, pc}
 L4f3ef0:
         .word   0x008bf998
-        .size   A_4f3eb8, . - A_4f3eb8
+        .size   ir_USER_GetReceiveEvent, . - ir_USER_GetReceiveEvent
 
 @ FUN_004f3ef4
-        .global A_4f3ef4
-        .type   A_4f3ef4, %function
-A_4f3ef4:
+        .global ir_USER_InitializeIrnop
+        .type   ir_USER_InitializeIrnop, %function
+ir_USER_InitializeIrnop:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         ldm     r4, {r5, r6}
@@ -11776,12 +11776,12 @@ L4f3f44:
         .word   0x00010182
 L4f3f48:
         .word   0x008bf998
-        .size   A_4f3ef4, . - A_4f3ef4
+        .size   ir_USER_InitializeIrnop, . - ir_USER_InitializeIrnop
 
 @ FUN_004f3f4c
-        .global A_4f3f4c
-        .type   A_4f3f4c, %function
-A_4f3f4c:
+        .global ir_USER_SetOwnMachineId
+        .type   ir_USER_SetOwnMachineId, %function
+ir_USER_SetOwnMachineId:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4f3f80
@@ -11799,7 +11799,7 @@ L4f3f80:
         .word   0x001a0040
 L4f3f84:
         .word   0x008bf998
-        .size   A_4f3f4c, . - A_4f3f4c
+        .size   ir_USER_SetOwnMachineId, . - ir_USER_SetOwnMachineId
 
 @ FUN_004f3f88
         .global A_4f3f88
@@ -11825,9 +11825,9 @@ L4f3fc0:
         .size   A_4f3f88, . - A_4f3f88
 
 @ FUN_004f3fc4
-        .global A_4f3fc4
-        .type   A_4f3fc4, %function
-A_4f3fc4:
+        .global ir_USER_ReceiveIrnopLarge
+        .type   ir_USER_ReceiveIrnopLarge, %function
+ir_USER_ReceiveIrnopLarge:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mov     r6, r3
@@ -11855,12 +11855,12 @@ L4f401c:
         .word   0x00100042
 L4f4020:
         .word   0x008bf998
-        .size   A_4f3fc4, . - A_4f3fc4
+        .size   ir_USER_ReceiveIrnopLarge, . - ir_USER_ReceiveIrnopLarge
 
 @ FUN_004f4024
-        .global A_4f4024
-        .type   A_4f4024, %function
-A_4f4024:
+        .global ir_USER_RequireConnection
+        .type   ir_USER_RequireConnection, %function
+ir_USER_RequireConnection:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4f4058
@@ -11878,12 +11878,12 @@ L4f4058:
         .word   0x00060040
 L4f405c:
         .word   0x008bf998
-        .size   A_4f4024, . - A_4f4024
+        .size   ir_USER_RequireConnection, . - ir_USER_RequireConnection
 
 @ FUN_004f4060
-        .global A_4f4060
-        .type   A_4f4060, %function
-A_4f4060:
+        .global ir_USER_ClearReceiveBuffer
+        .type   ir_USER_ClearReceiveBuffer, %function
+ir_USER_ClearReceiveBuffer:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x30000
@@ -11897,7 +11897,7 @@ A_4f4060:
         pop     {r4, pc}
 L4f408c:
         .word   0x008bf998
-        .size   A_4f4060, . - A_4f4060
+        .size   ir_USER_ClearReceiveBuffer, . - ir_USER_ClearReceiveBuffer
 
 @ FUN_004f4090
         .global A_4f4090
@@ -11923,9 +11923,9 @@ L4f40c8:
         .size   A_4f4090, . - A_4f4090
 
 @ FUN_004f40cc
-        .global A_4f40cc
-        .type   A_4f40cc, %function
-A_4f40cc:
+        .global ir_USER_ReleaseReceivedData
+        .type   ir_USER_ReleaseReceivedData, %function
+ir_USER_ReleaseReceivedData:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4f40fc
@@ -11942,12 +11942,12 @@ L4f40fc:
         .word   0x00190040
 L4f4100:
         .word   0x008bf998
-        .size   A_4f40cc, . - A_4f40cc
+        .size   ir_USER_ReleaseReceivedData, . - ir_USER_ReleaseReceivedData
 
 @ FUN_004f4104
-        .global A_4f4104
-        .type   A_4f4104, %function
-A_4f4104:
+        .global ir_USER_InitializeIrnopShared
+        .type   ir_USER_InitializeIrnopShared, %function
+ir_USER_InitializeIrnopShared:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x18
         ldm     r4, {r5, r6}
@@ -11972,7 +11972,7 @@ L4f4154:
         .word   0x00180182
 L4f4158:
         .word   0x008bf998
-        .size   A_4f4104, . - A_4f4104
+        .size   ir_USER_InitializeIrnopShared, . - ir_USER_InitializeIrnopShared
 
 @ FUN_004f415c
         .global A_4f415c
@@ -12007,9 +12007,9 @@ L4f41b8:
         .size   A_4f415c, . - A_4f415c
 
 @ FUN_004f41bc
-        .global A_4f41bc
-        .type   A_4f41bc, %function
-A_4f41bc:
+        .global ir_USER_GetConnectionStatusEvent
+        .type   ir_USER_GetConnectionStatusEvent, %function
+ir_USER_GetConnectionStatusEvent:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -12027,7 +12027,7 @@ L4f41f0:
         pop     {r4, r5, r6, pc}
 L4f41f4:
         .word   0x008bf998
-        .size   A_4f41bc, . - A_4f41bc
+        .size   ir_USER_GetConnectionStatusEvent, . - ir_USER_GetConnectionStatusEvent
 
 @ FUN_004f41f8
         .global A_4f41f8
@@ -12141,9 +12141,9 @@ L4f4328:
         .size   A_4f42e0, . - A_4f42e0
 
 @ FUN_004f432c
-        .global A_4f432c
-        .type   A_4f432c, %function
-A_4f432c:
+        .global ir_USER_SendIrnop
+        .type   ir_USER_SendIrnop, %function
+ir_USER_SendIrnop:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4f4370
@@ -12165,7 +12165,7 @@ L4f4370:
         .word   0x000d0042
 L4f4374:
         .word   0x008bf998
-        .size   A_4f432c, . - A_4f432c
+        .size   ir_USER_SendIrnop, . - ir_USER_SendIrnop
 
 @ FUN_004f4b00
         .global A_4f4b00
@@ -12503,9 +12503,9 @@ L4fb3ac:
         .size   A_4fb35c, . - A_4fb35c
 
 @ FUN_004fb3b0
-        .global A_4fb3b0
-        .type   A_4fb3b0, %function
-A_4fb3b0:
+        .global cecd_u_ReadMessage
+        .type   cecd_u_ReadMessage, %function
+cecd_u_ReadMessage:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, ip}
@@ -12541,12 +12541,12 @@ L4fb428:
         .word   0x00030104
 L4fb42c:
         .word   0x008b8778
-        .size   A_4fb3b0, . - A_4fb3b0
+        .size   cecd_u_ReadMessage, . - cecd_u_ReadMessage
 
 @ FUN_004fb46c
-        .global A_4fb46c
-        .type   A_4fb46c, %function
-A_4fb46c:
+        .global cecd_u_WriteMessage
+        .type   cecd_u_WriteMessage, %function
+cecd_u_WriteMessage:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r1, ip}
@@ -12577,12 +12577,12 @@ L4fb4d4:
         .word   0x00060104
 L4fb4d8:
         .word   0x008b8778
-        .size   A_4fb46c, . - A_4fb46c
+        .size   cecd_u_WriteMessage, . - cecd_u_WriteMessage
 
 @ FUN_004fb4dc
-        .global A_4fb4dc
-        .type   A_4fb4dc, %function
-A_4fb4dc:
+        .global cecd_u_OpenAndRead
+        .type   cecd_u_OpenAndRead, %function
+cecd_u_OpenAndRead:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         mov     r5, r2
@@ -12614,12 +12614,12 @@ L4fb544:
         .word   0x00120104
 L4fb548:
         .word   0x008b8778
-        .size   A_4fb4dc, . - A_4fb4dc
+        .size   cecd_u_OpenAndRead, . - cecd_u_OpenAndRead
 
 @ FUN_004fb54c
-        .global A_4fb54c
-        .type   A_4fb54c, %function
-A_4fb54c:
+        .global cecd_u_GetCecInfoBuffer
+        .type   cecd_u_GetCecInfoBuffer, %function
+cecd_u_GetCecInfoBuffer:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fb58c
@@ -12640,12 +12640,12 @@ L4fb58c:
         .word   0x000d0082
 L4fb590:
         .word   0x008b8778
-        .size   A_4fb54c, . - A_4fb54c
+        .size   cecd_u_GetCecInfoBuffer, . - cecd_u_GetCecInfoBuffer
 
 @ FUN_004fb594
-        .global A_4fb594
-        .type   A_4fb594, %function
-A_4fb594:
+        .global cecd_u_GetEventLogStart
+        .type   cecd_u_GetEventLogStart, %function
+cecd_u_GetEventLogStart:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -12663,12 +12663,12 @@ L4fb5c8:
         pop     {r4, r5, r6, pc}
 L4fb5cc:
         .word   0x008b8778
-        .size   A_4fb594, . - A_4fb594
+        .size   cecd_u_GetEventLogStart, . - cecd_u_GetEventLogStart
 
 @ FUN_004fb5d0
-        .global A_4fb5d0
-        .type   A_4fb5d0, %function
-A_4fb5d0:
+        .global cecd_u_OpenAndWrite
+        .type   cecd_u_OpenAndWrite, %function
+cecd_u_OpenAndWrite:
         push    {r4, r5, r6, lr}
         ldr     ip, [sp, #0x10]
         mrc     p15, #0, r4, c13, c0, #3
@@ -12693,7 +12693,7 @@ L4fb620:
         .word   0x00110104
 L4fb624:
         .word   0x008b8778
-        .size   A_4fb5d0, . - A_4fb5d0
+        .size   cecd_u_OpenAndWrite, . - cecd_u_OpenAndWrite
 
 @ FUN_004fb628
         .global A_4fb628
@@ -12722,9 +12722,9 @@ L4fb668:
         .size   A_4fb628, . - A_4fb628
 
 @ FUN_004fb66c
-        .global A_4fb66c
-        .type   A_4fb66c, %function
-A_4fb66c:
+        .global cecd_u_GetEventLogEntryCount
+        .type   cecd_u_GetEventLogEntryCount, %function
+cecd_u_GetEventLogEntryCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -12742,12 +12742,12 @@ L4fb6a0:
         pop     {r4, r5, r6, pc}
 L4fb6a4:
         .word   0x008b8778
-        .size   A_4fb66c, . - A_4fb66c
+        .size   cecd_u_GetEventLogEntryCount, . - cecd_u_GetEventLogEntryCount
 
 @ FUN_004fb73c
-        .global A_4fb73c
-        .type   A_4fb73c, %function
-A_4fb73c:
+        .global cecd_u_WriteMessageWithHMAC
+        .type   cecd_u_WriteMessageWithHMAC, %function
+cecd_u_WriteMessageWithHMAC:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r1, r5, ip}
@@ -12783,12 +12783,12 @@ L4fb7b4:
         .word   0x0000020a
 L4fb7b8:
         .word   0x008b8778
-        .size   A_4fb73c, . - A_4fb73c
+        .size   cecd_u_WriteMessageWithHMAC, . - cecd_u_WriteMessageWithHMAC
 
 @ FUN_004fb7bc
-        .global A_4fb7bc
-        .type   A_4fb7bc, %function
-A_4fb7bc:
+        .global cecd_u_GetCecInfoEventHandle
+        .type   cecd_u_GetCecInfoEventHandle, %function
+cecd_u_GetCecInfoEventHandle:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -12806,7 +12806,7 @@ L4fb7f0:
         pop     {r4, r5, r6, pc}
 L4fb7f4:
         .word   0x008b8778
-        .size   A_4fb7bc, . - A_4fb7bc
+        .size   cecd_u_GetCecInfoEventHandle, . - cecd_u_GetCecInfoEventHandle
 
 @ FUN_004fb884
         .global A_4fb884
@@ -12838,9 +12838,9 @@ L4fb8d0:
         .size   A_4fb884, . - A_4fb884
 
 @ FUN_004fb944
-        .global A_4fb944
-        .type   A_4fb944, %function
-A_4fb944:
+        .global cecd_u_Write_WriteRawFile
+        .type   cecd_u_Write_WriteRawFile, %function
+cecd_u_Write_WriteRawFile:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fb984
@@ -12861,12 +12861,12 @@ L4fb984:
         .word   0x00050042
 L4fb988:
         .word   0x008b8778
-        .size   A_4fb944, . - A_4fb944
+        .size   cecd_u_Write_WriteRawFile, . - cecd_u_Write_WriteRawFile
 
 @ FUN_004fb98c
-        .global A_4fb98c
-        .type   A_4fb98c, %function
-A_4fb98c:
+        .global cecd_u_Delete
+        .type   cecd_u_Delete, %function
+cecd_u_Delete:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r2, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -12892,12 +12892,12 @@ L4fb9e0:
         .word   0x00080102
 L4fb9e4:
         .word   0x008b8778
-        .size   A_4fb98c, . - A_4fb98c
+        .size   cecd_u_Delete, . - cecd_u_Delete
 
 @ FUN_004fba30
-        .global A_4fba30
-        .type   A_4fba30, %function
-A_4fba30:
+        .global cecd_u_ReadData_GetSystemInfo
+        .type   cecd_u_ReadData_GetSystemInfo, %function
+cecd_u_ReadData_GetSystemInfo:
         push    {r4, r5, r6, lr}
         ldr     ip, [sp, #0x10]
         mrc     p15, #0, r4, c13, c0, #3
@@ -12923,7 +12923,7 @@ L4fba84:
         .word   0x000a00c4
 L4fba88:
         .word   0x008b8778
-        .size   A_4fba30, . - A_4fba30
+        .size   cecd_u_ReadData_GetSystemInfo, . - cecd_u_ReadData_GetSystemInfo
 
 @ FUN_004fbbb8
         .global A_4fbbb8
@@ -12956,9 +12956,9 @@ L4fbc08:
         .size   A_4fbbb8, . - A_4fbbb8
 
 @ FUN_004fbc0c
-        .global A_4fbc0c
-        .type   A_4fbc0c, %function
-A_4fbc0c:
+        .global cecd_s_ReadMessage
+        .type   cecd_s_ReadMessage, %function
+cecd_s_ReadMessage:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, ip}
@@ -12994,12 +12994,12 @@ L4fbc84:
         .word   0x00030104
 L4fbc88:
         .word   0x008b877c
-        .size   A_4fbc0c, . - A_4fbc0c
+        .size   cecd_s_ReadMessage, . - cecd_s_ReadMessage
 
 @ FUN_004fbc8c
-        .global A_4fbc8c
-        .type   A_4fbc8c, %function
-A_4fbc8c:
+        .global cecd_s_SprGetSendSlotsMetadata
+        .type   cecd_s_SprGetSendSlotsMetadata, %function
+cecd_s_SprGetSendSlotsMetadata:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -13024,12 +13024,12 @@ L4fbcd8:
         .word   0x040c0042
 L4fbcdc:
         .word   0x008b877c
-        .size   A_4fbc8c, . - A_4fbc8c
+        .size   cecd_s_SprGetSendSlotsMetadata, . - cecd_s_SprGetSendSlotsMetadata
 
 @ FUN_004fbd1c
-        .global A_4fbd1c
-        .type   A_4fbd1c, %function
-A_4fbd1c:
+        .global cecd_s_GenHashConsoleUnique
+        .type   cecd_s_GenHashConsoleUnique, %function
+cecd_s_GenHashConsoleUnique:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13049,12 +13049,12 @@ L4fbd54:
         .word   0x04150000
 L4fbd58:
         .word   0x008b877c
-        .size   A_4fbd1c, . - A_4fbd1c
+        .size   cecd_s_GenHashConsoleUnique, . - cecd_s_GenHashConsoleUnique
 
 @ FUN_004fbd5c
-        .global A_4fbd5c
-        .type   A_4fbd5c, %function
-A_4fbd5c:
+        .global cecd_s_SprGetSlot
+        .type   cecd_s_SprGetSlot, %function
+cecd_s_SprGetSlot:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fbd9c
@@ -13075,12 +13075,12 @@ L4fbd9c:
         .word   0x040d0082
 L4fbda0:
         .word   0x008b877c
-        .size   A_4fbd5c, . - A_4fbd5c
+        .size   cecd_s_SprGetSlot, . - cecd_s_SprGetSlot
 
 @ FUN_004fbda4
-        .global A_4fbda4
-        .type   A_4fbda4, %function
-A_4fbda4:
+        .global cecd_s_SprSetRecvSlotsMetadata
+        .type   cecd_s_SprSetRecvSlotsMetadata, %function
+cecd_s_SprSetRecvSlotsMetadata:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fbde4
@@ -13101,12 +13101,12 @@ L4fbde4:
         .word   0x04110042
 L4fbde8:
         .word   0x008b877c
-        .size   A_4fbda4, . - A_4fbda4
+        .size   cecd_s_SprSetRecvSlotsMetadata, . - cecd_s_SprSetRecvSlotsMetadata
 
 @ FUN_004fbdec
-        .global A_4fbdec
-        .type   A_4fbdec, %function
-A_4fbdec:
+        .global cecd_s_WriteMessage
+        .type   cecd_s_WriteMessage, %function
+cecd_s_WriteMessage:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r1, ip}
@@ -13137,12 +13137,12 @@ L4fbe54:
         .word   0x00060104
 L4fbe58:
         .word   0x008b877c
-        .size   A_4fbdec, . - A_4fbdec
+        .size   cecd_s_WriteMessage, . - cecd_s_WriteMessage
 
 @ FUN_004fbe5c
-        .global A_4fbe5c
-        .type   A_4fbe5c, %function
-A_4fbe5c:
+        .global cecd_s_SprCreate
+        .type   cecd_s_SprCreate, %function
+cecd_s_SprCreate:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13162,12 +13162,12 @@ L4fbe94:
         .word   0x040a0000
 L4fbe98:
         .word   0x008b877c
-        .size   A_4fbe5c, . - A_4fbe5c
+        .size   cecd_s_SprCreate, . - cecd_s_SprCreate
 
 @ FUN_004fbe9c
-        .global A_4fbe9c
-        .type   A_4fbe9c, %function
-A_4fbe9c:
+        .global cecd_s_SprSetTitleSent
+        .type   cecd_s_SprSetTitleSent, %function
+cecd_s_SprSetTitleSent:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4fbed8
@@ -13187,12 +13187,12 @@ L4fbed8:
         .word   0x040e0080
 L4fbedc:
         .word   0x008b877c
-        .size   A_4fbe9c, . - A_4fbe9c
+        .size   cecd_s_SprSetTitleSent, . - cecd_s_SprSetTitleSent
 
 @ FUN_004fbee0
-        .global A_4fbee0
-        .type   A_4fbee0, %function
-A_4fbee0:
+        .global cecd_s_SprAddSlot
+        .type   cecd_s_SprAddSlot, %function
+cecd_s_SprAddSlot:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L4fbf30
@@ -13217,12 +13217,12 @@ L4fbf30:
         .word   0x041200c2
 L4fbf34:
         .word   0x008b877c
-        .size   A_4fbee0, . - A_4fbee0
+        .size   cecd_s_SprAddSlot, . - cecd_s_SprAddSlot
 
 @ FUN_004fbf38
-        .global A_4fbf38
-        .type   A_4fbf38, %function
-A_4fbf38:
+        .global cecd_s_SprDone
+        .type   cecd_s_SprDone, %function
+cecd_s_SprDone:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fbf6c
@@ -13240,7 +13240,7 @@ L4fbf6c:
         .word   0x04140040
 L4fbf70:
         .word   0x008b877c
-        .size   A_4fbf38, . - A_4fbf38
+        .size   cecd_s_SprDone, . - cecd_s_SprDone
 
 @ FUN_004fbf74
         .global A_4fbf74
@@ -13266,9 +13266,9 @@ L4fbfac:
         .size   A_4fbf74, . - A_4fbf74
 
 @ FUN_004fbfb0
-        .global A_4fbfb0
-        .type   A_4fbfb0, %function
-A_4fbfb0:
+        .global cecd_s_OpenAndRead
+        .type   cecd_s_OpenAndRead, %function
+cecd_s_OpenAndRead:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         mov     r5, r2
@@ -13300,12 +13300,12 @@ L4fc018:
         .word   0x00120104
 L4fc01c:
         .word   0x008b877c
-        .size   A_4fbfb0, . - A_4fbfb0
+        .size   cecd_s_OpenAndRead, . - cecd_s_OpenAndRead
 
 @ FUN_004fc020
-        .global A_4fc020
-        .type   A_4fc020, %function
-A_4fc020:
+        .global cecd_s_GetCecInfoBuffer
+        .type   cecd_s_GetCecInfoBuffer, %function
+cecd_s_GetCecInfoBuffer:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fc060
@@ -13326,12 +13326,12 @@ L4fc060:
         .word   0x000d0082
 L4fc064:
         .word   0x008b877c
-        .size   A_4fc020, . - A_4fc020
+        .size   cecd_s_GetCecInfoBuffer, . - cecd_s_GetCecInfoBuffer
 
 @ FUN_004fc068
-        .global A_4fc068
-        .type   A_4fc068, %function
-A_4fc068:
+        .global cecd_s_GetEventLogStart
+        .type   cecd_s_GetEventLogStart, %function
+cecd_s_GetEventLogStart:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13349,12 +13349,12 @@ L4fc09c:
         pop     {r4, r5, r6, pc}
 L4fc0a0:
         .word   0x008b877c
-        .size   A_4fc068, . - A_4fc068
+        .size   cecd_s_GetEventLogStart, . - cecd_s_GetEventLogStart
 
 @ FUN_004fc0a4
-        .global A_4fc0a4
-        .type   A_4fc0a4, %function
-A_4fc0a4:
+        .global cecd_s_OpenAndWrite
+        .type   cecd_s_OpenAndWrite, %function
+cecd_s_OpenAndWrite:
         push    {r4, r5, r6, lr}
         ldr     ip, [sp, #0x10]
         mrc     p15, #0, r4, c13, c0, #3
@@ -13379,7 +13379,7 @@ L4fc0f4:
         .word   0x00110104
 L4fc0f8:
         .word   0x008b877c
-        .size   A_4fc0a4, . - A_4fc0a4
+        .size   cecd_s_OpenAndWrite, . - cecd_s_OpenAndWrite
 
 @ FUN_004fc0fc
         .global A_4fc0fc
@@ -13408,9 +13408,9 @@ L4fc13c:
         .size   A_4fc0fc, . - A_4fc0fc
 
 @ FUN_004fc140
-        .global A_4fc140
-        .type   A_4fc140, %function
-A_4fc140:
+        .global cecd_s_GetEventLogEntryCount
+        .type   cecd_s_GetEventLogEntryCount, %function
+cecd_s_GetEventLogEntryCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13428,7 +13428,7 @@ L4fc174:
         pop     {r4, r5, r6, pc}
 L4fc178:
         .word   0x008b877c
-        .size   A_4fc140, . - A_4fc140
+        .size   cecd_s_GetEventLogEntryCount, . - cecd_s_GetEventLogEntryCount
 
 @ FUN_004fc210
         .global A_4fc210
@@ -13456,9 +13456,9 @@ L4fc24c:
         .size   A_4fc210, . - A_4fc210
 
 @ FUN_004fc250
-        .global A_4fc250
-        .type   A_4fc250, %function
-A_4fc250:
+        .global cecd_s_SprInitialise
+        .type   cecd_s_SprInitialise, %function
+cecd_s_SprInitialise:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fc27c
@@ -13474,12 +13474,12 @@ L4fc27c:
         .word   0x040b0000
 L4fc280:
         .word   0x008b877c
-        .size   A_4fc250, . - A_4fc250
+        .size   cecd_s_SprInitialise, . - cecd_s_SprInitialise
 
 @ FUN_004fc284
-        .global A_4fc284
-        .type   A_4fc284, %function
-A_4fc284:
+        .global cecd_s_SprStartRecv
+        .type   cecd_s_SprStartRecv, %function
+cecd_s_SprStartRecv:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x4100000
@@ -13493,12 +13493,12 @@ A_4fc284:
         pop     {r4, pc}
 L4fc2b0:
         .word   0x008b877c
-        .size   A_4fc284, . - A_4fc284
+        .size   cecd_s_SprStartRecv, . - cecd_s_SprStartRecv
 
 @ FUN_004fc2b4
-        .global A_4fc2b4
-        .type   A_4fc2b4, %function
-A_4fc2b4:
+        .global cecd_s_WriteMessageWithHMAC
+        .type   cecd_s_WriteMessageWithHMAC, %function
+cecd_s_WriteMessageWithHMAC:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r1, r5, ip}
@@ -13534,12 +13534,12 @@ L4fc32c:
         .word   0x0000020a
 L4fc330:
         .word   0x008b877c
-        .size   A_4fc2b4, . - A_4fc2b4
+        .size   cecd_s_WriteMessageWithHMAC, . - cecd_s_WriteMessageWithHMAC
 
 @ FUN_004fc334
-        .global A_4fc334
-        .type   A_4fc334, %function
-A_4fc334:
+        .global cecd_s_SprFinaliseSend
+        .type   cecd_s_SprFinaliseSend, %function
+cecd_s_SprFinaliseSend:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fc360
@@ -13555,12 +13555,12 @@ L4fc360:
         .word   0x040f0000
 L4fc364:
         .word   0x008b877c
-        .size   A_4fc334, . - A_4fc334
+        .size   cecd_s_SprFinaliseSend, . - cecd_s_SprFinaliseSend
 
 @ FUN_004fc368
-        .global A_4fc368
-        .type   A_4fc368, %function
-A_4fc368:
+        .global cecd_s_SprFinaliseRecv
+        .type   cecd_s_SprFinaliseRecv, %function
+cecd_s_SprFinaliseRecv:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fc394
@@ -13576,12 +13576,12 @@ L4fc394:
         .word   0x04130000
 L4fc398:
         .word   0x008b877c
-        .size   A_4fc368, . - A_4fc368
+        .size   cecd_s_SprFinaliseRecv, . - cecd_s_SprFinaliseRecv
 
 @ FUN_004fc39c
-        .global A_4fc39c
-        .type   A_4fc39c, %function
-A_4fc39c:
+        .global cecd_s_GetCecInfoEventHandle
+        .type   cecd_s_GetCecInfoEventHandle, %function
+cecd_s_GetCecInfoEventHandle:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13599,12 +13599,12 @@ L4fc3d0:
         pop     {r4, r5, r6, pc}
 L4fc3d4:
         .word   0x008b877c
-        .size   A_4fc39c, . - A_4fc39c
+        .size   cecd_s_GetCecInfoEventHandle, . - cecd_s_GetCecInfoEventHandle
 
 @ FUN_004fc3d8
-        .global A_4fc3d8
-        .type   A_4fc3d8, %function
-A_4fc3d8:
+        .global cecd_s_GetCecInfoEventHandleSys
+        .type   cecd_s_GetCecInfoEventHandleSys, %function
+cecd_s_GetCecInfoEventHandleSys:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13626,7 +13626,7 @@ L4fc418:
         .word   0x04020002
 L4fc41c:
         .word   0x008b877c
-        .size   A_4fc3d8, . - A_4fc3d8
+        .size   cecd_s_GetCecInfoEventHandleSys, . - cecd_s_GetCecInfoEventHandleSys
 
 @ FUN_004fc45c
         .global A_4fc45c
@@ -13688,9 +13688,9 @@ L4fc548:
         .size   A_4fc4fc, . - A_4fc4fc
 
 @ FUN_004fc5bc
-        .global A_4fc5bc
-        .type   A_4fc5bc, %function
-A_4fc5bc:
+        .global cecd_s_Write_WriteRawFile
+        .type   cecd_s_Write_WriteRawFile, %function
+cecd_s_Write_WriteRawFile:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fc5fc
@@ -13711,12 +13711,12 @@ L4fc5fc:
         .word   0x00050042
 L4fc600:
         .word   0x008b877c
-        .size   A_4fc5bc, . - A_4fc5bc
+        .size   cecd_s_Write_WriteRawFile, . - cecd_s_Write_WriteRawFile
 
 @ FUN_004fc604
-        .global A_4fc604
-        .type   A_4fc604, %function
-A_4fc604:
+        .global cecd_s_Delete
+        .type   cecd_s_Delete, %function
+cecd_s_Delete:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r2, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -13742,12 +13742,12 @@ L4fc658:
         .word   0x00080102
 L4fc65c:
         .word   0x008b877c
-        .size   A_4fc604, . - A_4fc604
+        .size   cecd_s_Delete, . - cecd_s_Delete
 
 @ FUN_004fc6a8
-        .global A_4fc6a8
-        .type   A_4fc6a8, %function
-A_4fc6a8:
+        .global cecd_s_ReadData_GetSystemInfo
+        .type   cecd_s_ReadData_GetSystemInfo, %function
+cecd_s_ReadData_GetSystemInfo:
         push    {r4, r5, r6, lr}
         ldr     ip, [sp, #0x10]
         mrc     p15, #0, r4, c13, c0, #3
@@ -13773,7 +13773,7 @@ L4fc6fc:
         .word   0x000a00c4
 L4fc700:
         .word   0x008b877c
-        .size   A_4fc6a8, . - A_4fc6a8
+        .size   cecd_s_ReadData_GetSystemInfo, . - cecd_s_ReadData_GetSystemInfo
 
 @ FUN_004fd668
         .global A_4fd668
@@ -13802,9 +13802,9 @@ L4fd6a8:
         .size   A_4fd668, . - A_4fd668
 
 @ FUN_004fd964
-        .global A_4fd964
-        .type   A_4fd964, %function
-A_4fd964:
+        .global cfg_i_SecureInfoGetByte101_4fd964
+        .type   cfg_i_SecureInfoGetByte101_4fd964, %function
+cfg_i_SecureInfoGetByte101_4fd964:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13824,12 +13824,12 @@ L4fd99c:
         .word   0x04070000
 L4fd9a0:
         .word   0x008bb62c
-        .size   A_4fd964, . - A_4fd964
+        .size   cfg_i_SecureInfoGetByte101_4fd964, . - cfg_i_SecureInfoGetByte101_4fd964
 
 @ FUN_004fd9a4
-        .global A_4fd9a4
-        .type   A_4fd9a4, %function
-A_4fd9a4:
+        .global cfg_i_GetSystemModel_4fd9a4
+        .type   cfg_i_GetSystemModel_4fd9a4, %function
+cfg_i_GetSystemModel_4fd9a4:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13847,12 +13847,12 @@ L4fd9d8:
         pop     {r4, r5, r6, pc}
 L4fd9dc:
         .word   0x008bb62c
-        .size   A_4fd9a4, . - A_4fd9a4
+        .size   cfg_i_GetSystemModel_4fd9a4, . - cfg_i_GetSystemModel_4fd9a4
 
 @ FUN_004fd9e0
-        .global A_4fd9e0
-        .type   A_4fd9e0, %function
-A_4fd9e0:
+        .global cfg_i_GetConfigInfoBlk8_4fd9e0
+        .type   cfg_i_GetConfigInfoBlk8_4fd9e0, %function
+cfg_i_GetConfigInfoBlk8_4fd9e0:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fda24
@@ -13874,12 +13874,12 @@ L4fda24:
         .word   0x04010082
 L4fda28:
         .word   0x008bb62c
-        .size   A_4fd9e0, . - A_4fd9e0
+        .size   cfg_i_GetConfigInfoBlk8_4fd9e0, . - cfg_i_GetConfigInfoBlk8_4fd9e0
 
 @ FUN_004fda2c
-        .global A_4fda2c
-        .type   A_4fda2c, %function
-A_4fda2c:
+        .global cfg_i_SecureInfoGetRegion_4fda2c
+        .type   cfg_i_SecureInfoGetRegion_4fda2c, %function
+cfg_i_SecureInfoGetRegion_4fda2c:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -13899,12 +13899,12 @@ L4fda64:
         .word   0x04060000
 L4fda68:
         .word   0x008bb62c
-        .size   A_4fda2c, . - A_4fda2c
+        .size   cfg_i_SecureInfoGetRegion_4fda2c, . - cfg_i_SecureInfoGetRegion_4fda2c
 
 @ FUN_004fda6c
-        .global A_4fda6c
-        .type   A_4fda6c, %function
-A_4fda6c:
+        .global cfg_i_SetConfigInfoBlk4_4fda6c
+        .type   cfg_i_SetConfigInfoBlk4_4fda6c, %function
+cfg_i_SetConfigInfoBlk4_4fda6c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fdaac
@@ -13925,12 +13925,12 @@ L4fdaac:
         .word   0x04020082
 L4fdab0:
         .word   0x008bb62c
-        .size   A_4fda6c, . - A_4fda6c
+        .size   cfg_i_SetConfigInfoBlk4_4fda6c, . - cfg_i_SetConfigInfoBlk4_4fda6c
 
 @ FUN_004fdab4
-        .global A_4fdab4
-        .type   A_4fdab4, %function
-A_4fdab4:
+        .global cfg_i_UpdateConfigNANDSavegame_4fdab4
+        .type   cfg_i_UpdateConfigNANDSavegame_4fdab4, %function
+cfg_i_UpdateConfigNANDSavegame_4fdab4:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fdae0
@@ -13946,12 +13946,12 @@ L4fdae0:
         .word   0x04030000
 L4fdae4:
         .word   0x008bb62c
-        .size   A_4fdab4, . - A_4fdab4
+        .size   cfg_i_UpdateConfigNANDSavegame_4fdab4, . - cfg_i_UpdateConfigNANDSavegame_4fdab4
 
 @ FUN_004fdae8
-        .global A_4fdae8
-        .type   A_4fdae8, %function
-A_4fdae8:
+        .global cfg_i_SecureInfoGetSerialNo_4fdae8
+        .type   cfg_i_SecureInfoGetSerialNo_4fdae8, %function
+cfg_i_SecureInfoGetSerialNo_4fdae8:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fdb28
@@ -13972,12 +13972,12 @@ L4fdb28:
         .word   0x04080042
 L4fdb2c:
         .word   0x008bb62c
-        .size   A_4fdae8, . - A_4fdae8
+        .size   cfg_i_SecureInfoGetSerialNo_4fdae8, . - cfg_i_SecureInfoGetSerialNo_4fdae8
 
 @ FUN_004fdb30
-        .global A_4fdb30
-        .type   A_4fdb30, %function
-A_4fdb30:
+        .global cfg_i_GenHashConsoleUnique_4fdb30
+        .type   cfg_i_GenHashConsoleUnique_4fdb30, %function
+cfg_i_GenHashConsoleUnique_4fdb30:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -13998,12 +13998,12 @@ L4fdb6c:
         .word   0x00030040
 L4fdb70:
         .word   0x008bb62c
-        .size   A_4fdb30, . - A_4fdb30
+        .size   cfg_i_GenHashConsoleUnique_4fdb30, . - cfg_i_GenHashConsoleUnique_4fdb30
 
 @ FUN_004fdb74
-        .global A_4fdb74
-        .type   A_4fdb74, %function
-A_4fdb74:
+        .global cfg_i_GetModelNintendo2DS_4fdb74
+        .type   cfg_i_GetModelNintendo2DS_4fdb74, %function
+cfg_i_GetModelNintendo2DS_4fdb74:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14021,12 +14021,12 @@ L4fdba8:
         pop     {r4, r5, r6, pc}
 L4fdbac:
         .word   0x008bb62c
-        .size   A_4fdb74, . - A_4fdb74
+        .size   cfg_i_GetModelNintendo2DS_4fdb74, . - cfg_i_GetModelNintendo2DS_4fdb74
 
 @ FUN_004fdbb0
-        .global A_4fdbb0
-        .type   A_4fdbb0, %function
-A_4fdbb0:
+        .global cfg_i_GetRegionCanadaUSA_4fdbb0
+        .type   cfg_i_GetRegionCanadaUSA_4fdbb0, %function
+cfg_i_GetRegionCanadaUSA_4fdbb0:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14044,7 +14044,7 @@ L4fdbe4:
         pop     {r4, r5, r6, pc}
 L4fdbe8:
         .word   0x008bb62c
-        .size   A_4fdbb0, . - A_4fdbb0
+        .size   cfg_i_GetRegionCanadaUSA_4fdbb0, . - cfg_i_GetRegionCanadaUSA_4fdbb0
 
 @ FUN_004fdbec
         .global A_4fdbec
@@ -14068,9 +14068,9 @@ L4fdc1c:
         .size   A_4fdbec, . - A_4fdbec
 
 @ FUN_004fdc20
-        .global A_4fdc20
-        .type   A_4fdc20, %function
-A_4fdc20:
+        .global cfg_i_GetLocalFriendCodeSeed_4fdc20
+        .type   cfg_i_GetLocalFriendCodeSeed_4fdc20, %function
+cfg_i_GetLocalFriendCodeSeed_4fdc20:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14090,7 +14090,7 @@ L4fdc58:
         .word   0x04050000
 L4fdc5c:
         .word   0x008bb62c
-        .size   A_4fdc20, . - A_4fdc20
+        .size   cfg_i_GetLocalFriendCodeSeed_4fdc20, . - cfg_i_GetLocalFriendCodeSeed_4fdc20
 
 @ FUN_004fdc60
         .global A_4fdc60
@@ -14135,9 +14135,9 @@ L4fdcc4:
         .size   A_4fdc94, . - A_4fdc94
 
 @ FUN_004fdcc8
-        .global A_4fdcc8
-        .type   A_4fdcc8, %function
-A_4fdcc8:
+        .global cfg_i_UpdateConfigBlk00040003_4fdcc8
+        .type   cfg_i_UpdateConfigBlk00040003_4fdcc8, %function
+cfg_i_UpdateConfigBlk00040003_4fdcc8:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fdcf4
@@ -14153,12 +14153,12 @@ L4fdcf4:
         .word   0x04090000
 L4fdcf8:
         .word   0x008bb62c
-        .size   A_4fdcc8, . - A_4fdcc8
+        .size   cfg_i_UpdateConfigBlk00040003_4fdcc8, . - cfg_i_UpdateConfigBlk00040003_4fdcc8
 
 @ FUN_004fdcfc
-        .global A_4fdcfc
-        .type   A_4fdcfc, %function
-A_4fdcfc:
+        .global cfg_i_GetLocalFriendCodeSeedData_4fdcfc
+        .type   cfg_i_GetLocalFriendCodeSeedData_4fdcfc, %function
+cfg_i_GetLocalFriendCodeSeedData_4fdcfc:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fdd3c
@@ -14179,12 +14179,12 @@ L4fdd3c:
         .word   0x04040042
 L4fdd40:
         .word   0x008bb62c
-        .size   A_4fdcfc, . - A_4fdcfc
+        .size   cfg_i_GetLocalFriendCodeSeedData_4fdcfc, . - cfg_i_GetLocalFriendCodeSeedData_4fdcfc
 
 @ FUN_004fdd44
-        .global A_4fdd44
-        .type   A_4fdd44, %function
-A_4fdd44:
+        .global cfg_i_GetConfigInfoBlk2_4fdd44
+        .type   cfg_i_GetConfigInfoBlk2_4fdd44, %function
+cfg_i_GetConfigInfoBlk2_4fdd44:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fdd88
@@ -14206,12 +14206,12 @@ L4fdd88:
         .word   0x00010082
 L4fdd8c:
         .word   0x008bb62c
-        .size   A_4fdd44, . - A_4fdd44
+        .size   cfg_i_GetConfigInfoBlk2_4fdd44, . - cfg_i_GetConfigInfoBlk2_4fdd44
 
 @ FUN_004fdd90
-        .global A_4fdd90
-        .type   A_4fdd90, %function
-A_4fdd90:
+        .global cfg_i_SecureInfoGetRegion_4fdd90
+        .type   cfg_i_SecureInfoGetRegion_4fdd90, %function
+cfg_i_SecureInfoGetRegion_4fdd90:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14229,7 +14229,7 @@ L4fddc4:
         pop     {r4, r5, r6, pc}
 L4fddc8:
         .word   0x008bb62c
-        .size   A_4fdd90, . - A_4fdd90
+        .size   cfg_i_SecureInfoGetRegion_4fdd90, . - cfg_i_SecureInfoGetRegion_4fdd90
 
 @ FUN_004fddcc
         .global A_4fddcc
@@ -14253,9 +14253,9 @@ L4fddfc:
         .size   A_4fddcc, . - A_4fddcc
 
 @ FUN_004fde00
-        .global A_4fde00
-        .type   A_4fde00, %function
-A_4fde00:
+        .global cfg_i_SecureInfoGetByte101_4fde00
+        .type   cfg_i_SecureInfoGetByte101_4fde00, %function
+cfg_i_SecureInfoGetByte101_4fde00:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14275,12 +14275,12 @@ L4fde38:
         .word   0x04070000
 L4fde3c:
         .word   0x008bb628
-        .size   A_4fde00, . - A_4fde00
+        .size   cfg_i_SecureInfoGetByte101_4fde00, . - cfg_i_SecureInfoGetByte101_4fde00
 
 @ FUN_004fde40
-        .global A_4fde40
-        .type   A_4fde40, %function
-A_4fde40:
+        .global cfg_i_GetSystemModel_4fde40
+        .type   cfg_i_GetSystemModel_4fde40, %function
+cfg_i_GetSystemModel_4fde40:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14298,12 +14298,12 @@ L4fde74:
         pop     {r4, r5, r6, pc}
 L4fde78:
         .word   0x008bb628
-        .size   A_4fde40, . - A_4fde40
+        .size   cfg_i_GetSystemModel_4fde40, . - cfg_i_GetSystemModel_4fde40
 
 @ FUN_004fde7c
-        .global A_4fde7c
-        .type   A_4fde7c, %function
-A_4fde7c:
+        .global cfg_i_GetConfigInfoBlk8_4fde7c
+        .type   cfg_i_GetConfigInfoBlk8_4fde7c, %function
+cfg_i_GetConfigInfoBlk8_4fde7c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fdec0
@@ -14325,12 +14325,12 @@ L4fdec0:
         .word   0x04010082
 L4fdec4:
         .word   0x008bb628
-        .size   A_4fde7c, . - A_4fde7c
+        .size   cfg_i_GetConfigInfoBlk8_4fde7c, . - cfg_i_GetConfigInfoBlk8_4fde7c
 
 @ FUN_004fdec8
-        .global A_4fdec8
-        .type   A_4fdec8, %function
-A_4fdec8:
+        .global cfg_i_SecureInfoGetByte101_4fdec8
+        .type   cfg_i_SecureInfoGetByte101_4fdec8, %function
+cfg_i_SecureInfoGetByte101_4fdec8:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14350,12 +14350,12 @@ L4fdf00:
         .word   0x08170000
 L4fdf04:
         .word   0x008bb628
-        .size   A_4fdec8, . - A_4fdec8
+        .size   cfg_i_SecureInfoGetByte101_4fdec8, . - cfg_i_SecureInfoGetByte101_4fdec8
 
 @ FUN_004fdf08
-        .global A_4fdf08
-        .type   A_4fdf08, %function
-A_4fdf08:
+        .global cfg_i_SecureInfoGetRegion_4fdf08
+        .type   cfg_i_SecureInfoGetRegion_4fdf08, %function
+cfg_i_SecureInfoGetRegion_4fdf08:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14375,12 +14375,12 @@ L4fdf40:
         .word   0x04060000
 L4fdf44:
         .word   0x008bb628
-        .size   A_4fdf08, . - A_4fdf08
+        .size   cfg_i_SecureInfoGetRegion_4fdf08, . - cfg_i_SecureInfoGetRegion_4fdf08
 
 @ FUN_004fdf48
-        .global A_4fdf48
-        .type   A_4fdf48, %function
-A_4fdf48:
+        .global cfg_i_SetConfigInfoBlk4_4fdf48
+        .type   cfg_i_SetConfigInfoBlk4_4fdf48, %function
+cfg_i_SetConfigInfoBlk4_4fdf48:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fdf88
@@ -14401,12 +14401,12 @@ L4fdf88:
         .word   0x04020082
 L4fdf8c:
         .word   0x008bb628
-        .size   A_4fdf48, . - A_4fdf48
+        .size   cfg_i_SetConfigInfoBlk4_4fdf48, . - cfg_i_SetConfigInfoBlk4_4fdf48
 
 @ FUN_004fdf90
-        .global A_4fdf90
-        .type   A_4fdf90, %function
-A_4fdf90:
+        .global cfg_i_GetConfigInfoBlk8_4fdf90
+        .type   cfg_i_GetConfigInfoBlk8_4fdf90, %function
+cfg_i_GetConfigInfoBlk8_4fdf90:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fdfd4
@@ -14428,12 +14428,12 @@ L4fdfd4:
         .word   0x08010082
 L4fdfd8:
         .word   0x008bb628
-        .size   A_4fdf90, . - A_4fdf90
+        .size   cfg_i_GetConfigInfoBlk8_4fdf90, . - cfg_i_GetConfigInfoBlk8_4fdf90
 
 @ FUN_004fdfdc
-        .global A_4fdfdc
-        .type   A_4fdfdc, %function
-A_4fdfdc:
+        .global cfg_i_SecureInfoGetRegion_4fdfdc
+        .type   cfg_i_SecureInfoGetRegion_4fdfdc, %function
+cfg_i_SecureInfoGetRegion_4fdfdc:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14453,12 +14453,12 @@ L4fe014:
         .word   0x08160000
 L4fe018:
         .word   0x008bb628
-        .size   A_4fdfdc, . - A_4fdfdc
+        .size   cfg_i_SecureInfoGetRegion_4fdfdc, . - cfg_i_SecureInfoGetRegion_4fdfdc
 
 @ FUN_004fe01c
-        .global A_4fe01c
-        .type   A_4fe01c, %function
-A_4fe01c:
+        .global cfg_i_SetConfigInfoBlk4_4fe01c
+        .type   cfg_i_SetConfigInfoBlk4_4fe01c, %function
+cfg_i_SetConfigInfoBlk4_4fe01c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fe05c
@@ -14479,12 +14479,12 @@ L4fe05c:
         .word   0x08020082
 L4fe060:
         .word   0x008bb628
-        .size   A_4fe01c, . - A_4fe01c
+        .size   cfg_i_SetConfigInfoBlk4_4fe01c, . - cfg_i_SetConfigInfoBlk4_4fe01c
 
 @ FUN_004fe064
-        .global A_4fe064
-        .type   A_4fe064, %function
-A_4fe064:
+        .global cfg_i_UpdateConfigNANDSavegame_4fe064
+        .type   cfg_i_UpdateConfigNANDSavegame_4fe064, %function
+cfg_i_UpdateConfigNANDSavegame_4fe064:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe090
@@ -14500,12 +14500,12 @@ L4fe090:
         .word   0x04030000
 L4fe094:
         .word   0x008bb628
-        .size   A_4fe064, . - A_4fe064
+        .size   cfg_i_UpdateConfigNANDSavegame_4fe064, . - cfg_i_UpdateConfigNANDSavegame_4fe064
 
 @ FUN_004fe098
-        .global A_4fe098
-        .type   A_4fe098, %function
-A_4fe098:
+        .global cfg_i_SecureInfoGetSerialNo_4fe098
+        .type   cfg_i_SecureInfoGetSerialNo_4fe098, %function
+cfg_i_SecureInfoGetSerialNo_4fe098:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe0d8
@@ -14526,12 +14526,12 @@ L4fe0d8:
         .word   0x04080042
 L4fe0dc:
         .word   0x008bb628
-        .size   A_4fe098, . - A_4fe098
+        .size   cfg_i_SecureInfoGetSerialNo_4fe098, . - cfg_i_SecureInfoGetSerialNo_4fe098
 
 @ FUN_004fe0e0
-        .global A_4fe0e0
-        .type   A_4fe0e0, %function
-A_4fe0e0:
+        .global cfg_i_GenHashConsoleUnique_4fe0e0
+        .type   cfg_i_GenHashConsoleUnique_4fe0e0, %function
+cfg_i_GenHashConsoleUnique_4fe0e0:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -14552,12 +14552,12 @@ L4fe11c:
         .word   0x00030040
 L4fe120:
         .word   0x008bb628
-        .size   A_4fe0e0, . - A_4fe0e0
+        .size   cfg_i_GenHashConsoleUnique_4fe0e0, . - cfg_i_GenHashConsoleUnique_4fe0e0
 
 @ FUN_004fe124
-        .global A_4fe124
-        .type   A_4fe124, %function
-A_4fe124:
+        .global cfg_i_UpdateConfigNANDSavegame_4fe124
+        .type   cfg_i_UpdateConfigNANDSavegame_4fe124, %function
+cfg_i_UpdateConfigNANDSavegame_4fe124:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe150
@@ -14573,12 +14573,12 @@ L4fe150:
         .word   0x08030000
 L4fe154:
         .word   0x008bb628
-        .size   A_4fe124, . - A_4fe124
+        .size   cfg_i_UpdateConfigNANDSavegame_4fe124, . - cfg_i_UpdateConfigNANDSavegame_4fe124
 
 @ FUN_004fe158
-        .global A_4fe158
-        .type   A_4fe158, %function
-A_4fe158:
+        .global cfg_i_SecureInfoGetSerialNo_4fe158
+        .type   cfg_i_SecureInfoGetSerialNo_4fe158, %function
+cfg_i_SecureInfoGetSerialNo_4fe158:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe198
@@ -14599,12 +14599,12 @@ L4fe198:
         .word   0x08180042
 L4fe19c:
         .word   0x008bb628
-        .size   A_4fe158, . - A_4fe158
+        .size   cfg_i_SecureInfoGetSerialNo_4fe158, . - cfg_i_SecureInfoGetSerialNo_4fe158
 
 @ FUN_004fe1a0
-        .global A_4fe1a0
-        .type   A_4fe1a0, %function
-A_4fe1a0:
+        .global cfg_i_GetModelNintendo2DS_4fe1a0
+        .type   cfg_i_GetModelNintendo2DS_4fe1a0, %function
+cfg_i_GetModelNintendo2DS_4fe1a0:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14622,12 +14622,12 @@ L4fe1d4:
         pop     {r4, r5, r6, pc}
 L4fe1d8:
         .word   0x008bb628
-        .size   A_4fe1a0, . - A_4fe1a0
+        .size   cfg_i_GetModelNintendo2DS_4fe1a0, . - cfg_i_GetModelNintendo2DS_4fe1a0
 
 @ FUN_004fe1dc
-        .global A_4fe1dc
-        .type   A_4fe1dc, %function
-A_4fe1dc:
+        .global cfg_i_GetRegionCanadaUSA_4fe1dc
+        .type   cfg_i_GetRegionCanadaUSA_4fe1dc, %function
+cfg_i_GetRegionCanadaUSA_4fe1dc:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14645,12 +14645,12 @@ L4fe210:
         pop     {r4, r5, r6, pc}
 L4fe214:
         .word   0x008bb628
-        .size   A_4fe1dc, . - A_4fe1dc
+        .size   cfg_i_GetRegionCanadaUSA_4fe1dc, . - cfg_i_GetRegionCanadaUSA_4fe1dc
 
 @ FUN_004fe218
-        .global A_4fe218
-        .type   A_4fe218, %function
-A_4fe218:
+        .global cfg_i_CreateConfigInfoBlk
+        .type   cfg_i_CreateConfigInfoBlk, %function
+cfg_i_CreateConfigInfoBlk:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fe264
@@ -14674,12 +14674,12 @@ L4fe264:
         .word   0x080400c2
 L4fe268:
         .word   0x008bb628
-        .size   A_4fe218, . - A_4fe218
+        .size   cfg_i_CreateConfigInfoBlk, . - cfg_i_CreateConfigInfoBlk
 
 @ FUN_004fe26c
-        .global A_4fe26c
-        .type   A_4fe26c, %function
-A_4fe26c:
+        .global cfg_i_FormatConfig
+        .type   cfg_i_FormatConfig, %function
+cfg_i_FormatConfig:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe298
@@ -14695,12 +14695,12 @@ L4fe298:
         .word   0x08060000
 L4fe29c:
         .word   0x008bb628
-        .size   A_4fe26c, . - A_4fe26c
+        .size   cfg_i_FormatConfig, . - cfg_i_FormatConfig
 
 @ FUN_004fe2a0
-        .global A_4fe2a0
-        .type   A_4fe2a0, %function
-A_4fe2a0:
+        .global cfg_i_SetSecureInfo
+        .type   cfg_i_SetSecureInfo, %function
+cfg_i_SetSecureInfo:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L4fe2f0
@@ -14725,12 +14725,12 @@ L4fe2f0:
         .word   0x08110084
 L4fe2f4:
         .word   0x008bb628
-        .size   A_4fe2a0, . - A_4fe2a0
+        .size   cfg_i_SetSecureInfo, . - cfg_i_SetSecureInfo
 
 @ FUN_004fe2f8
-        .global A_4fe2f8
-        .type   A_4fe2f8, %function
-A_4fe2f8:
+        .global cfg_i_DeleteConfigNANDSavefile
+        .type   cfg_i_DeleteConfigNANDSavefile, %function
+cfg_i_DeleteConfigNANDSavefile:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe324
@@ -14746,7 +14746,7 @@ L4fe324:
         .word   0x08050000
 L4fe328:
         .word   0x008bb628
-        .size   A_4fe2f8, . - A_4fe2f8
+        .size   cfg_i_DeleteConfigNANDSavefile, . - cfg_i_DeleteConfigNANDSavefile
 
 @ FUN_004fe32c
         .global A_4fe32c
@@ -14791,9 +14791,9 @@ L4fe390:
         .size   A_4fe360, . - A_4fe360
 
 @ FUN_004fe394
-        .global A_4fe394
-        .type   A_4fe394, %function
-A_4fe394:
+        .global cfg_i_DeleteCreateNANDSecureInfo
+        .type   cfg_i_DeleteCreateNANDSecureInfo, %function
+cfg_i_DeleteCreateNANDSecureInfo:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe3c0
@@ -14809,7 +14809,7 @@ L4fe3c0:
         .word   0x08120000
 L4fe3c4:
         .word   0x008bb628
-        .size   A_4fe394, . - A_4fe394
+        .size   cfg_i_DeleteCreateNANDSecureInfo, . - cfg_i_DeleteCreateNANDSecureInfo
 
 @ FUN_004fe3c8
         .global A_4fe3c8
@@ -14833,9 +14833,9 @@ L4fe3f8:
         .size   A_4fe3c8, . - A_4fe3c8
 
 @ FUN_004fe3fc
-        .global A_4fe3fc
-        .type   A_4fe3fc, %function
-A_4fe3fc:
+        .global cfg_i_SecureInfoGetData
+        .type   cfg_i_SecureInfoGetData, %function
+cfg_i_SecureInfoGetData:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe43c
@@ -14856,12 +14856,12 @@ L4fe43c:
         .word   0x08140042
 L4fe440:
         .word   0x008bb628
-        .size   A_4fe3fc, . - A_4fe3fc
+        .size   cfg_i_SecureInfoGetData, . - cfg_i_SecureInfoGetData
 
 @ FUN_004fe444
-        .global A_4fe444
-        .type   A_4fe444, %function
-A_4fe444:
+        .global cfg_i_VerifySigSecureInfo
+        .type   cfg_i_VerifySigSecureInfo, %function
+cfg_i_VerifySigSecureInfo:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe470
@@ -14877,7 +14877,7 @@ L4fe470:
         .word   0x08130000
 L4fe474:
         .word   0x008bb628
-        .size   A_4fe444, . - A_4fe444
+        .size   cfg_i_VerifySigSecureInfo, . - cfg_i_VerifySigSecureInfo
 
 @ FUN_004fe478
         .global A_4fe478
@@ -14906,9 +14906,9 @@ L4fe4bc:
         .size   A_4fe478, . - A_4fe478
 
 @ FUN_004fe4c0
-        .global A_4fe4c0
-        .type   A_4fe4c0, %function
-A_4fe4c0:
+        .global cfg_i_GetLocalFriendCodeSeed_4fe4c0
+        .type   cfg_i_GetLocalFriendCodeSeed_4fe4c0, %function
+cfg_i_GetLocalFriendCodeSeed_4fe4c0:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14928,7 +14928,7 @@ L4fe4f8:
         .word   0x04050000
 L4fe4fc:
         .word   0x008bb628
-        .size   A_4fe4c0, . - A_4fe4c0
+        .size   cfg_i_GetLocalFriendCodeSeed_4fe4c0, . - cfg_i_GetLocalFriendCodeSeed_4fe4c0
 
 @ FUN_004fe500
         .global A_4fe500
@@ -14952,9 +14952,9 @@ L4fe530:
         .size   A_4fe500, . - A_4fe500
 
 @ FUN_004fe534
-        .global A_4fe534
-        .type   A_4fe534, %function
-A_4fe534:
+        .global cfg_i_GetLocalFriendCodeSeed_4fe534
+        .type   cfg_i_GetLocalFriendCodeSeed_4fe534, %function
+cfg_i_GetLocalFriendCodeSeed_4fe534:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -14972,12 +14972,12 @@ L4fe568:
         pop     {r4, r5, r6, pc}
 L4fe56c:
         .word   0x008bb628
-        .size   A_4fe534, . - A_4fe534
+        .size   cfg_i_GetLocalFriendCodeSeed_4fe534, . - cfg_i_GetLocalFriendCodeSeed_4fe534
 
 @ FUN_004fe570
-        .global A_4fe570
-        .type   A_4fe570, %function
-A_4fe570:
+        .global cfg_i_SecureInfoGetSignature
+        .type   cfg_i_SecureInfoGetSignature, %function
+cfg_i_SecureInfoGetSignature:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe5b0
@@ -14998,7 +14998,7 @@ L4fe5b0:
         .word   0x08150042
 L4fe5b4:
         .word   0x008bb628
-        .size   A_4fe570, . - A_4fe570
+        .size   cfg_i_SecureInfoGetSignature, . - cfg_i_SecureInfoGetSignature
 
 @ FUN_004fe5b8
         .global A_4fe5b8
@@ -15043,9 +15043,9 @@ L4fe61c:
         .size   A_4fe5ec, . - A_4fe5ec
 
 @ FUN_004fe620
-        .global A_4fe620
-        .type   A_4fe620, %function
-A_4fe620:
+        .global cfg_i_DeleteCreateNANDLocalFriendCodeSeed
+        .type   cfg_i_DeleteCreateNANDLocalFriendCodeSeed, %function
+cfg_i_DeleteCreateNANDLocalFriendCodeSeed:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe64c
@@ -15061,7 +15061,7 @@ L4fe64c:
         .word   0x080d0000
 L4fe650:
         .word   0x008bb628
-        .size   A_4fe620, . - A_4fe620
+        .size   cfg_i_DeleteCreateNANDLocalFriendCodeSeed, . - cfg_i_DeleteCreateNANDLocalFriendCodeSeed
 
 @ FUN_004fe654
         .global A_4fe654
@@ -15111,9 +15111,9 @@ L4fe6cc:
         .size   A_4fe69c, . - A_4fe69c
 
 @ FUN_004fe6d0
-        .global A_4fe6d0
-        .type   A_4fe6d0, %function
-A_4fe6d0:
+        .global cfg_i_SetGetLocalFriendCodeSeedData
+        .type   cfg_i_SetGetLocalFriendCodeSeedData, %function
+cfg_i_SetGetLocalFriendCodeSeedData:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe71c
@@ -15137,12 +15137,12 @@ L4fe71c:
         .word   0x080b0082
 L4fe720:
         .word   0x008bb628
-        .size   A_4fe6d0, . - A_4fe6d0
+        .size   cfg_i_SetGetLocalFriendCodeSeedData, . - cfg_i_SetGetLocalFriendCodeSeedData
 
 @ FUN_004fe724
-        .global A_4fe724
-        .type   A_4fe724, %function
-A_4fe724:
+        .global cfg_i_ResetAnalogStickCalibrationParam
+        .type   cfg_i_ResetAnalogStickCalibrationParam, %function
+cfg_i_ResetAnalogStickCalibrationParam:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe750
@@ -15158,12 +15158,12 @@ L4fe750:
         .word   0x080a0000
 L4fe754:
         .word   0x008bb628
-        .size   A_4fe724, . - A_4fe724
+        .size   cfg_i_ResetAnalogStickCalibrationParam, . - cfg_i_ResetAnalogStickCalibrationParam
 
 @ FUN_004fe758
-        .global A_4fe758
-        .type   A_4fe758, %function
-A_4fe758:
+        .global cfg_i_VerifySigLocalFriendCodeSeed
+        .type   cfg_i_VerifySigLocalFriendCodeSeed, %function
+cfg_i_VerifySigLocalFriendCodeSeed:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe784
@@ -15179,12 +15179,12 @@ L4fe784:
         .word   0x080e0000
 L4fe788:
         .word   0x008bb628
-        .size   A_4fe758, . - A_4fe758
+        .size   cfg_i_VerifySigLocalFriendCodeSeed, . - cfg_i_VerifySigLocalFriendCodeSeed
 
 @ FUN_004fe78c
-        .global A_4fe78c
-        .type   A_4fe78c, %function
-A_4fe78c:
+        .global cfg_i_UpdateConfigBlk00040003_4fe78c
+        .type   cfg_i_UpdateConfigBlk00040003_4fe78c, %function
+cfg_i_UpdateConfigBlk00040003_4fe78c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L4fe7b8
@@ -15200,12 +15200,12 @@ L4fe7b8:
         .word   0x04090000
 L4fe7bc:
         .word   0x008bb628
-        .size   A_4fe78c, . - A_4fe78c
+        .size   cfg_i_UpdateConfigBlk00040003_4fe78c, . - cfg_i_UpdateConfigBlk00040003_4fe78c
 
 @ FUN_004fe7c0
-        .global A_4fe7c0
-        .type   A_4fe7c0, %function
-A_4fe7c0:
+        .global cfg_i_SetLocalFriendCodeSeedSignature
+        .type   cfg_i_SetLocalFriendCodeSeedSignature, %function
+cfg_i_SetLocalFriendCodeSeedSignature:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe800
@@ -15226,12 +15226,12 @@ L4fe800:
         .word   0x080c0042
 L4fe804:
         .word   0x008bb628
-        .size   A_4fe7c0, . - A_4fe7c0
+        .size   cfg_i_SetLocalFriendCodeSeedSignature, . - cfg_i_SetLocalFriendCodeSeedSignature
 
 @ FUN_004fe808
-        .global A_4fe808
-        .type   A_4fe808, %function
-A_4fe808:
+        .global cfg_i_GetLocalFriendCodeSeedData_4fe808
+        .type   cfg_i_GetLocalFriendCodeSeedData_4fe808, %function
+cfg_i_GetLocalFriendCodeSeedData_4fe808:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe848
@@ -15252,12 +15252,12 @@ L4fe848:
         .word   0x04040042
 L4fe84c:
         .word   0x008bb628
-        .size   A_4fe808, . - A_4fe808
+        .size   cfg_i_GetLocalFriendCodeSeedData_4fe808, . - cfg_i_GetLocalFriendCodeSeedData_4fe808
 
 @ FUN_004fe850
-        .global A_4fe850
-        .type   A_4fe850, %function
-A_4fe850:
+        .global cfg_i_GetLocalFriendCodeSeedData_4fe850
+        .type   cfg_i_GetLocalFriendCodeSeedData_4fe850, %function
+cfg_i_GetLocalFriendCodeSeedData_4fe850:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L4fe890
@@ -15278,12 +15278,12 @@ L4fe890:
         .word   0x080f0042
 L4fe894:
         .word   0x008bb628
-        .size   A_4fe850, . - A_4fe850
+        .size   cfg_i_GetLocalFriendCodeSeedData_4fe850, . - cfg_i_GetLocalFriendCodeSeedData_4fe850
 
 @ FUN_004fe898
-        .global A_4fe898
-        .type   A_4fe898, %function
-A_4fe898:
+        .global cfg_i_GetConfigInfoBlk2_4fe898
+        .type   cfg_i_GetConfigInfoBlk2_4fe898, %function
+cfg_i_GetConfigInfoBlk2_4fe898:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L4fe8dc
@@ -15305,12 +15305,12 @@ L4fe8dc:
         .word   0x00010082
 L4fe8e0:
         .word   0x008bb628
-        .size   A_4fe898, . - A_4fe898
+        .size   cfg_i_GetConfigInfoBlk2_4fe898, . - cfg_i_GetConfigInfoBlk2_4fe898
 
 @ FUN_004fe8e4
-        .global A_4fe8e4
-        .type   A_4fe8e4, %function
-A_4fe8e4:
+        .global cfg_i_SecureInfoGetRegion_4fe8e4
+        .type   cfg_i_SecureInfoGetRegion_4fe8e4, %function
+cfg_i_SecureInfoGetRegion_4fe8e4:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15328,12 +15328,12 @@ L4fe918:
         pop     {r4, r5, r6, pc}
 L4fe91c:
         .word   0x008bb628
-        .size   A_4fe8e4, . - A_4fe8e4
+        .size   cfg_i_SecureInfoGetRegion_4fe8e4, . - cfg_i_SecureInfoGetRegion_4fe8e4
 
 @ FUN_004fe920
-        .global A_4fe920
-        .type   A_4fe920, %function
-A_4fe920:
+        .global cfg_i_GetSystemModel_4fe920
+        .type   cfg_i_GetSystemModel_4fe920, %function
+cfg_i_GetSystemModel_4fe920:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15351,12 +15351,12 @@ L4fe954:
         pop     {r4, r5, r6, pc}
 L4fe958:
         .word   0x008b878c
-        .size   A_4fe920, . - A_4fe920
+        .size   cfg_i_GetSystemModel_4fe920, . - cfg_i_GetSystemModel_4fe920
 
 @ FUN_004fe95c
-        .global A_4fe95c
-        .type   A_4fe95c, %function
-A_4fe95c:
+        .global cfg_i_GenHashConsoleUnique_4fe95c
+        .type   cfg_i_GenHashConsoleUnique_4fe95c, %function
+cfg_i_GenHashConsoleUnique_4fe95c:
         mov     r0, r0
         push    {r4, r5, r6, lr}
         mov     r5, r1
@@ -15378,12 +15378,12 @@ L4fe99c:
         .word   0x00030040
 L4fe9a0:
         .word   0x008b878c
-        .size   A_4fe95c, . - A_4fe95c
+        .size   cfg_i_GenHashConsoleUnique_4fe95c, . - cfg_i_GenHashConsoleUnique_4fe95c
 
 @ FUN_004fe9a4
-        .global A_4fe9a4
-        .type   A_4fe9a4, %function
-A_4fe9a4:
+        .global cfg_i_GetModelNintendo2DS_4fe9a4
+        .type   cfg_i_GetModelNintendo2DS_4fe9a4, %function
+cfg_i_GetModelNintendo2DS_4fe9a4:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15401,12 +15401,12 @@ L4fe9d8:
         pop     {r4, r5, r6, pc}
 L4fe9dc:
         .word   0x008b878c
-        .size   A_4fe9a4, . - A_4fe9a4
+        .size   cfg_i_GetModelNintendo2DS_4fe9a4, . - cfg_i_GetModelNintendo2DS_4fe9a4
 
 @ FUN_004fe9e0
-        .global A_4fe9e0
-        .type   A_4fe9e0, %function
-A_4fe9e0:
+        .global cfg_i_GetRegionCanadaUSA_4fe9e0
+        .type   cfg_i_GetRegionCanadaUSA_4fe9e0, %function
+cfg_i_GetRegionCanadaUSA_4fe9e0:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15424,12 +15424,12 @@ L4fea14:
         pop     {r4, r5, r6, pc}
 L4fea18:
         .word   0x008b878c
-        .size   A_4fe9e0, . - A_4fe9e0
+        .size   cfg_i_GetRegionCanadaUSA_4fe9e0, . - cfg_i_GetRegionCanadaUSA_4fe9e0
 
 @ FUN_004fea1c
-        .global A_4fea1c
-        .type   A_4fea1c, %function
-A_4fea1c:
+        .global cfg_i_SecureInfoGetRegion_4fea1c
+        .type   cfg_i_SecureInfoGetRegion_4fea1c, %function
+cfg_i_SecureInfoGetRegion_4fea1c:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15447,12 +15447,12 @@ L4fea50:
         pop     {r4, r5, r6, pc}
 L4fea54:
         .word   0x008b878c
-        .size   A_4fea1c, . - A_4fea1c
+        .size   cfg_i_SecureInfoGetRegion_4fea1c, . - cfg_i_SecureInfoGetRegion_4fea1c
 
 @ FUN_00501018
-        .global A_501018
-        .type   A_501018, %function
-A_501018:
+        .global dsp_DSP_GetSemaphore
+        .type   dsp_DSP_GetSemaphore, %function
+dsp_DSP_GetSemaphore:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -15467,12 +15467,12 @@ A_501018:
         ldr     r0, [r4, #4]
 L501048:
         pop     {r4, r5, r6, pc}
-        .size   A_501018, . - A_501018
+        .size   dsp_DSP_GetSemaphore, . - dsp_DSP_GetSemaphore
 
 @ FUN_00501084
-        .global A_501084
-        .type   A_501084, %function
-A_501084:
+        .global dsp_DSP_MaskSemaphore
+        .type   dsp_DSP_MaskSemaphore, %function
+dsp_DSP_MaskSemaphore:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5010b8
@@ -15488,12 +15488,12 @@ A_501084:
         pop     {r4, pc}
 L5010b8:
         .word   0x000a0040
-        .size   A_501084, . - A_501084
+        .size   dsp_DSP_MaskSemaphore, . - dsp_DSP_MaskSemaphore
 
 @ FUN_005010bc
-        .global A_5010bc
-        .type   A_5010bc, %function
-A_5010bc:
+        .global dsp_DSP_ClearSemaphore
+        .type   dsp_DSP_ClearSemaphore, %function
+dsp_DSP_ClearSemaphore:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5010f0
@@ -15509,12 +15509,12 @@ A_5010bc:
         pop     {r4, pc}
 L5010f0:
         .word   0x00090040
-        .size   A_5010bc, . - A_5010bc
+        .size   dsp_DSP_ClearSemaphore, . - dsp_DSP_ClearSemaphore
 
 @ FUN_005011c0
-        .global A_5011c0
-        .type   A_5011c0, %function
-A_5011c0:
+        .global dsp_DSP_SendDataIsEmpty
+        .type   dsp_DSP_SendDataIsEmpty, %function
+dsp_DSP_SendDataIsEmpty:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -15534,12 +15534,12 @@ L5011f8:
         pop     {r4, r5, pc}
 L501200:
         .word   0x00040040
-        .size   A_5011c0, . - A_5011c0
+        .size   dsp_DSP_SendDataIsEmpty, . - dsp_DSP_SendDataIsEmpty
 
 @ FUN_00501204
-        .global A_501204
-        .type   A_501204, %function
-A_501204:
+        .global dsp_DSP_GetIsDspOccupied
+        .type   dsp_DSP_GetIsDspOccupied, %function
+dsp_DSP_GetIsDspOccupied:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -15554,12 +15554,12 @@ A_501204:
         ldr     r0, [r4, #4]
 L501234:
         pop     {r4, r5, r6, pc}
-        .size   A_501204, . - A_501204
+        .size   dsp_DSP_GetIsDspOccupied, . - dsp_DSP_GetIsDspOccupied
 
 @ FUN_00501238
-        .global A_501238
-        .type   A_501238, %function
-A_501238:
+        .global dsp_DSP_SetIirFilterI2S1
+        .type   dsp_DSP_SetIirFilterI2S1, %function
+dsp_DSP_SetIirFilterI2S1:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L501274
@@ -15577,12 +15577,12 @@ A_501238:
         pop     {r4, pc}
 L501274:
         .word   0x001a0042
-        .size   A_501238, . - A_501238
+        .size   dsp_DSP_SetIirFilterI2S1, . - dsp_DSP_SetIirFilterI2S1
 
 @ FUN_00501278
-        .global A_501278
-        .type   A_501278, %function
-A_501278:
+        .global dsp_DSP_SetIirFilterI2S2
+        .type   dsp_DSP_SetIirFilterI2S2, %function
+dsp_DSP_SetIirFilterI2S2:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L5012b4
@@ -15600,7 +15600,7 @@ A_501278:
         pop     {r4, pc}
 L5012b4:
         .word   0x001b0042
-        .size   A_501278, . - A_501278
+        .size   dsp_DSP_SetIirFilterI2S2, . - dsp_DSP_SetIirFilterI2S2
 
 @ FUN_00501338
         .global A_501338
@@ -15626,9 +15626,9 @@ L501370:
         .size   A_501338, . - A_501338
 
 @ FUN_00501374
-        .global A_501374
-        .type   A_501374, %function
-A_501374:
+        .global dsp_DSP_GetHeadphoneStatus
+        .type   dsp_DSP_GetHeadphoneStatus, %function
+dsp_DSP_GetHeadphoneStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -15643,7 +15643,7 @@ A_501374:
         ldr     r0, [r4, #4]
 L5013a4:
         pop     {r4, r5, r6, pc}
-        .size   A_501374, . - A_501374
+        .size   dsp_DSP_GetHeadphoneStatus, . - dsp_DSP_GetHeadphoneStatus
 
 @ FUN_005013a8
         .global A_5013a8
@@ -15669,9 +15669,9 @@ L5013e0:
         .size   A_5013a8, . - A_5013a8
 
 @ FUN_005013e4
-        .global A_5013e4
-        .type   A_5013e4, %function
-A_5013e4:
+        .global dsp_DSP_ReadPipeIfPossible
+        .type   dsp_DSP_ReadPipeIfPossible, %function
+dsp_DSP_ReadPipeIfPossible:
         push    {r4, r5, r6, r7, r8, lr}
         ldr     r7, [sp, #0x1c]
         mrc     p15, #0, r4, c13, c0, #3
@@ -15700,12 +15700,12 @@ L501444:
         pop     {r4, r5, r6, r7, r8, pc}
 L501448:
         .word   0x001000c0
-        .size   A_5013e4, . - A_5013e4
+        .size   dsp_DSP_ReadPipeIfPossible, . - dsp_DSP_ReadPipeIfPossible
 
 @ FUN_0050144c
-        .global A_50144c
-        .type   A_50144c, %function
-A_50144c:
+        .global dsp_DSP_InvalidateDCache
+        .type   dsp_DSP_InvalidateDCache, %function
+dsp_DSP_InvalidateDCache:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L501484
@@ -15722,12 +15722,12 @@ A_50144c:
         pop     {r4, r5, r6, pc}
 L501484:
         .word   0x00140082
-        .size   A_50144c, . - A_50144c
+        .size   dsp_DSP_InvalidateDCache, . - dsp_DSP_InvalidateDCache
 
 @ FUN_00501488
-        .global A_501488
-        .type   A_501488, %function
-A_501488:
+        .global dsp_DSP_CheckSemaphoreRequest
+        .type   dsp_DSP_CheckSemaphoreRequest, %function
+dsp_DSP_CheckSemaphoreRequest:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -15742,12 +15742,12 @@ A_501488:
         ldr     r0, [r4, #4]
 L5014b8:
         pop     {r4, r5, r6, pc}
-        .size   A_501488, . - A_501488
+        .size   dsp_DSP_CheckSemaphoreRequest, . - dsp_DSP_CheckSemaphoreRequest
 
 @ FUN_005014f0
-        .global A_5014f0
-        .type   A_5014f0, %function
-A_5014f0:
+        .global dsp_DSP_RegisterInterruptEvents
+        .type   dsp_DSP_RegisterInterruptEvents, %function
+dsp_DSP_RegisterInterruptEvents:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L501528
@@ -15764,12 +15764,12 @@ A_5014f0:
         pop     {r4, r5, r6, pc}
 L501528:
         .word   0x00150082
-        .size   A_5014f0, . - A_5014f0
+        .size   dsp_DSP_RegisterInterruptEvents, . - dsp_DSP_RegisterInterruptEvents
 
 @ FUN_0050152c
-        .global A_50152c
-        .type   A_50152c, %function
-A_50152c:
+        .global dsp_DSP_ConvertProcessAddressFromDspDram
+        .type   dsp_DSP_ConvertProcessAddressFromDspDram, %function
+dsp_DSP_ConvertProcessAddressFromDspDram:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -15787,12 +15787,12 @@ L501560:
         pop     {r4, r5, r6, pc}
 L501564:
         .word   0x000c0040
-        .size   A_50152c, . - A_50152c
+        .size   dsp_DSP_ConvertProcessAddressFromDspDram, . - dsp_DSP_ConvertProcessAddressFromDspDram
 
 @ FUN_005015ac
-        .global A_5015ac
-        .type   A_5015ac, %function
-A_5015ac:
+        .global dsp_DSP_SendData
+        .type   dsp_DSP_SendData, %function
+dsp_DSP_SendData:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5015e8
@@ -15810,7 +15810,7 @@ A_5015ac:
         pop     {r4, r5, pc}
 L5015e8:
         .word   0x00030080
-        .size   A_5015ac, . - A_5015ac
+        .size   dsp_DSP_SendData, . - dsp_DSP_SendData
 
 @ FUN_00501998
         .global A_501998
@@ -15837,9 +15837,9 @@ L5019d8:
         .size   A_501998, . - A_501998
 
 @ FUN_00502da0
-        .global A_502da0
-        .type   A_502da0, %function
-A_502da0:
+        .global hid_USER_GetSoundVolume
+        .type   hid_USER_GetSoundVolume, %function
+hid_USER_GetSoundVolume:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15857,7 +15857,7 @@ L502dd4:
         pop     {r4, r5, r6, pc}
 L502dd8:
         .word   0x008b7d20
-        .size   A_502da0, . - A_502da0
+        .size   hid_USER_GetSoundVolume, . - hid_USER_GetSoundVolume
 
 @ FUN_00502ddc
         .global A_502ddc
@@ -15921,9 +15921,9 @@ L502e8c:
         .size   A_502e18, . - A_502e18
 
 @ FUN_00502e90
-        .global A_502e90
-        .type   A_502e90, %function
-A_502e90:
+        .global hid_USER_StartAnalogStickCalibration
+        .type   hid_USER_StartAnalogStickCalibration, %function
+hid_USER_StartAnalogStickCalibration:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0xb0000
@@ -15937,12 +15937,12 @@ A_502e90:
         pop     {r4, pc}
 L502ebc:
         .word   0x008b7d20
-        .size   A_502e90, . - A_502e90
+        .size   hid_USER_StartAnalogStickCalibration, . - hid_USER_StartAnalogStickCalibration
 
 @ FUN_00502ec0
-        .global A_502ec0
-        .type   A_502ec0, %function
-A_502ec0:
+        .global hid_USER_GetAnalogStickCalibrateParam
+        .type   hid_USER_GetAnalogStickCalibrateParam, %function
+hid_USER_GetAnalogStickCalibrateParam:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -15965,7 +15965,7 @@ L502f08:
         pop     {r4, r5, r6, r7, r8, pc}
 L502f0c:
         .word   0x008b7d20
-        .size   A_502ec0, . - A_502ec0
+        .size   hid_USER_GetAnalogStickCalibrateParam, . - hid_USER_GetAnalogStickCalibrateParam
 
 @ FUN_00502f10
         .global A_502f10
@@ -16227,9 +16227,9 @@ L5031d0:
         .size   A_5031a4, . - A_5031a4
 
 @ FUN_00503b40
-        .global A_503b40
-        .type   A_503b40, %function
-A_503b40:
+        .global mic_u_UnmapSharedMem
+        .type   mic_u_UnmapSharedMem, %function
+mic_u_UnmapSharedMem:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x20000
@@ -16243,12 +16243,12 @@ A_503b40:
         pop     {r4, pc}
 L503b6c:
         .word   0x008b7d48
-        .size   A_503b40, . - A_503b40
+        .size   mic_u_UnmapSharedMem, . - mic_u_UnmapSharedMem
 
 @ FUN_00503b70
-        .global A_503b70
-        .type   A_503b70, %function
-A_503b70:
+        .global mic_u_GetPower
+        .type   mic_u_GetPower, %function
+mic_u_GetPower:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16266,12 +16266,12 @@ L503ba4:
         pop     {r4, r5, r6, pc}
 L503ba8:
         .word   0x008b7d48
-        .size   A_503b70, . - A_503b70
+        .size   mic_u_GetPower, . - mic_u_GetPower
 
 @ FUN_00503bb0
-        .global A_503bb0
-        .type   A_503bb0, %function
-A_503bb0:
+        .global mic_u_IsSampling
+        .type   mic_u_IsSampling, %function
+mic_u_IsSampling:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16289,12 +16289,12 @@ L503be4:
         pop     {r4, r5, r6, pc}
 L503be8:
         .word   0x008b7d48
-        .size   A_503bb0, . - A_503bb0
+        .size   mic_u_IsSampling, . - mic_u_IsSampling
 
 @ FUN_00503bec
-        .global A_503bec
-        .type   A_503bec, %function
-A_503bec:
+        .global mic_u_SetPower
+        .type   mic_u_SetPower, %function
+mic_u_SetPower:
         mov     r0, r0
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
@@ -16313,12 +16313,12 @@ L503c24:
         .word   0x000a0040
 L503c28:
         .word   0x008b7d48
-        .size   A_503bec, . - A_503bec
+        .size   mic_u_SetPower, . - mic_u_SetPower
 
 @ FUN_00503c30
-        .global A_503c30
-        .type   A_503c30, %function
-A_503c30:
+        .global mic_u_StopSampling
+        .type   mic_u_StopSampling, %function
+mic_u_StopSampling:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x50000
@@ -16332,12 +16332,12 @@ A_503c30:
         pop     {r4, pc}
 L503c5c:
         .word   0x008b7d48
-        .size   A_503c30, . - A_503c30
+        .size   mic_u_StopSampling, . - mic_u_StopSampling
 
 @ FUN_00503c60
-        .global A_503c60
-        .type   A_503c60, %function
-A_503c60:
+        .global mic_u_StartSampling
+        .type   mic_u_StartSampling, %function
+mic_u_StartSampling:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L503cac
@@ -16361,12 +16361,12 @@ L503cac:
         .word   0x00030140
 L503cb0:
         .word   0x008b7d48
-        .size   A_503c60, . - A_503c60
+        .size   mic_u_StartSampling, . - mic_u_StartSampling
 
 @ FUN_00503cb4
-        .global A_503cb4
-        .type   A_503cb4, %function
-A_503cb4:
+        .global mic_u_AdjustSampling
+        .type   mic_u_AdjustSampling, %function
+mic_u_AdjustSampling:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L503ce8
@@ -16384,12 +16384,12 @@ L503ce8:
         .word   0x00040040
 L503cec:
         .word   0x008b7d48
-        .size   A_503cb4, . - A_503cb4
+        .size   mic_u_AdjustSampling, . - mic_u_AdjustSampling
 
 @ FUN_00503cf0
-        .global A_503cf0
-        .type   A_503cf0, %function
-A_503cf0:
+        .global mic_u_MapSharedMem
+        .type   mic_u_MapSharedMem, %function
+mic_u_MapSharedMem:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L503d2c
@@ -16409,12 +16409,12 @@ L503d2c:
         .word   0x00010042
 L503d30:
         .word   0x008b7d48
-        .size   A_503cf0, . - A_503cf0
+        .size   mic_u_MapSharedMem, . - mic_u_MapSharedMem
 
 @ FUN_00503d34
-        .global A_503d34
-        .type   A_503d34, %function
-A_503d34:
+        .global mic_u_SetIirFilterMic
+        .type   mic_u_SetIirFilterMic, %function
+mic_u_SetIirFilterMic:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L503d74
@@ -16435,12 +16435,12 @@ L503d74:
         .word   0x000c0042
 L503d78:
         .word   0x008b7d48
-        .size   A_503d34, . - A_503d34
+        .size   mic_u_SetIirFilterMic, . - mic_u_SetIirFilterMic
 
 @ FUN_00503d7c
-        .global A_503d7c
-        .type   A_503d7c, %function
-A_503d7c:
+        .global mic_u_SetAllowShellClosed
+        .type   mic_u_SetAllowShellClosed, %function
+mic_u_SetAllowShellClosed:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L503db0
@@ -16458,12 +16458,12 @@ L503db0:
         .word   0x000f0040
 L503db4:
         .word   0x008b7d48
-        .size   A_503d7c, . - A_503d7c
+        .size   mic_u_SetAllowShellClosed, . - mic_u_SetAllowShellClosed
 
 @ FUN_00503db8
-        .global A_503db8
-        .type   A_503db8, %function
-A_503db8:
+        .global mic_u_GetEventHandle
+        .type   mic_u_GetEventHandle, %function
+mic_u_GetEventHandle:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16481,7 +16481,7 @@ L503dec:
         pop     {r4, r5, r6, pc}
 L503df0:
         .word   0x008b7d48
-        .size   A_503db8, . - A_503db8
+        .size   mic_u_GetEventHandle, . - mic_u_GetEventHandle
 
 @ FUN_00503df4
         .global A_503df4
@@ -16506,9 +16506,9 @@ L503e28:
         .size   A_503df4, . - A_503df4
 
 @ FUN_00503e2c
-        .global A_503e2c
-        .type   A_503e2c, %function
-A_503e2c:
+        .global mic_u_GetGain
+        .type   mic_u_GetGain, %function
+mic_u_GetGain:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16526,12 +16526,12 @@ L503e60:
         pop     {r4, r5, r6, pc}
 L503e64:
         .word   0x008b7d48
-        .size   A_503e2c, . - A_503e2c
+        .size   mic_u_GetGain, . - mic_u_GetGain
 
 @ FUN_00503e68
-        .global A_503e68
-        .type   A_503e68, %function
-A_503e68:
+        .global mic_u_SetGain
+        .type   mic_u_SetGain, %function
+mic_u_SetGain:
         mov     r0, r0
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
@@ -16550,12 +16550,12 @@ L503ea0:
         .word   0x00080040
 L503ea4:
         .word   0x008b7d48
-        .size   A_503e68, . - A_503e68
+        .size   mic_u_SetGain, . - mic_u_SetGain
 
 @ FUN_00503ea8
-        .global A_503ea8
-        .type   A_503ea8, %function
-A_503ea8:
+        .global mic_u_GetClamp
+        .type   mic_u_GetClamp, %function
+mic_u_GetClamp:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16573,12 +16573,12 @@ L503edc:
         pop     {r4, r5, r6, pc}
 L503ee0:
         .word   0x008b7d48
-        .size   A_503ea8, . - A_503ea8
+        .size   mic_u_GetClamp, . - mic_u_GetClamp
 
 @ FUN_00503ee4
-        .global A_503ee4
-        .type   A_503ee4, %function
-A_503ee4:
+        .global mic_u_SetClamp
+        .type   mic_u_SetClamp, %function
+mic_u_SetClamp:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L503f18
@@ -16596,12 +16596,12 @@ L503f18:
         .word   0x000d0040
 L503f1c:
         .word   0x008b7d48
-        .size   A_503ee4, . - A_503ee4
+        .size   mic_u_SetClamp, . - mic_u_SetClamp
 
 @ FUN_0050404c
-        .global A_50404c
-        .type   A_50404c, %function
-A_50404c:
+        .global ndm_u_QueryStatus
+        .type   ndm_u_QueryStatus, %function
+ndm_u_QueryStatus:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -16624,12 +16624,12 @@ L504090:
         .word   0x000d0040
 L504094:
         .word   0x008b8818
-        .size   A_50404c, . - A_50404c
+        .size   ndm_u_QueryStatus, . - ndm_u_QueryStatus
 
 @ FUN_00504098
-        .global A_504098
-        .type   A_504098, %function
-A_504098:
+        .global ndm_u_UnlockState
+        .type   ndm_u_UnlockState, %function
+ndm_u_UnlockState:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L5040cc
@@ -16647,12 +16647,12 @@ L5040cc:
         .word   0x00050002
 L5040d0:
         .word   0x008b8818
-        .size   A_504098, . - A_504098
+        .size   ndm_u_UnlockState, . - ndm_u_UnlockState
 
 @ FUN_0050410c
-        .global A_50410c
-        .type   A_50410c, %function
-A_50410c:
+        .global ndm_u_GetTargetState
+        .type   ndm_u_GetTargetState, %function
+ndm_u_GetTargetState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16670,12 +16670,12 @@ L504140:
         pop     {r4, r5, r6, pc}
 L504144:
         .word   0x008b8818
-        .size   A_50410c, . - A_50410c
+        .size   ndm_u_GetTargetState, . - ndm_u_GetTargetState
 
 @ FUN_00504148
-        .global A_504148
-        .type   A_504148, %function
-A_504148:
+        .global ndm_u_GetCurrentState
+        .type   ndm_u_GetCurrentState, %function
+ndm_u_GetCurrentState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16693,12 +16693,12 @@ L50417c:
         pop     {r4, r5, r6, pc}
 L504180:
         .word   0x008b8818
-        .size   A_504148, . - A_504148
+        .size   ndm_u_GetCurrentState, . - ndm_u_GetCurrentState
 
 @ FUN_00504184
-        .global A_504184
-        .type   A_504184, %function
-A_504184:
+        .global ndm_u_GetScanInterval
+        .type   ndm_u_GetScanInterval, %function
+ndm_u_GetScanInterval:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16716,12 +16716,12 @@ L5041b8:
         pop     {r4, r5, r6, pc}
 L5041bc:
         .word   0x008b8818
-        .size   A_504184, . - A_504184
+        .size   ndm_u_GetScanInterval, . - ndm_u_GetScanInterval
 
 @ FUN_005041c0
-        .global A_5041c0
-        .type   A_5041c0, %function
-A_5041c0:
+        .global ndm_u_ResumeScheduler
+        .type   ndm_u_ResumeScheduler, %function
+ndm_u_ResumeScheduler:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x90000
@@ -16735,12 +16735,12 @@ A_5041c0:
         pop     {r4, pc}
 L5041ec:
         .word   0x008b8818
-        .size   A_5041c0, . - A_5041c0
+        .size   ndm_u_ResumeScheduler, . - ndm_u_ResumeScheduler
 
 @ FUN_005041f0
-        .global A_5041f0
-        .type   A_5041f0, %function
-A_5041f0:
+        .global ndm_u_SetScanInterval
+        .type   ndm_u_SetScanInterval, %function
+ndm_u_SetScanInterval:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L504220
@@ -16757,12 +16757,12 @@ L504220:
         .word   0x00100040
 L504224:
         .word   0x008b8818
-        .size   A_5041f0, . - A_5041f0
+        .size   ndm_u_SetScanInterval, . - ndm_u_SetScanInterval
 
 @ FUN_00504228
-        .global A_504228
-        .type   A_504228, %function
-A_504228:
+        .global ndm_u_GetRetryInterval
+        .type   ndm_u_GetRetryInterval, %function
+ndm_u_GetRetryInterval:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16780,12 +16780,12 @@ L50425c:
         pop     {r4, r5, r6, pc}
 L504260:
         .word   0x008b8818
-        .size   A_504228, . - A_504228
+        .size   ndm_u_GetRetryInterval, . - ndm_u_GetRetryInterval
 
 @ FUN_00504264
-        .global A_504264
-        .type   A_504264, %function
-A_504264:
+        .global ndm_u_SetRetryInterval
+        .type   ndm_u_SetRetryInterval, %function
+ndm_u_SetRetryInterval:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L504294
@@ -16802,12 +16802,12 @@ L504294:
         .word   0x00120040
 L504298:
         .word   0x008b8818
-        .size   A_504264, . - A_504264
+        .size   ndm_u_SetRetryInterval, . - ndm_u_SetRetryInterval
 
 @ FUN_0050429c
-        .global A_50429c
-        .type   A_50429c, %function
-A_50429c:
+        .global ndm_u_SuspendScheduler
+        .type   ndm_u_SuspendScheduler, %function
+ndm_u_SuspendScheduler:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L5042d0
@@ -16825,12 +16825,12 @@ L5042d0:
         .word   0x00080040
 L5042d4:
         .word   0x008b8818
-        .size   A_50429c, . - A_50429c
+        .size   ndm_u_SuspendScheduler, . - ndm_u_SuspendScheduler
 
 @ FUN_005042d8
-        .global A_5042d8
-        .type   A_5042d8, %function
-A_5042d8:
+        .global ndm_u_GetDefaultDaemons
+        .type   ndm_u_GetDefaultDaemons, %function
+ndm_u_GetDefaultDaemons:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16848,12 +16848,12 @@ L50430c:
         pop     {r4, r5, r6, pc}
 L504310:
         .word   0x008b8818
-        .size   A_5042d8, . - A_5042d8
+        .size   ndm_u_GetDefaultDaemons, . - ndm_u_GetDefaultDaemons
 
 @ FUN_00504314
-        .global A_504314
-        .type   A_504314, %function
-A_504314:
+        .global ndm_u_QueryExclusiveMode
+        .type   ndm_u_QueryExclusiveMode, %function
+ndm_u_QueryExclusiveMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -16871,12 +16871,12 @@ L504348:
         pop     {r4, r5, r6, pc}
 L50434c:
         .word   0x008b8818
-        .size   A_504314, . - A_504314
+        .size   ndm_u_QueryExclusiveMode, . - ndm_u_QueryExclusiveMode
 
 @ FUN_00504350
-        .global A_504350
-        .type   A_504350, %function
-A_504350:
+        .global ndm_u_EnterExclusiveState
+        .type   ndm_u_EnterExclusiveState, %function
+ndm_u_EnterExclusiveState:
         mov     r0, r0
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
@@ -16896,12 +16896,12 @@ L50438c:
         .word   0x00010042
 L504390:
         .word   0x008b8818
-        .size   A_504350, . - A_504350
+        .size   ndm_u_EnterExclusiveState, . - ndm_u_EnterExclusiveState
 
 @ FUN_00504394
-        .global A_504394
-        .type   A_504394, %function
-A_504394:
+        .global ndm_u_LeaveExclusiveState
+        .type   ndm_u_LeaveExclusiveState, %function
+ndm_u_LeaveExclusiveState:
         mov     r0, r0
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
@@ -16920,12 +16920,12 @@ L5043cc:
         .word   0x00020002
 L5043d0:
         .word   0x008b8818
-        .size   A_504394, . - A_504394
+        .size   ndm_u_LeaveExclusiveState, . - ndm_u_LeaveExclusiveState
 
 @ FUN_005043d4
-        .global A_5043d4
-        .type   A_5043d4, %function
-A_5043d4:
+        .global ndm_u_ResetDefaultDaemons
+        .type   ndm_u_ResetDefaultDaemons, %function
+ndm_u_ResetDefaultDaemons:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x150000
@@ -16939,7 +16939,7 @@ A_5043d4:
         pop     {r4, pc}
 L504400:
         .word   0x008b8818
-        .size   A_5043d4, . - A_5043d4
+        .size   ndm_u_ResetDefaultDaemons, . - ndm_u_ResetDefaultDaemons
 
 @ FUN_00504404
         .global A_504404
@@ -16965,9 +16965,9 @@ L50443c:
         .size   A_504404, . - A_504404
 
 @ FUN_00504440
-        .global A_504440
-        .type   A_504440, %function
-A_504440:
+        .global ndm_u_GetDaemonDisableCount
+        .type   ndm_u_GetDaemonDisableCount, %function
+ndm_u_GetDaemonDisableCount:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mov     r5, r1
         mov     r6, r2
@@ -16993,12 +16993,12 @@ L504490:
         .word   0x000e0040
 L504494:
         .word   0x008b8818
-        .size   A_504440, . - A_504440
+        .size   ndm_u_GetDaemonDisableCount, . - ndm_u_GetDaemonDisableCount
 
 @ FUN_00504498
-        .global A_504498
-        .type   A_504498, %function
-A_504498:
+        .global ndm_u_ClearHalfAwakeMacFilter
+        .type   ndm_u_ClearHalfAwakeMacFilter, %function
+ndm_u_ClearHalfAwakeMacFilter:
         mov     r0, r0
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
@@ -17013,12 +17013,12 @@ A_504498:
         pop     {r4, pc}
 L5044c8:
         .word   0x008b8818
-        .size   A_504498, . - A_504498
+        .size   ndm_u_ClearHalfAwakeMacFilter, . - ndm_u_ClearHalfAwakeMacFilter
 
 @ FUN_005044cc
-        .global A_5044cc
-        .type   A_5044cc, %function
-A_5044cc:
+        .global ndm_u_GetSchedulerDisableCount
+        .type   ndm_u_GetSchedulerDisableCount, %function
+ndm_u_GetSchedulerDisableCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mov     r6, r1
@@ -17039,12 +17039,12 @@ L50450c:
         pop     {r4, r5, r6, pc}
 L504510:
         .word   0x008b8818
-        .size   A_5044cc, . - A_5044cc
+        .size   ndm_u_GetSchedulerDisableCount, . - ndm_u_GetSchedulerDisableCount
 
 @ FUN_00504514
-        .global A_504514
-        .type   A_504514, %function
-A_504514:
+        .global ndm_u_LockState
+        .type   ndm_u_LockState, %function
+ndm_u_LockState:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L504548
@@ -17062,7 +17062,7 @@ L504548:
         .word   0x00040002
 L50454c:
         .word   0x008b8818
-        .size   A_504514, . - A_504514
+        .size   ndm_u_LockState, . - ndm_u_LockState
 
 @ FUN_0050c2fc
         .global A_50c2fc
@@ -17206,9 +17206,9 @@ L50c4fc:
         .size   A_50c4ac, . - A_50c4ac
 
 @ FUN_0050c638
-        .global A_50c638
-        .type   A_50c638, %function
-A_50c638:
+        .global ptm_sysm_GetRtcAlarm
+        .type   ptm_sysm_GetRtcAlarm, %function
+ptm_sysm_GetRtcAlarm:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17226,12 +17226,12 @@ L50c66c:
         pop     {r4, r5, r6, pc}
 L50c670:
         .word   0x008b8514
-        .size   A_50c638, . - A_50c638
+        .size   ptm_sysm_GetRtcAlarm, . - ptm_sysm_GetRtcAlarm
 
 @ FUN_0050c674
-        .global A_50c674
-        .type   A_50c674, %function
-A_50c674:
+        .global ptm_sysm_RebootAsync
+        .type   ptm_sysm_RebootAsync, %function
+ptm_sysm_RebootAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50c6a4
@@ -17248,12 +17248,12 @@ L50c6a4:
         .word   0x04090080
 L50c6a8:
         .word   0x008b8514
-        .size   A_50c674, . - A_50c674
+        .size   ptm_sysm_RebootAsync, . - ptm_sysm_RebootAsync
 
 @ FUN_0050c6ac
-        .global A_50c6ac
-        .type   A_50c6ac, %function
-A_50c6ac:
+        .global ptm_sysm_SetRtcAlarm
+        .type   ptm_sysm_SetRtcAlarm, %function
+ptm_sysm_SetRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50c6dc
@@ -17270,12 +17270,12 @@ L50c6dc:
         .word   0x00020080
 L50c6e0:
         .word   0x008b8514
-        .size   A_50c6ac, . - A_50c6ac
+        .size   ptm_sysm_SetRtcAlarm, . - ptm_sysm_SetRtcAlarm
 
 @ FUN_0050c6e4
-        .global A_50c6e4
-        .type   A_50c6e4, %function
-A_50c6e4:
+        .global ptm_sysm_SetUserTime
+        .type   ptm_sysm_SetUserTime, %function
+ptm_sysm_SetUserTime:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50c714
@@ -17292,12 +17292,12 @@ L50c714:
         .word   0x080c0080
 L50c718:
         .word   0x008b8514
-        .size   A_50c6e4, . - A_50c6e4
+        .size   ptm_sysm_SetUserTime, . - ptm_sysm_SetUserTime
 
 @ FUN_0050c71c
-        .global A_50c71c
-        .type   A_50c71c, %function
-A_50c71c:
+        .global ptm_sysm_RequestSleep
+        .type   ptm_sysm_RequestSleep, %function
+ptm_sysm_RequestSleep:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50c748
@@ -17313,12 +17313,12 @@ L50c748:
         .word   0x04060000
 L50c74c:
         .word   0x008b8514
-        .size   A_50c71c, . - A_50c71c
+        .size   ptm_sysm_RequestSleep, . - ptm_sysm_RequestSleep
 
 @ FUN_0050c750
-        .global A_50c750
-        .type   A_50c750, %function
-A_50c750:
+        .global ptm_sysm_GetShellState
+        .type   ptm_sysm_GetShellState, %function
+ptm_sysm_GetShellState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17336,12 +17336,12 @@ L50c784:
         pop     {r4, r5, r6, pc}
 L50c788:
         .word   0x008b8514
-        .size   A_50c750, . - A_50c750
+        .size   ptm_sysm_GetShellState, . - ptm_sysm_GetShellState
 
 @ FUN_0050c78c
-        .global A_50c78c
-        .type   A_50c78c, %function
-A_50c78c:
+        .global ptm_sysm_SetRtcAlarmEx
+        .type   ptm_sysm_SetRtcAlarmEx, %function
+ptm_sysm_SetRtcAlarmEx:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50c7c8
@@ -17361,12 +17361,12 @@ L50c7c8:
         .word   0x040100c0
 L50c7cc:
         .word   0x008b8514
-        .size   A_50c78c, . - A_50c78c
+        .size   ptm_sysm_SetRtcAlarmEx, . - ptm_sysm_SetRtcAlarmEx
 
 @ FUN_0050c7d0
-        .global A_50c7d0
-        .type   A_50c7d0, %function
-A_50c7d0:
+        .global ptm_sysm_ShutdownAsync
+        .type   ptm_sysm_ShutdownAsync, %function
+ptm_sysm_ShutdownAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50c804
@@ -17384,12 +17384,12 @@ L50c804:
         .word   0x040700c0
 L50c808:
         .word   0x008b8514
-        .size   A_50c7d0, . - A_50c7d0
+        .size   ptm_sysm_ShutdownAsync, . - ptm_sysm_ShutdownAsync
 
 @ FUN_0050c80c
-        .global A_50c80c
-        .type   A_50c80c, %function
-A_50c80c:
+        .global ptm_sysm_CancelRtcAlarm
+        .type   ptm_sysm_CancelRtcAlarm, %function
+ptm_sysm_CancelRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -17403,12 +17403,12 @@ A_50c80c:
         pop     {r4, pc}
 L50c838:
         .word   0x008b8514
-        .size   A_50c80c, . - A_50c80c
+        .size   ptm_sysm_CancelRtcAlarm, . - ptm_sysm_CancelRtcAlarm
 
 @ FUN_0050c83c
-        .global A_50c83c
-        .type   A_50c83c, %function
-A_50c83c:
+        .global ptm_sysm_FormatSavedata
+        .type   ptm_sysm_FormatSavedata, %function
+ptm_sysm_FormatSavedata:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50c868
@@ -17424,12 +17424,12 @@ L50c868:
         .word   0x08130000
 L50c86c:
         .word   0x008b8514
-        .size   A_50c83c, . - A_50c83c
+        .size   ptm_sysm_FormatSavedata, . - ptm_sysm_FormatSavedata
 
 @ FUN_0050c870
-        .global A_50c870
-        .type   A_50c870, %function
-A_50c870:
+        .global ptm_sysm_GetAwakeReason
+        .type   ptm_sysm_GetAwakeReason, %function
+ptm_sysm_GetAwakeReason:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mov     r6, r1
@@ -17453,7 +17453,7 @@ L50c8b8:
         .word   0x04050000
 L50c8bc:
         .word   0x008b8514
-        .size   A_50c870, . - A_50c870
+        .size   ptm_sysm_GetAwakeReason, . - ptm_sysm_GetAwakeReason
 
 @ FUN_0050c8c0
         .global A_50c8c0
@@ -17487,9 +17487,9 @@ L50c914:
         .size   A_50c8c0, . - A_50c8c0
 
 @ FUN_0050c918
-        .global A_50c918
-        .type   A_50c918, %function
-A_50c918:
+        .global ptm_sysm_GetShellStatus
+        .type   ptm_sysm_GetShellStatus, %function
+ptm_sysm_GetShellStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17509,12 +17509,12 @@ L50c950:
         .word   0x08110000
 L50c954:
         .word   0x008b8514
-        .size   A_50c918, . - A_50c918
+        .size   ptm_sysm_GetShellStatus, . - ptm_sysm_GetShellStatus
 
 @ FUN_0050c958
-        .global A_50c958
-        .type   A_50c958, %function
-A_50c958:
+        .global ptm_sysm_GetStepHistory
+        .type   ptm_sysm_GetStepHistory, %function
+ptm_sysm_GetStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50c99c
@@ -17536,12 +17536,12 @@ L50c99c:
         .word   0x000b00c2
 L50c9a0:
         .word   0x008b8514
-        .size   A_50c958, . - A_50c958
+        .size   ptm_sysm_GetStepHistory, . - ptm_sysm_GetStepHistory
 
 @ FUN_0050c9a4
-        .global A_50c9a4
-        .type   A_50c9a4, %function
-A_50c9a4:
+        .global ptm_sysm_SetStepHistory
+        .type   ptm_sysm_SetStepHistory, %function
+ptm_sysm_SetStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50c9e8
@@ -17563,12 +17563,12 @@ L50c9e8:
         .word   0x080600c2
 L50c9ec:
         .word   0x008b8514
-        .size   A_50c9a4, . - A_50c9a4
+        .size   ptm_sysm_SetStepHistory, . - ptm_sysm_SetStepHistory
 
 @ FUN_0050c9f0
-        .global A_50c9f0
-        .type   A_50c9f0, %function
-A_50c9f0:
+        .global ptm_sysm_GetAdapterState
+        .type   ptm_sysm_GetAdapterState, %function
+ptm_sysm_GetAdapterState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17586,12 +17586,12 @@ L50ca24:
         pop     {r4, r5, r6, pc}
 L50ca28:
         .word   0x008b8514
-        .size   A_50c9f0, . - A_50c9f0
+        .size   ptm_sysm_GetAdapterState, . - ptm_sysm_GetAdapterState
 
 @ FUN_0050ca2c
-        .global A_50ca2c
-        .type   A_50ca2c, %function
-A_50ca2c:
+        .global ptm_sysm_GetBatteryLevel
+        .type   ptm_sysm_GetBatteryLevel, %function
+ptm_sysm_GetBatteryLevel:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17609,12 +17609,12 @@ L50ca60:
         pop     {r4, r5, r6, pc}
 L50ca64:
         .word   0x008b8514
-        .size   A_50ca2c, . - A_50ca2c
+        .size   ptm_sysm_GetBatteryLevel, . - ptm_sysm_GetBatteryLevel
 
 @ FUN_0050ca68
-        .global A_50ca68
-        .type   A_50ca68, %function
-A_50ca68:
+        .global ptm_sysm_NotifyPlayEvent
+        .type   ptm_sysm_NotifyPlayEvent, %function
+ptm_sysm_NotifyPlayEvent:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -17636,12 +17636,12 @@ L50caac:
         .word   0x080e0140
 L50cab0:
         .word   0x008b8514
-        .size   A_50ca68, . - A_50ca68
+        .size   ptm_sysm_NotifyPlayEvent, . - ptm_sysm_NotifyPlayEvent
 
 @ FUN_0050cab4
-        .global A_50cab4
-        .type   A_50cab4, %function
-A_50cab4:
+        .global ptm_sysm_ReplySleepQuery
+        .type   ptm_sysm_ReplySleepQuery, %function
+ptm_sysm_ReplySleepQuery:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50caf0
@@ -17661,12 +17661,12 @@ L50caf0:
         .word   0x04020042
 L50caf4:
         .word   0x008b8514
-        .size   A_50cab4, . - A_50cab4
+        .size   ptm_sysm_ReplySleepQuery, . - ptm_sysm_ReplySleepQuery
 
 @ FUN_0050caf8
-        .global A_50caf8
-        .type   A_50caf8, %function
-A_50caf8:
+        .global ptm_sysm_ClearPlayHistory
+        .type   ptm_sysm_ClearPlayHistory, %function
+ptm_sysm_ClearPlayHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50cb24
@@ -17682,12 +17682,12 @@ L50cb24:
         .word   0x080a0000
 L50cb28:
         .word   0x008b8514
-        .size   A_50caf8, . - A_50caf8
+        .size   ptm_sysm_ClearPlayHistory, . - ptm_sysm_ClearPlayHistory
 
 @ FUN_0050cb2c
-        .global A_50cb2c
-        .type   A_50cb2c, %function
-A_50cb2c:
+        .global ptm_sysm_ClearStepHistory
+        .type   ptm_sysm_ClearStepHistory, %function
+ptm_sysm_ClearStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50cb58
@@ -17703,12 +17703,12 @@ L50cb58:
         .word   0x08050000
 L50cb5c:
         .word   0x008b8514
-        .size   A_50cb2c, . - A_50cb2c
+        .size   ptm_sysm_ClearStepHistory, . - ptm_sysm_ClearStepHistory
 
 @ FUN_0050cb60
-        .global A_50cb60
-        .type   A_50cb60, %function
-A_50cb60:
+        .global ptm_sysm_GetInfoLEDStatus
+        .type   ptm_sysm_GetInfoLEDStatus, %function
+ptm_sysm_GetInfoLEDStatus:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17728,12 +17728,12 @@ L50cb98:
         .word   0x08030000
 L50cb9c:
         .word   0x008b8514
-        .size   A_50cb60, . - A_50cb60
+        .size   ptm_sysm_GetInfoLEDStatus, . - ptm_sysm_GetInfoLEDStatus
 
 @ FUN_0050cba0
-        .global A_50cba0
-        .type   A_50cba0, %function
-A_50cba0:
+        .global ptm_sysm_GetSoftwareClosedFlag
+        .type   ptm_sysm_GetSoftwareClosedFlag, %function
+ptm_sysm_GetSoftwareClosedFlag:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17753,12 +17753,12 @@ L50cbd8:
         .word   0x080f0000
 L50cbdc:
         .word   0x008b8514
-        .size   A_50cba0, . - A_50cba0
+        .size   ptm_sysm_GetSoftwareClosedFlag, . - ptm_sysm_GetSoftwareClosedFlag
 
 @ FUN_0050cbe0
-        .global A_50cbe0
-        .type   A_50cbe0, %function
-A_50cbe0:
+        .global ptm_sysm_SetWakeupTrigger
+        .type   ptm_sysm_SetWakeupTrigger, %function
+ptm_sysm_SetWakeupTrigger:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50cc1c
@@ -17778,12 +17778,12 @@ L50cc1c:
         .word   0x04040102
 L50cc20:
         .word   0x008b8514
-        .size   A_50cbe0, . - A_50cbe0
+        .size   ptm_sysm_SetWakeupTrigger, . - ptm_sysm_SetWakeupTrigger
 
 @ FUN_0050cc24
-        .global A_50cc24
-        .type   A_50cc24, %function
-A_50cc24:
+        .global ptm_sysm_GetPedometerState
+        .type   ptm_sysm_GetPedometerState, %function
+ptm_sysm_GetPedometerState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17801,12 +17801,12 @@ L50cc58:
         pop     {r4, r5, r6, pc}
 L50cc5c:
         .word   0x008b8514
-        .size   A_50cc24, . - A_50cc24
+        .size   ptm_sysm_GetPedometerState, . - ptm_sysm_GetPedometerState
 
 @ FUN_0050cc60
-        .global A_50cc60
-        .type   A_50cc60, %function
-A_50cc60:
+        .global ptm_sysm_GetStepHistoryAll
+        .type   ptm_sysm_GetStepHistoryAll, %function
+ptm_sysm_GetStepHistoryAll:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50cca8
@@ -17829,12 +17829,12 @@ L50cca8:
         .word   0x000f0084
 L50ccac:
         .word   0x008b8514
-        .size   A_50cc60, . - A_50cc60
+        .size   ptm_sysm_GetStepHistoryAll, . - ptm_sysm_GetStepHistoryAll
 
 @ FUN_0050ccb0
-        .global A_50ccb0
-        .type   A_50ccb0, %function
-A_50ccb0:
+        .global ptm_sysm_GetTotalStepCount
+        .type   ptm_sysm_GetTotalStepCount, %function
+ptm_sysm_GetTotalStepCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17852,12 +17852,12 @@ L50cce4:
         pop     {r4, r5, r6, pc}
 L50cce8:
         .word   0x008b8514
-        .size   A_50ccb0, . - A_50ccb0
+        .size   ptm_sysm_GetTotalStepCount, . - ptm_sysm_GetTotalStepCount
 
 @ FUN_0050cd30
-        .global A_50cd30
-        .type   A_50cd30, %function
-A_50cd30:
+        .global ptm_sysm_ClearSoftwareClosedFlag
+        .type   ptm_sysm_ClearSoftwareClosedFlag, %function
+ptm_sysm_ClearSoftwareClosedFlag:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x8100000
@@ -17871,12 +17871,12 @@ A_50cd30:
         pop     {r4, pc}
 L50cd5c:
         .word   0x008b8514
-        .size   A_50cd30, . - A_50cd30
+        .size   ptm_sysm_ClearSoftwareClosedFlag, . - ptm_sysm_ClearSoftwareClosedFlag
 
 @ FUN_0050cd60
-        .global A_50cd60
-        .type   A_50cd60, %function
-A_50cd60:
+        .global ptm_sysm_GetPlayHistoryStart
+        .type   ptm_sysm_GetPlayHistoryStart, %function
+ptm_sysm_GetPlayHistoryStart:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17896,12 +17896,12 @@ L50cd98:
         .word   0x08080000
 L50cd9c:
         .word   0x008b8514
-        .size   A_50cd60, . - A_50cd60
+        .size   ptm_sysm_GetPlayHistoryStart, . - ptm_sysm_GetPlayHistoryStart
 
 @ FUN_0050cda0
-        .global A_50cda0
-        .type   A_50cda0, %function
-A_50cda0:
+        .global ptm_sysm_GetStepHistoryEntry
+        .type   ptm_sysm_GetStepHistoryEntry, %function
+ptm_sysm_GetStepHistoryEntry:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50cde0
@@ -17922,7 +17922,7 @@ L50cde0:
         .word   0x000a0042
 L50cde4:
         .word   0x008b8514
-        .size   A_50cda0, . - A_50cda0
+        .size   ptm_sysm_GetStepHistoryEntry, . - ptm_sysm_GetStepHistoryEntry
 
 @ FUN_0050cde8
         .global A_50cde8
@@ -17975,9 +17975,9 @@ L50ce68:
         .size   A_50ce28, . - A_50ce28
 
 @ FUN_0050ce6c
-        .global A_50ce6c
-        .type   A_50ce6c, %function
-A_50ce6c:
+        .global ptm_sysm_GetPlayHistoryLength
+        .type   ptm_sysm_GetPlayHistoryLength, %function
+ptm_sysm_GetPlayHistoryLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -17997,12 +17997,12 @@ L50cea4:
         .word   0x08090000
 L50cea8:
         .word   0x008b8514
-        .size   A_50ce6c, . - A_50ce6c
+        .size   ptm_sysm_GetPlayHistoryLength, . - ptm_sysm_GetPlayHistoryLength
 
 @ FUN_0050ceac
-        .global A_50ceac
-        .type   A_50ceac, %function
-A_50ceac:
+        .global ptm_sysm_InvalidateSystemTime
+        .type   ptm_sysm_InvalidateSystemTime, %function
+ptm_sysm_InvalidateSystemTime:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50ced8
@@ -18018,12 +18018,12 @@ L50ced8:
         .word   0x080d0000
 L50cedc:
         .word   0x008b8514
-        .size   A_50ceac, . - A_50ceac
+        .size   ptm_sysm_InvalidateSystemTime, . - ptm_sysm_InvalidateSystemTime
 
 @ FUN_0050cee0
-        .global A_50cee0
-        .type   A_50cee0, %function
-A_50cee0:
+        .global ptm_sysm_GetBatteryChargeState
+        .type   ptm_sysm_GetBatteryChargeState, %function
+ptm_sysm_GetBatteryChargeState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18041,12 +18041,12 @@ L50cf14:
         pop     {r4, r5, r6, pc}
 L50cf18:
         .word   0x008b8514
-        .size   A_50cee0, . - A_50cee0
+        .size   ptm_sysm_GetBatteryChargeState, . - ptm_sysm_GetBatteryChargeState
 
 @ FUN_0050cf1c
-        .global A_50cf1c
-        .type   A_50cf1c, %function
-A_50cf1c:
+        .global ptm_sysm_SetInfoLEDPatternHeader
+        .type   ptm_sysm_SetInfoLEDPatternHeader, %function
+ptm_sysm_SetInfoLEDPatternHeader:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50cf4c
@@ -18063,12 +18063,12 @@ L50cf4c:
         .word   0x08020040
 L50cf50:
         .word   0x008b8514
-        .size   A_50cf1c, . - A_50cf1c
+        .size   ptm_sysm_SetInfoLEDPatternHeader, . - ptm_sysm_SetInfoLEDPatternHeader
 
 @ FUN_0050cf54
-        .global A_50cf54
-        .type   A_50cf54, %function
-A_50cf54:
+        .global ptm_sysm_IsShutdownByBatteryEmpty
+        .type   ptm_sysm_IsShutdownByBatteryEmpty, %function
+ptm_sysm_IsShutdownByBatteryEmpty:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18088,12 +18088,12 @@ L50cf8c:
         .word   0x08120000
 L50cf90:
         .word   0x008b8514
-        .size   A_50cf54, . - A_50cf54
+        .size   ptm_sysm_IsShutdownByBatteryEmpty, . - ptm_sysm_IsShutdownByBatteryEmpty
 
 @ FUN_0050cf94
-        .global A_50cf94
-        .type   A_50cf94, %function
-A_50cf94:
+        .global ptm_sysm_GetPedometerRecordingMode
+        .type   ptm_sysm_GetPedometerRecordingMode, %function
+ptm_sysm_GetPedometerRecordingMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18111,12 +18111,12 @@ L50cfc8:
         pop     {r4, r5, r6, pc}
 L50cfcc:
         .word   0x008b8514
-        .size   A_50cf94, . - A_50cf94
+        .size   ptm_sysm_GetPedometerRecordingMode, . - ptm_sysm_GetPedometerRecordingMode
 
 @ FUN_0050cfd0
-        .global A_50cfd0
-        .type   A_50cfd0, %function
-A_50cfd0:
+        .global ptm_sysm_SetBatteryEmptyLEDPattern
+        .type   ptm_sysm_SetBatteryEmptyLEDPattern, %function
+ptm_sysm_SetBatteryEmptyLEDPattern:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50d000
@@ -18133,12 +18133,12 @@ L50d000:
         .word   0x08040040
 L50d004:
         .word   0x008b8514
-        .size   A_50cfd0, . - A_50cfd0
+        .size   ptm_sysm_SetBatteryEmptyLEDPattern, . - ptm_sysm_SetBatteryEmptyLEDPattern
 
 @ FUN_0050d008
-        .global A_50d008
-        .type   A_50d008, %function
-A_50d008:
+        .global ptm_sysm_SetPedometerRecordingMode
+        .type   ptm_sysm_SetPedometerRecordingMode, %function
+ptm_sysm_SetPedometerRecordingMode:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50d038
@@ -18155,12 +18155,12 @@ L50d038:
         .word   0x000d0040
 L50d03c:
         .word   0x008b8514
-        .size   A_50d008, . - A_50d008
+        .size   ptm_sysm_SetPedometerRecordingMode, . - ptm_sysm_SetPedometerRecordingMode
 
 @ FUN_0050d040
-        .global A_50d040
-        .type   A_50d040, %function
-A_50d040:
+        .global ptm_sysm_GetLegacyJumpProhibitedFlag
+        .type   ptm_sysm_GetLegacyJumpProhibitedFlag, %function
+ptm_sysm_GetLegacyJumpProhibitedFlag:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18180,12 +18180,12 @@ L50d078:
         .word   0x08140000
 L50d07c:
         .word   0x008b8514
-        .size   A_50d040, . - A_50d040
+        .size   ptm_sysm_GetLegacyJumpProhibitedFlag, . - ptm_sysm_GetLegacyJumpProhibitedFlag
 
 @ FUN_0050d080
-        .global A_50d080
-        .type   A_50d080, %function
-A_50d080:
+        .global ptm_sysm_SetPlayHistoryRecordingMode
+        .type   ptm_sysm_SetPlayHistoryRecordingMode, %function
+ptm_sysm_SetPlayHistoryRecordingMode:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50d0b4
@@ -18203,12 +18203,12 @@ L50d0b4:
         .word   0x08150040
 L50d0b8:
         .word   0x008b8514
-        .size   A_50d080, . - A_50d080
+        .size   ptm_sysm_SetPlayHistoryRecordingMode, . - ptm_sysm_SetPlayHistoryRecordingMode
 
 @ FUN_0050d0bc
-        .global A_50d0bc
-        .type   A_50d0bc, %function
-A_50d0bc:
+        .global ptm_sysm_NotifySleepPreparationComplete
+        .type   ptm_sysm_NotifySleepPreparationComplete, %function
+ptm_sysm_NotifySleepPreparationComplete:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50d0f4
@@ -18227,12 +18227,12 @@ L50d0f4:
         .word   0x04030042
 L50d0f8:
         .word   0x008b8514
-        .size   A_50d0bc, . - A_50d0bc
+        .size   ptm_sysm_NotifySleepPreparationComplete, . - ptm_sysm_NotifySleepPreparationComplete
 
 @ FUN_0050d0fc
-        .global A_50d0fc
-        .type   A_50d0fc, %function
-A_50d0fc:
+        .global ptm_sysm_Awake
+        .type   ptm_sysm_Awake, %function
+ptm_sysm_Awake:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50d128
@@ -18248,7 +18248,7 @@ L50d128:
         .word   0x04080000
 L50d12c:
         .word   0x008b8514
-        .size   A_50d0fc, . - A_50d0fc
+        .size   ptm_sysm_Awake, . - ptm_sysm_Awake
 
 @ FUN_0050d130
         .global A_50d130
@@ -18298,9 +18298,9 @@ L50d1a4:
         .size   A_50d170, . - A_50d170
 
 @ FUN_0050d1a8
-        .global A_50d1a8
-        .type   A_50d1a8, %function
-A_50d1a8:
+        .global ptm_s_GetRtcAlarm
+        .type   ptm_s_GetRtcAlarm, %function
+ptm_s_GetRtcAlarm:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18318,12 +18318,12 @@ L50d1dc:
         pop     {r4, r5, r6, pc}
 L50d1e0:
         .word   0x008b851c
-        .size   A_50d1a8, . - A_50d1a8
+        .size   ptm_s_GetRtcAlarm, . - ptm_s_GetRtcAlarm
 
 @ FUN_0050d1e4
-        .global A_50d1e4
-        .type   A_50d1e4, %function
-A_50d1e4:
+        .global ptm_s_RebootAsync
+        .type   ptm_s_RebootAsync, %function
+ptm_s_RebootAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50d214
@@ -18340,12 +18340,12 @@ L50d214:
         .word   0x04090080
 L50d218:
         .word   0x008b851c
-        .size   A_50d1e4, . - A_50d1e4
+        .size   ptm_s_RebootAsync, . - ptm_s_RebootAsync
 
 @ FUN_0050d21c
-        .global A_50d21c
-        .type   A_50d21c, %function
-A_50d21c:
+        .global ptm_s_SetRtcAlarm
+        .type   ptm_s_SetRtcAlarm, %function
+ptm_s_SetRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50d24c
@@ -18362,12 +18362,12 @@ L50d24c:
         .word   0x00020080
 L50d250:
         .word   0x008b851c
-        .size   A_50d21c, . - A_50d21c
+        .size   ptm_s_SetRtcAlarm, . - ptm_s_SetRtcAlarm
 
 @ FUN_0050d254
-        .global A_50d254
-        .type   A_50d254, %function
-A_50d254:
+        .global ptm_s_RequestSleep
+        .type   ptm_s_RequestSleep, %function
+ptm_s_RequestSleep:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50d280
@@ -18383,12 +18383,12 @@ L50d280:
         .word   0x04060000
 L50d284:
         .word   0x008b851c
-        .size   A_50d254, . - A_50d254
+        .size   ptm_s_RequestSleep, . - ptm_s_RequestSleep
 
 @ FUN_0050d288
-        .global A_50d288
-        .type   A_50d288, %function
-A_50d288:
+        .global ptm_s_GetShellState
+        .type   ptm_s_GetShellState, %function
+ptm_s_GetShellState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18406,12 +18406,12 @@ L50d2bc:
         pop     {r4, r5, r6, pc}
 L50d2c0:
         .word   0x008b851c
-        .size   A_50d288, . - A_50d288
+        .size   ptm_s_GetShellState, . - ptm_s_GetShellState
 
 @ FUN_0050d2c4
-        .global A_50d2c4
-        .type   A_50d2c4, %function
-A_50d2c4:
+        .global ptm_s_SetRtcAlarmEx
+        .type   ptm_s_SetRtcAlarmEx, %function
+ptm_s_SetRtcAlarmEx:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50d300
@@ -18431,12 +18431,12 @@ L50d300:
         .word   0x040100c0
 L50d304:
         .word   0x008b851c
-        .size   A_50d2c4, . - A_50d2c4
+        .size   ptm_s_SetRtcAlarmEx, . - ptm_s_SetRtcAlarmEx
 
 @ FUN_0050d308
-        .global A_50d308
-        .type   A_50d308, %function
-A_50d308:
+        .global ptm_s_ShutdownAsync
+        .type   ptm_s_ShutdownAsync, %function
+ptm_s_ShutdownAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50d33c
@@ -18454,12 +18454,12 @@ L50d33c:
         .word   0x040700c0
 L50d340:
         .word   0x008b851c
-        .size   A_50d308, . - A_50d308
+        .size   ptm_s_ShutdownAsync, . - ptm_s_ShutdownAsync
 
 @ FUN_0050d344
-        .global A_50d344
-        .type   A_50d344, %function
-A_50d344:
+        .global ptm_s_CancelRtcAlarm
+        .type   ptm_s_CancelRtcAlarm, %function
+ptm_s_CancelRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -18473,12 +18473,12 @@ A_50d344:
         pop     {r4, pc}
 L50d370:
         .word   0x008b851c
-        .size   A_50d344, . - A_50d344
+        .size   ptm_s_CancelRtcAlarm, . - ptm_s_CancelRtcAlarm
 
 @ FUN_0050d374
-        .global A_50d374
-        .type   A_50d374, %function
-A_50d374:
+        .global ptm_s_GetAwakeReason
+        .type   ptm_s_GetAwakeReason, %function
+ptm_s_GetAwakeReason:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mov     r6, r1
@@ -18502,12 +18502,12 @@ L50d3bc:
         .word   0x04050000
 L50d3c0:
         .word   0x008b851c
-        .size   A_50d374, . - A_50d374
+        .size   ptm_s_GetAwakeReason, . - ptm_s_GetAwakeReason
 
 @ FUN_0050d3c4
-        .global A_50d3c4
-        .type   A_50d3c4, %function
-A_50d3c4:
+        .global ptm_s_GetStepHistory
+        .type   ptm_s_GetStepHistory, %function
+ptm_s_GetStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50d408
@@ -18529,12 +18529,12 @@ L50d408:
         .word   0x000b00c2
 L50d40c:
         .word   0x008b851c
-        .size   A_50d3c4, . - A_50d3c4
+        .size   ptm_s_GetStepHistory, . - ptm_s_GetStepHistory
 
 @ FUN_0050d410
-        .global A_50d410
-        .type   A_50d410, %function
-A_50d410:
+        .global ptm_s_GetAdapterState
+        .type   ptm_s_GetAdapterState, %function
+ptm_s_GetAdapterState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18552,12 +18552,12 @@ L50d444:
         pop     {r4, r5, r6, pc}
 L50d448:
         .word   0x008b851c
-        .size   A_50d410, . - A_50d410
+        .size   ptm_s_GetAdapterState, . - ptm_s_GetAdapterState
 
 @ FUN_0050d44c
-        .global A_50d44c
-        .type   A_50d44c, %function
-A_50d44c:
+        .global ptm_s_GetBatteryLevel
+        .type   ptm_s_GetBatteryLevel, %function
+ptm_s_GetBatteryLevel:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18575,12 +18575,12 @@ L50d480:
         pop     {r4, r5, r6, pc}
 L50d484:
         .word   0x008b851c
-        .size   A_50d44c, . - A_50d44c
+        .size   ptm_s_GetBatteryLevel, . - ptm_s_GetBatteryLevel
 
 @ FUN_0050d488
-        .global A_50d488
-        .type   A_50d488, %function
-A_50d488:
+        .global ptm_s_ReplySleepQuery
+        .type   ptm_s_ReplySleepQuery, %function
+ptm_s_ReplySleepQuery:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50d4c4
@@ -18600,12 +18600,12 @@ L50d4c4:
         .word   0x04020042
 L50d4c8:
         .word   0x008b851c
-        .size   A_50d488, . - A_50d488
+        .size   ptm_s_ReplySleepQuery, . - ptm_s_ReplySleepQuery
 
 @ FUN_0050d4cc
-        .global A_50d4cc
-        .type   A_50d4cc, %function
-A_50d4cc:
+        .global ptm_s_SetWakeupTrigger
+        .type   ptm_s_SetWakeupTrigger, %function
+ptm_s_SetWakeupTrigger:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50d508
@@ -18625,12 +18625,12 @@ L50d508:
         .word   0x04040102
 L50d50c:
         .word   0x008b851c
-        .size   A_50d4cc, . - A_50d4cc
+        .size   ptm_s_SetWakeupTrigger, . - ptm_s_SetWakeupTrigger
 
 @ FUN_0050d510
-        .global A_50d510
-        .type   A_50d510, %function
-A_50d510:
+        .global ptm_s_GetPedometerState
+        .type   ptm_s_GetPedometerState, %function
+ptm_s_GetPedometerState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18648,12 +18648,12 @@ L50d544:
         pop     {r4, r5, r6, pc}
 L50d548:
         .word   0x008b851c
-        .size   A_50d510, . - A_50d510
+        .size   ptm_s_GetPedometerState, . - ptm_s_GetPedometerState
 
 @ FUN_0050d54c
-        .global A_50d54c
-        .type   A_50d54c, %function
-A_50d54c:
+        .global ptm_s_GetStepHistoryAll
+        .type   ptm_s_GetStepHistoryAll, %function
+ptm_s_GetStepHistoryAll:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50d594
@@ -18676,12 +18676,12 @@ L50d594:
         .word   0x000f0084
 L50d598:
         .word   0x008b851c
-        .size   A_50d54c, . - A_50d54c
+        .size   ptm_s_GetStepHistoryAll, . - ptm_s_GetStepHistoryAll
 
 @ FUN_0050d59c
-        .global A_50d59c
-        .type   A_50d59c, %function
-A_50d59c:
+        .global ptm_s_GetTotalStepCount
+        .type   ptm_s_GetTotalStepCount, %function
+ptm_s_GetTotalStepCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18699,12 +18699,12 @@ L50d5d0:
         pop     {r4, r5, r6, pc}
 L50d5d4:
         .word   0x008b851c
-        .size   A_50d59c, . - A_50d59c
+        .size   ptm_s_GetTotalStepCount, . - ptm_s_GetTotalStepCount
 
 @ FUN_0050d5d8
-        .global A_50d5d8
-        .type   A_50d5d8, %function
-A_50d5d8:
+        .global ptm_s_GetStepHistoryEntry
+        .type   ptm_s_GetStepHistoryEntry, %function
+ptm_s_GetStepHistoryEntry:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50d618
@@ -18725,7 +18725,7 @@ L50d618:
         .word   0x000a0042
 L50d61c:
         .word   0x008b851c
-        .size   A_50d5d8, . - A_50d5d8
+        .size   ptm_s_GetStepHistoryEntry, . - ptm_s_GetStepHistoryEntry
 
 @ FUN_0050d620
         .global A_50d620
@@ -18752,9 +18752,9 @@ L50d65c:
         .size   A_50d620, . - A_50d620
 
 @ FUN_0050d660
-        .global A_50d660
-        .type   A_50d660, %function
-A_50d660:
+        .global ptm_s_GetBatteryChargeState
+        .type   ptm_s_GetBatteryChargeState, %function
+ptm_s_GetBatteryChargeState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18772,12 +18772,12 @@ L50d694:
         pop     {r4, r5, r6, pc}
 L50d698:
         .word   0x008b851c
-        .size   A_50d660, . - A_50d660
+        .size   ptm_s_GetBatteryChargeState, . - ptm_s_GetBatteryChargeState
 
 @ FUN_0050d69c
-        .global A_50d69c
-        .type   A_50d69c, %function
-A_50d69c:
+        .global ptm_s_GetPedometerRecordingMode
+        .type   ptm_s_GetPedometerRecordingMode, %function
+ptm_s_GetPedometerRecordingMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18795,12 +18795,12 @@ L50d6d0:
         pop     {r4, r5, r6, pc}
 L50d6d4:
         .word   0x008b851c
-        .size   A_50d69c, . - A_50d69c
+        .size   ptm_s_GetPedometerRecordingMode, . - ptm_s_GetPedometerRecordingMode
 
 @ FUN_0050d6d8
-        .global A_50d6d8
-        .type   A_50d6d8, %function
-A_50d6d8:
+        .global ptm_s_SetPedometerRecordingMode
+        .type   ptm_s_SetPedometerRecordingMode, %function
+ptm_s_SetPedometerRecordingMode:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50d708
@@ -18817,12 +18817,12 @@ L50d708:
         .word   0x000d0040
 L50d70c:
         .word   0x008b851c
-        .size   A_50d6d8, . - A_50d6d8
+        .size   ptm_s_SetPedometerRecordingMode, . - ptm_s_SetPedometerRecordingMode
 
 @ FUN_0050d710
-        .global A_50d710
-        .type   A_50d710, %function
-A_50d710:
+        .global ptm_s_NotifySleepPreparationComplete
+        .type   ptm_s_NotifySleepPreparationComplete, %function
+ptm_s_NotifySleepPreparationComplete:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50d748
@@ -18841,12 +18841,12 @@ L50d748:
         .word   0x04030042
 L50d74c:
         .word   0x008b851c
-        .size   A_50d710, . - A_50d710
+        .size   ptm_s_NotifySleepPreparationComplete, . - ptm_s_NotifySleepPreparationComplete
 
 @ FUN_0050d750
-        .global A_50d750
-        .type   A_50d750, %function
-A_50d750:
+        .global ptm_s_Awake
+        .type   ptm_s_Awake, %function
+ptm_s_Awake:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L50d77c
@@ -18862,12 +18862,12 @@ L50d77c:
         .word   0x04080000
 L50d780:
         .word   0x008b851c
-        .size   A_50d750, . - A_50d750
+        .size   ptm_s_Awake, . - ptm_s_Awake
 
 @ FUN_0050d784
-        .global A_50d784
-        .type   A_50d784, %function
-A_50d784:
+        .global ptm_gets_GetRtcAlarm
+        .type   ptm_gets_GetRtcAlarm, %function
+ptm_gets_GetRtcAlarm:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18885,12 +18885,12 @@ L50d7b8:
         pop     {r4, r5, r6, pc}
 L50d7bc:
         .word   0x008b8518
-        .size   A_50d784, . - A_50d784
+        .size   ptm_gets_GetRtcAlarm, . - ptm_gets_GetRtcAlarm
 
 @ FUN_0050d7c0
-        .global A_50d7c0
-        .type   A_50d7c0, %function
-A_50d7c0:
+        .global ptm_gets_SetRtcAlarm
+        .type   ptm_gets_SetRtcAlarm, %function
+ptm_gets_SetRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50d7f0
@@ -18907,12 +18907,12 @@ L50d7f0:
         .word   0x00020080
 L50d7f4:
         .word   0x008b8518
-        .size   A_50d7c0, . - A_50d7c0
+        .size   ptm_gets_SetRtcAlarm, . - ptm_gets_SetRtcAlarm
 
 @ FUN_0050d7f8
-        .global A_50d7f8
-        .type   A_50d7f8, %function
-A_50d7f8:
+        .global ptm_gets_GetShellState
+        .type   ptm_gets_GetShellState, %function
+ptm_gets_GetShellState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -18930,7 +18930,7 @@ L50d82c:
         pop     {r4, r5, r6, pc}
 L50d830:
         .word   0x008b8518
-        .size   A_50d7f8, . - A_50d7f8
+        .size   ptm_gets_GetShellState, . - ptm_gets_GetShellState
 
 @ FUN_0050d834
         .global A_50d834
@@ -18958,9 +18958,9 @@ L50d870:
         .size   A_50d834, . - A_50d834
 
 @ FUN_0050d874
-        .global A_50d874
-        .type   A_50d874, %function
-A_50d874:
+        .global ptm_gets_CancelRtcAlarm
+        .type   ptm_gets_CancelRtcAlarm, %function
+ptm_gets_CancelRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -18974,12 +18974,12 @@ A_50d874:
         pop     {r4, pc}
 L50d8a0:
         .word   0x008b8518
-        .size   A_50d874, . - A_50d874
+        .size   ptm_gets_CancelRtcAlarm, . - ptm_gets_CancelRtcAlarm
 
 @ FUN_0050d8a4
-        .global A_50d8a4
-        .type   A_50d8a4, %function
-A_50d8a4:
+        .global ptm_gets_GetStepHistory
+        .type   ptm_gets_GetStepHistory, %function
+ptm_gets_GetStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50d8e8
@@ -19001,12 +19001,12 @@ L50d8e8:
         .word   0x000b00c2
 L50d8ec:
         .word   0x008b8518
-        .size   A_50d8a4, . - A_50d8a4
+        .size   ptm_gets_GetStepHistory, . - ptm_gets_GetStepHistory
 
 @ FUN_0050d8f0
-        .global A_50d8f0
-        .type   A_50d8f0, %function
-A_50d8f0:
+        .global ptm_gets_GetAdapterState
+        .type   ptm_gets_GetAdapterState, %function
+ptm_gets_GetAdapterState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19024,12 +19024,12 @@ L50d924:
         pop     {r4, r5, r6, pc}
 L50d928:
         .word   0x008b8518
-        .size   A_50d8f0, . - A_50d8f0
+        .size   ptm_gets_GetAdapterState, . - ptm_gets_GetAdapterState
 
 @ FUN_0050d92c
-        .global A_50d92c
-        .type   A_50d92c, %function
-A_50d92c:
+        .global ptm_gets_GetBatteryLevel
+        .type   ptm_gets_GetBatteryLevel, %function
+ptm_gets_GetBatteryLevel:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19047,12 +19047,12 @@ L50d960:
         pop     {r4, r5, r6, pc}
 L50d964:
         .word   0x008b8518
-        .size   A_50d92c, . - A_50d92c
+        .size   ptm_gets_GetBatteryLevel, . - ptm_gets_GetBatteryLevel
 
 @ FUN_0050d968
-        .global A_50d968
-        .type   A_50d968, %function
-A_50d968:
+        .global ptm_gets_GetPedometerState
+        .type   ptm_gets_GetPedometerState, %function
+ptm_gets_GetPedometerState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19070,12 +19070,12 @@ L50d99c:
         pop     {r4, r5, r6, pc}
 L50d9a0:
         .word   0x008b8518
-        .size   A_50d968, . - A_50d968
+        .size   ptm_gets_GetPedometerState, . - ptm_gets_GetPedometerState
 
 @ FUN_0050d9a4
-        .global A_50d9a4
-        .type   A_50d9a4, %function
-A_50d9a4:
+        .global ptm_gets_GetStepHistoryAll
+        .type   ptm_gets_GetStepHistoryAll, %function
+ptm_gets_GetStepHistoryAll:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50d9ec
@@ -19098,12 +19098,12 @@ L50d9ec:
         .word   0x000f0084
 L50d9f0:
         .word   0x008b8518
-        .size   A_50d9a4, . - A_50d9a4
+        .size   ptm_gets_GetStepHistoryAll, . - ptm_gets_GetStepHistoryAll
 
 @ FUN_0050d9f4
-        .global A_50d9f4
-        .type   A_50d9f4, %function
-A_50d9f4:
+        .global ptm_gets_GetTotalStepCount
+        .type   ptm_gets_GetTotalStepCount, %function
+ptm_gets_GetTotalStepCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19121,12 +19121,12 @@ L50da28:
         pop     {r4, r5, r6, pc}
 L50da2c:
         .word   0x008b8518
-        .size   A_50d9f4, . - A_50d9f4
+        .size   ptm_gets_GetTotalStepCount, . - ptm_gets_GetTotalStepCount
 
 @ FUN_0050da30
-        .global A_50da30
-        .type   A_50da30, %function
-A_50da30:
+        .global ptm_gets_GetStepHistoryEntry
+        .type   ptm_gets_GetStepHistoryEntry, %function
+ptm_gets_GetStepHistoryEntry:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50da70
@@ -19147,7 +19147,7 @@ L50da70:
         .word   0x000a0042
 L50da74:
         .word   0x008b8518
-        .size   A_50da30, . - A_50da30
+        .size   ptm_gets_GetStepHistoryEntry, . - ptm_gets_GetStepHistoryEntry
 
 @ FUN_0050da78
         .global A_50da78
@@ -19174,9 +19174,9 @@ L50dab4:
         .size   A_50da78, . - A_50da78
 
 @ FUN_0050dab8
-        .global A_50dab8
-        .type   A_50dab8, %function
-A_50dab8:
+        .global ptm_gets_GetBatteryChargeState
+        .type   ptm_gets_GetBatteryChargeState, %function
+ptm_gets_GetBatteryChargeState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19194,12 +19194,12 @@ L50daec:
         pop     {r4, r5, r6, pc}
 L50daf0:
         .word   0x008b8518
-        .size   A_50dab8, . - A_50dab8
+        .size   ptm_gets_GetBatteryChargeState, . - ptm_gets_GetBatteryChargeState
 
 @ FUN_0050daf4
-        .global A_50daf4
-        .type   A_50daf4, %function
-A_50daf4:
+        .global ptm_gets_GetPedometerRecordingMode
+        .type   ptm_gets_GetPedometerRecordingMode, %function
+ptm_gets_GetPedometerRecordingMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19217,12 +19217,12 @@ L50db28:
         pop     {r4, r5, r6, pc}
 L50db2c:
         .word   0x008b8518
-        .size   A_50daf4, . - A_50daf4
+        .size   ptm_gets_GetPedometerRecordingMode, . - ptm_gets_GetPedometerRecordingMode
 
 @ FUN_0050db30
-        .global A_50db30
-        .type   A_50db30, %function
-A_50db30:
+        .global ptm_gets_SetPedometerRecordingMode
+        .type   ptm_gets_SetPedometerRecordingMode, %function
+ptm_gets_SetPedometerRecordingMode:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50db60
@@ -19239,12 +19239,12 @@ L50db60:
         .word   0x000d0040
 L50db64:
         .word   0x008b8518
-        .size   A_50db30, . - A_50db30
+        .size   ptm_gets_SetPedometerRecordingMode, . - ptm_gets_SetPedometerRecordingMode
 
 @ FUN_0050db68
-        .global A_50db68
-        .type   A_50db68, %function
-A_50db68:
+        .global ptm_play_GetRtcAlarm
+        .type   ptm_play_GetRtcAlarm, %function
+ptm_play_GetRtcAlarm:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19262,12 +19262,12 @@ L50db9c:
         pop     {r4, r5, r6, pc}
 L50dba0:
         .word   0x008b8510
-        .size   A_50db68, . - A_50db68
+        .size   ptm_play_GetRtcAlarm, . - ptm_play_GetRtcAlarm
 
 @ FUN_0050dba4
-        .global A_50dba4
-        .type   A_50dba4, %function
-A_50dba4:
+        .global ptm_play_SetRtcAlarm
+        .type   ptm_play_SetRtcAlarm, %function
+ptm_play_SetRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50dbd4
@@ -19284,12 +19284,12 @@ L50dbd4:
         .word   0x00020080
 L50dbd8:
         .word   0x008b8510
-        .size   A_50dba4, . - A_50dba4
+        .size   ptm_play_SetRtcAlarm, . - ptm_play_SetRtcAlarm
 
 @ FUN_0050dbdc
-        .global A_50dbdc
-        .type   A_50dbdc, %function
-A_50dbdc:
+        .global ptm_play_GetShellState
+        .type   ptm_play_GetShellState, %function
+ptm_play_GetShellState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19307,12 +19307,12 @@ L50dc10:
         pop     {r4, r5, r6, pc}
 L50dc14:
         .word   0x008b8510
-        .size   A_50dbdc, . - A_50dbdc
+        .size   ptm_play_GetShellState, . - ptm_play_GetShellState
 
 @ FUN_0050dc18
-        .global A_50dc18
-        .type   A_50dc18, %function
-A_50dc18:
+        .global ptm_play_CancelRtcAlarm
+        .type   ptm_play_CancelRtcAlarm, %function
+ptm_play_CancelRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -19326,7 +19326,7 @@ A_50dc18:
         pop     {r4, pc}
 L50dc44:
         .word   0x008b8510
-        .size   A_50dc18, . - A_50dc18
+        .size   ptm_play_CancelRtcAlarm, . - ptm_play_CancelRtcAlarm
 
 @ FUN_0050dc48
         .global A_50dc48
@@ -19360,9 +19360,9 @@ L50dc9c:
         .size   A_50dc48, . - A_50dc48
 
 @ FUN_0050dca0
-        .global A_50dca0
-        .type   A_50dca0, %function
-A_50dca0:
+        .global ptm_play_GetStepHistory
+        .type   ptm_play_GetStepHistory, %function
+ptm_play_GetStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50dce4
@@ -19384,12 +19384,12 @@ L50dce4:
         .word   0x000b00c2
 L50dce8:
         .word   0x008b8510
-        .size   A_50dca0, . - A_50dca0
+        .size   ptm_play_GetStepHistory, . - ptm_play_GetStepHistory
 
 @ FUN_0050dcec
-        .global A_50dcec
-        .type   A_50dcec, %function
-A_50dcec:
+        .global ptm_play_GetAdapterState
+        .type   ptm_play_GetAdapterState, %function
+ptm_play_GetAdapterState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19407,12 +19407,12 @@ L50dd20:
         pop     {r4, r5, r6, pc}
 L50dd24:
         .word   0x008b8510
-        .size   A_50dcec, . - A_50dcec
+        .size   ptm_play_GetAdapterState, . - ptm_play_GetAdapterState
 
 @ FUN_0050dd28
-        .global A_50dd28
-        .type   A_50dd28, %function
-A_50dd28:
+        .global ptm_play_GetBatteryLevel
+        .type   ptm_play_GetBatteryLevel, %function
+ptm_play_GetBatteryLevel:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19430,12 +19430,12 @@ L50dd5c:
         pop     {r4, r5, r6, pc}
 L50dd60:
         .word   0x008b8510
-        .size   A_50dd28, . - A_50dd28
+        .size   ptm_play_GetBatteryLevel, . - ptm_play_GetBatteryLevel
 
 @ FUN_0050dd64
-        .global A_50dd64
-        .type   A_50dd64, %function
-A_50dd64:
+        .global ptm_play_GetPedometerState
+        .type   ptm_play_GetPedometerState, %function
+ptm_play_GetPedometerState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19453,12 +19453,12 @@ L50dd98:
         pop     {r4, r5, r6, pc}
 L50dd9c:
         .word   0x008b8510
-        .size   A_50dd64, . - A_50dd64
+        .size   ptm_play_GetPedometerState, . - ptm_play_GetPedometerState
 
 @ FUN_0050dda0
-        .global A_50dda0
-        .type   A_50dda0, %function
-A_50dda0:
+        .global ptm_play_GetStepHistoryAll
+        .type   ptm_play_GetStepHistoryAll, %function
+ptm_play_GetStepHistoryAll:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50dde8
@@ -19481,12 +19481,12 @@ L50dde8:
         .word   0x000f0084
 L50ddec:
         .word   0x008b8510
-        .size   A_50dda0, . - A_50dda0
+        .size   ptm_play_GetStepHistoryAll, . - ptm_play_GetStepHistoryAll
 
 @ FUN_0050ddf0
-        .global A_50ddf0
-        .type   A_50ddf0, %function
-A_50ddf0:
+        .global ptm_play_GetTotalStepCount
+        .type   ptm_play_GetTotalStepCount, %function
+ptm_play_GetTotalStepCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19504,12 +19504,12 @@ L50de24:
         pop     {r4, r5, r6, pc}
 L50de28:
         .word   0x008b8510
-        .size   A_50ddf0, . - A_50ddf0
+        .size   ptm_play_GetTotalStepCount, . - ptm_play_GetTotalStepCount
 
 @ FUN_0050de2c
-        .global A_50de2c
-        .type   A_50de2c, %function
-A_50de2c:
+        .global ptm_play_GetPlayHistoryStart
+        .type   ptm_play_GetPlayHistoryStart, %function
+ptm_play_GetPlayHistoryStart:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19529,12 +19529,12 @@ L50de64:
         .word   0x08080000
 L50de68:
         .word   0x008b8510
-        .size   A_50de2c, . - A_50de2c
+        .size   ptm_play_GetPlayHistoryStart, . - ptm_play_GetPlayHistoryStart
 
 @ FUN_0050de6c
-        .global A_50de6c
-        .type   A_50de6c, %function
-A_50de6c:
+        .global ptm_play_GetStepHistoryEntry
+        .type   ptm_play_GetStepHistoryEntry, %function
+ptm_play_GetStepHistoryEntry:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50deac
@@ -19555,7 +19555,7 @@ L50deac:
         .word   0x000a0042
 L50deb0:
         .word   0x008b8510
-        .size   A_50de6c, . - A_50de6c
+        .size   ptm_play_GetStepHistoryEntry, . - ptm_play_GetStepHistoryEntry
 
 @ FUN_0050deb4
         .global A_50deb4
@@ -19608,9 +19608,9 @@ L50df34:
         .size   A_50def4, . - A_50def4
 
 @ FUN_0050df38
-        .global A_50df38
-        .type   A_50df38, %function
-A_50df38:
+        .global ptm_play_GetPlayHistoryLength
+        .type   ptm_play_GetPlayHistoryLength, %function
+ptm_play_GetPlayHistoryLength:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19630,12 +19630,12 @@ L50df70:
         .word   0x08090000
 L50df74:
         .word   0x008b8510
-        .size   A_50df38, . - A_50df38
+        .size   ptm_play_GetPlayHistoryLength, . - ptm_play_GetPlayHistoryLength
 
 @ FUN_0050df78
-        .global A_50df78
-        .type   A_50df78, %function
-A_50df78:
+        .global ptm_play_GetBatteryChargeState
+        .type   ptm_play_GetBatteryChargeState, %function
+ptm_play_GetBatteryChargeState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19653,12 +19653,12 @@ L50dfac:
         pop     {r4, r5, r6, pc}
 L50dfb0:
         .word   0x008b8510
-        .size   A_50df78, . - A_50df78
+        .size   ptm_play_GetBatteryChargeState, . - ptm_play_GetBatteryChargeState
 
 @ FUN_0050dfb4
-        .global A_50dfb4
-        .type   A_50dfb4, %function
-A_50dfb4:
+        .global ptm_play_GetPedometerRecordingMode
+        .type   ptm_play_GetPedometerRecordingMode, %function
+ptm_play_GetPedometerRecordingMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19676,12 +19676,12 @@ L50dfe8:
         pop     {r4, r5, r6, pc}
 L50dfec:
         .word   0x008b8510
-        .size   A_50dfb4, . - A_50dfb4
+        .size   ptm_play_GetPedometerRecordingMode, . - ptm_play_GetPedometerRecordingMode
 
 @ FUN_0050dff0
-        .global A_50dff0
-        .type   A_50dff0, %function
-A_50dff0:
+        .global ptm_play_SetPedometerRecordingMode
+        .type   ptm_play_SetPedometerRecordingMode, %function
+ptm_play_SetPedometerRecordingMode:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50e020
@@ -19698,12 +19698,12 @@ L50e020:
         .word   0x000d0040
 L50e024:
         .word   0x008b8510
-        .size   A_50dff0, . - A_50dff0
+        .size   ptm_play_SetPedometerRecordingMode, . - ptm_play_SetPedometerRecordingMode
 
 @ FUN_0050e2e4
-        .global A_50e2e4
-        .type   A_50e2e4, %function
-A_50e2e4:
+        .global ptm_u_GetRtcAlarm
+        .type   ptm_u_GetRtcAlarm, %function
+ptm_u_GetRtcAlarm:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19721,12 +19721,12 @@ L50e318:
         pop     {r4, r5, r6, pc}
 L50e31c:
         .word   0x008b850c
-        .size   A_50e2e4, . - A_50e2e4
+        .size   ptm_u_GetRtcAlarm, . - ptm_u_GetRtcAlarm
 
 @ FUN_0050e320
-        .global A_50e320
-        .type   A_50e320, %function
-A_50e320:
+        .global ptm_u_SetRtcAlarm
+        .type   ptm_u_SetRtcAlarm, %function
+ptm_u_SetRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50e350
@@ -19743,12 +19743,12 @@ L50e350:
         .word   0x00020080
 L50e354:
         .word   0x008b850c
-        .size   A_50e320, . - A_50e320
+        .size   ptm_u_SetRtcAlarm, . - ptm_u_SetRtcAlarm
 
 @ FUN_0050e358
-        .global A_50e358
-        .type   A_50e358, %function
-A_50e358:
+        .global ptm_u_GetShellState
+        .type   ptm_u_GetShellState, %function
+ptm_u_GetShellState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19766,12 +19766,12 @@ L50e38c:
         pop     {r4, r5, r6, pc}
 L50e390:
         .word   0x008b850c
-        .size   A_50e358, . - A_50e358
+        .size   ptm_u_GetShellState, . - ptm_u_GetShellState
 
 @ FUN_0050e394
-        .global A_50e394
-        .type   A_50e394, %function
-A_50e394:
+        .global ptm_u_CancelRtcAlarm
+        .type   ptm_u_CancelRtcAlarm, %function
+ptm_u_CancelRtcAlarm:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -19785,12 +19785,12 @@ A_50e394:
         pop     {r4, pc}
 L50e3c0:
         .word   0x008b850c
-        .size   A_50e394, . - A_50e394
+        .size   ptm_u_CancelRtcAlarm, . - ptm_u_CancelRtcAlarm
 
 @ FUN_0050e3c4
-        .global A_50e3c4
-        .type   A_50e3c4, %function
-A_50e3c4:
+        .global ptm_u_GetStepHistory
+        .type   ptm_u_GetStepHistory, %function
+ptm_u_GetStepHistory:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50e408
@@ -19812,12 +19812,12 @@ L50e408:
         .word   0x000b00c2
 L50e40c:
         .word   0x008b850c
-        .size   A_50e3c4, . - A_50e3c4
+        .size   ptm_u_GetStepHistory, . - ptm_u_GetStepHistory
 
 @ FUN_0050e410
-        .global A_50e410
-        .type   A_50e410, %function
-A_50e410:
+        .global ptm_u_GetAdapterState
+        .type   ptm_u_GetAdapterState, %function
+ptm_u_GetAdapterState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19835,12 +19835,12 @@ L50e444:
         pop     {r4, r5, r6, pc}
 L50e448:
         .word   0x008b850c
-        .size   A_50e410, . - A_50e410
+        .size   ptm_u_GetAdapterState, . - ptm_u_GetAdapterState
 
 @ FUN_0050e44c
-        .global A_50e44c
-        .type   A_50e44c, %function
-A_50e44c:
+        .global ptm_u_GetBatteryLevel
+        .type   ptm_u_GetBatteryLevel, %function
+ptm_u_GetBatteryLevel:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19858,12 +19858,12 @@ L50e480:
         pop     {r4, r5, r6, pc}
 L50e484:
         .word   0x008b850c
-        .size   A_50e44c, . - A_50e44c
+        .size   ptm_u_GetBatteryLevel, . - ptm_u_GetBatteryLevel
 
 @ FUN_0050e488
-        .global A_50e488
-        .type   A_50e488, %function
-A_50e488:
+        .global ptm_u_GetPedometerState
+        .type   ptm_u_GetPedometerState, %function
+ptm_u_GetPedometerState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19881,12 +19881,12 @@ L50e4bc:
         pop     {r4, r5, r6, pc}
 L50e4c0:
         .word   0x008b850c
-        .size   A_50e488, . - A_50e488
+        .size   ptm_u_GetPedometerState, . - ptm_u_GetPedometerState
 
 @ FUN_0050e4c4
-        .global A_50e4c4
-        .type   A_50e4c4, %function
-A_50e4c4:
+        .global ptm_u_GetStepHistoryAll
+        .type   ptm_u_GetStepHistoryAll, %function
+ptm_u_GetStepHistoryAll:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L50e50c
@@ -19909,12 +19909,12 @@ L50e50c:
         .word   0x000f0084
 L50e510:
         .word   0x008b850c
-        .size   A_50e4c4, . - A_50e4c4
+        .size   ptm_u_GetStepHistoryAll, . - ptm_u_GetStepHistoryAll
 
 @ FUN_0050e514
-        .global A_50e514
-        .type   A_50e514, %function
-A_50e514:
+        .global ptm_u_GetTotalStepCount
+        .type   ptm_u_GetTotalStepCount, %function
+ptm_u_GetTotalStepCount:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -19932,12 +19932,12 @@ L50e548:
         pop     {r4, r5, r6, pc}
 L50e54c:
         .word   0x008b850c
-        .size   A_50e514, . - A_50e514
+        .size   ptm_u_GetTotalStepCount, . - ptm_u_GetTotalStepCount
 
 @ FUN_0050e550
-        .global A_50e550
-        .type   A_50e550, %function
-A_50e550:
+        .global ptm_u_GetStepHistoryEntry
+        .type   ptm_u_GetStepHistoryEntry, %function
+ptm_u_GetStepHistoryEntry:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L50e590
@@ -19958,7 +19958,7 @@ L50e590:
         .word   0x000a0042
 L50e594:
         .word   0x008b850c
-        .size   A_50e550, . - A_50e550
+        .size   ptm_u_GetStepHistoryEntry, . - ptm_u_GetStepHistoryEntry
 
 @ FUN_0050e598
         .global A_50e598
@@ -19985,9 +19985,9 @@ L50e5d4:
         .size   A_50e598, . - A_50e598
 
 @ FUN_0050e5d8
-        .global A_50e5d8
-        .type   A_50e5d8, %function
-A_50e5d8:
+        .global ptm_u_GetBatteryChargeState
+        .type   ptm_u_GetBatteryChargeState, %function
+ptm_u_GetBatteryChargeState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -20005,12 +20005,12 @@ L50e60c:
         pop     {r4, r5, r6, pc}
 L50e610:
         .word   0x008b850c
-        .size   A_50e5d8, . - A_50e5d8
+        .size   ptm_u_GetBatteryChargeState, . - ptm_u_GetBatteryChargeState
 
 @ FUN_0050e614
-        .global A_50e614
-        .type   A_50e614, %function
-A_50e614:
+        .global ptm_u_GetPedometerRecordingMode
+        .type   ptm_u_GetPedometerRecordingMode, %function
+ptm_u_GetPedometerRecordingMode:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -20028,12 +20028,12 @@ L50e648:
         pop     {r4, r5, r6, pc}
 L50e64c:
         .word   0x008b850c
-        .size   A_50e614, . - A_50e614
+        .size   ptm_u_GetPedometerRecordingMode, . - ptm_u_GetPedometerRecordingMode
 
 @ FUN_0050e650
-        .global A_50e650
-        .type   A_50e650, %function
-A_50e650:
+        .global ptm_u_SetPedometerRecordingMode
+        .type   ptm_u_SetPedometerRecordingMode, %function
+ptm_u_SetPedometerRecordingMode:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L50e680
@@ -20050,7 +20050,7 @@ L50e680:
         .word   0x000d0040
 L50e684:
         .word   0x008b850c
-        .size   A_50e650, . - A_50e650
+        .size   ptm_u_SetPedometerRecordingMode, . - ptm_u_SetPedometerRecordingMode
 
 @ FUN_0050e688
         .global A_50e688
@@ -20122,9 +20122,9 @@ L517d4c:
         .size   A_517d20, . - A_517d20
 
 @ FUN_00517d9c
-        .global A_517d9c
-        .type   A_517d9c, %function
-A_517d9c:
+        .global srv_pm_Unsubscribe_517d9c
+        .type   srv_pm_Unsubscribe_517d9c, %function
+srv_pm_Unsubscribe_517d9c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L517dcc
@@ -20141,7 +20141,7 @@ L517dcc:
         .word   0x000a0040
 L517dd0:
         .word   0x008bb4e0
-        .size   A_517d9c, . - A_517d9c
+        .size   srv_pm_Unsubscribe_517d9c, . - srv_pm_Unsubscribe_517d9c
 
 @ FUN_00517dd4
         .global A_517dd4
@@ -20166,9 +20166,9 @@ L517e08:
         .size   A_517dd4, . - A_517dd4
 
 @ FUN_00517e70
-        .global A_517e70
-        .type   A_517e70, %function
-A_517e70:
+        .global srv_pm_RegisterClient_517e70
+        .type   srv_pm_RegisterClient_517e70, %function
+srv_pm_RegisterClient_517e70:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L517ea4
@@ -20186,7 +20186,7 @@ L517ea4:
         .word   0x00010002
 L517ea8:
         .word   0x008bb4e0
-        .size   A_517e70, . - A_517e70
+        .size   srv_pm_RegisterClient_517e70, . - srv_pm_RegisterClient_517e70
 
 @ FUN_00517f04
         .global A_517f04
@@ -20263,9 +20263,9 @@ L5180d4:
         .size   A_5180a0, . - A_5180a0
 
 @ FUN_0051812c
-        .global A_51812c
-        .type   A_51812c, %function
-A_51812c:
+        .global srv_pm_EnableNotification_51812c
+        .type   srv_pm_EnableNotification_51812c, %function
+srv_pm_EnableNotification_51812c:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -20283,12 +20283,12 @@ L518160:
         pop     {r4, r5, r6, pc}
 L518164:
         .word   0x008bb4e0
-        .size   A_51812c, . - A_51812c
+        .size   srv_pm_EnableNotification_51812c, . - srv_pm_EnableNotification_51812c
 
 @ FUN_005181c0
-        .global A_5181c0
-        .type   A_5181c0, %function
-A_5181c0:
+        .global srv_pm_PublishToSubscriber_5181c0
+        .type   srv_pm_PublishToSubscriber_5181c0, %function
+srv_pm_PublishToSubscriber_5181c0:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L5181f0
@@ -20305,12 +20305,12 @@ L5181f0:
         .word   0x000c0080
 L5181f4:
         .word   0x008bb4e0
-        .size   A_5181c0, . - A_5181c0
+        .size   srv_pm_PublishToSubscriber_5181c0, . - srv_pm_PublishToSubscriber_5181c0
 
 @ FUN_005181f8
-        .global A_5181f8
-        .type   A_5181f8, %function
-A_5181f8:
+        .global srv_pm_ReceiveNotification_5181f8
+        .type   srv_pm_ReceiveNotification_5181f8, %function
+srv_pm_ReceiveNotification_5181f8:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -20328,12 +20328,12 @@ L51822c:
         pop     {r4, r5, r6, pc}
 L518230:
         .word   0x008bb4e0
-        .size   A_5181f8, . - A_5181f8
+        .size   srv_pm_ReceiveNotification_5181f8, . - srv_pm_ReceiveNotification_5181f8
 
 @ FUN_0051828c
-        .global A_51828c
-        .type   A_51828c, %function
-A_51828c:
+        .global srv_pm_Subscribe_51828c
+        .type   srv_pm_Subscribe_51828c, %function
+srv_pm_Subscribe_51828c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5182bc
@@ -20350,12 +20350,12 @@ L5182bc:
         .word   0x00090040
 L5182c0:
         .word   0x008bb4e0
-        .size   A_51828c, . - A_51828c
+        .size   srv_pm_Subscribe_51828c, . - srv_pm_Subscribe_51828c
 
 @ FUN_005182c4
-        .global A_5182c4
-        .type   A_5182c4, %function
-A_5182c4:
+        .global srv_pm_Unsubscribe_5182c4
+        .type   srv_pm_Unsubscribe_5182c4, %function
+srv_pm_Unsubscribe_5182c4:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5182f4
@@ -20372,12 +20372,12 @@ L5182f4:
         .word   0x000a0040
 L5182f8:
         .word   0x008b85f4
-        .size   A_5182c4, . - A_5182c4
+        .size   srv_pm_Unsubscribe_5182c4, . - srv_pm_Unsubscribe_5182c4
 
 @ FUN_00518514
-        .global A_518514
-        .type   A_518514, %function
-A_518514:
+        .global srv_pm_PublishToSubscriber_518514
+        .type   srv_pm_PublishToSubscriber_518514, %function
+srv_pm_PublishToSubscriber_518514:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L518544
@@ -20394,12 +20394,12 @@ L518544:
         .word   0x000c0080
 L518548:
         .word   0x008b85f4
-        .size   A_518514, . - A_518514
+        .size   srv_pm_PublishToSubscriber_518514, . - srv_pm_PublishToSubscriber_518514
 
 @ FUN_005185a4
-        .global A_5185a4
-        .type   A_5185a4, %function
-A_5185a4:
+        .global srv_pm_Subscribe_5185a4
+        .type   srv_pm_Subscribe_5185a4, %function
+srv_pm_Subscribe_5185a4:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5185d4
@@ -20416,12 +20416,12 @@ L5185d4:
         .word   0x00090040
 L5185d8:
         .word   0x008b85f4
-        .size   A_5185a4, . - A_5185a4
+        .size   srv_pm_Subscribe_5185a4, . - srv_pm_Subscribe_5185a4
 
 @ FUN_0051af78
-        .global A_51af78
-        .type   A_51af78, %function
-A_51af78:
+        .global nwm_UDS_GetChannel
+        .type   nwm_UDS_GetChannel, %function
+nwm_UDS_GetChannel:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -20436,12 +20436,12 @@ A_51af78:
         ldr     r0, [r4, #4]
 L51afa8:
         pop     {r4, r5, r6, pc}
-        .size   A_51af78, . - A_51af78
+        .size   nwm_UDS_GetChannel, . - nwm_UDS_GetChannel
 
 @ FUN_0051afac
-        .global A_51afac
-        .type   A_51afac, %function
-A_51afac:
+        .global nwm_UDS_PullPacket
+        .type   nwm_UDS_PullPacket, %function
+nwm_UDS_PullPacket:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, r8, sb}
@@ -20471,12 +20471,12 @@ L51b010:
         pop     {r4, r5, r6, r7, r8, sb, sl, pc}
 L51b014:
         .word   0x001400c0
-        .size   A_51afac, . - A_51afac
+        .size   nwm_UDS_PullPacket, . - nwm_UDS_PullPacket
 
 @ FUN_0051b018
-        .global A_51b018
-        .type   A_51b018, %function
-A_51b018:
+        .global nwm_UDS_EjectClient
+        .type   nwm_UDS_EjectClient, %function
+nwm_UDS_EjectClient:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51b04c
@@ -20492,7 +20492,7 @@ A_51b018:
         pop     {r4, pc}
 L51b04c:
         .word   0x00050040
-        .size   A_51b018, . - A_51b018
+        .size   nwm_UDS_EjectClient, . - nwm_UDS_EjectClient
 
 @ FUN_0051b050
         .global A_51b050
@@ -20516,9 +20516,9 @@ L51b084:
         .size   A_51b050, . - A_51b050
 
 @ FUN_0051b088
-        .global A_51b088
-        .type   A_51b088, %function
-A_51b088:
+        .global nwm_UDS_CreateNetwork2
+        .type   nwm_UDS_CreateNetwork2, %function
+nwm_UDS_CreateNetwork2:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L51b0d4
@@ -20542,12 +20542,12 @@ L51b0d4:
         .word   0x001d0044
 L51b0d8:
         .word   0x00420402
-        .size   A_51b088, . - A_51b088
+        .size   nwm_UDS_CreateNetwork2, . - nwm_UDS_CreateNetwork2
 
 @ FUN_0051b0dc
-        .global A_51b0dc
-        .type   A_51b0dc, %function
-A_51b0dc:
+        .global nwm_UDS_DestroyNetwork
+        .type   nwm_UDS_DestroyNetwork, %function
+nwm_UDS_DestroyNetwork:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0x80000
@@ -20558,12 +20558,12 @@ A_51b0dc:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_51b0dc, . - A_51b0dc
+        .size   nwm_UDS_DestroyNetwork, . - nwm_UDS_DestroyNetwork
 
 @ FUN_0051b104
-        .global A_51b104
-        .type   A_51b104, %function
-A_51b104:
+        .global nwm_UDS_EjectSpectator
+        .type   nwm_UDS_EjectSpectator, %function
+nwm_UDS_EjectSpectator:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0x60000
@@ -20574,12 +20574,12 @@ A_51b104:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_51b104, . - A_51b104
+        .size   nwm_UDS_EjectSpectator, . - nwm_UDS_EjectSpectator
 
 @ FUN_0051b12c
-        .global A_51b12c
-        .type   A_51b12c, %function
-A_51b12c:
+        .global nwm_UDS_ConnectNetwork2
+        .type   nwm_UDS_ConnectNetwork2, %function
+nwm_UDS_ConnectNetwork2:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         ldr     r2, [sp, #0x20]
         mrc     p15, #0, r4, c13, c0, #3
@@ -20607,7 +20607,7 @@ L51b188:
         .word   0x001e0084
 L51b18c:
         .word   0x00420402
-        .size   A_51b12c, . - A_51b12c
+        .size   nwm_UDS_ConnectNetwork2, . - nwm_UDS_ConnectNetwork2
 
 @ FUN_0051b190
         .global A_51b190
@@ -20648,9 +20648,9 @@ L51b1ec:
         .size   A_51b1c0, . - A_51b1c0
 
 @ FUN_0051b1f0
-        .global A_51b1f0
-        .type   A_51b1f0, %function
-A_51b1f0:
+        .global nwm_UDS_ScanOnConnection
+        .type   nwm_UDS_ScanOnConnection, %function
+nwm_UDS_ScanOnConnection:
         push    {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr}
         ldr     ip, [sp, #0x28]
         mrc     p15, #0, r4, c13, c0, #3
@@ -20682,12 +20682,12 @@ A_51b1f0:
         pop     {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc}
 L51b264:
         .word   0x00220402
-        .size   A_51b1f0, . - A_51b1f0
+        .size   nwm_UDS_ScanOnConnection, . - nwm_UDS_ScanOnConnection
 
 @ FUN_0051b268
-        .global A_51b268
-        .type   A_51b268, %function
-A_51b268:
+        .global nwm_UDS_DisconnectNetwork
+        .type   nwm_UDS_DisconnectNetwork, %function
+nwm_UDS_DisconnectNetwork:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0xa0000
@@ -20698,7 +20698,7 @@ A_51b268:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_51b268, . - A_51b268
+        .size   nwm_UDS_DisconnectNetwork, . - nwm_UDS_DisconnectNetwork
 
 @ FUN_0051b290
         .global A_51b290
@@ -20722,9 +20722,9 @@ L51b2c4:
         .size   A_51b290, . - A_51b290
 
 @ FUN_0051b2c8
-        .global A_51b2c8
-        .type   A_51b2c8, %function
-A_51b2c8:
+        .global nwm_UDS_GetApplicationData
+        .type   nwm_UDS_GetApplicationData, %function
+nwm_UDS_GetApplicationData:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r2
         mrc     p15, #0, r5, c13, c0, #3
@@ -20751,12 +20751,12 @@ L51b320:
         pop     {r4, r5, r6, r7, r8, pc}
 L51b324:
         .word   0x00110040
-        .size   A_51b2c8, . - A_51b2c8
+        .size   nwm_UDS_GetApplicationData, . - nwm_UDS_GetApplicationData
 
 @ FUN_0051b328
-        .global A_51b328
-        .type   A_51b328, %function
-A_51b328:
+        .global nwm_UDS_GetNodeInformation
+        .type   nwm_UDS_GetNodeInformation, %function
+nwm_UDS_GetNodeInformation:
         push    {r0, r1, r2, r4, r5, r6, r7, r8, sb, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -20779,12 +20779,12 @@ L51b36c:
         pop     {r4, r5, r6, r7, r8, sb, pc}
 L51b374:
         .word   0x000d0040
-        .size   A_51b328, . - A_51b328
+        .size   nwm_UDS_GetNodeInformation, . - nwm_UDS_GetNodeInformation
 
 @ FUN_0051b378
-        .global A_51b378
-        .type   A_51b378, %function
-A_51b378:
+        .global nwm_UDS_SetApplicationData
+        .type   nwm_UDS_SetApplicationData, %function
+nwm_UDS_SetApplicationData:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51b3b8
@@ -20803,12 +20803,12 @@ A_51b378:
         pop     {r4, pc}
 L51b3b8:
         .word   0x00100042
-        .size   A_51b378, . - A_51b378
+        .size   nwm_UDS_SetApplicationData, . - nwm_UDS_SetApplicationData
 
 @ FUN_0051b3bc
-        .global A_51b3bc
-        .type   A_51b3bc, %function
-A_51b3bc:
+        .global nwm_UDS_GetConnectionStatus
+        .type   nwm_UDS_GetConnectionStatus, %function
+nwm_UDS_GetConnectionStatus:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mov     r4, r1
         mrc     p15, #0, r5, c13, c0, #3
@@ -20830,12 +20830,12 @@ A_51b3bc:
         ldr     r0, [r5, #4]
 L51b408:
         pop     {r4, r5, r6, r7, r8, sb, sl, pc}
-        .size   A_51b3bc, . - A_51b3bc
+        .size   nwm_UDS_GetConnectionStatus, . - nwm_UDS_GetConnectionStatus
 
 @ FUN_0051b454
-        .global A_51b454
-        .type   A_51b454, %function
-A_51b454:
+        .global nwm_UDS_InitializeWithVersion
+        .type   nwm_UDS_InitializeWithVersion, %function
+nwm_UDS_InitializeWithVersion:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, sb, sl, fp, ip, lr}
         ldr     r1, [sp, #0x38]
         mrc     p15, #0, r4, c13, c0, #3
@@ -20867,12 +20867,12 @@ L51b4bc:
         pop     {r4, r5, r6, r7, r8, sb, sl, fp, ip, pc}
 L51b4c4:
         .word   0x001b0302
-        .size   A_51b454, . - A_51b454
+        .size   nwm_UDS_InitializeWithVersion, . - nwm_UDS_InitializeWithVersion
 
 @ FUN_0051b4c8
-        .global A_51b4c8
-        .type   A_51b4c8, %function
-A_51b4c8:
+        .global nwm_UDS_SetProbeResponseParam
+        .type   nwm_UDS_SetProbeResponseParam, %function
+nwm_UDS_SetProbeResponseParam:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L51b50c
@@ -20892,12 +20892,12 @@ A_51b4c8:
         pop     {r4, r5, pc}
 L51b50c:
         .word   0x00210080
-        .size   A_51b4c8, . - A_51b4c8
+        .size   nwm_UDS_SetProbeResponseParam, . - nwm_UDS_SetProbeResponseParam
 
 @ FUN_0051b510
-        .global A_51b510
-        .type   A_51b510, %function
-A_51b510:
+        .global nwm_UDS_UpdateNetworkAttribute
+        .type   nwm_UDS_UpdateNetworkAttribute, %function
+nwm_UDS_UpdateNetworkAttribute:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51b54c
@@ -20915,12 +20915,12 @@ A_51b510:
         pop     {r4, r5, pc}
 L51b54c:
         .word   0x00070080
-        .size   A_51b510, . - A_51b510
+        .size   nwm_UDS_UpdateNetworkAttribute, . - nwm_UDS_UpdateNetworkAttribute
 
 @ FUN_0051b550
-        .global A_51b550
-        .type   A_51b550, %function
-A_51b550:
+        .global nwm_UDS_GetNodeInformationList2
+        .type   nwm_UDS_GetNodeInformationList2, %function
+nwm_UDS_GetNodeInformationList2:
         push    {r4, r5, r6, r7, r8, lr}
         ldr     ip, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -20953,7 +20953,7 @@ L51b5bc:
         .word   0x00420402
 L51b5c0:
         .word   0x00a00002
-        .size   A_51b550, . - A_51b550
+        .size   nwm_UDS_GetNodeInformationList2, . - nwm_UDS_GetNodeInformationList2
 
 @ FUN_0051b5c4
         .global A_51b5c4
@@ -21003,9 +21003,9 @@ L51b640:
         .size   A_51b5f8, . - A_51b5f8
 
 @ FUN_0051b644
-        .global A_51b644
-        .type   A_51b644, %function
-A_51b644:
+        .global nwm_UDS_Flush
+        .type   nwm_UDS_Flush, %function
+nwm_UDS_Flush:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51b678
@@ -21021,12 +21021,12 @@ A_51b644:
         pop     {r4, pc}
 L51b678:
         .word   0x00200040
-        .size   A_51b644, . - A_51b644
+        .size   nwm_UDS_Flush, . - nwm_UDS_Flush
 
 @ FUN_0051b67c
-        .global A_51b67c
-        .type   A_51b67c, %function
-A_51b67c:
+        .global nwm_UDS_SendTo
+        .type   nwm_UDS_SendTo, %function
+nwm_UDS_SendTo:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         add     r4, sp, #0x20
         ldm     r4, {r2, r3, ip}
@@ -21057,12 +21057,12 @@ A_51b67c:
         pop     {r4, r5, r6, pc}
 L51b6ec:
         .word   0x00170182
-        .size   A_51b67c, . - A_51b67c
+        .size   nwm_UDS_SendTo, . - nwm_UDS_SendTo
 
 @ FUN_0051b6f0
-        .global A_51b6f0
-        .type   A_51b6f0, %function
-A_51b6f0:
+        .global nwm_UDS_Unbind
+        .type   nwm_UDS_Unbind, %function
+nwm_UDS_Unbind:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -21083,12 +21083,12 @@ L51b730:
         pop     {r4, r5, r6, pc}
 L51b734:
         .word   0x00130040
-        .size   A_51b6f0, . - A_51b6f0
+        .size   nwm_UDS_Unbind, . - nwm_UDS_Unbind
 
 @ FUN_0051b738
-        .global A_51b738
-        .type   A_51b738, %function
-A_51b738:
+        .global nwm_UDS_Finalize
+        .type   nwm_UDS_Finalize, %function
+nwm_UDS_Finalize:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0x30000
@@ -21099,7 +21099,7 @@ A_51b738:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_51b738, . - A_51b738
+        .size   nwm_UDS_Finalize, . - nwm_UDS_Finalize
 
 @ FUN_0051b87c
         .global A_51b87c
@@ -21119,9 +21119,9 @@ L51b89c:
         .size   A_51b87c, . - A_51b87c
 
 @ FUN_0051bcc0
-        .global A_51bcc0
-        .type   A_51bcc0, %function
-A_51bcc0:
+        .global y2r_u_GetRotation
+        .type   y2r_u_GetRotation, %function
+y2r_u_GetRotation:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21139,12 +21139,12 @@ L51bcf4:
         pop     {r4, r5, r6, pc}
 L51bcf8:
         .word   0x008aaeb4
-        .size   A_51bcc0, . - A_51bcc0
+        .size   y2r_u_GetRotation, . - y2r_u_GetRotation
 
 @ FUN_0051bcfc
-        .global A_51bcfc
-        .type   A_51bcfc, %function
-A_51bcfc:
+        .global y2r_u_PingProcess
+        .type   y2r_u_PingProcess, %function
+y2r_u_PingProcess:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21162,12 +21162,12 @@ L51bd30:
         pop     {r4, r5, r6, pc}
 L51bd34:
         .word   0x008aaeb4
-        .size   A_51bcfc, . - A_51bcfc
+        .size   y2r_u_PingProcess, . - y2r_u_PingProcess
 
 @ FUN_0051bd38
-        .global A_51bd38
-        .type   A_51bd38, %function
-A_51bd38:
+        .global y2r_u_SetRotation
+        .type   y2r_u_SetRotation, %function
+y2r_u_SetRotation:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51bd6c
@@ -21185,12 +21185,12 @@ L51bd6c:
         .word   0x00050040
 L51bd70:
         .word   0x008aaeb4
-        .size   A_51bd38, . - A_51bd38
+        .size   y2r_u_SetRotation, . - y2r_u_SetRotation
 
 @ FUN_0051bd74
-        .global A_51bd74
-        .type   A_51bd74, %function
-A_51bd74:
+        .global y2r_u_SetSendingU
+        .type   y2r_u_SetSendingU, %function
+y2r_u_SetSendingU:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L51bdc8
@@ -21216,12 +21216,12 @@ L51bdc8:
         .word   0x00110102
 L51bdcc:
         .word   0x008aaeb4
-        .size   A_51bd74, . - A_51bd74
+        .size   y2r_u_SetSendingU, . - y2r_u_SetSendingU
 
 @ FUN_0051bdd0
-        .global A_51bdd0
-        .type   A_51bdd0, %function
-A_51bdd0:
+        .global y2r_u_SetSendingV
+        .type   y2r_u_SetSendingV, %function
+y2r_u_SetSendingV:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L51be24
@@ -21247,12 +21247,12 @@ L51be24:
         .word   0x00120102
 L51be28:
         .word   0x008aaeb4
-        .size   A_51bdd0, . - A_51bdd0
+        .size   y2r_u_SetSendingV, . - y2r_u_SetSendingV
 
 @ FUN_0051be2c
-        .global A_51be2c
-        .type   A_51be2c, %function
-A_51be2c:
+        .global y2r_u_SetSendingY
+        .type   y2r_u_SetSendingY, %function
+y2r_u_SetSendingY:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L51be80
@@ -21278,12 +21278,12 @@ L51be80:
         .word   0x00100102
 L51be84:
         .word   0x008aaeb4
-        .size   A_51be2c, . - A_51be2c
+        .size   y2r_u_SetSendingY, . - y2r_u_SetSendingY
 
 @ FUN_0051be88
-        .global A_51be88
-        .type   A_51be88, %function
-A_51be88:
+        .global y2r_u_SetReceiving
+        .type   y2r_u_SetReceiving, %function
+y2r_u_SetReceiving:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L51bedc
@@ -21309,12 +21309,12 @@ L51bedc:
         .word   0x00180102
 L51bee0:
         .word   0x008aaeb4
-        .size   A_51be88, . - A_51be88
+        .size   y2r_u_SetReceiving, . - y2r_u_SetReceiving
 
 @ FUN_0051bee4
-        .global A_51bee4
-        .type   A_51bee4, %function
-A_51bee4:
+        .global y2r_u_GetInputLines
+        .type   y2r_u_GetInputLines, %function
+y2r_u_GetInputLines:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21332,12 +21332,12 @@ L51bf18:
         pop     {r4, r5, r6, pc}
 L51bf1c:
         .word   0x008aaeb4
-        .size   A_51bee4, . - A_51bee4
+        .size   y2r_u_GetInputLines, . - y2r_u_GetInputLines
 
 @ FUN_0051bf20
-        .global A_51bf20
-        .type   A_51bf20, %function
-A_51bf20:
+        .global y2r_u_SetInputLines
+        .type   y2r_u_SetInputLines, %function
+y2r_u_SetInputLines:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51bf54
@@ -21355,12 +21355,12 @@ L51bf54:
         .word   0x001c0040
 L51bf58:
         .word   0x008aaeb4
-        .size   A_51bf20, . - A_51bf20
+        .size   y2r_u_SetInputLines, . - y2r_u_SetInputLines
 
 @ FUN_0051bf5c
-        .global A_51bf5c
-        .type   A_51bf5c, %function
-A_51bf5c:
+        .global y2r_u_SetSendingYUYV
+        .type   y2r_u_SetSendingYUYV, %function
+y2r_u_SetSendingYUYV:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L51bfb0
@@ -21386,12 +21386,12 @@ L51bfb0:
         .word   0x00130102
 L51bfb4:
         .word   0x008aaeb4
-        .size   A_51bf5c, . - A_51bf5c
+        .size   y2r_u_SetSendingYUYV, . - y2r_u_SetSendingYUYV
 
 @ FUN_0051bfb8
-        .global A_51bfb8
-        .type   A_51bfb8, %function
-A_51bfb8:
+        .global y2r_u_DriverFinalize
+        .type   y2r_u_DriverFinalize, %function
+y2r_u_DriverFinalize:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x2c0000
@@ -21405,12 +21405,12 @@ A_51bfb8:
         pop     {r4, pc}
 L51bfe4:
         .word   0x008aaeb4
-        .size   A_51bfb8, . - A_51bfb8
+        .size   y2r_u_DriverFinalize, . - y2r_u_DriverFinalize
 
 @ FUN_0051bfe8
-        .global A_51bfe8
-        .type   A_51bfe8, %function
-A_51bfe8:
+        .global y2r_u_GetInputFormat
+        .type   y2r_u_GetInputFormat, %function
+y2r_u_GetInputFormat:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21428,12 +21428,12 @@ L51c01c:
         pop     {r4, r5, r6, pc}
 L51c020:
         .word   0x008aaeb4
-        .size   A_51bfe8, . - A_51bfe8
+        .size   y2r_u_GetInputFormat, . - y2r_u_GetInputFormat
 
 @ FUN_0051c024
-        .global A_51c024
-        .type   A_51c024, %function
-A_51c024:
+        .global y2r_u_SetInputFormat
+        .type   y2r_u_SetInputFormat, %function
+y2r_u_SetInputFormat:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c058
@@ -21451,12 +21451,12 @@ L51c058:
         .word   0x00010040
 L51c05c:
         .word   0x008aaeb4
-        .size   A_51c024, . - A_51c024
+        .size   y2r_u_SetInputFormat, . - y2r_u_SetInputFormat
 
 @ FUN_0051c060
-        .global A_51c060
-        .type   A_51c060, %function
-A_51c060:
+        .global y2r_u_StopConversion
+        .type   y2r_u_StopConversion, %function
+y2r_u_StopConversion:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x270000
@@ -21470,12 +21470,12 @@ A_51c060:
         pop     {r4, pc}
 L51c08c:
         .word   0x008aaeb4
-        .size   A_51c060, . - A_51c060
+        .size   y2r_u_StopConversion, . - y2r_u_StopConversion
 
 @ FUN_0051c090
-        .global A_51c090
-        .type   A_51c090, %function
-A_51c090:
+        .global y2r_u_GetOutputFormat
+        .type   y2r_u_GetOutputFormat, %function
+y2r_u_GetOutputFormat:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21493,12 +21493,12 @@ L51c0c4:
         pop     {r4, r5, r6, pc}
 L51c0c8:
         .word   0x008aaeb4
-        .size   A_51c090, . - A_51c090
+        .size   y2r_u_GetOutputFormat, . - y2r_u_GetOutputFormat
 
 @ FUN_0051c0cc
-        .global A_51c0cc
-        .type   A_51c0cc, %function
-A_51c0cc:
+        .global y2r_u_SetOutputFormat
+        .type   y2r_u_SetOutputFormat, %function
+y2r_u_SetOutputFormat:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c100
@@ -21516,12 +21516,12 @@ L51c100:
         .word   0x00030040
 L51c104:
         .word   0x008aaeb4
-        .size   A_51c0cc, . - A_51c0cc
+        .size   y2r_u_SetOutputFormat, . - y2r_u_SetOutputFormat
 
 @ FUN_0051c108
-        .global A_51c108
-        .type   A_51c108, %function
-A_51c108:
+        .global y2r_u_StartConversion
+        .type   y2r_u_StartConversion, %function
+y2r_u_StartConversion:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x260000
@@ -21535,12 +21535,12 @@ A_51c108:
         pop     {r4, pc}
 L51c134:
         .word   0x008aaeb4
-        .size   A_51c108, . - A_51c108
+        .size   y2r_u_StartConversion, . - y2r_u_StartConversion
 
 @ FUN_0051c138
-        .global A_51c138
-        .type   A_51c138, %function
-A_51c138:
+        .global y2r_u_DriverInitialize
+        .type   y2r_u_DriverInitialize, %function
+y2r_u_DriverInitialize:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x2b0000
@@ -21554,12 +21554,12 @@ A_51c138:
         pop     {r4, pc}
 L51c164:
         .word   0x008aaeb4
-        .size   A_51c138, . - A_51c138
+        .size   y2r_u_DriverInitialize, . - y2r_u_DriverInitialize
 
 @ FUN_0051c168
-        .global A_51c168
-        .type   A_51c168, %function
-A_51c168:
+        .global y2r_u_IsBusyConversion
+        .type   y2r_u_IsBusyConversion, %function
+y2r_u_IsBusyConversion:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21577,12 +21577,12 @@ L51c19c:
         pop     {r4, r5, r6, pc}
 L51c1a0:
         .word   0x008aaeb4
-        .size   A_51c168, . - A_51c168
+        .size   y2r_u_IsBusyConversion, . - y2r_u_IsBusyConversion
 
 @ FUN_0051c1e0
-        .global A_51c1e0
-        .type   A_51c1e0, %function
-A_51c1e0:
+        .global y2r_u_GetInputLineWidth
+        .type   y2r_u_GetInputLineWidth, %function
+y2r_u_GetInputLineWidth:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21600,12 +21600,12 @@ L51c214:
         pop     {r4, r5, r6, pc}
 L51c218:
         .word   0x008aaeb4
-        .size   A_51c1e0, . - A_51c1e0
+        .size   y2r_u_GetInputLineWidth, . - y2r_u_GetInputLineWidth
 
 @ FUN_0051c21c
-        .global A_51c21c
-        .type   A_51c21c, %function
-A_51c21c:
+        .global y2r_u_SetBlockAlignment
+        .type   y2r_u_SetBlockAlignment, %function
+y2r_u_SetBlockAlignment:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c250
@@ -21623,12 +21623,12 @@ L51c250:
         .word   0x00070040
 L51c254:
         .word   0x008aaeb4
-        .size   A_51c21c, . - A_51c21c
+        .size   y2r_u_SetBlockAlignment, . - y2r_u_SetBlockAlignment
 
 @ FUN_0051c258
-        .global A_51c258
-        .type   A_51c258, %function
-A_51c258:
+        .global y2r_u_SetInputLineWidth
+        .type   y2r_u_SetInputLineWidth, %function
+y2r_u_SetInputLineWidth:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c28c
@@ -21646,12 +21646,12 @@ L51c28c:
         .word   0x001a0040
 L51c290:
         .word   0x008aaeb4
-        .size   A_51c258, . - A_51c258
+        .size   y2r_u_SetInputLineWidth, . - y2r_u_SetInputLineWidth
 
 @ FUN_0051c294
-        .global A_51c294
-        .type   A_51c294, %function
-A_51c294:
+        .global y2r_u_IsFinishedSendingU
+        .type   y2r_u_IsFinishedSendingU, %function
+y2r_u_IsFinishedSendingU:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21669,12 +21669,12 @@ L51c2c8:
         pop     {r4, r5, r6, pc}
 L51c2cc:
         .word   0x008aaeb4
-        .size   A_51c294, . - A_51c294
+        .size   y2r_u_IsFinishedSendingU, . - y2r_u_IsFinishedSendingU
 
 @ FUN_0051c2d0
-        .global A_51c2d0
-        .type   A_51c2d0, %function
-A_51c2d0:
+        .global y2r_u_IsFinishedSendingV
+        .type   y2r_u_IsFinishedSendingV, %function
+y2r_u_IsFinishedSendingV:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21692,12 +21692,12 @@ L51c304:
         pop     {r4, r5, r6, pc}
 L51c308:
         .word   0x008aaeb4
-        .size   A_51c2d0, . - A_51c2d0
+        .size   y2r_u_IsFinishedSendingV, . - y2r_u_IsFinishedSendingV
 
 @ FUN_0051c30c
-        .global A_51c30c
-        .type   A_51c30c, %function
-A_51c30c:
+        .global y2r_u_IsFinishedSendingY
+        .type   y2r_u_IsFinishedSendingY, %function
+y2r_u_IsFinishedSendingY:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21715,12 +21715,12 @@ L51c340:
         pop     {r4, r5, r6, pc}
 L51c344:
         .word   0x008aaeb4
-        .size   A_51c30c, . - A_51c30c
+        .size   y2r_u_IsFinishedSendingY, . - y2r_u_IsFinishedSendingY
 
 @ FUN_0051c348
-        .global A_51c348
-        .type   A_51c348, %function
-A_51c348:
+        .global y2r_u_GetPackageParameter
+        .type   y2r_u_GetPackageParameter, %function
+y2r_u_GetPackageParameter:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21741,12 +21741,12 @@ L51c388:
         pop     {r4, r5, r6, pc}
 L51c38c:
         .word   0x008aaeb4
-        .size   A_51c348, . - A_51c348
+        .size   y2r_u_GetPackageParameter, . - y2r_u_GetPackageParameter
 
 @ FUN_0051c390
-        .global A_51c390
-        .type   A_51c390, %function
-A_51c390:
+        .global y2r_u_GetSpacialDithering
+        .type   y2r_u_GetSpacialDithering, %function
+y2r_u_GetSpacialDithering:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21764,12 +21764,12 @@ L51c3c4:
         pop     {r4, r5, r6, pc}
 L51c3c8:
         .word   0x008aaeb4
-        .size   A_51c390, . - A_51c390
+        .size   y2r_u_GetSpacialDithering, . - y2r_u_GetSpacialDithering
 
 @ FUN_0051c3cc
-        .global A_51c3cc
-        .type   A_51c3cc, %function
-A_51c3cc:
+        .global y2r_u_GetTransferEndEvent
+        .type   y2r_u_GetTransferEndEvent, %function
+y2r_u_GetTransferEndEvent:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21787,12 +21787,12 @@ L51c400:
         pop     {r4, r5, r6, pc}
 L51c404:
         .word   0x008aaeb4
-        .size   A_51c3cc, . - A_51c3cc
+        .size   y2r_u_GetTransferEndEvent, . - y2r_u_GetTransferEndEvent
 
 @ FUN_0051c408
-        .global A_51c408
-        .type   A_51c408, %function
-A_51c408:
+        .global y2r_u_IsFinishedReceiving
+        .type   y2r_u_IsFinishedReceiving, %function
+y2r_u_IsFinishedReceiving:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21810,12 +21810,12 @@ L51c43c:
         pop     {r4, r5, r6, pc}
 L51c440:
         .word   0x008aaeb4
-        .size   A_51c408, . - A_51c408
+        .size   y2r_u_IsFinishedReceiving, . - y2r_u_IsFinishedReceiving
 
 @ FUN_0051c444
-        .global A_51c444
-        .type   A_51c444, %function
-A_51c444:
+        .global y2r_u_SetPackageParameter
+        .type   y2r_u_SetPackageParameter, %function
+y2r_u_SetPackageParameter:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51c484
@@ -21836,12 +21836,12 @@ L51c484:
         .word   0x002901c0
 L51c488:
         .word   0x008aaeb4
-        .size   A_51c444, . - A_51c444
+        .size   y2r_u_SetPackageParameter, . - y2r_u_SetPackageParameter
 
 @ FUN_0051c48c
-        .global A_51c48c
-        .type   A_51c48c, %function
-A_51c48c:
+        .global y2r_u_SetSpacialDithering
+        .type   y2r_u_SetSpacialDithering, %function
+y2r_u_SetSpacialDithering:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c4c0
@@ -21859,12 +21859,12 @@ L51c4c0:
         .word   0x00090040
 L51c4c4:
         .word   0x008aaeb4
-        .size   A_51c48c, . - A_51c48c
+        .size   y2r_u_SetSpacialDithering, . - y2r_u_SetSpacialDithering
 
 @ FUN_0051c4c8
-        .global A_51c4c8
-        .type   A_51c4c8, %function
-A_51c4c8:
+        .global y2r_u_GetCoefficient
+        .type   y2r_u_GetCoefficient, %function
+y2r_u_GetCoefficient:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21888,12 +21888,12 @@ L51c514:
         pop     {r4, r5, r6, pc}
 L51c518:
         .word   0x008aaeb4
-        .size   A_51c4c8, . - A_51c4c8
+        .size   y2r_u_GetCoefficient, . - y2r_u_GetCoefficient
 
 @ FUN_0051c51c
-        .global A_51c51c
-        .type   A_51c51c, %function
-A_51c51c:
+        .global y2r_u_GetTemporalDithering
+        .type   y2r_u_GetTemporalDithering, %function
+y2r_u_GetTemporalDithering:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21911,12 +21911,12 @@ L51c550:
         pop     {r4, r5, r6, pc}
 L51c554:
         .word   0x008aaeb4
-        .size   A_51c51c, . - A_51c51c
+        .size   y2r_u_GetTemporalDithering, . - y2r_u_GetTemporalDithering
 
 @ FUN_0051c558
-        .global A_51c558
-        .type   A_51c558, %function
-A_51c558:
+        .global y2r_u_IsFinishedSendingYuv
+        .type   y2r_u_IsFinishedSendingYuv, %function
+y2r_u_IsFinishedSendingYuv:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -21934,12 +21934,12 @@ L51c58c:
         pop     {r4, r5, r6, pc}
 L51c590:
         .word   0x008aaeb4
-        .size   A_51c558, . - A_51c558
+        .size   y2r_u_IsFinishedSendingYuv, . - y2r_u_IsFinishedSendingYuv
 
 @ FUN_0051c594
-        .global A_51c594
-        .type   A_51c594, %function
-A_51c594:
+        .global y2r_u_SetCoefficient
+        .type   y2r_u_SetCoefficient, %function
+y2r_u_SetCoefficient:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51c5e0
@@ -21963,12 +21963,12 @@ L51c5e0:
         .word   0x001e0100
 L51c5e4:
         .word   0x008aaeb4
-        .size   A_51c594, . - A_51c594
+        .size   y2r_u_SetCoefficient, . - y2r_u_SetCoefficient
 
 @ FUN_0051c5e8
-        .global A_51c5e8
-        .type   A_51c5e8, %function
-A_51c5e8:
+        .global y2r_u_SetTemporalDithering
+        .type   y2r_u_SetTemporalDithering, %function
+y2r_u_SetTemporalDithering:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c61c
@@ -21986,12 +21986,12 @@ L51c61c:
         .word   0x000b0040
 L51c620:
         .word   0x008aaeb4
-        .size   A_51c5e8, . - A_51c5e8
+        .size   y2r_u_SetTemporalDithering, . - y2r_u_SetTemporalDithering
 
 @ FUN_0051c624
-        .global A_51c624
-        .type   A_51c624, %function
-A_51c624:
+        .global y2r_u_SetStandardCoefficient
+        .type   y2r_u_SetStandardCoefficient, %function
+y2r_u_SetStandardCoefficient:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c658
@@ -22009,12 +22009,12 @@ L51c658:
         .word   0x00200040
 L51c65c:
         .word   0x008aaeb4
-        .size   A_51c624, . - A_51c624
+        .size   y2r_u_SetStandardCoefficient, . - y2r_u_SetStandardCoefficient
 
 @ FUN_0051c660
-        .global A_51c660
-        .type   A_51c660, %function
-A_51c660:
+        .global y2r_u_GetTransferEndInterrupt
+        .type   y2r_u_GetTransferEndInterrupt, %function
+y2r_u_GetTransferEndInterrupt:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -22032,12 +22032,12 @@ L51c694:
         pop     {r4, r5, r6, pc}
 L51c698:
         .word   0x008aaeb4
-        .size   A_51c660, . - A_51c660
+        .size   y2r_u_GetTransferEndInterrupt, . - y2r_u_GetTransferEndInterrupt
 
 @ FUN_0051c69c
-        .global A_51c69c
-        .type   A_51c69c, %function
-A_51c69c:
+        .global y2r_u_SetTransferEndInterrupt
+        .type   y2r_u_SetTransferEndInterrupt, %function
+y2r_u_SetTransferEndInterrupt:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c6d0
@@ -22055,12 +22055,12 @@ L51c6d0:
         .word   0x000d0040
 L51c6d4:
         .word   0x008aaeb4
-        .size   A_51c69c, . - A_51c69c
+        .size   y2r_u_SetTransferEndInterrupt, . - y2r_u_SetTransferEndInterrupt
 
 @ FUN_0051c760
-        .global A_51c760
-        .type   A_51c760, %function
-A_51c760:
+        .global y2r_u_GetStandardCoefficient
+        .type   y2r_u_GetStandardCoefficient, %function
+y2r_u_GetStandardCoefficient:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -22089,12 +22089,12 @@ L51c7bc:
         .word   0x00210040
 L51c7c0:
         .word   0x008aaeb4
-        .size   A_51c760, . - A_51c760
+        .size   y2r_u_GetStandardCoefficient, . - y2r_u_GetStandardCoefficient
 
 @ FUN_0051c7c4
-        .global A_51c7c4
-        .type   A_51c7c4, %function
-A_51c7c4:
+        .global y2r_u_GetAlpha
+        .type   y2r_u_GetAlpha, %function
+y2r_u_GetAlpha:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -22112,12 +22112,12 @@ L51c7f8:
         pop     {r4, r5, r6, pc}
 L51c7fc:
         .word   0x008aaeb4
-        .size   A_51c7c4, . - A_51c7c4
+        .size   y2r_u_GetAlpha, . - y2r_u_GetAlpha
 
 @ FUN_0051c800
-        .global A_51c800
-        .type   A_51c800, %function
-A_51c800:
+        .global y2r_u_SetAlpha
+        .type   y2r_u_SetAlpha, %function
+y2r_u_SetAlpha:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L51c834
@@ -22135,7 +22135,7 @@ L51c834:
         .word   0x00220040
 L51c838:
         .word   0x008aaeb4
-        .size   A_51c800, . - A_51c800
+        .size   y2r_u_SetAlpha, . - y2r_u_SetAlpha
 
 @ FUN_0051f134
         .global A_51f134
@@ -22207,9 +22207,9 @@ L51f1f4:
         .size   A_51f198, . - A_51f198
 
 @ FUN_0051f1f8
-        .global A_51f1f8
-        .type   A_51f1f8, %function
-A_51f1f8:
+        .global boss_CancelTask_51f1f8
+        .type   boss_CancelTask_51f1f8, %function
+boss_CancelTask_51f1f8:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f234
@@ -22227,12 +22227,12 @@ A_51f1f8:
         pop     {r4, pc}
 L51f234:
         .word   0x001e0042
-        .size   A_51f1f8, . - A_51f1f8
+        .size   boss_CancelTask_51f1f8, . - boss_CancelTask_51f1f8
 
 @ FUN_0051f238
-        .global A_51f238
-        .type   A_51f238, %function
-A_51f238:
+        .global boss_ReadNsData_51f238
+        .type   boss_ReadNsData_51f238, %function
+boss_ReadNsData_51f238:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, r6}
@@ -22260,12 +22260,12 @@ L51f294:
         pop     {r4, r5, r6, r7, r8, pc}
 L51f298:
         .word   0x00280102
-        .size   A_51f238, . - A_51f238
+        .size   boss_ReadNsData_51f238, . - boss_ReadNsData_51f238
 
 @ FUN_0051f29c
-        .global A_51f29c
-        .type   A_51f29c, %function
-A_51f29c:
+        .global boss_DeleteNsData_51f29c
+        .type   boss_DeleteNsData_51f29c, %function
+boss_DeleteNsData_51f29c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L51f2c8
@@ -22279,12 +22279,12 @@ A_51f29c:
         pop     {r4, pc}
 L51f2c8:
         .word   0x00260040
-        .size   A_51f29c, . - A_51f29c
+        .size   boss_DeleteNsData_51f29c, . - boss_DeleteNsData_51f29c
 
 @ FUN_0051f2cc
-        .global A_51f2cc
-        .type   A_51f2cc, %function
-A_51f2cc:
+        .global boss_GetAppIdList
+        .type   boss_GetAppIdList, %function
+boss_GetAppIdList:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51f2f4
@@ -22297,12 +22297,12 @@ A_51f2cc:
         pop     {r4, pc}
 L51f2f4:
         .word   0x040a0000
-        .size   A_51f2cc, . - A_51f2cc
+        .size   boss_GetAppIdList, . - boss_GetAppIdList
 
 @ FUN_0051f2f8
-        .global A_51f2f8
-        .type   A_51f2f8, %function
-A_51f2f8:
+        .global boss_GetErrorCode_51f2f8
+        .type   boss_GetErrorCode_51f2f8, %function
+boss_GetErrorCode_51f2f8:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -22322,12 +22322,12 @@ L51f330:
         pop     {r4, r5, pc}
 L51f338:
         .word   0x002e0040
-        .size   A_51f2f8, . - A_51f2f8
+        .size   boss_GetErrorCode_51f2f8, . - boss_GetErrorCode_51f2f8
 
 @ FUN_0051f33c
-        .global A_51f33c
-        .type   A_51f33c, %function
-A_51f33c:
+        .global boss_GetTaskCount_51f33c
+        .type   boss_GetTaskCount_51f33c, %function
+boss_GetTaskCount_51f33c:
         push    {r4, r5, r6, lr}
         mov     r5, r3
         mrc     p15, #0, r4, c13, c0, #3
@@ -22349,12 +22349,12 @@ L51f380:
         pop     {r4, r5, r6, pc}
 L51f384:
         .word   0x001a0042
-        .size   A_51f33c, . - A_51f33c
+        .size   boss_GetTaskCount_51f33c, . - boss_GetTaskCount_51f33c
 
 @ FUN_0051f388
-        .global A_51f388
-        .type   A_51f388, %function
-A_51f388:
+        .global boss_GetTaskError_51f388
+        .type   boss_GetTaskError_51f388, %function
+boss_GetTaskError_51f388:
         push    {r4, r5, r6, lr}
         mov     r5, r3
         mrc     p15, #0, r4, c13, c0, #3
@@ -22378,12 +22378,12 @@ L51f3d4:
         pop     {r4, r5, r6, pc}
 L51f3d8:
         .word   0x00240082
-        .size   A_51f388, . - A_51f388
+        .size   boss_GetTaskError_51f388, . - boss_GetTaskError_51f388
 
 @ FUN_0051f3dc
-        .global A_51f3dc
-        .type   A_51f3dc, %function
-A_51f3dc:
+        .global boss_RegisterTask_51f3dc
+        .type   boss_RegisterTask_51f3dc, %function
+boss_RegisterTask_51f3dc:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f42c
@@ -22406,12 +22406,12 @@ A_51f3dc:
         pop     {r4, pc}
 L51f42c:
         .word   0x000b00c2
-        .size   A_51f3dc, . - A_51f3dc
+        .size   boss_RegisterTask_51f3dc, . - boss_RegisterTask_51f3dc
 
 @ FUN_0051f430
-        .global A_51f430
-        .type   A_51f430, %function
-A_51f430:
+        .global boss_SendProperty_51f430
+        .type   boss_SendProperty_51f430, %function
+boss_SendProperty_51f430:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51f478
@@ -22432,12 +22432,12 @@ A_51f430:
         pop     {r4, pc}
 L51f478:
         .word   0x00140082
-        .size   A_51f430, . - A_51f430
+        .size   boss_SendProperty_51f430, . - boss_SendProperty_51f430
 
 @ FUN_0051f47c
-        .global A_51f47c
-        .type   A_51f47c, %function
-A_51f47c:
+        .global boss_GetOptoutFlag_51f47c
+        .type   boss_GetOptoutFlag_51f47c, %function
+boss_GetOptoutFlag_51f47c:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -22452,12 +22452,12 @@ A_51f47c:
         ldr     r0, [r4, #4]
 L51f4ac:
         pop     {r4, r5, r6, pc}
-        .size   A_51f47c, . - A_51f47c
+        .size   boss_GetOptoutFlag_51f47c, . - boss_GetOptoutFlag_51f47c
 
 @ FUN_0051f4b0
-        .global A_51f4b0
-        .type   A_51f4b0, %function
-A_51f4b0:
+        .global boss_GetSprelayUrl
+        .type   boss_GetSprelayUrl, %function
+boss_GetSprelayUrl:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f4ec
@@ -22475,12 +22475,12 @@ A_51f4b0:
         pop     {r4, pc}
 L51f4ec:
         .word   0x043f0042
-        .size   A_51f4b0, . - A_51f4b0
+        .size   boss_GetSprelayUrl, . - boss_GetSprelayUrl
 
 @ FUN_0051f4f0
-        .global A_51f4f0
-        .type   A_51f4f0, %function
-A_51f4f0:
+        .global boss_GetStepIdList_51f4f0
+        .type   boss_GetStepIdList_51f4f0, %function
+boss_GetStepIdList_51f4f0:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f52c
@@ -22498,12 +22498,12 @@ A_51f4f0:
         pop     {r4, pc}
 L51f52c:
         .word   0x000f0042
-        .size   A_51f4f0, . - A_51f4f0
+        .size   boss_GetStepIdList_51f4f0, . - boss_GetStepIdList_51f4f0
 
 @ FUN_0051f530
-        .global A_51f530
-        .type   A_51f530, %function
-A_51f530:
+        .global boss_GetTaskIdList_51f530
+        .type   boss_GetTaskIdList_51f530, %function
+boss_GetTaskIdList_51f530:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0xe0000
@@ -22514,12 +22514,12 @@ A_51f530:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_51f530, . - A_51f530
+        .size   boss_GetTaskIdList_51f530, . - boss_GetTaskIdList_51f530
 
 @ FUN_0051f558
-        .global A_51f558
-        .type   A_51f558, %function
-A_51f558:
+        .global boss_GetTaskResult_51f558
+        .type   boss_GetTaskResult_51f558, %function
+boss_GetTaskResult_51f558:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r3
         ldrd    r6, r7, [sp, #0x18]
@@ -22546,12 +22546,12 @@ L51f5b0:
         pop     {r4, r5, r6, r7, r8, pc}
 L51f5b4:
         .word   0x00210042
-        .size   A_51f558, . - A_51f558
+        .size   boss_GetTaskResult_51f558, . - boss_GetTaskResult_51f558
 
 @ FUN_0051f5b8
-        .global A_51f5b8
-        .type   A_51f5b8, %function
-A_51f5b8:
+        .global boss_GetTaskStatus_51f5b8
+        .type   boss_GetTaskStatus_51f5b8, %function
+boss_GetTaskStatus_51f5b8:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         ldr     r5, [sp, #0x20]
         mrc     p15, #0, r4, c13, c0, #3
@@ -22578,12 +22578,12 @@ L51f60c:
         pop     {r4, r5, r6, pc}
 L51f614:
         .word   0x002300c2
-        .size   A_51f5b8, . - A_51f5b8
+        .size   boss_GetTaskStatus_51f5b8, . - boss_GetTaskStatus_51f5b8
 
 @ FUN_0051f618
-        .global A_51f618
-        .type   A_51f618, %function
-A_51f618:
+        .global boss_SetOptoutFlag_51f618
+        .type   boss_SetOptoutFlag_51f618, %function
+boss_SetOptoutFlag_51f618:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L51f64c
@@ -22599,12 +22599,12 @@ A_51f618:
         pop     {r4, pc}
 L51f64c:
         .word   0x00090040
-        .size   A_51f618, . - A_51f618
+        .size   boss_SetOptoutFlag_51f618, . - boss_SetOptoutFlag_51f618
 
 @ FUN_0051f650
-        .global A_51f650
-        .type   A_51f650, %function
-A_51f650:
+        .global boss_GetStorageInfo_51f650
+        .type   boss_GetStorageInfo_51f650, %function
+boss_GetStorageInfo_51f650:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -22619,12 +22619,12 @@ A_51f650:
         ldr     r0, [r4, #4]
 L51f680:
         pop     {r4, r5, r6, pc}
-        .size   A_51f650, . - A_51f650
+        .size   boss_GetStorageInfo_51f650, . - boss_GetStorageInfo_51f650
 
 @ FUN_0051f684
-        .global A_51f684
-        .type   A_51f684, %function
-A_51f684:
+        .global boss_UnregisterTask_51f684
+        .type   boss_UnregisterTask_51f684, %function
+boss_UnregisterTask_51f684:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f6cc
@@ -22645,12 +22645,12 @@ A_51f684:
         pop     {r4, pc}
 L51f6cc:
         .word   0x000c0082
-        .size   A_51f684, . - A_51f684
+        .size   boss_UnregisterTask_51f684, . - boss_UnregisterTask_51f684
 
 @ FUN_0051f6d0
-        .global A_51f6d0
-        .type   A_51f6d0, %function
-A_51f6d0:
+        .global boss_ReceiveProperty_51f6d0
+        .type   boss_ReceiveProperty_51f6d0, %function
+boss_ReceiveProperty_51f6d0:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         ldr     r5, [sp, #0x20]
         mrc     p15, #0, r4, c13, c0, #3
@@ -22675,12 +22675,12 @@ L51f71c:
         pop     {r4, r5, r6, pc}
 L51f724:
         .word   0x00160082
-        .size   A_51f6d0, . - A_51f6d0
+        .size   boss_ReceiveProperty_51f6d0, . - boss_ReceiveProperty_51f6d0
 
 @ FUN_0051f728
-        .global A_51f728
-        .type   A_51f728, %function
-A_51f728:
+        .global boss_SetStorageInfo_51f728
+        .type   boss_SetStorageInfo_51f728, %function
+boss_SetStorageInfo_51f728:
         push    {r4, lr}
         ldr     r1, [sp, #8]
         mrc     p15, #0, r4, c13, c0, #3
@@ -22698,12 +22698,12 @@ A_51f728:
         pop     {r4, pc}
 L51f764:
         .word   0x00020100
-        .size   A_51f728, . - A_51f728
+        .size   boss_SetStorageInfo_51f728, . - boss_SetStorageInfo_51f728
 
 @ FUN_0051f768
-        .global A_51f768
-        .type   A_51f768, %function
-A_51f768:
+        .global boss_UpdateTaskCount_51f768
+        .type   boss_UpdateTaskCount_51f768, %function
+boss_UpdateTaskCount_51f768:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L51f7a4
@@ -22721,12 +22721,12 @@ A_51f768:
         pop     {r4, pc}
 L51f7a4:
         .word   0x00180082
-        .size   A_51f768, . - A_51f768
+        .size   boss_UpdateTaskCount_51f768, . - boss_UpdateTaskCount_51f768
 
 @ FUN_0051f7a8
-        .global A_51f7a8
-        .type   A_51f7a8, %function
-A_51f7a8:
+        .global boss_GetNsDataNewFlag_51f7a8
+        .type   boss_GetNsDataNewFlag_51f7a8, %function
+boss_GetNsDataNewFlag_51f7a8:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -22744,12 +22744,12 @@ L51f7dc:
         pop     {r4, r5, r6, pc}
 L51f7e0:
         .word   0x002c0040
-        .size   A_51f7a8, . - A_51f7a8
+        .size   boss_GetNsDataNewFlag_51f7a8, . - boss_GetNsDataNewFlag_51f7a8
 
 @ FUN_0051f7e4
-        .global A_51f7e4
-        .type   A_51f7e4, %function
-A_51f7e4:
+        .global boss_GetPolicyListUrl
+        .type   boss_GetPolicyListUrl, %function
+boss_GetPolicyListUrl:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f820
@@ -22767,12 +22767,12 @@ A_51f7e4:
         pop     {r4, pc}
 L51f820:
         .word   0x04280042
-        .size   A_51f7e4, . - A_51f7e4
+        .size   boss_GetPolicyListUrl, . - boss_GetPolicyListUrl
 
 @ FUN_0051f824
-        .global A_51f824
-        .type   A_51f824, %function
-A_51f824:
+        .global boss_SetNsDataNewFlag_51f824
+        .type   boss_SetNsDataNewFlag_51f824, %function
+boss_SetNsDataNewFlag_51f824:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L51f85c
@@ -22789,12 +22789,12 @@ A_51f824:
         pop     {r4, r5, pc}
 L51f85c:
         .word   0x002b0080
-        .size   A_51f824, . - A_51f824
+        .size   boss_SetNsDataNewFlag_51f824, . - boss_SetNsDataNewFlag_51f824
 
 @ FUN_0051f860
-        .global A_51f860
-        .type   A_51f860, %function
-A_51f860:
+        .global boss_SetPolicyListUrl
+        .type   boss_SetPolicyListUrl, %function
+boss_SetPolicyListUrl:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f89c
@@ -22812,12 +22812,12 @@ A_51f860:
         pop     {r4, pc}
 L51f89c:
         .word   0x04270042
-        .size   A_51f860, . - A_51f860
+        .size   boss_SetPolicyListUrl, . - boss_SetPolicyListUrl
 
 @ FUN_0051f8a0
-        .global A_51f8a0
-        .type   A_51f8a0, %function
-A_51f8a0:
+        .global boss_GetNewArrivalFlag_51f8a0
+        .type   boss_GetNewArrivalFlag_51f8a0, %function
+boss_GetNewArrivalFlag_51f8a0:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -22832,12 +22832,12 @@ A_51f8a0:
         ldr     r0, [r4, #4]
 L51f8d0:
         pop     {r4, r5, r6, pc}
-        .size   A_51f8a0, . - A_51f8a0
+        .size   boss_GetNewArrivalFlag_51f8a0, . - boss_GetNewArrivalFlag_51f8a0
 
 @ FUN_0051f8d4
-        .global A_51f8d4
-        .type   A_51f8d4, %function
-A_51f8d4:
+        .global boss_GetPolicyListEnvId
+        .type   boss_GetPolicyListEnvId, %function
+boss_GetPolicyListEnvId:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f910
@@ -22855,12 +22855,12 @@ A_51f8d4:
         pop     {r4, pc}
 L51f910:
         .word   0x04260042
-        .size   A_51f8d4, . - A_51f8d4
+        .size   boss_GetPolicyListEnvId, . - boss_GetPolicyListEnvId
 
 @ FUN_0051f914
-        .global A_51f914
-        .type   A_51f914, %function
-A_51f914:
+        .global boss_SendPropertyHandle_51f914
+        .type   boss_SendPropertyHandle_51f914, %function
+boss_SendPropertyHandle_51f914:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f954
@@ -22879,12 +22879,12 @@ A_51f914:
         pop     {r4, r5, pc}
 L51f954:
         .word   0x00150042
-        .size   A_51f914, . - A_51f914
+        .size   boss_SendPropertyHandle_51f914, . - boss_SendPropertyHandle_51f914
 
 @ FUN_0051f958
-        .global A_51f958
-        .type   A_51f958, %function
-A_51f958:
+        .global boss_SetPolicyListEnvId
+        .type   boss_SetPolicyListEnvId, %function
+boss_SetPolicyListEnvId:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f994
@@ -22902,12 +22902,12 @@ A_51f958:
         pop     {r4, pc}
 L51f994:
         .word   0x04250042
-        .size   A_51f958, . - A_51f958
+        .size   boss_SetPolicyListEnvId, . - boss_SetPolicyListEnvId
 
 @ FUN_0051f998
-        .global A_51f998
-        .type   A_51f998, %function
-A_51f998:
+        .global boss_StartTaskImmediate_51f998
+        .type   boss_StartTaskImmediate_51f998, %function
+boss_StartTaskImmediate_51f998:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L51f9d4
@@ -22925,12 +22925,12 @@ A_51f998:
         pop     {r4, pc}
 L51f9d4:
         .word   0x001d0042
-        .size   A_51f998, . - A_51f998
+        .size   boss_StartTaskImmediate_51f998, . - boss_StartTaskImmediate_51f998
 
 @ FUN_0051f9d8
-        .global A_51f9d8
-        .type   A_51f9d8, %function
-A_51f9d8:
+        .global boss_GetNsDataHeaderInfo_51f9d8
+        .type   boss_GetNsDataHeaderInfo_51f9d8, %function
+boss_GetNsDataHeaderInfo_51f9d8:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r2, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -22953,12 +22953,12 @@ A_51f9d8:
         pop     {r4, pc}
 L51fa28:
         .word   0x002700c2
-        .size   A_51f9d8, . - A_51f9d8
+        .size   boss_GetNsDataHeaderInfo_51f9d8, . - boss_GetNsDataHeaderInfo_51f9d8
 
 @ FUN_0051fa2c
-        .global A_51fa2c
-        .type   A_51fa2c, %function
-A_51fa2c:
+        .global boss_GetTaskFinishHandle_51fa2c
+        .type   boss_GetTaskFinishHandle_51fa2c, %function
+boss_GetTaskFinishHandle_51fa2c:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -22973,12 +22973,12 @@ A_51fa2c:
         ldr     r0, [r4, #4]
 L51fa5c:
         pop     {r4, r5, r6, pc}
-        .size   A_51fa2c, . - A_51fa2c
+        .size   boss_GetTaskFinishHandle_51fa2c, . - boss_GetTaskFinishHandle_51fa2c
 
 @ FUN_0051fa60
-        .global A_51fa60
-        .type   A_51fa60, %function
-A_51fa60:
+        .global boss_StartTaskPrivileged
+        .type   boss_StartTaskPrivileged, %function
+boss_StartTaskPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -22999,12 +22999,12 @@ A_51fa60:
         pop     {r4, r5, r6, pc}
 L51faa8:
         .word   0x042e00c2
-        .size   A_51fa60, . - A_51fa60
+        .size   boss_StartTaskPrivileged, . - boss_StartTaskPrivileged
 
 @ FUN_0051faac
-        .global A_51faac
-        .type   A_51faac, %function
-A_51faac:
+        .global boss_CancelTaskPrivileged
+        .type   boss_CancelTaskPrivileged, %function
+boss_CancelTaskPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -23025,12 +23025,12 @@ A_51faac:
         pop     {r4, r5, r6, pc}
 L51faf4:
         .word   0x043000c2
-        .size   A_51faac, . - A_51faac
+        .size   boss_CancelTaskPrivileged, . - boss_CancelTaskPrivileged
 
 @ FUN_0051faf8
-        .global A_51faf8
-        .type   A_51faf8, %function
-A_51faf8:
+        .global boss_ReadNsDataPrivileged
+        .type   boss_ReadNsDataPrivileged, %function
+boss_ReadNsDataPrivileged:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         add     r4, sp, #0x34
         ldm     r4, {r1, r5, r6}
@@ -23062,12 +23062,12 @@ L51fb64:
         pop     {r4, r5, r6, r7, r8, sb, sl, pc}
 L51fb68:
         .word   0x04170182
-        .size   A_51faf8, . - A_51faf8
+        .size   boss_ReadNsDataPrivileged, . - boss_ReadNsDataPrivileged
 
 @ FUN_0051fb6c
-        .global A_51fb6c
-        .type   A_51fb6c, %function
-A_51fb6c:
+        .global boss_DeleteNsDataPrivileged
+        .type   boss_DeleteNsDataPrivileged, %function
+boss_DeleteNsDataPrivileged:
         push    {r4, lr}
         ldr     r1, [sp, #8]
         mrc     p15, #0, r4, c13, c0, #3
@@ -23083,12 +23083,12 @@ A_51fb6c:
         pop     {r4, pc}
 L51fba0:
         .word   0x041500c0
-        .size   A_51fb6c, . - A_51fb6c
+        .size   boss_DeleteNsDataPrivileged, . - boss_DeleteNsDataPrivileged
 
 @ FUN_0051fba4
-        .global A_51fba4
-        .type   A_51fba4, %function
-A_51fba4:
+        .global boss_GetNsDataIdList2_51fba4
+        .type   boss_GetNsDataIdList2_51fba4, %function
+boss_GetNsDataIdList2_51fba4:
         push    {r4, r5, r6, r7, r8, lr}
         ldr     r5, [sp, #0x18]
         ldr     r6, [sp, #0x24]
@@ -23118,12 +23118,12 @@ L51fc08:
         pop     {r4, r5, r6, r7, r8, pc}
 L51fc0c:
         .word   0x00120102
-        .size   A_51fba4, . - A_51fba4
+        .size   boss_GetNsDataIdList2_51fba4, . - boss_GetNsDataIdList2_51fba4
 
 @ FUN_0051fc10
-        .global A_51fc10
-        .type   A_51fc10, %function
-A_51fc10:
+        .global boss_GetTaskQueryPrivileged
+        .type   boss_GetTaskQueryPrivileged, %function
+boss_GetTaskQueryPrivileged:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x1c
         ldm     r4, {r1, r6, ip}
@@ -23150,12 +23150,12 @@ A_51fc10:
         pop     {r4, r5, r6, r7, r8, pc}
 L51fc70:
         .word   0x04390104
-        .size   A_51fc10, . - A_51fc10
+        .size   boss_GetTaskQueryPrivileged, . - boss_GetTaskQueryPrivileged
 
 @ FUN_0051fc74
-        .global A_51fc74
-        .type   A_51fc74, %function
-A_51fc74:
+        .global boss_GetStepIdListPrivileged
+        .type   boss_GetStepIdListPrivileged, %function
+boss_GetStepIdListPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -23176,7 +23176,7 @@ A_51fc74:
         pop     {r4, r5, r6, pc}
 L51fcbc:
         .word   0x040c00c2
-        .size   A_51fc74, . - A_51fc74
+        .size   boss_GetStepIdListPrivileged, . - boss_GetStepIdListPrivileged
 
 @ FUN_0051fcc0
         .global A_51fcc0
@@ -23198,9 +23198,9 @@ L51fcec:
         .size   A_51fcc0, . - A_51fcc0
 
 @ FUN_0051fcf0
-        .global A_51fcf0
-        .type   A_51fcf0, %function
-A_51fcf0:
+        .global boss_GetTestModeAvailability
+        .type   boss_GetTestModeAvailability, %function
+boss_GetTestModeAvailability:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -23215,12 +23215,12 @@ A_51fcf0:
         ldr     r0, [r4, #4]
 L51fd20:
         pop     {r4, r5, r6, pc}
-        .size   A_51fcf0, . - A_51fcf0
+        .size   boss_GetTestModeAvailability, . - boss_GetTestModeAvailability
 
 @ FUN_0051fd24
-        .global A_51fd24
-        .type   A_51fd24, %function
-A_51fd24:
+        .global boss_UnregisterTaskPrivileged
+        .type   boss_UnregisterTaskPrivileged, %function
+boss_UnregisterTaskPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -23243,7 +23243,7 @@ A_51fd24:
         pop     {r4, r5, r6, pc}
 L51fd74:
         .word   0x04090102
-        .size   A_51fd24, . - A_51fd24
+        .size   boss_UnregisterTaskPrivileged, . - boss_UnregisterTaskPrivileged
 
 @ FUN_0051fd78
         .global A_51fd78
@@ -23268,9 +23268,9 @@ L51fdac:
         .size   A_51fd78, . - A_51fd78
 
 @ FUN_0051fdb0
-        .global A_51fdb0
-        .type   A_51fdb0, %function
-A_51fdb0:
+        .global boss_GetNsDataNewFlagPrivileged
+        .type   boss_GetNsDataNewFlagPrivileged, %function
+boss_GetNsDataNewFlagPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, r5}
@@ -23290,12 +23290,12 @@ L51fdec:
         pop     {r4, r5, r6, pc}
 L51fdf0:
         .word   0x041b00c0
-        .size   A_51fdb0, . - A_51fdb0
+        .size   boss_GetNsDataNewFlagPrivileged, . - boss_GetNsDataNewFlagPrivileged
 
 @ FUN_0051fdf4
-        .global A_51fdf4
-        .type   A_51fdf4, %function
-A_51fdf4:
+        .global boss_SetNsDataNewFlagPrivileged
+        .type   boss_SetNsDataNewFlagPrivileged, %function
+boss_SetNsDataNewFlagPrivileged:
         push    {r4, lr}
         ldr     r1, [sp, #8]
         mrc     p15, #0, r4, c13, c0, #3
@@ -23313,7 +23313,7 @@ A_51fdf4:
         pop     {r4, pc}
 L51fe30:
         .word   0x041a0100
-        .size   A_51fdf4, . - A_51fdf4
+        .size   boss_SetNsDataNewFlagPrivileged, . - boss_SetNsDataNewFlagPrivileged
 
 @ FUN_0051fe34
         .global A_51fe34
@@ -23337,9 +23337,9 @@ L51fe68:
         .size   A_51fe34, . - A_51fe34
 
 @ FUN_0051fe6c
-        .global A_51fe6c
-        .type   A_51fe6c, %function
-A_51fe6c:
+        .global boss_StartTaskImmediatePrivileged
+        .type   boss_StartTaskImmediatePrivileged, %function
+boss_StartTaskImmediatePrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -23360,12 +23360,12 @@ A_51fe6c:
         pop     {r4, r5, r6, pc}
 L51feb4:
         .word   0x042f00c2
-        .size   A_51fe6c, . - A_51fe6c
+        .size   boss_StartTaskImmediatePrivileged, . - boss_StartTaskImmediatePrivileged
 
 @ FUN_0051feb8
-        .global A_51feb8
-        .type   A_51feb8, %function
-A_51feb8:
+        .global boss_GetNsDataHeaderInfoPrivileged
+        .type   boss_GetNsDataHeaderInfoPrivileged, %function
+boss_GetNsDataHeaderInfoPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x18
         ldr     r5, [sp, #0x10]
@@ -23390,7 +23390,7 @@ A_51feb8:
         pop     {r4, r5, r6, pc}
 L51ff10:
         .word   0x04160142
-        .size   A_51feb8, . - A_51feb8
+        .size   boss_GetNsDataHeaderInfoPrivileged, . - boss_GetNsDataHeaderInfoPrivileged
 
 @ FUN_0051ff14
         .global A_51ff14
@@ -23414,9 +23414,9 @@ L51ff48:
         .size   A_51ff14, . - A_51ff14
 
 @ FUN_0051ff4c
-        .global A_51ff4c
-        .type   A_51ff4c, %function
-A_51ff4c:
+        .global boss_StartBgImmediatePrivileged
+        .type   boss_StartBgImmediatePrivileged, %function
+boss_StartBgImmediatePrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r1, ip}
@@ -23437,12 +23437,12 @@ A_51ff4c:
         pop     {r4, r5, r6, pc}
 L51ff94:
         .word   0x043400c2
-        .size   A_51ff4c, . - A_51ff4c
+        .size   boss_StartBgImmediatePrivileged, . - boss_StartBgImmediatePrivileged
 
 @ FUN_0051ff98
-        .global A_51ff98
-        .type   A_51ff98, %function
-A_51ff98:
+        .global boss_GetTaskPriorityPrivileged
+        .type   boss_GetTaskPriorityPrivileged, %function
+boss_GetTaskPriorityPrivileged:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldr     r5, [sp, #0x18]
@@ -23467,12 +23467,12 @@ L51ffe8:
         pop     {r4, r5, r6, pc}
 L51ffec:
         .word   0x043700c2
-        .size   A_51ff98, . - A_51ff98
+        .size   boss_GetTaskPriorityPrivileged, . - boss_GetTaskPriorityPrivileged
 
 @ FUN_0051fff0
-        .global A_51fff0
-        .type   A_51fff0, %function
-A_51fff0:
+        .global boss_StartTask_51fff0
+        .type   boss_StartTask_51fff0, %function
+boss_StartTask_51fff0:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L52002c
@@ -23490,7 +23490,7 @@ A_51fff0:
         pop     {r4, pc}
 L52002c:
         .word   0x001c0042
-        .size   A_51fff0, . - A_51fff0
+        .size   boss_StartTask_51fff0, . - boss_StartTask_51fff0
 
 @ FUN_005219e0
         .global A_5219e0
@@ -23533,9 +23533,9 @@ L521a44:
         .size   A_521a14, . - A_521a14
 
 @ FUN_00521a48
-        .global A_521a48
-        .type   A_521a48, %function
-A_521a48:
+        .global boss_CancelTask_521a48
+        .type   boss_CancelTask_521a48, %function
+boss_CancelTask_521a48:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L521a84
@@ -23553,12 +23553,12 @@ A_521a48:
         pop     {r4, pc}
 L521a84:
         .word   0x001e0042
-        .size   A_521a48, . - A_521a48
+        .size   boss_CancelTask_521a48, . - boss_CancelTask_521a48
 
 @ FUN_00521a88
-        .global A_521a88
-        .type   A_521a88, %function
-A_521a88:
+        .global boss_ReadNsData_521a88
+        .type   boss_ReadNsData_521a88, %function
+boss_ReadNsData_521a88:
         push    {r4, r5, r6, r7, r8, lr}
         add     r4, sp, #0x20
         ldm     r4, {r5, r6}
@@ -23586,12 +23586,12 @@ L521ae4:
         pop     {r4, r5, r6, r7, r8, pc}
 L521ae8:
         .word   0x00280102
-        .size   A_521a88, . - A_521a88
+        .size   boss_ReadNsData_521a88, . - boss_ReadNsData_521a88
 
 @ FUN_00521aec
-        .global A_521aec
-        .type   A_521aec, %function
-A_521aec:
+        .global boss_DeleteNsData_521aec
+        .type   boss_DeleteNsData_521aec, %function
+boss_DeleteNsData_521aec:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L521b18
@@ -23605,12 +23605,12 @@ A_521aec:
         pop     {r4, pc}
 L521b18:
         .word   0x00260040
-        .size   A_521aec, . - A_521aec
+        .size   boss_DeleteNsData_521aec, . - boss_DeleteNsData_521aec
 
 @ FUN_00521b1c
-        .global A_521b1c
-        .type   A_521b1c, %function
-A_521b1c:
+        .global boss_GetErrorCode_521b1c
+        .type   boss_GetErrorCode_521b1c, %function
+boss_GetErrorCode_521b1c:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -23630,12 +23630,12 @@ L521b54:
         pop     {r4, r5, pc}
 L521b5c:
         .word   0x002e0040
-        .size   A_521b1c, . - A_521b1c
+        .size   boss_GetErrorCode_521b1c, . - boss_GetErrorCode_521b1c
 
 @ FUN_00521b60
-        .global A_521b60
-        .type   A_521b60, %function
-A_521b60:
+        .global boss_GetTaskCount_521b60
+        .type   boss_GetTaskCount_521b60, %function
+boss_GetTaskCount_521b60:
         push    {r4, r5, r6, lr}
         mov     r5, r3
         mrc     p15, #0, r4, c13, c0, #3
@@ -23657,12 +23657,12 @@ L521ba4:
         pop     {r4, r5, r6, pc}
 L521ba8:
         .word   0x001a0042
-        .size   A_521b60, . - A_521b60
+        .size   boss_GetTaskCount_521b60, . - boss_GetTaskCount_521b60
 
 @ FUN_00521bac
-        .global A_521bac
-        .type   A_521bac, %function
-A_521bac:
+        .global boss_GetTaskError_521bac
+        .type   boss_GetTaskError_521bac, %function
+boss_GetTaskError_521bac:
         push    {r4, r5, r6, lr}
         mov     r5, r3
         mrc     p15, #0, r4, c13, c0, #3
@@ -23686,12 +23686,12 @@ L521bf8:
         pop     {r4, r5, r6, pc}
 L521bfc:
         .word   0x00240082
-        .size   A_521bac, . - A_521bac
+        .size   boss_GetTaskError_521bac, . - boss_GetTaskError_521bac
 
 @ FUN_00521c00
-        .global A_521c00
-        .type   A_521c00, %function
-A_521c00:
+        .global boss_RegisterTask_521c00
+        .type   boss_RegisterTask_521c00, %function
+boss_RegisterTask_521c00:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L521c50
@@ -23714,12 +23714,12 @@ A_521c00:
         pop     {r4, pc}
 L521c50:
         .word   0x000b00c2
-        .size   A_521c00, . - A_521c00
+        .size   boss_RegisterTask_521c00, . - boss_RegisterTask_521c00
 
 @ FUN_00521c54
-        .global A_521c54
-        .type   A_521c54, %function
-A_521c54:
+        .global boss_SendProperty_521c54
+        .type   boss_SendProperty_521c54, %function
+boss_SendProperty_521c54:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L521c9c
@@ -23740,12 +23740,12 @@ A_521c54:
         pop     {r4, pc}
 L521c9c:
         .word   0x00140082
-        .size   A_521c54, . - A_521c54
+        .size   boss_SendProperty_521c54, . - boss_SendProperty_521c54
 
 @ FUN_00521ca0
-        .global A_521ca0
-        .type   A_521ca0, %function
-A_521ca0:
+        .global boss_GetOptoutFlag_521ca0
+        .type   boss_GetOptoutFlag_521ca0, %function
+boss_GetOptoutFlag_521ca0:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -23760,12 +23760,12 @@ A_521ca0:
         ldr     r0, [r4, #4]
 L521cd0:
         pop     {r4, r5, r6, pc}
-        .size   A_521ca0, . - A_521ca0
+        .size   boss_GetOptoutFlag_521ca0, . - boss_GetOptoutFlag_521ca0
 
 @ FUN_00521cd4
-        .global A_521cd4
-        .type   A_521cd4, %function
-A_521cd4:
+        .global boss_GetStepIdList_521cd4
+        .type   boss_GetStepIdList_521cd4, %function
+boss_GetStepIdList_521cd4:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L521d10
@@ -23783,12 +23783,12 @@ A_521cd4:
         pop     {r4, pc}
 L521d10:
         .word   0x000f0042
-        .size   A_521cd4, . - A_521cd4
+        .size   boss_GetStepIdList_521cd4, . - boss_GetStepIdList_521cd4
 
 @ FUN_00521d14
-        .global A_521d14
-        .type   A_521d14, %function
-A_521d14:
+        .global boss_GetTaskIdList_521d14
+        .type   boss_GetTaskIdList_521d14, %function
+boss_GetTaskIdList_521d14:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r1, #0xe0000
@@ -23799,12 +23799,12 @@ A_521d14:
         cmp     r1, #0
         ldrge   r0, [r4, #4]
         pop     {r4, pc}
-        .size   A_521d14, . - A_521d14
+        .size   boss_GetTaskIdList_521d14, . - boss_GetTaskIdList_521d14
 
 @ FUN_00521d3c
-        .global A_521d3c
-        .type   A_521d3c, %function
-A_521d3c:
+        .global boss_GetTaskResult_521d3c
+        .type   boss_GetTaskResult_521d3c, %function
+boss_GetTaskResult_521d3c:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r3
         ldrd    r6, r7, [sp, #0x18]
@@ -23831,12 +23831,12 @@ L521d94:
         pop     {r4, r5, r6, r7, r8, pc}
 L521d98:
         .word   0x00210042
-        .size   A_521d3c, . - A_521d3c
+        .size   boss_GetTaskResult_521d3c, . - boss_GetTaskResult_521d3c
 
 @ FUN_00521d9c
-        .global A_521d9c
-        .type   A_521d9c, %function
-A_521d9c:
+        .global boss_GetTaskStatus_521d9c
+        .type   boss_GetTaskStatus_521d9c, %function
+boss_GetTaskStatus_521d9c:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         ldr     r5, [sp, #0x20]
         mrc     p15, #0, r4, c13, c0, #3
@@ -23863,12 +23863,12 @@ L521df0:
         pop     {r4, r5, r6, pc}
 L521df8:
         .word   0x002300c2
-        .size   A_521d9c, . - A_521d9c
+        .size   boss_GetTaskStatus_521d9c, . - boss_GetTaskStatus_521d9c
 
 @ FUN_00521dfc
-        .global A_521dfc
-        .type   A_521dfc, %function
-A_521dfc:
+        .global boss_SetOptoutFlag_521dfc
+        .type   boss_SetOptoutFlag_521dfc, %function
+boss_SetOptoutFlag_521dfc:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L521e30
@@ -23884,12 +23884,12 @@ A_521dfc:
         pop     {r4, pc}
 L521e30:
         .word   0x00090040
-        .size   A_521dfc, . - A_521dfc
+        .size   boss_SetOptoutFlag_521dfc, . - boss_SetOptoutFlag_521dfc
 
 @ FUN_00521e34
-        .global A_521e34
-        .type   A_521e34, %function
-A_521e34:
+        .global boss_GetStorageInfo_521e34
+        .type   boss_GetStorageInfo_521e34, %function
+boss_GetStorageInfo_521e34:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -23904,12 +23904,12 @@ A_521e34:
         ldr     r0, [r4, #4]
 L521e64:
         pop     {r4, r5, r6, pc}
-        .size   A_521e34, . - A_521e34
+        .size   boss_GetStorageInfo_521e34, . - boss_GetStorageInfo_521e34
 
 @ FUN_00521e68
-        .global A_521e68
-        .type   A_521e68, %function
-A_521e68:
+        .global boss_UnregisterTask_521e68
+        .type   boss_UnregisterTask_521e68, %function
+boss_UnregisterTask_521e68:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L521eb0
@@ -23930,12 +23930,12 @@ A_521e68:
         pop     {r4, pc}
 L521eb0:
         .word   0x000c0082
-        .size   A_521e68, . - A_521e68
+        .size   boss_UnregisterTask_521e68, . - boss_UnregisterTask_521e68
 
 @ FUN_00521eb4
-        .global A_521eb4
-        .type   A_521eb4, %function
-A_521eb4:
+        .global boss_ReceiveProperty_521eb4
+        .type   boss_ReceiveProperty_521eb4, %function
+boss_ReceiveProperty_521eb4:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         ldr     r5, [sp, #0x20]
         mrc     p15, #0, r4, c13, c0, #3
@@ -23960,12 +23960,12 @@ L521f00:
         pop     {r4, r5, r6, pc}
 L521f08:
         .word   0x00160082
-        .size   A_521eb4, . - A_521eb4
+        .size   boss_ReceiveProperty_521eb4, . - boss_ReceiveProperty_521eb4
 
 @ FUN_00521f0c
-        .global A_521f0c
-        .type   A_521f0c, %function
-A_521f0c:
+        .global boss_SetStorageInfo_521f0c
+        .type   boss_SetStorageInfo_521f0c, %function
+boss_SetStorageInfo_521f0c:
         push    {r4, lr}
         ldr     r1, [sp, #8]
         mrc     p15, #0, r4, c13, c0, #3
@@ -23983,12 +23983,12 @@ A_521f0c:
         pop     {r4, pc}
 L521f48:
         .word   0x00020100
-        .size   A_521f0c, . - A_521f0c
+        .size   boss_SetStorageInfo_521f0c, . - boss_SetStorageInfo_521f0c
 
 @ FUN_00521f4c
-        .global A_521f4c
-        .type   A_521f4c, %function
-A_521f4c:
+        .global boss_UpdateTaskCount_521f4c
+        .type   boss_UpdateTaskCount_521f4c, %function
+boss_UpdateTaskCount_521f4c:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L521f88
@@ -24006,12 +24006,12 @@ A_521f4c:
         pop     {r4, pc}
 L521f88:
         .word   0x00180082
-        .size   A_521f4c, . - A_521f4c
+        .size   boss_UpdateTaskCount_521f4c, . - boss_UpdateTaskCount_521f4c
 
 @ FUN_00521f8c
-        .global A_521f8c
-        .type   A_521f8c, %function
-A_521f8c:
+        .global boss_GetNsDataNewFlag_521f8c
+        .type   boss_GetNsDataNewFlag_521f8c, %function
+boss_GetNsDataNewFlag_521f8c:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -24029,12 +24029,12 @@ L521fc0:
         pop     {r4, r5, r6, pc}
 L521fc4:
         .word   0x002c0040
-        .size   A_521f8c, . - A_521f8c
+        .size   boss_GetNsDataNewFlag_521f8c, . - boss_GetNsDataNewFlag_521f8c
 
 @ FUN_00521fc8
-        .global A_521fc8
-        .type   A_521fc8, %function
-A_521fc8:
+        .global boss_SetNsDataNewFlag_521fc8
+        .type   boss_SetNsDataNewFlag_521fc8, %function
+boss_SetNsDataNewFlag_521fc8:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L522000
@@ -24051,12 +24051,12 @@ A_521fc8:
         pop     {r4, r5, pc}
 L522000:
         .word   0x002b0080
-        .size   A_521fc8, . - A_521fc8
+        .size   boss_SetNsDataNewFlag_521fc8, . - boss_SetNsDataNewFlag_521fc8
 
 @ FUN_00522004
-        .global A_522004
-        .type   A_522004, %function
-A_522004:
+        .global boss_GetNewArrivalFlag_522004
+        .type   boss_GetNewArrivalFlag_522004, %function
+boss_GetNewArrivalFlag_522004:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -24071,7 +24071,7 @@ A_522004:
         ldr     r0, [r4, #4]
 L522034:
         pop     {r4, r5, r6, pc}
-        .size   A_522004, . - A_522004
+        .size   boss_GetNewArrivalFlag_522004, . - boss_GetNewArrivalFlag_522004
 
 @ FUN_00522038
         .global A_522038
@@ -24095,9 +24095,9 @@ L52206c:
         .size   A_522038, . - A_522038
 
 @ FUN_00522070
-        .global A_522070
-        .type   A_522070, %function
-A_522070:
+        .global boss_SendPropertyHandle_522070
+        .type   boss_SendPropertyHandle_522070, %function
+boss_SendPropertyHandle_522070:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L5220b0
@@ -24116,12 +24116,12 @@ A_522070:
         pop     {r4, r5, pc}
 L5220b0:
         .word   0x00150042
-        .size   A_522070, . - A_522070
+        .size   boss_SendPropertyHandle_522070, . - boss_SendPropertyHandle_522070
 
 @ FUN_005220b4
-        .global A_5220b4
-        .type   A_5220b4, %function
-A_5220b4:
+        .global boss_StartTaskImmediate_5220b4
+        .type   boss_StartTaskImmediate_5220b4, %function
+boss_StartTaskImmediate_5220b4:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L5220f0
@@ -24139,12 +24139,12 @@ A_5220b4:
         pop     {r4, pc}
 L5220f0:
         .word   0x001d0042
-        .size   A_5220b4, . - A_5220b4
+        .size   boss_StartTaskImmediate_5220b4, . - boss_StartTaskImmediate_5220b4
 
 @ FUN_005220f4
-        .global A_5220f4
-        .type   A_5220f4, %function
-A_5220f4:
+        .global boss_GetNsDataHeaderInfo_5220f4
+        .type   boss_GetNsDataHeaderInfo_5220f4, %function
+boss_GetNsDataHeaderInfo_5220f4:
         push    {r0, r1, r2, r3, r4, lr}
         ldr     r2, [sp, #0x18]
         mrc     p15, #0, r4, c13, c0, #3
@@ -24167,12 +24167,12 @@ A_5220f4:
         pop     {r4, pc}
 L522144:
         .word   0x002700c2
-        .size   A_5220f4, . - A_5220f4
+        .size   boss_GetNsDataHeaderInfo_5220f4, . - boss_GetNsDataHeaderInfo_5220f4
 
 @ FUN_00522148
-        .global A_522148
-        .type   A_522148, %function
-A_522148:
+        .global boss_GetTaskFinishHandle_522148
+        .type   boss_GetTaskFinishHandle_522148, %function
+boss_GetTaskFinishHandle_522148:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -24187,12 +24187,12 @@ A_522148:
         ldr     r0, [r4, #4]
 L522178:
         pop     {r4, r5, r6, pc}
-        .size   A_522148, . - A_522148
+        .size   boss_GetTaskFinishHandle_522148, . - boss_GetTaskFinishHandle_522148
 
 @ FUN_0052217c
-        .global A_52217c
-        .type   A_52217c, %function
-A_52217c:
+        .global boss_GetNsDataIdList2_52217c
+        .type   boss_GetNsDataIdList2_52217c, %function
+boss_GetNsDataIdList2_52217c:
         push    {r4, r5, r6, r7, r8, lr}
         ldr     r5, [sp, #0x18]
         ldr     r6, [sp, #0x24]
@@ -24222,12 +24222,12 @@ L5221e0:
         pop     {r4, r5, r6, r7, r8, pc}
 L5221e4:
         .word   0x00120102
-        .size   A_52217c, . - A_52217c
+        .size   boss_GetNsDataIdList2_52217c, . - boss_GetNsDataIdList2_52217c
 
 @ FUN_005221e8
-        .global A_5221e8
-        .type   A_5221e8, %function
-A_5221e8:
+        .global boss_StartTask_5221e8
+        .type   boss_StartTask_5221e8, %function
+boss_StartTask_5221e8:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L522224
@@ -24245,7 +24245,7 @@ A_5221e8:
         pop     {r4, pc}
 L522224:
         .word   0x001c0042
-        .size   A_5221e8, . - A_5221e8
+        .size   boss_StartTask_5221e8, . - boss_StartTask_5221e8
 
 @ FUN_005336cc
         .global A_5336cc
@@ -24410,9 +24410,9 @@ L536d48:
         .size   A_536d30, . - A_536d30
 
 @ FUN_00536d50
-        .global A_536d50
-        .type   A_536d50, %function
-A_536d50:
+        .global APT_U_GetAttribute
+        .type   APT_U_GetAttribute, %function
+APT_U_GetAttribute:
         push    {r4, r5, r6, lr}
         mov     r5, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -24433,12 +24433,12 @@ L536d8c:
         .word   0x000a0040
 L536d90:
         .word   0x008ab930
-        .size   A_536d50, . - A_536d50
+        .size   APT_U_GetAttribute, . - APT_U_GetAttribute
 
 @ FUN_00536d94
-        .global A_536d94
-        .type   A_536d94, %function
-A_536d94:
+        .global APT_U_SendDspSleep
+        .type   APT_U_SendDspSleep, %function
+APT_U_SendDspSleep:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L536dd0
@@ -24458,12 +24458,12 @@ L536dd0:
         .word   0x003c0042
 L536dd4:
         .word   0x008ab930
-        .size   A_536d94, . - A_536d94
+        .size   APT_U_SendDspSleep, . - APT_U_SendDspSleep
 
 @ FUN_00536dd8
-        .global A_536dd8
-        .type   A_536dd8, %function
-A_536dd8:
+        .global APT_U_GetAppletInfo
+        .type   APT_U_GetAppletInfo, %function
+APT_U_GetAppletInfo:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mov     r5, r1
         mov     r6, r2
@@ -24495,12 +24495,12 @@ L536e40:
         .word   0x00060040
 L536e44:
         .word   0x008ab930
-        .size   A_536dd8, . - A_536dd8
+        .size   APT_U_GetAppletInfo, . - APT_U_GetAppletInfo
 
 @ FUN_00536e48
-        .global A_536e48
-        .type   A_536e48, %function
-A_536e48:
+        .global APT_U_GetSharedFont
+        .type   APT_U_GetSharedFont, %function
+APT_U_GetSharedFont:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mov     r6, r1
@@ -24521,12 +24521,12 @@ L536e88:
         pop     {r4, r5, r6, pc}
 L536e8c:
         .word   0x008ab930
-        .size   A_536e48, . - A_536e48
+        .size   APT_U_GetSharedFont, . - APT_U_GetSharedFont
 
 @ FUN_00536e90
-        .global A_536e90
-        .type   A_536e90, %function
-A_536e90:
+        .global APT_U_LeaveHomeMenu
+        .type   APT_U_LeaveHomeMenu, %function
+APT_U_LeaveHomeMenu:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L536edc
@@ -24550,12 +24550,12 @@ L536edc:
         .word   0x002e0044
 L536ee0:
         .word   0x008ab930
-        .size   A_536e90, . - A_536e90
+        .size   APT_U_LeaveHomeMenu, . - APT_U_LeaveHomeMenu
 
 @ FUN_00536ee4
-        .global A_536ee4
-        .type   A_536ee4, %function
-A_536ee4:
+        .global APT_U_SendDspWakeUp
+        .type   APT_U_SendDspWakeUp, %function
+APT_U_SendDspWakeUp:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L536f20
@@ -24575,12 +24575,12 @@ L536f20:
         .word   0x003d0042
 L536f24:
         .word   0x008ab930
-        .size   A_536ee4, . - A_536ee4
+        .size   APT_U_SendDspWakeUp, . - APT_U_SendDspWakeUp
 
 @ FUN_00536f28
-        .global A_536f28
-        .type   A_536f28, %function
-A_536f28:
+        .global APT_U_GetCaptureInfo
+        .type   APT_U_GetCaptureInfo, %function
+APT_U_GetCaptureInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L536f7c
@@ -24606,12 +24606,12 @@ L536f7c:
         .word   0x004a0040
 L536f80:
         .word   0x008ab930
-        .size   A_536f28, . - A_536f28
+        .size   APT_U_GetCaptureInfo, . - APT_U_GetCaptureInfo
 
 @ FUN_00536f84
-        .global A_536f84
-        .type   A_536f84, %function
-A_536f84:
+        .global APT_U_GetProgramInfo
+        .type   APT_U_GetProgramInfo, %function
+APT_U_GetProgramInfo:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mov     r6, r1
@@ -24639,12 +24639,12 @@ L536fdc:
         .word   0x00480100
 L536fe0:
         .word   0x008ab930
-        .size   A_536f84, . - A_536f84
+        .size   APT_U_GetProgramInfo, . - APT_U_GetProgramInfo
 
 @ FUN_00536fe4
-        .global A_536fe4
-        .type   A_536fe4, %function
-A_536fe4:
+        .global APT_U_JumpToHomeMenu
+        .type   APT_U_JumpToHomeMenu, %function
+APT_U_JumpToHomeMenu:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L537030
@@ -24668,12 +24668,12 @@ L537030:
         .word   0x002c0044
 L537034:
         .word   0x008ab930
-        .size   A_536fe4, . - A_536fe4
+        .size   APT_U_JumpToHomeMenu, . - APT_U_JumpToHomeMenu
 
 @ FUN_00537038
-        .global A_537038
-        .type   A_537038, %function
-A_537038:
+        .global APT_U_LoadSysMenuArg
+        .type   APT_U_LoadSysMenuArg, %function
+APT_U_LoadSysMenuArg:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L53708c
@@ -24699,12 +24699,12 @@ L53708c:
         .word   0x00360040
 L537090:
         .word   0x008ab930
-        .size   A_537038, . - A_537038
+        .size   APT_U_LoadSysMenuArg, . - APT_U_LoadSysMenuArg
 
 @ FUN_00537094
-        .global A_537094
-        .type   A_537094, %function
-A_537094:
+        .global APT_U_SendDeliverArg
+        .type   APT_U_SendDeliverArg, %function
+APT_U_SendDeliverArg:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L5370f0
@@ -24732,12 +24732,12 @@ L5370f0:
         .word   0x00340084
 L5370f4:
         .word   0x008ab930
-        .size   A_537094, . - A_537094
+        .size   APT_U_SendDeliverArg, . - APT_U_SendDeliverArg
 
 @ FUN_005370f8
-        .global A_5370f8
-        .type   A_5370f8, %function
-A_5370f8:
+        .global APT_U_StoreSysMenuArg
+        .type   APT_U_StoreSysMenuArg, %function
+APT_U_StoreSysMenuArg:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L53713c
@@ -24759,12 +24759,12 @@ L53713c:
         .word   0x00370042
 L537140:
         .word   0x008ab930
-        .size   A_5370f8, . - A_5370f8
+        .size   APT_U_StoreSysMenuArg, . - APT_U_StoreSysMenuArg
 
 @ FUN_00537144
-        .global A_537144
-        .type   A_537144, %function
-A_537144:
+        .global APT_U_GetAppletManInfo
+        .type   APT_U_GetAppletManInfo, %function
+APT_U_GetAppletManInfo:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}
         mov     r5, r1
         mov     r6, r2
@@ -24796,12 +24796,12 @@ L5371ac:
         .word   0x00050040
 L5371b0:
         .word   0x008ab930
-        .size   A_537144, . - A_537144
+        .size   APT_U_GetAppletManInfo, . - APT_U_GetAppletManInfo
 
 @ FUN_005371b4
-        .global A_5371b4
-        .type   A_5371b4, %function
-A_5371b4:
+        .global APT_U_StartApplication
+        .type   APT_U_StartApplication, %function
+APT_U_StartApplication:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L537218
@@ -24831,12 +24831,12 @@ L537218:
         .word   0x001b00c4
 L53721c:
         .word   0x008ab930
-        .size   A_5371b4, . - A_5371b4
+        .size   APT_U_StartApplication, . - APT_U_StartApplication
 
 @ FUN_00537220
-        .global A_537220
-        .type   A_537220, %function
-A_537220:
+        .global APT_U_CancelApplication
+        .type   APT_U_CancelApplication, %function
+APT_U_CancelApplication:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x1d0000
@@ -24850,12 +24850,12 @@ A_537220:
         pop     {r4, pc}
 L53724c:
         .word   0x008ab930
-        .size   A_537220, . - A_537220
+        .size   APT_U_CancelApplication, . - APT_U_CancelApplication
 
 @ FUN_00537250
-        .global A_537250
-        .type   A_537250, %function
-A_537250:
+        .global APT_U_CloseSystemApplet
+        .type   APT_U_CloseSystemApplet, %function
+APT_U_CloseSystemApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53729c
@@ -24879,12 +24879,12 @@ L53729c:
         .word   0x00290044
 L5372a0:
         .word   0x008ab930
-        .size   A_537250, . - A_537250
+        .size   APT_U_CloseSystemApplet, . - APT_U_CloseSystemApplet
 
 @ FUN_005372a4
-        .global A_5372a4
-        .type   A_5372a4, %function
-A_5372a4:
+        .global APT_U_DoApplicationJump
+        .type   APT_U_DoApplicationJump, %function
+APT_U_DoApplicationJump:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L537300
@@ -24912,12 +24912,12 @@ L537300:
         .word   0x00320084
 L537304:
         .word   0x008ab930
-        .size   A_5372a4, . - A_5372a4
+        .size   APT_U_DoApplicationJump, . - APT_U_DoApplicationJump
 
 @ FUN_00537308
-        .global A_537308
-        .type   A_537308, %function
-A_537308:
+        .global APT_U_JumpToApplication
+        .type   APT_U_JumpToApplication, %function
+APT_U_JumpToApplication:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L537354
@@ -24941,12 +24941,12 @@ L537354:
         .word   0x00240044
 L537358:
         .word   0x008ab930
-        .size   A_537308, . - A_537308
+        .size   APT_U_JumpToApplication, . - APT_U_JumpToApplication
 
 @ FUN_0053735c
-        .global A_53735c
-        .type   A_53735c, %function
-A_53735c:
+        .global APT_U_ReceiveDeliverArg
+        .type   APT_U_ReceiveDeliverArg, %function
+APT_U_ReceiveDeliverArg:
         push    {r4, r5, r6, r7, r8, sb, sl, fp, ip, lr}
         ldrd    sl, fp, [sp, #0x28]
         mrc     p15, #0, r5, c13, c0, #3
@@ -24984,12 +24984,12 @@ L5373dc:
         .word   0x00350080
 L5373e0:
         .word   0x008ab930
-        .size   A_53735c, . - A_53735c
+        .size   APT_U_ReceiveDeliverArg, . - APT_U_ReceiveDeliverArg
 
 @ FUN_005373e4
-        .global A_5373e4
-        .type   A_5373e4, %function
-A_5373e4:
+        .global APT_U_StartSystemApplet
+        .type   APT_U_StartSystemApplet, %function
+APT_U_StartSystemApplet:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L53742c
@@ -25012,12 +25012,12 @@ L53742c:
         .word   0x001f0084
 L537430:
         .word   0x008ab930
-        .size   A_5373e4, . - A_5373e4
+        .size   APT_U_StartSystemApplet, . - APT_U_StartSystemApplet
 
 @ FUN_00537434
-        .global A_537434
-        .type   A_537434, %function
-A_537434:
+        .global APT_U_WakeupApplication
+        .type   APT_U_WakeupApplication, %function
+APT_U_WakeupApplication:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x1c0000
@@ -25031,12 +25031,12 @@ A_537434:
         pop     {r4, pc}
 L537460:
         .word   0x008ab930
-        .size   A_537434, . - A_537434
+        .size   APT_U_WakeupApplication, . - APT_U_WakeupApplication
 
 @ FUN_00537464
-        .global A_537464
-        .type   A_537464, %function
-A_537464:
+        .global APT_U_CloseLibraryApplet
+        .type   APT_U_CloseLibraryApplet, %function
+APT_U_CloseLibraryApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L5374b0
@@ -25060,12 +25060,12 @@ L5374b0:
         .word   0x00280044
 L5374b4:
         .word   0x008ab930
-        .size   A_537464, . - A_537464
+        .size   APT_U_CloseLibraryApplet, . - APT_U_CloseLibraryApplet
 
 @ FUN_005374b8
-        .global A_5374b8
-        .type   A_5374b8, %function
-A_5374b8:
+        .global APT_U_GetStartupArgument
+        .type   APT_U_GetStartupArgument, %function
+APT_U_GetStartupArgument:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r3
         mrc     p15, #0, r4, c13, c0, #3
@@ -25096,12 +25096,12 @@ L53751c:
         .word   0x00510080
 L537520:
         .word   0x008ab930
-        .size   A_5374b8, . - A_5374b8
+        .size   APT_U_GetStartupArgument, . - APT_U_GetStartupArgument
 
 @ FUN_00537524
-        .global A_537524
-        .type   A_537524, %function
-A_537524:
+        .global APT_U_HardwareResetAsync
+        .type   APT_U_HardwareResetAsync, %function
+APT_U_HardwareResetAsync:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x4e0000
@@ -25115,12 +25115,12 @@ A_537524:
         pop     {r4, pc}
 L537550:
         .word   0x008ab930
-        .size   A_537524, . - A_537524
+        .size   APT_U_HardwareResetAsync, . - APT_U_HardwareResetAsync
 
 @ FUN_00537554
-        .global A_537554
-        .type   A_537554, %function
-A_537554:
+        .global APT_U_StartLibraryApplet
+        .type   APT_U_StartLibraryApplet, %function
+APT_U_StartLibraryApplet:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L53759c
@@ -25143,12 +25143,12 @@ L53759c:
         .word   0x001e0084
 L5375a0:
         .word   0x008ab930
-        .size   A_537554, . - A_537554
+        .size   APT_U_StartLibraryApplet, . - APT_U_StartLibraryApplet
 
 @ FUN_005375a4
-        .global A_5375a4
-        .type   A_5375a4, %function
-A_5375a4:
+        .global APT_U_GetPreparationState
+        .type   APT_U_GetPreparationState, %function
+APT_U_GetPreparationState:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -25166,12 +25166,12 @@ L5375d8:
         pop     {r4, r5, r6, pc}
 L5375dc:
         .word   0x008ab930
-        .size   A_5375a4, . - A_5375a4
+        .size   APT_U_GetPreparationState, . - APT_U_GetPreparationState
 
 @ FUN_005375e0
-        .global A_5375e0
-        .type   A_5375e0, %function
-A_5375e0:
+        .global APT_U_LeaveResidentApplet
+        .type   APT_U_LeaveResidentApplet, %function
+APT_U_LeaveResidentApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53762c
@@ -25195,12 +25195,12 @@ L53762c:
         .word   0x00300044
 L537630:
         .word   0x008ab930
-        .size   A_5375e0, . - A_5375e0
+        .size   APT_U_LeaveResidentApplet, . - APT_U_LeaveResidentApplet
 
 @ FUN_00537634
-        .global A_537634
-        .type   A_537634, %function
-A_537634:
+        .global APT_U_SetFatalErrDispMode
+        .type   APT_U_SetFatalErrDispMode, %function
+APT_U_SetFatalErrDispMode:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x4c0000
@@ -25214,12 +25214,12 @@ A_537634:
         pop     {r4, pc}
 L537660:
         .word   0x008ab930
-        .size   A_537634, . - A_537634
+        .size   APT_U_SetFatalErrDispMode, . - APT_U_SetFatalErrDispMode
 
 @ FUN_00537664
-        .global A_537664
-        .type   A_537664, %function
-A_537664:
+        .global APT_U_SetPreparationState
+        .type   APT_U_SetPreparationState, %function
+APT_U_SetPreparationState:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L537698
@@ -25237,12 +25237,12 @@ L537698:
         .word   0x00140040
 L53769c:
         .word   0x008ab930
-        .size   A_537664, . - A_537664
+        .size   APT_U_SetPreparationState, . - APT_U_SetPreparationState
 
 @ FUN_005376a0
-        .global A_5376a0
-        .type   A_5376a0, %function
-A_5376a0:
+        .global APT_U_StartNewestHomeMenu
+        .type   APT_U_StartNewestHomeMenu, %function
+APT_U_StartNewestHomeMenu:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L5376ec
@@ -25266,12 +25266,12 @@ L5376ec:
         .word   0x00200044
 L5376f0:
         .word   0x008ab930
-        .size   A_5376a0, . - A_5376a0
+        .size   APT_U_StartNewestHomeMenu, . - APT_U_StartNewestHomeMenu
 
 @ FUN_005376f4
-        .global A_5376f4
-        .type   A_5376f4, %function
-A_5376f4:
+        .global APT_U_StartResidentApplet
+        .type   APT_U_StartResidentApplet, %function
+APT_U_StartResidentApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L537740
@@ -25295,12 +25295,12 @@ L537740:
         .word   0x003a0044
 L537744:
         .word   0x008ab930
-        .size   A_5376f4, . - A_5376f4
+        .size   APT_U_StartResidentApplet, . - APT_U_StartResidentApplet
 
 @ FUN_00537748
-        .global A_537748
-        .type   A_537748, %function
-A_537748:
+        .global APT_U_GetAppletProgramInfo
+        .type   APT_U_GetAppletProgramInfo, %function
+APT_U_GetAppletProgramInfo:
         push    {r4, r5, r6, lr}
         mov     r5, r2
         mrc     p15, #0, r4, c13, c0, #3
@@ -25321,12 +25321,12 @@ L537784:
         .word   0x004d0080
 L537788:
         .word   0x008ab930
-        .size   A_537748, . - A_537748
+        .size   APT_U_GetAppletProgramInfo, . - APT_U_GetAppletProgramInfo
 
 @ FUN_0053778c
-        .global A_53778c
-        .type   A_53778c, %function
-A_53778c:
+        .global APT_U_MapProgramIdForDebug
+        .type   APT_U_MapProgramIdForDebug, %function
+APT_U_MapProgramIdForDebug:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5377c0
@@ -25344,12 +25344,12 @@ L5377c0:
         .word   0x001100c0
 L5377c4:
         .word   0x008ab930
-        .size   A_53778c, . - A_53778c
+        .size   APT_U_MapProgramIdForDebug, . - APT_U_MapProgramIdForDebug
 
 @ FUN_005377c8
-        .global A_5377c8
-        .type   A_5377c8, %function
-A_5377c8:
+        .global APT_U_PreloadLibraryApplet
+        .type   APT_U_PreloadLibraryApplet, %function
+APT_U_PreloadLibraryApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5377f8
@@ -25366,12 +25366,12 @@ L5377f8:
         .word   0x00160040
 L5377fc:
         .word   0x008ab930
-        .size   A_5377c8, . - A_5377c8
+        .size   APT_U_PreloadLibraryApplet, . - APT_U_PreloadLibraryApplet
 
 @ FUN_00537800
-        .global A_537800
-        .type   A_537800, %function
-A_537800:
+        .global APT_U_CountRegisteredApplet
+        .type   APT_U_CountRegisteredApplet, %function
+APT_U_CountRegisteredApplet:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -25389,12 +25389,12 @@ L537834:
         pop     {r4, r5, r6, pc}
 L537838:
         .word   0x008ab930
-        .size   A_537800, . - A_537800
+        .size   APT_U_CountRegisteredApplet, . - APT_U_CountRegisteredApplet
 
 @ FUN_0053783c
-        .global A_53783c
-        .type   A_53783c, %function
-A_53783c:
+        .global APT_U_GetWirelessRebootInfo
+        .type   APT_U_GetWirelessRebootInfo, %function
+APT_U_GetWirelessRebootInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L537890
@@ -25420,12 +25420,12 @@ L537890:
         .word   0x00450040
 L537894:
         .word   0x008ab930
-        .size   A_53783c, . - A_53783c
+        .size   APT_U_GetWirelessRebootInfo, . - APT_U_GetWirelessRebootInfo
 
 @ FUN_00537898
-        .global A_537898
-        .type   A_537898, %function
-A_537898:
+        .global APT_U_PreloadResidentApplet
+        .type   APT_U_PreloadResidentApplet, %function
+APT_U_PreloadResidentApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L5378c8
@@ -25442,12 +25442,12 @@ L5378c8:
         .word   0x00380040
 L5378cc:
         .word   0x008ab930
-        .size   A_537898, . - A_537898
+        .size   APT_U_PreloadResidentApplet, . - APT_U_PreloadResidentApplet
 
 @ FUN_005378d0
-        .global A_5378d0
-        .type   A_5378d0, %function
-A_5378d0:
+        .global APT_U_SendCaptureBufferInfo
+        .type   APT_U_SendCaptureBufferInfo, %function
+APT_U_SendCaptureBufferInfo:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L537914
@@ -25469,12 +25469,12 @@ L537914:
         .word   0x00400042
 L537918:
         .word   0x008ab930
-        .size   A_5378d0, . - A_5378d0
+        .size   APT_U_SendCaptureBufferInfo, . - APT_U_SendCaptureBufferInfo
 
 @ FUN_0053791c
-        .global A_53791c
-        .type   A_53791c, %function
-A_53791c:
+        .global APT_U_PrepareToLeaveHomeMenu
+        .type   APT_U_PrepareToLeaveHomeMenu, %function
+APT_U_PrepareToLeaveHomeMenu:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x2d0000
@@ -25488,12 +25488,12 @@ A_53791c:
         pop     {r4, pc}
 L537948:
         .word   0x008ab930
-        .size   A_53791c, . - A_53791c
+        .size   APT_U_PrepareToLeaveHomeMenu, . - APT_U_PrepareToLeaveHomeMenu
 
 @ FUN_0053794c
-        .global A_53794c
-        .type   A_53794c, %function
-A_53794c:
+        .global APT_U_GetLastSignaledAppletId
+        .type   APT_U_GetLastSignaledAppletId, %function
+APT_U_GetLastSignaledAppletId:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -25511,12 +25511,12 @@ L537980:
         pop     {r4, r5, r6, pc}
 L537984:
         .word   0x008ab930
-        .size   A_53794c, . - A_53794c
+        .size   APT_U_GetLastSignaledAppletId, . - APT_U_GetLastSignaledAppletId
 
 @ FUN_00537988
-        .global A_537988
-        .type   A_537988, %function
-A_537988:
+        .global APT_U_OrderToCloseApplication
+        .type   APT_U_OrderToCloseApplication, %function
+APT_U_OrderToCloseApplication:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x210000
@@ -25530,12 +25530,12 @@ A_537988:
         pop     {r4, pc}
 L5379b4:
         .word   0x008ab930
-        .size   A_537988, . - A_537988
+        .size   APT_U_OrderToCloseApplication, . - APT_U_OrderToCloseApplication
 
 @ FUN_005379b8
-        .global A_5379b8
-        .type   A_5379b8, %function
-A_5379b8:
+        .global APT_U_PrepareToJumpToHomeMenu
+        .type   APT_U_PrepareToJumpToHomeMenu, %function
+APT_U_PrepareToJumpToHomeMenu:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x2b0000
@@ -25549,12 +25549,12 @@ A_5379b8:
         pop     {r4, pc}
 L5379e4:
         .word   0x008ab930
-        .size   A_5379b8, . - A_5379b8
+        .size   APT_U_PrepareToJumpToHomeMenu, . - APT_U_PrepareToJumpToHomeMenu
 
 @ FUN_005379e8
-        .global A_5379e8
-        .type   A_5379e8, %function
-A_5379e8:
+        .global APT_U_OrderToCloseSystemApplet
+        .type   APT_U_OrderToCloseSystemApplet, %function
+APT_U_OrderToCloseSystemApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x2a0000
@@ -25568,12 +25568,12 @@ A_5379e8:
         pop     {r4, pc}
 L537a14:
         .word   0x008ab930
-        .size   A_5379e8, . - A_5379e8
+        .size   APT_U_OrderToCloseSystemApplet, . - APT_U_OrderToCloseSystemApplet
 
 @ FUN_00537a18
-        .global A_537a18
-        .type   A_537a18, %function
-A_537a18:
+        .global APT_U_ReceiveCaptureBufferInfo
+        .type   APT_U_ReceiveCaptureBufferInfo, %function
+APT_U_ReceiveCaptureBufferInfo:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r2
         mrc     p15, #0, r5, c13, c0, #3
@@ -25603,12 +25603,12 @@ L537a78:
         .word   0x00410040
 L537a7c:
         .word   0x008ab930
-        .size   A_537a18, . - A_537a18
+        .size   APT_U_ReceiveCaptureBufferInfo, . - APT_U_ReceiveCaptureBufferInfo
 
 @ FUN_00537a80
-        .global A_537a80
-        .type   A_537a80, %function
-A_537a80:
+        .global APT_U_PrepareToStartApplication
+        .type   APT_U_PrepareToStartApplication, %function
+APT_U_PrepareToStartApplication:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537acc
@@ -25632,7 +25632,7 @@ L537acc:
         .word   0x00150140
 L537ad0:
         .word   0x008ab930
-        .size   A_537a80, . - A_537a80
+        .size   APT_U_PrepareToStartApplication, . - APT_U_PrepareToStartApplication
 
 @ FUN_00537ad4
         .global A_537ad4
@@ -25661,9 +25661,9 @@ L537b14:
         .size   A_537ad4, . - A_537ad4
 
 @ FUN_00537b18
-        .global A_537b18
-        .type   A_537b18, %function
-A_537b18:
+        .global APT_U_PrepareToCloseSystemApplet
+        .type   APT_U_PrepareToCloseSystemApplet, %function
+APT_U_PrepareToCloseSystemApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x260000
@@ -25677,12 +25677,12 @@ A_537b18:
         pop     {r4, pc}
 L537b44:
         .word   0x008ab930
-        .size   A_537b18, . - A_537b18
+        .size   APT_U_PrepareToCloseSystemApplet, . - APT_U_PrepareToCloseSystemApplet
 
 @ FUN_00537b48
-        .global A_537b48
-        .type   A_537b48, %function
-A_537b48:
+        .global APT_U_PrepareToDoApplicationJump
+        .type   APT_U_PrepareToDoApplicationJump, %function
+APT_U_PrepareToDoApplicationJump:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L537b8c
@@ -25704,12 +25704,12 @@ L537b8c:
         .word   0x00310100
 L537b90:
         .word   0x008ab930
-        .size   A_537b48, . - A_537b48
+        .size   APT_U_PrepareToDoApplicationJump, . - APT_U_PrepareToDoApplicationJump
 
 @ FUN_00537b94
-        .global A_537b94
-        .type   A_537b94, %function
-A_537b94:
+        .global APT_U_PrepareToJumpToApplication
+        .type   APT_U_PrepareToJumpToApplication, %function
+APT_U_PrepareToJumpToApplication:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L537bc8
@@ -25727,12 +25727,12 @@ L537bc8:
         .word   0x00230040
 L537bcc:
         .word   0x008ab930
-        .size   A_537b94, . - A_537b94
+        .size   APT_U_PrepareToJumpToApplication, . - APT_U_PrepareToJumpToApplication
 
 @ FUN_00537bd0
-        .global A_537bd0
-        .type   A_537bd0, %function
-A_537bd0:
+        .global APT_U_PrepareToStartSystemApplet
+        .type   APT_U_PrepareToStartSystemApplet, %function
+APT_U_PrepareToStartSystemApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537c00
@@ -25749,12 +25749,12 @@ L537c00:
         .word   0x00190040
 L537c04:
         .word   0x008ab930
-        .size   A_537bd0, . - A_537bd0
+        .size   APT_U_PrepareToStartSystemApplet, . - APT_U_PrepareToStartSystemApplet
 
 @ FUN_00537c08
-        .global A_537c08
-        .type   A_537c08, %function
-A_537c08:
+        .global APT_U_SetApplicationCpuTimeLimit
+        .type   APT_U_SetApplicationCpuTimeLimit, %function
+APT_U_SetApplicationCpuTimeLimit:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L537c38
@@ -25771,12 +25771,12 @@ L537c38:
         .word   0x004f0080
 L537c3c:
         .word   0x008ab930
-        .size   A_537c08, . - A_537c08
+        .size   APT_U_SetApplicationCpuTimeLimit, . - APT_U_SetApplicationCpuTimeLimit
 
 @ FUN_00537c40
-        .global A_537c40
-        .type   A_537c40, %function
-A_537c40:
+        .global APT_U_PrepareToCloseLibraryApplet
+        .type   APT_U_PrepareToCloseLibraryApplet, %function
+APT_U_PrepareToCloseLibraryApplet:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L537c88
@@ -25799,12 +25799,12 @@ L537c88:
         .word   0x002500c0
 L537c8c:
         .word   0x008ab930
-        .size   A_537c40, . - A_537c40
+        .size   APT_U_PrepareToCloseLibraryApplet, . - APT_U_PrepareToCloseLibraryApplet
 
 @ FUN_00537c90
-        .global A_537c90
-        .type   A_537c90, %function
-A_537c90:
+        .global APT_U_PrepareToStartLibraryApplet
+        .type   APT_U_PrepareToStartLibraryApplet, %function
+APT_U_PrepareToStartLibraryApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537cc0
@@ -25821,7 +25821,7 @@ L537cc0:
         .word   0x00180040
 L537cc4:
         .word   0x008ab930
-        .size   A_537c90, . - A_537c90
+        .size   APT_U_PrepareToStartLibraryApplet, . - APT_U_PrepareToStartLibraryApplet
 
 @ FUN_00537cc8
         .global A_537cc8
@@ -25850,9 +25850,9 @@ L537d08:
         .size   A_537cc8, . - A_537cc8
 
 @ FUN_00537d0c
-        .global A_537d0c
-        .type   A_537d0c, %function
-A_537d0c:
+        .global APT_U_SetHomeMenuAppletIdForDebug
+        .type   APT_U_SetHomeMenuAppletIdForDebug, %function
+APT_U_SetHomeMenuAppletIdForDebug:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537d3c
@@ -25869,12 +25869,12 @@ L537d3c:
         .word   0x00120040
 L537d40:
         .word   0x008ab930
-        .size   A_537d0c, . - A_537d0c
+        .size   APT_U_SetHomeMenuAppletIdForDebug, . - APT_U_SetHomeMenuAppletIdForDebug
 
 @ FUN_00537d44
-        .global A_537d44
-        .type   A_537d44, %function
-A_537d44:
+        .global APT_U_PrepareToLeaveResidentApplet
+        .type   APT_U_PrepareToLeaveResidentApplet, %function
+APT_U_PrepareToLeaveResidentApplet:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L537d78
@@ -25892,12 +25892,12 @@ L537d78:
         .word   0x002f0040
 L537d7c:
         .word   0x008ab930
-        .size   A_537d44, . - A_537d44
+        .size   APT_U_PrepareToLeaveResidentApplet, . - APT_U_PrepareToLeaveResidentApplet
 
 @ FUN_00537d80
-        .global A_537d80
-        .type   A_537d80, %function
-A_537d80:
+        .global APT_U_PrepareToStartNewestHomeMenu
+        .type   APT_U_PrepareToStartNewestHomeMenu, %function
+APT_U_PrepareToStartNewestHomeMenu:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x1a0000
@@ -25911,12 +25911,12 @@ A_537d80:
         pop     {r4, pc}
 L537dac:
         .word   0x008ab930
-        .size   A_537d80, . - A_537d80
+        .size   APT_U_PrepareToStartNewestHomeMenu, . - APT_U_PrepareToStartNewestHomeMenu
 
 @ FUN_00537db0
-        .global A_537db0
-        .type   A_537db0, %function
-A_537db0:
+        .global APT_U_PrepareToStartResidentApplet
+        .type   APT_U_PrepareToStartResidentApplet, %function
+APT_U_PrepareToStartResidentApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537de0
@@ -25933,12 +25933,12 @@ L537de0:
         .word   0x00390040
 L537de4:
         .word   0x008ab930
-        .size   A_537db0, . - A_537db0
+        .size   APT_U_PrepareToStartResidentApplet, . - APT_U_PrepareToStartResidentApplet
 
 @ FUN_00537de8
-        .global A_537de8
-        .type   A_537de8, %function
-A_537de8:
+        .global APT_U_FinishPreloadingLibraryApplet
+        .type   APT_U_FinishPreloadingLibraryApplet, %function
+APT_U_FinishPreloadingLibraryApplet:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537e18
@@ -25955,12 +25955,12 @@ L537e18:
         .word   0x00170040
 L537e1c:
         .word   0x008ab930
-        .size   A_537de8, . - A_537de8
+        .size   APT_U_FinishPreloadingLibraryApplet, . - APT_U_FinishPreloadingLibraryApplet
 
 @ FUN_00537e20
-        .global A_537e20
-        .type   A_537e20, %function
-A_537e20:
+        .global APT_U_GetProgramIdOnApplicationJump
+        .type   APT_U_GetProgramIdOnApplicationJump, %function
+APT_U_GetProgramIdOnApplicationJump:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r0
         mov     r6, r1
@@ -25987,12 +25987,12 @@ L537e78:
         pop     {r4, r5, r6, r7, r8, pc}
 L537e7c:
         .word   0x008ab930
-        .size   A_537e20, . - A_537e20
+        .size   APT_U_GetProgramIdOnApplicationJump, . - APT_U_GetProgramIdOnApplicationJump
 
 @ FUN_00537e80
-        .global A_537e80
-        .type   A_537e80, %function
-A_537e80:
+        .global APT_U_Wrap
+        .type   APT_U_Wrap, %function
+APT_U_Wrap:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r5, ip}
@@ -26020,12 +26020,12 @@ L537edc:
         .word   0x00460104
 L537ee0:
         .word   0x008ab930
-        .size   A_537e80, . - A_537e80
+        .size   APT_U_Wrap, . - APT_U_Wrap
 
 @ FUN_00537ee4
-        .global A_537ee4
-        .type   A_537ee4, %function
-A_537ee4:
+        .global APT_U_Wrap1
+        .type   APT_U_Wrap1, %function
+APT_U_Wrap1:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r5, ip}
@@ -26053,12 +26053,12 @@ L537f40:
         .word   0x00520104
 L537f44:
         .word   0x008ab930
-        .size   A_537ee4, . - A_537ee4
+        .size   APT_U_Wrap1, . - APT_U_Wrap1
 
 @ FUN_00537f48
-        .global A_537f48
-        .type   A_537f48, %function
-A_537f48:
+        .global APT_U_Reboot
+        .type   APT_U_Reboot, %function
+APT_U_Reboot:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L537f98
@@ -26083,12 +26083,12 @@ L537f98:
         .word   0x00490180
 L537f9c:
         .word   0x008ab930
-        .size   A_537f48, . - A_537f48
+        .size   APT_U_Reboot, . - APT_U_Reboot
 
 @ FUN_00537fa0
-        .global A_537fa0
-        .type   A_537fa0, %function
-A_537fa0:
+        .global APT_U_Unwrap
+        .type   APT_U_Unwrap, %function
+APT_U_Unwrap:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r5, ip}
@@ -26116,12 +26116,12 @@ L537ffc:
         .word   0x00470104
 L538000:
         .word   0x008ab930
-        .size   A_537fa0, . - A_537fa0
+        .size   APT_U_Unwrap, . - APT_U_Unwrap
 
 @ FUN_00538004
-        .global A_538004
-        .type   A_538004, %function
-A_538004:
+        .global APT_U_Unwrap1
+        .type   APT_U_Unwrap1, %function
+APT_U_Unwrap1:
         push    {r4, r5, r6, lr}
         add     r4, sp, #0x10
         ldm     r4, {r5, ip}
@@ -26149,12 +26149,12 @@ L538060:
         .word   0x00530104
 L538064:
         .word   0x008ab930
-        .size   A_538004, . - A_538004
+        .size   APT_U_Unwrap1, . - APT_U_Unwrap1
 
 @ FUN_00538068
-        .global A_538068
-        .type   A_538068, %function
-A_538068:
+        .global APT_U_Finalize
+        .type   APT_U_Finalize, %function
+APT_U_Finalize:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L538098
@@ -26171,12 +26171,12 @@ L538098:
         .word   0x00040040
 L53809c:
         .word   0x008ab930
-        .size   A_538068, . - A_538068
+        .size   APT_U_Finalize, . - APT_U_Finalize
 
 @ FUN_005380a0
-        .global A_5380a0
-        .type   A_5380a0, %function
-A_5380a0:
+        .global APT_U_DebugFunc
+        .type   APT_U_DebugFunc, %function
+APT_U_DebugFunc:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         ldr     r6, [sp, #0x24]
         ldr     ip, [sp, #0x20]
@@ -26211,7 +26211,7 @@ L538114:
         .word   0x001000c2
 L538118:
         .word   0x008ab930
-        .size   A_5380a0, . - A_5380a0
+        .size   APT_U_DebugFunc, . - APT_U_DebugFunc
 
 @ FUN_0053812c
         .global A_53812c
@@ -26256,9 +26256,9 @@ L538198:
         .size   A_538150, . - A_538150
 
 @ FUN_005392e4
-        .global A_5392e4
-        .type   A_5392e4, %function
-A_5392e4:
+        .global cam_u_IsTrimming
+        .type   cam_u_IsTrimming, %function
+cam_u_IsTrimming:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -26281,12 +26281,12 @@ L539328:
         .word   0x000f0040
 L53932c:
         .word   0x008aab70
-        .size   A_5392e4, . - A_5392e4
+        .size   cam_u_IsTrimming, . - cam_u_IsTrimming
 
 @ FUN_00539330
-        .global A_539330
-        .type   A_539330, %function
-A_539330:
+        .global cam_u_ClearBuffer
+        .type   cam_u_ClearBuffer, %function
+cam_u_ClearBuffer:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539364
@@ -26304,12 +26304,12 @@ L539364:
         .word   0x00040040
 L539368:
         .word   0x008aab70
-        .size   A_539330, . - A_539330
+        .size   cam_u_ClearBuffer, . - cam_u_ClearBuffer
 
 @ FUN_0053936c
-        .global A_53936c
-        .type   A_53936c, %function
-A_53936c:
+        .global cam_u_GetMaxBytes
+        .type   cam_u_GetMaxBytes, %function
+cam_u_GetMaxBytes:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -26334,12 +26334,12 @@ L5393b8:
         .word   0x000d0080
 L5393bc:
         .word   0x008aab70
-        .size   A_53936c, . - A_53936c
+        .size   cam_u_GetMaxBytes, . - cam_u_GetMaxBytes
 
 @ FUN_005393c0
-        .global A_5393c0
-        .type   A_5393c0, %function
-A_5393c0:
+        .global cam_u_GetMaxLines
+        .type   cam_u_GetMaxLines, %function
+cam_u_GetMaxLines:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -26364,12 +26364,12 @@ L53940c:
         .word   0x000a0080
 L539410:
         .word   0x008aab70
-        .size   A_5393c0, . - A_5393c0
+        .size   cam_u_GetMaxLines, . - cam_u_GetMaxLines
 
 @ FUN_00539414
-        .global A_539414
-        .type   A_539414, %function
-A_539414:
+        .global cam_u_SetContrast
+        .type   cam_u_SetContrast, %function
+cam_u_SetContrast:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539454
@@ -26390,12 +26390,12 @@ L539454:
         .word   0x00230080
 L539458:
         .word   0x008aab70
-        .size   A_539414, . - A_539414
+        .size   cam_u_SetContrast, . - cam_u_SetContrast
 
 @ FUN_0053945c
-        .global A_53945c
-        .type   A_53945c, %function
-A_53945c:
+        .global cam_u_SetExposure
+        .type   cam_u_SetExposure, %function
+cam_u_SetExposure:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53949c
@@ -26416,12 +26416,12 @@ L53949c:
         .word   0x00150080
 L5394a0:
         .word   0x008aab70
-        .size   A_53945c, . - A_53945c
+        .size   cam_u_SetExposure, . - cam_u_SetExposure
 
 @ FUN_005394a4
-        .global A_5394a4
-        .type   A_5394a4, %function
-A_5394a4:
+        .global cam_u_SetTrimming
+        .type   cam_u_SetTrimming, %function
+cam_u_SetTrimming:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L5394e4
@@ -26442,12 +26442,12 @@ L5394e4:
         .word   0x000e0080
 L5394e8:
         .word   0x008aab70
-        .size   A_5394a4, . - A_5394a4
+        .size   cam_u_SetTrimming, . - cam_u_SetTrimming
 
 @ FUN_005394ec
-        .global A_5394ec
-        .type   A_5394ec, %function
-A_5394ec:
+        .global cam_u_StopCapture
+        .type   cam_u_StopCapture, %function
+cam_u_StopCapture:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539520
@@ -26465,12 +26465,12 @@ L539520:
         .word   0x00020040
 L539524:
         .word   0x008aab70
-        .size   A_5394ec, . - A_5394ec
+        .size   cam_u_StopCapture, . - cam_u_StopCapture
 
 @ FUN_00539528
-        .global A_539528
-        .type   A_539528, %function
-A_539528:
+        .global cam_u_SetFrameRate
+        .type   cam_u_SetFrameRate, %function
+cam_u_SetFrameRate:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539568
@@ -26491,12 +26491,12 @@ L539568:
         .word   0x00200080
 L53956c:
         .word   0x008aab70
-        .size   A_539528, . - A_539528
+        .size   cam_u_SetFrameRate, . - cam_u_SetFrameRate
 
 @ FUN_00539570
-        .global A_539570
-        .type   A_539570, %function
-A_539570:
+        .global cam_u_SetPhotoMode
+        .type   cam_u_SetPhotoMode, %function
+cam_u_SetPhotoMode:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L5395b0
@@ -26517,12 +26517,12 @@ L5395b0:
         .word   0x00210080
 L5395b4:
         .word   0x008aab70
-        .size   A_539570, . - A_539570
+        .size   cam_u_SetPhotoMode, . - cam_u_SetPhotoMode
 
 @ FUN_005395b8
-        .global A_5395b8
-        .type   A_5395b8, %function
-A_5395b8:
+        .global cam_u_SetReceiving
+        .type   cam_u_SetReceiving, %function
+cam_u_SetReceiving:
         push    {r0, r1, r2, r3, r4, r5, r6, lr}
         mov     r5, r0
         ldr     r3, [sp, #0x20]
@@ -26552,12 +26552,12 @@ L539618:
         .word   0x00070102
 L53961c:
         .word   0x008aab70
-        .size   A_5395b8, . - A_5395b8
+        .size   cam_u_SetReceiving, . - cam_u_SetReceiving
 
 @ FUN_00539620
-        .global A_539620
-        .type   A_539620, %function
-A_539620:
+        .global cam_u_SetSharpness
+        .type   cam_u_SetSharpness, %function
+cam_u_SetSharpness:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539660
@@ -26578,12 +26578,12 @@ L539660:
         .word   0x00180080
 L539664:
         .word   0x008aab70
-        .size   A_539620, . - A_539620
+        .size   cam_u_SetSharpness, . - cam_u_SetSharpness
 
 @ FUN_00539668
-        .global A_539668
-        .type   A_539668, %function
-A_539668:
+        .global cam_u_StartCapture
+        .type   cam_u_StartCapture, %function
+cam_u_StartCapture:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53969c
@@ -26601,12 +26601,12 @@ L53969c:
         .word   0x00010040
 L5396a0:
         .word   0x008aab70
-        .size   A_539668, . - A_539668
+        .size   cam_u_StartCapture, . - cam_u_StartCapture
 
 @ FUN_005396a4
-        .global A_5396a4
-        .type   A_5396a4, %function
-A_5396a4:
+        .global cam_u_SetDetailSize
+        .type   cam_u_SetDetailSize, %function
+cam_u_SetDetailSize:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539714
@@ -26639,12 +26639,12 @@ L539714:
         .word   0x001e0200
 L539718:
         .word   0x008aab70
-        .size   A_5396a4, . - A_5396a4
+        .size   cam_u_SetDetailSize, . - cam_u_SetDetailSize
 
 @ FUN_0053971c
-        .global A_53971c
-        .type   A_53971c, %function
-A_53971c:
+        .global cam_u_SwitchContext
+        .type   cam_u_SwitchContext, %function
+cam_u_SwitchContext:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53975c
@@ -26665,12 +26665,12 @@ L53975c:
         .word   0x00140080
 L539760:
         .word   0x008aab70
-        .size   A_53971c, . - A_53971c
+        .size   cam_u_SwitchContext, . - cam_u_SwitchContext
 
 @ FUN_00539764
-        .global A_539764
-        .type   A_539764, %function
-A_539764:
+        .global cam_u_DriverFinalize
+        .type   cam_u_DriverFinalize, %function
+cam_u_DriverFinalize:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x3a0000
@@ -26684,12 +26684,12 @@ A_539764:
         pop     {r4, pc}
 L539790:
         .word   0x008aab70
-        .size   A_539764, . - A_539764
+        .size   cam_u_DriverFinalize, . - cam_u_DriverFinalize
 
 @ FUN_00539794
-        .global A_539794
-        .type   A_539794, %function
-A_539794:
+        .global cam_u_IsAutoExposure
+        .type   cam_u_IsAutoExposure, %function
+cam_u_IsAutoExposure:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -26712,12 +26712,12 @@ L5397d8:
         .word   0x001a0040
 L5397dc:
         .word   0x008aab70
-        .size   A_539794, . - A_539794
+        .size   cam_u_IsAutoExposure, . - cam_u_IsAutoExposure
 
 @ FUN_005397e0
-        .global A_5397e0
-        .type   A_5397e0, %function
-A_5397e0:
+        .global cam_u_SetNoiseFilter
+        .type   cam_u_SetNoiseFilter, %function
+cam_u_SetNoiseFilter:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539820
@@ -26738,12 +26738,12 @@ L539820:
         .word   0x00280080
 L539824:
         .word   0x008aab70
-        .size   A_5397e0, . - A_5397e0
+        .size   cam_u_SetNoiseFilter, . - cam_u_SetNoiseFilter
 
 @ FUN_00539828
-        .global A_539828
-        .type   A_539828, %function
-A_539828:
+        .global cam_u_SetAutoExposure
+        .type   cam_u_SetAutoExposure, %function
+cam_u_SetAutoExposure:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539868
@@ -26764,12 +26764,12 @@ L539868:
         .word   0x00190080
 L53986c:
         .word   0x008aab70
-        .size   A_539828, . - A_539828
+        .size   cam_u_SetAutoExposure, . - cam_u_SetAutoExposure
 
 @ FUN_00539870
-        .global A_539870
-        .type   A_539870, %function
-A_539870:
+        .global cam_u_SetOutputFormat
+        .type   cam_u_SetOutputFormat, %function
+cam_u_SetOutputFormat:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L5398b8
@@ -26792,12 +26792,12 @@ L5398b8:
         .word   0x002500c0
 L5398bc:
         .word   0x008aab70
-        .size   A_539870, . - A_539870
+        .size   cam_u_SetOutputFormat, . - cam_u_SetOutputFormat
 
 @ FUN_005398c0
-        .global A_5398c0
-        .type   A_5398c0, %function
-A_5398c0:
+        .global cam_u_SetWhiteBalance
+        .type   cam_u_SetWhiteBalance, %function
+cam_u_SetWhiteBalance:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539900
@@ -26818,12 +26818,12 @@ L539900:
         .word   0x00160080
 L539904:
         .word   0x008aab70
-        .size   A_5398c0, . - A_5398c0
+        .size   cam_u_SetWhiteBalance, . - cam_u_SetWhiteBalance
 
 @ FUN_00539908
-        .global A_539908
-        .type   A_539908, %function
-A_539908:
+        .global cam_u_DriverInitialize
+        .type   cam_u_DriverInitialize, %function
+cam_u_DriverInitialize:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x390000
@@ -26837,12 +26837,12 @@ A_539908:
         pop     {r4, pc}
 L539934:
         .word   0x008aab70
-        .size   A_539908, . - A_539908
+        .size   cam_u_DriverInitialize, . - cam_u_DriverInitialize
 
 @ FUN_00539938
-        .global A_539938
-        .type   A_539938, %function
-A_539938:
+        .global cam_u_GetTransferBytes
+        .type   cam_u_GetTransferBytes, %function
+cam_u_GetTransferBytes:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -26865,12 +26865,12 @@ L53997c:
         .word   0x000c0040
 L539980:
         .word   0x008aab70
-        .size   A_539938, . - A_539938
+        .size   cam_u_GetTransferBytes, . - cam_u_GetTransferBytes
 
 @ FUN_00539984
-        .global A_539984
-        .type   A_539984, %function
-A_539984:
+        .global cam_u_PlayShutterSound
+        .type   cam_u_PlayShutterSound, %function
+cam_u_PlayShutterSound:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L5399b8
@@ -26888,12 +26888,12 @@ L5399b8:
         .word   0x00380040
 L5399bc:
         .word   0x008aab70
-        .size   A_539984, . - A_539984
+        .size   cam_u_PlayShutterSound, . - cam_u_PlayShutterSound
 
 @ FUN_005399c0
-        .global A_5399c0
-        .type   A_5399c0, %function
-A_5399c0:
+        .global cam_u_SetTransferBytes
+        .type   cam_u_SetTransferBytes, %function
+cam_u_SetTransferBytes:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539a0c
@@ -26917,12 +26917,12 @@ L539a0c:
         .word   0x000b0100
 L539a10:
         .word   0x008aab70
-        .size   A_5399c0, . - A_5399c0
+        .size   cam_u_SetTransferBytes, . - cam_u_SetTransferBytes
 
 @ FUN_00539a14
-        .global A_539a14
-        .type   A_539a14, %function
-A_539a14:
+        .global cam_u_SetTransferLines
+        .type   cam_u_SetTransferLines, %function
+cam_u_SetTransferLines:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539a64
@@ -26947,12 +26947,12 @@ L539a64:
         .word   0x00090100
 L539a68:
         .word   0x008aab70
-        .size   A_539a14, . - A_539a14
+        .size   cam_u_SetTransferLines, . - cam_u_SetTransferLines
 
 @ FUN_00539a6c
-        .global A_539a6c
-        .type   A_539a6c, %function
-A_539a6c:
+        .global cam_u_WriteRegisterI2c
+        .type   cam_u_WriteRegisterI2c, %function
+cam_u_WriteRegisterI2c:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539ab4
@@ -26975,12 +26975,12 @@ L539ab4:
         .word   0x002d00c0
 L539ab8:
         .word   0x008aab70
-        .size   A_539a6c, . - A_539a6c
+        .size   cam_u_WriteRegisterI2c, . - cam_u_WriteRegisterI2c
 
 @ FUN_00539abc
-        .global A_539abc
-        .type   A_539abc, %function
-A_539abc:
+        .global cam_u_GetTrimmingParams
+        .type   cam_u_GetTrimmingParams, %function
+cam_u_GetTrimmingParams:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r0
         mov     r6, r1
@@ -27011,12 +27011,12 @@ L539b20:
         .word   0x00110040
 L539b24:
         .word   0x008aab70
-        .size   A_539abc, . - A_539abc
+        .size   cam_u_GetTrimmingParams, . - cam_u_GetTrimmingParams
 
 @ FUN_00539b28
-        .global A_539b28
-        .type   A_539b28, %function
-A_539b28:
+        .global cam_u_SetLensCorrection
+        .type   cam_u_SetLensCorrection, %function
+cam_u_SetLensCorrection:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539b68
@@ -27037,12 +27037,12 @@ L539b68:
         .word   0x00240080
 L539b6c:
         .word   0x008aab70
-        .size   A_539b28, . - A_539b28
+        .size   cam_u_SetLensCorrection, . - cam_u_SetLensCorrection
 
 @ FUN_00539b70
-        .global A_539b70
-        .type   A_539b70, %function
-A_539b70:
+        .global cam_u_SetTrimmingParams
+        .type   cam_u_SetTrimmingParams, %function
+cam_u_SetTrimmingParams:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539bc8
@@ -27069,12 +27069,12 @@ L539bc8:
         .word   0x00100140
 L539bcc:
         .word   0x008aab70
-        .size   A_539b70, . - A_539b70
+        .size   cam_u_SetTrimmingParams, . - cam_u_SetTrimmingParams
 
 @ FUN_00539bd0
-        .global A_539bd0
-        .type   A_539bd0, %function
-A_539bd0:
+        .global cam_u_IsAutoWhiteBalance
+        .type   cam_u_IsAutoWhiteBalance, %function
+cam_u_IsAutoWhiteBalance:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27097,12 +27097,12 @@ L539c14:
         .word   0x001c0040
 L539c18:
         .word   0x008aab70
-        .size   A_539bd0, . - A_539bd0
+        .size   cam_u_IsAutoWhiteBalance, . - cam_u_IsAutoWhiteBalance
 
 @ FUN_00539c1c
-        .global A_539c1c
-        .type   A_539c1c, %function
-A_539c1c:
+        .global cam_u_IsFinishedReceiving
+        .type   cam_u_IsFinishedReceiving, %function
+cam_u_IsFinishedReceiving:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27125,12 +27125,12 @@ L539c60:
         .word   0x00080040
 L539c64:
         .word   0x008aab70
-        .size   A_539c1c, . - A_539c1c
+        .size   cam_u_IsFinishedReceiving, . - cam_u_IsFinishedReceiving
 
 @ FUN_00539c68
-        .global A_539c68
-        .type   A_539c68, %function
-A_539c68:
+        .global cam_u_SetAutoWhiteBalance
+        .type   cam_u_SetAutoWhiteBalance, %function
+cam_u_SetAutoWhiteBalance:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539ca8
@@ -27151,12 +27151,12 @@ L539ca8:
         .word   0x001b0080
 L539cac:
         .word   0x008aab70
-        .size   A_539c68, . - A_539c68
+        .size   cam_u_SetAutoWhiteBalance, . - cam_u_SetAutoWhiteBalance
 
 @ FUN_00539cb0
-        .global A_539cb0
-        .type   A_539cb0, %function
-A_539cb0:
+        .global cam_u_WriteMcuVariableI2c
+        .type   cam_u_WriteMcuVariableI2c, %function
+cam_u_WriteMcuVariableI2c:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539cf8
@@ -27179,12 +27179,12 @@ L539cf8:
         .word   0x002e00c0
 L539cfc:
         .word   0x008aab70
-        .size   A_539cb0, . - A_539cb0
+        .size   cam_u_WriteMcuVariableI2c, . - cam_u_WriteMcuVariableI2c
 
 @ FUN_00539d00
-        .global A_539d00
-        .type   A_539d00, %function
-A_539d00:
+        .global cam_u_GetLatestVsyncTiming
+        .type   cam_u_GetLatestVsyncTiming, %function
+cam_u_GetLatestVsyncTiming:
         push    {r0, r1, r2, r4, r5, r6, r7, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L539d60
@@ -27213,12 +27213,12 @@ L539d60:
         .word   0x002a0080
 L539d64:
         .word   0x008aab70
-        .size   A_539d00, . - A_539d00
+        .size   cam_u_GetLatestVsyncTiming, . - cam_u_GetLatestVsyncTiming
 
 @ FUN_00539d68
-        .global A_539d68
-        .type   A_539d68, %function
-A_539d68:
+        .global cam_u_SetAutoExposureWindow
+        .type   cam_u_SetAutoExposureWindow, %function
+cam_u_SetAutoExposureWindow:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539dc0
@@ -27245,12 +27245,12 @@ L539dc0:
         .word   0x00260140
 L539dc4:
         .word   0x008aab70
-        .size   A_539d68, . - A_539d68
+        .size   cam_u_SetAutoExposureWindow, . - cam_u_SetAutoExposureWindow
 
 @ FUN_00539dc8
-        .global A_539dc8
-        .type   A_539dc8, %function
-A_539dc8:
+        .global cam_u_GetVsyncInterruptEvent
+        .type   cam_u_GetVsyncInterruptEvent, %function
+cam_u_GetVsyncInterruptEvent:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27273,12 +27273,12 @@ L539e0c:
         .word   0x00050040
 L539e10:
         .word   0x008aab70
-        .size   A_539dc8, . - A_539dc8
+        .size   cam_u_GetVsyncInterruptEvent, . - cam_u_GetVsyncInterruptEvent
 
 @ FUN_00539e14
-        .global A_539e14
-        .type   A_539e14, %function
-A_539e14:
+        .global cam_u_SynchronizeVsyncTiming
+        .type   cam_u_SynchronizeVsyncTiming, %function
+cam_u_SynchronizeVsyncTiming:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539e54
@@ -27299,12 +27299,12 @@ L539e54:
         .word   0x00290080
 L539e58:
         .word   0x008aab70
-        .size   A_539e14, . - A_539e14
+        .size   cam_u_SynchronizeVsyncTiming, . - cam_u_SynchronizeVsyncTiming
 
 @ FUN_00539e5c
-        .global A_539e5c
-        .type   A_539e5c, %function
-A_539e5c:
+        .global cam_u_SetTrimmingParamsCenter
+        .type   cam_u_SetTrimmingParamsCenter, %function
+cam_u_SetTrimmingParamsCenter:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539eb4
@@ -27331,12 +27331,12 @@ L539eb4:
         .word   0x00120140
 L539eb8:
         .word   0x008aab70
-        .size   A_539e5c, . - A_539e5c
+        .size   cam_u_SetTrimmingParamsCenter, . - cam_u_SetTrimmingParamsCenter
 
 @ FUN_00539ebc
-        .global A_539ebc
-        .type   A_539ebc, %function
-A_539ebc:
+        .global cam_u_PlayShutterSoundWithWave
+        .type   cam_u_PlayShutterSoundWithWave, %function
+cam_u_PlayShutterSoundWithWave:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L539f30
@@ -27370,12 +27370,12 @@ L539f30:
         .word   0x00370202
 L539f34:
         .word   0x008aab70
-        .size   A_539ebc, . - A_539ebc
+        .size   cam_u_PlayShutterSoundWithWave, . - cam_u_PlayShutterSoundWithWave
 
 @ FUN_00539f38
-        .global A_539f38
-        .type   A_539f38, %function
-A_539f38:
+        .global cam_u_ReadRegisterI2cExclusive
+        .type   cam_u_ReadRegisterI2cExclusive, %function
+cam_u_ReadRegisterI2cExclusive:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27400,12 +27400,12 @@ L539f84:
         .word   0x002f0080
 L539f88:
         .word   0x008aab70
-        .size   A_539f38, . - A_539f38
+        .size   cam_u_ReadRegisterI2cExclusive, . - cam_u_ReadRegisterI2cExclusive
 
 @ FUN_00539f8c
-        .global A_539f8c
-        .type   A_539f8c, %function
-A_539f8c:
+        .global cam_u_SetAutoWhiteBalanceWindow
+        .type   cam_u_SetAutoWhiteBalanceWindow, %function
+cam_u_SetAutoWhiteBalanceWindow:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L539fe4
@@ -27432,12 +27432,12 @@ L539fe4:
         .word   0x00270140
 L539fe8:
         .word   0x008aab70
-        .size   A_539f8c, . - A_539f8c
+        .size   cam_u_SetAutoWhiteBalanceWindow, . - cam_u_SetAutoWhiteBalanceWindow
 
 @ FUN_00539fec
-        .global A_539fec
-        .type   A_539fec, %function
-A_539fec:
+        .global cam_u_ReadMcuVariableI2cExclusive
+        .type   cam_u_ReadMcuVariableI2cExclusive, %function
+cam_u_ReadMcuVariableI2cExclusive:
         push    {r0, r1, r2, r4, r5, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27462,12 +27462,12 @@ L53a038:
         .word   0x00300080
 L53a03c:
         .word   0x008aab70
-        .size   A_539fec, . - A_539fec
+        .size   cam_u_ReadMcuVariableI2cExclusive, . - cam_u_ReadMcuVariableI2cExclusive
 
 @ FUN_0053a040
-        .global A_53a040
-        .type   A_53a040, %function
-A_53a040:
+        .global cam_u_GetBufferErrorInterruptEvent
+        .type   cam_u_GetBufferErrorInterruptEvent, %function
+cam_u_GetBufferErrorInterruptEvent:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27490,12 +27490,12 @@ L53a084:
         .word   0x00060040
 L53a088:
         .word   0x008aab70
-        .size   A_53a040, . - A_53a040
+        .size   cam_u_GetBufferErrorInterruptEvent, . - cam_u_GetBufferErrorInterruptEvent
 
 @ FUN_0053a08c
-        .global A_53a08c
-        .type   A_53a08c, %function
-A_53a08c:
+        .global cam_u_SetBrightnessSynchronization
+        .type   cam_u_SetBrightnessSynchronization, %function
+cam_u_SetBrightnessSynchronization:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53a0c0
@@ -27513,12 +27513,12 @@ L53a0c0:
         .word   0x003e0040
 L53a0c4:
         .word   0x008aab70
-        .size   A_53a08c, . - A_53a08c
+        .size   cam_u_SetBrightnessSynchronization, . - cam_u_SetBrightnessSynchronization
 
 @ FUN_0053a0c8
-        .global A_53a0c8
-        .type   A_53a0c8, %function
-A_53a0c8:
+        .global cam_u_SetWhiteBalanceWithoutBaseUp
+        .type   cam_u_SetWhiteBalanceWithoutBaseUp, %function
+cam_u_SetWhiteBalanceWithoutBaseUp:
         push    {r0, r1, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53a108
@@ -27539,12 +27539,12 @@ L53a108:
         .word   0x00170080
 L53a10c:
         .word   0x008aab70
-        .size   A_53a0c8, . - A_53a0c8
+        .size   cam_u_SetWhiteBalanceWithoutBaseUp, . - cam_u_SetWhiteBalanceWithoutBaseUp
 
 @ FUN_0053a110
-        .global A_53a110
-        .type   A_53a110, %function
-A_53a110:
+        .global cam_u_GetImageQualityCalibrationData
+        .type   cam_u_GetImageQualityCalibrationData, %function
+cam_u_GetImageQualityCalibrationData:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27572,12 +27572,12 @@ L53a16c:
         pop     {r4, r5, r6, pc}
 L53a170:
         .word   0x008aab70
-        .size   A_53a110, . - A_53a110
+        .size   cam_u_GetImageQualityCalibrationData, . - cam_u_GetImageQualityCalibrationData
 
 @ FUN_0053a174
-        .global A_53a174
-        .type   A_53a174, %function
-A_53a174:
+        .global cam_u_GetStereoCameraCalibrationData
+        .type   cam_u_GetStereoCameraCalibrationData, %function
+cam_u_GetStereoCameraCalibrationData:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mov     r4, r0
         mrc     p15, #0, r5, c13, c0, #3
@@ -27606,12 +27606,12 @@ L53a1d4:
         pop     {r4, r5, r6, r7, r8, sb, sl, pc}
 L53a1d8:
         .word   0x008aab70
-        .size   A_53a174, . - A_53a174
+        .size   cam_u_GetStereoCameraCalibrationData, . - cam_u_GetStereoCameraCalibrationData
 
 @ FUN_0053a1dc
-        .global A_53a1dc
-        .type   A_53a1dc, %function
-A_53a1dc:
+        .global cam_u_SetImageQualityCalibrationData
+        .type   cam_u_SetImageQualityCalibrationData, %function
+cam_u_SetImageQualityCalibrationData:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53a238
@@ -27639,12 +27639,12 @@ L53a238:
         .word   0x00310180
 L53a23c:
         .word   0x008aab70
-        .size   A_53a1dc, . - A_53a1dc
+        .size   cam_u_SetImageQualityCalibrationData, . - cam_u_SetImageQualityCalibrationData
 
 @ FUN_0053a284
-        .global A_53a284
-        .type   A_53a284, %function
-A_53a284:
+        .global cam_u_SetStereoCameraCalibrationData
+        .type   cam_u_SetStereoCameraCalibrationData, %function
+cam_u_SetStereoCameraCalibrationData:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53a2e4
@@ -27673,12 +27673,12 @@ L53a2e4:
         .word   0x002c0400
 L53a2e8:
         .word   0x008aab70
-        .size   A_53a284, . - A_53a284
+        .size   cam_u_SetStereoCameraCalibrationData, . - cam_u_SetStereoCameraCalibrationData
 
 @ FUN_0053a2ec
-        .global A_53a2ec
-        .type   A_53a2ec, %function
-A_53a2ec:
+        .global cam_u_GetSuitableY2rStandardCoefficient
+        .type   cam_u_GetSuitableY2rStandardCoefficient, %function
+cam_u_GetSuitableY2rStandardCoefficient:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27696,12 +27696,12 @@ L53a320:
         pop     {r4, r5, r6, pc}
 L53a324:
         .word   0x008aab70
-        .size   A_53a2ec, . - A_53a2ec
+        .size   cam_u_GetSuitableY2rStandardCoefficient, . - cam_u_GetSuitableY2rStandardCoefficient
 
 @ FUN_0053a328
-        .global A_53a328
-        .type   A_53a328, %function
-A_53a328:
+        .global cam_u_SetPackageParameterWithoutContext
+        .type   cam_u_SetPackageParameterWithoutContext, %function
+cam_u_SetPackageParameterWithoutContext:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53a378
@@ -27726,12 +27726,12 @@ L53a378:
         .word   0x003302c0
 L53a37c:
         .word   0x008aab70
-        .size   A_53a328, . - A_53a328
+        .size   cam_u_SetPackageParameterWithoutContext, . - cam_u_SetPackageParameterWithoutContext
 
 @ FUN_0053a380
-        .global A_53a380
-        .type   A_53a380, %function
-A_53a380:
+        .global cam_u_SetPackageParameterWithContextDetail
+        .type   cam_u_SetPackageParameterWithContextDetail, %function
+cam_u_SetPackageParameterWithContextDetail:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53a3cc
@@ -27755,12 +27755,12 @@ L53a3cc:
         .word   0x003501c0
 L53a3d0:
         .word   0x008aab70
-        .size   A_53a380, . - A_53a380
+        .size   cam_u_SetPackageParameterWithContextDetail, . - cam_u_SetPackageParameterWithContextDetail
 
 @ FUN_0053a3d4
-        .global A_53a3d4
-        .type   A_53a3d4, %function
-A_53a3d4:
+        .global cam_u_IsBusy
+        .type   cam_u_IsBusy, %function
+cam_u_IsBusy:
         push    {r0, r1, r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27783,12 +27783,12 @@ L53a418:
         .word   0x00030040
 L53a41c:
         .word   0x008aab70
-        .size   A_53a3d4, . - A_53a3d4
+        .size   cam_u_IsBusy, . - cam_u_IsBusy
 
 @ FUN_0053a420
-        .global A_53a420
-        .type   A_53a420, %function
-A_53a420:
+        .global cam_u_SetSize
+        .type   cam_u_SetSize, %function
+cam_u_SetSize:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53a468
@@ -27811,12 +27811,12 @@ L53a468:
         .word   0x001f00c0
 L53a46c:
         .word   0x008aab70
-        .size   A_53a420, . - A_53a420
+        .size   cam_u_SetSize, . - cam_u_SetSize
 
 @ FUN_0053a470
-        .global A_53a470
-        .type   A_53a470, %function
-A_53a470:
+        .global cam_u_FlipImage
+        .type   cam_u_FlipImage, %function
+cam_u_FlipImage:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53a4b8
@@ -27839,12 +27839,12 @@ L53a4b8:
         .word   0x001d00c0
 L53a4bc:
         .word   0x008aab70
-        .size   A_53a470, . - A_53a470
+        .size   cam_u_FlipImage, . - cam_u_FlipImage
 
 @ FUN_0053a4c0
-        .global A_53a4c0
-        .type   A_53a4c0, %function
-A_53a4c0:
+        .global cam_u_SetEffect
+        .type   cam_u_SetEffect, %function
+cam_u_SetEffect:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53a508
@@ -27867,12 +27867,12 @@ L53a508:
         .word   0x002200c0
 L53a50c:
         .word   0x008aab70
-        .size   A_53a4c0, . - A_53a4c0
+        .size   cam_u_SetEffect, . - cam_u_SetEffect
 
 @ FUN_0053b600
-        .global A_53b600
-        .type   A_53b600, %function
-A_53b600:
+        .global frd_a_HasLoggedIn
+        .type   frd_a_HasLoggedIn, %function
+frd_a_HasLoggedIn:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27890,12 +27890,12 @@ L53b634:
         pop     {r4, r5, r6, pc}
 L53b638:
         .word   0x008b8790
-        .size   A_53b600, . - A_53b600
+        .size   frd_a_HasLoggedIn, . - frd_a_HasLoggedIn
 
 @ FUN_0053b63c
-        .global A_53b63c
-        .type   A_53b63c, %function
-A_53b63c:
+        .global frd_a_GetFriendMii
+        .type   frd_a_GetFriendMii, %function
+frd_a_GetFriendMii:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L53b690
@@ -27921,12 +27921,12 @@ L53b690:
         .word   0x00140044
 L53b694:
         .word   0x008b8790
-        .size   A_53b63c, . - A_53b63c
+        .size   frd_a_GetFriendMii, . - frd_a_GetFriendMii
 
 @ FUN_0053b6dc
-        .global A_53b6dc
-        .type   A_53b6dc, %function
-A_53b6dc:
+        .global frd_a_GetMyProfile
+        .type   frd_a_GetMyProfile, %function
+frd_a_GetMyProfile:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -27944,12 +27944,12 @@ L53b710:
         pop     {r4, r5, r6, pc}
 L53b714:
         .word   0x008b8790
-        .size   A_53b6dc, . - A_53b6dc
+        .size   frd_a_GetMyProfile, . - frd_a_GetMyProfile
 
 @ FUN_0053b718
-        .global A_53b718
-        .type   A_53b718, %function
-A_53b718:
+        .global frd_a_RemoveFriend
+        .type   frd_a_RemoveFriend, %function
+frd_a_RemoveFriend:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53b758
@@ -27970,12 +27970,12 @@ L53b758:
         .word   0x04090100
 L53b75c:
         .word   0x008b8790
-        .size   A_53b718, . - A_53b718
+        .size   frd_a_RemoveFriend, . - frd_a_RemoveFriend
 
 @ FUN_0053b760
-        .global A_53b760
-        .type   A_53b760, %function
-A_53b760:
+        .global frd_a_GetFriendInfo
+        .type   frd_a_GetFriendInfo, %function
+frd_a_GetFriendInfo:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L53b7cc
@@ -28007,12 +28007,12 @@ L53b7cc:
         .word   0x001a00c4
 L53b7d0:
         .word   0x008b8790
-        .size   A_53b760, . - A_53b760
+        .size   frd_a_GetFriendInfo, . - frd_a_GetFriendInfo
 
 @ FUN_0053b7d4
-        .global A_53b7d4
-        .type   A_53b7d4, %function
-A_53b7d4:
+        .global frd_a_GetMyPassword
+        .type   frd_a_GetMyPassword, %function
+frd_a_GetMyPassword:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         ldr     r3, L53b828
@@ -28038,12 +28038,12 @@ L53b828:
         .word   0x00100040
 L53b82c:
         .word   0x008b8790
-        .size   A_53b7d4, . - A_53b7d4
+        .size   frd_a_GetMyPassword, . - frd_a_GetMyPassword
 
 @ FUN_0053b830
-        .global A_53b830
-        .type   A_53b830, %function
-A_53b830:
+        .global frd_a_GetMyPresence
+        .type   frd_a_GetMyPresence, %function
+frd_a_GetMyPresence:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x80000
@@ -28066,12 +28066,12 @@ L53b878:
         .word   0x004b0002
 L53b87c:
         .word   0x008b8790
-        .size   A_53b830, . - A_53b830
+        .size   frd_a_GetMyPresence, . - frd_a_GetMyPresence
 
 @ FUN_0053b8c4
-        .global A_53b8c4
-        .type   A_53b8c4, %function
-A_53b8c4:
+        .global frd_a_AllowHalfAwake
+        .type   frd_a_AllowHalfAwake, %function
+frd_a_AllowHalfAwake:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53b8f8
@@ -28089,12 +28089,12 @@ L53b8f8:
         .word   0x002f0040
 L53b8fc:
         .word   0x008b8790
-        .size   A_53b8c4, . - A_53b8c4
+        .size   frd_a_AllowHalfAwake, . - frd_a_AllowHalfAwake
 
 @ FUN_0053b900
-        .global A_53b900
-        .type   A_53b900, %function
-A_53b900:
+        .global frd_a_GetMyFriendKey
+        .type   frd_a_GetMyFriendKey, %function
+frd_a_GetMyFriendKey:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -28115,12 +28115,12 @@ L53b940:
         pop     {r4, r5, r6, pc}
 L53b944:
         .word   0x008b8790
-        .size   A_53b900, . - A_53b900
+        .size   frd_a_GetMyFriendKey, . - frd_a_GetMyFriendKey
 
 @ FUN_0053b948
-        .global A_53b948
-        .type   A_53b948, %function
-A_53b948:
+        .global frd_a_GetServerTypes
+        .type   frd_a_GetServerTypes, %function
+frd_a_GetServerTypes:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r0
         mov     r6, r1
@@ -28144,12 +28144,12 @@ L53b994:
         pop     {r4, r5, r6, r7, r8, pc}
 L53b998:
         .word   0x008b8790
-        .size   A_53b948, . - A_53b948
+        .size   frd_a_GetServerTypes, . - frd_a_GetServerTypes
 
 @ FUN_0053b99c
-        .global A_53b99c
-        .type   A_53b99c, %function
-A_53b99c:
+        .global frd_a_SendInvitation
+        .type   frd_a_SendInvitation, %function
+frd_a_SendInvitation:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L53b9e0
@@ -28171,12 +28171,12 @@ L53b9e0:
         .word   0x001f0042
 L53b9e4:
         .word   0x008b8790
-        .size   A_53b99c, . - A_53b99c
+        .size   frd_a_SendInvitation, . - frd_a_SendInvitation
 
 @ FUN_0053b9e8
-        .global A_53b9e8
-        .type   A_53b9e8, %function
-A_53b9e8:
+        .global frd_a_UpdateMyPresence
+        .type   frd_a_UpdateMyPresence, %function
+frd_a_UpdateMyPresence:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L53ba38
@@ -28203,12 +28203,12 @@ L53ba3c:
         .word   0x00400802
 L53ba40:
         .word   0x008b8790
-        .size   A_53b9e8, . - A_53b9e8
+        .size   frd_a_UpdateMyPresence, . - frd_a_UpdateMyPresence
 
 @ FUN_0053ba44
-        .global A_53ba44
-        .type   A_53ba44, %function
-A_53ba44:
+        .global frd_a_AddFriendOnline
+        .type   frd_a_AddFriendOnline, %function
+frd_a_AddFriendOnline:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L53ba80
@@ -28228,12 +28228,12 @@ L53ba80:
         .word   0x04060042
 L53ba84:
         .word   0x008b8790
-        .size   A_53ba44, . - A_53ba44
+        .size   frd_a_AddFriendOnline, . - frd_a_AddFriendOnline
 
 @ FUN_0053ba88
-        .global A_53ba88
-        .type   A_53ba88, %function
-A_53ba88:
+        .global frd_a_GetMyPreference
+        .type   frd_a_GetMyPreference, %function
+frd_a_GetMyPreference:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r0
         mov     r6, r1
@@ -28257,12 +28257,12 @@ L53bad4:
         pop     {r4, r5, r6, r7, r8, pc}
 L53bad8:
         .word   0x008b8790
-        .size   A_53ba88, . - A_53ba88
+        .size   frd_a_GetMyPreference, . - frd_a_GetMyPreference
 
 @ FUN_0053bb20
-        .global A_53bb20
-        .type   A_53bb20, %function
-A_53bb20:
+        .global frd_a_GetFriendComment
+        .type   frd_a_GetFriendComment, %function
+frd_a_GetFriendComment:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L53bb84
@@ -28292,12 +28292,12 @@ L53bb84:
         .word   0x00310082
 L53bb88:
         .word   0x008b8790
-        .size   A_53bb20, . - A_53bb20
+        .size   frd_a_GetFriendComment, . - frd_a_GetFriendComment
 
 @ FUN_0053bb8c
-        .global A_53bb8c
-        .type   A_53bb8c, %function
-A_53bb8c:
+        .global frd_a_GetFriendKeyList
+        .type   frd_a_GetFriendKeyList, %function
+frd_a_GetFriendKeyList:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r6, r1
         mrc     p15, #0, r4, c13, c0, #3
@@ -28327,12 +28327,12 @@ L53bbec:
         .word   0x00110080
 L53bbf0:
         .word   0x008b8790
-        .size   A_53bb8c, . - A_53bb8c
+        .size   frd_a_GetFriendKeyList, . - frd_a_GetFriendKeyList
 
 @ FUN_0053bbf4
-        .global A_53bbf4
-        .type   A_53bbf4, %function
-A_53bbf4:
+        .global frd_a_GetFriendProfile
+        .type   frd_a_GetFriendProfile, %function
+frd_a_GetFriendProfile:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53bc58
@@ -28362,12 +28362,12 @@ L53bc58:
         .word   0x00150042
 L53bc5c:
         .word   0x008b8790
-        .size   A_53bbf4, . - A_53bbf4
+        .size   frd_a_GetFriendProfile, . - frd_a_GetFriendProfile
 
 @ FUN_0053bc60
-        .global A_53bc60
-        .type   A_53bc60, %function
-A_53bc60:
+        .global frd_a_GetMyPlayingGame
+        .type   frd_a_GetMyPlayingGame, %function
+frd_a_GetMyPlayingGame:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -28388,12 +28388,12 @@ L53bca0:
         pop     {r4, r5, r6, pc}
 L53bca4:
         .word   0x008b8790
-        .size   A_53bc60, . - A_53bc60
+        .size   frd_a_GetMyPlayingGame, . - frd_a_GetMyPlayingGame
 
 @ FUN_0053bca8
-        .global A_53bca8
-        .type   A_53bca8, %function
-A_53bca8:
+        .global frd_a_GetNatProperties
+        .type   frd_a_GetNatProperties, %function
+frd_a_GetNatProperties:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mov     r6, r1
@@ -28414,12 +28414,12 @@ L53bce8:
         pop     {r4, r5, r6, pc}
 L53bcec:
         .word   0x008b8790
-        .size   A_53bca8, . - A_53bca8
+        .size   frd_a_GetNatProperties, . - frd_a_GetNatProperties
 
 @ FUN_0053bcf0
-        .global A_53bcf0
-        .type   A_53bcf0, %function
-A_53bcf0:
+        .global frd_a_LoadLocalAccount
+        .type   frd_a_LoadLocalAccount, %function
+frd_a_LoadLocalAccount:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53bd24
@@ -28437,12 +28437,12 @@ L53bd24:
         .word   0x04030040
 L53bd28:
         .word   0x008b8790
-        .size   A_53bcf0, . - A_53bcf0
+        .size   frd_a_LoadLocalAccount, . - frd_a_LoadLocalAccount
 
 @ FUN_0053bd2c
-        .global A_53bd2c
-        .type   A_53bd2c, %function
-A_53bd2c:
+        .global frd_a_UpdatePreference
+        .type   frd_a_UpdatePreference, %function
+frd_a_UpdatePreference:
         push    {r0, r1, r2, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53bd74
@@ -28465,12 +28465,12 @@ L53bd74:
         .word   0x040b00c0
 L53bd78:
         .word   0x008b8790
-        .size   A_53bd2c, . - A_53bd2c
+        .size   frd_a_UpdatePreference, . - frd_a_UpdatePreference
 
 @ FUN_0053be28
-        .global A_53be28
-        .type   A_53be28, %function
-A_53be28:
+        .global frd_a_GetFriendPresence
+        .type   frd_a_GetFriendPresence, %function
+frd_a_GetFriendPresence:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53be90
@@ -28501,12 +28501,12 @@ L53be90:
         .word   0x00120042
 L53be94:
         .word   0x008b8790
-        .size   A_53be28, . - A_53be28
+        .size   frd_a_GetFriendPresence, . - frd_a_GetFriendPresence
 
 @ FUN_0053be98
-        .global A_53be98
-        .type   A_53be98, %function
-A_53be98:
+        .global frd_a_GetMyFavoriteGame
+        .type   frd_a_GetMyFavoriteGame, %function
+frd_a_GetMyFavoriteGame:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -28527,7 +28527,7 @@ L53bed8:
         pop     {r4, r5, r6, pc}
 L53bedc:
         .word   0x008b8790
-        .size   A_53be98, . - A_53be98
+        .size   frd_a_GetMyFavoriteGame, . - frd_a_GetMyFavoriteGame
 
 @ FUN_0053bee0
         .global A_53bee0
@@ -28582,9 +28582,9 @@ L53bf64:
         .size   A_53bf24, . - A_53bf24
 
 @ FUN_0053bf68
-        .global A_53bf68
-        .type   A_53bf68, %function
-A_53bf68:
+        .global frd_a_UpdatePlayingGame
+        .type   frd_a_UpdatePlayingGame, %function
+frd_a_UpdatePlayingGame:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53bfa8
@@ -28605,12 +28605,12 @@ L53bfa8:
         .word   0x040a0100
 L53bfac:
         .word   0x008b8790
-        .size   A_53bf68, . - A_53bf68
+        .size   frd_a_UpdatePlayingGame, . - frd_a_UpdatePlayingGame
 
 @ FUN_0053bfb0
-        .global A_53bfb0
-        .type   A_53bfb0, %function
-A_53bfb0:
+        .global frd_a_CreateLocalAccount
+        .type   frd_a_CreateLocalAccount, %function
+frd_a_CreateLocalAccount:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53bff8
@@ -28633,12 +28633,12 @@ L53bff8:
         .word   0x04010100
 L53bffc:
         .word   0x008b8790
-        .size   A_53bfb0, . - A_53bfb0
+        .size   frd_a_CreateLocalAccount, . - frd_a_CreateLocalAccount
 
 @ FUN_0053c000
-        .global A_53c000
-        .type   A_53c000, %function
-A_53c000:
+        .global frd_a_DeleteLocalAccount
+        .type   frd_a_DeleteLocalAccount, %function
+frd_a_DeleteLocalAccount:
         push    {r0, r4, r5, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53c034
@@ -28656,12 +28656,12 @@ L53c034:
         .word   0x04020040
 L53c038:
         .word   0x008b8790
-        .size   A_53c000, . - A_53c000
+        .size   frd_a_DeleteLocalAccount, . - frd_a_DeleteLocalAccount
 
 @ FUN_0053c03c
-        .global A_53c03c
-        .type   A_53c03c, %function
-A_53c03c:
+        .global frd_a_GetMyNcPrincipalId
+        .type   frd_a_GetMyNcPrincipalId, %function
+frd_a_GetMyNcPrincipalId:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -28679,12 +28679,12 @@ L53c070:
         pop     {r4, r5, r6, pc}
 L53c074:
         .word   0x008b8790
-        .size   A_53c03c, . - A_53c03c
+        .size   frd_a_GetMyNcPrincipalId, . - frd_a_GetMyNcPrincipalId
 
 @ FUN_0053c078
-        .global A_53c078
-        .type   A_53c078, %function
-A_53c078:
+        .global frd_a_IncrementMoveCount
+        .type   frd_a_IncrementMoveCount, %function
+frd_a_IncrementMoveCount:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x4100000
@@ -28698,12 +28698,12 @@ A_53c078:
         pop     {r4, pc}
 L53c0a4:
         .word   0x008b8790
-        .size   A_53c078, . - A_53c078
+        .size   frd_a_IncrementMoveCount, . - frd_a_IncrementMoveCount
 
 @ FUN_0053c0a8
-        .global A_53c0a8
-        .type   A_53c0a8, %function
-A_53c0a8:
+        .global frd_a_UnloadLocalAccount
+        .type   frd_a_UnloadLocalAccount, %function
+frd_a_UnloadLocalAccount:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r0, L53c0d4
@@ -28719,12 +28719,12 @@ L53c0d4:
         .word   0x04040000
 L53c0d8:
         .word   0x008b8790
-        .size   A_53c0a8, . - A_53c0a8
+        .size   frd_a_UnloadLocalAccount, . - frd_a_UnloadLocalAccount
 
 @ FUN_0053c0dc
-        .global A_53c0dc
-        .type   A_53c0dc, %function
-A_53c0dc:
+        .global frd_a_UpdateFavoriteGame
+        .type   frd_a_UpdateFavoriteGame, %function
+frd_a_UpdateFavoriteGame:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53c11c
@@ -28745,7 +28745,7 @@ L53c11c:
         .word   0x040d0100
 L53c120:
         .word   0x008b8790
-        .size   A_53c0dc, . - A_53c0dc
+        .size   frd_a_UpdateFavoriteGame, . - frd_a_UpdateFavoriteGame
 
 @ FUN_0053c124
         .global A_53c124
@@ -28772,9 +28772,9 @@ L53c160:
         .size   A_53c124, . - A_53c124
 
 @ FUN_0053c1fc
-        .global A_53c1fc
-        .type   A_53c1fc, %function
-A_53c1fc:
+        .global frd_a_GetMyLocalAccountId
+        .type   frd_a_GetMyLocalAccountId, %function
+frd_a_GetMyLocalAccountId:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -28792,12 +28792,12 @@ L53c230:
         pop     {r4, r5, r6, pc}
 L53c234:
         .word   0x008b8790
-        .size   A_53c1fc, . - A_53c1fc
+        .size   frd_a_GetMyLocalAccountId, . - frd_a_GetMyLocalAccountId
 
 @ FUN_0053c238
-        .global A_53c238
-        .type   A_53c238, %function
-A_53c238:
+        .global frd_a_SetClientSdkVersion
+        .type   frd_a_SetClientSdkVersion, %function
+frd_a_SetClientSdkVersion:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53c270
@@ -28816,12 +28816,12 @@ L53c270:
         .word   0x00320042
 L53c274:
         .word   0x008b8790
-        .size   A_53c238, . - A_53c238
+        .size   frd_a_SetClientSdkVersion, . - frd_a_SetClientSdkVersion
 
 @ FUN_0053c278
-        .global A_53c278
-        .type   A_53c278, %function
-A_53c278:
+        .global frd_a_SetNotificationMask
+        .type   frd_a_SetNotificationMask, %function
+frd_a_SetNotificationMask:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53c2a8
@@ -28838,12 +28838,12 @@ L53c2a8:
         .word   0x00210040
 L53c2ac:
         .word   0x008b8790
-        .size   A_53c278, . - A_53c278
+        .size   frd_a_SetNotificationMask, . - frd_a_SetNotificationMask
 
 @ FUN_0053c2b0
-        .global A_53c2b0
-        .type   A_53c2b0, %function
-A_53c2b0:
+        .global frd_a_SetNcPrincipalId
+        .type   frd_a_SetNcPrincipalId, %function
+frd_a_SetNcPrincipalId:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53c2e0
@@ -28860,12 +28860,12 @@ L53c2e0:
         .word   0x040e0040
 L53c2e4:
         .word   0x008b8790
-        .size   A_53c2b0, . - A_53c2b0
+        .size   frd_a_SetNcPrincipalId, . - frd_a_SetNcPrincipalId
 
 @ FUN_0053c3bc
-        .global A_53c3bc
-        .type   A_53c3bc, %function
-A_53c3bc:
+        .global frd_a_GetMyApproachContext
+        .type   frd_a_GetMyApproachContext, %function
+frd_a_GetMyApproachContext:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x330000
@@ -28888,12 +28888,12 @@ L53c404:
         .word   0x00800002
 L53c408:
         .word   0x008b8790
-        .size   A_53c3bc, . - A_53c3bc
+        .size   frd_a_GetMyApproachContext, . - frd_a_GetMyApproachContext
 
 @ FUN_0053c40c
-        .global A_53c40c
-        .type   A_53c40c, %function
-A_53c40c:
+        .global frd_a_AddFriendWithApproach
+        .type   frd_a_AddFriendWithApproach, %function
+frd_a_AddFriendWithApproach:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L53c464
@@ -28922,12 +28922,12 @@ L53c468:
         .word   0x00800c02
 L53c46c:
         .word   0x008b8790
-        .size   A_53c40c, . - A_53c40c
+        .size   frd_a_AddFriendWithApproach, . - frd_a_AddFriendWithApproach
 
 @ FUN_0053c470
-        .global A_53c470
-        .type   A_53c470, %function
-A_53c470:
+        .global frd_a_GetFriendFavoriteGame
+        .type   frd_a_GetFriendFavoriteGame, %function
+frd_a_GetFriendFavoriteGame:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53c4cc
@@ -28955,12 +28955,12 @@ L53c4cc:
         .word   0x00190042
 L53c4d0:
         .word   0x008b8790
-        .size   A_53c470, . - A_53c470
+        .size   frd_a_GetFriendFavoriteGame, . - frd_a_GetFriendFavoriteGame
 
 @ FUN_0053c4d4
-        .global A_53c4d4
-        .type   A_53c4d4, %function
-A_53c4d4:
+        .global frd_a_GetFriendRelationship
+        .type   frd_a_GetFriendRelationship, %function
+frd_a_GetFriendRelationship:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53c538
@@ -28990,12 +28990,12 @@ L53c538:
         .word   0x00160042
 L53c53c:
         .word   0x008b8790
-        .size   A_53c4d4, . - A_53c4d4
+        .size   frd_a_GetFriendRelationship, . - frd_a_GetFriendRelationship
 
 @ FUN_0053c540
-        .global A_53c540
-        .type   A_53c540, %function
-A_53c540:
+        .global frd_a_GetLastResponseResult
+        .type   frd_a_GetLastResponseResult, %function
+frd_a_GetLastResponseResult:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x230000
@@ -29009,12 +29009,12 @@ A_53c540:
         pop     {r4, pc}
 L53c56c:
         .word   0x008b8790
-        .size   A_53c540, . - A_53c540
+        .size   frd_a_GetLastResponseResult, . - frd_a_GetLastResponseResult
 
 @ FUN_0053c570
-        .global A_53c570
-        .type   A_53c570, %function
-A_53c570:
+        .global frd_a_GetServerTimeDifference
+        .type   frd_a_GetServerTimeDifference, %function
+frd_a_GetServerTimeDifference:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -29032,12 +29032,12 @@ L53c5a4:
         pop     {r4, r5, r6, pc}
 L53c5a8:
         .word   0x008b8790
-        .size   A_53c570, . - A_53c570
+        .size   frd_a_GetServerTimeDifference, . - frd_a_GetServerTimeDifference
 
 @ FUN_0053c5ac
-        .global A_53c5ac
-        .type   A_53c5ac, %function
-A_53c5ac:
+        .global frd_a_GetServiceLocatorData
+        .type   frd_a_GetServiceLocatorData, %function
+frd_a_GetServiceLocatorData:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x2b0000
@@ -29060,12 +29060,12 @@ L53c5f4:
         .word   0x00660002
 L53c5f8:
         .word   0x008b8790
-        .size   A_53c5ac, . - A_53c5ac
+        .size   frd_a_GetServiceLocatorData, . - frd_a_GetServiceLocatorData
 
 @ FUN_0053c680
-        .global A_53c680
-        .type   A_53c680, %function
-A_53c680:
+        .global frd_a_DecryptApproachContext
+        .type   frd_a_DecryptApproachContext, %function
+frd_a_DecryptApproachContext:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L53c6e8
@@ -29098,7 +29098,7 @@ L53c6ec:
         .word   0x00800c02
 L53c6f0:
         .word   0x008b8790
-        .size   A_53c680, . - A_53c680
+        .size   frd_a_DecryptApproachContext, . - frd_a_DecryptApproachContext
 
 @ FUN_0053c6f4
         .global A_53c6f4
@@ -29153,9 +29153,9 @@ L53c7fc:
         .size   A_53c7bc, . - A_53c7bc
 
 @ FUN_0053c800
-        .global A_53c800
-        .type   A_53c800, %function
-A_53c800:
+        .global frd_a_GetFriendAttributeFlags
+        .type   frd_a_GetFriendAttributeFlags, %function
+frd_a_GetFriendAttributeFlags:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53c864
@@ -29185,7 +29185,7 @@ L53c864:
         .word   0x00170042
 L53c868:
         .word   0x008b8790
-        .size   A_53c800, . - A_53c800
+        .size   frd_a_GetFriendAttributeFlags, . - frd_a_GetFriendAttributeFlags
 
 @ FUN_0053c86c
         .global A_53c86c
@@ -29238,9 +29238,9 @@ L53c8ec:
         .size   A_53c8b0, . - A_53c8b0
 
 @ FUN_0053c8f0
-        .global A_53c8f0
-        .type   A_53c8f0, %function
-A_53c8f0:
+        .global frd_a_GetGameAuthenticationData
+        .type   frd_a_GetGameAuthenticationData, %function
+frd_a_GetGameAuthenticationData:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x290000
@@ -29263,12 +29263,12 @@ L53c938:
         .word   0x004e0002
 L53c93c:
         .word   0x008b8790
-        .size   A_53c8f0, . - A_53c8f0
+        .size   frd_a_GetGameAuthenticationData, . - frd_a_GetGameAuthenticationData
 
 @ FUN_0053c9d0
-        .global A_53c9d0
-        .type   A_53c9d0, %function
-A_53c9d0:
+        .global frd_a_UnscrambleLocalFriendCode
+        .type   frd_a_UnscrambleLocalFriendCode, %function
+frd_a_UnscrambleLocalFriendCode:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L53ca3c
@@ -29300,12 +29300,12 @@ L53ca3c:
         .word   0x001c0042
 L53ca40:
         .word   0x008b8790
-        .size   A_53c9d0, . - A_53c9d0
+        .size   frd_a_UnscrambleLocalFriendCode, . - frd_a_UnscrambleLocalFriendCode
 
 @ FUN_0053ca44
-        .global A_53ca44
-        .type   A_53ca44, %function
-A_53ca44:
+        .global frd_a_UpdateGameModeDescription
+        .type   frd_a_UpdateGameModeDescription, %function
+frd_a_UpdateGameModeDescription:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L53ca7c
@@ -29326,7 +29326,7 @@ L53ca80:
         .word   0x00400802
 L53ca84:
         .word   0x008b8790
-        .size   A_53ca44, . - A_53ca44
+        .size   frd_a_UpdateGameModeDescription, . - frd_a_UpdateGameModeDescription
 
 @ FUN_0053cabc
         .global A_53cabc
@@ -29353,9 +29353,9 @@ L53caf8:
         .size   A_53cabc, . - A_53cabc
 
 @ FUN_0053cafc
-        .global A_53cafc
-        .type   A_53cafc, %function
-A_53cafc:
+        .global frd_a_Logout
+        .type   frd_a_Logout, %function
+frd_a_Logout:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         mov     r0, #0x40000
@@ -29369,12 +29369,12 @@ A_53cafc:
         pop     {r4, pc}
 L53cb28:
         .word   0x008b8790
-        .size   A_53cafc, . - A_53cafc
+        .size   frd_a_Logout, . - frd_a_Logout
 
 @ FUN_0053cb70
-        .global A_53cb70
-        .type   A_53cb70, %function
-A_53cb70:
+        .global frd_a_IsOnline
+        .type   frd_a_IsOnline, %function
+frd_a_IsOnline:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -29392,12 +29392,12 @@ L53cba4:
         pop     {r4, r5, r6, pc}
 L53cba8:
         .word   0x008b8790
-        .size   A_53cb70, . - A_53cb70
+        .size   frd_a_IsOnline, . - frd_a_IsOnline
 
 @ FUN_00540878
-        .global A_540878
-        .type   A_540878, %function
-A_540878:
+        .global frd_u_HasLoggedIn
+        .type   frd_u_HasLoggedIn, %function
+frd_u_HasLoggedIn:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -29415,12 +29415,12 @@ L5408ac:
         pop     {r4, r5, r6, pc}
 L5408b0:
         .word   0x008b7ccc
-        .size   A_540878, . - A_540878
+        .size   frd_u_HasLoggedIn, . - frd_u_HasLoggedIn
 
 @ FUN_005408b4
-        .global A_5408b4
-        .type   A_5408b4, %function
-A_5408b4:
+        .global frd_u_GetFriendMii
+        .type   frd_u_GetFriendMii, %function
+frd_u_GetFriendMii:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L540908
@@ -29446,12 +29446,12 @@ L540908:
         .word   0x00140044
 L54090c:
         .word   0x008b7ccc
-        .size   A_5408b4, . - A_5408b4
+        .size   frd_u_GetFriendMii, . - frd_u_GetFriendMii
 
 @ FUN_00540990
-        .global A_540990
-        .type   A_540990, %function
-A_540990:
+        .global frd_u_GetFriendInfo
+        .type   frd_u_GetFriendInfo, %function
+frd_u_GetFriendInfo:
         push    {r0, r1, r2, r3, r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L5409fc
@@ -29483,12 +29483,12 @@ L5409fc:
         .word   0x001a00c4
 L540a00:
         .word   0x008b7ccc
-        .size   A_540990, . - A_540990
+        .size   frd_u_GetFriendInfo, . - frd_u_GetFriendInfo
 
 @ FUN_00540a60
-        .global A_540a60
-        .type   A_540a60, %function
-A_540a60:
+        .global frd_u_GetMyPresence
+        .type   frd_u_GetMyPresence, %function
+frd_u_GetMyPresence:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x80000
@@ -29511,12 +29511,12 @@ L540aa8:
         .word   0x004b0002
 L540aac:
         .word   0x008b7ccc
-        .size   A_540a60, . - A_540a60
+        .size   frd_u_GetMyPresence, . - frd_u_GetMyPresence
 
 @ FUN_00540aec
-        .global A_540aec
-        .type   A_540aec, %function
-A_540aec:
+        .global frd_u_GetMyFriendKey
+        .type   frd_u_GetMyFriendKey, %function
+frd_u_GetMyFriendKey:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -29537,12 +29537,12 @@ L540b2c:
         pop     {r4, r5, r6, pc}
 L540b30:
         .word   0x008b7ccc
-        .size   A_540aec, . - A_540aec
+        .size   frd_u_GetMyFriendKey, . - frd_u_GetMyFriendKey
 
 @ FUN_00540b88
-        .global A_540b88
-        .type   A_540b88, %function
-A_540b88:
+        .global frd_u_SendInvitation
+        .type   frd_u_SendInvitation, %function
+frd_u_SendInvitation:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L540bcc
@@ -29564,12 +29564,12 @@ L540bcc:
         .word   0x001f0042
 L540bd0:
         .word   0x008b7ccc
-        .size   A_540b88, . - A_540b88
+        .size   frd_u_SendInvitation, . - frd_u_SendInvitation
 
 @ FUN_00540bd4
-        .global A_540bd4
-        .type   A_540bd4, %function
-A_540bd4:
+        .global frd_u_UpdateMyPresence
+        .type   frd_u_UpdateMyPresence, %function
+frd_u_UpdateMyPresence:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L540c24
@@ -29596,12 +29596,12 @@ L540c28:
         .word   0x00400802
 L540c2c:
         .word   0x008b7ccc
-        .size   A_540bd4, . - A_540bd4
+        .size   frd_u_UpdateMyPresence, . - frd_u_UpdateMyPresence
 
 @ FUN_00540c30
-        .global A_540c30
-        .type   A_540c30, %function
-A_540c30:
+        .global frd_u_GetMyPreference
+        .type   frd_u_GetMyPreference, %function
+frd_u_GetMyPreference:
         push    {r4, r5, r6, r7, r8, lr}
         mov     r5, r0
         mov     r6, r1
@@ -29625,12 +29625,12 @@ L540c7c:
         pop     {r4, r5, r6, r7, r8, pc}
 L540c80:
         .word   0x008b7ccc
-        .size   A_540c30, . - A_540c30
+        .size   frd_u_GetMyPreference, . - frd_u_GetMyPreference
 
 @ FUN_00540cc8
-        .global A_540cc8
-        .type   A_540cc8, %function
-A_540cc8:
+        .global frd_u_GetFriendComment
+        .type   frd_u_GetFriendComment, %function
+frd_u_GetFriendComment:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L540d2c
@@ -29660,12 +29660,12 @@ L540d2c:
         .word   0x00310082
 L540d30:
         .word   0x008b7ccc
-        .size   A_540cc8, . - A_540cc8
+        .size   frd_u_GetFriendComment, . - frd_u_GetFriendComment
 
 @ FUN_00540d9c
-        .global A_540d9c
-        .type   A_540d9c, %function
-A_540d9c:
+        .global frd_u_GetFriendProfile
+        .type   frd_u_GetFriendProfile, %function
+frd_u_GetFriendProfile:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L540e00
@@ -29695,7 +29695,7 @@ L540e00:
         .word   0x00150042
 L540e04:
         .word   0x008b7ccc
-        .size   A_540d9c, . - A_540d9c
+        .size   frd_u_GetFriendProfile, . - frd_u_GetFriendProfile
 
 @ FUN_00540f50
         .global A_540f50
@@ -29750,9 +29750,9 @@ L540fd4:
         .size   A_540f94, . - A_540f94
 
 @ FUN_005410ec
-        .global A_5410ec
-        .type   A_5410ec, %function
-A_5410ec:
+        .global frd_u_GetMyLocalAccountId
+        .type   frd_u_GetMyLocalAccountId, %function
+frd_u_GetMyLocalAccountId:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -29770,12 +29770,12 @@ L541120:
         pop     {r4, r5, r6, pc}
 L541124:
         .word   0x008b7ccc
-        .size   A_5410ec, . - A_5410ec
+        .size   frd_u_GetMyLocalAccountId, . - frd_u_GetMyLocalAccountId
 
 @ FUN_00541128
-        .global A_541128
-        .type   A_541128, %function
-A_541128:
+        .global frd_u_SetClientSdkVersion
+        .type   frd_u_SetClientSdkVersion, %function
+frd_u_SetClientSdkVersion:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r1, L541160
@@ -29794,12 +29794,12 @@ L541160:
         .word   0x00320042
 L541164:
         .word   0x008b7ccc
-        .size   A_541128, . - A_541128
+        .size   frd_u_SetClientSdkVersion, . - frd_u_SetClientSdkVersion
 
 @ FUN_005411a0
-        .global A_5411a0
-        .type   A_5411a0, %function
-A_5411a0:
+        .global frd_u_GetEventNotification
+        .type   frd_u_GetEventNotification, %function
+frd_u_GetEventNotification:
         push    {r4, r5, r6, r7, r8, sb, sl, lr}
         mov     r6, r2
         mov     r7, r3
@@ -29833,12 +29833,12 @@ L541210:
         .word   0x00220040
 L541214:
         .word   0x008b7ccc
-        .size   A_5411a0, . - A_5411a0
+        .size   frd_u_GetEventNotification, . - frd_u_GetEventNotification
 
 @ FUN_00541218
-        .global A_541218
-        .type   A_541218, %function
-A_541218:
+        .global frd_u_GetFriendPlayingGame
+        .type   frd_u_GetFriendPlayingGame, %function
+frd_u_GetFriendPlayingGame:
         push    {r4, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r3, L54126c
@@ -29864,12 +29864,12 @@ L54126c:
         .word   0x00180044
 L541270:
         .word   0x008b7ccc
-        .size   A_541218, . - A_541218
+        .size   frd_u_GetFriendPlayingGame, . - frd_u_GetFriendPlayingGame
 
 @ FUN_00541274
-        .global A_541274
-        .type   A_541274, %function
-A_541274:
+        .global frd_u_GetMyApproachContext
+        .type   frd_u_GetMyApproachContext, %function
+frd_u_GetMyApproachContext:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r5, c13, c0, #3
         mov     r1, #0x330000
@@ -29892,12 +29892,12 @@ L5412bc:
         .word   0x00800002
 L5412c0:
         .word   0x008b7ccc
-        .size   A_541274, . - A_541274
+        .size   frd_u_GetMyApproachContext, . - frd_u_GetMyApproachContext
 
 @ FUN_005412c4
-        .global A_5412c4
-        .type   A_5412c4, %function
-A_5412c4:
+        .global frd_u_AddFriendWithApproach
+        .type   frd_u_AddFriendWithApproach, %function
+frd_u_AddFriendWithApproach:
         push    {r4, r5, r6, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r5, L54131c
@@ -29926,12 +29926,12 @@ L541320:
         .word   0x00800c02
 L541324:
         .word   0x008b7ccc
-        .size   A_5412c4, . - A_5412c4
+        .size   frd_u_AddFriendWithApproach, . - frd_u_AddFriendWithApproach
 
 @ FUN_00541328
-        .global A_541328
-        .type   A_541328, %function
-A_541328:
+        .global frd_u_GetFriendFavoriteGame
+        .type   frd_u_GetFriendFavoriteGame, %function
+frd_u_GetFriendFavoriteGame:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L541384
@@ -29959,12 +29959,12 @@ L541384:
         .word   0x00190042
 L541388:
         .word   0x008b7ccc
-        .size   A_541328, . - A_541328
+        .size   frd_u_GetFriendFavoriteGame, . - frd_u_GetFriendFavoriteGame
 
 @ FUN_0054138c
-        .global A_54138c
-        .type   A_54138c, %function
-A_54138c:
+        .global frd_u_GetFriendRelationship
+        .type   frd_u_GetFriendRelationship, %function
+frd_u_GetFriendRelationship:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L5413f0
@@ -29994,12 +29994,12 @@ L5413f0:
         .word   0x00160042
 L5413f4:
         .word   0x008b7ccc
-        .size   A_54138c, . - A_54138c
+        .size   frd_u_GetFriendRelationship, . - frd_u_GetFriendRelationship
 
 @ FUN_00541538
-        .global A_541538
-        .type   A_541538, %function
-A_541538:
+        .global frd_u_DecryptApproachContext
+        .type   frd_u_DecryptApproachContext, %function
+frd_u_DecryptApproachContext:
         push    {r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     r2, L5415a0
@@ -30032,7 +30032,7 @@ L5415a4:
         .word   0x00800c02
 L5415a8:
         .word   0x008b7ccc
-        .size   A_541538, . - A_541538
+        .size   frd_u_DecryptApproachContext, . - frd_u_DecryptApproachContext
 
 @ FUN_005415ac
         .global A_5415ac
@@ -30087,9 +30087,9 @@ L541630:
         .size   A_5415f0, . - A_5415f0
 
 @ FUN_00541634
-        .global A_541634
-        .type   A_541634, %function
-A_541634:
+        .global frd_u_GetFriendAttributeFlags
+        .type   frd_u_GetFriendAttributeFlags, %function
+frd_u_GetFriendAttributeFlags:
         push    {r4, r5, r6, r7, r8, lr}
         mrc     p15, #0, r4, c13, c0, #3
         ldr     ip, L541698
@@ -30119,7 +30119,7 @@ L541698:
         .word   0x00170042
 L54169c:
         .word   0x008b7ccc
-        .size   A_541634, . - A_541634
+        .size   frd_u_GetFriendAttributeFlags, . - frd_u_GetFriendAttributeFlags
 
 @ FUN_005416a0
         .global A_5416a0
@@ -30148,9 +30148,9 @@ L5416e0:
         .size   A_5416a0, . - A_5416a0
 
 @ FUN_00541970
-        .global A_541970
-        .type   A_541970, %function
-A_541970:
+        .global frd_u_IsOnline
+        .type   frd_u_IsOnline, %function
+frd_u_IsOnline:
         push    {r4, r5, r6, lr}
         mov     r5, r0
         mrc     p15, #0, r4, c13, c0, #3
@@ -30168,7 +30168,7 @@ L5419a4:
         pop     {r4, r5, r6, pc}
 L5419a8:
         .word   0x008b7ccc
-        .size   A_541970, . - A_541970
+        .size   frd_u_IsOnline, . - frd_u_IsOnline
 
 @ FUN_0056e660
         .global A_56e660

@@ -412,7 +412,7 @@ u32 W_518abc(u32 a0) {
 }
 
 // FUN_0051b8b4
-u32 W_51b8b4(u32 a0) {
+u32 ndm_u_LeaveExclusiveState_51b8b4(u32 a0) {
     u32 t1 = Fn_51a2a8_1(a0);
     u32 t2 = Fn_504394_1(t1);
     return Fn_504590_1(t2);
@@ -459,7 +459,7 @@ u32 W_535ea8() {
 }
 
 // FUN_00536408
-u32 W_536408(u32 a0, u32 a1) {
+u32 APT_U_SendCaptureBufferInfo(u32 a0, u32 a1) {
     u32 t1 = Fn_01d3e0_2(a0, a1);
     u32 t2 = Fn_5378d0_2(a0, a1);
     u32 t3 = Fn_01d534_1(t2);

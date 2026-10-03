@@ -24,6 +24,13 @@ def split_mn(m):
     return None
 
 def lift(I, word, fname, variants=True):
+    """SSA-style variants first (a fresh variable per register write, straight-line code only), then the register-variable form."""
+    res = []
+    try: res += _lift(I, word, fname, True)
+    except ValueError: pass
+    return res + _lift(I, word, fname, False)
+
+def _lift(I, word, fname, ssa):
     n = len(I)
     if n == 0: raise ValueError('empty')
     start, end_addr = I[0][2], I[-1][2] + 4
@@ -37,6 +44,8 @@ def lift(I, word, fname, variants=True):
             elif t != end_addr and not (start <= t < end_addr): pass
     defined = set(); params = set(); decls = set(); calls = []; out = []
     flags = [None]   # None | ('cmp', a, b) | ('nz', x)
+    cur = {}; ver = {}; newvars = []; curpred = [None]
+    if ssa and targets: raise ValueError('ssa labels')
     tmp = [0]
 
     def R(r):
@@ -48,15 +57,24 @@ def lift(I, word, fname, variants=True):
         if not mm or int(mm.group(1)) > 12: raise ValueError('reg ' + r)
         return int(mm.group(1))
 
+    frame = [0]
+
     def rd(r):
+        if r.strip() == 'sp': return '(u32)stk'
         k = R(r)
         if k not in defined:
             if k > 3: raise ValueError('uninit r%d' % k)
             params.add(k); defined.add(k)
-        return 'r%d' % k
+        return cur.get(k, 'r%d' % k) if ssa else 'r%d' % k
 
     def wr(r):
-        k = R(r); defined.add(k); return 'r%d' % k
+        k = R(r); defined.add(k)
+        if not ssa: return 'r%d' % k
+        if curpred[0]: raise ValueError('ssa predicated')
+        ver[k] = ver.get(k, 0) + 1; cur[k] = f'r{k}_{ver[k]}'; newvars.append(cur[k]); return cur[k]
+
+    def cname(r):
+        k = R(r); return cur.get(k, 'r%d' % k) if ssa else 'r%d' % k
 
     def op2(s):
         s = s.strip()
@@ -91,6 +109,7 @@ def lift(I, word, fname, variants=True):
         """-> (reg, address expr, pre stmt, post stmt)"""
         NUM = r'-?(?:0x[0-9a-f]+|\d+)'
         mm = re.fullmatch(r'(\w+), \[(\w+)(?:, #(%s))?\](!)?(?:, #(%s))?' % (NUM, NUM), o)
+        if mm and mm.group(2) == 'sp' and (mm.group(4) or mm.group(5) is not None): raise ValueError('sp writeback')
         if mm:
             b = rd(mm.group(2))
             if mm.group(5) is not None:       # post-indexed
@@ -110,7 +129,7 @@ def lift(I, word, fname, variants=True):
     def call_args(extra=None):
         a = []
         for k in range(4):
-            if k in defined: a.append('r%d' % k)
+            if k in defined: a.append(cur.get(k, 'r%d' % k) if ssa else 'r%d' % k)
             elif k == 0 and not defined & {0, 1, 2, 3}: break
             else: break
         # unread param r0 at function start counts as an argument only if some contiguous reg is defined
@@ -128,10 +147,19 @@ def lift(I, word, fname, variants=True):
         if not sm: raise ValueError('op ' + m)
         b, c, s = sm
         cs = cond(c) if (c and b not in ('b',)) or (c and b == 'b') else None
-        if b in ('push', 'nop'): continue
+        curpred[0] = cs if b not in ('b', 'bx', 'pop') else None
+        if b == 'push':
+            frame[0] += 4 * sum(1 for r in re.findall(r'r\d+', o) if int(r[1:]) <= 3)   # caller-saved regs pushed as stack slots
+            continue
+        if b == 'nop': continue
+        if b in ('add', 'sub') and re.fullmatch(r'sp, sp, #(0x[0-9a-f]+|\d+)', o.strip()):
+            if b == 'sub': frame[0] += int(o.split('#')[1], 0)
+            continue
+        if b == 'str' and o.strip() == 'lr, [sp, #-4]!': continue
+        if b == 'ldr' and o.strip() == 'lr, [sp], #4': continue
         if b == 'pop':
             if 'pc' not in o: continue
-            out.append(f'{"if (" + cs + ") " if cs else ""}{{RET}}'); continue
+            out.append(f'{"if (" + cs + ") " if cs else ""}{{RET {cur.get(0, 'r0')}}}'); continue
         if b == 'bx' and o.strip() != 'lr' and re.fullmatch(r'r\d+', o.strip()):
             fp = rd(o.strip()); args = call_args()
             if fp in args: args = args[:args.index(fp)]
@@ -139,14 +167,14 @@ def lift(I, word, fname, variants=True):
             out.append(f'{"if (" + cs + ") " if cs else ""}{{TAIL ((u32(*)({sig})){fp})({", ".join(args)})}}'); continue
         if b == 'bx':
             if o.strip() != 'lr': raise ValueError('bx ' + o)
-            out.append(f'{"if (" + cs + ") " if cs else ""}{{RET}}'); continue
+            out.append(f'{"if (" + cs + ") " if cs else ""}{{RET {cur.get(0, 'r0')}}}'); continue
         if b == 'ldr' and o.startswith('pc,'): raise ValueError('ldrpc')
         if b in ('mov', 'mvn'):
             d, src = [x.strip() for x in o.split(',', 1)]
             v = op2(src)
             if b == 'mvn': v = f'~{v}'
             emit(f'{wr(d)} = {v};', cs)
-            if s: flags[0] = ('nz', 'r%d' % R(d))
+            if s: flags[0] = ('nz', cname(d))
             continue
         if b in ('lsl', 'lsr', 'asr'):
             mm = re.fullmatch(r'(\w+), (\w+), #(0x[0-9a-f]+|\d+)', o)
@@ -156,12 +184,12 @@ def lift(I, word, fname, variants=True):
                 x = rd(mm.group(2)); sh = f'({rd(mm.group(3))} & 255)'
                 v = {'lsl': f'{x} << {sh}', 'lsr': f'{x} >> {sh}', 'asr': f'(u32)((int){x} >> {sh})'}[b]
                 emit(f'{wr(mm.group(1))} = {v};', cs)
-                if s: flags[0] = ('nz', 'r%d' % R(mm.group(1)))
+                if s: flags[0] = ('nz', cname(mm.group(1)))
                 continue
             x = rd(mm.group(2)); sh = int(mm.group(3), 0)
             v = {'lsl': f'{x} << {sh}', 'lsr': f'{x} >> {sh}', 'asr': f'(u32)((int){x} >> {sh})'}[b]
             emit(f'{wr(mm.group(1))} = {v};', cs)
-            if s: flags[0] = ('nz', 'r%d' % R(mm.group(1)))
+            if s: flags[0] = ('nz', cname(mm.group(1)))
             continue
         if b in ('add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'mul'):
             mm = re.fullmatch(r'(\w+), (\w+), (.+)', o)
@@ -171,6 +199,7 @@ def lift(I, word, fname, variants=True):
                 if not mm: raise ValueError('arith ' + o)
                 d, y = mm.groups(); x = d
             X = rd(x); Y = op2(y)
+            if x.strip() == 'sp' and not Y.endswith('u'): raise ValueError('sp arith')
             sym = {'add': '+', 'sub': '-', 'and': '&', 'orr': '|', 'eor': '^', 'mul': '*'}
             if b == 'rsb': v = f'{Y} - {X}'
             elif b == 'bic': v = f'{X} & ~{Y}'
@@ -201,10 +230,12 @@ def lift(I, word, fname, variants=True):
                 else: v = f'{w}u'
                 emit(f'{wr(mm.group(1))} = {v};', cs); continue
             d, addr, pre, post = mem(o)
+            if ssa and (pre or post): raise ValueError('ssa writeback')
             ty = {'ldr': 'u32', 'ldrb': 'u8', 'ldrh': 'u16', 'ldrsb': 'signed char', 'ldrsh': 'short'}[b]
             emit(f'{pre} {wr(d)} = *({ty}*)({addr}); {post}'.replace('  ', ' ').strip(), cs); continue
         if b in ('str', 'strb', 'strh'):
             d, addr, pre, post = mem(o)
+            if ssa and (pre or post): raise ValueError('ssa writeback')
             ty = {'str': 'u32', 'strb': 'u8', 'strh': 'u16'}[b]
             emit(f'{pre} *({ty}*)({addr}) = {rd(d)}; {post}'.replace('  ', ' ').strip(), cs); continue
         if b in ('uxth', 'sxth', 'uxtb', 'sxtb'):
@@ -218,7 +249,7 @@ def lift(I, word, fname, variants=True):
             if len(r) != 4: raise ValueError('mla')
             v = f'{rd(r[1])} * {rd(r[2])} + {rd(r[3])}'
             emit(f'{wr(r[0])} = {v};', cs)
-            if s: flags[0] = ('nz', 'r%d' % R(r[0]))
+            if s: flags[0] = ('nz', cname(r[0]))
             continue
         if b in ('ldm', 'stm'):
             mm = re.fullmatch(r'(\w+)(!)?, \{(.*)\}', o)
@@ -234,17 +265,15 @@ def lift(I, word, fname, variants=True):
             fp = rd(o.strip()); args = [x for x in call_args()]
             if fp in args: args = args[:args.index(fp)]
             sig = ', '.join(['u32'] * len(args))
-            emit(f'r0 = ((u32(*)({sig})){fp})({", ".join(args)});', cs)
+            emit(f'{wr("r0")} = ((u32(*)({sig})){fp})({", ".join(args)});', cs)
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b in ('bl', 'blx') and o.startswith('#'):
             t = int(o[1:], 0)
             args = call_args()
-            nm = f'Fn_{t:06x}_{len(args)}'
-            decls.add(f'u32 {nm}({", ".join(["u32"] * len(args))});'); calls.append((nm, t))
-            for k in args:
-                kk = int(k[1:]); rd(k)
-            emit(f'r0 = {nm}({", ".join(args)});', cs)
+            nm_ = f'Fn_{t:06x}_{len(args)}'
+            decls.add(f'u32 {nm_}({", ".join(["u32"] * len(args))});'); calls.append((nm_, t))
+            emit(f'{wr("r0")} = {nm_}({", ".join(args)});', cs)
             for k in (1, 2, 3, 12): defined.discard(k)
             defined.add(0); continue
         if b == 'b' and o.startswith('#'):
@@ -262,11 +291,25 @@ def lift(I, word, fname, variants=True):
     pl = ', '.join(f'u32 a{k}' for k in range(max(params) + 1)) if params else ''
     pre = ''.join(f'    u32 r{k}{" = a%d" % k if k in params else ""};\n' for k in range(13) if True) if False else ''
     regdecl = ', '.join(f'r{k}' + (f' = a{k}' if k in params else '') for k in range(13)) + ", fa, fb, fx"
+    if newvars: regdecl += ', ' + ', '.join(newvars)
+    if frame[0] == 4:   # one slot: a scalar local schedules like a source-level `u32 v; f(&v)`
+        regdecl += ', stk'; out = [l.replace('*(u32*)((u32)stk)', 'stk').replace('(u32)stk', '(u32)&stk') for l in out]
+        if ssa:   # `rX_n = expr; stk = rX_n;` is source-level `v = expr;`
+            o2 = []; i2 = 0
+            while i2 < len(out):
+                m1 = re.fullmatch(r'(r\d+_\d+) = (.*);', out[i2])
+                if m1 and i2 + 1 < len(out) and out[i2 + 1] == f'stk = {m1.group(1)};':
+                    o2.append(f'stk = {m1.group(2)};')
+                    for j in range(i2 + 2, len(out)): out[j] = re.sub(r'%s' % m1.group(1), 'stk', out[j])
+                    i2 += 2
+                else: o2.append(out[i2]); i2 += 1
+            out = o2
+    elif frame[0]: regdecl += f', stk[{(frame[0] + 3) // 4}]'
     body = '\n'.join('    ' + l for l in out)
     res = []
     for ty in ('void', 'u32'):
         txt = body
-        txt = re.sub(r'\{RET\}', 'return;' if ty == 'void' else 'return r0;', txt)
+        txt = re.sub(r'\{RET (\w+)\}', (lambda m: 'return;') if ty == 'void' else (lambda m: 'return %s;' % m.group(1)), txt)
         if ty == 'void': txt = re.sub(r'\{TAIL (.*?)\}$', r'{ \1; return; }', txt, flags=re.M)
         else: txt = re.sub(r'\{TAIL (.*?)\}$', r'return \1;', txt, flags=re.M)
         # TAIL under an if needs braces in both forms
