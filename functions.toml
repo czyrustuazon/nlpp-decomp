@@ -82099,3 +82099,11 @@ size = "48"
 src = "src/lookup_fwd.cpp"
 symbol = "_Z7InitRecP4Pooljj"
 score = 5   # NONMATCHING: zero constant lands in r3 not ip; mov #8 early
+
+[[function]]
+name = "BeginCmd"
+offset = "5924d4"
+size = "5c"
+src = "src/cmdbuf_misc.cpp"
+symbol = "_Z8BeginCmdP6CmdBufjt"
+score = 13   # NONMATCHING: wrap branch computes cur+4 as a separate add; next/rec stores pair up as stm
