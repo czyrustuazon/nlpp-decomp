@@ -140,3 +140,4 @@ The first constructor, with the allocation written out in the body, scored 18 an
 | `FUN_005c04bc/U1_and_masks_named_locals.cpp` | notes on the Utf8Decode variants | 70, 68, 81 (kept 53) |
 | `FUN_0059e380/Z1_zero_live_range_variants.txt` | TaggedStr ctor zero-register variants | 17 / 23 unchanged |
 | `FUN_005a1a58/A1_float_reinterpret_variants.txt` | float reinterpret spellings | 11 |
+| `FUN_0059dfc4` local `cnt`/`chars` per iteration (2026-10-02, not kept) | `AtL(chars, cnt, i)` helper with `m_count`/`m_chars` read once per iteration, for the `<` test, `=` test, `>` scan and 4 tag bytes | 192 (186 vs 200 ins; worse than 158). Retail drops the null check only on the `i+5` read and re-reads `m_chars` in the `>` scan while caching the count, so one cached pair does not model it |
