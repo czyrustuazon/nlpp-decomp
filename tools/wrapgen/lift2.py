@@ -32,6 +32,9 @@ def fconst(w):
     if not any(ch in t for ch in '.eE'): t += '.0'
     return t + 'f'
 
+PASS = [False]
+
+
 def lift(I, word, fname, variants=True):
     """SSA-style variants first (a fresh variable per register write, straight-line code only), then the register-variable form."""
     res = []
@@ -42,7 +45,21 @@ def lift(I, word, fname, variants=True):
         try: res += _lift(I, word, fname, False, p64)
         except ValueError:
             if not p64 and not res: raise
-    return res
+    for pas in (True,):
+        PASS[0] = True
+        try:
+            for ssa in (True, False):
+                try: res += _lift(I, word, fname, ssa, False)
+                except ValueError: pass
+        finally: PASS[0] = False
+    more = []
+    for r in res:
+        for v in (constprop(r), inline1(r)):
+            if v: more.append(v)
+        v = inline1(r)
+        v = constprop(v) if v else None
+        if v: more.append(v)
+    return res + more
 
 def _lift(I, word, fname, ssa, p64=False):
     pool = set()   # literal-pool words decode as bogus instructions; drop them
@@ -86,8 +103,10 @@ def _lift(I, word, fname, ssa, p64=False):
             params.add(k); defined.add(k)
         return cur.get(k, 'r%d' % k) if ssa else 'r%d' % k
 
+    wrote = set()
+
     def wr(r):
-        k = R(r); defined.add(k)
+        k = R(r); defined.add(k); wrote.add(k)
         if not ssa: return 'r%d' % k
         if curpred[0]: raise ValueError('ssa predicated')
         ver[k] = ver.get(k, 0) + 1; cur[k] = f'r{k}_{ver[k]}'; newvars.append(cur[k]); return cur[k]
@@ -161,6 +180,13 @@ def _lift(I, word, fname, ssa, p64=False):
 
     def call_args(extra=None):
         a = []
+        if PASS[0]:   # arguments are the untouched incoming registers (a clobbered temp means the callee takes fewer)
+            if 0 not in defined and defined & {1, 2, 3}: rd('r0')
+            a = []
+            for k in range(4):
+                if k in params and k not in wrote: a.append(cur.get(k, 'r%d' % k) if ssa else 'r%d' % k)
+                else: break
+            return a
         for k in range(4):
             if k in defined: a.append(cur.get(k, 'r%d' % k) if ssa else 'r%d' % k)
             elif k == 0 and not defined & {0, 1, 2, 3}: break
@@ -476,3 +502,54 @@ def _lift(I, word, fname, ssa, p64=False):
         if ty == 'void': txt = txt.replace('{ { ', '{ ').replace('; return; } }', '; return; }') if False else txt
         res.append((sorted(decls), f'{ty} {fname}({pl}) {{\n    u32 {regdecl};\n{fdecl}{txt}\n}}', calls))
     return res
+
+
+def _keepdecl(orig, new):
+    # the declaration line (`u32 r0 = a0, ... fx, ...;`) must keep its variable names
+    NL = chr(10)
+    o = orig.split(NL); n = new.split(NL)
+    for l in o:
+        if ' fa, fb, fx' in l:
+            for j, l2 in enumerate(n):
+                if ' fa, fb, fx' in l2: n[j] = l; break
+    return NL.join(n)
+
+
+def _sub(var, rep, txt):
+    return re.sub(r'\b%s\b(?!_)' % re.escape(var), lambda m: rep, txt)
+
+
+def constprop(r):
+    """Variant with SSA constants (`rX_n = 0u;`) substituted into later uses: `Fn(a, 0, 0)` schedules differently from
+    `r2_1 = 0; r1_1 = r2_1;` (retail sets r2 first and copies it, which only the literal form reproduces)."""
+    decls, body, calls = r
+    consts = {}; out = []
+    for l in body.split('\n'):
+        m = re.fullmatch(r'\s*(r\d+_\d+) = (\d+u|~0u|0x[0-9a-f]+u);', l)
+        if m: consts[m.group(1)] = m.group(2); continue
+        out.append(l)
+    if not consts: return None
+    txt = '\n'.join(out)
+    for k, v in consts.items(): txt = _sub(k, v, txt)
+    return (decls, txt.replace('fx, ' + ', '.join(consts.values()) + ', ', 'fx, '), calls) if False else (decls, _keepdecl(body, txt), calls)
+
+
+def inline1(r):
+    """Variant with single-use SSA temporaries folded into their use (`t = *(u32*)(p); *(u8*)(t + 8) = 4;`):
+    register choice follows the expression shape, not the temporary's name."""
+    decls, body, calls = r
+    lines = body.split('\n'); n = len(lines); changed = False
+    pat = re.compile(r'\s*(r\d+_\d+) = (.*);')
+    i = 0
+    while i < n:
+        m = pat.fullmatch(lines[i])
+        if m and 'Fn_' not in m.group(2) and 'WeakCall' not in m.group(2):
+            v = m.group(1)
+            uses = [j for j in range(n) if j != i and ' fa, fb, fx' not in lines[j] and re.search(r'\b%s\b(?!_)' % v, lines[j])]
+            if len(uses) == 1 and uses[0] > i and not any(l.lstrip().startswith(('L_', 'if', 'goto')) for l in lines[i + 1:uses[0] + 1]) \
+               and not re.search(r'\b(fa|fb|fx)\b', lines[uses[0]]):
+                rhs = m.group(2)
+                lines[uses[0]] = _sub(v, rhs if re.fullmatch(r'\w+', rhs) else '(' + rhs + ')', lines[uses[0]])
+                del lines[i]; n -= 1; changed = True; continue
+        i += 1
+    return (decls, '\n'.join(lines), calls) if changed else None
