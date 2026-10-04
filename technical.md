@@ -254,6 +254,8 @@ When a function matches, record in this file: address, proposed name, compiler f
 
 ### 6.1 Matched functions
 
+**Progress snapshot (2026-10-04).** `functions.toml` lists 10,338 functions with source. 10,290 are at score 0 (byte-identical to retail, 346,834 bytes including literal pools) and 48 are near-misses. That is about a third of the 31,721 functions in `symbols/code.bin.csv` (89.3% of `.text`). `python -m ctrdecomp check` is clean. Most matches are small leaf, weak-call and wrapper functions auto-lifted into `src/gen/` (80 files); the rest are hand-written (`src/hand_*.cpp`, `lib/`).
+
 | Address (file) | Proposed name | Source | Compiler / flags | Scratch | Relocs checked |
 |----------------|---------------|--------|------------------|---------|----------------|
 | `FUN_00542c30` (VA `0x00642C30`), 0xDC bytes incl. a 3-word pool | `ParseClim`. Likely an NW4C `nw::lyt` internal; the real NW name is unknown. | `lib/nw4c/lyt_clim.cpp` | ARMCC 4.1 b713–b1454, `--cpu=MPCore --arm -O3 -Otime` | None: decomp.me's API is blocked by Cloudflare, so it was matched locally (`python -m ctrdecomp diff`). To make a public scratch, paste `asm/FUN_00542c30.s` and pick compiler `armcc_41_1454`. | **Yes**, by mapping, not by link. `+0x54 R_ARM_CALL IsValidBinaryFile` → retail `BL 0x00541CE0`. `+0x80 R_ARM_CALL GetNextBlockHeader` → retail `BL 0x00541D60`. Both prototypes agree with the callees' disassembly. The pool has no relocations, and its three words match literally. A link-time check waits on gap 6. |
