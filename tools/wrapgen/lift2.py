@@ -33,9 +33,23 @@ def fconst(w):
     return t + 'f'
 
 PASS = [False]
+CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
 
 
 def lift(I, word, fname, variants=True):
+    res = []
+    for cmn in (True, False):
+        CMN[0] = cmn
+        try:
+            for v in _lift_all(I, word, fname, variants):
+                if v not in res: res.append(v)
+        except ValueError:
+            if cmn is False and not res: raise
+        finally: CMN[0] = True
+    if not res: raise ValueError('no variants')
+    return res
+
+def _lift_all(I, word, fname, variants=True):
     """SSA-style variants first (a fresh variable per register write, straight-line code only), then the register-variable form."""
     res = []
     for p64 in (False, True):
@@ -144,6 +158,10 @@ def _lift(I, word, fname, ssa, p64=False):
                    'ge': f'(int){a} >= (int){b}', 'lt': f'(int){a} < (int){b}', 'gt': f'(int){a} > (int){b}',
                    'le': f'(int){a} <= (int){b}', 'mi': f'(int)({a} - {b}) < 0', 'pl': f'(int)({a} - {b}) >= 0'}
             return tab[c]
+        if flags[0][0] == 'cmn':
+            a, b = flags[0][1:]
+            if c not in ('eq', 'ne'): raise ValueError('cmn cond ' + c)
+            return f'{a} {"==" if c == "eq" else "!="} {b}'
         if flags[0][0] == 'fcmp':
             a, b = flags[0][1:]
             tab = {'eq': f'{a} == {b}', 'ne': f'{a} != {b}', 'hs': f'{a} >= {b}', 'cs': f'{a} >= {b}', 'lo': f'{a} < {b}',
@@ -378,6 +396,7 @@ def _lift(I, word, fname, ssa, p64=False):
                 out.append(f'if ({cs}) {{ fa = {X}; fb = {Y}; }}'); flags[0] = ('cmp', 'fa', 'fb'); continue
             if b == 'cmp': flags[0] = ('cmp', 'fa', 'fb'); out.append(f'fa = {X}; fb = {Y};')
             elif b == 'tst': out.append(f'fx = {X} & {Y};'); flags[0] = ('nz', 'fx')
+            elif CMN[0]: out.append(f'fa = {X}; fb = 0u - {Y};'); flags[0] = ('cmn', 'fa', 'fb')   # eq/ne only: `x == -1` compiles to cmn
             else: out.append(f'fx = {X} + {Y};'); flags[0] = ('nz', 'fx')
             continue
         if b in ('ldrd', 'strd'):
