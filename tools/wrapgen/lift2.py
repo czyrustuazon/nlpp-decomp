@@ -2,7 +2,7 @@
 Same interface as lift.lift: returns [(decl_lines, body_text, calls)] or raises ValueError.
 Every register is a `u32 rN` local; branches become `goto`, predicated ops become `if`. The caller verifies each
 candidate by compiling it, so a lift only has to be plausible, not provably right."""
-import re
+import os, re
 REG = {'sp': None, 'lr': None, 'pc': None, 'ip': 12, 'fp': 11, 'sl': 10, 'sb': 9}
 CONDS = ('eq', 'ne', 'hs', 'cs', 'lo', 'cc', 'mi', 'pl', 'hi', 'ls', 'ge', 'lt', 'gt', 'le')
 BASES = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'cmp', 'cmn', 'tst',
@@ -33,7 +33,8 @@ def fconst(w):
     return t + 'f'
 
 PASS = [False]
-EXTRA = [0]   # minimum number of incoming register arguments (PASS variants)
+SWAPS = [int(os.environ.get('LIFT_SWAPS', '0'))]   # base variants to expand with adjacent-statement swaps (+1.4% matches on samples, but 4x slower: off by default)
+EXTRA = [0]  # minimum number of incoming register arguments (PASS variants)
 CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
 
 
@@ -86,6 +87,8 @@ def _lift_all(I, word, fname, variants=True):
         v = constprop(v) if v else None
         if v: more.append(v)
     more += [v for v in (reassoc(r) for r in res + more) if v]
+    if SWAPS[0]:
+        for r in (res + more)[:SWAPS[0]]: more += swaps(r)
     return res + more
 
 def _lift(I, word, fname, ssa, p64=False):
@@ -584,6 +587,23 @@ def reassoc(r):
             seen[(b, k)] = d
         out.append(l)
     return (decls, '\n'.join(out), calls) if changed else None
+
+
+def swaps(r, limit=8):
+    """Variants with one adjacent pair of independent SSA assignments exchanged (ARMCC schedules from source order: retail
+    `mov r2, #0; mov r1, r2; mov r0, r4` needs the argument defs in that order)."""
+    decls, body, calls = r
+    lines = body.split('\n'); pat = re.compile(r'\s*(r\d+_\d+) = ([^;(]*);')
+    out = []
+    for i in range(len(lines) - 1):
+        a, b = pat.fullmatch(lines[i]), pat.fullmatch(lines[i + 1])
+        if not a or not b or '*' in a.group(2) + b.group(2) and False: continue
+        if re.search(r'\b%s\b' % a.group(1), b.group(2)): continue
+        if a.group(1) in b.group(2): continue
+        ls = list(lines); ls[i], ls[i + 1] = ls[i + 1], ls[i]
+        out.append((decls, '\n'.join(ls), calls))
+        if len(out) >= limit: break
+    return out
 
 
 def inline1(r):
