@@ -41,6 +41,7 @@ if os.environ.get('ONLY'):   # ONLY=<csv with an `offset` column (hex)>: restric
 res = []; tried = 0
 for k, st in enumerate(cands):
     if k % nparts != part: continue
+    if tried and tried % 25 == 0: json.dump(res, open(f'{S}/gen2_{tag}_{part}.json', 'w'))   # partial results survive a kill
     sz = G.info[st][1]; tried += 1
     g = G.gen(st, sz)
     if g:
