@@ -13,7 +13,7 @@ for f in sorted(glob.glob(f'{S}/gen2_{tag}_*.json')): res += json.load(open(f))
 res.sort(key=lambda r: r['st'])
 ext = tomllib.load(open('externs.toml', 'rb'))['symbols']
 have = {int(f['offset'], 16) for f in tomllib.load(open('functions.toml', 'rb'))['function']}
-res = [r for r in res if r['st'] not in have]
+res = [r for r in res if r['st'] not in have and r['st'] >= 0x24]   # 0x0-0x23 is the vector table, not code
 thumb_at = lambda t: next((f[2] for f in funcs if f[0] <= t < f[0] + f[1]), False)
 NL = chr(10)
 PRE = NL.join(['typedef unsigned char u8;', 'typedef unsigned short u16;', 'typedef unsigned u32;', 'typedef unsigned long long u64;', 'static inline float u2f(u32 v) { union { u32 u; float f; } x; x.u = v; return x.f; }', 'static inline u32 f2u(float f) { union { u32 u; float f; } x; x.f = f; return x.u; }']) + NL

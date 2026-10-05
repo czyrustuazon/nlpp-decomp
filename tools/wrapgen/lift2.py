@@ -33,6 +33,7 @@ def fconst(w):
     return t + 'f'
 
 PASS = [False]
+EXTRA = [0]   # minimum number of incoming register arguments (PASS variants)
 CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
 
 
@@ -66,6 +67,17 @@ def _lift_all(I, word, fname, variants=True):
                 try: res += _lift(I, word, fname, ssa, False)
                 except ValueError: pass
         finally: PASS[0] = False
+    # PASS with at least N incoming arguments: a retail temp in r2/r3/ip where r1 is free means the callee takes pass-through args
+    PASS[0] = True
+    try:
+        for ex in (2, 3, 4):
+            EXTRA[0] = ex
+            for ssa in (True, False):
+                try:
+                    for v in _lift(I, word, fname, ssa, False):
+                        if v not in res: res.append(v)
+                except ValueError: pass
+    finally: PASS[0] = False; EXTRA[0] = 0
     more = []
     for r in res:
         for v in (constprop(r), inline1(r)):
@@ -73,6 +85,7 @@ def _lift_all(I, word, fname, variants=True):
         v = inline1(r)
         v = constprop(v) if v else None
         if v: more.append(v)
+    more += [v for v in (reassoc(r) for r in res + more) if v]
     return res + more
 
 def _lift(I, word, fname, ssa, p64=False):
@@ -93,6 +106,7 @@ def _lift(I, word, fname, ssa, p64=False):
             if start <= t < end_addr: targets.add(t)
             elif t != end_addr and not (start <= t < end_addr): pass
     defined = set(); params = set(); decls = set(); calls = []; out = []; fregs = set(); fdef = set(); fparams = set(); fret = [False]; fcur = {}; fver = {}; fnew = []; lastcall = [None]
+    params.update(range(EXTRA[0]))
     flags = [None]   # None | ('cmp', a, b) | ('nz', x)
     cur = {}; ver = {}; newvars = []; curpred = [None]
     if ssa and targets: raise ValueError('ssa labels')
@@ -551,6 +565,25 @@ def constprop(r):
     txt = '\n'.join(out)
     for k, v in consts.items(): txt = _sub(k, v, txt)
     return (decls, txt.replace('fx, ' + ', '.join(consts.values()) + ', ', 'fx, '), calls) if False else (decls, _keepdecl(body, txt), calls)
+
+
+def reassoc(r):
+    """Variant computing a second `base + K2` from the earlier `base + K1` (`add r3, r2, #0xc` where we emit `add r3, r1, #0x190`)."""
+    decls, body, calls = r
+    pat = re.compile(r'(\s*)(r\d+_\d+) = (r\d+_\d+|a\d+) \+ (\d+)u;')
+    seen = {}; out = []; changed = False
+    for l in body.split('\n'):
+        m = pat.fullmatch(l)
+        if m:
+            ind, d, b, k = m.group(1), m.group(2), m.group(3), int(m.group(4))
+            prev = [(v, n) for (bb, v), n in seen.items() if bb == b and v < k]
+            if prev:
+                v, n = max(prev)
+                out.append(f'{ind}{d} = {n} + {k - v}u;'); changed = True
+                seen[(b, k)] = d; continue
+            seen[(b, k)] = d
+        out.append(l)
+    return (decls, '\n'.join(out), calls) if changed else None
 
 
 def inline1(r):
