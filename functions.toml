@@ -84348,10 +84348,10 @@ score = 0
 [[function]]
 name = "SetW3"
 offset = "4c6f24"
-size = "1c"
+size = "18"
 src = "src/hand_misc16.cpp"
 symbol = "_Z5SetW3P6W3HostPK2W3"
-score = 5   # NONMATCHING: retail copies the odd word before the pair store and returns &h->p
+score = 0
 
 [[function]]
 name = "SetIdentity"

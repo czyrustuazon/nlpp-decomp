@@ -21,8 +21,10 @@ struct P2 { u32 a, b; };
 struct W3Host { char p0[0x124]; P2 p; u32 c; };
 void SetW3(W3Host* h, const W3* s)
 {
-    h->p = *(const P2*)s;
-    h->c = s->w[2];
+    u32 a = s->w[0], b = s->w[1], c = s->w[2];
+    h->c = c;
+    h->p.a = a;
+    h->p.b = b;
 }
 
 // FUN_0059b51c: identity quaternion
