@@ -2987,14 +2987,3 @@ void W_56ad4c(u32 a0) {
     r0 = Fn_56aa74_1(r0);
     { Fn_2024b0_1(r0); return; }
 }
-
-// FUN_0056e578
-void W_56e578() {
-
-}
-
-// FUN_0056e57c
-u32 W_56e57c() {
-
-    return 1;
-}
