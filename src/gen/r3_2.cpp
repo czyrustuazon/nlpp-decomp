@@ -1198,14 +1198,6 @@ void W_56502c(u32 a0, u32 a1, u32 a2) {
     return;
 }
 
-// FUN_00569f38
-void W_569f38(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = r0 + 4u;
-    *(u32*)(r0 + 0) = r1; *(u32*)(r0 + 4) = r2;
-    return;
-}
-
 // FUN_00570590
 void W_570590(u32 a0, u32 a1, u32 a2) {
     u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

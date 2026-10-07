@@ -28,15 +28,6 @@ u32 WeakCall4(u32, u32, u32, u32);
 u32 Fn_684f28_1(u32);
 u32 Fn_684f64_1(u32);
 
-// FUN_00542220
-void W_542220(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r2 = r1;
-    r1 = r0 + 4u;
-    r2 = r2 + 4u;
-    { WeakCall3(r0, r1, r2); return; }
-}
-
 // FUN_00548570
 void W_548570(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

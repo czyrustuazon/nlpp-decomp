@@ -106,19 +106,6 @@ void W_5449b0(u32 a0) {
     { Fn_2024b0_1(r0); return; }
 }
 
-// FUN_00545550
-void W_545550(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = r1;
-    r5 = r0;
-    r1 = r0 + 20u;
-    r0 = r0 + 16u;
-    r2 = r4 + 4u;
-    r0 = Fn_542230_3(r0, r1, r2);
-    *(u32*)(r4 + 12) = r5;
-    return;
-}
-
 // FUN_00545594
 void W_545594(u32 a0, u32 a1, u32 a2) {
     u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

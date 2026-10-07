@@ -37865,7 +37865,8 @@ score = 0
 name = "W_54b2fc"
 offset = "54b2fc"
 size = "18"
-src = "src/gen/hi_0.cpp"
+src = "lib/nw4c/nw_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_54b2fcj"
 generated = true
 score = 0
@@ -37928,7 +37929,8 @@ score = 0
 name = "W_54e624"
 offset = "54e624"
 size = "14"
-src = "src/gen/hi_0.cpp"
+src = "lib/nw4c/nw_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_54e624j"
 generated = true
 score = 0
@@ -70721,7 +70723,8 @@ score = 0
 name = "W_545550"
 offset = "545550"
 size = "24"
-src = "src/gen/br_11.cpp"
+src = "lib/nw4c/nw_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_545550jj"
 generated = true
 score = 0
@@ -80464,7 +80467,8 @@ score = 0
 name = "W_569f38"
 offset = "569f38"
 size = "c"
-src = "src/gen/r3_2.cpp"
+src = "lib/nw4c/nw_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_569f38jjj"
 generated = true
 score = 0
@@ -86779,7 +86783,8 @@ score = 0
 name = "W_542220"
 offset = "542220"
 size = "10"
-src = "src/gen/w6_1.cpp"
+src = "lib/nw4c/nw_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_542220jj"
 generated = true
 score = 0
@@ -112821,4 +112826,283 @@ size = "1c"
 src = "lib/ctrsdk/sdk2.s"
 symbol = "A_532b88"
 library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_542d64"
+offset = "542d64"
+size = "a8"
+src = "lib/nw4c/nw.s"
+symbol = "A_542d64"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_545d70"
+offset = "545d70"
+size = "10c"
+src = "lib/nw4c/nw.s"
+symbol = "A_545d70"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_545f70"
+offset = "545f70"
+size = "138"
+src = "lib/nw4c/nw.s"
+symbol = "A_545f70"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_546550"
+offset = "546550"
+size = "f0"
+src = "lib/nw4c/nw.s"
+symbol = "A_546550"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_548374"
+offset = "548374"
+size = "18c"
+src = "lib/nw4c/nw.s"
+symbol = "A_548374"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_548a84"
+offset = "548a84"
+size = "2a4"
+src = "lib/nw4c/nw.s"
+symbol = "A_548a84"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_548e78"
+offset = "548e78"
+size = "18c"
+src = "lib/nw4c/nw.s"
+symbol = "A_548e78"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_549078"
+offset = "549078"
+size = "48"
+src = "lib/nw4c/nw.s"
+symbol = "A_549078"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_549af4"
+offset = "549af4"
+size = "248"
+src = "lib/nw4c/nw.s"
+symbol = "A_549af4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54a294"
+offset = "54a294"
+size = "144"
+src = "lib/nw4c/nw.s"
+symbol = "A_54a294"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54a6e4"
+offset = "54a6e4"
+size = "bc"
+src = "lib/nw4c/nw.s"
+symbol = "A_54a6e4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54aa4c"
+offset = "54aa4c"
+size = "8c"
+src = "lib/nw4c/nw.s"
+symbol = "A_54aa4c"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54ada4"
+offset = "54ada4"
+size = "1b0"
+src = "lib/nw4c/nw.s"
+symbol = "A_54ada4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54c338"
+offset = "54c338"
+size = "2a0"
+src = "lib/nw4c/nw.s"
+symbol = "A_54c338"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54d868"
+offset = "54d868"
+size = "148"
+src = "lib/nw4c/nw.s"
+symbol = "A_54d868"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54db18"
+offset = "54db18"
+size = "38"
+src = "lib/nw4c/nw.s"
+symbol = "A_54db18"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54db9c"
+offset = "54db9c"
+size = "69c"
+src = "lib/nw4c/nw.s"
+symbol = "A_54db9c"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54e318"
+offset = "54e318"
+size = "a0"
+src = "lib/nw4c/nw.s"
+symbol = "A_54e318"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_54e3e4"
+offset = "54e3e4"
+size = "80"
+src = "lib/nw4c/nw.s"
+symbol = "A_54e3e4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_5591b4"
+offset = "5591b4"
+size = "54"
+src = "lib/nw4c/nw.s"
+symbol = "A_5591b4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_559228"
+offset = "559228"
+size = "64"
+src = "lib/nw4c/nw.s"
+symbol = "A_559228"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_5592b4"
+offset = "5592b4"
+size = "a8"
+src = "lib/nw4c/nw.s"
+symbol = "A_5592b4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_559364"
+offset = "559364"
+size = "90"
+src = "lib/nw4c/nw.s"
+symbol = "A_559364"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_55ba6c"
+offset = "55ba6c"
+size = "64"
+src = "lib/nw4c/nw.s"
+symbol = "A_55ba6c"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_55c4d4"
+offset = "55c4d4"
+size = "4c"
+src = "lib/nw4c/nw.s"
+symbol = "A_55c4d4"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_55c548"
+offset = "55c548"
+size = "a8"
+src = "lib/nw4c/nw.s"
+symbol = "A_55c548"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_55c698"
+offset = "55c698"
+size = "b8"
+src = "lib/nw4c/nw.s"
+symbol = "A_55c698"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_55c768"
+offset = "55c768"
+size = "68"
+src = "lib/nw4c/nw.s"
+symbol = "A_55c768"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_55c810"
+offset = "55c810"
+size = "70"
+src = "lib/nw4c/nw.s"
+symbol = "A_55c810"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_56aa88"
+offset = "56aa88"
+size = "1d8"
+src = "lib/nw4c/nw.s"
+symbol = "A_56aa88"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_56ac9c"
+offset = "56ac9c"
+size = "98"
+src = "lib/nw4c/nw.s"
+symbol = "A_56ac9c"
+library = "nw4c"
 score = 0

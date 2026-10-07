@@ -4,17 +4,17 @@ Matching decompilation of New Love Plus+ (3DS, title `00040000000F4E00`). The go
 
 ## Progress
 
-![Matching progress: 12.3% of code and 39.3% of functions are byte-exact](docs/progress.svg)
+![Matching progress: 12.5% of code and 39.4% of functions are byte-exact](docs/progress.svg)
 
 Measured 2026-10-07 from `functions.toml` against `symbols/code.bin.csv`; regenerate the chart and this table with `python tools/progress_chart.py`. The denominator is the 31,721 known functions (6,001 KiB), which cover 89.3% of `.text`, so the true size share is slightly lower. A function counts when it compiles (or assembles) to the retail bytes, score 0.
 
 | Category | Functions | Share | Code | Share |
 |----------|----------:|------:|-----:|------:|
-| Library, assembly (CTR SDK, `svc` stubs, C runtime) | 3,161 | 10.0% | 478 KiB | 8.0% |
-| Library, C | 560 | 1.8% | 20 KiB | 0.3% |
-| Generated C (`src/gen/`, lifter output) | 8,290 | 26.1% | 226 KiB | 3.8% |
+| Library, assembly (CTR SDK, NintendoWare, `svc` stubs, C runtime) | 3,192 | 10.1% | 486 KiB | 8.1% |
+| Library, C | 565 | 1.8% | 20 KiB | 0.3% |
+| Generated C (`src/gen/`, lifter output) | 8,285 | 26.1% | 226 KiB | 3.8% |
 | Hand-written game C | 462 | 1.5% | 16 KiB | 0.3% |
-| **Total byte-exact** | **12,473** | **39.3%** | **740 KiB** | **12.3%** |
+| **Total byte-exact** | **12,504** | **39.4%** | **748 KiB** | **12.5%** |
 
 Another 47 functions (7.4 KiB) are registered near-misses with a nonzero score. The linked `code.bin` is byte-identical to retail.
 
