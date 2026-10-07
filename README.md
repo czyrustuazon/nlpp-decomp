@@ -4,17 +4,23 @@ Matching decompilation of New Love Plus+ (3DS, title `00040000000F4E00`). The go
 
 ## Progress
 
-Measured 2026-10-01 from `functions.toml` (includes the 1,191 `svc` assembly stubs) against `symbols/code.bin.csv`. The denominator is the 31,721 known functions (6.14 MB), which cover 89.3% of `.text`, so the true size share is slightly lower.
+![Matching progress: 10.2% of code and 37.8% of functions are byte-exact](docs/progress.svg)
 
-| Measure | Estimate |
-|---------|----------|
-| Functions matched (by count) | 21.1% (6,705 of 31,721; 6,685 at score 0) |
-| Code matched (by size) | 3.5% (213,598 of 6,144,874 bytes; 3.4% at score 0) |
-| Of which hand-written source | 1,684 functions, 112,322 bytes (1.8%) |
+Measured 2026-10-06 from `functions.toml` against `symbols/code.bin.csv`; regenerate the chart and this table with `python tools/progress_chart.py`. The denominator is the 31,721 known functions (6,001 KiB), which cover 89.3% of `.text`, so the true size share is slightly lower. A function counts when it compiles (or assembles) to the retail bytes, score 0.
 
-The other 5,021 entries are generated wrappers (`src/gen/`), and the `svc` stubs overlap with the entries above.
+| Category | Functions | Share | Code | Share |
+|----------|----------:|------:|-----:|------:|
+| Library, assembly (CTR SDK, `svc` stubs, C runtime) | 2,673 | 8.4% | 349 KiB | 5.8% |
+| Library, C | 456 | 1.4% | 16 KiB | 0.3% |
+| Generated C (`src/gen/`, lifter output) | 8,394 | 26.5% | 230 KiB | 3.8% |
+| Hand-written game C | 462 | 1.5% | 16 KiB | 0.3% |
+| **Total byte-exact** | **11,985** | **37.8%** | **611 KiB** | **10.2%** |
 
-The linked `code.bin` is byte-identical to retail.
+Another 47 functions (7.4 KiB) are registered near-misses with a nonzero score. The linked `code.bin` is byte-identical to retail.
+
+- **Library** code is identified CTR SDK and runtime code under `lib/` (`technical.md` §5 gap 3). It is kept as a library, not decompiled: C where the lifter already matched it, assembly otherwise. A native port replaces it anyway.
+- **Generated C** is byte-exact but not yet readable: names are placeholders (`W_<offset>`, `Fn_<offset>_<argc>`) and every value is `u32`.
+- **Hand-written game C** is the part that reads like source. Leaving the library out, about 4% of the game's own code matches.
 
 ### Function percentage vs size percentage
 
@@ -27,6 +33,6 @@ For example, with 90 sixteen-byte stubs and 10 four-thousand-byte routines, matc
 
 ### What the number does not include
 
-- Much of the binary is CTR SDK and NintendoWare code, which the plan leaves as libraries rather than re-decompiling.
-- The roughly 9,000 mid-size functions with real branches are blocked on lifter work or hand matching.
+- More CTR SDK code than the 2026-10-06 batch: the candidates not yet filed are listed in `symbols/sdk_candidates.csv` (`tools/sdk_classify.py`). NintendoWare is not classified yet.
+- The mid-size and large functions with real branches; the lifter mostly clears small ones, so the unmatched remainder averages about 280 bytes per function against about 50 for the matched ones.
 - The `ldrex`/`strex` family (about 30 functions) cannot be matched from C with the vendored toolchain.
