@@ -860,36 +860,6 @@ u32 W_65bb0c() {
     return r0;
 }
 
-// FUN_00668cf8
-void ndm_u_LeaveExclusiveState_668cf8() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aab30;
-    r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_668d1c;
-    r0 = Fn_504394_1(r0);
-    r0 = 0u;
-    *(u8*)(r4) = r0;
-    r0 = Fn_504590_1(r0);
-    L_668d1c:;
-    { Fn_4e2680_1(r0); return; }
-}
-
-// FUN_00668dac
-void ac_Multi2_668dac() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aab30;
-    r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_668dd0;
-    r0 = Fn_504394_1(r0);
-    r0 = 0u;
-    *(u8*)(r4) = r0;
-    r0 = Fn_504590_1(r0);
-    L_668dd0:;
-    { Fn_4e2280_1(r0); return; }
-}
-
 // FUN_006691d0
 void W_6691d0(u32 a0, u32 a1) {
     u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

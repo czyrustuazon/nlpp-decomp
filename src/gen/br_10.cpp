@@ -1442,21 +1442,6 @@ u32 W_4e13a0() {
     return r0;
 }
 
-// FUN_004e161c
-void ac_Multi2_4e161c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aab30;
-    r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_4e1640;
-    r0 = Fn_504394_1(r0);
-    r0 = 0u;
-    *(u8*)(r4) = r0;
-    r0 = Fn_504590_1(r0);
-    L_4e1640:;
-    { Fn_4e2280_1(r0); return; }
-}
-
 // FUN_004e19c8
 u32 W_4e19c8() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
@@ -1616,96 +1601,6 @@ u32 W_4f796c(u32 a0, u32 a1) {
     u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     r0 = r0 & ~15728640u;
     r0 = r1 | (r0 << 8);
-    return r0;
-}
-
-// FUN_004f7978
-u32 ndm_u_EnterExclusiveState() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aab74;
-    r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa != fb) goto L_4f7998;
-    r0 = Fn_4fad4c_1(r0);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_4f799c;
-    L_4f7998:;
-    r0 = 1u;
-    L_4f799c:;
-    r1 = *(signed char*)(r4 + 1);
-    r2 = *(signed char*)(r4 + 3);
-    r0 = r0 & r1;
-    r0 = r0 & ~r2;
-    if (r0 == 0) goto L_4f79e8;
-    r0 = *(u8*)(r4 + 4);
-    fa = r0; fb = 0u;
-    if (fa != fb) goto L_4f79cc;
-    r0 = Fn_4fad4c_3(r0, r1, r2);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_4f79e8;
-    L_4f79cc:;
-    r0 = 4u;
-    r0 = Fn_504350_1(r0);
-    r1 = r0 & 2147483648u;
-    fa = r1; fb = 0u;
-    if ((int)fa >= (int)fb) r1 = 1u;
-    if ((int)fa >= (int)fb) *(u8*)(r4 + 3) = r1;
-    return r0;
-    L_4f79e8:;
-    r0 = 3766553592u;
-    return r0;
-}
-
-// FUN_004f79f8
-u32 ndm_u_LeaveExclusiveState_4f79f8() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aab74;
-    r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa != fb) goto L_4f7a18;
-    r0 = Fn_4fad4c_1(r0);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_4f7a1c;
-    L_4f7a18:;
-    r0 = 1u;
-    L_4f7a1c:;
-    r1 = *(signed char*)(r4 + 1);
-    r2 = *(signed char*)(r4 + 3);
-    r0 = r0 & r1;
-    fx = r0 & r2;
-    if (fx == 0) r0 = 3766553592u;
-    if (fx == 0) goto L_4f7a48;
-    r0 = Fn_504394_3(r0, r1, r2);
-    r1 = r0 & 2147483648u;
-    fa = r1; fb = 0u;
-    if ((int)fa >= (int)fb) r1 = 0u;
-    if ((int)fa >= (int)fb) *(u8*)(r4 + 3) = r1;
-    L_4f7a48:;
-    return r0;
-}
-
-// FUN_004fad4c
-u32 cecd_s_cmd417() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = (u32)g_008ab9f4;
-    r0 = *(signed char*)(r0);
-    return r0;
-}
-
-// FUN_004fad80
-u32 cecd_s_cmd416() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008ab9f4;
-    r0 = 0u;
-    r1 = *(u8*)(r4);
-    fa = r1; fb = 0u;
-    if (fa != fb) goto L_4fadac;
-    r0 = Fn_4fb2e4_2(r0, r1);
-    r1 = r0 & 2147483648u;
-    fa = r1; fb = 0u;
-    if ((int)fa >= (int)fb) r1 = 1u;
-    if ((int)fa >= (int)fb) *(u8*)(r4) = r1;
-    L_4fadac:;
     return r0;
 }
 

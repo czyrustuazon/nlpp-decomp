@@ -411,13 +411,6 @@ u32 W_518abc(u32 a0) {
     return 0;
 }
 
-// FUN_0051b8b4
-u32 ndm_u_LeaveExclusiveState_51b8b4(u32 a0) {
-    u32 t1 = Fn_51a2a8_1(a0);
-    u32 t2 = Fn_504394_1(t1);
-    return Fn_504590_1(t2);
-}
-
 // FUN_0051ce38
 void W_51ce38(u32 a0) {
     *(u16*)((u32)(a0) + 6) = 0;
@@ -456,14 +449,6 @@ u32 W_534038() {
 u32 W_535ea8() {
     u32 t1 = *(u8*)((u32)((u32)g_008ab8e0) + 5);
     return t1;
-}
-
-// FUN_00536408
-u32 APT_U_SendCaptureBufferInfo(u32 a0, u32 a1) {
-    u32 t1 = Fn_01d3e0_2(a0, a1);
-    u32 t2 = Fn_5378d0_2(a0, a1);
-    u32 t3 = Fn_01d534_1(t2);
-    return t2;
 }
 
 // FUN_00541c30

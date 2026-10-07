@@ -120,40 +120,6 @@ u32 W_4fd0f0(u32 a0, u32 a1) {
     return r0;
 }
 
-// FUN_00500a4c
-u32 dsp__DSP_Multi3_500a4c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aabb0;
-    r0 = 0u;
-    r1 = *(u8*)(r4 + 1);
-    fa = r1; fb = 0u;
-    if (fa == fb) goto L_500a74;
-    r0 = *(u32*)(r4 + 8);
-    r0 = Fn_028f24_2(r0, r1);
-    r1 = 0u;
-    *(u8*)(r4 + 1) = r1;
-    L_500a74:;
-    r1 = 1u;
-    *(u8*)(r4 + 3) = r1;
-    return r0;
-}
-
-// FUN_00500ce4
-u32 dsp__DSP_UnloadComponent_500ce4() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aabb0;
-    r0 = 0u;
-    r1 = *(u8*)(r4 + 1);
-    fa = r1; fb = 0u;
-    if (fa == fb) goto L_500d0c;
-    r0 = *(u32*)(r4 + 8);
-    r0 = Fn_028f24_2(r0, r1);
-    r1 = 0u;
-    *(u8*)(r4 + 1) = r1;
-    L_500d0c:;
-    return r0;
-}
-
 // FUN_00501a84
 void W_501a84(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

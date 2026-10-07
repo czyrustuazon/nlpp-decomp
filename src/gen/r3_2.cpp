@@ -741,17 +741,6 @@ void W_4f6544(u32 a0) {
     { ((u32(*)(u32, u32))r2)(r0, r1); return; }
 }
 
-// FUN_004f6784
-void ptm_u_GetStepHistory() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_50e3c4_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_4f679c;
-    { Fn_024730_1(r0); return; }
-    L_4f679c:;
-    return;
-}
-
 // FUN_004fb21c
 void W_4fb21c() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
@@ -799,39 +788,6 @@ void W_4fd058(u32 a0) {
     r2 = *(u32*)(r2 + 4);
     { ((u32(*)(u32, u32))r2)(r0, r1); return; }
     L_4fd07c:;
-    return;
-}
-
-// FUN_00500fa8
-void dsp__DSP_UnloadComponent_500fa8() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r6 = (u32)g_008aabb0;
-    r0 = *(signed char*)(r6 + 1);
-    r1 = *(signed char*)(r6 + 2);
-    r0 = r0 & ~r1;
-    if (r0 != 0) r5 = (u32)g_009a0f74;
-    if (r0 != 0) r4 = 0u;
-    if (r0 == 0) goto L_501008;
-    L_500fc8:;
-    r0 = *(u32*)(r5 + (r4 << 2));
-    fa = r0; fb = 0u;
-    if (fa != fb) r0 = ((u32(*)())r0)();
-    r4 = r4 + 1u;
-    fa = r4; fb = 8u;
-    if ((int)fa < (int)fb) goto L_500fc8;
-    r0 = *(u8*)(r6 + 1);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_500ffc;
-    r0 = *(u32*)(r6 + 8);
-    r0 = Fn_028f24_1(r0);
-    r0 = 0u;
-    *(u8*)(r6 + 1) = r0;
-    L_500ffc:;
-    r1 = 1u;
-    r0 = r1;
-    *(u8*)(r6 + 2) = r1;
-    L_501008:;
-    *(u8*)(r6) = r0;
     return;
 }
 
@@ -946,119 +902,6 @@ u32 W_514e14(u32 a0, u32 a1) {
     return r0;
 }
 
-// FUN_0051b8cc
-void y2r_u_cmd5() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51bd38_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51b8e4;
-    { Fn_024730_1(r0); return; }
-    L_51b8e4:;
-    return;
-}
-
-// FUN_0051ba14
-void y2r_u_cmd1c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51bf20_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51ba2c;
-    { Fn_024730_1(r0); return; }
-    L_51ba2c:;
-    return;
-}
-
-// FUN_0051bb14
-void y2r_u_cmd1() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c024_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51bb2c;
-    { Fn_024730_1(r0); return; }
-    L_51bb2c:;
-    return;
-}
-
-// FUN_0051bb30
-void y2r_u_cmd27() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c060_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51bb48;
-    { Fn_024730_1(r0); return; }
-    L_51bb48:;
-    return;
-}
-
-// FUN_0051bb4c
-void y2r_u_cmd3() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c0cc_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51bb64;
-    { Fn_024730_1(r0); return; }
-    L_51bb64:;
-    return;
-}
-
-// FUN_0051bb68
-u32 y2r_u_cmd26() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c108_0();
-    r1 = 3376435201u;
-    fa = r0; fb = r1;
-    if (fa == fb) goto L_51bb88;
-    r0 = r0 >> 31;
-    if (r0 != 0) r0 = Fn_024730_2(r0, r1);
-    r0 = 0u;
-    L_51bb88:;
-    return r0;
-}
-
-// FUN_0051bbac
-void y2r_u_cmd7() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c21c_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51bbc4;
-    { Fn_024730_1(r0); return; }
-    L_51bbc4:;
-    return;
-}
-
-// FUN_0051bbc8
-void y2r_u_cmd1a() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c258_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51bbe0;
-    { Fn_024730_1(r0); return; }
-    L_51bbe0:;
-    return;
-}
-
-// FUN_0051bca4
-void y2r_u_cmd20() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c624_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51bcbc;
-    { Fn_024730_1(r0); return; }
-    L_51bcbc:;
-    return;
-}
-
-// FUN_0051c83c
-void y2r_u_cmd22() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_51c800_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_51c854;
-    { Fn_024730_1(r0); return; }
-    L_51c854:;
-    return;
-}
-
 // FUN_0051c9a8
 u32 W_51c9a8(u32 a0, u32 a1, u32 a2) {
     u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
@@ -1145,72 +988,6 @@ void W_5342f4() {
     r0 = *(u32*)(r4 + 64);
     { ((u32(*)(u32))r1)(r0); return; }
     L_534330:;
-    return;
-}
-
-// FUN_00538574
-void cam_u_ClearBuffer() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_539330_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_53858c;
-    { Fn_024730_1(r0); return; }
-    L_53858c:;
-    return;
-}
-
-// FUN_005385b4
-void cam_u_SetTrimming() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_5394a4_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_5385cc;
-    { Fn_024730_1(r0); return; }
-    L_5385cc:;
-    return;
-}
-
-// FUN_005385d0
-void cam_u_StopCapture() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_5394ec_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_5385e8;
-    { Fn_024730_1(r0); return; }
-    L_5385e8:;
-    return;
-}
-
-// FUN_00538718
-void cam_u_StartCapture() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_539668_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_538730;
-    { Fn_024730_1(r0); return; }
-    L_538730:;
-    return;
-}
-
-// FUN_005389b4
-void cam_u_SetTransferBytes() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_5399c0_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_5389cc;
-    { Fn_024730_1(r0); return; }
-    L_5389cc:;
-    return;
-}
-
-// FUN_005389d0
-void cam_u_SetTransferLines() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = Fn_539a14_0();
-    r0 = r0 >> 31;
-    if (r0 == 0) goto L_5389e8;
-    { Fn_024730_1(r0); return; }
-    L_5389e8:;
     return;
 }
 

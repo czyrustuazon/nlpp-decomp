@@ -293,21 +293,6 @@ u32 W_4c312c(u32 a0) {
     return r0_7;
 }
 
-// FUN_004e1730
-void W_4e1730() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008aab30;
-    r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_4e1754;
-    r0 = Fn_504394_1(r0);
-    r0 = 0u;
-    *(u8*)(r4) = r0;
-    r0 = Fn_504590_1(r0);
-    L_4e1754:;
-    { Fn_4e2680_1(r0); return; }
-}
-
 // FUN_004faff0
 u32 W_4faff0() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
