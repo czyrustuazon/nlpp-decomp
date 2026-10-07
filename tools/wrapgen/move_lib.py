@@ -35,7 +35,7 @@ for f in moving:
 for kind, (decls, bodies) in out.items():
     if not bodies: continue
     flags = '--cpu=MPCore --arm -O2 -Otime' if kind == 'o2' else '--cpu=MPCore --arm -O3 -Otime'
-    hdr = ('// CTR SDK IPC wrappers (callers of the svc 0x32 stubs in lib/ctrsvc), matched by the lifter (tools/wrapgen).' + NL
+    hdr = ('// ' + os.environ.get('MOVE_DESC', 'CTR SDK functions, matched by the lifter (tools/wrapgen)') + '.' + NL
            + '// SDK code is kept as a library (technical.md section 5 gap 3, section 8 item 2); names and types are placeholders.' + NL
            + f'// Build: ARMCC 4.1 {flags}' + NL)
     open(f'{lib}_{kind}.cpp', 'w', newline=NL, encoding='utf-8').write(

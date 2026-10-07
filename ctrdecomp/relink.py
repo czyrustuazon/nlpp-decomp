@@ -53,8 +53,8 @@ def _thumb_call(word, place_va, target):
 def _arm_branch(word, rtype, place_va, target):
     if word & 0xFFFFFF != 0xFFFFFE:
         raise RuntimeError(f"unexpected addend in branch word 0x{word:08X}")
-    if target & 1:                                   # ARM -> Thumb: BLX <imm>, unconditional BL only
-        if rtype != R_ARM_CALL or word >> 24 != 0xEB:
+    if target & 1:                                   # ARM -> Thumb: BLX <imm>, from an unconditional BL or an assembled BLX
+        if rtype != R_ARM_CALL or word >> 24 not in (0xEB, 0xFA, 0xFB):
             raise RuntimeError("ARM branch to a Thumb function needs an unconditional BL")
         delta = (target & ~1) - (place_va + 8)
         if not -(1 << 25) <= delta < (1 << 25):

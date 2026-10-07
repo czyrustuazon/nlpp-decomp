@@ -87,21 +87,6 @@ void W_005cec() {
     return;
 }
 
-// FUN_0001317c
-u32 W_01317c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = (u32)g_008aab48;
-    r1 = *(u8*)(r0 + 1);
-    fa = r1; fb = 0u;
-    if (fa == fb) r0 = 0u;
-    if (fa == fb) goto L_1319c;
-    r1 = 0u;
-    *(u8*)(r0 + 1) = r1;
-    return Fn_01cf88_2(r0, r1);
-    L_1319c:;
-    return r0;
-}
-
 // FUN_00021e58
 void W_021e58(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
