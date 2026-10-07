@@ -88,34 +88,8 @@ u32 W_50745c(u32 a0, u32 a1, u32 a2, u32 a3) {
     return r0;
 }
 
-// FUN_005421ec
-void W_5421ec(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = r0 + 4u;
-    { WeakCall1(r0); return; }
-}
-
-// FUN_005426f8
-void W_5426f8(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = *(u32*)(r0 + 16);
-    { WeakCall1(r0); return; }
-}
-
 // FUN_0054c28c
 void W_54c28c() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     { WeakCall0(); return; }
-}
-
-// FUN_005545b8
-u32 W_5545b8(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r1_1, r0_1, r0_2, r0_3, r0_4, r0_5;
-    r1_1 = *(u32*)(r0 + 68);
-    r0_1 = *(u8*)(r0 + 93);
-    r0_2 = r1_1 * r0_1;
-    r0_3 = r0_2 + (r0_2 << 2);
-    r0_4 = r0_3 << 7;
-    r0_5 = r0_4 + 32u;
-    return r0_5;
 }

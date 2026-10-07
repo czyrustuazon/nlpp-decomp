@@ -1550,34 +1550,6 @@ u32 W_636464(u32 a0) {
     return r0;
 }
 
-// FUN_0063930c
-u32 W_63930c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r2 = *(u8*)(r0 + 12);
-    fa = r2; fb = 0u;
-    if (fa == fb) goto L_639328;
-    r2 = *(u32*)(r0 + 4);
-    r3 = *(u32*)(r2);
-    fa = r3; fb = r1;
-    if (fa > fb) goto L_639330;
-    L_639328:;
-    r0 = 0u;
-    return r0;
-    L_639330:;
-    r3 = *(u32*)(r0 + 8);
-    fa = r3; fb = 0u;
-    if (fa != fb) r0 = *(u32*)(r3 + (r1 << 2));
-    if (fa != fb) return r0;
-    r1 = r1 + (r1 << 1);
-    r1 = r2 + (r1 << 2);
-    r0 = *(u32*)(r0);
-    r4 = *(u32*)(r1 + 8);
-    r0 = Fn_637be8_4(r0, r1, r2, r3);
-    r0 = r0 + 8u;
-    r0 = r0 + r4;
-    return r0;
-}
-
 // FUN_0063d644
 u32 W_63d644(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
@@ -1857,46 +1829,6 @@ u32 W_66af4c(u32 a0) {
     L_66af80:;
     r0 = r5;
     return r0;
-}
-
-// FUN_00675d80
-void W_675d80(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r2 = (u32)g_008ab848;
-    r3 = r1 << 23;
-    r3 = r3 >> 23;
-    r2 = *(u32*)(r2);
-    r2 = r2 + (r3 << 2);
-    r3 = *(u32*)(r2 + 16);
-    fa = r3; fb = 0u;
-    if (fa == fb) *(u32*)(r2 + 16) = r0;
-    if (fa == fb) goto L_675df8;
-    r12 = *(u32*)(r3 + 8);
-    fa = r12; fb = r1;
-    if (fa > fb) *(u32*)(r0 + 12) = r3;
-    if (fa > fb) *(u32*)(r2 + 16) = r0;
-    if (fa > fb) goto L_675df8;
-    r2 = *(u32*)(r3 + 12);
-    fa = r2; fb = 0u;
-    if (fa == fb) goto L_675df4;
-    L_675dc4:;
-    r12 = *(u32*)(r2 + 8);
-    fa = r12; fb = r1;
-    if (fa <= fb) goto L_675de4;
-    *(u32*)(r3 + 12) = r0;
-    fa = r2; fb = 0u;
-    *(u32*)(r0 + 12) = r2;
-    if (fa != fb) goto L_675df8;
-    goto L_675df4;
-    L_675de4:;
-    r3 = r2;
-    r2 = *(u32*)(r2 + 12);
-    fa = r2; fb = 0u;
-    if (fa != fb) goto L_675dc4;
-    L_675df4:;
-    *(u32*)(r3 + 12) = r0;
-    L_675df8:;
-    return;
 }
 
 // FUN_00681db4

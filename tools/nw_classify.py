@@ -12,6 +12,10 @@ Only window members are followed and listed. Then a filter drops every candidate
 (anything outside the library areas below, the window past 0x56b000 counting as app, and not library-tagged in functions.toml) and, upward to a fixed point,
 every candidate that references a dropped one: a game class whose vtable sits in the band is caught this way when it
 calls game code. Dropped candidates are listed with tier `rejected`.
+Layout stage: the linker keeps each object's functions together, so a stretch of window functions that reference no
+app code and has NW (or other library) functions on both sides, or the window edge, is tier `layout`. Stretches next
+to a function that references app code are left alone: the game objects inside the window (around 0x5431c4, and
+0x54b000-0x54c400 with DrawTextToPane) are bounded that way.
 Zone stage: the shared inline zone 0x630000-0x690000 holds inline/template functions from every library and the game.
 A zone function reached from the NW set (or a slot of a band vtable) is tier `zone` when everything that references it
 is NW (or another accepted zone function), every vtable holding it is in the band, and it references no app code
@@ -36,7 +40,7 @@ graph = cg.build(cfg, funcs)
 fs = tomllib.load(open('functions.toml', 'rb'))['function']
 handled = {int(f['offset'], 16): f for f in fs}
 # seeds exclude this script's own output files, so a rerun lists the same set with its evidence
-OWN = ('lib/nw4c/nw2_o3.cpp', 'lib/nw4c/nw2.s', 'lib/nw4c/nw3_o3.cpp', 'lib/nw4c/nw3.s')
+OWN = ('lib/nw4c/nw2_o3.cpp', 'lib/nw4c/nw2.s', 'lib/nw4c/nw3_o3.cpp', 'lib/nw4c/nw3.s', 'lib/nw4c/nw4_o3.cpp', 'lib/nw4c/nw4.s')
 ZONE = (0x630000, 0x690000)
 seed = {o for o, f in handled.items() if f.get('library') == 'nw4c' and f['src'] not in OWN}
 word = lambda o: struct.unpack_from('<I', code, o)[0]
@@ -97,9 +101,28 @@ while ch:
     for s in set(why) - bad:
         if set(refs(s)) & bad: bad.add(s); ch = True
 
+# layout stage
+nwf = (seed | set(why)) - bad
+order = sorted(s for s in info if inw(s))
+def label(s):
+    if s in nwf: return 'N'
+    if info[s][2] or (handled.get(s, {}).get('library') and handled[s]['src'] not in OWN): return 'L'   # Thumb: runtime or padding
+    if s in bad or any(not isl(t) for t in refs(s)): return 'G'
+    return '?'
+lab = [label(s) for s in order]
+layout = set(); i = 0
+while i < len(order):
+    if lab[i] != '?': i += 1; continue
+    j = i
+    while j < len(order) and lab[j] == '?': j += 1
+    if (i == 0 or lab[i - 1] != 'G') and (j == len(order) or lab[j] != 'G'):
+        for k in range(i, j):
+            layout.add(order[k]); why[order[k]] = ('layout', f'{order[i - 1]:x}' if i else 'edge')
+    i = j
+nwf |= layout
+
 # zone stage
 inz = lambda o: ZONE[0] <= o < ZONE[1]
-nwf = (seed | set(why)) - bad
 rev, holders = {}, {}
 for s in info:
     for t in refs(s): rev.setdefault(t, set()).add(s)
@@ -136,7 +159,7 @@ for s in sorted(why):
     h = handled.get(s, {})
     if h.get('library') and h['src'] not in OWN: continue
     app = [t for t in refs(s) if not isl(t) or t in bad]
-    rows.append(dict(offset=f'{s:x}', size=f'{info[s][1]:x}', thumb=int(info[s][2]), tier=('zone' if s in zacc else 'zone-shared') if inz(s) else 'rejected' if s in bad else 'nw',
+    rows.append(dict(offset=f'{s:x}', size=f'{info[s][1]:x}', thumb=int(info[s][2]), tier=('zone' if s in zacc else 'zone-shared') if inz(s) else 'rejected' if s in bad else 'layout' if s in layout else 'nw',
                      evidence=why[s][0], via=why[s][1], app_refs=' '.join(f'{t:x}' for t in sorted(app)[:4]),
                      handled_src=h.get('src', '')))
 with open('symbols/nw_candidates.csv', 'w', newline='') as f:
@@ -146,6 +169,10 @@ zr = [r for r in rows if r['tier'] == 'zone']; zu = [r for r in zr if not r['han
 print(f'zone: reached {len(zreach)}, nw-only {len(zr)} ({len(zu)} unhandled, {sum(int(r["size"], 16) for r in zu) / 1024:.0f} KiB, '
       f'{sum(1 for r in zr if r["handled_src"].startswith("src/gen/"))} generated C, {sum(1 for r in zr if r["thumb"])} Thumb), '
       f'shared {sum(1 for r in rows if r["tier"] == "zone-shared")}')
+lr = [r for r in rows if r['tier'] == 'layout']; lu = [r for r in lr if not r['handled_src']]
+print(f'layout: {len(lr)} ({len(lu)} unhandled, {sum(int(r["size"], 16) for r in lu) / 1024:.0f} KiB, '
+      f'{sum(1 for r in lr if r["handled_src"].startswith("src/gen/"))} generated C, '
+      f'{sum(1 for r in lr if r["handled_src"] and not r["handled_src"].startswith("src/gen/") and r["handled_src"] not in OWN)} hand-written)')
 print(f'seeds {len(seed)}; candidates {len(why)} ({len(why) - len(rows)} already library); rejected {len(bad)}')
 print(f'  nw {len(nw)}: {len(un)} unhandled ({sum(int(r["size"], 16) for r in un) / 1024:.0f} KiB), '
       f'{sum(1 for r in nw if r["handled_src"].startswith("src/gen/"))} generated C, '

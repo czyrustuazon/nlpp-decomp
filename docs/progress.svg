@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 284" width="780" height="284" role="img" aria-labelledby="t d">
 <title id="t">nlpp-decomp matching progress</title>
-<desc id="d">Byte-exact share of the mapped code: 14.0% by size, 40.9% by function count. Breakdown in README.md.</desc>
+<desc id="d">Byte-exact share of the mapped code: 16.1% by size, 42.2% by function count. Breakdown in README.md.</desc>
 <style>
   svg { --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --rest:#e2e1dc; }
   @media (prefers-color-scheme: dark) {
@@ -15,33 +15,33 @@
 <text x="0" y="26" class="h">Byte-exact against retail code.bin</text>
 <text x="0" y="44" class="t2">31,721 mapped functions, 6,001 KiB (89.3% of .text) · relink identical</text>
 <text x="0" y="75" class="t1">Code size</text>
-<path d="M100.0,58 H151.9 V84 H100.0 Q96.0,84 96.0,80 V62 Q96.0,58 100.0,58 Z" style="fill:var(--s1)"/>
-  <rect x="153.9" y="58" width="1.0" height="26" style="fill:var(--s2)"/>
-  <rect x="156.6" y="58" width="19.9" height="26" style="fill:var(--s3)"/>
-  <rect x="178.5" y="58" width="1.0" height="26" style="fill:var(--s4)"/>
-  <path d="M180.1,58 H692.0 Q696.0,58 696.0,62 V80 Q696.0,84 692.0,84 H180.1 Z" style="fill:var(--rest)"/>
-<text x="704" y="75" class="t1 b">14.0%</text>
+<path d="M100.0,58 H164.2 V84 H100.0 Q96.0,84 96.0,80 V62 Q96.0,58 100.0,58 Z" style="fill:var(--s1)"/>
+  <rect x="166.2" y="58" width="1.1" height="26" style="fill:var(--s2)"/>
+  <rect x="169.2" y="58" width="19.5" height="26" style="fill:var(--s3)"/>
+  <rect x="190.8" y="58" width="1.0" height="26" style="fill:var(--s4)"/>
+  <path d="M192.3,58 H692.0 Q696.0,58 696.0,62 V80 Q696.0,84 692.0,84 H192.3 Z" style="fill:var(--rest)"/>
+<text x="704" y="75" class="t1 b">16.1%</text>
 <text x="0" y="119" class="t1">Functions</text>
-<path d="M100.0,102 H163.0 V128 H100.0 Q96.0,128 96.0,124 V106 Q96.0,102 100.0,102 Z" style="fill:var(--s1)"/>
-  <rect x="165.0" y="102" width="14.0" height="26" style="fill:var(--s2)"/>
-  <rect x="181.0" y="102" width="149.4" height="26" style="fill:var(--s3)"/>
-  <rect x="332.4" y="102" width="6.7" height="26" style="fill:var(--s4)"/>
-  <path d="M341.1,102 H692.0 Q696.0,102 696.0,106 V124 Q696.0,128 692.0,128 H341.1 Z" style="fill:var(--rest)"/>
-<text x="704" y="119" class="t1 b">40.9%</text>
+<path d="M100.0,102 H171.3 V128 H100.0 Q96.0,128 96.0,124 V106 Q96.0,102 100.0,102 Z" style="fill:var(--s1)"/>
+  <rect x="173.3" y="102" width="16.2" height="26" style="fill:var(--s2)"/>
+  <rect x="191.4" y="102" width="147.2" height="26" style="fill:var(--s3)"/>
+  <rect x="340.7" y="102" width="6.7" height="26" style="fill:var(--s4)"/>
+  <path d="M349.4,102 H692.0 Q696.0,102 696.0,106 V124 Q696.0,128 692.0,128 H349.4 Z" style="fill:var(--rest)"/>
+<text x="704" y="119" class="t1 b">42.2%</text>
 <rect x="0" y="160" width="12" height="12" rx="3" style="fill:var(--s1)"/>
 <text x="20" y="170" class="t1">library, assembly</text>
-<text x="20" y="187" class="t2">9.7% of code · 3,648 functions</text>
+<text x="20" y="187" class="t2">11.7% of code · 4,086 functions</text>
 <rect x="380" y="160" width="12" height="12" rx="3" style="fill:var(--s2)"/>
 <text x="400" y="170" class="t1">library, C</text>
-<text x="400" y="187" class="t2">0.4% of code · 844 functions</text>
+<text x="400" y="187" class="t2">0.5% of code · 960 functions</text>
 <rect x="0" y="200" width="12" height="12" rx="3" style="fill:var(--s3)"/>
 <text x="20" y="210" class="t1">generated C</text>
-<text x="20" y="227" class="t2">3.7% of code · 8,006 functions</text>
+<text x="20" y="227" class="t2">3.6% of code · 7,890 functions</text>
 <rect x="380" y="200" width="12" height="12" rx="3" style="fill:var(--s4)"/>
 <text x="400" y="210" class="t1">hand-written C</text>
 <text x="400" y="227" class="t2">0.3% of code · 462 functions</text>
 <rect x="0" y="240" width="12" height="12" rx="3" style="fill:var(--rest)"/>
 <text x="20" y="250" class="t1">not yet matched</text>
-<text x="20" y="267" class="t2">86.0% of code · 18,761 functions</text>
+<text x="20" y="267" class="t2">83.9% of code · 18,323 functions</text>
 </g>
 </svg>

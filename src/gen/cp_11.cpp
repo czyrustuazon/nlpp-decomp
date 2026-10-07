@@ -178,13 +178,6 @@ u32 W_6340c4(u32 a0, u32 a1) {
     return r0;
 }
 
-// FUN_00636d1c
-void W_636d1c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r0 = *(u32*)(r0 + 4);
-    { WeakCall1(r0); return; }
-}
-
 // FUN_00637090
 u32 W_637090(u32 a0, u32 a1) {
     u32 r0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, stk[8];
@@ -197,15 +190,6 @@ u32 W_637090(u32 a0, u32 a1) {
     r0 = r4 + (r4 << 2);
     r0 = r0 << 13;
     return r0;
-}
-
-// FUN_00639e20
-float W_639e20(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r0_1;
-    float f0, f0_1, ffa, ffb;
-    r0_1 = r0 + (r1 << 2);
-    f0_1 = *(float*)(r0_1 + 56);
-    return f0_1;
 }
 
 // FUN_0063e750
@@ -379,43 +363,6 @@ void W_68229c() {
 void W_682828() {
     u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
     { WeakCall0(); return; }
-}
-
-// FUN_00685818
-void W_685818(u32 a0, u32 a1, u32 a2, u32 a3, float p0) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    float f0 = p0, f16, ffa, ffb;
-    r6 = r0;
-    r4 = r1;
-    r8 = r2;
-    f16 = f0;
-    r7 = r3;
-    r5 = 0u;
-    L_685838:;
-    fa = r4; fb = 0u;
-    if (fa == fb) goto L_68588c;
-    fx = r4 & 1u;
-    if (fx == 0) goto L_68587c;
-    fa = r5; fb = 15u;
-    if ((int)fa > (int)fb) goto L_68587c;
-    r0 = r6 + (r5 << 2);
-    r0 = *(u32*)(r0 + 144);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_68587c;
-    r0 = r0 + ((u32)((int)r7 >> 1));
-    fx = r7 & 1u;
-    if (fx != 0) r1 = *(u32*)(r0);
-    f0 = f16;
-    if (fx == 0) r1 = r8;
-    if (fx != 0) r1 = *(u32*)(r1 + r8);
-    r0 = ((u32(*)(u32, float))r1)(r0, f0);
-    L_68587c:;
-    r5 = r5 + 1u;
-    fa = r5; fb = 16u;
-    r4 = r4 >> 1;
-    if ((int)fa < (int)fb) goto L_685838;
-    L_68588c:;
-    return;
 }
 
 // FUN_0068a530

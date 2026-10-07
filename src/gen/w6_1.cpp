@@ -176,25 +176,6 @@ void W_628b94(u32 a0) {
     { WeakCall1(r0); return; }
 }
 
-// FUN_00684e38
-u32 W_684e38(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r1 = 1u;
-    *(u8*)(r0 + 40) = r1;
-    r1 = 0u;
-    r0 = r0 + 56u;
-    return WeakCall2(r0, r1);
-}
-
-// FUN_00684f18
-void W_684f18(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r1 = ~0u;
-    r0 = r0 + 52u; *(u32*)(r0) = r1;
-    r0 = r0 + 4u;
-    { WeakCall2(r0, r1); return; }
-}
-
 // FUN_00684f38
 void W_684f38(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

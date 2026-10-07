@@ -82,12 +82,6 @@ extern char g_008bfa50[];
 extern char g_008bfa60[];
 extern char g_008bfa64[];
 
-// FUN_005613e8
-u32 W_5613e8(u32 a0, u32 a1) {
-    u32 r0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r0_1, r1_1, r0_2;
-    return ((r1 + 1u) * 432u);
-}
-
 // FUN_005717b4
 u32 W_5717b4(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r1_1, r4_1, r1_2, r3_1, r2_1, r0_1, r0_2, r1_3, r3_2, r2_2, r0_3, r0_4, r0_5;

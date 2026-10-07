@@ -92,31 +92,6 @@ u32 Fn_5bae94_1(u32);
 u32 Fn_5bb228_1(u32);
 u32 Fn_5bb488_1(u32);
 
-// FUN_00567494
-void W_567494(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = r0;
-    r0 = *(u32*)(r0 + 16);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_5674e4;
-    r5 = r4 + 4u;
-    r0 = r5;
-    r0 = Fn_0244c8_1(r0);
-    r0 = r4 + 16u;
-    r0 = Fn_5667ec_1(r0);
-    r0 = r5;
-    r0 = Fn_024568_1(r0);
-    r0 = Fn_55bca4_1(r0);
-    r4 = r0;
-    r1 = 1u;
-    r0 = Fn_55bd7c_2(r0, r1);
-    r1 = r0;
-    r0 = r4;
-    { Fn_55bfe4_2(r0, r1); return; }
-    L_5674e4:;
-    return;
-}
-
 // FUN_0056e480
 u32 W_56e480(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
