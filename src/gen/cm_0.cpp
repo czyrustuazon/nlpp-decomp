@@ -4907,42 +4907,6 @@ void W_556a30(u32 a0) {
     return;
 }
 
-// FUN_0055c150
-u32 W_55c150(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r3 = 0u;
-    L_55c154:;
-    r12 = r0 + (r3 << 3);
-    r12 = *(u32*)(r12 + 536);
-    fa = r12; fb = r1;
-    if (fa != fb) goto L_55c174;
-    r1 = r0 + (r3 << 3);
-    r0 = *(u32*)(r1 + 540);
-    *(u32*)(r1 + 540) = r2;
-    return r0;
-    L_55c174:;
-    r3 = r3 + 1u;
-    fa = r3; fb = 9u;
-    if ((int)fa < (int)fb) goto L_55c154;
-    r3 = 0u;
-    L_55c184:;
-    r12 = r0 + (r3 << 3);
-    r12 = *(u32*)(r12 + 536);
-    fa = r12; fb = 0u - 1u;
-    if (fa == fb) goto L_55c1a8;
-    r3 = r3 + 1u;
-    fa = r3; fb = 9u;
-    if ((int)fa < (int)fb) goto L_55c184;
-    r0 = 0u;
-    return r0;
-    L_55c1a8:;
-    r0 = r0 + (r3 << 3);
-    r0 = r0 + 536u;
-    *(u32*)(r0 + 0) = r1; *(u32*)(r0 + 4) = r2;
-    r0 = 0u;
-    return r0;
-}
-
 // FUN_0056af8c
 u32 W_56af8c(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

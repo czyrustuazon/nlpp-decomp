@@ -629,32 +629,6 @@ u32 W_54a02c(u32 a0, u32 a1, u32 a2) {
     return r0;
 }
 
-// FUN_0054dad0
-void W_54dad0(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = r2;
-    r2 = *(u32*)(r0);
-    r2 = *(u32*)(r2 + 24);
-    r0 = ((u32(*)(u32, u32))r2)(r0, r1);
-    fa = r0; fb = 0u;
-    if (fa != fb) r1 = r4 ^ 1u;
-    if (fa != fb) *(u8*)(r0 + 14) = r1;
-    return;
-}
-
-// FUN_0054daf4
-void W_54daf4(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = r2;
-    r2 = *(u32*)(r0);
-    r2 = *(u32*)(r2 + 28);
-    r0 = ((u32(*)(u32, u32))r2)(r0, r1);
-    fa = r0; fb = 0u;
-    if (fa != fb) r1 = r4 ^ 1u;
-    if (fa != fb) *(u8*)(r0 + 14) = r1;
-    return;
-}
-
 // FUN_005af7d4
 void W_5af7d4(u32 a0, u32 a1, float p0, float p1, float p2, float p3) {
     u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

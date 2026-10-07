@@ -30,6 +30,10 @@ for f in moving:
     if off not in blocks: sys.exit(f'no block for {off:x} in {f["src"]}')
     decls, bodies = out[kind]
     for l in head:
+        # only declarations the moved body uses: generated files may declare one callee with different return types,
+        # which ARMCC rejects in a single file (#311)
+        m = re.search(r'(\w+)\s*\(', l)
+        if m and not re.search(r'\b' + m.group(1) + r'\b', blocks[off]): continue
         if l and not l.startswith('//') and l not in PRE.split(NL) and l not in decls: decls.append(l)
     bodies.append((off, blocks[off])); newsrc[off] = f'{lib}_{kind}.cpp'
 for kind, (decls, bodies) in out.items():

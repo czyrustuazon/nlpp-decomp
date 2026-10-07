@@ -830,55 +830,6 @@ u32 W_4bf3fc(u32 a0) {
     return r0;
 }
 
-// FUN_00542ed4
-void W_542ed4(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, stk;
-    r1 = (u32)g_008ab280;
-    r4 = *(u32*)(r0);
-    r1 = *(u8*)(r1);
-    fa = r1; fb = 0u;
-    if (fa == fb) goto L_542f08;
-    fa = r4; fb = 0u;
-    stk = r4;
-    if (fa == fb) goto L_542f04;
-    r1 = (u32)&stk;
-    r0 = 1u;
-    r0 = Fn_660bf8_2(r0, r1);
-    L_542f04:;
-    return;
-    L_542f08:;
-    fa = r4; fb = 0u;
-    if (fa == fb) goto L_542f04;
-    r0 = 0u;
-    r1 = (u32)&stk;
-    stk = r0;
-    r0 = Fn_6691d0_2(r0, r1);
-    r12 = stk;
-    r0 = r4 << 30;
-    r1 = 257u;
-    r3 = r4 & ~3u;
-    r0 = r0 >> 14;
-    r2 = 0u;
-    r0 = ((u32(*)(u32, u32, u32, u32))r12)(r0, r1, r2, r3);
-    return;
-}
-
-// FUN_00555888
-void W_555888(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r3 = r0;
-    r0 = *(u32*)(r0);
-    r2 = r1;
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_5558ac;
-    r1 = *(u32*)(r0);
-    r12 = *(u32*)(r1 + 12);
-    r1 = *(u32*)(r3 + 12);
-    { ((u32(*)(u32, u32, u32, u32))r12)(r0, r1, r2, r3); return; }
-    L_5558ac:;
-    return;
-}
-
 // FUN_00566c40
 u32 W_566c40(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
