@@ -4012,7 +4012,8 @@ score = 0
 name = "W_005308"
 offset = "5308"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005308v"
 generated = true
 score = 0
@@ -4021,7 +4022,8 @@ score = 0
 name = "W_00536c"
 offset = "536c"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00536cv"
 generated = true
 score = 0
@@ -4030,7 +4032,8 @@ score = 0
 name = "W_00545c"
 offset = "545c"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00545cv"
 generated = true
 score = 0
@@ -4039,7 +4042,8 @@ score = 0
 name = "W_005518"
 offset = "5518"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005518j"
 generated = true
 score = 0
@@ -4048,7 +4052,8 @@ score = 0
 name = "W_005918"
 offset = "5918"
 size = "2c"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005918j"
 generated = true
 score = 0
@@ -4067,7 +4072,8 @@ score = 0
 name = "W_005e5c"
 offset = "5e5c"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005e5cv"
 generated = true
 score = 0
@@ -4076,7 +4082,8 @@ score = 0
 name = "W_005f90"
 offset = "5f90"
 size = "34"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005f90jj"
 generated = true
 score = 0
@@ -4085,7 +4092,8 @@ score = 0
 name = "W_005fd0"
 offset = "5fd0"
 size = "14"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005fd0v"
 generated = true
 score = 0
@@ -4094,7 +4102,8 @@ score = 0
 name = "W_007538"
 offset = "7538"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_007538v"
 generated = true
 score = 0
@@ -4103,7 +4112,8 @@ score = 0
 name = "W_0080a0"
 offset = "80a0"
 size = "c"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0080a0v"
 generated = true
 score = 0
@@ -4112,7 +4122,8 @@ score = 0
 name = "W_00865c"
 offset = "865c"
 size = "c"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00865cv"
 generated = true
 score = 0
@@ -4121,7 +4132,8 @@ score = 0
 name = "W_008668"
 offset = "8668"
 size = "c"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_008668v"
 generated = true
 score = 0
@@ -4240,7 +4252,8 @@ score = 0
 name = "W_00e14c"
 offset = "e14c"
 size = "18"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00e14cj"
 generated = true
 score = 0
@@ -4249,7 +4262,8 @@ score = 0
 name = "W_00e3b0"
 offset = "e3b0"
 size = "14"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00e3b0jj"
 generated = true
 score = 0
@@ -4358,7 +4372,8 @@ score = 0
 name = "W_015490"
 offset = "15490"
 size = "24"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_015490j"
 generated = true
 score = 0
@@ -4367,7 +4382,8 @@ score = 0
 name = "W_0185fc"
 offset = "185fc"
 size = "18"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0185fcv"
 generated = true
 score = 0
@@ -4496,7 +4512,8 @@ score = 0
 name = "W_0208f8"
 offset = "208f8"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0208f8j"
 generated = true
 score = 0
@@ -4505,7 +4522,8 @@ score = 0
 name = "W_021d70"
 offset = "21d70"
 size = "c"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_021d70j"
 generated = true
 score = 0
@@ -4514,7 +4532,8 @@ score = 0
 name = "W_024b70"
 offset = "24b70"
 size = "18"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_024b70jj"
 generated = true
 score = 0
@@ -4553,7 +4572,8 @@ score = 0
 name = "W_026bf4"
 offset = "26bf4"
 size = "10"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_026bf4j"
 generated = true
 score = 0
@@ -4582,7 +4602,8 @@ score = 0
 name = "W_02ae08"
 offset = "2ae08"
 size = "20"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02ae08j"
 generated = true
 score = 0
@@ -4591,7 +4612,8 @@ score = 0
 name = "W_02ae94"
 offset = "2ae94"
 size = "14"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02ae94j"
 generated = true
 score = 0
@@ -4600,7 +4622,8 @@ score = 0
 name = "W_02b00c"
 offset = "2b00c"
 size = "4"
-src = "src/gen/lo_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02b00cv"
 generated = true
 score = 0
@@ -46905,7 +46928,8 @@ score = 0
 name = "W_005a1c"
 offset = "5a1c"
 size = "3c"
-src = "src/gen/big_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005a1cv"
 generated = true
 score = 0
@@ -46924,7 +46948,8 @@ score = 0
 name = "W_025fa8"
 offset = "25fa8"
 size = "b4"
-src = "src/gen/big_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_025fa8jjj"
 generated = true
 score = 0
@@ -60127,7 +60152,8 @@ score = 0
 name = "W_005894"
 offset = "5894"
 size = "84"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005894v"
 generated = true
 score = 0
@@ -60136,7 +60162,8 @@ score = 0
 name = "W_005944"
 offset = "5944"
 size = "4c"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005944j"
 generated = true
 score = 0
@@ -60145,7 +60172,8 @@ score = 0
 name = "W_005d1c"
 offset = "5d1c"
 size = "44"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005d1cv"
 generated = true
 score = 0
@@ -60154,7 +60182,8 @@ score = 0
 name = "W_006484"
 offset = "6484"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_006484v"
 generated = true
 score = 0
@@ -60163,7 +60192,8 @@ score = 0
 name = "W_0079f8"
 offset = "79f8"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0079f8v"
 generated = true
 score = 0
@@ -60202,7 +60232,8 @@ score = 0
 name = "W_00a130"
 offset = "a130"
 size = "38"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00a130jj"
 generated = true
 score = 0
@@ -60261,7 +60292,8 @@ score = 0
 name = "W_015664"
 offset = "15664"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_015664j"
 generated = true
 score = 0
@@ -60270,7 +60302,8 @@ score = 0
 name = "W_015674"
 offset = "15674"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_015674j"
 generated = true
 score = 0
@@ -60279,7 +60312,8 @@ score = 0
 name = "W_017a48"
 offset = "17a48"
 size = "1c"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_017a48v"
 generated = true
 score = 0
@@ -60288,7 +60322,8 @@ score = 0
 name = "W_0185a0"
 offset = "185a0"
 size = "1c"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0185a0v"
 generated = true
 score = 0
@@ -60297,7 +60332,8 @@ score = 0
 name = "W_018bb4"
 offset = "18bb4"
 size = "24"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_018bb4jj"
 generated = true
 score = 0
@@ -60306,7 +60342,8 @@ score = 0
 name = "W_01902c"
 offset = "1902c"
 size = "3c"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01902cj"
 generated = true
 score = 0
@@ -60315,7 +60352,8 @@ score = 0
 name = "W_019068"
 offset = "19068"
 size = "48"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_019068j"
 generated = true
 score = 0
@@ -60324,7 +60362,8 @@ score = 0
 name = "W_0190b0"
 offset = "190b0"
 size = "50"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0190b0j"
 generated = true
 score = 0
@@ -60333,7 +60372,8 @@ score = 0
 name = "W_019100"
 offset = "19100"
 size = "18"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_019100j"
 generated = true
 score = 0
@@ -60342,7 +60382,8 @@ score = 0
 name = "W_01b958"
 offset = "1b958"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01b958jj"
 generated = true
 score = 0
@@ -60351,7 +60392,8 @@ score = 0
 name = "W_01ba44"
 offset = "1ba44"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01ba44jj"
 generated = true
 score = 0
@@ -60370,7 +60412,8 @@ score = 0
 name = "W_020ac8"
 offset = "20ac8"
 size = "c"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_020ac8j"
 generated = true
 score = 0
@@ -60419,7 +60462,8 @@ score = 0
 name = "W_026c04"
 offset = "26c04"
 size = "14"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_026c04jj"
 generated = true
 score = 0
@@ -60428,7 +60472,8 @@ score = 0
 name = "W_029044"
 offset = "29044"
 size = "18"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_029044jj"
 generated = true
 score = 0
@@ -60447,7 +60492,8 @@ score = 0
 name = "W_02a298"
 offset = "2a298"
 size = "34"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a298j"
 generated = true
 score = 0
@@ -60456,7 +60502,8 @@ score = 0
 name = "W_02a2cc"
 offset = "2a2cc"
 size = "14"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a2ccj"
 generated = true
 score = 0
@@ -60465,7 +60512,8 @@ score = 0
 name = "W_02a724"
 offset = "2a724"
 size = "20"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a724j"
 generated = true
 score = 0
@@ -60474,7 +60522,8 @@ score = 0
 name = "W_02aaa0"
 offset = "2aaa0"
 size = "10"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02aaa0jj"
 generated = true
 score = 0
@@ -60483,7 +60532,8 @@ score = 0
 name = "W_02afac"
 offset = "2afac"
 size = "5c"
-src = "src/gen/br_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02afacjjj"
 generated = true
 score = 0
@@ -70062,7 +70112,8 @@ score = 0
 name = "W_4fd0c8"
 offset = "4fd0c8"
 size = "28"
-src = "src/gen/br_11.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_4fd0c8jj"
 generated = true
 score = 0
@@ -70071,7 +70122,8 @@ score = 0
 name = "W_4fd0f0"
 offset = "4fd0f0"
 size = "28"
-src = "src/gen/br_11.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_4fd0f0jj"
 generated = true
 score = 0
@@ -76602,7 +76654,8 @@ score = 0
 name = "W_005528"
 offset = "5528"
 size = "3c"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005528j"
 generated = true
 score = 0
@@ -76611,7 +76664,8 @@ score = 0
 name = "W_006448"
 offset = "6448"
 size = "14"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_006448jj"
 generated = true
 score = 0
@@ -76620,7 +76674,8 @@ score = 0
 name = "W_00645c"
 offset = "645c"
 size = "14"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00645cjj"
 generated = true
 score = 0
@@ -76629,7 +76684,8 @@ score = 0
 name = "W_006470"
 offset = "6470"
 size = "14"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_006470jj"
 generated = true
 score = 0
@@ -76648,7 +76704,8 @@ score = 0
 name = "W_00b2a4"
 offset = "b2a4"
 size = "60"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00b2a4jj"
 generated = true
 score = 0
@@ -76657,7 +76714,8 @@ score = 0
 name = "W_00d964"
 offset = "d964"
 size = "1c"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00d964jj"
 generated = true
 score = 0
@@ -76666,7 +76724,8 @@ score = 0
 name = "W_010558"
 offset = "10558"
 size = "1c"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_010558j"
 generated = true
 score = 0
@@ -76685,7 +76744,8 @@ score = 0
 name = "W_014d6c"
 offset = "14d6c"
 size = "50"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_014d6cj"
 generated = true
 score = 0
@@ -76694,7 +76754,8 @@ score = 0
 name = "W_015684"
 offset = "15684"
 size = "30"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_015684j"
 generated = true
 score = 0
@@ -76703,7 +76764,8 @@ score = 0
 name = "W_0203e8"
 offset = "203e8"
 size = "88"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0203e8j"
 generated = true
 score = 0
@@ -76712,7 +76774,8 @@ score = 0
 name = "W_020ef4"
 offset = "20ef4"
 size = "30"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_020ef4v"
 generated = true
 score = 0
@@ -76721,7 +76784,8 @@ score = 0
 name = "W_02a218"
 offset = "2a218"
 size = "38"
-src = "src/gen/r3_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a218j"
 generated = true
 score = 0
@@ -82448,7 +82512,8 @@ score = 13   # NONMATCHING: wrap branch computes cur+4 as a separate add; next/r
 name = "W_01852c"
 offset = "1852c"
 size = "74"
-src = "src/gen/r5_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01852cj"
 generated = true
 score = 0
@@ -83332,7 +83397,8 @@ score = 0
 name = "W_005cec"
 offset = "5cec"
 size = "30"
-src = "src/gen/r5b_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005cecv"
 generated = true
 score = 0
@@ -83351,7 +83417,8 @@ score = 0
 name = "W_021e58"
 offset = "21e58"
 size = "28"
-src = "src/gen/r5b_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_021e58j"
 generated = true
 score = 0
@@ -84765,7 +84832,8 @@ score = 9   # NONMATCHING: register assignment (retail keeps the zero in r4 and 
 name = "W_007e08"
 offset = "7e08"
 size = "58"
-src = "src/gen/w5_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_007e08v"
 generated = true
 score = 0
@@ -86232,7 +86300,8 @@ score = 0
 name = "W_006234"
 offset = "6234"
 size = "10"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_006234v"
 generated = true
 score = 0
@@ -86241,7 +86310,8 @@ score = 0
 name = "W_010058"
 offset = "10058"
 size = "14"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_010058j"
 generated = true
 score = 0
@@ -86250,7 +86320,8 @@ score = 0
 name = "W_0131b4"
 offset = "131b4"
 size = "1c"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0131b4v"
 generated = true
 score = 0
@@ -86259,7 +86330,8 @@ score = 0
 name = "W_01b604"
 offset = "1b604"
 size = "20"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01b604j"
 generated = true
 score = 0
@@ -86278,7 +86350,8 @@ score = 0
 name = "W_0244b4"
 offset = "244b4"
 size = "14"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0244b4v"
 generated = true
 score = 0
@@ -86287,7 +86360,8 @@ score = 0
 name = "W_02aca0"
 offset = "2aca0"
 size = "24"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02aca0jj"
 generated = true
 score = 0
@@ -86296,7 +86370,8 @@ score = 0
 name = "W_0317c8"
 offset = "317c8"
 size = "14"
-src = "src/gen/w6_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0317c8jjj"
 generated = true
 score = 0
@@ -87010,7 +87085,8 @@ score = 0
 name = "W_00557c"
 offset = "557c"
 size = "c"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00557cv"
 generated = true
 score = 0
@@ -87019,7 +87095,8 @@ score = 0
 name = "W_005fe4"
 offset = "5fe4"
 size = "14"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_005fe4v"
 generated = true
 score = 0
@@ -87028,7 +87105,8 @@ score = 0
 name = "W_007b90"
 offset = "7b90"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_007b90v"
 generated = true
 score = 0
@@ -87037,7 +87115,8 @@ score = 0
 name = "W_00800c"
 offset = "800c"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00800cv"
 generated = true
 score = 0
@@ -87046,7 +87125,8 @@ score = 0
 name = "W_01097c"
 offset = "1097c"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01097cv"
 generated = true
 score = 0
@@ -87055,7 +87135,8 @@ score = 0
 name = "W_0123ec"
 offset = "123ec"
 size = "14"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0123ecj"
 generated = true
 score = 0
@@ -87074,7 +87155,8 @@ score = 0
 name = "W_0151c0"
 offset = "151c0"
 size = "8"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0151c0jj"
 generated = true
 score = 0
@@ -87083,7 +87165,8 @@ score = 0
 name = "W_015600"
 offset = "15600"
 size = "18"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_015600j"
 generated = true
 score = 0
@@ -87092,7 +87175,8 @@ score = 0
 name = "W_016030"
 offset = "16030"
 size = "8"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_016030j"
 generated = true
 score = 0
@@ -87101,7 +87185,8 @@ score = 0
 name = "W_01a170"
 offset = "1a170"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01a170v"
 generated = true
 score = 0
@@ -87110,7 +87195,8 @@ score = 0
 name = "W_01a2b0"
 offset = "1a2b0"
 size = "8"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_01a2b0j"
 generated = true
 score = 0
@@ -87119,7 +87205,8 @@ score = 0
 name = "W_021bd4"
 offset = "21bd4"
 size = "10"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_021bd4j"
 generated = true
 score = 0
@@ -87128,7 +87215,8 @@ score = 0
 name = "W_022100"
 offset = "22100"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_022100v"
 generated = true
 score = 0
@@ -87137,7 +87225,8 @@ score = 0
 name = "W_025398"
 offset = "25398"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_025398v"
 generated = true
 score = 0
@@ -87146,7 +87235,8 @@ score = 0
 name = "W_0253e4"
 offset = "253e4"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0253e4v"
 generated = true
 score = 0
@@ -87155,7 +87245,8 @@ score = 0
 name = "W_02605c"
 offset = "2605c"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02605cv"
 generated = true
 score = 0
@@ -87164,7 +87255,8 @@ score = 0
 name = "W_0282d0"
 offset = "282d0"
 size = "c"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_0282d0j"
 generated = true
 score = 0
@@ -87173,7 +87265,8 @@ score = 0
 name = "W_02a054"
 offset = "2a054"
 size = "1c"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a054jj"
 generated = true
 score = 0
@@ -87182,7 +87275,8 @@ score = 0
 name = "W_02a07c"
 offset = "2a07c"
 size = "4"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a07cv"
 generated = true
 score = 0
@@ -87191,7 +87285,8 @@ score = 0
 name = "W_02a210"
 offset = "2a210"
 size = "8"
-src = "src/gen/cp_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02a210j"
 generated = true
 score = 0
@@ -91343,7 +91438,8 @@ score = 0
 name = "W_014bb8"
 offset = "14bb8"
 size = "10"
-src = "src/gen/ia_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_014bb8j"
 generated = true
 score = 0
@@ -91352,7 +91448,8 @@ score = 0
 name = "W_020b90"
 offset = "20b90"
 size = "58"
-src = "src/gen/ia_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_020b90jjj"
 generated = true
 score = 0
@@ -91361,7 +91458,8 @@ score = 0
 name = "W_026814"
 offset = "26814"
 size = "1c"
-src = "src/gen/ia_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_026814jj"
 generated = true
 score = 0
@@ -91370,7 +91468,8 @@ score = 0
 name = "W_02ae28"
 offset = "2ae28"
 size = "6c"
-src = "src/gen/ia_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02ae28jjjj"
 generated = true
 score = 0
@@ -93186,7 +93285,8 @@ score = 0
 name = "W_00dbc8"
 offset = "dbc8"
 size = "e0"
-src = "src/gen/cm_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_00dbc8j"
 generated = true
 score = 0
@@ -93195,7 +93295,8 @@ score = 0
 name = "W_014a98"
 offset = "14a98"
 size = "88"
-src = "src/gen/cm_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_014a98v"
 generated = true
 score = 0
@@ -93204,7 +93305,8 @@ score = 0
 name = "W_015c54"
 offset = "15c54"
 size = "bc"
-src = "src/gen/cm_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_015c54jj"
 generated = true
 score = 0
@@ -93213,7 +93315,8 @@ score = 0
 name = "W_026bc4"
 offset = "26bc4"
 size = "30"
-src = "src/gen/cm_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_026bc4jj"
 generated = true
 score = 0
@@ -93222,7 +93325,8 @@ score = 0
 name = "W_02aab0"
 offset = "2aab0"
 size = "f4"
-src = "src/gen/cm_0.cpp"
+src = "lib/ctrsdk/sdk2_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_02aab0j"
 generated = true
 score = 0
@@ -108324,5 +108428,4397 @@ offset = "557b6c"
 size = "19c"
 src = "lib/ctrsdk/sdk.s"
 symbol = "A_557b6c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_001010"
+offset = "1010"
+size = "4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_001010"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_004af8"
+offset = "4af8"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_004af8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_004f10"
+offset = "4f10"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_004f10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_004f44"
+offset = "4f44"
+size = "54"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_004f44"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_004f98"
+offset = "4f98"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_004f98"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_004fb8"
+offset = "4fb8"
+size = "6c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_004fb8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005024"
+offset = "5024"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005024"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00507c"
+offset = "507c"
+size = "118"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00507c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005250"
+offset = "5250"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005250"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005270"
+offset = "5270"
+size = "98"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005270"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005318"
+offset = "5318"
+size = "54"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005318"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00546c"
+offset = "546c"
+size = "ac"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00546c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005564"
+offset = "5564"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005564"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005588"
+offset = "5588"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005588"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0055e0"
+offset = "55e0"
+size = "294"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0055e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005874"
+offset = "5874"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005874"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005990"
+offset = "5990"
+size = "8c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005990"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005a58"
+offset = "5a58"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005a58"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005b58"
+offset = "5b58"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005b58"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005ba0"
+offset = "5ba0"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005ba0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005c24"
+offset = "5c24"
+size = "38"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005c24"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005c5c"
+offset = "5c5c"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005c5c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005d60"
+offset = "5d60"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005d60"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005e6c"
+offset = "5e6c"
+size = "3c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005e6c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_005ea8"
+offset = "5ea8"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_005ea8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_006814"
+offset = "6814"
+size = "388"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_006814"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_006b9c"
+offset = "6b9c"
+size = "358"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_006b9c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_006ef4"
+offset = "6ef4"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_006ef4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_006f9c"
+offset = "6f9c"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_006f9c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00702c"
+offset = "702c"
+size = "130"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00702c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00715c"
+offset = "715c"
+size = "3dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00715c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007548"
+offset = "7548"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007548"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007604"
+offset = "7604"
+size = "118"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007604"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00771c"
+offset = "771c"
+size = "2dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00771c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007b94"
+offset = "7b94"
+size = "30"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007b94"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007bc4"
+offset = "7bc4"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007bc4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007c6c"
+offset = "7c6c"
+size = "80"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007c6c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007cec"
+offset = "7cec"
+size = "11c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007cec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_007ed4"
+offset = "7ed4"
+size = "138"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_007ed4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008010"
+offset = "8010"
+size = "7c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008010"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00808c"
+offset = "808c"
+size = "14"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00808c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0080e0"
+offset = "80e0"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0080e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008100"
+offset = "8100"
+size = "78"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008100"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008190"
+offset = "8190"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008190"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0081c4"
+offset = "81c4"
+size = "40"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0081c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00823c"
+offset = "823c"
+size = "b8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00823c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0082f4"
+offset = "82f4"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0082f4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008354"
+offset = "8354"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008354"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008390"
+offset = "8390"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008390"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0083dc"
+offset = "83dc"
+size = "1a4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0083dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008580"
+offset = "8580"
+size = "68"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008580"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008634"
+offset = "8634"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008634"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008930"
+offset = "8930"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008930"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_008be8"
+offset = "8be8"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_008be8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_009380"
+offset = "9380"
+size = "160"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_009380"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_009508"
+offset = "9508"
+size = "f8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_009508"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_009604"
+offset = "9604"
+size = "9c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_009604"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0096e8"
+offset = "96e8"
+size = "fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0096e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0097e4"
+offset = "97e4"
+size = "d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0097e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0098c0"
+offset = "98c0"
+size = "114"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0098c0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0099d8"
+offset = "99d8"
+size = "6bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0099d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00a168"
+offset = "a168"
+size = "b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00a168"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00a218"
+offset = "a218"
+size = "13c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00a218"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00a354"
+offset = "a354"
+size = "b4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00a354"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00a40c"
+offset = "a40c"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00a40c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00a4c8"
+offset = "a4c8"
+size = "9cc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00a4c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00aeec"
+offset = "aeec"
+size = "50"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00aeec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b110"
+offset = "b110"
+size = "6c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b110"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b190"
+offset = "b190"
+size = "114"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b190"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b374"
+offset = "b374"
+size = "b4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b374"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b428"
+offset = "b428"
+size = "f0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b428"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b518"
+offset = "b518"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b518"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b5a0"
+offset = "b5a0"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b5a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b5e4"
+offset = "b5e4"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b5e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b628"
+offset = "b628"
+size = "b8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b628"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00b6e0"
+offset = "b6e0"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00b6e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00bb68"
+offset = "bb68"
+size = "190"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00bb68"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00bd30"
+offset = "bd30"
+size = "ddc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00bd30"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00cb0c"
+offset = "cb0c"
+size = "148"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00cb0c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00cc84"
+offset = "cc84"
+size = "23c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00cc84"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00cec0"
+offset = "cec0"
+size = "74"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00cec0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d074"
+offset = "d074"
+size = "15c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d074"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d1d0"
+offset = "d1d0"
+size = "158"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d1d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d328"
+offset = "d328"
+size = "50"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d328"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d644"
+offset = "d644"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d644"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d6c8"
+offset = "d6c8"
+size = "30"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d6c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d6f8"
+offset = "d6f8"
+size = "100"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d6f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d7f8"
+offset = "d7f8"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d7f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d8e0"
+offset = "d8e0"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d8e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00d980"
+offset = "d980"
+size = "248"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00d980"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00dca8"
+offset = "dca8"
+size = "5c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00dca8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00dd04"
+offset = "dd04"
+size = "100"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00dd04"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00df94"
+offset = "df94"
+size = "8c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00df94"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e020"
+offset = "e020"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e020"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e0a4"
+offset = "e0a4"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e0a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e164"
+offset = "e164"
+size = "124"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e164"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e2cc"
+offset = "e2cc"
+size = "8c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e2cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e358"
+offset = "e358"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e358"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e3c4"
+offset = "e3c4"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e3c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e3dc"
+offset = "e3dc"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e3dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e4c4"
+offset = "e4c4"
+size = "1fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e4c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e798"
+offset = "e798"
+size = "1d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e798"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00e970"
+offset = "e970"
+size = "124"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00e970"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00ea94"
+offset = "ea94"
+size = "10"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00ea94"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00eaa4"
+offset = "eaa4"
+size = "dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00eaa4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00eb80"
+offset = "eb80"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00eb80"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00ec08"
+offset = "ec08"
+size = "5c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00ec08"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00ec64"
+offset = "ec64"
+size = "1e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00ec64"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00ee4c"
+offset = "ee4c"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00ee4c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00f098"
+offset = "f098"
+size = "134"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00f098"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00f1cc"
+offset = "f1cc"
+size = "ca4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00f1cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00fe70"
+offset = "fe70"
+size = "40"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00fe70"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_00ff74"
+offset = "ff74"
+size = "e4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_00ff74"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01006c"
+offset = "1006c"
+size = "15c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01006c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_010574"
+offset = "10574"
+size = "ec"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_010574"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_010660"
+offset = "10660"
+size = "224"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_010660"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0108ac"
+offset = "108ac"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0108ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_010930"
+offset = "10930"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_010930"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_010b30"
+offset = "10b30"
+size = "60"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_010b30"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_010e18"
+offset = "10e18"
+size = "64"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_010e18"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_010e7c"
+offset = "10e7c"
+size = "94"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_010e7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01174c"
+offset = "1174c"
+size = "64"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01174c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_011cec"
+offset = "11cec"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_011cec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_011d7c"
+offset = "11d7c"
+size = "23c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_011d7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_011fb8"
+offset = "11fb8"
+size = "364"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_011fb8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_013644"
+offset = "13644"
+size = "1fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_013644"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_013840"
+offset = "13840"
+size = "8c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_013840"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0138cc"
+offset = "138cc"
+size = "6d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0138cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_013fa0"
+offset = "13fa0"
+size = "1d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_013fa0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014174"
+offset = "14174"
+size = "1e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014174"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014354"
+offset = "14354"
+size = "208"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014354"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01455c"
+offset = "1455c"
+size = "2fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01455c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014858"
+offset = "14858"
+size = "1b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014858"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014bc8"
+offset = "14bc8"
+size = "3c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014bc8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014dbc"
+offset = "14dbc"
+size = "3c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014dbc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014df8"
+offset = "14df8"
+size = "108"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014df8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_014f00"
+offset = "14f00"
+size = "2c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_014f00"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0151c8"
+offset = "151c8"
+size = "108"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0151c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0154b4"
+offset = "154b4"
+size = "10"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0154b4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015564"
+offset = "15564"
+size = "54"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015564"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0155b8"
+offset = "155b8"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0155b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01561c"
+offset = "1561c"
+size = "30"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01561c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0156c8"
+offset = "156c8"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0156c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0156fc"
+offset = "156fc"
+size = "70"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0156fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01576c"
+offset = "1576c"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01576c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0157a0"
+offset = "157a0"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0157a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0157e8"
+offset = "157e8"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0157e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015830"
+offset = "15830"
+size = "64"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015830"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015894"
+offset = "15894"
+size = "68"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015894"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0158fc"
+offset = "158fc"
+size = "5c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0158fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015958"
+offset = "15958"
+size = "64"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015958"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0159bc"
+offset = "159bc"
+size = "78"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0159bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015a34"
+offset = "15a34"
+size = "14c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015a34"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015b80"
+offset = "15b80"
+size = "c4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015b80"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015d10"
+offset = "15d10"
+size = "80"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015d10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015d90"
+offset = "15d90"
+size = "5c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015d90"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_015f98"
+offset = "15f98"
+size = "98"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_015f98"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016038"
+offset = "16038"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016038"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0161d0"
+offset = "161d0"
+size = "b8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0161d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016338"
+offset = "16338"
+size = "38"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016338"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016370"
+offset = "16370"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016370"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016420"
+offset = "16420"
+size = "104"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016420"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016524"
+offset = "16524"
+size = "438"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016524"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01695c"
+offset = "1695c"
+size = "b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01695c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016b50"
+offset = "16b50"
+size = "1a0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016b50"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016d5c"
+offset = "16d5c"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016d5c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016d78"
+offset = "16d78"
+size = "148"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016d78"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016ec0"
+offset = "16ec0"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016ec0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_016f04"
+offset = "16f04"
+size = "2fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_016f04"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_017200"
+offset = "17200"
+size = "848"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_017200"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_017a64"
+offset = "17a64"
+size = "498"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_017a64"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_017efc"
+offset = "17efc"
+size = "348"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_017efc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018244"
+offset = "18244"
+size = "1b4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018244"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0183f8"
+offset = "183f8"
+size = "134"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0183f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018614"
+offset = "18614"
+size = "30"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018614"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018644"
+offset = "18644"
+size = "168"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018644"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0187ac"
+offset = "187ac"
+size = "108"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0187ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0188b4"
+offset = "188b4"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0188b4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018944"
+offset = "18944"
+size = "144"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018944"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018a88"
+offset = "18a88"
+size = "12c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018a88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018bd8"
+offset = "18bd8"
+size = "ec"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018bd8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018cc4"
+offset = "18cc4"
+size = "138"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018cc4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018dfc"
+offset = "18dfc"
+size = "1c4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018dfc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_018fd4"
+offset = "18fd4"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_018fd4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_019118"
+offset = "19118"
+size = "60"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_019118"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0191c0"
+offset = "191c0"
+size = "12c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0191c0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0192f0"
+offset = "192f0"
+size = "9c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0192f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01938c"
+offset = "1938c"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01938c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_019454"
+offset = "19454"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_019454"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_019498"
+offset = "19498"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_019498"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_019530"
+offset = "19530"
+size = "be8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_019530"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a164"
+offset = "1a164"
+size = "c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a164"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a194"
+offset = "1a194"
+size = "11c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a194"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a2b8"
+offset = "1a2b8"
+size = "14"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a2b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a2cc"
+offset = "1a2cc"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a2cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a330"
+offset = "1a330"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a330"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a3a4"
+offset = "1a3a4"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a3a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a48c"
+offset = "1a48c"
+size = "10"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a48c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a49c"
+offset = "1a49c"
+size = "38"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a49c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a514"
+offset = "1a514"
+size = "114"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a514"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a918"
+offset = "1a918"
+size = "78"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a918"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01a990"
+offset = "1a990"
+size = "11c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01a990"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01aaac"
+offset = "1aaac"
+size = "100"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01aaac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01abac"
+offset = "1abac"
+size = "2a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01abac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ae54"
+offset = "1ae54"
+size = "1a4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ae54"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01aff8"
+offset = "1aff8"
+size = "80"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01aff8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01b078"
+offset = "1b078"
+size = "1c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01b078"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01b33c"
+offset = "1b33c"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01b33c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01b810"
+offset = "1b810"
+size = "148"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01b810"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01b968"
+offset = "1b968"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01b968"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01b988"
+offset = "1b988"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01b988"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01c764"
+offset = "1c764"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01c764"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01c820"
+offset = "1c820"
+size = "f8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01c820"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01c918"
+offset = "1c918"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01c918"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01c964"
+offset = "1c964"
+size = "50"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01c964"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01c9b4"
+offset = "1c9b4"
+size = "98"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01c9b4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ca4c"
+offset = "1ca4c"
+size = "338"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ca4c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ce8c"
+offset = "1ce8c"
+size = "2c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ce8c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ceb8"
+offset = "1ceb8"
+size = "14"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ceb8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01cfe4"
+offset = "1cfe4"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01cfe4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01cffc"
+offset = "1cffc"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01cffc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01d048"
+offset = "1d048"
+size = "14"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01d048"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01d05c"
+offset = "1d05c"
+size = "68"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01d05c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01dba4"
+offset = "1dba4"
+size = "17c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01dba4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01dd20"
+offset = "1dd20"
+size = "188"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01dd20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01dea8"
+offset = "1dea8"
+size = "178"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01dea8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01e020"
+offset = "1e020"
+size = "b4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01e020"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01e0d4"
+offset = "1e0d4"
+size = "2d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01e0d4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01e3ac"
+offset = "1e3ac"
+size = "2c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01e3ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01e3d8"
+offset = "1e3d8"
+size = "110"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01e3d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01e4e8"
+offset = "1e4e8"
+size = "24"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01e4e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01e520"
+offset = "1e520"
+size = "5e4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01e520"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01eb04"
+offset = "1eb04"
+size = "284"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01eb04"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ed88"
+offset = "1ed88"
+size = "170"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ed88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01eef8"
+offset = "1eef8"
+size = "b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01eef8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01efa8"
+offset = "1efa8"
+size = "6e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01efa8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01f690"
+offset = "1f690"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01f690"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01f6c4"
+offset = "1f6c4"
+size = "d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01f6c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01f79c"
+offset = "1f79c"
+size = "5e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01f79c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01fdcc"
+offset = "1fdcc"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01fdcc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01fe74"
+offset = "1fe74"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01fe74"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ff34"
+offset = "1ff34"
+size = "6c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ff34"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_01ffa0"
+offset = "1ffa0"
+size = "390"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_01ffa0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020330"
+offset = "20330"
+size = "b8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020330"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020470"
+offset = "20470"
+size = "98"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020470"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0206d0"
+offset = "206d0"
+size = "6c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0206d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02073c"
+offset = "2073c"
+size = "fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02073c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020838"
+offset = "20838"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020838"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0208bc"
+offset = "208bc"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0208bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0208d4"
+offset = "208d4"
+size = "24"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0208d4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020908"
+offset = "20908"
+size = "1c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020908"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020ad4"
+offset = "20ad4"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020ad4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020b18"
+offset = "20b18"
+size = "78"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020b18"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020be8"
+offset = "20be8"
+size = "1bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020be8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020da4"
+offset = "20da4"
+size = "150"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020da4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_020f24"
+offset = "20f24"
+size = "1f4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_020f24"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021118"
+offset = "21118"
+size = "5c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021118"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021174"
+offset = "21174"
+size = "270"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021174"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0213e4"
+offset = "213e4"
+size = "140"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0213e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021524"
+offset = "21524"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021524"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02156c"
+offset = "2156c"
+size = "298"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02156c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021804"
+offset = "21804"
+size = "1c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021804"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0219cc"
+offset = "219cc"
+size = "40"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0219cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021a0c"
+offset = "21a0c"
+size = "1c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021a0c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021be4"
+offset = "21be4"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021be4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021ca0"
+offset = "21ca0"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021ca0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021cbc"
+offset = "21cbc"
+size = "10"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021cbc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021ce0"
+offset = "21ce0"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021ce0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021d7c"
+offset = "21d7c"
+size = "dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021d7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021e80"
+offset = "21e80"
+size = "68"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021e80"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021ee8"
+offset = "21ee8"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021ee8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_021fc8"
+offset = "21fc8"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_021fc8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022014"
+offset = "22014"
+size = "a0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022014"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0220b4"
+offset = "220b4"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0220b4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022104"
+offset = "22104"
+size = "74"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022104"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022178"
+offset = "22178"
+size = "198"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022178"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022310"
+offset = "22310"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022310"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022334"
+offset = "22334"
+size = "cc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022334"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022400"
+offset = "22400"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022400"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022458"
+offset = "22458"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022458"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022520"
+offset = "22520"
+size = "98"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022520"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0225b8"
+offset = "225b8"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0225b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0226a0"
+offset = "226a0"
+size = "b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0226a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022750"
+offset = "22750"
+size = "f0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022750"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022840"
+offset = "22840"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022840"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0229e4"
+offset = "229e4"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0229e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022d78"
+offset = "22d78"
+size = "1a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022d78"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_022f20"
+offset = "22f20"
+size = "1b8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_022f20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0238b0"
+offset = "238b0"
+size = "38"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0238b0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0238e8"
+offset = "238e8"
+size = "9e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0238e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0242c8"
+offset = "242c8"
+size = "54"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0242c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02432c"
+offset = "2432c"
+size = "54"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02432c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0248cc"
+offset = "248cc"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0248cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02498c"
+offset = "2498c"
+size = "1e4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02498c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0250f0"
+offset = "250f0"
+size = "a4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0250f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_025194"
+offset = "25194"
+size = "134"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_025194"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02539c"
+offset = "2539c"
+size = "30"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02539c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0253cc"
+offset = "253cc"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0253cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0253e8"
+offset = "253e8"
+size = "38"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0253e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0258bc"
+offset = "258bc"
+size = "10"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0258bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0258cc"
+offset = "258cc"
+size = "10"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0258cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_025ee8"
+offset = "25ee8"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_025ee8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026060"
+offset = "26060"
+size = "10c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026060"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02616c"
+offset = "2616c"
+size = "4d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02616c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0268cc"
+offset = "268cc"
+size = "dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0268cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0269a8"
+offset = "269a8"
+size = "3c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0269a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0269e4"
+offset = "269e4"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0269e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026a8c"
+offset = "26a8c"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026a8c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026b48"
+offset = "26b48"
+size = "7c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026b48"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026c18"
+offset = "26c18"
+size = "40"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026c18"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026c58"
+offset = "26c58"
+size = "13c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026c58"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026d94"
+offset = "26d94"
+size = "8c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026d94"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026e20"
+offset = "26e20"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026e20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026ee0"
+offset = "26ee0"
+size = "7c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026ee0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_026f5c"
+offset = "26f5c"
+size = "220"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_026f5c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02717c"
+offset = "2717c"
+size = "1b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02717c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02732c"
+offset = "2732c"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02732c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_027384"
+offset = "27384"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_027384"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02742c"
+offset = "2742c"
+size = "190"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02742c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0275c0"
+offset = "275c0"
+size = "110"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0275c0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0276d0"
+offset = "276d0"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0276d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_027714"
+offset = "27714"
+size = "4c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_027714"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_027760"
+offset = "27760"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_027760"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_027874"
+offset = "27874"
+size = "ac"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_027874"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_027920"
+offset = "27920"
+size = "c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_027920"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0282dc"
+offset = "282dc"
+size = "21c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0282dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0284f8"
+offset = "284f8"
+size = "7c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0284f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_028578"
+offset = "28578"
+size = "14"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_028578"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02858c"
+offset = "2858c"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02858c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0285ac"
+offset = "285ac"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0285ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0285cc"
+offset = "285cc"
+size = "20"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0285cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0285ec"
+offset = "285ec"
+size = "2a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0285ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_028894"
+offset = "28894"
+size = "134"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_028894"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0289c8"
+offset = "289c8"
+size = "264"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0289c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_028c98"
+offset = "28c98"
+size = "100"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_028c98"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_028db8"
+offset = "28db8"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_028db8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_028dd4"
+offset = "28dd4"
+size = "f0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_028dd4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02905c"
+offset = "2905c"
+size = "80"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02905c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02919c"
+offset = "2919c"
+size = "70"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02919c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029210"
+offset = "29210"
+size = "cc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029210"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0292dc"
+offset = "292dc"
+size = "64"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0292dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029498"
+offset = "29498"
+size = "6c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029498"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029b80"
+offset = "29b80"
+size = "214"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029b80"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029d94"
+offset = "29d94"
+size = "140"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029d94"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029ed4"
+offset = "29ed4"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029ed4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029ef0"
+offset = "29ef0"
+size = "84"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029ef0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_029f88"
+offset = "29f88"
+size = "cc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_029f88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a098"
+offset = "2a098"
+size = "a0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a098"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a138"
+offset = "2a138"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a138"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a1c8"
+offset = "2a1c8"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a1c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a250"
+offset = "2a250"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a250"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a2e0"
+offset = "2a2e0"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a2e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a3a0"
+offset = "2a3a0"
+size = "74"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a3a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a414"
+offset = "2a414"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a414"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a4dc"
+offset = "2a4dc"
+size = "194"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a4dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a674"
+offset = "2a674"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a674"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a750"
+offset = "2a750"
+size = "80"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a750"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a80c"
+offset = "2a80c"
+size = "13c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a80c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02a948"
+offset = "2a948"
+size = "60"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02a948"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02aba4"
+offset = "2aba4"
+size = "98"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02aba4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ac3c"
+offset = "2ac3c"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ac3c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ac64"
+offset = "2ac64"
+size = "3c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ac64"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02acc4"
+offset = "2acc4"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02acc4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ad4c"
+offset = "2ad4c"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ad4c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02aea8"
+offset = "2aea8"
+size = "dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02aea8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b010"
+offset = "2b010"
+size = "74"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b010"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b084"
+offset = "2b084"
+size = "58"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b084"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b0dc"
+offset = "2b0dc"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b0dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b0f4"
+offset = "2b0f4"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b0f4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b128"
+offset = "2b128"
+size = "40"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b128"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b168"
+offset = "2b168"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b168"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b184"
+offset = "2b184"
+size = "40"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b184"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b1c4"
+offset = "2b1c4"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b1c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b1e0"
+offset = "2b1e0"
+size = "48"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b1e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b228"
+offset = "2b228"
+size = "ac"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b228"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b2d8"
+offset = "2b2d8"
+size = "f0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b2d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b3c8"
+offset = "2b3c8"
+size = "a8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b3c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b470"
+offset = "2b470"
+size = "54"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b470"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b4c4"
+offset = "2b4c4"
+size = "60"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b4c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b524"
+offset = "2b524"
+size = "13c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b524"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b660"
+offset = "2b660"
+size = "1e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b660"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b848"
+offset = "2b848"
+size = "e4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b848"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b92c"
+offset = "2b92c"
+size = "50"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b92c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b97c"
+offset = "2b97c"
+size = "34"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b97c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02b9b0"
+offset = "2b9b0"
+size = "460"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02b9b0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02be10"
+offset = "2be10"
+size = "530"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02be10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c340"
+offset = "2c340"
+size = "5c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c340"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c39c"
+offset = "2c39c"
+size = "70"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c39c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c40c"
+offset = "2c40c"
+size = "74"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c40c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c480"
+offset = "2c480"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c480"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c508"
+offset = "2c508"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c508"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c5e8"
+offset = "2c5e8"
+size = "d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c5e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c6c0"
+offset = "2c6c0"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c6c0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c794"
+offset = "2c794"
+size = "fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c794"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c8a8"
+offset = "2c8a8"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c8a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02c9a0"
+offset = "2c9a0"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02c9a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02cab4"
+offset = "2cab4"
+size = "cc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02cab4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02cbb8"
+offset = "2cbb8"
+size = "108"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02cbb8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ccf8"
+offset = "2ccf8"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ccf8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02cdd4"
+offset = "2cdd4"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02cdd4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02cea4"
+offset = "2cea4"
+size = "c4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02cea4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02cf7c"
+offset = "2cf7c"
+size = "fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02cf7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d08c"
+offset = "2d08c"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d08c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d180"
+offset = "2d180"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d180"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d2d0"
+offset = "2d2d0"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d2d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d3d8"
+offset = "2d3d8"
+size = "108"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d3d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d534"
+offset = "2d534"
+size = "c0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d534"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d60c"
+offset = "2d60c"
+size = "b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d60c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d6d4"
+offset = "2d6d4"
+size = "ac"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d6d4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d798"
+offset = "2d798"
+size = "110"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d798"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d8a8"
+offset = "2d8a8"
+size = "c4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d8a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02d9a4"
+offset = "2d9a4"
+size = "110"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02d9a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02dab4"
+offset = "2dab4"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02dab4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02dba8"
+offset = "2dba8"
+size = "104"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02dba8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02dce4"
+offset = "2dce4"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02dce4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ddc0"
+offset = "2ddc0"
+size = "bc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ddc0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02de90"
+offset = "2de90"
+size = "c4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02de90"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02df68"
+offset = "2df68"
+size = "fc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02df68"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e078"
+offset = "2e078"
+size = "c8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e078"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e158"
+offset = "2e158"
+size = "b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e158"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e220"
+offset = "2e220"
+size = "ac"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e220"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e2e4"
+offset = "2e2e4"
+size = "f4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e2e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e3f0"
+offset = "2e3f0"
+size = "3c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e3f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e42c"
+offset = "2e42c"
+size = "2c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e42c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e458"
+offset = "2e458"
+size = "148"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e458"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e5f0"
+offset = "2e5f0"
+size = "78"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e5f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e668"
+offset = "2e668"
+size = "ec"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e668"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e754"
+offset = "2e754"
+size = "1e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e754"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02e934"
+offset = "2e934"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02e934"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ea08"
+offset = "2ea08"
+size = "e4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ea08"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02eb1c"
+offset = "2eb1c"
+size = "150"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02eb1c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02eca8"
+offset = "2eca8"
+size = "d0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02eca8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02edac"
+offset = "2edac"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02edac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02eedc"
+offset = "2eedc"
+size = "16c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02eedc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f0c4"
+offset = "2f0c4"
+size = "cc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f0c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f1fc"
+offset = "2f1fc"
+size = "f4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f1fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f31c"
+offset = "2f31c"
+size = "164"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f31c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f4b8"
+offset = "2f4b8"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f4b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f5c8"
+offset = "2f5c8"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f5c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f6fc"
+offset = "2f6fc"
+size = "180"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f6fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02f8f4"
+offset = "2f8f4"
+size = "dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02f8f4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02fa38"
+offset = "2fa38"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02fa38"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02fb4c"
+offset = "2fb4c"
+size = "158"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02fb4c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02fcdc"
+offset = "2fcdc"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02fcdc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02fde0"
+offset = "2fde0"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02fde0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_02ff0c"
+offset = "2ff0c"
+size = "174"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_02ff0c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0300f8"
+offset = "300f8"
+size = "d0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0300f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_030224"
+offset = "30224"
+size = "100"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_030224"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_030350"
+offset = "30350"
+size = "164"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_030350"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0304ec"
+offset = "304ec"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0304ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0305fc"
+offset = "305fc"
+size = "e8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0305fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_030710"
+offset = "30710"
+size = "158"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_030710"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0308a0"
+offset = "308a0"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0308a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0309a4"
+offset = "309a4"
+size = "1d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0309a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_030bbc"
+offset = "30bbc"
+size = "2c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_030bbc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_030bec"
+offset = "30bec"
+size = "50"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_030bec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0310d0"
+offset = "310d0"
+size = "68"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0310d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_031154"
+offset = "31154"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_031154"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0311f0"
+offset = "311f0"
+size = "90"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0311f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_03128c"
+offset = "3128c"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_03128c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_031360"
+offset = "31360"
+size = "44"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_031360"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0314a8"
+offset = "314a8"
+size = "d4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0314a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_03157c"
+offset = "3157c"
+size = "28"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_03157c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0316bc"
+offset = "316bc"
+size = "10c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0316bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_0317dc"
+offset = "317dc"
+size = "6c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_0317dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4f4b80"
+offset = "4f4b80"
+size = "118"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4f4b80"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4f4c98"
+offset = "4f4c98"
+size = "88"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4f4c98"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4f8354"
+offset = "4f8354"
+size = "5dc"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4f8354"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4f8938"
+offset = "4f8938"
+size = "2f4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4f8938"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4fa028"
+offset = "4fa028"
+size = "134"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4fa028"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4fa754"
+offset = "4fa754"
+size = "e0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4fa754"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4fc7d8"
+offset = "4fc7d8"
+size = "120"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4fc7d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4fc904"
+offset = "4fc904"
+size = "f0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4fc904"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_4fcb90"
+offset = "4fcb90"
+size = "124"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_4fcb90"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_504680"
+offset = "504680"
+size = "314"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_504680"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_504994"
+offset = "504994"
+size = "1a0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_504994"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_50692c"
+offset = "50692c"
+size = "268"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_50692c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_507ef8"
+offset = "507ef8"
+size = "534"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_507ef8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_50842c"
+offset = "50842c"
+size = "2b0"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_50842c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_5086dc"
+offset = "5086dc"
+size = "d8"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_5086dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_5087b4"
+offset = "5087b4"
+size = "1e4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_5087b4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_5095a4"
+offset = "5095a4"
+size = "228"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_5095a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_50f2cc"
+offset = "50f2cc"
+size = "80"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_50f2cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_510b88"
+offset = "510b88"
+size = "ec"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_510b88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_512190"
+offset = "512190"
+size = "380"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_512190"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_5164bc"
+offset = "5164bc"
+size = "1f4"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_5164bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_532b50"
+offset = "532b50"
+size = "18"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_532b50"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_532b88"
+offset = "532b88"
+size = "1c"
+src = "lib/ctrsdk/sdk2.s"
+symbol = "A_532b88"
 library = "ctrsdk"
 score = 0

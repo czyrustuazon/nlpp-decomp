@@ -24,7 +24,9 @@ from ctrdecomp import config as c, callgraph as cg
 from capstone import Cs, CS_ARCH_ARM, CS_MODE_ARM
 
 SDK_LIBS = {'ctrsvc', 'ctrsdk', 'ctr-sdk'}
-WINDOWS = [(0x0, 0x40000), (0x4d0000, 0x560000)]   # where the seeds cluster (section 5 gap 3); spans are recomputed
+WINDOWS = [(0x0, 0x40000), (0x4d0000, 0x541bc0)]   # where the seeds cluster (section 5 gap 3); spans are recomputed
+# 0x541bc0 is where NintendoWare starts (IsValidBinaryFile 0x541ce0, GetNextBlockHeader 0x541d60, ParseClim 0x542c30
+# in lib/nw4c): the stretch after it is called from all over the game and is not CTR SDK.
 cfg = c.load(); code = cfg.code()
 funcs = cg.load_symbols(cfg, 'symbols/code.bin.csv'); info = {f[0]: f for f in funcs}
 graph = cg.build(cfg, funcs)

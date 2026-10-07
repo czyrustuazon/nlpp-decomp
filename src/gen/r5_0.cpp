@@ -26,38 +26,6 @@ extern char g_0082df04[];
 extern char g_008bfa28[];
 extern char g_008bfa44[];
 
-// FUN_0001852c
-u32 W_01852c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    r4 = (u32)g_008ab850;
-    r1 = 2132u;
-    *(u32*)(r4) = r0;
-    r0 = Fn_1fddd8_2(r0, r1);
-    r0 = Fn_0226a0_1(r0);
-    r3 = *(u32*)(r4);
-    fa = r0; fb = 0u;
-    *(u32*)(r3 + 2048) = r0;
-    if (fa == fb) goto L_18564;
-    r1 = 1u;
-    r0 = 0u;
-    *(u32*)(r4 + 4) = r1;
-    return r0;
-    L_18564:;
-    r0 = (u32)g_008aab1c;
-    r12 = *(u32*)(r0);
-    fa = r12; fb = 0u;
-    if (fa == fb) goto L_18584;
-    r2 = 0u;
-    r1 = 256u;
-    r0 = 65536u;
-    r0 = ((u32(*)(u32, u32, u32, u32))r12)(r0, r1, r2, r3);
-    L_18584:;
-    r1 = 0u;
-    r0 = ~0u;
-    *(u32*)(r4) = r1;
-    return r0;
-}
-
 // FUN_0005a0a8
 void W_05a0a8(u32 a0, u32 a1) {
     u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;

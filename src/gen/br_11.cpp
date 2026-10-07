@@ -90,36 +90,6 @@ u32 Fn_55d8b8_1(u32);
 u32 Fn_562c3c_2(u32, u32);
 extern char g_009e0124[];
 
-// FUN_004fd0c8
-u32 W_4fd0c8(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    fa = r1; fb = 0u;
-    r4 = r0;
-    if (fa == fb) goto L_4fd0e0;
-    r0 = Fn_021ccc_2(r0, r1);
-    goto L_4fd0e8;
-    L_4fd0e0:;
-    r0 = Fn_646540_1(r0);
-    L_4fd0e8:;
-    r0 = r4;
-    return r0;
-}
-
-// FUN_004fd0f0
-u32 W_4fd0f0(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    fa = r1; fb = 0u;
-    r4 = r0;
-    if (fa == fb) goto L_4fd108;
-    r0 = Fn_021ccc_2(r0, r1);
-    goto L_4fd110;
-    L_4fd108:;
-    r0 = Fn_646540_1(r0);
-    L_4fd110:;
-    r0 = r4;
-    return r0;
-}
-
 // FUN_005449b0
 void W_5449b0(u32 a0) {
     u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
