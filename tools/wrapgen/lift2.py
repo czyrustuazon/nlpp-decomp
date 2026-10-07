@@ -36,6 +36,8 @@ PASS = [False]
 SWAPS = [int(os.environ.get('LIFT_SWAPS', '0'))]   # base variants to expand with adjacent-statement swaps (+1.4% matches on samples, but 4x slower: off by default)
 EXTRA = [0]  # minimum number of incoming register arguments (PASS variants)
 CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
+SAVED = [False]   # an incoming arg register copied to r4+ and not rewritten is not an argument of the next call (`mov r4, r0; bl GetHandle`)
+OUTSTK = [False]  # [sp, #k] above the frame = incoming stack params; frame stores = outgoing stack args of the next call
 
 
 def lift(I, word, fname, variants=True):
@@ -79,6 +81,15 @@ def _lift_all(I, word, fname, variants=True):
                         if v not in res: res.append(v)
                 except ValueError: pass
     finally: PASS[0] = False; EXTRA[0] = 0
+    for flag in (SAVED, OUTSTK):
+        flag[0] = True
+        try:
+            for ssa in (True, False):
+                try:
+                    for v in _lift(I, word, fname, ssa, False):
+                        if v not in res: res.append(v)
+                except ValueError: pass
+        finally: flag[0] = False
     more = []
     for r in res:
         for v in (constprop(r), inline1(r)):
@@ -87,6 +98,7 @@ def _lift_all(I, word, fname, variants=True):
         v = constprop(v) if v else None
         if v: more.append(v)
     more += [v for v in (reassoc(r) for r in res + more) if v]
+    more += [v for v in (pdirect(r) for r in res + more) if v]
     if SWAPS[0]:
         for r in (res + more)[:SWAPS[0]]: more += swaps(r)
     return res + more
@@ -114,6 +126,8 @@ def _lift(I, word, fname, ssa, p64=False):
     cur = {}; ver = {}; newvars = []; curpred = [None]
     if ssa and targets: raise ValueError('ssa labels')
     tmp = [0]
+    saved = set(); outgoing = {}; pushall = [0]; subsz = [0]; sparams = set()
+    if OUTSTK[0] and any(re.fullmatch(r'\w+, sp(, .*)?', o) and m.startswith(('mov', 'add', 'sub')) and not o.startswith('sp') for m, o, _ in I): raise ValueError('outstk addr taken')
 
     def R(r):
         r = r.strip()
@@ -215,6 +229,10 @@ def _lift(I, word, fname, ssa, p64=False):
 
     def call_args(extra=None):
         a = []
+        if OUTSTK[0] and outgoing:
+            ks = sorted(outgoing)
+            if ks != list(range(len(ks))): raise ValueError('outstk gap')
+            a = [rd('r%d' % k) for k in range(4)] + [outgoing[k] for k in ks]; outgoing.clear(); return a
         if PASS[0]:   # arguments are the untouched incoming registers (a clobbered temp means the callee takes fewer)
             if 0 not in defined and defined & {1, 2, 3}: rd('r0')
             a = []
@@ -223,6 +241,7 @@ def _lift(I, word, fname, ssa, p64=False):
                 else: break
             return a
         for k in range(4):
+            if SAVED[0] and k in saved and k not in wrote: break
             if k in defined: a.append(cur.get(k, 'r%d' % k) if ssa else 'r%d' % k)
             elif k == 0 and not defined & {0, 1, 2, 3}: break
             else: break
@@ -332,11 +351,12 @@ def _lift(I, word, fname, ssa, p64=False):
         cs = cond(c) if (c and b not in ('b',)) or (c and b == 'b') else None
         curpred[0] = cs if b not in ('b', 'bx', 'pop') else None
         if b == 'push':
+            pushall[0] += 4 * len(o.split(','))
             frame[0] += 4 * sum(1 for r in re.findall(r'r\d+', o) if int(r[1:]) <= 3)   # caller-saved regs pushed as stack slots
             continue
         if b == 'nop': continue
         if b in ('add', 'sub') and re.fullmatch(r'sp, sp, #(0x[0-9a-f]+|\d+)', o.strip()):
-            if b == 'sub': frame[0] += int(o.split('#')[1], 0)
+            if b == 'sub': frame[0] += int(o.split('#')[1], 0); subsz[0] += int(o.split('#')[1], 0)
             continue
         if b == 'str' and o.strip() == 'lr, [sp, #-4]!': continue
         if b == 'ldr' and o.strip() == 'lr, [sp], #4': continue
@@ -366,7 +386,10 @@ def _lift(I, word, fname, ssa, p64=False):
             defined.add(0); continue
         if b in ('mov', 'mvn'):
             d, src = [x.strip() for x in o.split(',', 1)]
-            v = op2(src)
+            if b == 'mov' and re.fullmatch(r'r([4-9]|1[01])|fp|sl|sb', d) and re.fullmatch(r'r[0-3]', src) and int(src[1]) not in wrote: saved.add(int(src[1]))
+            if SAVED[0] and ssa and not cs and b == 'mov' and re.fullmatch(r'r[0-3]', src) and int(src[1]) in saved and re.fullmatch(r'r([4-9]|1[01])|fp|sl|sb', d):
+                k_ = R(d); rd(src); cur[k_] = cur.get(int(src[1]), src); defined.add(k_); continue   # alias: source uses the parameter itself
+            v = '__current_pc()' if b == 'mov' and src == 'pc' else op2(src)   # SDK result checks pass the pc to the fatal handler
             if b == 'mvn': v = f'~{v}'
             emit(f'{wr(d)} = {v};', cs)
             if s: flags[0] = ('nz', cname(d))
@@ -442,11 +465,19 @@ def _lift(I, word, fname, ssa, p64=False):
                     decls.add(f'extern char g_{w:08x}[];'); v = f'(u32)g_{w:08x}'
                 else: v = f'{w}u'
                 emit(f'{wr(mm.group(1))} = {v};', cs); continue
+            mm = re.fullmatch(r'(\w+), \[sp(?:, #(0x[0-9a-f]+|\d+))?\]', o)
+            if OUTSTK[0] and mm and b == 'ldr' and int(mm.group(2) or '0', 0) >= pushall[0] + subsz[0]:
+                j = (int(mm.group(2) or '0', 0) - pushall[0] - subsz[0]) // 4; sparams.add(j)
+                emit(f'{wr(mm.group(1))} = a{4 + j};', cs); continue
             d, addr, pre, post = mem(o)
             if ssa and (pre or post): raise ValueError('ssa writeback')
             ty = {'ldr': 'u32', 'ldrb': 'u8', 'ldrh': 'u16', 'ldrsb': 'signed char', 'ldrsh': 'short'}[b]
             emit(f'{pre} {wr(d)} = *({ty}*)({addr}); {post}'.replace('  ', ' ').strip(), cs); continue
         if b in ('str', 'strb', 'strh'):
+            mm = re.fullmatch(r'(\w+), \[sp(?:, #(0x[0-9a-f]+|\d+))?\]', o)
+            if OUTSTK[0] and mm:
+                if b != 'str' or cs: raise ValueError('outstk store')
+                outgoing[int(mm.group(2) or '0', 0) // 4] = rd(mm.group(1)); continue
             d, addr, pre, post = mem(o)
             if ssa and (pre or post): raise ValueError('ssa writeback')
             ty = {'str': 'u32', 'strb': 'u8', 'strh': 'u16'}[b]
@@ -505,7 +536,11 @@ def _lift(I, word, fname, ssa, p64=False):
         raise ValueError('op ' + m + ' ' + o)
     if not (I[-1][0] == 'mov' and I[-1][1].strip() == 'r0, r0') and I[-1][0] not in ('pop', 'bx', 'b') and not re.match(r'(pop|bx|b|ldr)', I[-1][0]): raise ValueError('falls off')
     if sorted(fparams) != list(range(len(fparams))): raise ValueError('float param gap')
+    if sparams:
+        if sorted(sparams) != list(range(len(sparams))): raise ValueError('stack param gap')
+        params.update(range(4))
     pl = ', '.join([f'u32 a{k}' for k in range(max(params) + 1)] if params else []) 
+    if sparams: pl += ', ' + ', '.join(f'u32 a{4 + j}' for j in sorted(sparams))
     if fparams: pl += (', ' if pl else '') + ', '.join(f'float p{k}' for k in sorted(fparams))
     pre = ''.join(f'    u32 r{k}{" = a%d" % k if k in params else ""};\n' for k in range(13) if True) if False else ''
     regdecl = ', '.join(f'r{k}' + (f' = a{k}' if k in params else '') for k in range(13)) + ", fa, fb, fx"
@@ -520,7 +555,7 @@ def _lift(I, word, fname, ssa, p64=False):
                 m1 = re.fullmatch(r'(r\d+_\d+) = (.*);', out[i2])
                 if m1 and i2 + 1 < len(out) and out[i2 + 1] == f'stk = {m1.group(1)};':
                     o2.append(f'stk = {m1.group(2)};')
-                    for j in range(i2 + 2, len(out)): out[j] = re.sub(r'%s' % m1.group(1), 'stk', out[j])
+                    for j in range(i2 + 2, len(out)): out[j] = re.sub(r'\b%s\b' % m1.group(1), 'stk', out[j])
                     i2 += 2
                 else: o2.append(out[i2]); i2 += 1
             out = o2
@@ -568,6 +603,22 @@ def constprop(r):
     txt = '\n'.join(out)
     for k, v in consts.items(): txt = _sub(k, v, txt)
     return (decls, txt.replace('fx, ' + ', '.join(consts.values()) + ', ', 'fx, '), calls) if False else (decls, _keepdecl(body, txt), calls)
+
+
+def pdirect(r):
+    """Variant using the parameters themselves (`a0`) where the register copy (`u32 r0 = a0`) is never reassigned: at -O2
+    the copy changes which callee-saved register each parameter gets (`mov r5, r0; mov r4, r1` instead of r4, r5)."""
+    decls, body, calls = r
+    NL = chr(10); L = body.split(NL)
+    di = next((j for j, l in enumerate(L) if ' fa, fb, fx' in l), None)
+    if di is None: return None
+    rest = NL.join(L[:di] + L[di + 1:]); dl = L[di]; changed = False
+    for k, a in re.findall(r'\b(r\d+) = (a\d+)\b', dl):
+        if re.search(r'\b%s\b(?!_)\s*=(?!=)' % k, rest) or re.search(r'&%s\b(?!_)' % k, rest): continue
+        rest = _sub(k, a, rest); dl = dl.replace(f'{k} = {a}', k, 1); changed = True
+    if not changed: return None
+    R_ = rest.split(NL)
+    return (decls, NL.join(R_[:di] + [dl] + R_[di:]), calls)
 
 
 def reassoc(r):

@@ -94576,3 +94576,3591 @@ src = "src/gen/ex_0.cpp"
 symbol = "_Z8W_643b40jj"
 generated = true
 score = 0
+
+[[function]]
+name = "W_01d510"
+offset = "1d510"
+size = "24"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_01d510v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_01d5a4"
+offset = "1d5a4"
+size = "2c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_01d5a4j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_01d604"
+offset = "1d604"
+size = "24"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_01d604v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_01d980"
+offset = "1d980"
+size = "70"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_01d980v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_2d7610"
+offset = "2d7610"
+size = "6c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_2d7610j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e81bc"
+offset = "4e81bc"
+size = "70"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e81bcjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e869c"
+offset = "4e869c"
+size = "38"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e869cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e8970"
+offset = "4e8970"
+size = "48"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e8970jjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e8ff8"
+offset = "4e8ff8"
+size = "24"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e8ff8v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e93c8"
+offset = "4e93c8"
+size = "24"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e93c8j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e9820"
+offset = "4e9820"
+size = "44"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e9820jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e9bc4"
+offset = "4e9bc4"
+size = "2c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e9bc4v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e9c84"
+offset = "4e9c84"
+size = "2c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e9c84v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e9f50"
+offset = "4e9f50"
+size = "5c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e9f50jjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4ea6ec"
+offset = "4ea6ec"
+size = "48"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4ea6ecv"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4ed20c"
+offset = "4ed20c"
+size = "3c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4ed20cjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4f3738"
+offset = "4f3738"
+size = "3c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4f3738v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4fd2c8"
+offset = "4fd2c8"
+size = "38"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4fd2c8v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4fd3e4"
+offset = "4fd3e4"
+size = "38"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4fd3e4v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_51e040"
+offset = "51e040"
+size = "3c"
+src = "src/gen/ipc_o2_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_51e040j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4f387c"
+offset = "4f387c"
+size = "3c"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4f387cv"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4fd15c"
+offset = "4fd15c"
+size = "3c"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4fd15cv"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4fd328"
+offset = "4fd328"
+size = "48"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4fd328j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4fd3ac"
+offset = "4fd3ac"
+size = "38"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4fd3acv"
+generated = true
+score = 0
+
+[[function]]
+name = "W_51aab0"
+offset = "51aab0"
+size = "68"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_51aab0v"
+generated = true
+score = 0
+
+[[function]]
+name = "W_51d8e0"
+offset = "51d8e0"
+size = "44"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_51d8e0j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_51dac4"
+offset = "51dac4"
+size = "44"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_51dac4j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_61d3a8"
+offset = "61d3a8"
+size = "b4"
+src = "src/gen/ipc_o2b_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_61d3a8j"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e7764"
+offset = "4e7764"
+size = "28"
+src = "src/gen/ipc_o2c_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e7764jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e77b0"
+offset = "4e77b0"
+size = "28"
+src = "src/gen/ipc_o2c_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e77b0jj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e7da0"
+offset = "4e7da0"
+size = "30"
+src = "src/gen/ipc_o2c_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e7da0jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4e8dac"
+offset = "4e8dac"
+size = "30"
+src = "src/gen/ipc_o2c_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4e8dacjjj"
+generated = true
+score = 0
+
+[[function]]
+name = "W_4ef780"
+offset = "4ef780"
+size = "30"
+src = "src/gen/ipc_o2c_0.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O2", "-Otime", "--split_sections"]
+symbol = "_Z8W_4ef780jjj"
+generated = true
+score = 0
+
+[[function]]
+name = "fs_USER_SetPriority_5194"
+offset = "5194"
+size = "bc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_SetPriority_5194"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "hid_USER_GetIPCHandles"
+offset = "5ff8"
+size = "14"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "hid_USER_GetIPCHandles"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ndm_u_OverrideDefaultDaemons"
+offset = "61f0"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ndm_u_OverrideDefaultDaemons"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd2"
+offset = "6244"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd2"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Multi2_6494"
+offset = "6494"
+size = "160"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Multi2_6494"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Initialize"
+offset = "6604"
+size = "164"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Initialize"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Enable"
+offset = "6768"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Enable"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "hid_USER_EnableGyroscopeLow"
+offset = "8674"
+size = "200"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "hid_USER_EnableGyroscopeLow"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmdb_8964"
+offset = "8964"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmdb_8964"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd1"
+offset = "8b0c"
+size = "a0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd1"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Multi2_9028"
+offset = "9028"
+size = "174"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Multi2_9028"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "hid_USER_EnableAccelerometer"
+offset = "119d8"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "hid_USER_EnableAccelerometer"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_1231c"
+offset = "1231c"
+size = "d0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_1231c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Multi2_12940"
+offset = "12940"
+size = "358"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Multi2_12940"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "hid_USER_Multi2_1bca4"
+offset = "1bca4"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "hid_USER_Multi2_1bca4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd16_1cd84"
+offset = "1cd84"
+size = "108"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd16_1cd84"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd16_1cecc"
+offset = "1cecc"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd16_1cecc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd17_1cf34"
+offset = "1cf34"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd17_1cf34"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd2_1cfb0"
+offset = "1cfb0"
+size = "34"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd2_1cfb0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_AppletUtility"
+offset = "1d2c4"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_AppletUtility"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_CancelParameter"
+offset = "1d478"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_CancelParameter"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_SendParameter"
+offset = "1d628"
+size = "1f4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_SendParameter"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_UnloadComponent_24798"
+offset = "24798"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_UnloadComponent_24798"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_LoadComponent"
+offset = "24800"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_LoadComponent"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd13_25420"
+offset = "25420"
+size = "1f0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd13_25420"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd14_25658"
+offset = "25658"
+size = "ec"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd14_25658"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_SetClientVersion_4e10ac"
+offset = "4e10ac"
+size = "118"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_SetClientVersion_4e10ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_IsConnected_4e11c4"
+offset = "4e11c4"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_IsConnected_4e11c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_IsConnected_4e122c"
+offset = "4e122c"
+size = "60"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_IsConnected_4e122c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e128c"
+offset = "4e128c"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e128c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e13dc"
+offset = "4e13dc"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e13dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi3_4e14b0"
+offset = "4e14b0"
+size = "bc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi3_4e14b0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi3_4e1674"
+offset = "4e1674"
+size = "bc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi3_4e1674"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e1760"
+offset = "4e1760"
+size = "10c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e1760"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_i_SetClientVersion_4e186c"
+offset = "4e186c"
+size = "12c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_i_SetClientVersion_4e186c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi3_4e1a14"
+offset = "4e1a14"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi3_4e1a14"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi5_4e1acc"
+offset = "4e1acc"
+size = "c8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi5_4e1acc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e1ba0"
+offset = "4e1ba0"
+size = "c8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e1ba0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e1c88"
+offset = "4e1c88"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e1c88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e740c"
+offset = "4e740c"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e740c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ndm_u_LeaveExclusiveState_4e74d4"
+offset = "4e74d4"
+size = "d0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ndm_u_LeaveExclusiveState_4e74d4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_Multi2_4e75a4"
+offset = "4e75a4"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_Multi2_4e75a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_GetCardType_4e7800"
+offset = "4e7800"
+size = "1c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_GetCardType_4e7800"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_ControlArchive_4e7870"
+offset = "4e7870"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_ControlArchive_4e7870"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_ControlArchive_4e7b78"
+offset = "4e7b78"
+size = "5c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_ControlArchive_4e7b78"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_FormatSaveData_4e7bf4"
+offset = "4e7bf4"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_FormatSaveData_4e7bf4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_FormatSaveData_4e7c6c"
+offset = "4e7c6c"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_FormatSaveData_4e7c6c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CardSlotIsInserted_4e7cfc"
+offset = "4e7cfc"
+size = "34"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CardSlotIsInserted_4e7cfc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_IsSdmcDetected_4e7d34"
+offset = "4e7d34"
+size = "34"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_IsSdmcDetected_4e7d34"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_IsSdmcWritable_4e7d6c"
+offset = "4e7d6c"
+size = "34"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_IsSdmcWritable_4e7d6c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CreateExtSaveData_4e8128"
+offset = "4e8128"
+size = "94"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CreateExtSaveData_4e8128"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_AbnegateAccessRight_4e8670"
+offset = "4e8670"
+size = "28"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_AbnegateAccessRight_4e8670"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_QueryTotalQuotaSize_4e88a8"
+offset = "4e88a8"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_QueryTotalQuotaSize_4e88a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_ReadExtSaveDataIcon_4e88ec"
+offset = "4e88ec"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_ReadExtSaveDataIcon_4e88ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_ControlArchive_4e89b8"
+offset = "4e89b8"
+size = "5c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_ControlArchive_4e89b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4e8a14"
+offset = "4e8a14"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4e8a14"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_EnumerateExtSaveData_4e8af0"
+offset = "4e8af0"
+size = "94"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_EnumerateExtSaveData_4e8af0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd872"
+offset = "4e8d54"
+size = "38"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd872"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_FormatSaveData_4e8ddc"
+offset = "4e8ddc"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_FormatSaveData_4e8ddc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4e8e68"
+offset = "4e8e68"
+size = "a8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4e8e68"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_GetArchiveResource_4e8f10"
+offset = "4e8f10"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_GetArchiveResource_4e8f10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4e9020"
+offset = "4e9020"
+size = "104"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4e9020"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_SetFsCompatibilityInfo_4e91f8"
+offset = "4e91f8"
+size = "2c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_SetFsCompatibilityInfo_4e91f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd873"
+offset = "4e922c"
+size = "28"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd873"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4e9258"
+offset = "4e9258"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4e9258"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_GetExtDataBlockSize_4e933c"
+offset = "4e933c"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_GetExtDataBlockSize_4e933c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CreateSystemSaveData_4e94cc"
+offset = "4e94cc"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CreateSystemSaveData_4e94cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_DeleteSystemSaveData_4e9548"
+offset = "4e9548"
+size = "1c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_DeleteSystemSaveData_4e9548"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd9_4e960c"
+offset = "4e960c"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd9_4e960c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd9_4e9658"
+offset = "4e9658"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd9_4e9658"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_File_Read_4e9728"
+offset = "4e9728"
+size = "f4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_File_Read_4e9728"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd9_4e9864"
+offset = "4e9864"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd9_4e9864"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_DeleteAllExtSaveDataOnNand_4e98b8"
+offset = "4e98b8"
+size = "1c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_DeleteAllExtSaveDataOnNand_4e98b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_EnumerateExtSaveData_4e98d8"
+offset = "4e98d8"
+size = "60"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_EnumerateExtSaveData_4e98d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_FormatSaveData_4e9938"
+offset = "4e9938"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_FormatSaveData_4e9938"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_FormatSaveData_4e99bc"
+offset = "4e99bc"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_FormatSaveData_4e99bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd876"
+offset = "4e9a3c"
+size = "6c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd876"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd875"
+offset = "4e9b6c"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd875"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_SetPriority_4e9dbc"
+offset = "4e9dbc"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_SetPriority_4e9dbc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_SwitchCleanupInvalidSaveData_4e9f04"
+offset = "4e9f04"
+size = "1c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_SwitchCleanupInvalidSaveData_4e9f04"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CreateSystemSaveData_4ea154"
+offset = "4ea154"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CreateSystemSaveData_4ea154"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_DeleteSystemSaveData_4ea1ec"
+offset = "4ea1ec"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_DeleteSystemSaveData_4ea1ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_ResetCardCompatibilityParameter_4ea2a0"
+offset = "4ea2a0"
+size = "1c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_ResetCardCompatibilityParameter_4ea2a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CheckAuthorityToAccessExtSaveData_4ea33c"
+offset = "4ea33c"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CheckAuthorityToAccessExtSaveData_4ea33c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4ea5b0"
+offset = "4ea5b0"
+size = "a8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4ea5b0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4ea8d8"
+offset = "4ea8d8"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4ea8d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_ReadSpecialFile_4ea9a0"
+offset = "4ea9a0"
+size = "2c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_ReadSpecialFile_4ea9a0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4ea9d0"
+offset = "4ea9d0"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4ea9d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4eab04"
+offset = "4eab04"
+size = "e8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4eab04"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Multi2_4eadcc"
+offset = "4eadcc"
+size = "280"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Multi2_4eadcc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4ec858"
+offset = "4ec858"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4ec858"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_Initialize_4ec91c"
+offset = "4ec91c"
+size = "24"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_Initialize_4ec91c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CreateFile_4ec9e4"
+offset = "4ec9e4"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CreateFile_4ec9e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_DeleteFile_4eca54"
+offset = "4eca54"
+size = "5c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_DeleteFile_4eca54"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenDirectory_4ecbc4"
+offset = "4ecbc4"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenDirectory_4ecbc4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CreateDirectory_4ecc70"
+offset = "4ecc70"
+size = "5c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CreateDirectory_4ecc70"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_DeleteDirectory_4ecccc"
+offset = "4ecccc"
+size = "5c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_DeleteDirectory_4ecccc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_SetArchivePriority_4ecdc0"
+offset = "4ecdc0"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_SetArchivePriority_4ecdc0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_DeleteDirectoryRecursively_4ecdfc"
+offset = "4ecdfc"
+size = "5c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_DeleteDirectoryRecursively_4ecdfc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd801"
+offset = "4ecec8"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd801"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_File_Close_4ecf18"
+offset = "4ecf18"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_File_Close_4ecf18"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_File_Read_4ecf88"
+offset = "4ecf88"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_File_Read_4ecf88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_File_Write_4ecfc8"
+offset = "4ecfc8"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_File_Write_4ecfc8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_File_Write_4ed050"
+offset = "4ed050"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_File_Write_4ed050"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmdc01"
+offset = "4ed0e0"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmdc01"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenFile_4ed14c"
+offset = "4ed14c"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenFile_4ed14c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd802"
+offset = "4ed248"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd802"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4ed450"
+offset = "4ed450"
+size = "134"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4ed450"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4ed740"
+offset = "4ed740"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4ed740"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4ed7f8"
+offset = "4ed7f8"
+size = "b4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4ed7f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4ed8ac"
+offset = "4ed8ac"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4ed8ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4ed96c"
+offset = "4ed96c"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4ed96c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_OpenArchive_4eda24"
+offset = "4eda24"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_OpenArchive_4eda24"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CardNorDirectRead_4ef710"
+offset = "4ef710"
+size = "30"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CardNorDirectRead_4ef710"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CardNorDirectReadWithAddress_4ef740"
+offset = "4ef740"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CardNorDirectReadWithAddress_4ef740"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CardNorDirectWriteWithAddress_4ef7b0"
+offset = "4ef7b0"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CardNorDirectWriteWithAddress_4ef7b0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CardNorDirectCommandWithAddress_4efb00"
+offset = "4efb00"
+size = "28"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CardNorDirectCommandWithAddress_4efb00"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_SetPriority_4efc88"
+offset = "4efc88"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_SetPriority_4efc88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_CardNorDirectRead_4xIO_4efd44"
+offset = "4efd44"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_CardNorDirectRead_4xIO_4efd44"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_Disconnect_4f0088"
+offset = "4f0088"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_Disconnect_4f0088"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_InitializeIrnopShared_4f00c8"
+offset = "4f00c8"
+size = "1a0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_InitializeIrnopShared_4f00c8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmdc_4f02f8"
+offset = "4f02f8"
+size = "8d8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmdc_4f02f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_GetSendEvent_4f0bd0"
+offset = "4f0bd0"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_GetSendEvent_4f0bd0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_AnyConnection_4f0c14"
+offset = "4f0c14"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_AnyConnection_4f0c14"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_AutoConnection_4f0ddc"
+offset = "4f0ddc"
+size = "bc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_AutoConnection_4f0ddc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_AutoConnection_4f0e98"
+offset = "4f0e98"
+size = "64"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_AutoConnection_4f0e98"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_WaitConnection_4f0f78"
+offset = "4f0f78"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_WaitConnection_4f0f78"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_WaitConnection_4f0fcc"
+offset = "4f0fcc"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_WaitConnection_4f0fcc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_ClearSendBuffer_4f1240"
+offset = "4f1240"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_ClearSendBuffer_4f1240"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_GetReceiveEvent_4f1280"
+offset = "4f1280"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_GetReceiveEvent_4f1280"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmdc_4f1320"
+offset = "4f1320"
+size = "ec"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmdc_4f1320"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_RequireConnection_4f1ac8"
+offset = "4f1ac8"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_RequireConnection_4f1ac8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_ClearReceiveBuffer_4f20d8"
+offset = "4f20d8"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_ClearReceiveBuffer_4f20d8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_ReleaseReceivedData_4f2b38"
+offset = "4f2b38"
+size = "134"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_ReleaseReceivedData_4f2b38"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_ReleaseReceivedData_4f2d44"
+offset = "4f2d44"
+size = "d4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_ReleaseReceivedData_4f2d44"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmdc_4f30cc"
+offset = "4f30cc"
+size = "e4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmdc_4f30cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_GetConnectionStatusEvent_4f33c4"
+offset = "4f33c4"
+size = "44"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_GetConnectionStatusEvent_4f33c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_cmd12"
+offset = "4f3408"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_cmd12"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd9_4f34bc"
+offset = "4f34bc"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd9_4f34bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmdc_4f36a4"
+offset = "4f36a4"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmdc_4f36a4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd9_4f36e4"
+offset = "4f36e4"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd9_4f36e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_cmd11"
+offset = "4f3778"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_cmd11"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_Multi2_4f3c14"
+offset = "4f3c14"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_Multi2_4f3c14"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_ReleaseReceivedData_4f4378"
+offset = "4f4378"
+size = "184"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_ReleaseReceivedData_4f4378"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ir_USER_FinalizeIrnop_4f44fc"
+offset = "4f44fc"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ir_USER_FinalizeIrnop_4f44fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_GenHashConsoleUnique_4fabb0"
+offset = "4fabb0"
+size = "64"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_GenHashConsoleUnique_4fabb0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_ReadMessage_4faf88"
+offset = "4faf88"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_ReadMessage_4faf88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_WriteMessage_4fb02c"
+offset = "4fb02c"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_WriteMessage_4fb02c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_OpenAndRead_4fb094"
+offset = "4fb094"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_OpenAndRead_4fb094"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_OpenAndWrite_4fb0fc"
+offset = "4fb0fc"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_OpenAndWrite_4fb0fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_WriteMessageWithHMAC_4fb258"
+offset = "4fb258"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_WriteMessageWithHMAC_4fb258"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_Write_WriteRawFile_4fbb40"
+offset = "4fbb40"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_Write_WriteRawFile_4fbb40"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_Delete_4fc704"
+offset = "4fc704"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_Delete_4fc704"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cecd_s_ReadData_GetSystemInfo_4fc78c"
+offset = "4fc78c"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cecd_s_ReadData_GetSystemInfo_4fc78c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_4fd198"
+offset = "4fd198"
+size = "38"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_4fd198"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_4fd1d0"
+offset = "4fd1d0"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_4fd1d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_4fd248"
+offset = "4fd248"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_4fd248"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GenHashConsoleUnique"
+offset = "4fd300"
+size = "28"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GenHashConsoleUnique"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_4fd370"
+offset = "4fd370"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_4fd370"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_4fd41c"
+offset = "4fd41c"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_4fd41c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_4fd48c"
+offset = "4fd48c"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_4fd48c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_GetSemaphore"
+offset = "500738"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_GetSemaphore"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_Multi3_500888"
+offset = "500888"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_Multi3_500888"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_SendDataIsEmpty"
+offset = "5009e4"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_SendDataIsEmpty"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_Multi2_500b90"
+offset = "500b90"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_Multi2_500b90"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_Multi2_500c54"
+offset = "500c54"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_Multi2_500c54"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_Multi2_500d14"
+offset = "500d14"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_Multi2_500d14"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_RegisterInterruptEvents"
+offset = "500e28"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_RegisterInterruptEvents"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_ConvertProcessAddressFromDspDram"
+offset = "500f68"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_ConvertProcessAddressFromDspDram"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_SendData"
+offset = "501638"
+size = "34"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_SendData"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "dsp__DSP_cmd2"
+offset = "501798"
+size = "b0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "dsp__DSP_cmd2"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_cmd10_503610"
+offset = "503610"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_cmd10_503610"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_Multi2_503724"
+offset = "503724"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_Multi2_503724"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_Multi2_5037dc"
+offset = "5037dc"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_Multi2_5037dc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_SetIirFilterMic_503968"
+offset = "503968"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_SetIirFilterMic_503968"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_Multi3_503a20"
+offset = "503a20"
+size = "7c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_Multi3_503a20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_cmd10_503a9c"
+offset = "503a9c"
+size = "a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_cmd10_503a9c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_Multi3_503f20"
+offset = "503f20"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_Multi3_503f20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_MapSharedMem_503fa0"
+offset = "503fa0"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_MapSharedMem_503fa0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cfg_i_GetConfigInfoBlk2_512b1c"
+offset = "512b1c"
+size = "e0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cfg_i_GetConfigInfoBlk2_512b1c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd403"
+offset = "51782c"
+size = "7c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd403"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmd404"
+offset = "5179a4"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmd404"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "srv_pm_cmdb_517af8"
+offset = "517af8"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "srv_pm_cmdb_517af8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_GetChannel"
+offset = "518678"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_GetChannel"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ndm_u_Multi2_5186f0"
+offset = "5186f0"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ndm_u_Multi2_5186f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ndm_u_Multi2_5187b4"
+offset = "5187b4"
+size = "c4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ndm_u_Multi2_5187b4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_EjectClient"
+offset = "518878"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_EjectClient"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_PullPacket"
+offset = "518900"
+size = "1bc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_PullPacket"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_Multi2_518b40"
+offset = "518b40"
+size = "178"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_Multi2_518b40"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_UpdateNetworkAttribute_518d14"
+offset = "518d14"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_UpdateNetworkAttribute_518d14"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_ConnectNetwork2"
+offset = "518d8c"
+size = "f4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_ConnectNetwork2"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_DestroyNetwork"
+offset = "518f64"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_DestroyNetwork"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_EjectSpectator"
+offset = "518fd4"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_EjectSpectator"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_UpdateNetworkAttribute_519044"
+offset = "519044"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_UpdateNetworkAttribute_519044"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_ScanOnConnection_5191a8"
+offset = "5191a8"
+size = "140"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_ScanOnConnection_5191a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_UpdateNetworkAttribute_519414"
+offset = "519414"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_UpdateNetworkAttribute_519414"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_DisconnectNetwork"
+offset = "519498"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_DisconnectNetwork"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_GetNodeInformation_5195c4"
+offset = "5195c4"
+size = "16c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_GetNodeInformation_5195c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_GetConnectionStatus"
+offset = "519940"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_GetConnectionStatus"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_SetApplicationData"
+offset = "519b80"
+size = "60"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_SetApplicationData"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_GetApplicationData"
+offset = "519be8"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_GetApplicationData"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_GetNodeInformationList2"
+offset = "519d58"
+size = "174"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_GetNodeInformationList2"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_SendTo"
+offset = "51a1dc"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_SendTo"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_Finalize"
+offset = "51a2a8"
+size = "100"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_Finalize"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_InitializeWithVersion"
+offset = "51a3a8"
+size = "23c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_InitializeWithVersion"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_Unbind"
+offset = "51a5e4"
+size = "138"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_Unbind"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_cmd23_51a71c"
+offset = "51a71c"
+size = "13c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_cmd23_51a71c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_cmd23_51a858"
+offset = "51a858"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_cmd23_51a858"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_cmd23_51a8e4"
+offset = "51a8e4"
+size = "a8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_cmd23_51a8e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_cmd19"
+offset = "51aa50"
+size = "60"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_cmd19"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_cmd18"
+offset = "51ab18"
+size = "60"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_cmd18"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_GetNodeInformation_51ac08"
+offset = "51ac08"
+size = "6c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_GetNodeInformation_51ac08"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_ScanOnConnection_51adf4"
+offset = "51adf4"
+size = "114"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_ScanOnConnection_51adf4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_cmd23_51af30"
+offset = "51af30"
+size = "48"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_cmd23_51af30"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "nwm__UDS_Flush"
+offset = "51b7f8"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "nwm__UDS_Flush"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd11"
+offset = "51b8f0"
+size = "30"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd11"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd12"
+offset = "51b92c"
+size = "30"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd12"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd10"
+offset = "51b968"
+size = "30"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd2c"
+offset = "51b99c"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd2c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd18"
+offset = "51b9d8"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd18"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd13"
+offset = "51ba30"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd13"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmd2b"
+offset = "51ba6c"
+size = "a8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmd2b"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "y2r_u_cmdf"
+offset = "51bc2c"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "y2r_u_cmdf"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_CancelTaskPrivileged_51c858"
+offset = "51c858"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_CancelTaskPrivileged_51c858"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetAppIdList_51ccbc"
+offset = "51ccbc"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetAppIdList_51ccbc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetErrorCode"
+offset = "51cd14"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetErrorCode"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskQueryPrivileged_51cd88"
+offset = "51cd88"
+size = "b0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskQueryPrivileged_51cd88"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_RegisterTask"
+offset = "51d08c"
+size = "1e8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_RegisterTask"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetStepIdList"
+offset = "51d320"
+size = "c8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetStepIdList"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetStepIdListPrivileged_51d3e8"
+offset = "51d3e8"
+size = "b4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetStepIdListPrivileged_51d3e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskIdList"
+offset = "51d49c"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskIdList"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetStorageInfo"
+offset = "51d5e0"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetStorageInfo"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_UnregisterTask"
+offset = "51d6e4"
+size = "a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_UnregisterTask"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_UnregisterTaskPrivileged_51d788"
+offset = "51d788"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_UnregisterTaskPrivileged_51d788"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_SetStorageInfo"
+offset = "51d810"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_SetStorageInfo"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_StartTaskImmediatePrivileged_51db08"
+offset = "51db08"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_StartTaskImmediatePrivileged_51db08"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskFinishHandle_51dba0"
+offset = "51dba0"
+size = "190"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskFinishHandle_51dba0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_Multi2_51dd6c"
+offset = "51dd6c"
+size = "a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_Multi2_51dd6c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskPriorityPrivileged_51de10"
+offset = "51de10"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskPriorityPrivileged_51de10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetNsDataIdList2"
+offset = "51dec8"
+size = "108"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetNsDataIdList2"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskFinishHandle_51e250"
+offset = "51e250"
+size = "174"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskFinishHandle_51e250"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_UpdateTaskCount"
+offset = "51e3c4"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_UpdateTaskCount"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskStatus"
+offset = "51e45c"
+size = "f0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskStatus"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_StartTaskImmediate"
+offset = "51e54c"
+size = "a0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_StartTaskImmediate"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_StartTask"
+offset = "51e5ec"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_StartTask"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_CancelTask"
+offset = "51e678"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_CancelTask"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskCount"
+offset = "51e704"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskCount"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskError"
+offset = "51e794"
+size = "e0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskError"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_GetTaskResult"
+offset = "51e874"
+size = "ec"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_GetTaskResult"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_Multi2_51e9bc"
+offset = "51e9bc"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_Multi2_51e9bc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_Multi2_51ea68"
+offset = "51ea68"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_Multi2_51ea68"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_Multi2_51eb00"
+offset = "51eb00"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_Multi2_51eb00"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_Multi4_51eb8c"
+offset = "51eb8c"
+size = "2a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_Multi4_51eb8c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_cmd1"
+offset = "51ef04"
+size = "a0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_cmd1"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_SendPropertyHandle"
+offset = "520bd8"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_SendPropertyHandle"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_SendProperty_520c84"
+offset = "520c84"
+size = "b8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_SendProperty_520c84"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_ReceiveProperty_521750"
+offset = "521750"
+size = "100"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_ReceiveProperty_521750"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_SendProperty_521890"
+offset = "521890"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_SendProperty_521890"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_ReceiveProperty_521904"
+offset = "521904"
+size = "9c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_ReceiveProperty_521904"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "boss_StartTaskPrivileged_522278"
+offset = "522278"
+size = "9c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "boss_StartTaskPrivileged_522278"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmdb_5335b8"
+offset = "5335b8"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmdb_5335b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmdb_533678"
+offset = "533678"
+size = "2c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmdb_533678"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd15_533700"
+offset = "533700"
+size = "64"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd15_533700"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cmd18_5337fc"
+offset = "5337fc"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cmd18_5337fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Multi2_53459c"
+offset = "53459c"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Multi2_53459c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_GetAppletInfo_5349cc"
+offset = "5349cc"
+size = "a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_GetAppletInfo_5349cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_LeaveHomeMenu_534ad4"
+offset = "534ad4"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_LeaveHomeMenu_534ad4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Multi3_534c30"
+offset = "534c30"
+size = "148"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Multi3_534c30"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_IsRegistered"
+offset = "53516c"
+size = "184"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_IsRegistered"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_GetAppletManInfo_5352f0"
+offset = "5352f0"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_GetAppletManInfo_5352f0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_StartApplication_53540c"
+offset = "53540c"
+size = "128"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_StartApplication_53540c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_CloseSystemApplet_535534"
+offset = "535534"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_CloseSystemApplet_535534"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_DoApplicationJump_535598"
+offset = "535598"
+size = "138"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_DoApplicationJump_535598"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_JumpToApplication_5356d0"
+offset = "5356d0"
+size = "9c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_JumpToApplication_5356d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_ReceiveDeliverArg_53580c"
+offset = "53580c"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_ReceiveDeliverArg_53580c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_StartSystemApplet_53590c"
+offset = "53590c"
+size = "1e0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_StartSystemApplet_53590c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_WakeupApplication_535b20"
+offset = "535b20"
+size = "cc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_WakeupApplication_535b20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_CloseLibraryApplet_535c00"
+offset = "535c00"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_CloseLibraryApplet_535c00"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_CloseLibraryApplet_535c7c"
+offset = "535c7c"
+size = "4c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_CloseLibraryApplet_535c7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_StartLibraryApplet_535d44"
+offset = "535d44"
+size = "164"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_StartLibraryApplet_535d44"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_LeaveResidentApplet_535eb8"
+offset = "535eb8"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_LeaveResidentApplet_535eb8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_StartNewestHomeMenu_535f08"
+offset = "535f08"
+size = "12c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_StartNewestHomeMenu_535f08"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_StartResidentApplet_536034"
+offset = "536034"
+size = "d8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_StartResidentApplet_536034"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToLeaveHomeMenu_536488"
+offset = "536488"
+size = "e4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToLeaveHomeMenu_536488"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToJumpToHomeMenu_536580"
+offset = "536580"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToJumpToHomeMenu_536580"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToDoApplicationJump_536844"
+offset = "536844"
+size = "9c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToDoApplicationJump_536844"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToCloseApplication"
+offset = "5368e0"
+size = "ac"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToCloseApplication"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToStartApplication_53698c"
+offset = "53698c"
+size = "a0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToStartApplication_53698c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToJumpToApplication_536a40"
+offset = "536a40"
+size = "a0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToJumpToApplication_536a40"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_PrepareToStartSystemApplet_536ae0"
+offset = "536ae0"
+size = "10c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_PrepareToStartSystemApplet_536ae0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "APT_U_Finalize_53819c"
+offset = "53819c"
+size = "54"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "APT_U_Finalize_53819c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_DriverFinalize_5385ec"
+offset = "5385ec"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_DriverFinalize_5385ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_SetFrameRate_538628"
+offset = "538628"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_SetFrameRate_538628"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_SetReceiving_5386ac"
+offset = "5386ac"
+size = "6c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_SetReceiving_5386ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_DriverInitialize_538744"
+offset = "538744"
+size = "174"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_DriverInitialize_538744"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_SetAutoExposure_5388b8"
+offset = "5388b8"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_SetAutoExposure_5388b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_PlayShutterSound_53895c"
+offset = "53895c"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_PlayShutterSound_53895c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_SetAutoWhiteBalance_5389ec"
+offset = "5389ec"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_SetAutoWhiteBalance_5389ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_GetVsyncInterruptEvent_538a70"
+offset = "538a70"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_GetVsyncInterruptEvent_538a70"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_SetTrimmingParamsCenter_538ab0"
+offset = "538ab0"
+size = "24"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_SetTrimmingParamsCenter_538ab0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_GetBufferErrorInterruptEvent_538ad4"
+offset = "538ad4"
+size = "40"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_GetBufferErrorInterruptEvent_538ad4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_GetSuitableY2rStandardCoefficient_538e7c"
+offset = "538e7c"
+size = "7c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_GetSuitableY2rStandardCoefficient_538e7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_SetSize_53a530"
+offset = "53a530"
+size = "8c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_SetSize_53a530"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "cam_u_Activate"
+offset = "53a5bc"
+size = "7c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "cam_u_Activate"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_Multi2_53b2e8"
+offset = "53b2e8"
+size = "17c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_Multi2_53b2e8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendAttributeFlags_53b464"
+offset = "53b464"
+size = "138"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendAttributeFlags_53b464"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_HasLoggedIn_53b59c"
+offset = "53b59c"
+size = "64"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_HasLoggedIn_53b59c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendMii_53cc3c"
+offset = "53cc3c"
+size = "a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendMii_53cc3c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendMii_53cce0"
+offset = "53cce0"
+size = "170"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendMii_53cce0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_RemoveFriend_53cf38"
+offset = "53cf38"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_RemoveFriend_53cf38"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendInfo_53d030"
+offset = "53d030"
+size = "b0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendInfo_53d030"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendInfo_53d0e0"
+offset = "53d0e0"
+size = "174"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendInfo_53d0e0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyPresence_53d2cc"
+offset = "53d2cc"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyPresence_53d2cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyFriendKey_53d438"
+offset = "53d438"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyFriendKey_53d438"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_SendInvitation_53d53c"
+offset = "53d53c"
+size = "7c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_SendInvitation_53d53c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_SendInvitation_53d5b8"
+offset = "53d5b8"
+size = "114"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_SendInvitation_53d5b8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_UpdateMyPresence_53d6cc"
+offset = "53d6cc"
+size = "c0"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_UpdateMyPresence_53d6cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyPreference_53d78c"
+offset = "53d78c"
+size = "80"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyPreference_53d78c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyPreference_53d80c"
+offset = "53d80c"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyPreference_53d80c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_SetClientSdkVersion_53d910"
+offset = "53d910"
+size = "140"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_SetClientSdkVersion_53d910"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendComment_53da50"
+offset = "53da50"
+size = "a8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendComment_53da50"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendComment_53daf8"
+offset = "53daf8"
+size = "174"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendComment_53daf8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendProfile_53dd0c"
+offset = "53dd0c"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendProfile_53dd0c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendProfile_53dda4"
+offset = "53dda4"
+size = "150"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendProfile_53dda4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyFriendKey_53df68"
+offset = "53df68"
+size = "6c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyFriendKey_53df68"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_LoadLocalAccount_53e054"
+offset = "53e054"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_LoadLocalAccount_53e054"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_UpdateMyPresence_53e0ac"
+offset = "53e0ac"
+size = "a8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_UpdateMyPresence_53e0ac"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_UpdatePreference_53e154"
+offset = "53e154"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_UpdatePreference_53e154"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyPresence_53e23c"
+offset = "53e23c"
+size = "f8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyPresence_53e23c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_UpdatePlayingGame_53e540"
+offset = "53e540"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_UpdatePlayingGame_53e540"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_CreateLocalAccount_53e598"
+offset = "53e598"
+size = "70"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_CreateLocalAccount_53e598"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_DeleteLocalAccount_53e608"
+offset = "53e608"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_DeleteLocalAccount_53e608"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_IncrementMoveCount_53e6f8"
+offset = "53e6f8"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_IncrementMoveCount_53e6f8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_UnloadLocalAccount_53e784"
+offset = "53e784"
+size = "50"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_UnloadLocalAccount_53e784"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_UpdateFavoriteGame_53e7d4"
+offset = "53e7d4"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_UpdateFavoriteGame_53e7d4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyLocalAccountId_53ea50"
+offset = "53ea50"
+size = "64"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyLocalAccountId_53ea50"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyPreference_53eab4"
+offset = "53eab4"
+size = "78"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyPreference_53eab4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_SetNcPrincipalId_53ec24"
+offset = "53ec24"
+size = "58"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_SetNcPrincipalId_53ec24"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetEventNotification_53ec7c"
+offset = "53ec7c"
+size = "90"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetEventNotification_53ec7c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendPlayingGame_53ed0c"
+offset = "53ed0c"
+size = "a4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendPlayingGame_53ed0c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendPlayingGame_53edb0"
+offset = "53edb0"
+size = "170"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendPlayingGame_53edb0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyApproachContext_53ef20"
+offset = "53ef20"
+size = "d4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyApproachContext_53ef20"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyFriendKey_53eff4"
+offset = "53eff4"
+size = "74"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyFriendKey_53eff4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyPresence_53f068"
+offset = "53f068"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyPresence_53f068"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_AddFriendWithApproach_53f0ec"
+offset = "53f0ec"
+size = "ec"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_AddFriendWithApproach_53f0ec"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_DecryptApproachContext_53f298"
+offset = "53f298"
+size = "b4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_DecryptApproachContext_53f298"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendFavoriteGame_53f34c"
+offset = "53f34c"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendFavoriteGame_53f34c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendFavoriteGame_53f3e4"
+offset = "53f3e4"
+size = "150"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendFavoriteGame_53f3e4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendRelationship_53f534"
+offset = "53f534"
+size = "98"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendRelationship_53f534"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendRelationship_53f5cc"
+offset = "53f5cc"
+size = "150"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendRelationship_53f5cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_HasLoggedIn_53fa1c"
+offset = "53fa1c"
+size = "124"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_HasLoggedIn_53fa1c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetMyApproachContext_53fb40"
+offset = "53fb40"
+size = "e4"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetMyApproachContext_53fb40"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendAttributeFlags_53fd10"
+offset = "53fd10"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendAttributeFlags_53fd10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_GetFriendAttributeFlags_53fe10"
+offset = "53fe10"
+size = "150"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_GetFriendAttributeFlags_53fe10"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_HasLoggedIn_5400fc"
+offset = "5400fc"
+size = "fc"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_HasLoggedIn_5400fc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_DecryptApproachContext_54031c"
+offset = "54031c"
+size = "e8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_DecryptApproachContext_54031c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_DecryptApproachContext_540404"
+offset = "540404"
+size = "e8"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_DecryptApproachContext_540404"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_u_IsOnline_541ad8"
+offset = "541ad8"
+size = "64"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_u_IsOnline_541ad8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "frd_a_AddFriendOnline_541b3c"
+offset = "541b3c"
+size = "84"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "frd_a_AddFriendOnline_541b3c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "mic_u_SetPower_61d5c0"
+offset = "61d5c0"
+size = "88"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "mic_u_SetPower_61d5c0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "fs_USER_cmd804"
+offset = "631664"
+size = "3c"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "fs_USER_cmd804"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "ac_IsConnected_668ddc"
+offset = "668ddc"
+size = "68"
+src = "lib/ctrsdk/ipc_wrappers.s"
+symbol = "ac_IsConnected_668ddc"
+library = "ctrsdk"
+score = 0

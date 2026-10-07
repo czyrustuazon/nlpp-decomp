@@ -14,8 +14,12 @@ cfg = c.load(); code = cfg.code()
 md = Cs(CS_ARCH_ARM, CS_MODE_ARM)
 out, tag = sys.argv[1], sys.argv[2]
 specs = [tuple(int(x, 16) for x in a.split(':')) for a in sys.argv[3:]]
+NAMES = {}   # ASM_NAMES=<csv with offset,name> (e.g. symbols/names.csv): use those names instead of A_<offset>
+if os.environ.get('ASM_NAMES'):
+    import csv
+    NAMES = {int(r['offset'], 16): r['name'] for r in csv.DictReader(open(os.environ['ASM_NAMES']))}
 HEAD = """@ Generated from the retail image by tools/wrapgen/asmify.py ({tag}): hand-written library code, kept as
-@ assembly. Names are placeholders (A_<file offset>); the bytes must equal retail.
+@ assembly. Names are placeholders (A_<file offset>, or labels from ASM_NAMES); the bytes must equal retail.
         .syntax unified
         .arm
         .arch   armv6k
@@ -32,6 +36,11 @@ for st, sz in specs:
         m = re.match(r'(\w+), \[pc(?:, #(0x[0-9a-f]+|\d+))?\]$', i.op_str)
         if i.mnemonic.startswith(('ldr', 'vldr')) and m:
             pool.add(i.address + 8 + (int(m.group(2), 0) if m.group(2) else 0))
+    for k, i in enumerate(ins):   # switch: `cmp rX, #N; ldrlo pc, [pc, rX, lsl #2]; b default; .word case0..caseN-1`
+        m = re.match(r'pc, \[pc, (\w+), lsl #2\]$', i.op_str)
+        if i.mnemonic.startswith('ldr') and m and k and ins[k - 1].mnemonic == 'cmp':
+            m2 = re.match(r'%s, #(0x[0-9a-f]+|\d+)$' % m.group(1), ins[k - 1].op_str)
+            if m2: pool.update(i.address + 8 + 4 * j for j in range(int(m2.group(1), 0)))
     if pool and max(pool) + 4 > end:                 # trailing literal pool is part of the function
         end = max(pool) + 4; sz = end - st
     labels = set(pool)
@@ -59,7 +68,7 @@ for st, sz in specs:
                 op = f'{m2.group(1)}, L{a + 8 + (int(m2.group(2), 0) if m2.group(2) else 0):x}'
         body.append(f'        {m:<7} {op}'.rstrip())
         a += 4
-    name = f'A_{st:06x}'
+    name = NAMES.get(st, f'A_{st:06x}')
     text += f'\n@ FUN_{st:08x}\n        .global {name}\n        .type   {name}, %function\n{name}:\n' + '\n'.join(body) + f'\n        .size   {name}, . - {name}\n'
     rows.append((name, st, sz))
 open(out, 'w', newline='\n').write(text)

@@ -11,18 +11,20 @@ import lift2 as L2
 lo, hi, mx, part, nparts = [int(x, 16) if i < 3 else int(x) for i, x in enumerate(sys.argv[1:6])]
 tag = sys.argv[6] if len(sys.argv) > 6 else 'x'
 S = G.S; NL = G.NL; PRE = G.PRE
+FL = os.environ.get('GEN_FLAGS')   # e.g. "--cpu=MPCore --arm -O2 -Otime --split_sections" (SDK code is -O2, technical.md section 8 item 7)
+FL = FL.split() if FL else None
 def attempt(st, sz, decl, body):
     p = f'{S}/g2_{tag}_{st:06x}.cpp'
     open(p, 'w').write(PRE + decl + NL + body + NL)
     try:
-        obj = compile_obj(G.cfg, p)
+        obj = compile_obj(G.cfg, p, FL)
         tab = ELFFile(open(obj, 'rb')).get_section_by_name('.symtab')
         syms = [s.name for s in tab.iter_symbols() if s['st_shndx'] not in ('SHN_UNDEF', 'SHN_ABS') and s.name.startswith('_Z') and f'W_{st:06x}' in s.name]
         if not syms: return None
         sym = syms[0]
         z = len(read_function(obj, sym).data)
         if z < sz or z > sz + 0x24: return None
-        if compare(G.cfg, p, sym, st, z).score == 0:
+        if compare(G.cfg, p, sym, st, z, FL).score == 0:
             und = [s.name for s in tab.iter_symbols() if s['st_shndx'] == 'SHN_UNDEF' and s.name and not s.name.startswith('Lib$$')]
             return dict(st=st, size=z, sym=sym, decl=decl, body=body, und=und, callee=sorted(G.graph[st]))
     except Exception:
@@ -38,11 +40,12 @@ if os.environ.get('ONLY'):   # ONLY=<csv with an `offset` column (hex)>: restric
     import csv
     only = {int(r['offset'], 16) for r in csv.DictReader(open(os.environ['ONLY']))}
     cands = [st for st in cands if st in only]
-res = []; tried = 0
+res = []; tried = 0; saved = [-1]
 for k, st in enumerate(cands):
     if k % nparts != part: continue
-    if tried and tried % 25 == 0: json.dump(res, open(f'{S}/gen2_{tag}_{part}.json', 'w'))   # partial results survive a kill
+    if len(res) != saved[0]: json.dump(res, open(f'{S}/gen2_{tag}_{part}.json', 'w')); saved[0] = len(res)   # partial results survive a kill
     sz = G.info[st][1]; tried += 1
+    print(f'{tried} {st:06x} matched={len(res)}', flush=True)
     g = G.gen(st, sz)
     if g:
         r = attempt(st, sz, g[0], g[1])
