@@ -33,6 +33,10 @@ def fconst(w):
     return t + 'f'
 
 PASS = [False]
+# LIFT_NOTHROW=1: define the lifted function `throw()`. With --exceptions in GEN_FLAGS this reproduces retail's non-tail
+# last call (`bl X; pop {.., pc}` where a plain build emits `pop; b X`): a nothrow function cannot tail-call a callee
+# that may throw (technical.md section 8, "Non-tail last call").
+NOTHROW = ' throw()' if os.environ.get('LIFT_NOTHROW') == '1' else ''
 SWAPS = [int(os.environ.get('LIFT_SWAPS', '0'))]   # base variants to expand with adjacent-statement swaps (+1.4% matches on samples, but 4x slower: off by default)
 EXTRA = [0]  # minimum number of incoming register arguments (PASS variants)
 CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
@@ -571,7 +575,7 @@ def _lift(I, word, fname, ssa, p64=False):
         # TAIL under an if needs braces in both forms
         txt = re.sub(r'if \((.*)\) (return (?:u2f\()?Fn_[^;]*;)', r'if (\1) { \2 }', txt)
         if ty == 'void': txt = txt.replace('{ { ', '{ ').replace('; return; } }', '; return; }') if False else txt
-        res.append((sorted(decls), f'{ty} {fname}({pl}) {{\n    u32 {regdecl};\n{fdecl}{txt}\n}}', calls))
+        res.append((sorted(decls), f'{ty} {fname}({pl}){NOTHROW} {{\n    u32 {regdecl};\n{fdecl}{txt}\n}}', calls))
     return res
 
 
