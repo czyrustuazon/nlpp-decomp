@@ -72,19 +72,25 @@ import lift as L
 def attempt(st, sz, decl, body):
     src = PRE + decl + NL + body + NL
     p = f'{S}/g_{st:06x}.cpp'; open(p, 'w').write(src)
+    obj = None
     try:
         obj = compile_obj(cfg, p)
-        tab = ELFFile(open(obj, 'rb')).get_section_by_name('.symtab')
-        syms = [s.name for s in tab.iter_symbols() if s['st_shndx'] not in ('SHN_UNDEF', 'SHN_ABS') and s.name.startswith('_Z') and f'W_{st:06x}' in s.name]
+        with open(obj, 'rb') as fh:   # closed before the unlink below (Windows cannot delete an open file)
+            tab = ELFFile(fh).get_section_by_name('.symtab')
+            syms = [s.name for s in tab.iter_symbols() if s['st_shndx'] not in ('SHN_UNDEF', 'SHN_ABS') and s.name.startswith('_Z') and f'W_{st:06x}' in s.name]
+            und = [s.name for s in tab.iter_symbols() if s['st_shndx'] == 'SHN_UNDEF' and s.name and not s.name.startswith('Lib$$')]
         if not syms: return None
         sym = syms[0]
         for z in range(sz, sz + 0x24, 4):
             try:
                 if compare(cfg, p, sym, st, z).score == 0:
-                    und = [s.name for s in tab.iter_symbols() if s['st_shndx'] == 'SHN_UNDEF' and s.name and not s.name.startswith('Lib$$')]
                     return dict(st=st, size=z, sym=sym, decl=decl, body=body, und=und, callee=sorted(graph[st]))
             except Exception: pass
     except Exception: return None
+    finally:
+        if obj:   # compile_obj leaves its object in the temp dir (technical.md section 8, lifter passes 2026-10-08)
+            try: os.unlink(obj)
+            except OSError: pass
     return None
 if __name__ == '__main__':
     lo, hi, mx = [int(x, 16) for x in sys.argv[1:4]]

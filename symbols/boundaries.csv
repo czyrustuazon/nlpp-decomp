@@ -1,0 +1,3 @@
+offset,size,note
+66bb0c,4a40,NW-only zone function (100-way jump table); CFG walk covers every word to its pool end 0x67054c; the ARM/Thumb fragments 0x66feac-0x670360 are pieces of it
+67055c,4ed8,NW-only zone function (two jump tables); CFG walk covers every word to its pool end 0x675434; 0x67445e is a piece of it

@@ -13,7 +13,8 @@
   python -m ctrdecomp ghidra-export <out.csv> [--own]
   python -m ctrdecomp ghidra-import <out.csv> [--log file]
   python -m ctrdecomp ghidra-seed <out.csv> [--log file]
-  python -m ctrdecomp pipeline-symbols <functions.csv> <symbols/code.bin.csv>
+  python -m ctrdecomp pipeline-symbols <functions.csv> <symbols/code.bin.csv> [--no-exidx]
+  python -m ctrdecomp exidx [--dump symbols/exidx.csv] [--apply symbols/code.bin.csv]
   python -m ctrdecomp rank [symbols.csv] [--top N] [--ready-below ADDR]
 
 Offsets and sizes are hex file offsets into the configured code image.
@@ -171,6 +172,19 @@ def cmd_ghidra_seed(cfg, a):
 def cmd_pipeline_symbols(cfg, a):
     from .symbols import convert
     print(json.dumps(convert(cfg, a.inp, a.out), indent=2))
+    if not a.no_exidx:  # split/add function starts from the unwind index (ctrdecomp/exidx.py)
+        from .exidx import repair_csv
+        print(json.dumps(repair_csv(cfg, a.out, a.out), indent=2))
+
+
+def cmd_exidx(cfg, a):
+    from . import exidx
+    if a.dump:
+        print(json.dumps(exidx.dump(cfg, a.dump), indent=2))
+    if a.apply:
+        print(json.dumps(exidx.repair_csv(cfg, a.apply, a.apply), indent=2))
+    if not a.dump and not a.apply:  # dry run: report what --apply would change
+        print(json.dumps(exidx.repair_csv(cfg, os.path.join(cfg.root, "symbols", "code.bin.csv")), indent=2))
 
 
 def cmd_rank(cfg, a):
@@ -213,7 +227,8 @@ def main(argv=None):
     p.add_argument("--own", action="store_true", help="use this project's analysis, not the reference project"); p.set_defaults(fn=cmd_ghidra_decomp)
     p = sub.add_parser("ghidra-export"); p.add_argument("out"); p.add_argument("--own", action="store_true"); p.set_defaults(fn=cmd_ghidra_export)
     p = sub.add_parser("ghidra-seed"); p.add_argument("out"); p.add_argument("--log", default="build/ghidra-seed.log"); p.set_defaults(fn=cmd_ghidra_seed)
-    p = sub.add_parser("pipeline-symbols"); p.add_argument("inp"); p.add_argument("out"); p.set_defaults(fn=cmd_pipeline_symbols)
+    p = sub.add_parser("pipeline-symbols"); p.add_argument("inp"); p.add_argument("out"); p.add_argument("--no-exidx", action="store_true"); p.set_defaults(fn=cmd_pipeline_symbols)
+    p = sub.add_parser("exidx"); p.add_argument("--dump"); p.add_argument("--apply"); p.set_defaults(fn=cmd_exidx)
     p = sub.add_parser("rank"); p.add_argument("symbols", nargs="?", default="symbols/code.bin.csv"); p.add_argument("--top", type=int, default=25); p.add_argument("--ready-below", type=hexint); p.set_defaults(fn=cmd_rank)
     p = sub.add_parser("ghidra-import"); p.add_argument("out"); p.add_argument("--log", default="build/ghidra-import.log"); p.set_defaults(fn=cmd_ghidra_import)
 

@@ -16,22 +16,26 @@ FL = FL.split() if FL else None
 def attempt(st, sz, decl, body):
     p = f'{S}/g2_{tag}_{st:06x}.cpp'
     open(p, 'w').write(PRE + decl + NL + body + NL)
+    obj = None
     try:
         obj = compile_obj(G.cfg, p, FL)
-        tab = ELFFile(open(obj, 'rb')).get_section_by_name('.symtab')
-        syms = [s.name for s in tab.iter_symbols() if s['st_shndx'] not in ('SHN_UNDEF', 'SHN_ABS') and s.name.startswith('_Z') and f'W_{st:06x}' in s.name]
+        with open(obj, 'rb') as fh:   # closed before the unlink below (Windows cannot delete an open file)
+            tab = ELFFile(fh).get_section_by_name('.symtab')
+            syms = [s.name for s in tab.iter_symbols() if s['st_shndx'] not in ('SHN_UNDEF', 'SHN_ABS') and s.name.startswith('_Z') and f'W_{st:06x}' in s.name]
+            undall = [s.name for s in tab.iter_symbols() if s['st_shndx'] == 'SHN_UNDEF' and s.name and not s.name.startswith('Lib$$')]
         if not syms: return None
         sym = syms[0]
         z = len(read_function(obj, sym).data)
         if z < sz or z > sz + 0x24: return None
         if compare(G.cfg, p, sym, st, z, FL).score == 0:
-            und = [s.name for s in tab.iter_symbols() if s['st_shndx'] == 'SHN_UNDEF' and s.name and not s.name.startswith('Lib$$')]
-            return dict(st=st, size=z, sym=sym, decl=decl, body=body, und=und, callee=sorted(G.graph[st]))
+            return dict(st=st, size=z, sym=sym, decl=decl, body=body, und=undall, callee=sorted(G.graph[st]))
     except Exception:
         return None
     finally:
-        try: os.unlink(p)
-        except OSError: pass
+        for q in (p, obj):   # compile_obj leaves its object in the temp dir; leaking one per attempt slowed every run
+            try:
+                if q: os.unlink(q)
+            except OSError: pass
     return None
 d = __import__('tomllib').load(open('functions.toml', 'rb'))
 handled = {int(f['offset'], 16) for f in d['function']}

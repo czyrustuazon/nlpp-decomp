@@ -1,6 +1,6 @@
 """progress_chart.py: measure matching progress and draw docs/progress.svg for the README.
 
-Denominator: the ARM/Thumb functions of `.text` in symbols/code.bin.csv (which covers 89.3% of `.text`).
+Denominator: the ARM/Thumb functions of `.text` in symbols/code.bin.csv (which covers 92.3% of `.text`).
 A function counts when functions.toml has an entry for it at score 0. Categories:
   library, assembly   library-tagged, src is .s (CTR SDK, svc stubs, C runtime)
   library, C          library-tagged, src is C/C++
@@ -89,7 +89,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{
 <rect width="100%" height="100%" rx="8" style="fill:var(--surface)"/>
 <g transform="translate(16,0)">
 <text x="0" y="26" class="h">Byte-exact against retail code.bin</text>
-<text x="0" y="44" class="t2">{N:,} mapped functions, {B / 1024:,.0f} KiB (89.3% of .text) · relink identical</text>
+<text x="0" y="44" class="t2">{N:,} mapped functions, {B / 1024:,.0f} KiB ({100 * B / 0x68F7FC:.1f}% of .text) · relink identical</text>
 {chr(10).join(body)}
 </g>
 </svg>

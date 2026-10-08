@@ -4,17 +4,17 @@ Matching decompilation of New Love Plus+ (3DS, title `00040000000F4E00`). The go
 
 ## Progress
 
-![Matching progress: 16.2% of code and 42.9% of functions are byte-exact](docs/progress.svg)
+![Matching progress: 16.0% of code and 39.4% of functions are byte-exact](docs/progress.svg)
 
-Measured 2026-10-07 from `functions.toml` against `symbols/code.bin.csv`; regenerate the chart and this table with `python tools/progress_chart.py`. The denominator is the 31,721 known functions (6,001 KiB), which cover 89.3% of `.text`, so the true size share is slightly lower. A function counts when it compiles (or assembles) to the retail bytes, score 0.
+Measured 2026-10-08 from `functions.toml` against `symbols/code.bin.csv`; regenerate the chart and this table with `python tools/progress_chart.py`. The denominator is the 36,403 known functions (6,203 KiB), which cover 92.3% of `.text`, so the true size share is slightly lower. It grew from 31,721 on 2026-10-08 when the unwind index added 4,534 missing functions and split 158 merged ones (the matched count did not change), then a lifter pass over the new functions and an `--exceptions` pass added 709 matches. A function counts when it compiles (or assembles) to the retail bytes, score 0.
 
 | Category | Functions | Share | Code | Share |
 |----------|----------:|------:|-----:|------:|
-| Library, assembly (CTR SDK, NintendoWare, `svc` stubs, C runtime) | 4,086 | 12.9% | 702 KiB | 11.7% |
-| Library, C | 960 | 3.0% | 31 KiB | 0.5% |
-| Generated C (`src/gen/`, lifter output) | 8,113 | 25.6% | 222 KiB | 3.7% |
-| Hand-written game C | 462 | 1.5% | 16 KiB | 0.3% |
-| **Total byte-exact** | **13,621** | **42.9%** | **970 KiB** | **16.2%** |
+| Library, assembly (CTR SDK, NintendoWare, `svc` stubs, C runtime) | 4,086 | 11.2% | 702 KiB | 11.3% |
+| Library, C | 960 | 2.6% | 31 KiB | 0.5% |
+| Generated C (`src/gen/`, lifter output) | 8,822 | 24.2% | 243 KiB | 3.9% |
+| Hand-written game C | 462 | 1.3% | 16 KiB | 0.3% |
+| **Total byte-exact** | **14,330** | **39.4%** | **991 KiB** | **16.0%** |
 
 Another 47 functions (7.4 KiB) are registered near-misses with a nonzero score. The linked `code.bin` is byte-identical to retail.
 
