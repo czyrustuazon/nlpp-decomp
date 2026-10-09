@@ -7,8 +7,10 @@ REG = {'sp': None, 'lr': None, 'pc': None, 'ip': 12, 'fp': 11, 'sl': 10, 'sb': 9
 CONDS = ('eq', 'ne', 'hs', 'cs', 'lo', 'cc', 'mi', 'pl', 'hi', 'ls', 'ge', 'lt', 'gt', 'le')
 BASES = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'cmp', 'cmn', 'tst',
          'ldr', 'ldrb', 'ldrh', 'ldrsb', 'ldrsh', 'str', 'strb', 'strh', 'bl', 'blx', 'bx', 'b', 'nop', 'push', 'pop', 'orn',
-         'uxth', 'sxth', 'uxtb', 'sxtb', 'mla', 'ldm', 'stm', 'ldrd', 'strd')
-SETS = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'orn', 'mla')
+         'uxth', 'sxth', 'uxtb', 'sxtb', 'mla', 'ldm', 'stm', 'ldrd', 'strd', 'adc', 'sbc', 'rsc',
+         'umull', 'smull', 'umlal', 'smlal')
+SETS = ('mov', 'mvn', 'add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'lsl', 'lsr', 'asr', 'mul', 'orn', 'mla', 'adc', 'sbc', 'rsc')
+REGRE = r'\b(r\d+|ip|fp|sl|sb|lr)\b'
 
 def split_mn(m):
     """-> (base, cond, setflags) or None"""
@@ -173,7 +175,9 @@ def _lift(I, word, fname, ssa, p64=False):
             targets.add(t)
     defined = set(); params = set(); decls = set(); calls = []; out = []; fregs = set(); fdef = set(); fparams = set(); fret = [False]; fcur = {}; fver = {}; fnew = []; lastcall = [None]
     params.update(range(EXTRA[0]))
-    flags = [None]   # None | ('cmp', a, b) | ('nz', x)
+    flags = [None]   # None | ('cmp', a, b) | ('nz', x) | ('cmp64', a, b)
+    carry = [None]   # pending low half of a 64-bit add/sub (adds/subs/rsbs) waiting for its adc/sbc/rsc
+    used64 = [False]
     cur = {}; ver = {}; newvars = []; curpred = [None]
     if ssa and targets: raise ValueError('ssa labels')
     tmp = [0]
@@ -244,6 +248,12 @@ def _lift(I, word, fname, ssa, p64=False):
             a, b = flags[0][1:]
             if c not in ('eq', 'ne'): raise ValueError('cmn cond ' + c)
             return f'{a} {"==" if c == "eq" else "!="} {b}'
+        if flags[0][0] == 'cmp64':   # subs/sbcs: only the conditions that read N, V, C are valid (Z is the high word's)
+            a, b = flags[0][1:]
+            tab = {'ge': f'(long long){a} >= (long long){b}', 'lt': f'(long long){a} < (long long){b}',
+                   'hs': f'{a} >= {b}', 'cs': f'{a} >= {b}', 'lo': f'{a} < {b}', 'cc': f'{a} < {b}'}
+            if c not in tab: raise ValueError('cmp64 cond ' + c)
+            return tab[c]
         if flags[0][0] == 'fcmp':
             a, b = flags[0][1:]
             tab = {'eq': f'{a} == {b}', 'ne': f'{a} != {b}', 'hs': f'{a} >= {b}', 'cs': f'{a} >= {b}', 'lo': f'{a} < {b}',
@@ -489,6 +499,40 @@ def _lift(I, word, fname, ssa, p64=False):
             dd = wr(d)
             emit(f'{dd} = {v};', cs)
             if s: flags[0] = ('nz', dd)
+            carry[0] = (b, len(out) - 1, i, dd, X, Y) if s and b in ('add', 'sub', 'rsb') and not cs else None
+            continue
+        if b in ('adc', 'sbc', 'rsc'):
+            # 64-bit add/sub: the pair becomes one u64 statement at the low half's position, so ARMCC emits adds/adc again
+            mm = re.fullmatch(r'(\w+), (\w+), (.+)', o)
+            if not mm or cs or not carry[0]: raise ValueError('carry')
+            kb, idx, ci, lo, XL, YL = carry[0]; carry[0] = None
+            if {'add': 'adc', 'sub': 'sbc', 'rsb': 'rsc'}[kb] != b: raise ValueError('carry kind')
+            d, x, y = mm.groups()
+            his = {x} | set(re.findall(REGRE, y))
+            for m2, o2, _ in I[ci + 1:i]:   # the high half moves up to the low half: nothing between may disturb it
+                sm2 = split_mn(m2); toks = re.findall(REGRE, o2)
+                if not sm2 or sm2[0] in ('bl', 'blx', 'ldm', 'stm', 'push', 'pop') or sm2[2] or sm2[0] in ('cmp', 'cmn', 'tst'): raise ValueError('carry gap')
+                if d in toks: raise ValueError('carry gap')
+                if toks and sm2[0] not in ('str', 'strb', 'strh', 'strd') and toks[0] in his: raise ValueError('carry gap')
+            HX = rd(x); HY = op2(y)
+            A = f'(((u64){HX} << 32) | {XL})'; B = f'(((u64){HY} << 32) | {YL})'
+            if b == 'rsc': A, B = B, A
+            HI = wr(d)
+            if s:   # subs/sbcs: a 64-bit compare
+                used64[0] = True
+                out[idx] = f'fa64 = {A}; fb64 = {B}; {lo} = (u32)(fa64 - fb64); {HI} = (u32)((fa64 - fb64) >> 32);'
+                flags[0] = ('cmp64', 'fa64', 'fb64')
+            else:
+                out[idx] = f'{{ u64 t_ = {A} {"+" if b == "adc" else "-"} {B}; {lo} = (u32)t_; {HI} = (u32)(t_ >> 32); }}'
+            continue
+        if b in ('umull', 'smull', 'umlal', 'smlal'):
+            r = [x.strip() for x in o.split(',')]
+            if len(r) != 4 or s: raise ValueError(b)
+            X = rd(r[2]); Y = rd(r[3])
+            prod = f'(u64){X} * {Y}' if b[0] == 'u' else f'(u64)((long long)(int){X} * (int){Y})'
+            if b.endswith('lal'): prod = f'(((u64){rd(r[1])} << 32) | {rd(r[0])}) + {prod}'
+            LO = wr(r[0]); HI = wr(r[1])
+            emit(f'{{ u64 t_ = {prod}; {LO} = (u32)t_; {HI} = (u32)(t_ >> 32); }}', cs)
             continue
         if b in ('cmp', 'cmn', 'tst'):
             mm = re.fullmatch(r'(\w+), (.+)', o)
@@ -609,6 +653,7 @@ def _lift(I, word, fname, ssa, p64=False):
     pre = ''.join(f'    u32 r{k}{" = a%d" % k if k in params else ""};\n' for k in range(13) if True) if False else ''
     regdecl = ', '.join(f'r{k}' + (f' = a{k}' if k in params else '') for k in range(13)) + ", fa, fb, fx"
     fdecl = ('    float ' + ', '.join([f'f{k}' + (f' = p{k}' if k in fparams else '') for k in sorted(fregs)] + fnew) + ', ffa, ffb;' + chr(10)) if fregs else ''
+    if used64[0]: fdecl += '    u64 fa64, fb64;' + chr(10)
     fl_ret = bool(fregs)
     if newvars: regdecl += ', ' + ', '.join(newvars)
     if frame[0] == 4:   # one slot: a scalar local schedules like a source-level `u32 v; f(&v)`
