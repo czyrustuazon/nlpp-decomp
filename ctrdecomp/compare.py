@@ -25,6 +25,7 @@ class Obj:
     data: bytes                    # function bytes plus its literal pool
     thumb: bool
     relocs: dict = field(default_factory=dict)   # offset -> (type, symbol)
+    local: dict = field(default_factory=dict)    # section-local marker symbol (`__switch$$`) -> offset in data
 
 
 @dataclass
@@ -76,10 +77,13 @@ def read_function(obj, symbol):
         shndx = sym["st_shndx"]
         data = elf.get_section(shndx).data()
         start = sym["st_value"] & ~1
-        same_sec = sorted(s["st_value"] & ~1 for s in funcs if s["st_shndx"] == shndx)
+        # `__switch$$` is a local STT_FUNC marker ARMCC puts on a jump table; it does not end the function
+        same_sec = sorted(s["st_value"] & ~1 for s in funcs if s["st_shndx"] == shndx and "$$" not in s.name)
         nxt = [v for v in same_sec if v > start]
         end = nxt[0] if nxt else len(data)   # include the literal pool up to the next function
-        return Obj(data[start:end], bool(sym["st_value"] & 1), _section_relocs(elf, shndx, start, end))
+        local = {s.name: (s["st_value"] & ~1) - start for s in funcs
+                 if s["st_shndx"] == shndx and "$$" in s.name and start <= (s["st_value"] & ~1) < end}
+        return Obj(data[start:end], bool(sym["st_value"] & 1), _section_relocs(elf, shndx, start, end), local)
 
 
 def _section_relocs(elf, shndx, start, end):

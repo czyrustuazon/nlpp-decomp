@@ -13,6 +13,32 @@ tag = sys.argv[6] if len(sys.argv) > 6 else 'x'
 S = G.S; NL = G.NL; PRE = G.PRE
 FL = os.environ.get('GEN_FLAGS')   # e.g. "--cpu=MPCore --arm -O2 -Otime --split_sections" (SDK code is -O2, technical.md section 8 item 7)
 FL = FL.split() if FL else None
+def strend(st, sz):
+    """end of the string literals the function addresses with adr (placed after its code and pool), relative to st"""
+    e = 0
+    for m, o, a in G.ins_of(st, sz):
+        t = L2.adr_target(m, o, a)
+        if t is not None and t >= a and (lit := L2.cstr(G.word, t)): e = max(e, (t + lit[1] + 3 & ~3) - st)
+    return e
+import bisect, re
+_starts = sorted(f[0] for f in G.funcs)
+def effsize(st, sz):
+    """Ghidra does not follow ARMCC jump tables, so a switch function's listed size can stop before its last cases,
+    or the list splits it into fragments: extend it past its largest case target to the next listed start, as long
+    as the fragments it swallows have no functions.toml entry"""
+    end = st + sz
+    for _ in range(8):
+        I = G.ins_of(st, end - st); far = 0
+        for j, (m, o, a) in enumerate(I):
+            sw = L2.switch_at(I, j)
+            if sw: far = max([far] + [G.word(a + 8 + 4 * i) - 0x100000 for i in range(sw[1])])
+        if far < end: return end - st
+        if far - st > 0x2000: return sz
+        k = bisect.bisect_right(_starts, far)
+        nxt = _starts[k] if k < len(_starts) else far + 4
+        if any(st < x < nxt and x in handled for x in _starts[bisect.bisect_right(_starts, st):k]): return sz
+        end = nxt
+    return sz
 def attempt(st, sz, decl, body):
     p = f'{S}/g2_{tag}_{st:06x}.cpp'
     open(p, 'w').write(PRE + decl + NL + body + NL)
@@ -26,7 +52,7 @@ def attempt(st, sz, decl, body):
         if not syms: return None
         sym = syms[0]
         z = len(read_function(obj, sym).data)
-        if z < sz or z > sz + 0x24: return None
+        if z < sz or z > max(sz, strend(st, sz)) + 0x24: return None
         if compare(G.cfg, p, sym, st, z, FL).score == 0:
             return dict(st=st, size=z, sym=sym, decl=decl, body=body, und=undall, callee=sorted(G.graph[st]))
     except Exception:
@@ -48,7 +74,7 @@ res = []; tried = 0; saved = [-1]
 for k, st in enumerate(cands):
     if k % nparts != part: continue
     if len(res) != saved[0]: json.dump(res, open(f'{S}/gen2_{tag}_{part}.json', 'w')); saved[0] = len(res)   # partial results survive a kill
-    sz = G.info[st][1]; tried += 1
+    sz = effsize(st, G.info[st][1]); tried += 1
     print(f'{tried} {st:06x} matched={len(res)}', flush=True)
     g = G.gen(st, sz)
     if g:

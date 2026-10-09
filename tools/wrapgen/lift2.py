@@ -32,6 +32,40 @@ def fconst(w):
     if not any(ch in t for ch in '.eE'): t += '.0'
     return t + 'f'
 
+def adr_target(m, o, a):
+    """`add/sub rX, pc, #k` (ARMCC's adr) -> target address, else None"""
+    mm = re.fullmatch(r'(\w+), pc, #(0x[0-9a-f]+|\d+)', o.strip())
+    if not mm or m not in ('add', 'sub'): return None
+    k = int(mm.group(2), 0)
+    return a + 8 + (k if m == 'add' else -k)
+
+def cstr(word, t, limit=0x400):
+    """C string literal for the NUL-terminated bytes at t -> (literal, length incl. NUL) or None.
+    ARMCC places a function's string literals in its own section after the code and pool, and addresses them with adr."""
+    bs = bytearray()
+    while len(bs) < limit:
+        b = (word((t + len(bs)) & ~3) >> (8 * ((t + len(bs)) & 3))) & 0xff
+        if b == 0: break
+        bs.append(b)
+    else: return None
+    s = ''.join(chr(b) if 0x20 <= b < 0x7f and chr(b) not in '"\\?' else '\\%03o' % b for b in bs)
+    return f'"{s}"', len(bs) + 1
+
+def switch_at(I, j):
+    """I[j] is ARMCC's table jump `ldrlo pc, [pc, rX, lsl #2]` -> (rX, case count) from the bounding `cmp rX, #N`
+    (the scheduler may put other instructions between them); False if the bound is not found; None if not a table jump"""
+    m, o, a = I[j]
+    mm = re.fullmatch(r'pc, \[pc, (\w+), lsl #2\]', o)
+    if not (mm and m in ('ldrlo', 'ldrcc')): return None
+    for k in range(j - 1, max(-1, j - 12), -1):
+        pm_, po_ = I[k][0], I[k][1]
+        if pm_ == 'cmp':
+            pm = re.fullmatch(r'(\w+), #(0x[0-9a-f]+|\d+)', po_)
+            return (mm.group(1), int(pm.group(2), 0)) if pm and pm.group(1) == mm.group(1) else False
+        sm_ = split_mn(pm_) or (pm_, None, False)
+        if sm_[0] in ('cmn', 'tst', 'teq', 'b', 'bl', 'blx', 'bx', 'pop') or sm_[2]: return False
+    return False
+
 PASS = [False]
 # LIFT_NOTHROW=1: define the lifted function `throw()`. With --exceptions in GEN_FLAGS this reproduces retail's non-tail
 # last call (`bl X; pop {.., pc}` where a plain build emits `pop; b X`): a nothrow function cannot tail-call a callee
@@ -109,9 +143,18 @@ def _lift_all(I, word, fname, variants=True):
 
 def _lift(I, word, fname, ssa, p64=False):
     pool = set()   # literal-pool words decode as bogus instructions; drop them
+    jt = {}        # switch: `cmp rX, #N; ldrlo pc, [pc, rX, lsl #2]; b default` then N absolute case addresses
+    for j, (m, o, a) in enumerate(I):
+        sw = switch_at(I, j)
+        if sw is False: raise ValueError('switch shape')
+        if sw:
+            ws = [word(a + 8 + 4 * k) - 0x100000 for k in range(sw[1])]
+            jt[a] = (sw[0], ws); pool.update(range(a + 8, a + 8 + 4 * len(ws), 4))
     for m, o, a in I:
         mm = re.fullmatch(r'\w+, \[pc(?:, #(0x[0-9a-f]+|\d+))?\]', o)
-        if mm and m.startswith('ldr'): pool.add(a + 8 + (int(mm.group(1), 0) if mm.group(1) else 0))
+        if mm and m.startswith(('ldr', 'vldr')): pool.add(a + 8 + (int(mm.group(1), 0) if mm.group(1) else 0))
+        t = adr_target(m, o, a)   # string literal bytes inside the listed range decode as bogus instructions too
+        if t is not None and (lit := cstr(word, t)): pool.update(range(t & ~3, t + lit[1], 4))
     if pool: I = [x for x in I if x[2] not in pool]
     n = len(I)
     if n == 0: raise ValueError('empty')
@@ -124,6 +167,10 @@ def _lift(I, word, fname, ssa, p64=False):
             t = int(o[1:], 0)
             if start <= t < end_addr: targets.add(t)
             elif t != end_addr and not (start <= t < end_addr): pass
+    for _, ws in jt.values():
+        for t in ws:
+            if not start <= t < end_addr: raise ValueError('switch target')
+            targets.add(t)
     defined = set(); params = set(); decls = set(); calls = []; out = []; fregs = set(); fdef = set(); fparams = set(); fret = [False]; fcur = {}; fver = {}; fnew = []; lastcall = [None]
     params.update(range(EXTRA[0]))
     flags = [None]   # None | ('cmp', a, b) | ('nz', x)
@@ -244,6 +291,9 @@ def _lift(I, word, fname, ssa, p64=False):
                 if k in params and k not in wrote: a.append(cur.get(k, 'r%d' % k) if ssa else 'r%d' % k)
                 else: break
             return a
+        hi_ = max([k for k in (1, 2, 3) if k in defined], default=-1)
+        for k in range(hi_):   # r1 set before the call, r0 untouched: r0 is the incoming argument passed through
+            if k not in defined and k not in wrote: rd('r%d' % k)
         for k in range(4):
             if SAVED[0] and k in saved and k not in wrote: break
             if k in defined: a.append(cur.get(k, 'r%d' % k) if ssa else 'r%d' % k)
@@ -375,6 +425,12 @@ def _lift(I, word, fname, ssa, p64=False):
         if b == 'bx':
             if o.strip() != 'lr': raise ValueError('bx ' + o)
             out.append(f'{"if (" + cs + ") " if cs else ""}{{RET {cur.get(0, 'r0')}}}'); continue
+        if b == 'ldr' and a in jt:
+            x_, ws = jt[a]; X = rd(x_)
+            cases = ' '.join(f'case {k}: goto L_{t:x};' for k, t in enumerate(ws))
+            nx = I[i + 1] if i + 1 < n else None   # the `b default` after the table load becomes the default label
+            dflt = f' default: goto L_{int(nx[1][1:], 0):x};' if nx and nx[0] == 'b' and nx[1].startswith('#') and int(nx[1][1:], 0) in targets else ''
+            out.append(f'switch ({X}) {{ {cases}{dflt} }}'); continue
         if b == 'ldr' and o.startswith('pc,'): raise ValueError('ldrpc')
         if b == 'mov' and c is None and o.strip() == 'r0, r0':
             # `mov r0, r0` is a BL to an unresolved weak symbol that the linker turned into a nop
@@ -413,6 +469,10 @@ def _lift(I, word, fname, ssa, p64=False):
             emit(f'{wr(mm.group(1))} = {v};', cs)
             if s: flags[0] = ('nz', cname(mm.group(1)))
             continue
+        if b in ('add', 'sub') and not s and (t := adr_target(b, o, a)) is not None:
+            lit = cstr(word, t)
+            if not lit or t < a: raise ValueError('adr')
+            emit(f'{wr(o.split(",")[0])} = (u32){lit[0]};', cs); continue
         if b in ('add', 'sub', 'rsb', 'and', 'orr', 'eor', 'bic', 'mul'):
             mm = re.fullmatch(r'(\w+), (\w+), (.+)', o)
             if mm: d, x, y = mm.groups()

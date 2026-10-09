@@ -79,6 +79,8 @@ def _resolve(word, rtype, place_va, target):
 def resolve_function(mine, place_va, addr):
     """Return the function's bytes with every relocation resolved from `addr` (name -> VA)."""
     data = bytearray(mine.data)
+    if mine.local:   # jump tables address their own function
+        addr = {**addr, **{k: place_va + v for k, v in mine.local.items()}}
     for o, (rtype, sym) in sorted(mine.relocs.items()):
         if sym not in addr:
             raise RuntimeError(f"no address for {sym!r} (add it to externs.toml)")

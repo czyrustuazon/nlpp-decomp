@@ -16,7 +16,7 @@ leaves=[s for s in todo if not graph[s]]
 ok=set(leaves)|handled
 ready=[s for s in todo if graph[s] and graph[s]<=ok]
 code=cfg.code()
-md=Cs(CS_ARCH_ARM,CS_MODE_ARM)
+md=Cs(CS_ARCH_ARM,CS_MODE_ARM); md.skipdata=True   # undecodable words (jump tables, strings) must not end the listing
 def ins_of(st,sz): return [(i.mnemonic,i.op_str,i.address) for i in md.disasm(code[st:st+sz],st)]
 def pool(addr_ins):
     m,o,a=addr_ins
