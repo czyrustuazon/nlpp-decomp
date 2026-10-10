@@ -32,154 +32,154 @@ extern char g_008bfaf4[];
 
 // FUN_0068a710
 u32 W_68a710() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa68)) = 0u;
     return r0;
 }
 
 // FUN_0068a738
 u32 W_68a738() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa78)) = 0u;
     return r0;
 }
 
 // FUN_0068a74c
 u32 W_68a74c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa7c)) = 0u;
     return r0;
 }
 
 // FUN_0068a760
 u32 W_68a760() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa80)) = 0u;
     return r0;
 }
 
 // FUN_0068a774
 u32 W_68a774() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa88)) = 0u;
     return r0;
 }
 
 // FUN_0068a788
 u32 W_68a788() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa98)) = 0u;
     return r0;
 }
 
 // FUN_0068a79c
 u32 W_68a79c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfa9c)) = 0u;
     return r0;
 }
 
 // FUN_0068a7b0
 u32 W_68a7b0() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfaa0)) = 0u;
     return r0;
 }
 
 // FUN_0068a7ec
 u32 W_68a7ec() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfab0)) = 0u;
     return r0;
 }
 
 // FUN_0068a814
 u32 W_68a814() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfab8)) = 0u;
     return r0;
 }
 
 // FUN_0068a828
 u32 W_68a828() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfac0)) = 0u;
     return r0;
 }
 
 // FUN_0068a83c
 u32 W_68a83c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfac4)) = 0u;
     return r0;
 }
 
 // FUN_0068a850
 u32 W_68a850() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfacc)) = 0u;
     return r0;
 }
 
 // FUN_0068a878
 u32 W_68a878() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfad4)) = 0u;
     return r0;
 }
 
 // FUN_0068a88c
 u32 W_68a88c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfad8)) = 0u;
     return r0;
 }
 
 // FUN_0068a8a0
 u32 W_68a8a0() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfadc)) = 0u;
     return r0;
 }
 
 // FUN_0068a8b4
 u32 W_68a8b4() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfae0)) = 0u;
     return r0;
 }
 
 // FUN_0068a8c8
 u32 W_68a8c8() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfae4)) = 0u;
     return r0;
 }
 
 // FUN_0068a8dc
 u32 W_68a8dc() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfae8)) = 0u;
     return r0;
 }
 
 // FUN_0068a8f0
 u32 W_68a8f0() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfaec)) = 0u;
     return r0;
 }
 
 // FUN_0068a904
 u32 W_68a904() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfaf0)) = 0u;
     return r0;
 }
 
 // FUN_0068a918
 u32 W_68a918() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r2_1, r1_1;
+    u32 r0;
     *(u32*)(((u32)g_008bfaf4)) = 0u;
     return r0;
 }

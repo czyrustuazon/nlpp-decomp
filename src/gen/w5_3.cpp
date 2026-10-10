@@ -35,7 +35,7 @@ extern char g_0081c8d4[];
 
 // FUN_005ba43c
 void W_5ba43c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r4, fa, fb;
     r1 = (u32)g_0082e040;
     *(u32*)(r0) = r1; r0 = r0 + 28u;
     r0 = WeakCall2(r0, r1);
@@ -54,7 +54,7 @@ void W_5ba43c(u32 a0) {
 
 // FUN_005ba484
 u32 W_5ba484(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r4, fa, fb;
     r1 = (u32)g_0082e040;
     *(u32*)(r0) = r1; r0 = r0 + 28u;
     r0 = WeakCall2(r0, r1);
@@ -73,7 +73,7 @@ u32 W_5ba484(u32 a0) {
 
 // FUN_005c525c
 void W_5c525c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1;
     r1 = (u32)g_0082e498;
     *(u32*)(r0) = r1;
     r0 = WeakCall2(r0, r1);
@@ -82,21 +82,21 @@ void W_5c525c(u32 a0) {
 
 // FUN_005f3064
 void W_5f3064() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0;
     r0 = WeakCall0();
     { Fn_2024b0_1(r0); return; }
 }
 
 // FUN_005f5634
 void W_5f5634() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0;
     r0 = WeakCall0();
     { Fn_2024b0_1(r0); return; }
 }
 
 // FUN_0060b208
 u32 W_60b208() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r0_1, r0_2;
+    u32 r0_1, r0_2;
     r0_1 = WeakCall0();
     r0_2 = r0_1 - 8u;
     return r0_2;
@@ -104,22 +104,21 @@ u32 W_60b208() {
 
 // FUN_0060f0b4
 void W_60f0b4() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0;
     r0 = WeakCall0();
     { Fn_2024b0_1(r0); return; }
 }
 
 // FUN_00616cb0
 u32 W_616cb0() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, stk;
+    u32 r0, r4, stk;
     r0 = (u32)&stk;
     r0 = Fn_01fd94_1(r0);
     r0 = (u32)&stk;
     r0 = Fn_01fd7c_1(r0);
     r4 = (u32)g_008aa79c;
     r0 = *(u8*)(r4);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_616ce0;
+    if (r0 == 0u) goto L_616ce0;
     r0 = Fn_4e9c84_1(r0);
     r0 = 0u;
     *(u8*)(r4) = r0;
@@ -134,7 +133,7 @@ u32 W_616cb0() {
 
 // FUN_0061cbb0
 u32 W_61cbb0(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1;
     r1 = (u32)g_0082fc80;
     *(u32*)(r0) = r1; r0 = r0 + 8u;
     r0 = WeakCall2(r0, r1);
@@ -144,7 +143,7 @@ u32 W_61cbb0(u32 a0) {
 
 // FUN_00630c24
 u32 W_630c24(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r2, fa, fb;
     r0 = *(u32*)(r0 + 68);
     fa = r0; fb = 0u;
     if (fa != fb) r0 = r0 + 1024u;
@@ -152,12 +151,10 @@ u32 W_630c24(u32 a0) {
     if (fa != fb) goto L_630c7c;
     r0 = (u32)g_00890f98;
     r0 = *(u32*)(r0 + 16);
-    fx = r0 & 1u;
-    if (fx != 0) goto L_630c78;
+    if ((r0 & 1u) != 0) goto L_630c78;
     r0 = (u32)g_00890fa8;
     r0 = Fn_203d64_1(r0);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_630c78;
+    if (r0 == 0u) goto L_630c78;
     r0 = (u32)g_008bfd9c;
     r0 = Fn_5a0e3c_1(r0);
     r2 = (u32)g_00100000;
@@ -173,7 +170,7 @@ u32 W_630c24(u32 a0) {
 
 // FUN_00643cb8
 u32 W_643cb8(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1;
     r1 = (u32)g_0082fc80;
     *(u32*)(r0 - 28) = r1;
     r0 = r0 - 20u;
@@ -184,7 +181,7 @@ u32 W_643cb8(u32 a0) {
 
 // FUN_00682c5c
 void W_682c5c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1;
     r1 = (u32)g_0081c8a0;
     *(u32*)(r0) = r1;
     r0 = WeakCall2(r0, r1);
@@ -193,7 +190,7 @@ void W_682c5c(u32 a0) {
 
 // FUN_006830b4
 void W_6830b4(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1;
     r1 = (u32)g_0081c8d4;
     *(u32*)(r0) = r1;
     r0 = WeakCall2(r0, r1);

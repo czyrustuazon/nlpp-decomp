@@ -30,7 +30,7 @@ u32 Fn_684f64_1(u32);
 
 // FUN_0057f690
 void W_57f690(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r4;
     r4 = r0;
     r1 = 80u;
     r0 = Fn_1fddd8_2(r0, r1);
@@ -42,7 +42,7 @@ void W_57f690(u32 a0) {
 
 // FUN_005899c4
 u32 W_5899c4(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1 = a1, r2;
     r2 = r1;
     r1 = 8u;
     r0 = r0 + 4u;
@@ -51,7 +51,7 @@ u32 W_5899c4(u32 a0, u32 a1) {
 
 // FUN_005919f0
 void W_5919f0(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1 = a1, r2;
     r2 = r1;
     r1 = r0 + 12u;
     r0 = r2;
@@ -60,7 +60,7 @@ void W_5919f0(u32 a0, u32 a1) {
 
 // FUN_00597e64
 void W_597e64(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r2;
     r2 = 0u;
     r1 = 1u;
     *(u8*)(r0 + 198) = r2;
@@ -70,7 +70,7 @@ void W_597e64(u32 a0) {
 
 // FUN_0059b748
 void W_59b748(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1 = a1, fa, fb;
     r0 = *(u32*)(r0 + 72);
     fa = r0; fb = 0u;
     if (fa != fb) r0 = *(u32*)(r0 + 368);
@@ -84,7 +84,7 @@ void W_59b748(u32 a0, u32 a1) {
 
 // FUN_0059ceb4
 void W_59ceb4(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r4;
     r4 = r0;
     r0 = r0 + 56u;
     r0 = Fn_59cb38_1(r0);
@@ -94,9 +94,8 @@ void W_59ceb4(u32 a0) {
 
 // FUN_005a845c
 void W_5a845c(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    fa = r1; fb = 2u;
-    if (fa < fb) r0 = r0 + (r1 << 2);
+    u32 r0 = a0, r1 = a1, r2 = a2;
+    if (r1 < 2u) r0 = r0 + (r1 << 2);
     r1 = r2;
     r0 = *(u32*)(r0 + 104);
     { WeakCall3(r0, r1, r2); return; }
@@ -104,7 +103,7 @@ void W_5a845c(u32 a0, u32 a1, u32 a2) {
 
 // FUN_005c0d3c
 void W_5c0d3c() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0, r1, r2;
     r2 = 1u;
     r1 = 0u;
     r0 = 16384u;
@@ -113,7 +112,7 @@ void W_5c0d3c() {
 
 // FUN_005c75ec
 u32 W_5c75ec(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r2, r4;
     r4 = r0;
     r0 = Fn_5c7c28_1(r0);
     r2 = 0u;
@@ -124,7 +123,7 @@ u32 W_5c75ec(u32 a0) {
 
 // FUN_005c7c04
 void W_5c7c04() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0, r1, r2;
     r2 = 0u;
     r1 = r2;
     r0 = 3u;
@@ -133,7 +132,7 @@ void W_5c7c04() {
 
 // FUN_0060d3dc
 void W_60d3dc(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, fa, fb;
     r0 = *(u8*)(r0);
     fa = r0; fb = 4u;
     if (fa < fb) r0 = r0 + 2u;
@@ -143,7 +142,7 @@ void W_60d3dc(u32 a0) {
 
 // FUN_0060d514
 void W_60d514(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0;
     r0 = r0 + 128u;
     r0 = Fn_633428_1(r0);
     r0 = (u32)(signed char)r0;
@@ -152,7 +151,7 @@ void W_60d514(u32 a0) {
 
 // FUN_00627fc0
 void W_627fc0() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0, r1;
     r0 = Fn_261560_0();
     r1 = 308u;
     { WeakCall2(r0, r1); return; }
@@ -160,7 +159,7 @@ void W_627fc0() {
 
 // FUN_00628b6c
 void W_628b6c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0;
     r0 = *(u32*)(r0 + 148);
     r0 = r0 + 12u;
     r0 = Fn_2c5c08_1(r0);
@@ -169,7 +168,7 @@ void W_628b6c(u32 a0) {
 
 // FUN_00628b94
 void W_628b94(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0;
     r0 = *(u32*)(r0 + 148);
     r0 = r0 + 12u;
     r0 = Fn_2c5c08_1(r0);
@@ -178,7 +177,7 @@ void W_628b94(u32 a0) {
 
 // FUN_00684f38
 void W_684f38(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r4;
     r4 = r0;
     r0 = Fn_684f28_1(r0);
     r0 = r4;

@@ -15,8 +15,8 @@ u32 Fn_62fba0_2(u32, u32);
 
 // FUN_00353984
 void W_353984(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    float f0, ffa, ffb;
+    u32 r0 = a0, r1 = a1, r4, r5, fa, fb;
+    float f0;
     r4 = r0;
     *(u8*)(r0 + 100) = r1;
     r0 = *(u8*)(r0 + 101);
@@ -25,15 +25,13 @@ void W_353984(u32 a0, u32 a1) {
     r0 = *(u32*)(r4 + 84);
     if (fa != fb) r1 = *(u32*)(r5 + 4);
     if (fa == fb) r1 = *(u32*)(r5);
-    fa = r0; fb = 0u;
-    if (fa != fb) r0 = Fn_5af1dc_2(r0, r1);
+    if (r0 != 0u) r0 = Fn_5af1dc_2(r0, r1);
     r0 = *(u8*)(r4 + 100);
     fa = r0; fb = 0u;
     r0 = *(u32*)(r4 + 88);
     if (fa != fb) r1 = *(u32*)(r5 + 12);
     if (fa == fb) r1 = *(u32*)(r5 + 8);
-    fa = r0; fb = 0u;
-    if (fa != fb) r0 = Fn_5af1dc_2(r0, r1);
+    if (r0 != 0u) r0 = Fn_5af1dc_2(r0, r1);
     r0 = *(u8*)(r4 + 100);
     fa = r0; fb = 0u;
     if (fa != fb) f0 = 0.0f;
@@ -42,8 +40,7 @@ void W_353984(u32 a0, u32 a1) {
     *(float*)(r4 + 104) = f0;
     r0 = Fn_3534f8_1f1(r0, f0);
     r0 = *(u32*)(r4 + 68);
-    fa = r0; fb = 0u;
-    if (fa == fb) goto L_353a00;
+    if (r0 == 0u) goto L_353a00;
     r1 = *(signed char*)(r4 + 100);
     { Fn_3579ec_2(r0, r1); return; }
     L_353a00:;
@@ -52,7 +49,7 @@ void W_353984(u32 a0, u32 a1) {
 
 // FUN_0062fb34
 u32 W_62fb34(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1, r4, r5;
     r4 = r0;
     r5 = *(short*)(r0 + 10);
     r1 = 1u;

@@ -13,8 +13,8 @@ u32 WeakCall1f1(u32, float);
 
 // FUN_00199614
 void W_199614(u32 a0, float p0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    float f0 = p0, f16, ffa, ffb;
+    u32 r0 = a0, r1, r4;
+    float f0 = p0, f16;
     r4 = r0;
     f16 = f0;
     r0 = *(u32*)(r0);
@@ -29,8 +29,8 @@ void W_199614(u32 a0, float p0) {
 
 // FUN_005c45c8
 void W_5c45c8(u32 a0, float p0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    float f0 = p0, f16, ffa, ffb;
+    u32 r0 = a0, r1, r2, r4;
+    float f0 = p0, f16;
     r4 = r0;
     f16 = f0;
     r2 = 0u;

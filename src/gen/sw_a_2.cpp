@@ -11,17 +11,16 @@ static inline u32 f2u(float f) { union { u32 u; float f; } x; x.f = f; return x.
 
 // FUN_005d1a58
 u32 W_5d1a58() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r0_1;
+    u32 r0_1;
     r0_1 = (u32)"";
     return r0_1;
 }
 
 // FUN_005f905c
 u32 W_5f905c(u32 a0) {
-    u32 r0 = a0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1;
     r1 = *(u8*)(r0 + 68);
     r0 = 0u;
-    fa = r1; fb = 15u;
     switch (r1) { case 0: goto L_5f906c; case 1: goto L_5f90ac; case 2: goto L_5f90b4; case 3: goto L_5f90bc; case 4: goto L_5f90bc; case 5: goto L_5f90c4; case 6: goto L_5f90cc; case 7: goto L_5f90bc; case 8: goto L_5f90c4; case 9: goto L_5f90d4; case 10: goto L_5f90dc; case 11: goto L_5f90dc; case 12: goto L_5f90b4; case 13: goto L_5f90e4; case 14: goto L_5f90e4; }
     L_5f906c:;
     return r0;
@@ -53,38 +52,32 @@ u32 W_5f905c(u32 a0) {
 
 // FUN_0061d8c8
 u32 W_61d8c8() {
-    u32 r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx, r0_1;
+    u32 r0_1;
     r0_1 = (u32)"Nocomment";
     return r0_1;
 }
 
 // FUN_00629c04
 u32 W_629c04(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0, r1 = a1, r2 = a2, r3 = a3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
-    fa = r2; fb = 8u;
+    u32 r0, r1 = a1, r2 = a2, r3 = a3, fa, fb;
     r0 = 0u;
     switch (r2) { case 0: goto L_629c34; case 1: goto L_629c40; case 2: goto L_629c4c; case 3: goto L_629c58; case 4: goto L_629c70; case 5: goto L_629c80; case 6: goto L_629c90; case 7: goto L_629ca0; default: goto L_629c64; }
     goto L_629c64;
     L_629c34:;
-    fa = r1; fb = 3u;
-    if (fa == fb) goto L_629cac;
+    if (r1 == 3u) goto L_629cac;
     goto L_629c60;
     L_629c40:;
-    fa = r1; fb = 0u;
-    if (fa == fb) goto L_629cac;
+    if (r1 == 0u) goto L_629cac;
     goto L_629c60;
     L_629c4c:;
-    fa = r1; fb = 1u;
-    if (fa == fb) goto L_629cac;
+    if (r1 == 1u) goto L_629cac;
     goto L_629c60;
     L_629c58:;
-    fa = r1; fb = 2u;
-    if (fa == fb) goto L_629cac;
+    if (r1 == 2u) goto L_629cac;
     L_629c60:;
     r0 = 0u;
     L_629c64:;
-    fa = r3; fb = 0u;
-    if (fa != fb) r0 = r0 ^ 1u;
+    if (r3 != 0u) r0 = r0 ^ 1u;
     return r0;
     L_629c70:;
     fa = r1; fb = 0u;
@@ -112,26 +105,21 @@ u32 W_629c04(u32 a0, u32 a1, u32 a2, u32 a3) {
 
 // FUN_0062b3e4
 u32 W_62b3e4(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, fa, fb, fx;
+    u32 r0 = a0, r1 = a1, r2 = a2, r3, r12, fa, fb;
     r12 = *(u32*)(r0 + 172);
     r3 = 13u;
     r0 = 0u;
-    fa = r12; fb = 0u;
-    if (fa != fb) r3 = *(u8*)(r12 + 4);
-    fa = r1; fb = 16u;
+    if (r12 != 0u) r3 = *(u8*)(r12 + 4);
     switch (r1) { case 0: goto L_62b444; case 1: goto L_62b45c; case 2: goto L_62b450; case 3: goto L_62b4ac; case 4: goto L_62b4a0; case 5: goto L_62b484; case 6: goto L_62b478; case 7: goto L_62b4b8; case 8: goto L_62b4c4; case 9: goto L_62b4dc; case 10: goto L_62b4d0; case 11: goto L_62b4d0; case 12: goto L_62b4d0; case 13: goto L_62b4d0; case 14: goto L_62b468; case 15: goto L_62b490; default: goto L_62b4d0; }
     goto L_62b4d0;
     L_62b444:;
-    fa = r3; fb = 0u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 0u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b450:;
-    fa = r3; fb = 2u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 2u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b45c:;
-    fa = r3; fb = 1u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 1u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b468:;
     fa = r3; fb = 2u;
@@ -139,12 +127,10 @@ u32 W_62b3e4(u32 a0, u32 a1, u32 a2) {
     if (fa == fb) goto L_62b4e8;
     goto L_62b4cc;
     L_62b478:;
-    fa = r3; fb = 6u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 6u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b484:;
-    fa = r3; fb = 5u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 5u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b490:;
     fa = r3; fb = 6u;
@@ -152,25 +138,20 @@ u32 W_62b3e4(u32 a0, u32 a1, u32 a2) {
     if (fa == fb) goto L_62b4e8;
     goto L_62b4cc;
     L_62b4a0:;
-    fa = r3; fb = 4u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 4u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b4ac:;
-    fa = r3; fb = 3u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 3u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b4b8:;
-    fa = r3; fb = 7u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 7u) goto L_62b4e8;
     goto L_62b4cc;
     L_62b4c4:;
-    fa = r3; fb = 8u;
-    if (fa == fb) goto L_62b4e8;
+    if (r3 == 8u) goto L_62b4e8;
     L_62b4cc:;
     r0 = 0u;
     L_62b4d0:;
-    fa = r2; fb = 0u;
-    if (fa != fb) r0 = r0 ^ 1u;
+    if (r2 != 0u) r0 = r0 ^ 1u;
     return r0;
     L_62b4dc:;
     fa = r3; fb = 11u;
