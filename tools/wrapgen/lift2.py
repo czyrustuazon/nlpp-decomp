@@ -77,7 +77,14 @@ NOTHROW = ' throw()' if os.environ.get('LIFT_NOTHROW') == '1' else ''
 # technical.md section 8, "Exception cleanups"): some local has a user-declared empty destructor. `frame` makes the
 # lifted stack frame that object (a one-word or missing frame falls back to `top`); `top` declares an empty-destructor
 # guard as the function's first local. Use with --exceptions in GEN_FLAGS and CLEAN=1 in gen2.py.
-GUARD = os.environ.get('LIFT_GUARD', '')
+# LIFT_GUARD=ptop,pcall,pcall1 (any comma list): the guard is polymorphic (`virtual ~PGuard_() {}`). Its only code is
+# a vptr store to a dead local, which ARMCC removes, but unlike a non-virtual empty guard it keeps the bare pad.
+# ptop: one guard for the whole function; pcall: each call statement in its own `{ PGuard_ g_; ... }` block;
+# pcall1: only the first call; none: also the variant without a guard. Each listed mode adds a variant.
+GUARDS = [g for g in os.environ.get('LIFT_GUARD', '').split(',') if g]
+GUARD = next((g for g in GUARDS if g in ('frame', 'top')), '')
+PGUARDS = [g for g in GUARDS if g in ('ptop', 'pcall', 'pcall1')]
+_CALL_LINE = re.compile(r'(\s*)((?:if \(.*?\) )?)(.*\b(?:Fn_|WeakCall)\w*\(.*\);(?: return;)?)')
 SWAPS = [int(os.environ.get('LIFT_SWAPS', '0'))]   # base variants to expand with adjacent-statement swaps (+1.4% matches on samples, but 4x slower: off by default)
 EXTRA = [0]  # minimum number of incoming register arguments (PASS variants)
 CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
@@ -690,7 +697,22 @@ def _lift(I, word, fname, ssa, p64=False):
         # TAIL under an if needs braces in both forms
         txt = re.sub(r'if \((.*)\) (return (?:u2f\()?Fn_[^;]*;)', r'if (\1) { \2 }', txt)
         if ty == 'void': txt = txt.replace('{ { ', '{ ').replace('; return; } }', '; return; }') if False else txt
-        res.append((sorted(decls), f'{ty} {fname}({pl}){NOTHROW} {{\n    u32 {regdecl};\n{fdecl}{txt}\n}}', calls))
+        if not PGUARDS or 'none' in GUARDS:   # 'none': also the variant without a guard
+            res.append((sorted(decls), f'{ty} {fname}({pl}){NOTHROW} {{\n    u32 {regdecl};\n{fdecl}{txt}\n}}', calls))
+        for pg in PGUARDS:
+            gd = sorted(decls | {'struct PGuard_ { virtual ~PGuard_() {} };'})
+            if pg == 'ptop':
+                gtxt = '    PGuard_ g_;\n' + txt
+            else:
+                out_l = []; n_wr = 0
+                for l in txt.split('\n'):
+                    m_ = _CALL_LINE.fullmatch(l)
+                    if m_ and (pg == 'pcall' or n_wr == 0) and '{' not in m_.group(3) and 'goto' not in m_.group(3):
+                        l = f'{m_.group(1)}{m_.group(2)}{{ PGuard_ g_; {m_.group(3)} }}'; n_wr += 1
+                    out_l.append(l)
+                if not n_wr: continue
+                gtxt = '\n'.join(out_l)
+            res.append((gd, f'{ty} {fname}({pl}){NOTHROW} {{\n    u32 {regdecl};\n{fdecl}{gtxt}\n}}', calls))
     return res
 
 

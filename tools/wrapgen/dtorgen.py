@@ -27,6 +27,7 @@ DELETE = 0x2024b0   # operator delete (_ZdlPv)
 cfg = C.load(); code = cfg.code()
 md = capstone.Cs(capstone.CS_ARCH_ARM, capstone.CS_MODE_ARM)
 size = {int(r['Location'], 16) - 0x100000: int(r['Size'], 16) for r in csv.DictReader(open('symbols/code.bin.csv'))}
+THUMB = {int(r['Location'], 16) - 0x100000 for r in csv.DictReader(open('symbols/code.bin.csv')) if r['Mode'] == '$t'}
 pads = collections.defaultdict(list)
 for r in csv.DictReader(open('symbols/cleanup_pads.csv')): pads[int(r['parent'], 16)].append(int(r['offset'], 16))
 
@@ -123,7 +124,9 @@ def externs(obj_path, p, vp, calls):
     return out
 
 
-PRE = 'typedef unsigned u32;\n'
+PRE = '\n'.join(['typedef unsigned char u8;', 'typedef unsigned short u16;', 'typedef unsigned u32;', 'typedef unsigned long long u64;',
+                 'static inline float u2f(u32 v) { union { u32 u; float f; } x; x.u = v; return x.f; }',
+                 'static inline u32 f2u(float f) { union { u32 u; float f; } x; x.f = f; return x.u; }']) + '\n'   # the lifter's prelude
 
 
 # ---- stage 2: destructors whose base or member destructor is inline ----
@@ -299,7 +302,7 @@ def lifted_externs(und):
     for u in und:
         m = re.search(r'Fn_([0-9a-f]{6})', u)
         if m:
-            t = int(m.group(1), 16); out[u] = 0x100000 + t + (1 if t % 4 else 0); continue
+            t = int(m.group(1), 16); out[u] = 0x100000 + t + (1 if t in THUMB else 0); continue
         m = re.match(r'g_([0-9a-f]{8})$', u)
         if m: out[u] = int(m.group(1), 16)
     return out
@@ -423,6 +426,174 @@ def apply(in_json, path):
     print(len(res), 'functions;', len(ext), 'externs')
 
 
+# ---- stage 3: destructors with a body ----
+# `C::~C() { if (m) { F(m, 0); m = 0; } }` and the like: the body is lifted with lift2 and wrapped in the destructor,
+# so the vptr store at entry is the compiler's own (as a free function ARMCC schedules it differently). The lifted
+# vptr store is removed, and for the deleting form (D0) the tail call to operator delete. Bare pads come from a
+# polymorphic local (lift2 LIFT_GUARD=ptop/pcall/pcall1): its dead vptr store is removed, its empty pad is kept.
+
+def vptr_at_entry(p):
+    """the vtable value stored to [this] in the first instructions, or None"""
+    ins = list(md.disasm(code[p:p + min(size[p], 0x30)], p))
+    this = {'r0'}; lit = {}
+    for i in ins:
+        m, o = i.mnemonic, i.op_str
+        mm = re.fullmatch(r'(r\d+), \[pc, #(0x[0-9a-f]+|\d+)\]', o)
+        if m == 'ldr' and mm:
+            a = i.address + 8 + int(mm.group(2), 0); lit[mm.group(1)] = int.from_bytes(code[a:a + 4], 'little'); continue
+        mm = re.fullmatch(r'(r\d+), (r\d+)', o)
+        if m == 'mov' and mm and mm.group(2) in this: this.add(mm.group(1)); continue
+        mm = re.fullmatch(r'(r\d+), \[(r\d+)\](?:, #\w+)?', o)
+        if m == 'str' and mm and mm.group(1) in lit and mm.group(2) in this:
+            v = lit[mm.group(1)]
+            return v if 0x790000 <= v < 0x889000 else None
+        if m.startswith('b'): return None
+    return None
+
+
+def body_variants(p, vt, dele):
+    """lifted body variants as (decl lines, helper text) for `static inline void Body_<p>(u32 a0)`"""
+    os.environ['LIFT_GUARD'] = os.environ.get('DT_GUARDS', 'none,ptop,pcall,pcall1')
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    os.environ.setdefault('S', 'build/a/g')
+    import gen as G, lift2 as L2
+    L2.GUARDS[:] = [g for g in os.environ['LIFT_GUARD'].split(',') if g]
+    L2.PGUARDS[:] = [g for g in L2.GUARDS if g in ('ptop', 'pcall', 'pcall1')]
+    try: vs = L2.lift(G.ins_of(p, size[p]), G.word, f'Body_{p:06x}')
+    except Exception: return []
+    out = []; seen = set()
+    vtn = f'g_{vt:08x}'
+    for decls, body, _ in vs:
+        mm = re.match(r'void Body_[0-9a-f]+\(((?:u32 a0)?)\)', body)
+        if not mm: continue
+        lines = body.split('\n')
+        # the vptr store: `X = (u32)g_<vt>;` ... `*(u32*)(Y) = X;`, or the folded `*(u32*)(Y) = (u32)g_<vt>;`
+        var = None; done_ = False; new = []
+        for l in lines:
+            m1 = re.fullmatch(r'\s*(\w+) = \(u32\)' + vtn + ';', l)
+            if m1 and var is None: var = m1.group(1); new.append(l); continue
+            m2 = re.fullmatch(r'\s*\*\(u32\*\)\((\w+)\) = (\w+|\(u32\)' + vtn + ');', l)
+            if m2 and not done_ and (m2.group(2) == var or vtn in m2.group(2)): done_ = True; continue
+            new.append(l)
+        if not done_: continue
+        txt = '\n'.join(new)
+        if dele:
+            txt2 = re.sub(r'(\{ )?(r\d+(?:_\d+)? = )?Fn_2024b0_\d+\([^;]*\); return;( \})?', 'return;', txt)
+            if txt2 == txt: continue
+            txt = txt2
+        if 'Fn_2024b0' in txt: continue
+        # `r4 = r0;` before r0 changes copies `this`; in a destructor `this` is one value, so use a0 for the copy
+        tl = txt.split('\n')
+        for j, l in enumerate(tl):
+            m3 = re.fullmatch(r'\s*(\w+) = (r0|a0);', l)
+            if m3:
+                x = m3.group(1)
+                if sum(1 for l2 in tl if re.match(r'\s*(?:\{ \w+ g_; )?' + re.escape(x) + r' = ', l2)) == 1:
+                    tl[j] = ''
+                    tl = [re.sub(r'\b%s\b' % re.escape(x), 'a0', l2) if k != j and not l2.lstrip().startswith(('u32 ', 'float ', 'u64 ')) else l2 for k, l2 in enumerate(tl)]
+                break
+            if re.match(r'\s*r0(_\d+)? = ', l) or 'goto' in l or l.strip().endswith(':;'): break
+        tl = [l for l in tl if l != '']
+        inner = '\n'.join(tl[1:-1])   # without the signature and the closing brace
+        import tidy   # flag pairs folded into their `if` (a pair schedules differently in a destructor body)
+        for fields, body_ in (fieldize(inner), (None, inner)):   # typed members first: they match far more often
+            if body_ is None: continue
+            for b2 in (tidy.fold(body_, bold=True), tidy.fold(body_), body_):
+                if (fields, b2) in seen: continue
+                seen.add((fields, b2)); out.append((list(decls), b2, fields))
+    return out
+
+
+FSIZE = {'u8': 1, 'signed char': 1, 'u16': 2, 'short': 2, 'u32': 4, 'float': 4, 'u64': 8}
+_ACC = re.compile(r'\*\((u8|signed char|u16|short|u32|float|u64)\*\)\(a0(?: \+ (\d+))?\)')
+
+
+def fieldize(inner):
+    """accesses through `this` -> typed members (ARMCC schedules a member access, not a raw pointer access, across
+    the destructor's own vptr store). -> (member declarations, body) or (None, None)"""
+    lines = inner.split('\n')
+    # the incoming r0 is `this` until it is first written (reads on that line's right-hand side still see it)
+    for j, l in enumerate(lines):
+        if j == 0: continue   # the declaration line
+        if 'goto' in l or l.strip().endswith(':;'): break
+        m = re.match(r'(\s*(?:\{ \w+ g_; )?)r0 = (.*)$', l)
+        if m:
+            lines[j] = m.group(1) + 'r0 = ' + re.sub(r'\br0\b', 'a0', m.group(2)); break
+        lines[j] = re.sub(r'\br0\b', 'a0', l)
+    body = '\n'.join(lines)
+    acc = {}
+    for m in _ACC.finditer(body):
+        k = int(m.group(2) or 0); t = m.group(1)
+        if acc.get(k, t) != t: return None, None
+        acc[k] = t
+    if not acc: return None, None
+    cur = 4; decl = []
+    for k in sorted(acc):
+        t = acc[k]; z = FSIZE[t]
+        if k < cur or k % z: return None, None
+        if k > cur: decl.append(f'u8 pad_{k:x}[{k - cur}];')
+        decl.append(f'{t} f_{k:x};'); cur = k + z
+    body = _ACC.sub(lambda m: f'f_{int(m.group(2) or 0):x}', body)
+    return ' '.join(decl), body
+
+
+def run3(out_json, only=None):
+    done = {int(f['offset'], 16) for f in tomllib.load(open('functions.toml', 'rb'))['function']}
+    IGN = ('_ZdlPv', '__cxa_end_cleanup', '__aeabi_unwind_cpp_pr0', '__aeabi_unwind_cpp_pr1', '__cxa_call_unexpected', '__gxx_personality_v0')
+    part, nparts = int(os.environ.get('PART', '0')), int(os.environ.get('NPARTS', '1'))
+    mx = int(os.environ.get('DT_MAX', '100'), 16)
+    res = []; tried = 0
+    for k_, p in enumerate(sorted(pads)):
+        if k_ % nparts != part: continue
+        if p in done or p not in size or size[p] > mx or (only and p not in only): continue
+        vt = vptr_at_entry(p)
+        if vt is None: continue
+        last = list(md.disasm(code[p + size[p] - 4:p + size[p]], p + size[p] - 4))
+        dele = bool(last) and last[0].mnemonic == 'b' and last[0].op_str == '#0x2024b0'
+        tried += 1; hit = None
+        for decls, body_, fields in body_variants(p, vt, dele):
+            n = f'{p:06x}'
+            for base in ('poly', 'none'):
+                lines = []
+                mem = (fields + ' ') if fields else ''
+                if base == 'poly':
+                    lines.append(f'struct B_{n} {{ virtual ~B_{n}() {{}} }};')
+                    lines.append(f'struct C_{n} : B_{n} {{ virtual void key_(); {mem}~C_{n}(); }};')
+                else:
+                    lines.append(f'struct C_{n} {{ virtual void key_(); {mem}virtual ~C_{n}(); }};')
+                lines.append(f'C_{n}::~C_{n}() {{\n    u32 a0 = (u32)this;\n{body_}\n}}')
+                text = '\n'.join(lines)
+                helper = ''
+                sym = f'_ZN{len("C_" + n)}C_{n}D{0 if dele else 1}Ev'
+                src = f'build/a/tmp/dt3_{n}.cpp'
+                open(src, 'w').write(PRE + '\n'.join(decls) + '\n' + text + '\n')
+                obj = None; sc = None
+                try:
+                    obj = compile_obj(cfg, src, FL)
+                    z = len(read_function(obj, sym).data)
+                    with open(obj, 'rb') as fh:
+                        und = [s.name for s in ELFFile(fh).get_section_by_name('.symtab').iter_symbols() if s['st_shndx'] == 'SHN_UNDEF' and s.name and not s.name.startswith('Lib$$') and s.name not in IGN]
+                    ext = {f'_ZTV{len("C_" + n)}C_{n}': vt - 8}
+                    ext.update(lifted_externs([u for u in und if u not in ext]))
+                    sc = compare(cfg, src, sym, p, z, FL, clean=pads[p][0]).score
+                except Exception as e:
+                    if os.environ.get('DTDEBUG'): print('  error', repr(e)[:200])
+                finally:
+                    for q in (src, obj):
+                        try:
+                            if q: os.unlink(q)
+                        except OSError: pass
+                if os.environ.get('DTDEBUG'): print('  ', base, sc)
+                if sc == 0 and size[p] <= z <= size[p] + 0x10 and all(u in ext for u in und):
+                    hit = dict(st=p, size=z, sym=sym, decls=decls, text=text, clean=pads[p][0], ext=ext, name=f'C_{n}::~C_{n}')
+                    break
+            if hit: break
+        print(f'{p:06x} {"match" if hit else "miss"}', flush=True)
+        if hit: res.append(hit)
+    json.dump(res, open(out_json, 'w'), indent=1)
+    print(f'tried {tried}, matched {len(res)}')
+
+
 def merge(out_json, stage2, stage1):
     """stage 2 results first; a stage 1 result only when its pads call nothing but destructors the body calls (else
     the pad calls an inline destructor's out-of-line copy, which stage 1 would have given a wrong name and address)"""
@@ -446,8 +617,8 @@ def merge(out_json, stage2, stage1):
 if __name__ == '__main__':
     if sys.argv[1] == 'merge':   # merge OUT.json STAGE1.json STAGE2.json..
         merge(sys.argv[2], sys.argv[4:], [sys.argv[3]]); sys.exit()
-    if sys.argv[1] in ('run', 'run2'):
+    if sys.argv[1] in ('run', 'run2', 'run3'):
         only = {int(r['offset'], 16) for r in csv.DictReader(open(sys.argv[3]))} if len(sys.argv) > 3 else None
-        (run if sys.argv[1] == 'run' else run2)(sys.argv[2], only)
+        {'run': run, 'run2': run2, 'run3': run3}[sys.argv[1]](sys.argv[2], only)
     else:
         apply(sys.argv[2], sys.argv[3])
