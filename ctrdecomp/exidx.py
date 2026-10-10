@@ -11,6 +11,13 @@ Repairs applied to a symbol CSV (symbols/code.bin.csv format, see symbols.py):
          next, typically after a tail call the linker turned into `mov r0, r0`)
   add    an entry in a gap between known functions becomes a new function that runs to the next
          start (known or entry); ARM when word-aligned with condition AL, else Thumb
+  pads   cleanup landing pads are not functions: with --exceptions ARMCC emits a function's cleanups (destructors
+         of locals and members on the unwind path) as a separate section `<fn>.clean`, placed right after the
+         function. Each pad never pushes, uses the parent's callee-saved registers and ends with a call to
+         __cxa_end_cleanup (found as the most common such last call right after an extab function); one listed
+         entry may hold several pads and their pool, never a return. Pads are
+         removed from the list and written to symbols/cleanup_pads.csv (offset, size, parent; hex file offsets);
+         consecutive pads belong to the function before them.
 Known starts without an entry are never removed: a stretch built without unwind tables (assembly,
 the C runtime, a library built without --exceptions) sits under one cantunwind entry. Boundaries
 inside such stretches are fixed by hand in symbols/boundaries.csv (offset, size, note; hex file
@@ -157,6 +164,41 @@ def overrides(cfg, code, rows, path):
     return rows, dropped
 
 
+def cleanup_pads(cfg, code, rows, entries):
+    """-> (rows without pads, [(pad offset, size, parent offset)], __cxa_end_cleanup offset or None)"""
+    from collections import Counter
+    import capstone
+    md = capstone.Cs(capstone.CS_ARCH_ARM, capstone.CS_MODE_ARM)
+    base = cfg.load_base
+    kind = {fn: k for fn, k, _ in entries}
+    fns = [(int(r["Location"], 16) - base, int(r["Size"], 16), r) for r in rows if r["Mode"] == "$a"]
+    fns.sort(key=lambda x: x[0])
+    last = {}   # offset -> target of the final bl/blx, for functions that never push
+    for o, sz, _ in fns:
+        ins = list(md.disasm(code[o:o + sz], o))
+        if not ins or any(i.mnemonic in ("push", "stmdb") for i in ins):
+            continue
+        # one listed entry may hold several pads (branches to a shared tail) and their literal pool, but no return
+        if any(i.mnemonic in ("pop", "bx") or (i.mnemonic.startswith("ldm") and "pc" in i.op_str) for i in ins):
+            continue
+        calls = [i for i in ins if i.mnemonic in ("bl", "blx") and i.op_str.startswith("#")]
+        if calls:
+            last[o] = int(calls[-1].op_str[1:], 0)
+    votes = Counter(last[o] for k, (o, _, _) in enumerate(fns) if o in last and k and kind.get(fns[k - 1][0]) == "extab")
+    if not votes:
+        return rows, [], None
+    end = votes.most_common(1)[0][0]
+    pads, parent = [], None
+    for o, sz, _ in fns:
+        if last.get(o) == end:
+            if parent is not None:
+                pads.append((o, sz, parent))
+        else:
+            parent = o
+    drop = {o for o, _, _ in pads}
+    return [r for r in rows if int(r["Location"], 16) - base not in drop], pads, end
+
+
 def repair_csv(cfg, path, out_path=None):
     code = cfg.code()
     lo, hi, entries = table(cfg, code)
@@ -166,6 +208,15 @@ def repair_csv(cfg, path, out_path=None):
     fix = os.path.join(cfg.root, "symbols", "boundaries.csv")
     if os.path.isfile(fix):
         new, stats["override_dropped"] = overrides(cfg, code, new, fix)
+    new, pads, end = cleanup_pads(cfg, code, new, entries)
+    stats["cleanup_pads"] = len(pads)
+    stats["cxa_end_cleanup"] = f"0x{end:x}" if end is not None else None
+    if out_path:
+        with open(os.path.join(os.path.dirname(out_path), "cleanup_pads.csv"), "w", newline="") as f:
+            w = csv.writer(f, lineterminator="\n")
+            w.writerow(["offset", "size", "parent"])
+            for o, sz, p in pads:
+                w.writerow([f"{o:x}", f"{sz:x}", f"{p:x}"])
     stats = {"table": f"0x{lo + cfg.load_base:X}-0x{hi + cfg.load_base:X}", **stats, "functions_before": len(rows),
              "functions_after": len(new)}
     if out_path:

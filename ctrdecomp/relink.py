@@ -129,6 +129,11 @@ def relink(cfg, out=None):
                     raise RuntimeError(f"size 0x{len(mine.data):X}, declared 0x{size:X}")
                 data = resolve_function(mine, base + off, addr)
                 image[off:off + size] = data
+                if "clean" in fn:   # the cleanup section goes where the linker put it, right after the function
+                    if mine.clean is None:
+                        raise RuntimeError("functions.toml names a cleanup pad but the object has no .clean section")
+                    co = int(fn["clean"], 16)
+                    image[co:co + len(mine.clean.data)] = resolve_function(mine.clean, base + co, addr)
                 placed.append(fn["name"])
             except RuntimeError as e:
                 errors.append((fn["name"], str(e)))

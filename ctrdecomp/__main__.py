@@ -117,7 +117,8 @@ def cmd_check(cfg, a):
         if a.names and fn["name"] not in a.names:
             continue
         r = compare(cfg, os.path.join(cfg.root, fn["src"]), fn["symbol"], int(fn["offset"], 16),
-                    int(fn["size"], 16), fn.get("flags") or None, fn.get("build"), cache)
+                    int(fn["size"], 16), fn.get("flags") or None, fn.get("build"), cache,
+                    int(fn["clean"], 16) if "clean" in fn else None)
         want = int(fn.get("score", 0))
         ok = r.score == want
         bad += not ok

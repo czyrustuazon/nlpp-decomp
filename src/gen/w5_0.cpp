@@ -28,17 +28,6 @@ u32 W_03af04() {
     return r0_3;
 }
 
-// FUN_0006a908
-u32 W_06a908(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r0_2, r0_3, r0_4;
-    r4_1 = r0;
-    r0_1 = Fn_06a7a4_1(r0);
-    r0_2 = r4_1 + 4u;
-    r0_3 = WeakCall1(r0_2);
-    r0_4 = r0_3 - 4u;
-    return r0_4;
-}
-
 // FUN_000fee4c
 void W_0fee4c() {
     u32 r0;

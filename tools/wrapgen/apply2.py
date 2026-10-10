@@ -27,7 +27,7 @@ for n in range(0, len(res), chunk):
         for line in r['decl'].split(NL):
             if line and line not in decls: decls.append(line)
         bodies.append(f"// FUN_{r['st']:08x}" + NL + r['body'])
-        toml.append(f'{NL}[[function]]{NL}name = "W_{r["st"]:06x}"{NL}offset = "{r["st"]:x}"{NL}size = "{r["size"]:x}"{NL}src = "{path}"{NL}{FLINE}symbol = "{r["sym"]}"{NL}generated = true{NL}score = 0{NL}')
+        toml.append(f'{NL}[[function]]{NL}name = "W_{r["st"]:06x}"{NL}offset = "{r["st"]:x}"{NL}size = "{r["size"]:x}"{NL}src = "{path}"{NL}{FLINE}symbol = "{r["sym"]}"{NL}' + (f'clean = "{r["clean"]:x}"{NL}' if 'clean' in r else '') + f'generated = true{NL}score = 0{NL}')
         for u in r['und']:
             if re.search(r'WeakCall\d', u):
                 ext_rows[u] = 'weak'; continue

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 284" width="780" height="284" role="img" aria-labelledby="t d">
 <title id="t">nlpp-decomp matching progress</title>
-<desc id="d">Byte-exact share of the mapped code: 17.3% by size, 40.9% by function count. Breakdown in README.md.</desc>
+<desc id="d">Byte-exact share of the mapped code: 17.4% by size, 44.9% by function count. Breakdown in README.md.</desc>
 <style>
   svg { --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --rest:#e2e1dc; }
   @media (prefers-color-scheme: dark) {
@@ -13,21 +13,21 @@
 <rect width="100%" height="100%" rx="8" style="fill:var(--surface)"/>
 <g transform="translate(16,0)">
 <text x="0" y="26" class="h">Byte-exact against retail code.bin</text>
-<text x="0" y="44" class="t2">36,380 mapped functions, 6,221 KiB (92.6% of .text) · relink identical</text>
+<text x="0" y="44" class="t2">33,353 mapped functions, 6,221 KiB (92.6% of .text) · relink identical</text>
 <text x="0" y="75" class="t1">Code size</text>
 <path d="M100.0,58 H167.6 V84 H100.0 Q96.0,84 96.0,80 V62 Q96.0,58 100.0,58 Z" style="fill:var(--s1)"/>
   <rect x="169.6" y="58" width="1.0" height="26" style="fill:var(--s2)"/>
-  <rect x="172.7" y="58" width="23.4" height="26" style="fill:var(--s3)"/>
-  <rect x="198.0" y="58" width="1.0" height="26" style="fill:var(--s4)"/>
-  <path d="M199.5,58 H692.0 Q696.0,58 696.0,62 V80 Q696.0,84 692.0,84 H199.5 Z" style="fill:var(--rest)"/>
-<text x="704" y="75" class="t1 b">17.3%</text>
+  <rect x="172.7" y="58" width="23.9" height="26" style="fill:var(--s3)"/>
+  <rect x="198.6" y="58" width="1.0" height="26" style="fill:var(--s4)"/>
+  <path d="M200.2,58 H692.0 Q696.0,58 696.0,62 V80 Q696.0,84 692.0,84 H200.2 Z" style="fill:var(--rest)"/>
+<text x="704" y="75" class="t1 b">17.4%</text>
 <text x="0" y="119" class="t1">Functions</text>
-<path d="M100.0,102 H166.9 V128 H100.0 Q96.0,128 96.0,124 V106 Q96.0,102 100.0,102 Z" style="fill:var(--s1)"/>
-  <rect x="168.9" y="102" width="14.1" height="26" style="fill:var(--s2)"/>
-  <rect x="185.1" y="102" width="146.7" height="26" style="fill:var(--s3)"/>
-  <rect x="333.8" y="102" width="5.6" height="26" style="fill:var(--s4)"/>
-  <path d="M341.4,102 H692.0 Q696.0,102 696.0,106 V124 Q696.0,128 692.0,128 H341.4 Z" style="fill:var(--rest)"/>
-<text x="704" y="119" class="t1 b">40.9%</text>
+<path d="M100.0,102 H173.5 V128 H100.0 Q96.0,128 96.0,124 V106 Q96.0,102 100.0,102 Z" style="fill:var(--s1)"/>
+  <rect x="175.5" y="102" width="15.6" height="26" style="fill:var(--s2)"/>
+  <rect x="193.2" y="102" width="161.6" height="26" style="fill:var(--s3)"/>
+  <rect x="356.8" y="102" width="6.4" height="26" style="fill:var(--s4)"/>
+  <path d="M365.2,102 H692.0 Q696.0,102 696.0,106 V124 Q696.0,128 692.0,128 H365.2 Z" style="fill:var(--rest)"/>
+<text x="704" y="119" class="t1 b">44.9%</text>
 <rect x="0" y="160" width="12" height="12" rx="3" style="fill:var(--s1)"/>
 <text x="20" y="170" class="t1">library, assembly</text>
 <text x="20" y="187" class="t2">12.3% of code · 4,422 functions</text>
@@ -36,12 +36,12 @@
 <text x="400" y="187" class="t2">0.5% of code · 979 functions</text>
 <rect x="0" y="200" width="12" height="12" rx="3" style="fill:var(--s3)"/>
 <text x="20" y="210" class="t1">generated C</text>
-<text x="20" y="227" class="t2">4.2% of code · 9,017 functions</text>
+<text x="20" y="227" class="t2">4.3% of code · 9,095 functions</text>
 <rect x="380" y="200" width="12" height="12" rx="3" style="fill:var(--s4)"/>
 <text x="400" y="210" class="t1">hand-written C</text>
-<text x="400" y="227" class="t2">0.3% of code · 462 functions</text>
+<text x="400" y="227" class="t2">0.3% of code · 469 functions</text>
 <rect x="0" y="240" width="12" height="12" rx="3" style="fill:var(--rest)"/>
 <text x="20" y="250" class="t1">not yet matched</text>
-<text x="20" y="267" class="t2">82.7% of code · 21,500 functions</text>
+<text x="20" y="267" class="t2">82.6% of code · 18,388 functions</text>
 </g>
 </svg>

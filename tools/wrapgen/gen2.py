@@ -39,6 +39,12 @@ def effsize(st, sz):
         if any(st < x < nxt and x in handled for x in _starts[bisect.bisect_right(_starts, st):k]): return sz
         end = nxt
     return sz
+# CLEAN=1: only functions with a cleanup pad (symbols/cleanup_pads.csv); the pad is scored with the function and recorded
+CLEAN = {}
+if os.environ.get('CLEAN') == '1':
+    import csv
+    for r in csv.DictReader(open('symbols/cleanup_pads.csv')):
+        CLEAN.setdefault(int(r['parent'], 16), int(r['offset'], 16))   # the first pad starts the parent's .clean section
 def attempt(st, sz, decl, body):
     p = f'{S}/g2_{tag}_{st:06x}.cpp'
     open(p, 'w').write(PRE + decl + NL + body + NL)
@@ -53,8 +59,10 @@ def attempt(st, sz, decl, body):
         sym = syms[0]
         z = len(read_function(obj, sym).data)
         if z < sz or z > max(sz, strend(st, sz)) + 0x24: return None
-        if compare(G.cfg, p, sym, st, z, FL).score == 0:
-            return dict(st=st, size=z, sym=sym, decl=decl, body=body, und=undall, callee=sorted(G.graph[st]))
+        if compare(G.cfg, p, sym, st, z, FL, clean=CLEAN.get(st)).score == 0:
+            r = dict(st=st, size=z, sym=sym, decl=decl, body=body, und=undall, callee=sorted(G.graph[st]))
+            if st in CLEAN: r['clean'] = CLEAN[st]
+            return r
     except Exception:
         return None
     finally:
@@ -66,6 +74,7 @@ def attempt(st, sz, decl, body):
 d = __import__('tomllib').load(open('functions.toml', 'rb'))
 handled = {int(f['offset'], 16) for f in d['function']}
 cands = [st for st, sz, th, n in G.funcs if not th and st not in handled and lo <= st < hi and sz <= mx]
+if CLEAN: cands = [st for st in cands if st in CLEAN]
 if os.environ.get('ONLY'):   # ONLY=<csv with an `offset` column (hex)>: restrict to those functions
     import csv
     only = {int(r['offset'], 16) for r in csv.DictReader(open(os.environ['ONLY']))}

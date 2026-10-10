@@ -73,6 +73,11 @@ PASS = [False]
 # last call (`bl X; pop {.., pc}` where a plain build emits `pop; b X`): a nothrow function cannot tail-call a callee
 # that may throw (technical.md section 8, "Non-tail last call").
 NOTHROW = ' throw()' if os.environ.get('LIFT_NOTHROW') == '1' else ''
+# LIFT_GUARD=frame|top: for extab functions whose cleanup pad calls no destructor (only `nop; blx __cxa_end_cleanup`,
+# technical.md section 8, "Exception cleanups"): some local has a user-declared empty destructor. `frame` makes the
+# lifted stack frame that object (a one-word or missing frame falls back to `top`); `top` declares an empty-destructor
+# guard as the function's first local. Use with --exceptions in GEN_FLAGS and CLEAN=1 in gen2.py.
+GUARD = os.environ.get('LIFT_GUARD', '')
 SWAPS = [int(os.environ.get('LIFT_SWAPS', '0'))]   # base variants to expand with adjacent-statement swaps (+1.4% matches on samples, but 4x slower: off by default)
 EXTRA = [0]  # minimum number of incoming register arguments (PASS variants)
 CMN = [True]   # cmn lifted as an equality compare against the negated operand (else as `fx = a + b`)
@@ -668,8 +673,13 @@ def _lift(I, word, fname, ssa, p64=False):
                     i2 += 2
                 else: o2.append(out[i2]); i2 += 1
             out = o2
+    elif frame[0] and GUARD == 'frame':
+        fdecl = f'    struct Frame_ {{ u32 w[{(frame[0] + 3) // 4}]; ~Frame_() {{}} }} stk;' + chr(10) + fdecl
+        out = [l.replace('(u32)stk', '(u32)&stk') for l in out]
     elif frame[0]: regdecl += f', stk[{(frame[0] + 3) // 4}]'
-    body = '\n'.join('    ' + l for l in out)
+    if GUARD == 'top' or (GUARD == 'frame' and frame[0] in (0, 4)):
+        decls.add('struct Guard_ { ~Guard_() {} };'); fdecl = '    Guard_ guard_;' + chr(10) + fdecl
+    body ='\n'.join('    ' + l for l in out)
     res = []
     for ty in ('void', 'u32') + (('float',) if fl_ret else ()):
         txt = body

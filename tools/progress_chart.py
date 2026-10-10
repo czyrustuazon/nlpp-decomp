@@ -1,6 +1,8 @@
 """progress_chart.py: measure matching progress and draw docs/progress.svg for the README.
 
 Denominator: the ARM/Thumb functions of `.text` in symbols/code.bin.csv (which covers 92.3% of `.text`).
+Exception cleanup pads (symbols/cleanup_pads.csv) are not functions: their bytes are added to their parent, and they
+count as matched only when the parent's entry places its `.clean` section (`clean = "<offset>"`).
 A function counts when functions.toml has an entry for it at score 0. Categories:
   library, assembly   library-tagged, src is .s (CTR SDK, svc stubs, C runtime)
   library, C          library-tagged, src is C/C++
@@ -15,13 +17,18 @@ funcs = {}
 for r in csv.DictReader(open('symbols/code.bin.csv')):
     if r['Segment'] == '.text' and r['Mode'] in ('$a', '$t'):
         funcs[int(r['Location'], 16) - 0x100000] = int(r['Size'], 16)
-N, B = len(funcs), sum(funcs.values())
+pads = {}
+if os.path.isfile('symbols/cleanup_pads.csv'):
+    for r in csv.DictReader(open('symbols/cleanup_pads.csv')):
+        p = int(r['parent'], 16)
+        if p in funcs: pads[p] = pads.get(p, 0) + int(r['size'], 16)
+N, B = len(funcs), sum(funcs.values()) + sum(pads.values())
 CATS = ['library, assembly', 'library, C', 'generated C', 'hand-written C']
 cnt = defaultdict(lambda: [0, 0]); seen = set(); near = [0, 0]
 for f in tomllib.load(open('functions.toml', 'rb'))['function']:
     o = int(f['offset'], 16)
     if o in seen or o not in funcs: continue
-    seen.add(o); sz = funcs[o]
+    seen.add(o); sz = funcs[o] + (pads.get(o, 0) if 'clean' in f else 0)
     if f.get('score', 0) != 0: near[0] += 1; near[1] += sz; continue
     if f.get('library'): k = CATS[0] if f['src'].endswith('.s') else CATS[1]
     elif f['src'].startswith('src/gen/'): k = CATS[2]

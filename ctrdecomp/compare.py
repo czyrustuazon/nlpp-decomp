@@ -26,6 +26,7 @@ class Obj:
     thumb: bool
     relocs: dict = field(default_factory=dict)   # offset -> (type, symbol)
     local: dict = field(default_factory=dict)    # section-local marker symbol (`__switch$$`) -> offset in data
+    clean: "Obj" = None                          # the function's exception cleanup section `<section>.clean`, if any
 
 
 @dataclass
@@ -83,7 +84,14 @@ def read_function(obj, symbol):
         end = nxt[0] if nxt else len(data)   # include the literal pool up to the next function
         local = {s.name: (s["st_value"] & ~1) - start for s in funcs
                  if s["st_shndx"] == shndx and "$$" in s.name and start <= (s["st_value"] & ~1) < end}
-        return Obj(data[start:end], bool(sym["st_value"] & 1), _section_relocs(elf, shndx, start, end), local)
+        # With --exceptions ARMCC puts the cleanup code (landing pads) in a section of its own, `<section>.clean`;
+        # the linker places it right after the function (technical.md section 8, "Exception cleanups")
+        sec_name = elf.get_section(shndx).name
+        clean = None
+        for k, s in enumerate(elf.iter_sections()):
+            if s.name == sec_name + ".clean":
+                clean = Obj(s.data(), False, _section_relocs(elf, k, 0, len(s.data())))
+        return Obj(data[start:end], bool(sym["st_value"] & 1), _section_relocs(elf, shndx, start, end), local, clean)
 
 
 def _section_relocs(elf, shndx, start, end):
@@ -147,7 +155,9 @@ def _thumb_bl_target(hw1, hw2, pc):
     return t & ~3 if not (hw2 & 0x1000) else t   # BLX targets are word-aligned
 
 
-def compare(cfg, src, symbol, off, size, flags=None, build=None, cache=None):
+def compare(cfg, src, symbol, off, size, flags=None, build=None, cache=None, clean=None):
+    """clean: file offset of the function's cleanup pad in retail; the `.clean` section is then scored too
+    (each differing or missing word counts one, as does a missing section)"""
     code = cfg.code()
     target = code[off:off + size]
     key = (src, tuple(flags or ()), build)
@@ -179,6 +189,17 @@ def compare(cfg, src, symbol, off, size, flags=None, build=None, cache=None):
         rows.append((off + o, t, mins.get(o, (0, "-"))[1], same))
     tcount, mcount = len(tins), len(mins)
     score += max(0, mcount - tcount)
+    if clean is not None:
+        if mine.clean is None:
+            score += 1
+        else:
+            cm = set()
+            for o, (rtype, _) in mine.clean.relocs.items():
+                cm.update(range(o, o + _reloc_width(rtype)))
+            ct = code[clean:clean + len(mine.clean.data)]
+            for o in range(0, len(mine.clean.data), 4):
+                if any(ct[k] != mine.clean.data[k] and k not in cm for k in range(o, min(o + 4, len(ct)))) or o + 4 > len(ct):
+                    score += 1
 
     relocs = []
     for o, (rtype, name) in sorted(mine.relocs.items()):
