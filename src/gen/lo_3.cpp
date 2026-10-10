@@ -1140,12 +1140,6 @@ u32 W_1fce58() {
     return (u32)g_0089c9e8;
 }
 
-// FUN_001fdb28
-u32 W_1fdb28() {
-
-    return 10989716u;
-}
-
 // FUN_001fe034
 u32 W_1fe034() {
 

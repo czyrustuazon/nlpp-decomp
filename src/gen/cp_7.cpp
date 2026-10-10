@@ -30,64 +30,6 @@ u32 Fn_01231c_1f1(u32, float);
 u32 Fn_6617b0_4(u32, u32, u32, u32);
 u32 Fn_6659b0_3f4(u32, u32, u32, float, float, float, float);
 
-// FUN_00507290
-u32 W_507290(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4, r5, r6, fa, fb, stk[2];
-    r4 = r0;
-    r0 = *(u32*)(r2);
-    r6 = r1;
-    r1 = r0 + 8u;
-    r5 = r3;
-    r0 = (u32)stk + 4u;
-    r0 = Fn_6855c4_4(r0, r1, r2, r3);
-    r0 = *(u32*)((u32)stk + 4);
-    fa = r0; fb = 0u;
-    if (fa == fb) r0 = 2u;
-    if (fa == fb) goto L_5072f0;
-    r2 = *(u32*)(r5);
-    r1 = (u32)stk;
-    r0 = r0 + 8u;
-    *(u32*)((u32)stk) = r2;
-    r0 = Fn_6854e8_3(r0, r1, r2);
-    r0 = *(u32*)(r5);
-    *(u32*)(r6) = r0;
-    r0 = *(u32*)(r4);
-    r0 = *(u32*)(r0 + 4);
-    *(u32*)(r4) = r0;
-    r0 = 0u;
-    L_5072f0:;
-    return r0;
-}
-
-// FUN_0050745c
-u32 W_50745c(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4, r5, r6, fa, fb, stk[2];
-    r4 = r0;
-    r0 = *(u32*)(r3);
-    r6 = r1;
-    r1 = r0 + 8u;
-    r5 = r2;
-    r0 = (u32)stk + 4u;
-    r0 = Fn_6855c4_4(r0, r1, r2, r3);
-    r0 = *(u32*)((u32)stk + 4);
-    fa = r0; fb = 0u;
-    if (fa == fb) r0 = 2u;
-    if (fa == fb) goto L_5074bc;
-    r2 = *(u32*)(r5);
-    r1 = (u32)stk;
-    r0 = r0 + 8u;
-    *(u32*)((u32)stk) = r2;
-    r0 = Fn_6854e8_3(r0, r1, r2);
-    r0 = *(u32*)(r5);
-    *(u32*)(r6) = r0;
-    r0 = *(u32*)(r4);
-    r0 = *(u32*)(r0 + 4);
-    *(u32*)(r4) = r0;
-    r0 = 0u;
-    L_5074bc:;
-    return r0;
-}
-
 // FUN_0054c28c
 void W_54c28c() {
     { WeakCall0(); return; }

@@ -507,20 +507,6 @@ u32 W_1ff428() {
     return r0;
 }
 
-// FUN_001ff578
-u32 W_1ff578() {
-    u32 r0;
-    r0 = ~0u;
-    return r0;
-}
-
-// FUN_001ff5a4
-u32 W_1ff5a4() {
-    u32 r0;
-    r0 = ~0u;
-    return r0;
-}
-
 // FUN_00200ec0
 u32 W_200ec0(u32 a0, u32 a1, u32 a2) {
     u32 r0 = a0, r1 = a1, r2 = a2, r3, r4;

@@ -1,3 +1,9 @@
 offset,size,note
 66bb0c,4a40,NW-only zone function (100-way jump table); CFG walk covers every word to its pool end 0x67054c; the ARM/Thumb fragments 0x66feac-0x670360 are pieces of it
 67055c,4ed8,NW-only zone function (two jump tables); CFG walk covers every word to its pool end 0x675434; 0x67445e is a piece of it
+f0048,17c,switch function; CFG walk through its jump table covers the data words at 0xf008a (listed as Thumb) and 0xf019c
+2f55cc,cdec,large switch function; CFG walk covers 0x2ffa7c (listed as Thumb) and 14 orphaned case blocks 0x300000-0x302394
+3d0284,7b8,switch function; CFG walk covers 0x3d0800 and 0x3d089c (case blocks, the latter listed as Thumb)
+456e10,598,switch function; CFG walk covers 0x45706c (case blocks listed as Thumb)
+58f58c,dc0,switch function; CFG walk covers 0x590198 and 0x5901a6 (listed as Thumb)
+59fa90,784,switch function; CFG walk covers 0x59feb8 (case blocks listed as Thumb)

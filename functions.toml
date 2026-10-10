@@ -13596,7 +13596,8 @@ score = 0
 name = "W_1fdb28"
 offset = "1fdb28"
 size = "c"
-src = "src/gen/lo_3.cpp"
+src = "lib/crt/crt3_o3.cpp"
+library = "crt"
 symbol = "_Z8W_1fdb28v"
 generated = true
 score = 0
@@ -45572,7 +45573,8 @@ score = 0
 name = "W_634608"
 offset = "634608"
 size = "c"
-src = "src/gen/hi_9.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_634608v"
 generated = true
 score = 0
@@ -46875,7 +46877,8 @@ score = 0
 name = "W_685330"
 offset = "685330"
 size = "18"
-src = "src/gen/hi_10.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_685330jjj"
 generated = true
 score = 0
@@ -46884,7 +46887,8 @@ score = 0
 name = "W_685348"
 offset = "685348"
 size = "18"
-src = "src/gen/hi_10.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_685348jjj"
 generated = true
 score = 0
@@ -46893,7 +46897,8 @@ score = 0
 name = "W_685360"
 offset = "685360"
 size = "18"
-src = "src/gen/hi_10.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_685360jjj"
 generated = true
 score = 0
@@ -46902,7 +46907,8 @@ score = 0
 name = "W_6854e8"
 offset = "6854e8"
 size = "14"
-src = "src/gen/hi_10.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_6854e8jj"
 generated = true
 score = 0
@@ -46938,7 +46944,8 @@ score = 0
 name = "W_686960"
 offset = "686960"
 size = "4"
-src = "src/gen/hi_10.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_686960v"
 generated = true
 score = 0
@@ -46947,7 +46954,8 @@ score = 0
 name = "W_686c0c"
 offset = "686c0c"
 size = "4"
-src = "src/gen/hi_10.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_686c0cv"
 generated = true
 score = 0
@@ -63337,7 +63345,8 @@ score = 0
 name = "W_1ff578"
 offset = "1ff578"
 size = "8"
-src = "src/gen/br_3.cpp"
+src = "lib/crt/crt3_o3.cpp"
+library = "crt"
 symbol = "_Z8W_1ff578v"
 generated = true
 score = 0
@@ -63346,7 +63355,8 @@ score = 0
 name = "W_1ff5a4"
 offset = "1ff5a4"
 size = "8"
-src = "src/gen/br_3.cpp"
+src = "lib/crt/crt3_o3.cpp"
+library = "crt"
 symbol = "_Z8W_1ff5a4v"
 generated = true
 score = 0
@@ -74835,7 +74845,8 @@ score = 0
 name = "W_6329b0"
 offset = "6329b0"
 size = "10"
-src = "src/gen/br_15.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_6329b0jj"
 generated = true
 score = 0
@@ -74853,7 +74864,8 @@ score = 0
 name = "W_63384c"
 offset = "63384c"
 size = "10"
-src = "src/gen/br_15.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_63384cj"
 generated = true
 score = 0
@@ -75070,7 +75082,8 @@ score = 0
 name = "W_635d24"
 offset = "635d24"
 size = "10"
-src = "src/gen/br_16.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_635d24jj"
 generated = true
 score = 0
@@ -75088,7 +75101,8 @@ score = 0
 name = "W_635d44"
 offset = "635d44"
 size = "10"
-src = "src/gen/br_16.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_635d44j"
 generated = true
 score = 0
@@ -75097,7 +75111,8 @@ score = 0
 name = "W_635d60"
 offset = "635d60"
 size = "18"
-src = "src/gen/br_16.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_635d60jj"
 generated = true
 score = 0
@@ -82407,7 +82422,8 @@ score = 0
 name = "W_6855c4"
 offset = "6855c4"
 size = "48"
-src = "src/gen/r3_3.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_6855c4jj"
 generated = true
 score = 0
@@ -90179,7 +90195,8 @@ score = 0
 name = "W_507290"
 offset = "507290"
 size = "68"
-src = "src/gen/cp_7.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_507290jjjj"
 generated = true
 score = 0
@@ -90188,7 +90205,8 @@ score = 0
 name = "W_50745c"
 offset = "50745c"
 size = "68"
-src = "src/gen/cp_7.cpp"
+src = "lib/ctrsdk/sdk3_o3.cpp"
+library = "ctrsdk"
 symbol = "_Z8W_50745cjjjj"
 generated = true
 score = 0
@@ -127796,7 +127814,8 @@ score = 0
 name = "W_54c334"
 offset = "54c334"
 size = "4"
-src = "src/gen/xa_3.cpp"
+src = "lib/nw4c/nw5_o3.cpp"
+library = "nw4c"
 symbol = "_Z8W_54c334v"
 generated = true
 score = 0
@@ -132369,4 +132388,3350 @@ src = "src/gen/w64_e_0.cpp"
 flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
 symbol = "_Z8W_62fb34j"
 generated = true
+score = 0
+
+[[function]]
+name = "A_00004c"
+offset = "4c"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_00004c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000068"
+offset = "68"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_000068"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0000ac"
+offset = "ac"
+size = "22"
+src = "lib/crt/thumb.s"
+symbol = "A_0000ac"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0000ce"
+offset = "ce"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_0000ce"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0000dc"
+offset = "dc"
+size = "38"
+src = "lib/crt/thumb.s"
+symbol = "A_0000dc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000114"
+offset = "114"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_000114"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00011c"
+offset = "11c"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_00011c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000130"
+offset = "130"
+size = "38"
+src = "lib/crt/thumb.s"
+symbol = "A_000130"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000168"
+offset = "168"
+size = "48"
+src = "lib/crt/thumb.s"
+symbol = "A_000168"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0001b0"
+offset = "1b0"
+size = "1c"
+src = "lib/crt/thumb.s"
+symbol = "A_0001b0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0001cc"
+offset = "1cc"
+size = "2c"
+src = "lib/crt/thumb.s"
+symbol = "A_0001cc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000200"
+offset = "200"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_000200"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00023c"
+offset = "23c"
+size = "4c"
+src = "lib/crt/thumb.s"
+symbol = "A_00023c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000288"
+offset = "288"
+size = "52"
+src = "lib/crt/thumb.s"
+symbol = "A_000288"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000374"
+offset = "374"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_000374"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000380"
+offset = "380"
+size = "bc"
+src = "lib/crt/thumb.s"
+symbol = "A_000380"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00043c"
+offset = "43c"
+size = "56"
+src = "lib/crt/thumb.s"
+symbol = "A_00043c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00058c"
+offset = "58c"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_00058c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000624"
+offset = "624"
+size = "1a"
+src = "lib/crt/thumb.s"
+symbol = "A_000624"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000640"
+offset = "640"
+size = "70"
+src = "lib/crt/thumb.s"
+symbol = "A_000640"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0006b8"
+offset = "6b8"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_0006b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0006c8"
+offset = "6c8"
+size = "50"
+src = "lib/crt/thumb.s"
+symbol = "A_0006c8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00072a"
+offset = "72a"
+size = "1e"
+src = "lib/crt/thumb.s"
+symbol = "A_00072a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000748"
+offset = "748"
+size = "70"
+src = "lib/crt/thumb.s"
+symbol = "A_000748"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0007fc"
+offset = "7fc"
+size = "1fe"
+src = "lib/crt/thumb.s"
+symbol = "A_0007fc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0009fa"
+offset = "9fa"
+size = "88"
+src = "lib/crt/thumb.s"
+symbol = "A_0009fa"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000a82"
+offset = "a82"
+size = "4e"
+src = "lib/crt/thumb.s"
+symbol = "A_000a82"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000ad0"
+offset = "ad0"
+size = "36"
+src = "lib/crt/thumb.s"
+symbol = "A_000ad0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000b40"
+offset = "b40"
+size = "28"
+src = "lib/crt/thumb.s"
+symbol = "A_000b40"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000b68"
+offset = "b68"
+size = "74"
+src = "lib/crt/thumb.s"
+symbol = "A_000b68"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000bdc"
+offset = "bdc"
+size = "18"
+src = "lib/crt/thumb.s"
+symbol = "A_000bdc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000c46"
+offset = "c46"
+size = "16"
+src = "lib/crt/thumb.s"
+symbol = "A_000c46"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000c84"
+offset = "c84"
+size = "7e"
+src = "lib/crt/thumb.s"
+symbol = "A_000c84"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000d48"
+offset = "d48"
+size = "24"
+src = "lib/crt/thumb.s"
+symbol = "A_000d48"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000d8c"
+offset = "d8c"
+size = "3a"
+src = "lib/crt/thumb.s"
+symbol = "A_000d8c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000e7a"
+offset = "e7a"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_000e7a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_000e88"
+offset = "e88"
+size = "38"
+src = "lib/crt/thumb.s"
+symbol = "A_000e88"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0011b8"
+offset = "11b8"
+size = "16"
+src = "lib/crt/thumb.s"
+symbol = "A_0011b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0011e8"
+offset = "11e8"
+size = "28"
+src = "lib/crt/thumb.s"
+symbol = "A_0011e8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001210"
+offset = "1210"
+size = "90"
+src = "lib/crt/thumb.s"
+symbol = "A_001210"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0012a8"
+offset = "12a8"
+size = "16"
+src = "lib/crt/thumb.s"
+symbol = "A_0012a8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0012d8"
+offset = "12d8"
+size = "40"
+src = "lib/crt/thumb.s"
+symbol = "A_0012d8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001318"
+offset = "1318"
+size = "a8"
+src = "lib/crt/thumb.s"
+symbol = "A_001318"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0013c0"
+offset = "13c0"
+size = "f4"
+src = "lib/crt/thumb.s"
+symbol = "A_0013c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0015f0"
+offset = "15f0"
+size = "6c"
+src = "lib/crt/thumb.s"
+symbol = "A_0015f0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001668"
+offset = "1668"
+size = "1c"
+src = "lib/crt/thumb.s"
+symbol = "A_001668"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001684"
+offset = "1684"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_001684"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00168c"
+offset = "168c"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_00168c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00169e"
+offset = "169e"
+size = "144"
+src = "lib/crt/thumb.s"
+symbol = "A_00169e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0017e2"
+offset = "17e2"
+size = "14a"
+src = "lib/crt/thumb.s"
+symbol = "A_0017e2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00192c"
+offset = "192c"
+size = "e2"
+src = "lib/crt/thumb.s"
+symbol = "A_00192c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001a1c"
+offset = "1a1c"
+size = "28"
+src = "lib/crt/thumb.s"
+symbol = "A_001a1c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001a8a"
+offset = "1a8a"
+size = "11a"
+src = "lib/crt/thumb.s"
+symbol = "A_001a8a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001ba4"
+offset = "1ba4"
+size = "e4"
+src = "lib/crt/thumb.s"
+symbol = "A_001ba4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001c88"
+offset = "1c88"
+size = "cc"
+src = "lib/crt/thumb.s"
+symbol = "A_001c88"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_001d98"
+offset = "1d98"
+size = "394"
+src = "lib/crt/thumb.s"
+symbol = "A_001d98"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0025f0"
+offset = "25f0"
+size = "1f4"
+src = "lib/crt/thumb.s"
+symbol = "A_0025f0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002c78"
+offset = "2c78"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_002c78"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002c8c"
+offset = "2c8c"
+size = "46"
+src = "lib/crt/thumb.s"
+symbol = "A_002c8c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002cd2"
+offset = "2cd2"
+size = "16"
+src = "lib/crt/thumb.s"
+symbol = "A_002cd2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002ce8"
+offset = "2ce8"
+size = "30"
+src = "lib/crt/thumb.s"
+symbol = "A_002ce8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002d18"
+offset = "2d18"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_002d18"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002d38"
+offset = "2d38"
+size = "18"
+src = "lib/crt/thumb.s"
+symbol = "A_002d38"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002d5c"
+offset = "2d5c"
+size = "58"
+src = "lib/crt/thumb.s"
+symbol = "A_002d5c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002db4"
+offset = "2db4"
+size = "22"
+src = "lib/crt/thumb.s"
+symbol = "A_002db4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002dd8"
+offset = "2dd8"
+size = "170"
+src = "lib/crt/thumb.s"
+symbol = "A_002dd8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002f48"
+offset = "2f48"
+size = "34"
+src = "lib/crt/thumb.s"
+symbol = "A_002f48"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002f7c"
+offset = "2f7c"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_002f7c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002f84"
+offset = "2f84"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_002f84"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_002fcc"
+offset = "2fcc"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_002fcc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003354"
+offset = "3354"
+size = "6c"
+src = "lib/crt/thumb.s"
+symbol = "A_003354"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0033c0"
+offset = "33c0"
+size = "98"
+src = "lib/crt/thumb.s"
+symbol = "A_0033c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003458"
+offset = "3458"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_003458"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003462"
+offset = "3462"
+size = "1c"
+src = "lib/crt/thumb.s"
+symbol = "A_003462"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00347e"
+offset = "347e"
+size = "16"
+src = "lib/crt/thumb.s"
+symbol = "A_00347e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003494"
+offset = "3494"
+size = "4"
+src = "lib/crt/thumb.s"
+symbol = "A_003494"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003498"
+offset = "3498"
+size = "8c"
+src = "lib/crt/thumb.s"
+symbol = "A_003498"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003524"
+offset = "3524"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_003524"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00352e"
+offset = "352e"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_00352e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0035a2"
+offset = "35a2"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_0035a2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0035b2"
+offset = "35b2"
+size = "6e"
+src = "lib/crt/thumb.s"
+symbol = "A_0035b2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003620"
+offset = "3620"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_003620"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00362a"
+offset = "362a"
+size = "32"
+src = "lib/crt/thumb.s"
+symbol = "A_00362a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00365c"
+offset = "365c"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_00365c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003666"
+offset = "3666"
+size = "1e"
+src = "lib/crt/thumb.s"
+symbol = "A_003666"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003684"
+offset = "3684"
+size = "36"
+src = "lib/crt/thumb.s"
+symbol = "A_003684"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0036ba"
+offset = "36ba"
+size = "2e"
+src = "lib/crt/thumb.s"
+symbol = "A_0036ba"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0036e8"
+offset = "36e8"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_0036e8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003708"
+offset = "3708"
+size = "2e"
+src = "lib/crt/thumb.s"
+symbol = "A_003708"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003736"
+offset = "3736"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_003736"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003758"
+offset = "3758"
+size = "104"
+src = "lib/crt/thumb.s"
+symbol = "A_003758"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003860"
+offset = "3860"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003860"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00386c"
+offset = "386c"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_00386c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00387c"
+offset = "387c"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_00387c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00388c"
+offset = "388c"
+size = "6"
+src = "lib/crt/thumb.s"
+symbol = "A_00388c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003898"
+offset = "3898"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003898"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0038c4"
+offset = "38c4"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_0038c4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0038d0"
+offset = "38d0"
+size = "cc"
+src = "lib/crt/thumb.s"
+symbol = "A_0038d0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00399c"
+offset = "399c"
+size = "140"
+src = "lib/crt/thumb.s"
+symbol = "A_00399c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003adc"
+offset = "3adc"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_003adc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003aec"
+offset = "3aec"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003aec"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003af8"
+offset = "3af8"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_003af8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b00"
+offset = "3b00"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_003b00"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b20"
+offset = "3b20"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003b20"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b4c"
+offset = "3b4c"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003b4c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b78"
+offset = "3b78"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003b78"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b84"
+offset = "3b84"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003b84"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b90"
+offset = "3b90"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003b90"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003b9c"
+offset = "3b9c"
+size = "60"
+src = "lib/crt/thumb.s"
+symbol = "A_003b9c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003bfc"
+offset = "3bfc"
+size = "88"
+src = "lib/crt/thumb.s"
+symbol = "A_003bfc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003c84"
+offset = "3c84"
+size = "34"
+src = "lib/crt/thumb.s"
+symbol = "A_003c84"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003cb8"
+offset = "3cb8"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_003cb8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003ccc"
+offset = "3ccc"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003ccc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003cd8"
+offset = "3cd8"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003cd8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003ce4"
+offset = "3ce4"
+size = "18"
+src = "lib/crt/thumb.s"
+symbol = "A_003ce4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003cfc"
+offset = "3cfc"
+size = "2c"
+src = "lib/crt/thumb.s"
+symbol = "A_003cfc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003d28"
+offset = "3d28"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003d28"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003d54"
+offset = "3d54"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003d54"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003d80"
+offset = "3d80"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003d80"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003d8c"
+offset = "3d8c"
+size = "1a"
+src = "lib/crt/thumb.s"
+symbol = "A_003d8c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003db2"
+offset = "3db2"
+size = "11a"
+src = "lib/crt/thumb.s"
+symbol = "A_003db2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003ecc"
+offset = "3ecc"
+size = "1c"
+src = "lib/crt/thumb.s"
+symbol = "A_003ecc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003ee8"
+offset = "3ee8"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_003ee8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003ef4"
+offset = "3ef4"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_003ef4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003efc"
+offset = "3efc"
+size = "74"
+src = "lib/crt/thumb.s"
+symbol = "A_003efc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003f70"
+offset = "3f70"
+size = "34"
+src = "lib/crt/thumb.s"
+symbol = "A_003f70"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_003fa4"
+offset = "3fa4"
+size = "b0"
+src = "lib/crt/thumb.s"
+symbol = "A_003fa4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004054"
+offset = "4054"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_004054"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00405e"
+offset = "405e"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_00405e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00406c"
+offset = "406c"
+size = "bc"
+src = "lib/crt/thumb.s"
+symbol = "A_00406c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004128"
+offset = "4128"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_004128"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00413a"
+offset = "413a"
+size = "dc"
+src = "lib/crt/thumb.s"
+symbol = "A_00413a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004216"
+offset = "4216"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_004216"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004220"
+offset = "4220"
+size = "24"
+src = "lib/crt/thumb.s"
+symbol = "A_004220"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004244"
+offset = "4244"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_004244"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004264"
+offset = "4264"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_004264"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004280"
+offset = "4280"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_004280"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00429c"
+offset = "429c"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_00429c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0042b8"
+offset = "42b8"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_0042b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0042c4"
+offset = "42c4"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_0042c4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0042d0"
+offset = "42d0"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_0042d0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0042dc"
+offset = "42dc"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_0042dc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0042ea"
+offset = "42ea"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_0042ea"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0042f4"
+offset = "42f4"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_0042f4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004300"
+offset = "4300"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_004300"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00430e"
+offset = "430e"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_00430e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004318"
+offset = "4318"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_004318"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004324"
+offset = "4324"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_004324"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004338"
+offset = "4338"
+size = "6a"
+src = "lib/crt/thumb.s"
+symbol = "A_004338"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0043dc"
+offset = "43dc"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_0043dc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0043e8"
+offset = "43e8"
+size = "2a"
+src = "lib/crt/thumb.s"
+symbol = "A_0043e8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004412"
+offset = "4412"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_004412"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004422"
+offset = "4422"
+size = "2a"
+src = "lib/crt/thumb.s"
+symbol = "A_004422"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00444c"
+offset = "444c"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_00444c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00445c"
+offset = "445c"
+size = "6"
+src = "lib/crt/thumb.s"
+symbol = "A_00445c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00446e"
+offset = "446e"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_00446e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004478"
+offset = "4478"
+size = "40"
+src = "lib/crt/thumb.s"
+symbol = "A_004478"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0044b8"
+offset = "44b8"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_0044b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0044c0"
+offset = "44c0"
+size = "36"
+src = "lib/crt/thumb.s"
+symbol = "A_0044c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0044f6"
+offset = "44f6"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_0044f6"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004500"
+offset = "4500"
+size = "18"
+src = "lib/crt/thumb.s"
+symbol = "A_004500"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004518"
+offset = "4518"
+size = "a0"
+src = "lib/crt/thumb.s"
+symbol = "A_004518"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0045b8"
+offset = "45b8"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_0045b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0045c8"
+offset = "45c8"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_0045c8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004604"
+offset = "4604"
+size = "30"
+src = "lib/crt/thumb.s"
+symbol = "A_004604"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004634"
+offset = "4634"
+size = "48"
+src = "lib/crt/thumb.s"
+symbol = "A_004634"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00467c"
+offset = "467c"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_00467c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00469c"
+offset = "469c"
+size = "80"
+src = "lib/crt/thumb.s"
+symbol = "A_00469c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00471c"
+offset = "471c"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_00471c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004728"
+offset = "4728"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_004728"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00473c"
+offset = "473c"
+size = "5e"
+src = "lib/crt/thumb.s"
+symbol = "A_00473c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_00479a"
+offset = "479a"
+size = "40"
+src = "lib/crt/thumb.s"
+symbol = "A_00479a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0047da"
+offset = "47da"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_0047da"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0047e4"
+offset = "47e4"
+size = "44"
+src = "lib/crt/thumb.s"
+symbol = "A_0047e4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004828"
+offset = "4828"
+size = "8c"
+src = "lib/crt/thumb.s"
+symbol = "A_004828"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0048b4"
+offset = "48b4"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_0048b4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0048be"
+offset = "48be"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_0048be"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_0048e8"
+offset = "48e8"
+size = "17c"
+src = "lib/crt/thumb.s"
+symbol = "A_0048e8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_004a64"
+offset = "4a64"
+size = "84"
+src = "lib/crt/thumb.s"
+symbol = "A_004a64"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fcdbc"
+offset = "1fcdbc"
+size = "4c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fcdbc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fce08"
+offset = "1fce08"
+size = "50"
+src = "lib/crt/thumb.s"
+symbol = "A_1fce08"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd314"
+offset = "1fd314"
+size = "2c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd314"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd340"
+offset = "1fd340"
+size = "4a"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd340"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd390"
+offset = "1fd390"
+size = "50"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd390"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd3e0"
+offset = "1fd3e0"
+size = "18"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd3e0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd3f8"
+offset = "1fd3f8"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd3f8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd40c"
+offset = "1fd40c"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd40c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd454"
+offset = "1fd454"
+size = "1c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd454"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd470"
+offset = "1fd470"
+size = "1e"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd470"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd48e"
+offset = "1fd48e"
+size = "2c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd48e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd4ba"
+offset = "1fd4ba"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd4ba"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd4cc"
+offset = "1fd4cc"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd4cc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd4d0"
+offset = "1fd4d0"
+size = "4c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd4d0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd598"
+offset = "1fd598"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd598"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd5aa"
+offset = "1fd5aa"
+size = "1a"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd5aa"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd5c4"
+offset = "1fd5c4"
+size = "16"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd5c4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd6b4"
+offset = "1fd6b4"
+size = "38"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd6b4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd6ec"
+offset = "1fd6ec"
+size = "4a"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd6ec"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd756"
+offset = "1fd756"
+size = "26"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd756"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd77c"
+offset = "1fd77c"
+size = "a"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd77c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd792"
+offset = "1fd792"
+size = "26"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd792"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd7b8"
+offset = "1fd7b8"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd7b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd7c8"
+offset = "1fd7c8"
+size = "2c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd7c8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd7f4"
+offset = "1fd7f4"
+size = "22"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd7f4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd870"
+offset = "1fd870"
+size = "b0"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd870"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fd920"
+offset = "1fd920"
+size = "44"
+src = "lib/crt/thumb.s"
+symbol = "A_1fd920"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fdaf0"
+offset = "1fdaf0"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_1fdaf0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fdd70"
+offset = "1fdd70"
+size = "4c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fdd70"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fde2c"
+offset = "1fde2c"
+size = "e4"
+src = "lib/crt/thumb.s"
+symbol = "A_1fde2c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fdf14"
+offset = "1fdf14"
+size = "40"
+src = "lib/crt/thumb.s"
+symbol = "A_1fdf14"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe260"
+offset = "1fe260"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe260"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe2dc"
+offset = "1fe2dc"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe2dc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe348"
+offset = "1fe348"
+size = "42"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe348"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe38a"
+offset = "1fe38a"
+size = "36"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe38a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe3c0"
+offset = "1fe3c0"
+size = "12c"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe3c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe4ec"
+offset = "1fe4ec"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe4ec"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe550"
+offset = "1fe550"
+size = "26"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe550"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe684"
+offset = "1fe684"
+size = "70"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe684"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe778"
+offset = "1fe778"
+size = "d4"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe778"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fe944"
+offset = "1fe944"
+size = "78"
+src = "lib/crt/thumb.s"
+symbol = "A_1fe944"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1ff298"
+offset = "1ff298"
+size = "188"
+src = "lib/crt/thumb.s"
+symbol = "A_1ff298"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1ff540"
+offset = "1ff540"
+size = "1e"
+src = "lib/crt/thumb.s"
+symbol = "A_1ff540"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1ff5ac"
+offset = "1ff5ac"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_1ff5ac"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1ff5c0"
+offset = "1ff5c0"
+size = "4c"
+src = "lib/crt/thumb.s"
+symbol = "A_1ff5c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1ff60c"
+offset = "1ff60c"
+size = "4c"
+src = "lib/crt/thumb.s"
+symbol = "A_1ff60c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1ff658"
+offset = "1ff658"
+size = "44"
+src = "lib/crt/thumb.s"
+symbol = "A_1ff658"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fff5c"
+offset = "1fff5c"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_1fff5c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_1fff74"
+offset = "1fff74"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_1fff74"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20002e"
+offset = "20002e"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_20002e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2000c0"
+offset = "2000c0"
+size = "32"
+src = "lib/crt/thumb.s"
+symbol = "A_2000c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2000f2"
+offset = "2000f2"
+size = "32"
+src = "lib/crt/thumb.s"
+symbol = "A_2000f2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_200124"
+offset = "200124"
+size = "10a"
+src = "lib/crt/thumb.s"
+symbol = "A_200124"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20022e"
+offset = "20022e"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_20022e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20026a"
+offset = "20026a"
+size = "ae"
+src = "lib/crt/thumb.s"
+symbol = "A_20026a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_200318"
+offset = "200318"
+size = "30"
+src = "lib/crt/thumb.s"
+symbol = "A_200318"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_200348"
+offset = "200348"
+size = "102"
+src = "lib/crt/thumb.s"
+symbol = "A_200348"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20044a"
+offset = "20044a"
+size = "46"
+src = "lib/crt/thumb.s"
+symbol = "A_20044a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2004a8"
+offset = "2004a8"
+size = "36"
+src = "lib/crt/thumb.s"
+symbol = "A_2004a8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2004de"
+offset = "2004de"
+size = "5ea"
+src = "lib/crt/thumb.s"
+symbol = "A_2004de"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_200ac8"
+offset = "200ac8"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_200ac8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_200d10"
+offset = "200d10"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_200d10"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_201eb8"
+offset = "201eb8"
+size = "9e"
+src = "lib/crt/thumb.s"
+symbol = "A_201eb8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_201f56"
+offset = "201f56"
+size = "64"
+src = "lib/crt/thumb.s"
+symbol = "A_201f56"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_201fba"
+offset = "201fba"
+size = "9e"
+src = "lib/crt/thumb.s"
+symbol = "A_201fba"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202080"
+offset = "202080"
+size = "20"
+src = "lib/crt/thumb.s"
+symbol = "A_202080"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2020a0"
+offset = "2020a0"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_2020a0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2020b0"
+offset = "2020b0"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_2020b0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2020c0"
+offset = "2020c0"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_2020c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2020d0"
+offset = "2020d0"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_2020d0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2020d8"
+offset = "2020d8"
+size = "a8"
+src = "lib/crt/thumb.s"
+symbol = "A_2020d8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202180"
+offset = "202180"
+size = "c8"
+src = "lib/crt/thumb.s"
+symbol = "A_202180"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202248"
+offset = "202248"
+size = "1fc"
+src = "lib/crt/thumb.s"
+symbol = "A_202248"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202444"
+offset = "202444"
+size = "34"
+src = "lib/crt/thumb.s"
+symbol = "A_202444"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202478"
+offset = "202478"
+size = "28"
+src = "lib/crt/thumb.s"
+symbol = "A_202478"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2024e4"
+offset = "2024e4"
+size = "60"
+src = "lib/crt/thumb.s"
+symbol = "A_2024e4"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202544"
+offset = "202544"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202544"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20254c"
+offset = "20254c"
+size = "38"
+src = "lib/crt/thumb.s"
+symbol = "A_20254c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202584"
+offset = "202584"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_202584"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2025c0"
+offset = "2025c0"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_2025c0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2025cc"
+offset = "2025cc"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_2025cc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2025e0"
+offset = "2025e0"
+size = "58"
+src = "lib/crt/thumb.s"
+symbol = "A_2025e0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202638"
+offset = "202638"
+size = "24"
+src = "lib/crt/thumb.s"
+symbol = "A_202638"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20265c"
+offset = "20265c"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_20265c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202670"
+offset = "202670"
+size = "32"
+src = "lib/crt/thumb.s"
+symbol = "A_202670"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2026a2"
+offset = "2026a2"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_2026a2"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2026b0"
+offset = "2026b0"
+size = "50"
+src = "lib/crt/thumb.s"
+symbol = "A_2026b0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202700"
+offset = "202700"
+size = "14"
+src = "lib/crt/thumb.s"
+symbol = "A_202700"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202714"
+offset = "202714"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_202714"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202758"
+offset = "202758"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_202758"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20277a"
+offset = "20277a"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_20277a"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202788"
+offset = "202788"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_202788"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202794"
+offset = "202794"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_202794"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2027a0"
+offset = "2027a0"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_2027a0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2027b8"
+offset = "2027b8"
+size = "50"
+src = "lib/crt/thumb.s"
+symbol = "A_2027b8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202808"
+offset = "202808"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_202808"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202818"
+offset = "202818"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_202818"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202848"
+offset = "202848"
+size = "10"
+src = "lib/crt/thumb.s"
+symbol = "A_202848"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2029e0"
+offset = "2029e0"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_2029e0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2029e8"
+offset = "2029e8"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_2029e8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2029f0"
+offset = "2029f0"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_2029f0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_2029f8"
+offset = "2029f8"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_2029f8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a00"
+offset = "202a00"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a00"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a08"
+offset = "202a08"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a08"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a10"
+offset = "202a10"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a10"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a18"
+offset = "202a18"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a18"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a20"
+offset = "202a20"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a20"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a28"
+offset = "202a28"
+size = "2"
+src = "lib/crt/thumb.s"
+symbol = "A_202a28"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a30"
+offset = "202a30"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a30"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a38"
+offset = "202a38"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a38"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202a40"
+offset = "202a40"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_202a40"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202ab0"
+offset = "202ab0"
+size = "38"
+src = "lib/crt/thumb.s"
+symbol = "A_202ab0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202ae8"
+offset = "202ae8"
+size = "1a"
+src = "lib/crt/thumb.s"
+symbol = "A_202ae8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202b02"
+offset = "202b02"
+size = "c"
+src = "lib/crt/thumb.s"
+symbol = "A_202b02"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202ba8"
+offset = "202ba8"
+size = "52"
+src = "lib/crt/thumb.s"
+symbol = "A_202ba8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202bfc"
+offset = "202bfc"
+size = "60"
+src = "lib/crt/thumb.s"
+symbol = "A_202bfc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202c5c"
+offset = "202c5c"
+size = "54"
+src = "lib/crt/thumb.s"
+symbol = "A_202c5c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202cd0"
+offset = "202cd0"
+size = "40"
+src = "lib/crt/thumb.s"
+symbol = "A_202cd0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202e5c"
+offset = "202e5c"
+size = "34"
+src = "lib/crt/thumb.s"
+symbol = "A_202e5c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202e90"
+offset = "202e90"
+size = "48"
+src = "lib/crt/thumb.s"
+symbol = "A_202e90"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202ed8"
+offset = "202ed8"
+size = "e"
+src = "lib/crt/thumb.s"
+symbol = "A_202ed8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202ee6"
+offset = "202ee6"
+size = "48"
+src = "lib/crt/thumb.s"
+symbol = "A_202ee6"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202f30"
+offset = "202f30"
+size = "24"
+src = "lib/crt/thumb.s"
+symbol = "A_202f30"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_202f54"
+offset = "202f54"
+size = "80"
+src = "lib/crt/thumb.s"
+symbol = "A_202f54"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203010"
+offset = "203010"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_203010"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203050"
+offset = "203050"
+size = "24"
+src = "lib/crt/thumb.s"
+symbol = "A_203050"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203074"
+offset = "203074"
+size = "30"
+src = "lib/crt/thumb.s"
+symbol = "A_203074"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203170"
+offset = "203170"
+size = "1c"
+src = "lib/crt/thumb.s"
+symbol = "A_203170"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20318c"
+offset = "20318c"
+size = "d2"
+src = "lib/crt/thumb.s"
+symbol = "A_20318c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_20325e"
+offset = "20325e"
+size = "5a"
+src = "lib/crt/thumb.s"
+symbol = "A_20325e"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203358"
+offset = "203358"
+size = "28"
+src = "lib/crt/thumb.s"
+symbol = "A_203358"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203b48"
+offset = "203b48"
+size = "18"
+src = "lib/crt/thumb.s"
+symbol = "A_203b48"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203b60"
+offset = "203b60"
+size = "2e"
+src = "lib/crt/thumb.s"
+symbol = "A_203b60"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203b94"
+offset = "203b94"
+size = "3c"
+src = "lib/crt/thumb.s"
+symbol = "A_203b94"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203bd0"
+offset = "203bd0"
+size = "e8"
+src = "lib/crt/thumb.s"
+symbol = "A_203bd0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203cb8"
+offset = "203cb8"
+size = "8"
+src = "lib/crt/thumb.s"
+symbol = "A_203cb8"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203cc0"
+offset = "203cc0"
+size = "1a"
+src = "lib/crt/thumb.s"
+symbol = "A_203cc0"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203cdc"
+offset = "203cdc"
+size = "80"
+src = "lib/crt/thumb.s"
+symbol = "A_203cdc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203d64"
+offset = "203d64"
+size = "12"
+src = "lib/crt/thumb.s"
+symbol = "A_203d64"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203d7c"
+offset = "203d7c"
+size = "cc"
+src = "lib/crt/thumb.s"
+symbol = "A_203d7c"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203e48"
+offset = "203e48"
+size = "b4"
+src = "lib/crt/thumb.s"
+symbol = "A_203e48"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203efc"
+offset = "203efc"
+size = "54"
+src = "lib/crt/thumb.s"
+symbol = "A_203efc"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_203f50"
+offset = "203f50"
+size = "30"
+src = "lib/crt/thumb.s"
+symbol = "A_203f50"
+thumb = true
+library = "crt"
+score = 0
+
+[[function]]
+name = "A_6315d4"
+offset = "6315d4"
+size = "28"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_6315d4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_63161c"
+offset = "63161c"
+size = "28"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_63161c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_632534"
+offset = "632534"
+size = "d0"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_632534"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_6327d0"
+offset = "6327d0"
+size = "7c"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_6327d0"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_63287c"
+offset = "63287c"
+size = "b8"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_63287c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_63379c"
+offset = "63379c"
+size = "64"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_63379c"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_6848a8"
+offset = "6848a8"
+size = "c0"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_6848a8"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_684968"
+offset = "684968"
+size = "cc"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_684968"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_685378"
+offset = "685378"
+size = "24"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_685378"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_6854cc"
+offset = "6854cc"
+size = "1c"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_6854cc"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_68c258"
+offset = "68c258"
+size = "6c"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_68c258"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_68c2c4"
+offset = "68c2c4"
+size = "6c"
+src = "lib/ctrsdk/zone.s"
+symbol = "A_68c2c4"
+library = "ctrsdk"
+score = 0
+
+[[function]]
+name = "A_66bb0c"
+offset = "66bb0c"
+size = "4a40"
+src = "lib/nw4c/zone.s"
+symbol = "A_66bb0c"
+library = "nw4c"
+score = 0
+
+[[function]]
+name = "A_67055c"
+offset = "67055c"
+size = "4ed8"
+src = "lib/nw4c/zone.s"
+symbol = "A_67055c"
+library = "nw4c"
 score = 0
