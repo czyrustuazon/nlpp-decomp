@@ -130,6 +130,23 @@ The first constructor, with the allocation written out in the body, scored 18 an
 | `FUN_0020bcc0` (kept in `src/`) | if-chain assigning `text`/`icon` locals, one shared call | 120 (191 vs 144 ins) |
 | `switch` on slot | dense switch | 143 (jump table `ldrlo pc,[pc,r1,lsl #2]`; retail has a `cmp`/`beq` chain) |
 
+**2026-10-10, Agent B: `BindMSelBtnIconAndText` under `--exceptions` (its exidx entry is extab).** Retail's cleanup pad at 0x20ae54 is only `nop; blx __cxa_end_cleanup`, with no destructor call, so a local has a user-declared destructor that inlines to nothing. `PaneRef` is that local: `PaneRef()` is the out-of-line `FUN_005e8b54` and `~PaneRef() {}` is empty. All rows below use `--cpu=MPCore --arm -O3 -Otime --split_sections --exceptions`.
+
+| File | What it changed | Score |
+|------|-----------------|-------|
+| `FUN_0020ad74/exc_paneref_raii_committed_body.cpp` | committed body; `PaneRef` with ctor and empty dtor | 16 (permuter 31,000 variants: 14) |
+| `FUN_0020ad74/exc_inline_find_layout_bool_act.cpp` | `inline Find(BtnLayout*, name, PaneRef*)` around `FindPane(l->root, name, ref, 0)` | 10; the `mov r3, #0` now follows `add r1, pc` as in retail, and the body matches |
+| `FUN_0020ad74/exc_inline_find_layout_ne0.cpp` | as above, `m->active != 0` passed straight to Begin (no `bool act`) | 9. The plain spelling, a ternary, and `bool act` after `base` also give 9. `if/else` into `act` gives 8, but it is permuter-like noise. A `UiContext*` local at Begin gives 45. Every 4.1 build ≥ b713 gives 9 |
+| `FUN_0020ad74/exc_slots_index_kept.cpp` | as above with `m->slots[index]` (struct pad fixed to put `slots` at +0x78) | **9, kept**. The residual is prologue register choice only: retail copies `text` to r7 first and loads `active` into r3, while ours loads it into r0. An `IsActive()` accessor and a `MSelMenu::` member function also give 9. `u32` base and `index << 3` give 9, and a `BtnSlot*` local gives 45 |
+| inline `Bind(root, name, ref, file)` doing Find and Bind together | the helper also holds the `PaneRef` | 45 / 51 |
+
+**2026-10-10, Agent B: `OptionMenu_BindPlateTextures` matched.** Its exidx entry is inline unwind, so it is built with `--exceptions`. The listed size 0x240 stopped inside the function. Retail places the string literals in two islands, and the second runs to 0x20bffc, the next function, so the real size is **0x33c**.
+
+| File | What it changed | Score |
+|------|-----------------|-------|
+| `FUN_0020bcc0/exc_if_chain_calls_literals_MATCH.cpp` | `if (slot == 0) BindPlate(m, "..Icon..", "..Obj..", "..Text.."); else if (slot == 1) ...` for slots 0-7, with literals at each call (ARMCC pools the shared Obj string once), then `Finish1`, then `if (slot == 0) SetFlag(m, 1)` | **0** at size 0x33c (63 at 0x240, all of them the second string island). Plain flags give 111 |
+| same chain, with `const char* obj` as a local, as a `static const char[]`, or with a `switch` | | 140-190 |
+
 ## 2026-10-01 Str/TaggedStr family (kept sources in `src/`; scores in `functions.toml`)
 
 | File | What it changed | Score |
@@ -147,3 +164,23 @@ The first constructor, with the allocation written out in the body, scored 18 an
 | `TierOf` (`src/hand_misc5.cpp`) | `for` loop over thresholds (rolls), unrolled if-chain with result var, early returns, `int` result, `short` value | 19-25; ARMCC keeps an extra `mov r1, r0` (retail loads both fields before zeroing r0) |
 | `NearlyEqual`, `SegInterpA/B`, `Length` | operand order, `!(d > tol)`, locals first, `Dot` helper, `__fabsf` | 4-19; float register numbering (`s0` vs `s1`) and load order differ |
 | Constructor family, round 2 (2026-10-03; `CbObj_ctor`, `TimedState_ctor`) | 60 more layouts: base with/without vptr x init-list / body / cb-first / flag-first x derived `x` in list or body; method `Init()` instead of base ctor; key function defined or not; callback defined in the same TU; `volatile` flag, `const` callback; `-O1`/`-O2`/`-Ospace` | best stays 5. Findings: (1) retail emits in source order flag, callback, vptr, field, so the right layout is a non-polymorphic base {flag, callback[, word]} plus a virtual derived (in `TimedState` the vptr store follows the +0xc store, so the base spans +4..+0x10); that layout reproduces the store order; (2) the residual is only scheduling: ARMCC hoists both literal-pool loads (callback in r3, vptr in r1) above the stores, retail loads the vptr after storing the callback and reuses r1 (callback in r1, zero in r2). Flags, key function and TU placement do not change it. Likely a scheduler difference, not a source difference |
+
+## 2026-10-10, Agent B: FUN_0054b880 DrawTextToPane rewrite (kept: `src/draw_text.cpp`)
+
+Its exidx entry is extab. The pad at 0x54c068 destroys a `TaggedStr` at sp+0x138 and a `Str` at sp+0x568, so both are RAII locals, and the function is built with `--exceptions`. Scores are positional, then the difflib count of +/- lines in brackets. The committed draft was 463 [898].
+
+| File | What it changed | Score |
+|------|-----------------|-------|
+| `FUN_0054b880/dtp_a.cpp` | Real `Str`/`TaggedStr` classes with ctor and dtor. `ts.Parse(str.m_text)`: the draft passed +0x14, but retail reads +4. Phase 1 is `inline Lines SplitLines(ts, maxLine)` returned by value: retail spills the hidden result pointer, and the two 0x104 copies are `__aeabi_memcpy4` = 0x20004c. Unsigned `limit` compare (`movhi`). `GlyphAdvance` is called before `if (ok)` | 468 [774] |
+| Encode as `for (k < 5) { if (b[0] != 0) break; for (j < 4) b[j] = b[j+1]; }` on `signed char` | ARMCC unrolls this into retail's five shift steps with `asr`/`sxtb`. A single loop with `k < 5 && b[0] == 0` stays a loop | |
+| `FUN_0054b880/dtp_c.cpp` | One `const StrChar& c = CharAt(ts, i)` for the draw branch: retail checks the guard once there. A shared `Align()` with `case 0: return 0;` and no default gives retail's `cmp 0/1/2` chain; `default:` or if-chains predicate instead. `TaggedStr` is 0x224 bytes (no pad word), because the next local starts at +0x224 | 465 [659] |
+| `FUN_0054b880/dtp_d.cpp` (kept) | Separate `AlignX(.., fontH, ..)`, which computes `fontH / 2 * cols + (count - 1) * spacing` inside the case (retail sinks the division there), and `AlignY(lines * rowH + (lines - 1) * spacing)` | **437 [525]**; the frame size equals retail's (0x5c8), and most of the rest is slot offsets |
+| `FUN_0054b880/dtp_e.cpp` | `ok` declared after `L` | 359 [538]: same instruction count, frame 0x594 without `ip` in the push |
+| `FUN_0054b880/dtp_f.cpp` | Encode's work buffer passed in from the caller | 453 [541]. It gives retail's `sub sp, #0x590`, but `ts` moves to 0x110 |
+| `bool ok`, `ok = adv`, ternaries | | no change. Retail's `movs r2, r0; movne r2, #1` is not reproduced |
+
+Not solved: stack slot order. Retail puts `str` at 0x568, `ok` at 0x564, the result temporary at 0x460, `built` at 0x35c, `ts` at 0x138, `L` at 0x34, and reuses the dead `built` area for the phase-2 spills.
+
+## 2026-10-10, Agent B: `throw()` plus `--exceptions` on hand-written near-misses
+
+`build/b/throw_sweep.py` (git-ignored) adds `throw()` to each near-miss's definition and declarations and scores it with `--exceptions`. Four reach 0: `MoveEmb` 0x16aaf8 (a non-tail virtual call, the known shape), and three **leaf** functions with no calls: `ListInsert` 0x542230, `UnlinkAll` 0x542154 and `Length` 0x6407a0. With plain flags or `--exceptions` alone, those three keep their old scores (10, 9, 4), so the exception specification itself changes leaf scheduling and register allocation. A leaf never needs unwinding, so its `cantunwind` entry does not mean it was built without `--exceptions`. `Panel::SetSlot`/`SetFirst` 0x61a664/0x61b364 match with `--exceptions` and an inline `Sub::SetSlot`/`SetFirst` member (retail moves `idx`/`flag` before testing `m_on`); `throw()` is not needed there. `HolderUseD/E/F` with an inline `Holder::Get(kind)` stay at 2-3. `TaggedStr()` with `throw()` gives 17 plain and 11 with `--exceptions`.

@@ -93,7 +93,8 @@ struct Emb {
     u16 base;                                        // +4
 };
 struct EmbHost { char p0[0x44]; Emb emb; };
-void MoveEmb(EmbHost* h, short d)
+// throw() with --exceptions: the exception specification changes this function's codegen too (2026-10-10).
+void MoveEmb(EmbHost* h, short d) throw()
 {
     Emb* e = &h->emb;
     e->Move((short)(d + e->base));

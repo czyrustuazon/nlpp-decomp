@@ -7,7 +7,8 @@ typedef int s32;
 // FUN_00542154: unlink every node from `node` up to (not including) node->next
 struct LNode2 { LNode2* next; LNode2* prev; };
 struct LList2 { s32 count; };
-LNode2* UnlinkAll(LList2* l, LNode2* node)
+// throw() with --exceptions: the exception specification changes this function's codegen too (2026-10-10).
+LNode2* UnlinkAll(LList2* l, LNode2* node) throw()
 {
     LNode2* end = node->next;
     for (; node != end; ) {

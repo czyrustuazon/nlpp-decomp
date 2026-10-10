@@ -94,23 +94,21 @@ float W_59cf10() {
 
 // FUN_0059d074
 void W_59d074(u32 a0, float p0, float p1) {
-    u32 r0 = a0;
     float f0 = p0, f1 = p1, f3_1, f2_1, f0_1, f1_1;
-    f3_1 = *(float*)(r0);
-    f2_1 = *(float*)(r0 + 16);
+    f3_1 = *(float*)(a0);
+    f2_1 = *(float*)(a0 + 16);
     f0_1 = f3_1 * f0;
     f1_1 = f2_1 * f1;
-    *(float*)(r0) = f0_1;
-    *(float*)(r0 + 16) = f1_1;
+    *(float*)(a0) = f0_1;
+    *(float*)(a0 + 16) = f1_1;
     return;
 }
 
 // FUN_0059d0dc
 void W_59d0dc(u32 a0, float p0, float p1) {
-    u32 r0 = a0;
     float f0 = p0, f1 = p1;
-    *(float*)(r0 + 8) = f0;
-    *(float*)(r0 + 20) = f1;
+    *(float*)(a0 + 8) = f0;
+    *(float*)(a0 + 20) = f1;
     return;
 }
 
@@ -143,12 +141,12 @@ void W_5a0558() {
 
 // FUN_005a3584
 void W_5a3584(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r4_1, r5_1, r2_1, r1_1, r0_1, r1_2, r0_2, r0_3, stk[35];
-    r4_1 = r1;
-    r5_1 = r0;
+    u32 r4_1, r5_1, r2_1, r1_1, r0_1, r1_2, r0_2, r0_3, stk[35];
+    r4_1 = a1;
+    r5_1 = a0;
     r2_1 = 0u;
     r1_1 = (u32)stk;
-    r0_1 = Fn_020b18_3(r0, r1_1, r2_1);
+    r0_1 = Fn_020b18_3(a0, r1_1, r2_1);
     r1_2 = (u32)stk;
     r0_2 = r5_1;
     *(u8*)((u32)stk + 12) = r4_1;
@@ -158,8 +156,8 @@ void W_5a3584(u32 a0, u32 a1) {
 
 // FUN_005a5a5c
 u32 W_5a5a5c(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r0_2, r1_1, r0_3, r0_4, r0_5, r0_6, r0_7, stk;
-    r4_1 = r0;
+    u32 r4_1, r0_1, r0_2, r1_1, r0_3, r0_4, r0_5, r0_6, r0_7, stk;
+    r4_1 = a0;
     r0_1 = (u32)&stk;
     r0_2 = Fn_02a054_1(r0_1);
     r1_1 = r0_2;
@@ -173,25 +171,25 @@ u32 W_5a5a5c(u32 a0) {
 
 // FUN_005a79b8
 void W_5a79b8(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
-    r0 = r0 + (r1 << 2);
+    u32 r0 = a0;
+    r0 = r0 + (a1 << 2);
     r0 = *(u32*)(r0 + 12);
-    { WeakCall2(r0, r1); return; }
+    { WeakCall2(r0, a1); return; }
 }
 
 // FUN_005a8ec4
 void W_5a8ec4(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
+    u32 r0 = a0, r2;
     float f0, f1, f2, f3;
-    r2 = *(u32*)(r1 + 16);
+    r2 = *(u32*)(a1 + 16);
     *(u32*)(r0 + 252) = r2;
-    r2 = *(u32*)(r1 + 20);
+    r2 = *(u32*)(a1 + 20);
     *(u32*)(r0 + 256) = r2;
     r0 = r0 + 236u;
-    f0 = *(float*)(r1 + 0);
-    f1 = *(float*)(r1 + 4);
-    f2 = *(float*)(r1 + 8);
-    f3 = *(float*)(r1 + 12);
+    f0 = *(float*)(a1 + 0);
+    f1 = *(float*)(a1 + 4);
+    f2 = *(float*)(a1 + 8);
+    f3 = *(float*)(a1 + 12);
     *(float*)(r0 + 0) = f0;
     *(float*)(r0 + 4) = f1;
     *(float*)(r0 + 8) = f2;
@@ -220,13 +218,13 @@ void W_5a8fc8() {
 
 // FUN_005aaca8
 void W_5aaca8(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r0_1;
+    u32 r0_1;
     float f0_1, f1_1, f2_1, f3_1;
-    f0_1 = *(float*)(r1 + 0);
-    f1_1 = *(float*)(r1 + 4);
-    f2_1 = *(float*)(r1 + 8);
-    f3_1 = *(float*)(r1 + 12);
-    r0_1 = r0 + 20u;
+    f0_1 = *(float*)(a1 + 0);
+    f1_1 = *(float*)(a1 + 4);
+    f2_1 = *(float*)(a1 + 8);
+    f3_1 = *(float*)(a1 + 12);
+    r0_1 = a0 + 20u;
     *(float*)(r0_1 + 0) = f0_1;
     *(float*)(r0_1 + 4) = f1_1;
     *(float*)(r0_1 + 8) = f2_1;
@@ -251,8 +249,8 @@ void W_5ad5ec() {
 
 // FUN_005ae51c
 void W_5ae51c(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r0_2, r1_1, r0_3, r0_4, r0_5, r0_6, stk[2];
-    r4_1 = r0;
+    u32 r4_1, r0_1, r0_2, r1_1, r0_3, r0_4, r0_5, r0_6, stk[2];
+    r4_1 = a0;
     r0_1 = (u32)stk;
     r0_2 = Fn_5b2ad4_1(r0_1);
     r1_1 = r0_2;
@@ -294,35 +292,31 @@ void W_5b200c() {
 
 // FUN_005bb1a0
 void W_5bb1a0(u32 a0, float p0, float p1) {
-    u32 r0 = a0;
     float f0 = p0, f1 = p1;
-    *(float*)(r0 + 132) = f0;
-    *(float*)(r0 + 144) = f1;
+    *(float*)(a0 + 132) = f0;
+    *(float*)(a0 + 144) = f1;
     return;
 }
 
 // FUN_005bb1ac
 void W_5bb1ac(u32 a0, float p0, float p1) {
-    u32 r0 = a0;
     float f0 = p0, f1 = p1;
-    *(float*)(r0 + 136) = f0;
-    *(float*)(r0 + 148) = f1;
+    *(float*)(a0 + 136) = f0;
+    *(float*)(a0 + 148) = f1;
     return;
 }
 
 // FUN_005bb1b8
 void W_5bb1b8(u32 a0, float p0, float p1) {
-    u32 r0 = a0;
     float f0 = p0, f1 = p1;
-    *(float*)(r0 + 140) = f0;
-    *(float*)(r0 + 152) = f1;
+    *(float*)(a0 + 140) = f0;
+    *(float*)(a0 + 152) = f1;
     return;
 }
 
 // FUN_005bbae4
 void W_5bbae4(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r2 = a2, r3 = a3;
-    if ((int)r3 >= (int)0u) { *(u32*)(r0 + 80) = r2; *(u32*)(r0 + 80 + 4) = r3; }
+    if ((int)a3 >= 0) { *(u32*)(a0 + 80) = a2; *(u32*)(a0 + 80 + 4) = a3; }
     return;
 }
 
@@ -360,14 +354,14 @@ void W_5be8f0() {
 
 // FUN_005be9d8
 void W_5be9d8(u32 a0) {
-    u32 r0 = a0, r2_1, r1_1;
+    u32 r2_1, r1_1;
     float f0_1;
     r2_1 = ~0u;
     r1_1 = 0u;
     f0_1 = 0.0f;
-    *(u16*)(r0) = r2_1;
-    *(u16*)(r0 + 2) = r1_1;
-    *(float*)(r0 + 4) = f0_1;
+    *(u16*)(a0) = r2_1;
+    *(u16*)(a0 + 2) = r1_1;
+    *(float*)(a0 + 4) = f0_1;
     return;
 }
 
@@ -404,22 +398,22 @@ void W_5c034c() {
 
 // FUN_005c1ad8
 void W_5c1ad8(u32 a0, float p0, float p1) {
-    u32 r0 = a0, r1_1, r0_1;
+    u32 r1_1, r0_1;
     float f0 = p0, f1 = p1;
-    r1_1 = *(u32*)(r0 + 12);
+    r1_1 = *(u32*)(a0 + 12);
     *(float*)(r1_1 + 236) = f0;
-    r0_1 = *(u32*)(r0 + 12);
+    r0_1 = *(u32*)(a0 + 12);
     *(float*)(r0_1 + 240) = f1;
     return;
 }
 
 // FUN_005c2a44
 void W_5c2a44(u32 a0, float p0) {
-    u32 r0 = a0, r1_1, r0_1;
+    u32 r1_1, r0_1;
     float f0 = p0;
-    r1_1 = *(u32*)(r0);
+    r1_1 = *(u32*)(a0);
     if (r1_1 != 0u) *(float*)(r1_1 + 384) = f0;
-    r0_1 = *(u32*)(r0 + 4);
+    r0_1 = *(u32*)(a0 + 4);
     if (r0_1 != 0u) *(float*)(r0_1 + 384) = f0;
     return;
 }

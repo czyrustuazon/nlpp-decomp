@@ -132,7 +132,7 @@ void W_4494a4(u32 a0) {
     L_4494d0:;
     r5 = r5 + 1u;
     r4 = r4 + 4u;
-    if ((int)r5 < (int)4u) goto L_4494bc;
+    if ((int)r5 < 4) goto L_4494bc;
     return;
 }
 
@@ -159,19 +159,19 @@ u32 W_449cb8(u32 a0, u32 a1) {
 
 // FUN_0044a9a4
 u32 W_44a9a4(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
+    u32 r0 = a0;
     r0 = *(u32*)(r0 + 24);
-    if (r0 != 0u) r0 = *(signed char*)(r0 + r1);
+    if (r0 != 0u) r0 = *(signed char*)(r0 + a1);
     return r0;
 }
 
 // FUN_0044a9b4
 void W_44a9b4(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, fa, fb;
+    u32 r0 = a0, r2, fa, fb;
     r0 = *(u32*)(r0 + 24);
     fa = r0; fb = 0u;
     if (fa != fb) r2 = 1u;
-    if (fa != fb) *(u8*)(r0 + r1) = r2;
+    if (fa != fb) *(u8*)(r0 + a1) = r2;
     return;
 }
 
@@ -186,10 +186,10 @@ u32 W_44b81c(u32 a0) {
 
 // FUN_0044b82c
 void W_44b82c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r4, fa, fb;
+    u32 r0 = a0, r4, fa, fb;
     r4 = r0;
-    r0 = r1;
-    r0 = Fn_60d420_2(r0, r1);
+    r0 = a1;
+    r0 = Fn_60d420_2(r0, a1);
     r0 = r0 - 2u;
     fa = r0; fb = 3u;
     if (fa <= fb) r0 = r0 & 255u;
@@ -353,10 +353,10 @@ u32 W_4520d0(u32 a0) {
 
 // FUN_00453998
 void W_453998(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u16*)(r0 + 48);
+    u32 r1 = a1, r2;
+    r2 = *(u16*)(a0 + 48);
     r1 = r1 | r2;
-    *(u16*)(r0 + 48) = r1;
+    *(u16*)(a0 + 48) = r1;
     return;
 }
 
@@ -371,21 +371,21 @@ u32 W_4539a8(u32 a0, u32 a1) {
 
 // FUN_004539b8
 void W_4539b8(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u16*)(r0 + 48);
+    u32 r1 = a1, r2;
+    r2 = *(u16*)(a0 + 48);
     r1 = r2 & ~r1;
-    *(u16*)(r0 + 48) = r1;
+    *(u16*)(a0 + 48) = r1;
     return;
 }
 
 // FUN_00454150
 u32 W_454150(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, fa, fb;
+    u32 r0 = a0, fa, fb;
     r0 = *(u32*)(r0 + 8);
     if (r0 == 0u) goto L_454170;
     r0 = (u32)g_007d953c;
     r0 = *(u32*)(r0);
-    fa = r0; fb = r1;
+    fa = r0; fb = a1;
     if (fa == fb) r0 = 1u;
     if (fa != fb) r0 = 0u;
     L_454170:;
@@ -431,8 +431,8 @@ u32 W_4587b4(u32 a0) {
 
 // FUN_004587c8
 u32 W_4587c8(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
-    r0 = r0 + r1;
+    u32 r0 = a0;
+    r0 = r0 + a1;
     r0 = r0 + 256u;
     r0 = *(signed char*)(r0 + 42);
     return r0;
@@ -440,18 +440,18 @@ u32 W_4587c8(u32 a0, u32 a1) {
 
 // FUN_004587d8
 void W_4587d8(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
+    u32 r0 = a0;
     r0 = r0 + 284u;
-    *(u16*)(r0) = r1;
+    *(u16*)(r0) = a1;
     return;
 }
 
 // FUN_004587e4
 void W_4587e4(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
+    u32 r0 = a0;
     r0 = r0 + 256u;
     r0 = r0 + 30u;
-    *(u16*)(r0) = r1;
+    *(u16*)(r0) = a1;
     return;
 }
 
@@ -465,9 +465,9 @@ u32 W_458958(u32 a0) {
 
 // FUN_0045896c
 void W_45896c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u8*)(r0 + 241);
-    if (r2 != r1) *(u8*)(r0 + 241) = r1;
+    u32 r2;
+    r2 = *(u8*)(a0 + 241);
+    if (r2 != a1) *(u8*)(a0 + 241) = a1;
     return;
 }
 
@@ -489,31 +489,31 @@ u32 W_458abc(u32 a0) {
 
 // FUN_00458d88
 void W_458d88(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u8*)(r0 + 292);
-    if (r2 != r1) *(u8*)(r0 + 292) = r1;
+    u32 r2;
+    r2 = *(u8*)(a0 + 292);
+    if (r2 != a1) *(u8*)(a0 + 292) = a1;
     return;
 }
 
 // FUN_00458d98
 void W_458d98(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, fa, fb;
-    if (r1 != 0u) goto L_458db4;
-    r2 = *(u8*)(r0 + 82);
+    u32 r2, fa, fb;
+    if (a1 != 0u) goto L_458db4;
+    r2 = *(u8*)(a0 + 82);
     fa = r2; fb = 0u;
-    if (fa == fb) r2 = *(signed char*)(r0 + 83);
+    if (fa == fb) r2 = *(signed char*)(a0 + 83);
     if (fa != fb) r2 = 1u;
-    *(u8*)(r0 + 83) = r2;
+    *(u8*)(a0 + 83) = r2;
     L_458db4:;
-    *(u8*)(r0 + 82) = r1;
+    *(u8*)(a0 + 82) = a1;
     return;
 }
 
 // FUN_00459034
 void W_459034(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u8*)(r0 + 263);
-    if (r2 != r1) *(u8*)(r0 + 263) = r1;
+    u32 r2;
+    r2 = *(u8*)(a0 + 263);
+    if (r2 != a1) *(u8*)(a0 + 263) = a1;
     return;
 }
 
@@ -534,17 +534,17 @@ u32 W_459094(u32 a0) {
 
 // FUN_004590cc
 void W_4590cc(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u8*)(r0 + 261);
-    if (r2 != r1) *(u8*)(r0 + 261) = r1;
+    u32 r2;
+    r2 = *(u8*)(a0 + 261);
+    if (r2 != a1) *(u8*)(a0 + 261) = a1;
     return;
 }
 
 // FUN_00459100
 void W_459100(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u8*)(r0 + 260);
-    if (r2 != r1) *(u8*)(r0 + 260) = r1;
+    u32 r2;
+    r2 = *(u8*)(a0 + 260);
+    if (r2 != a1) *(u8*)(a0 + 260) = a1;
     return;
 }
 
@@ -561,7 +561,7 @@ void W_45a328(u32 a0) {
     r1 = 5u;
     r0 = Fn_5c31cc_4(r0, r1, r2, r3);
     r4 = r4 + 1u;
-    if ((int)r4 < (int)5u) goto L_45a334;
+    if ((int)r4 < 5) goto L_45a334;
     r0 = 16778185u;
     { Fn_5db4a8_1(r0); return; }
 }
@@ -578,26 +578,26 @@ u32 W_45ab24(u32 a0) {
     r0 = Fn_6423ac_1(r0);
     if (r0 == 0u) r6 = 0u;
     r4 = r4 + 1u;
-    if ((int)r4 < (int)5u) goto L_45ab34;
+    if ((int)r4 < 5) goto L_45ab34;
     r0 = r6;
     return r0;
 }
 
 // FUN_0045fe40
 void W_45fe40(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = *(u8*)(r0 + 15);
-    if (r2 != r1) *(u8*)(r0 + 15) = r1;
+    u32 r2;
+    r2 = *(u8*)(a0 + 15);
+    if (r2 != a1) *(u8*)(a0 + 15) = a1;
     return;
 }
 
 // FUN_00460940
 u32 W_460940(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2;
+    u32 r0 = a0, r1 = a1;
     r0 = r0 + (r1 << 2);
-    r1 = r2 + (r2 << 1);
+    r1 = a2 + (a2 << 1);
     r0 = *(u32*)(r0 + 8);
-    r1 = r1 + (r2 << 4);
+    r1 = r1 + (a2 << 4);
     r0 = r0 + (r1 << 3);
     return r0;
 }
@@ -649,13 +649,13 @@ u32 W_4611f8() {
 
 // FUN_004613a0
 u32 W_4613a0(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, fa, fb;
+    u32 r0 = a0, r2, fa, fb;
     r2 = *(u8*)(r0 + 1);
     fa = r2; fb = 0u;
     if (fa == fb) r0 = 0u;
     if (fa == fb) goto L_4613bc;
     r0 = *(u32*)(r0 + 8);
-    if (r0 != 0u) r0 = r0 + (r1 << 3);
+    if (r0 != 0u) r0 = r0 + (a1 << 3);
     L_4613bc:;
     return r0;
 }
@@ -717,12 +717,12 @@ u32 W_466268() {
 
 // FUN_00468140
 void W_468140(u32 a0) {
-    u32 r0 = a0, r1, r2;
+    u32 r1, r2;
     r2 = 1u;
     r1 = ~0u;
-    *(u8*)(r0) = r2;
-    *(u32*)(r0 + 4) = r1;
-    *(u32*)(r0 + 8) = r1;
+    *(u8*)(a0) = r2;
+    *(u32*)(a0 + 4) = r1;
+    *(u32*)(a0 + 8) = r1;
     return;
 }
 
@@ -946,16 +946,16 @@ u32 W_478b60(u32 a0) {
 
 // FUN_00478bc0
 void W_478bc0(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
+    u32 r0 = a0, r2;
     r2 = *(signed char*)(r0 + 85);
-    if (r2 == r1) goto L_478bf0;
-    *(u8*)(r0 + 85) = r1;
+    if (r2 == a1) goto L_478bf0;
+    *(u8*)(r0 + 85) = a1;
     r0 = *(u32*)(r0 + 100);
     if (r0 == 0u) goto L_478bf0;
-    if (r1 == 0u) goto L_478be8;
-    { Fn_467ce0_3(r0, r1, r2); return; }
+    if (a1 == 0u) goto L_478be8;
+    { Fn_467ce0_3(r0, a1, r2); return; }
     L_478be8:;
-    { Fn_46795c_3(r0, r1, r2); return; }
+    { Fn_46795c_3(r0, a1, r2); return; }
     L_478bf0:;
     return;
 }
@@ -1418,25 +1418,25 @@ void W_480f2c(u32 a0) {
 
 // FUN_00482a04
 u32 W_482a04(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, fa, fb;
-    fa = r1; fb = 1u;
+    u32 r0 = a0, r2, fa, fb;
+    fa = a1; fb = 1u;
     if (fa == fb) r0 = *(u32*)(r0 + 368);
     if (fa == fb) goto L_482a5c;
-    fa = r1; fb = 2u;
+    fa = a1; fb = 2u;
     if (fa == fb) r0 = *(u32*)(r0 + 372);
     if (fa == fb) goto L_482a5c;
-    fa = r1; fb = 3u;
+    fa = a1; fb = 3u;
     if (fa == fb) r0 = *(u32*)(r0 + 376);
     if (fa == fb) goto L_482a5c;
     r2 = *(u32*)(r0 + 292);
     if (r2 == 0u) goto L_482a40;
-    fa = r1; fb = 4u;
+    fa = a1; fb = 4u;
     if (fa == fb) r0 = *(u32*)(r0 + 380);
     if (fa == fb) goto L_482a5c;
     L_482a40:;
     r2 = *(u32*)(r0 + 300);
     if (r2 == 0u) goto L_482a58;
-    fa = r1; fb = 5u;
+    fa = a1; fb = 5u;
     if (fa == fb) r0 = *(u32*)(r0 + 384);
     if (fa == fb) goto L_482a5c;
     L_482a58:;

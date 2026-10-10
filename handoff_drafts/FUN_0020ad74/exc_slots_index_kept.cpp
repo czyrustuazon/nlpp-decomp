@@ -1,0 +1,47 @@
+// Menu binders (technical.md §6 item 4). Small UI helpers that bind BCLIM file names to
+// layout panes; callers are menu setup functions, callees are layout (nw::lyt-like) code that
+// is not matched. Build: ARMCC 4.1 --cpu=MPCore --arm -O3 -Otime.
+//   FUN_0020ad74 BindMSelBtnIconAndText
+//   FUN_001eb3dc OptionMenu_BindBtnTextures
+
+typedef unsigned int u32;
+typedef int          s32;
+
+// Global UI context, VA 0x008BFA40 (the pointer itself; +0xB2C is a resource/archive handle).
+struct UiContext { u32 pad[0x2CB]; void* resource; };      // resource at +0xB2C
+extern UiContext* g_UiContext;
+
+struct PaneRef { u32 w[4]; PaneRef(); ~PaneRef() {} };                               // 16-byte lookup result
+struct BtnSlot { struct BtnLayout* layout; u32 unk4; };     // 8 bytes, array at menu+0x78
+struct BtnLayout { u32 unk0; u32 unk4; void* root; };       // root at +8
+
+struct MSelMenu {
+    u32     unk0;
+    s32     active;                  // +0x04
+    u32     pad[0x1C];
+    BtnSlot slots[4];                // +0x78
+};
+
+void UiContext_Begin(UiContext*, bool, u32);                // FUN_005c6614
+void UiContext_End(UiContext*, bool);                       // FUN_005c67dc
+void PaneRef_Init(PaneRef*);                                // FUN_005e8b54
+void FindPane(void* root, const char* name, PaneRef* out, u32 flag);   // FUN_005eba00
+void BindBclim(PaneRef*, u32, void* resource, const char* file);       // FUN_005e8720
+
+void MSelMenu_Prepare(MSelMenu*, u32 count);                // FUN_0020b160
+void MSelMenu_Finish1(MSelMenu*, u32, u32);                 // FUN_005c760c
+void MSelMenu_Finish2(MSelMenu*);                           // FUN_005c7c28
+
+
+inline void Find(BtnLayout* l, const char* name, PaneRef* ref) { FindPane(l->root, name, ref, 0); }
+void BindMSelBtnIconAndText(MSelMenu* m, s32 index, const char* icon, const char* text)
+{
+    UiContext_Begin(g_UiContext, m->active != 0, 0);
+    PaneRef ref;
+    Find(m->slots[index].layout, "Pic_Btn_Icon", &ref);
+    BindBclim(&ref, 0, g_UiContext->resource, icon);
+    Find(m->slots[index].layout, "Pic_Btn_Text", &ref);
+    BindBclim(&ref, 0, g_UiContext->resource, text);
+    UiContext* ce = g_UiContext;
+    UiContext_End(ce, m->active != 0);
+}

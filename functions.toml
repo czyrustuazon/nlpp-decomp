@@ -77,7 +77,9 @@ offset = "54b880"
 size = "7e8"
 src = "src/draw_text.cpp"
 symbol = "_Z14DrawTextToPaneP4PaneiiPijj"
-score = 463   # NONMATCHING: draft (468 vs 506 instructions); Lines struct + shared encode buffers
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+clean = "54c068"
+score = 440   # NONMATCHING: --exceptions; RAII Str/TaggedStr locals, SplitLines returns Lines by value; frame slot order and spill choices differ; 3 of the 440 are pad sp offsets (handoff_drafts/FUN_0054b880)
 
 # Thumb functions (first real Thumb matches; technical.md 6.1). Flags differ from the ARM game code.
 
@@ -242,7 +244,9 @@ offset = "20ad74"
 size = "e0"
 src = "src/menu_bind.cpp"
 symbol = "_Z22BindMSelBtnIconAndTextP8MSelMenuiPKcS2_"
-score = 13   # NONMATCHING: 56 instructions both; epilogue now matches (named ctx local); only the prologue schedule differs (retail: mov r7,r3 before ldr r3,[r4,#4]; mov r3,#0 after add r1,pc in the FindPane setup)
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+clean = "20ae54"
+score = 9   # NONMATCHING: --exceptions (extab; polymorphic PaneRef local, bare pad 0x20ae54 matches). Prologue register choice only: retail copies text to r7 first and loads active into r3
 
 [[function]]
 name = "OptionMenu_BindBtnTextures"
@@ -255,10 +259,11 @@ score = 0
 [[function]]
 name = "OptionMenu_BindPlateTextures"
 offset = "20bcc0"
-size = "240"
+size = "33c"
 src = "src/menu_bind.cpp"
 symbol = "_Z28OptionMenu_BindPlateTexturesP8MSelMenui"
-score = 120   # NONMATCHING: 191 vs 144 instructions; retail is a cmp/beq chain with per-case adr blocks and one Obj string, ours if-converts or duplicates strings
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "GetSlotField"
@@ -781,7 +786,8 @@ offset = "61a664"
 size = "34"
 src = "src/ui_small3.cpp"
 symbol = "_ZN5Panel7SetSlotEjj"
-score = 12   # NONMATCHING: retail does not tail-call and keeps compares unpredicated
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "Panel_SetFirst"
@@ -789,7 +795,8 @@ offset = "61b364"
 size = "34"
 src = "src/ui_small3.cpp"
 symbol = "_ZN5Panel8SetFirstEjj"
-score = 12   # NONMATCHING: same
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "Label_Ctor"
@@ -84745,7 +84752,8 @@ offset = "542230"
 size = "24"
 src = "src/hand_vec.cpp"
 symbol = "_Z10ListInsertP5LListP5LNodeS2_"
-score = 10   # NONMATCHING: ARMCC moves l out of r0 early (mov r3, r0) because n is the return value; retail keeps l in r0 until the count update
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "Normalize"
@@ -84809,7 +84817,8 @@ offset = "6407a0"
 size = "20"
 src = "src/hand_misc7.cpp"
 symbol = "_Z6LengthPK2V3"
-score = 4   # NONMATCHING: retail loads x and z before y; ARMCC loads x,y,z in order
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "SetPt"
@@ -85161,7 +85170,8 @@ offset = "16aaf8"
 size = "20"
 src = "src/hand_misc16.cpp"
 symbol = "_Z7MoveEmbP7EmbHosts"
-score = 8   # NONMATCHING: retail is not a tail call (push r4/lr, blx, pop pc); ARMCC emits bx
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "TimedState_ctor"
@@ -85177,7 +85187,8 @@ offset = "542154"
 size = "4c"
 src = "src/hand_misc17.cpp"
 symbol = "_Z9UnlinkAllP6LList2P6LNode2"
-score = 9   # NONMATCHING: register assignment (retail keeps the zero in r4 and the temporaries in ip)
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+score = 0
 
 [[function]]
 name = "W_007e08"

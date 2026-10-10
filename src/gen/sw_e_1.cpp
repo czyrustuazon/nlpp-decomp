@@ -47,9 +47,9 @@ u32 Fn_2ae4b8_2(u32, u32);
 
 // FUN_003e5738
 void W_3e5738(u32 a0) {
-    u32 r0 = a0, r1_1, r0_1, r1_2;
+    u32 r1_1, r0_1, r1_2;
     r1_1 = (u32)"ExecEventReplay";
-    r0_1 = Fn_3e5468_2(r0, r1_1);
+    r0_1 = Fn_3e5468_2(a0, r1_1);
     r1_2 = (u32)g_00822cd0;
     *(u32*)(r0_1) = r1_2;
     return;
@@ -57,9 +57,9 @@ void W_3e5738(u32 a0) {
 
 // FUN_003e5814
 void W_3e5814(u32 a0) {
-    u32 r0 = a0, r1_1, r0_1, r1_2;
+    u32 r1_1, r0_1, r1_2;
     r1_1 = (u32)"ExecEventCommand";
-    r0_1 = Fn_3e5468_2(r0, r1_1);
+    r0_1 = Fn_3e5468_2(a0, r1_1);
     r1_2 = (u32)g_00822d2c;
     *(u32*)(r0_1) = r1_2;
     return;
@@ -67,9 +67,9 @@ void W_3e5814(u32 a0) {
 
 // FUN_003e5944
 void W_3e5944(u32 a0) {
-    u32 r0 = a0, r1_1, r0_1, r1_2;
+    u32 r1_1, r0_1, r1_2;
     r1_1 = (u32)"ExecEventStartUp";
-    r0_1 = Fn_3e5468_2(r0, r1_1);
+    r0_1 = Fn_3e5468_2(a0, r1_1);
     r1_2 = (u32)g_00822d88;
     *(u32*)(r0_1) = r1_2;
     return;
@@ -77,9 +77,9 @@ void W_3e5944(u32 a0) {
 
 // FUN_003e5d7c
 void W_3e5d7c(u32 a0) {
-    u32 r0 = a0, r1_1, r0_1, r1_2;
+    u32 r1_1, r0_1, r1_2;
     r1_1 = (u32)"ExecEventMonologue";
-    r0_1 = Fn_3e5468_2(r0, r1_1);
+    r0_1 = Fn_3e5468_2(a0, r1_1);
     r1_2 = (u32)g_00822e40;
     *(u32*)(r0_1) = r1_2;
     return;
@@ -229,17 +229,17 @@ void W_459fe4(u32 a0, u32 a1) {
 
 // FUN_00461268
 void W_461268(u32 a0) {
-    u32 r0 = a0, r0_1;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"SkinshipReaction"), 0u);
+    u32 r0_1;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"SkinshipReaction"), 0u);
     *(u32*)(r0_1) = ((u32)g_0082643c);
     return;
 }
 
 // FUN_004a8664
 u32 W_4a8664(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r4;
-    r4 = r1;
-    r0 = Fn_262e80_2(r0, r1);
+    u32 r0 = a0, r4;
+    r4 = a1;
+    r0 = Fn_262e80_2(r0, a1);
     switch (r4) { case 0: goto L_4a86a4; case 1: goto L_4a86ac; case 2: goto L_4a86b4; case 3: goto L_4a86bc; case 4: goto L_4a86c4; case 5: goto L_4a86cc; case 6: goto L_4a86d4; case 7: goto L_4a86dc; case 8: goto L_4a86e4; case 9: goto L_4a86ec; default: goto L_4a86f4; }
     goto L_4a86f4;
     L_4a86a4:;
@@ -300,8 +300,8 @@ void W_4aa284(u32 a0, u32 a1) {
 
 // FUN_004afe24
 void W_4afe24(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c967c_3(r0, ((u32)"TutorialUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c967c_3(a0, ((u32)"TutorialUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00827a40);
@@ -314,9 +314,9 @@ void W_4afe24(u32 a0) {
 
 // FUN_004b8084
 u32 W_4b8084(u32 a0) {
-    u32 r0 = a0, r5_1, r0_1, r4_1, r0_4, r0_5, r1_2, stk[3];
+    u32 r5_1, r0_1, r4_1, r0_4, r0_5, r1_2, stk[3];
     r5_1 = 0u;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"BootCheckDemoProcess"), r5_1);
+    r0_1 = Fn_4e0128_3(a0, ((u32)"BootCheckDemoProcess"), r5_1);
     r4_1 = r0_1;
     *(u32*)(r4_1) = ((u32)g_00827cbc);
     *(u32*)(r4_1 + 68) = r5_1;
@@ -329,8 +329,8 @@ u32 W_4b8084(u32 a0) {
 
 // FUN_004bfef8
 void W_4bfef8(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"ManualBGUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"ManualBGUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00827e1c);
@@ -398,11 +398,11 @@ u32 W_576a58() {
 
 // FUN_005c602c
 void W_5c602c(u32 a0) {
-    u32 r0 = a0, r5_1, r0_4, r0_6;
+    u32 r5_1, r0_4, r0_6;
     r5_1 = *(u32*)((*(u32*)(((u32)g_008bfa48))) + 8);
     r0_4 = Fn_5ea0d8_2(r5_1, ((u32)"."));
     r0_6 = Fn_5ea204_2(r5_1, 0u);
-    *(u32*)(r0 + 2860) = r0_6;
+    *(u32*)(a0 + 2860) = r0_6;
     return;
 }
 
@@ -431,11 +431,11 @@ u32 W_5cee4c() {
 
 // FUN_005d00fc
 u32 W_5d00fc(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, fa, fb;
-    switch (r1) { case 0: goto L_5d0160; case 1: goto L_5d0158; case 2: goto L_5d0140; case 3: goto L_5d0158; case 4: goto L_5d0160; case 5: goto L_5d0158; case 6: goto L_5d0160; case 7: goto L_5d0158; case 8: goto L_5d0158; case 9: goto L_5d0160; case 10: goto L_5d0158; case 11: goto L_5d0160; case 12: goto L_5d0158; default: goto L_5d0160; }
+    u32 r0 = a0, fa, fb;
+    switch (a1) { case 0: goto L_5d0160; case 1: goto L_5d0158; case 2: goto L_5d0140; case 3: goto L_5d0158; case 4: goto L_5d0160; case 5: goto L_5d0158; case 6: goto L_5d0160; case 7: goto L_5d0158; case 8: goto L_5d0158; case 9: goto L_5d0160; case 10: goto L_5d0158; case 11: goto L_5d0160; case 12: goto L_5d0158; default: goto L_5d0160; }
     goto L_5d0160;
     L_5d0140:;
-    r0 = Fn_502114_2(r0, r1);
+    r0 = Fn_502114_2(r0, a1);
     fa = r0; fb = 0u;
     if (fa != fb) r0 = 29u;
     if (fa == fb) r0 = 28u;
@@ -537,7 +537,7 @@ u32 W_62c110(u32 a0, u32 a1, u32 a2, u32 a3) {
     r3 = r3 + 8u;
     r0 = r12;
     r0 = Fn_62d5d8_4(r0, r1, r2, r3);
-    if ((int)r0 < (int)0u) goto L_62c270;
+    if ((int)r0 < 0) goto L_62c270;
     L_62c268:;
     if ((int)r5 >= (int)r0) goto L_62c274;
     L_62c270:;
@@ -549,12 +549,12 @@ u32 W_62c110(u32 a0, u32 a1, u32 a2, u32 a3) {
 
 // FUN_0062fba0
 u32 W_62fba0(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r4, r5, r6, r7;
+    u32 r0 = a0, r4, r5, r6, r7;
     r5 = r0;
-    r7 = r1;
+    r7 = a1;
     r6 = 0u;
     r0 = 24u;
-    r0 = Fn_2ae4b8_2(r0, r1);
+    r0 = Fn_2ae4b8_2(r0, a1);
     if (r0 != 0u) r6 = 1u;
     r4 = 0u;
     switch (r7) { case 0: goto L_62fc48; case 1: goto L_62fbfc; case 2: goto L_62fbe4; case 3: goto L_62fc3c; case 4: goto L_62fc14; default: goto L_62fc48; }
@@ -562,16 +562,16 @@ u32 W_62fba0(u32 a0, u32 a1) {
     L_62fbe4:;
     r4 = *(short*)(r5 + 6);
     if (r6 == 0u) goto L_62fc48;
-    if ((int)r4 >= (int)127u) goto L_62fc48;
+    if ((int)r4 >= 127) goto L_62fc48;
     goto L_62fc34;
     L_62fbfc:;
     r4 = *(short*)(r5 + 4);
     if (r6 == 0u) goto L_62fc48;
-    if ((int)r4 >= (int)127u) goto L_62fc48;
+    if ((int)r4 >= 127) goto L_62fc48;
     goto L_62fc34;
     L_62fc14:;
     r0 = *(signed char*)(r5 + 8);
-    if ((int)r0 < (int)0u) r4 = 0u - r0;
+    if ((int)r0 < 0) r4 = 0u - r0;
     r0 = 24u;
     r0 = Fn_2ae4b8_1(r0);
     if (r0 == 0u) goto L_62fc48;
@@ -580,7 +580,7 @@ u32 W_62fba0(u32 a0, u32 a1) {
     goto L_62fc48;
     L_62fc3c:;
     r0 = *(signed char*)(r5 + 8);
-    if ((int)r0 > (int)0u) r4 = r0;
+    if ((int)r0 > 0) r4 = r0;
     L_62fc48:;
     r0 = r4;
     return r0;

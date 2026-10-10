@@ -47,7 +47,7 @@ u32 W_407350(u32 a0) {
     if (r0 == 0u) goto L_407430;
     r0 = *(u32*)(r4 + 64);
     r5 = 0u;
-    if ((int)r0 <= (int)0u) goto L_407424;
+    if ((int)r0 <= 0) goto L_407424;
     L_4073e4:;
     r0 = *(u32*)(r4 + 104);
     r0 = *(u32*)(r0 + (r5 << 2));
@@ -154,6 +154,6 @@ void W_426ef8(u32 a0) {
     *(u32*)(r0 + 404) = r1;
     *(u32*)(r0 + 336) = r1;
     *(u32*)(r0 + 416) = r1;
-    if ((int)r5 < (int)8u) goto L_426fe8;
+    if ((int)r5 < 8) goto L_426fe8;
     return;
 }

@@ -31,6 +31,43 @@ Ghidra image base is 0. Runtime VA = file offset + `0x100000`.
 - This folder does not patch `img.bin`, ship a CIA, or replace Azahar.
 - Localization bugs stay in the patcher. When a match explains a screen, add a short pointer in the patcher doc. Do not move patcher notes here.
 
+## TWO-AGENT PLAN (2026-10-10; read this first)
+
+Two agents now work in this tree at the same time. Each one owns its files, not an address range. The user said which role you have; if not, ask. State at the start: `main` at `5ff087d`, `relink` identical, 14,880 of 36,380 functions (40.9%), 1,073 KiB (17.3%).
+
+**Why this split.** Remaining unhandled code by exidx kind (`symbols/exidx.csv`):
+- `extab` functions: 3,217 functions, 1,410 KiB.
+- inline unwind: 8,081 functions, 2,358 KiB.
+- no entry: 5,838 functions, 1,152 KiB.
+- `cantunwind`: 4,317 functions, 218 KiB.
+
+`extab` functions have C++ locals or members with destructors. The lifter cannot produce them. ARMCC emits their cleanup code into a separate section `i.<fn>.clean` (`mov r0, <obj>; nop; bl ~T; nop; bl __cxa_end_cleanup`, where `__cxa_end_cleanup` is 0x202080), and the linker places it right after the function. 3,107 entries of `symbols/code.bin.csv` are such cleanup pads, not functions (80 KiB). They read the parent's `r4`+, nothing calls them, and their last call is 0x202080. 240 of them already have a matched parent. Exception-aware matching is the biggest lift. The rest is mostly scheduling and register-allocation misses, plus readability.
+
+**Agent A: exceptions and tooling.**
+- Owns: `ctrdecomp/*.py` (`compare`, `relink`, `exidx`), `tools/wrapgen/lift2.py`, `gen2.py`, `apply2.py`, `asmify.py`, `move_lib.py`, new `src/gen/<prefix>_*.cpp` files, `symbols/code.bin.csv`, `symbols/boundaries.csv`. Scratch directory `build/a/`.
+- Tasks, in order:
+  1. `compare` and `relink` treat `i.<fn>.clean` as part of its function and place it at the pad address. Then rebuild the 240 matched parents with `--exceptions` to get their pads.
+  2. Fold cleanup pads into their parents in the function list (or mark them), so they stop counting as functions.
+  3. Hand-match one small `extab` function to prove the C++ shape.
+  4. RAII-aware lifter: read the pads to declare locals or members with destructors, then run a pass over the `extab` functions.
+  5. If time is left: the about 3,000 tiny unreferenced functions that lift.
+
+**Agent B: hand-matching and readability.**
+- Owns: hand-written `src/*.cpp` (`src/hand_*`, family files such as `src/tagged_str.cpp`, `src/draw_text.cpp`, `src/menu_bind.cpp`), `tools/wrapgen/tidy.py`, `handoff_drafts/`, and a new `symbols/names_proposed.csv`. Scratch directory `build/b/`. Does not edit Agent A's files. If a tool change is needed, write it down and ask the user.
+- Tasks:
+  1. Retry the text/UI near-misses (`TaggedStr::Parse`, `TaggedStr` ctors, `DrawTextToPane`, `OptionMenu_BindPlateTextures`, `BindMSelBtnIconAndText`). Pick flags from the function's own exidx entry: `cantunwind` gets the plain flags, inline/extab gets `--exceptions`; the Str/TaggedStr block 0x578230-0x5b1ba8 is plain (`technical.md` §8). Record every attempt in `handoff_drafts/`.
+  2. Tidy round 2 (`tidy.py`): `(int)5u` becomes `5`; drop `u32 r0 = a0` copies where a parameter is never reassigned; keep a rewrite only at score 0. Tidy only `src/gen` files already committed, never ones Agent A is writing.
+  3. Names: propose names per function family from callers, strings and the patcher's screen notes (`../NewLovePlusPlusEngPatcher/docs/technical.md`) in `symbols/names_proposed.csv`. The user checks them against the game before any rename.
+
+**Shared rules.**
+- `functions.toml` and `externs.toml` are append-only; re-read them before every edit. When committing, stage only your own entries: HEAD plus your rows, via `git hash-object -w` and `git update-index --cacheinfo`. Never `git add -A`.
+- Run `python -m ctrdecomp relink` (identical, `errors: []`) before asking the user to commit. Do not edit sources while a `relink` runs, yours or the other agent's (check with the PowerShell tool: `Get-CimInstance Win32_Process`).
+- Stop only your own processes; filter by your `build/a` or `build/b` paths and tags. Use the PowerShell tool, not `powershell` from Bash. Keep temp objects under your scratch directory (`TMP`/`TEMP`).
+- The user commits and pushes; ask, one agent at a time. No new branches.
+- Results go into `technical.md` §8 (new paragraph with date and role) and a one-line LATEST note under this section. Chat is lost.
+
+**LATEST (Agent B, 2026-10-10).** Matched 7 near-misses: `OptionMenu_BindPlateTextures` (size is 0x33c), `Panel::SetSlot`/`SetFirst`, and with `throw()` `MoveEmb`, `ListInsert`, `UnlinkAll`, `Length`. Improved `BindMSelBtnIconAndText` 13 -> 9 and `DrawTextToPane` 463 -> 440 (both with `clean` pads). Finding for the lifter: `throw()` + `--exceptions` changes leaf codegen, and `cantunwind` on a leaf is no evidence of plain flags. Next for B: tidy round 2 (`tidy.py --round2`), then the user checks `symbols/names_proposed.csv`. Details: `technical.md` §8 "Hand-matching with exception flags".
+
 ## RESUME HERE (written 2026-10-03 night; the machine is hibernating, work continues the next day)
 
 **Repo state.** Weak-call lifting is committed through `src/gen/w8_0.cpp` (163 + 78 + 6 + 2 matches; `relink16` byte-identical, `errors: []`). The VFP lifter round (`vpush`/`vpop` skipped, `vldmia`/`vstmia` of `s` lists, `s16`+ live across calls, float returns after direct calls) lifts 779 weak-call functions up to 0xc8 bytes but only 8 of the 0x80-0xc8 ones matched: float code lifts correctly and misses on scheduling/regalloc (0xcec0: score 22). Treat those as hand-match candidates (`technical.md` §8, last paragraph). Not pushed (the user pushes). Commits are GPG-signed; if signing fails ask the user to unlock the key.

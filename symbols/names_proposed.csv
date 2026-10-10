@@ -1,0 +1,92 @@
+offset,current,proposed,family,evidence,confidence
+0de04,A_00de04,Heap_Alloc,heap (SDK),patcher §10: malloc; data abort inside it on a corrupted arena header (ldr r2 [r0 #4]),medium
+15304,A_015304,Heap_Unlink,heap (SDK),patcher: heap unlink at PC 0x11531C during a heap smash,medium
+1a43c,A_01a43c,DivS32,runtime (SDK block),patcher §21: wait delay divides here; delay 0 would divide by zero,medium
+22d48,A_022d48,DivU32,runtime (SDK block),patcher §21: (+0xd60 / +0xd54) voice divide is BL 0x22D48,medium
+05b49c,FUN_0005b49c,MyroomWatcher_Open,myroom / SpotPass magazine,patcher §16.8: WEB Watcher is Myroom layout 0xC built here,low
+0ea254,FUN_000ea254,BootUI_Update,boot / SpotPass,patcher §16.7: boot UI state machine; state 0 binds slot 0x1e7 and opens warning layout 0x3074,medium
+0ea964,FUN_000ea964,BootUI_OpenWarningLayout,boot / SpotPass,patcher §16.7: opens the warning layout (id 0x3074),medium
+0ebe0c,FUN_000ebe0c,TitleUI_Update,title / SpotPass,patcher §16.7: TitleUIOperator tick; enters applying-wait via 0xeb3bc,medium
+0eb3bc,FUN_000eb3bc,TitleUI_BeginApplyWait,title / SpotPass,patcher §16.7: applying-wait entry called from TitleUI tick,low
+10ef5c,FUN_0010ef5c,CommunicationOptionUI_Update,options,patcher: Communication Settings DATA is CommunicationOptionUIOperator FUN_0010ef5c,high
+132d40,FUN_00132d40,Password_Match,options / password,patcher §22: strcmp of the ABC buffer against pack 0xb000 slots 0-52,high
+1330d8,W_1330d8,Password_GetMatchedSlot,options / password,patcher §22: UI after match returns +0x94 (the matched slot),high
+13bd20,FUN_0013bd20,TalkWindow_DrawGlyphs,talk window,patcher §21: draw with new glyph count,medium
+13f260,W_13f260,TalkWindow_SetSpeedIndex,talk window,patcher §21: stores r1 at +0xd9c only if r1 < 5 (delay table index),high
+13f6a4,FUN_0013f6a4,TalkWindow_Process,talk window,patcher §21.4: live date talk is TalkWindowProcess (glyph progress +0xd50/+0xd54),high
+147808,FUN_00147808,NameKana_CharAt,profile / names,patcher §17.8: indexes each character as ptr + i*3 (hiragana-only lookup),medium
+147e04,FUN_00147e04,NameKana_FindZuDzu,profile / names,patcher §17.8: scans for ず/づ (pack 0x7000 slots 0x3b/0x40),medium
+14b730,FUN_0014b730,NameCardUI_SetReveal,name card,patcher §12.4.6: sets +0xb1 when called with r1=0 r2=0,low
+14b890,FUN_0014b890,NameCardUI_OpenMultiWin,name card,patcher: opens MultiWin (state 2) from Communication Settings parent helper,low
+14d584,FUN_0014d584,NameCardUI_DrawSelectBars,name card,patcher §12.4.6: state 2 draws the two right-hand bars,medium
+14e648,FUN_0014e648,NameCardUI_DrawDataText,name card,patcher: pack 0x9d01 slot 4 DrawText (state 8),low
+14eb9c,FUN_0014eb9c,NameCardUI_CheckExtraData,name card,patcher §16.8: returns (extra & ~0x20 & has-rows) ^ 1 and binds pack 0x9d01,medium
+14ed0c,FUN_0014ed0c,NameCardUI_Update,name card,patcher §12.4.6: main-menu Name Card operator; state byte +0x84; jump table at 0x14ED2C,high
+150668,FUN_00150668,NameCardUI_BuildLayouts,name card,patcher §12.4.6: layouts are built here; asked for the next state,medium
+16ea1c,FUN_0016ea1c,NintendoLogo_Ctor,boot logos,patcher §12.7: NintendoLogo ctor; stores TEXI id 0x5A0008 in +0x60 and +0x64,high
+16ec1c,FUN_0016ec1c,CesaLogo_BindTextures,boot logos,patcher §12.7: CesaLogo state 2 binds both ids via FUN_005af3ac,high
+16f338,FUN_0016f338,CesaLogo_Ctor,boot logos,patcher §12.7: CesaLogo ctor; +0x60 = 0x5A0002 +0x64 = 0x5A0008,high
+195fa4,FUN_00195fa4,SysDialog_Open,system dialog,patcher §16.9: links a one-line message record and returns a packed layout id (pack 0x1901 slot = tableA[layout] + mode),medium
+1d14e0,FUN_001d14e0,ClockUI_BuildSoftkeyTable,clock / softkeys,patcher §6.1: init table builder for the softkey enables,medium
+1d1c70,FUN_001d1c70,Softkey_EnableO,clock / softkeys,patcher §6.1: Pos_Com_Btn_o enable (flags +0x28/+0x3b),high
+1d2080,FUN_001d2080,Softkey_EnableT,clock / softkeys,patcher §6.1: Pos_Com_btn_t enable (flags +0x37/+0x49),high
+1d2498,FUN_001d2498,Softkey_EnableM,clock / softkeys,patcher §6.1: Pos_Com_Btn_m enable (flags +0x25 sticky +0x38),high
+1d2e5c,FUN_001d2e5c,DisplayOptionUI_OnSpeedSlider,options / display,patcher §21.1: slider change; reads knob and stores delay at +0x118,high
+1d2f90,FUN_001d2f90,DisplayOptionUI_Setup,options / display,patcher §21.1: copies the speed sample and binds pane Window_Message,high
+1f1a6c,FUN_001f1a6c,ProfileUI_FillCalledName,profile / names,patcher §17.8: fills Lyt_Prf_Win_Call01/02 (with 0x23e468),low
+2240f8,FUN_002240f8,DataPlate_SetRowText,name card,patcher: row setter for Com_Dataplate01 ("%s %s" from save or NO DATA),medium
+23e468,FUN_0023e468,ProfileUI_BuildCalledList,profile / names,patcher §17.8: fills Lyt_Prf_Win_Call01/02 (with 0x1f1a6c),low
+24842c,FUN_0024842c,DrawHeaderPaneText,text / panes,patcher §2: (ui paneIndex stringSrc) -> MakeStr + DrawTextToPane into a pane slot,high
+249fd4,FUN_00249fd4,ProfileUI_DrawBloodTypeKeys,profile,patcher §6.3: Tex_Bt%02d with GetText(.. 0x106 button) = blood types,medium
+255a18,FUN_00255a18,MultiWin_BindHeader,UI / MultiWin,patcher: binds Com_MultiWin_W01_Text* BCLIMs by index (table ~0x6c3f9c),medium
+2575c4,W_2575c4,Password_IsUsed,options / password,patcher §22: used-bit (8 bytes at save +0xc),medium
+257600,FUN_00257600,Password_SetUsed,options / password,patcher §22: used-bit (8 bytes at save +0xc),medium
+25959c,FUN_0025959c,Player_AddMoney,items,patcher §22: Riches grant FUN_0025959c(.. 100),medium
+2626e8,FUN_002626e8,SysMessage_BindSlot,system dialog,patcher §16.7: binds message slot 0x1e7 onto the sentence pane via 0x4b119c,low
+2d2e50,W_2d2e50,OptionAdjustTimeUI_Create,options / clock,patcher §7: factory; alloc and vtable install for OptionAdjustTimeUIOperator,high
+2d4d2c,FUN_002d4d2c,MessagePane_Create,options / display,patcher §21.1: binds Window_Message via ctor 0x2d5574,medium
+2d544c,FUN_002d544c,MessagePane_Tick,options / display,patcher §21.1: typewriter tick; advances one glyph when +0x2C reaches +0x24,high
+2d553c,FUN_002d553c,MessagePane_Reset,options / display,patcher §21.1: replay/reset; clears +0x28/+0x2C,high
+2d5574,FUN_002d5574,MessagePane_Ctor,options / display,patcher §21.1: message-pane ctor,high
+2d8754,W_2d8754,Config_SetColor,config,patcher §21.3: color knob is +0x10..+0x1C via this,low
+2d87a4,FUN_002d87a4,Config_ClampByte,config,patcher §21.3: clamp to min 0 / max 0xFF (pool words 0x6C5504/0x6C5508),medium
+2d8874,W_2d8874,Config_SpeedRateToIndex,config,patcher §21: maps saved cfg+0x0C rate to delay index,high
+319320,FUN_00319320,SysPopup_Open,system dialog,patcher §16.7: later SysPopup (slot 0x1e6),low
+34cd98,FUN_0034cd98,DateUI_FillPrefecture,profile / date,patcher §3: GetText(.. 0x107 slot from +0x84) = prefecture names,medium
+350a1c,FUN_00350a1c,ClockPopUI_DrawHeaders,options / clock,patcher §7: multi-pane DrawHeaderPaneText draws,low
+38dc70,FUN_0038dc70,Password_GrantItems,options / password,patcher §22: applies item_id[53] table at 0x6B6F00,high
+390058,FUN_00390058,Player_AddItem,items,patcher §22: positive ids are given through this (0x0404 ids),medium
+39fc64,FUN_0039fc64,OptionAdjustTimeUI_Spawn,options / clock,patcher §7: caller that creates OptionAdjustTimeUIOperator,low
+3b82e0,FUN_003b82e0,Heroine_HasNickname,heroine,patcher §22: tests slot 0x18 for the VISA nickname grant,low
+3bd280,W_3bd280,TalkWindow_ApplySpeedA,talk window,patcher §21: caller that passes *(obj+0x0C) through 0x2d8874 then 0x13f260,low
+3c2130,W_3c2130,TalkWindow_ApplySpeedB,talk window,patcher §21: same pattern as 0x3bd280,low
+443cd8,FUN_00443cd8,TitleUI_ShowCafeOverlay,title,patcher §16.7: shows the +0x90 cafe overlay (state 1),medium
+4b119c,FUN_004b119c,SysMessage_BindPane,system dialog,patcher §16.7: binds a message slot onto a sentence pane,medium
+4b17b0,FUN_004b17b0,SysMessage_Show,system dialog,patcher §16.7: shows message id 0x2b61 (pane id),medium
+4b2574,FUN_004b2574,SysPopup_OpenTyped,system dialog,patcher §16.7: type-2 SysPopup slot 0x1e5,low
+542828,A_542828,Clim_Upload,nw::lyt (library),patcher §5.4: maps the BCLIM format byte via 0x6E9964 and uploads with target 0x0DE1; only caller of ParseClim,high
+54b880,DrawTextToPane,DrawTextToPane,text / panes,keep (patcher §2 and §14 use this name),high
+598ff4,FUN_00598ff4,Texi_Lookup,textures,patcher §12.7: constructor ids are 1-based TEXI indices ((id & 0xffff) - 1),medium
+59a010,FUN_0059a010,Heap_GetArenaStats,heap,patcher: heap-arena stats fill (not DrawText),low
+5aeef4,FUN_005aeef4,Texi_GetSize,textures,patcher §12.7: bind keeps this function's TEXI size,low
+5af3ac,FUN_005af3ac,Texi_BindToPane,textures,patcher §12.7: CesaLogo binds both TEXI ids through this,medium
+5c4578,FUN_005c4578,Slider_GetLevel,UI widgets,patcher §21.1: reads the slit/knob level,medium
+5cd218,FUN_005cd218,Config_LoadSpeedLevel,config,patcher §21.3: level = (cfg+0x0C + 1) >> 6 clamped 1-4,high
+5cdaa0,FUN_005cdaa0,Config_SaveSpeedLevel,config,patcher §21.3: cfg+0x0C = level * 0x40 - 1,high
+5d191c,W_5d191c,StrNCopy,runtime / text,patcher §21.1: strncpy wrapper,high
+5d1e18,W_5d1e18,SpeedLevelToDelay,options / display,patcher §21.2: cmp/moveq chain level -> 18/12/6/0 frames,high
+5fe5d0,FUN_005fe5d0,WebWorker_Init,SpotPass magazine,patcher §16.8: stores +0x46 on the worker at *0x008BFAEC,low
+5fe718,FUN_005fe718,WebWorker_Run,SpotPass magazine,patcher §16.11: calls 0x4f9974 on worker+0x4c then vtable +0x24,low
+5fe780,FUN_005fe780,WebWorker_Pump,SpotPass magazine,patcher §16.11: command 9 pump; adds 0x910 and calls a vtable,low
+5fe9d8,FUN_005fe9d8,WebWorker_HasRows,SpotPass magazine,patcher §16.8: has-rows poll,medium
+6088c8,FUN_006088c8,SpotPass_MergeNsData,SpotPass,patcher §16.8: merge (stubbed to return 1 by the patch),medium
+608cac,FUN_00608cac,SpotPass_ParseInfoA,SpotPass,patcher §16.3: info.dat consumer,low
+609ab0,FUN_00609ab0,SpotPass_GetNsDataNewFlag,SpotPass,patcher §16.8: GetNsDataNewFlag,high
+609ef4,FUN_00609ef4,SpotPass_ParseInfoB,SpotPass,patcher §16.3: info.dat consumer,low
+62fa8c,W_62fa8c,TitleUI_PollApplyDone,title / SpotPass,patcher §16.7: wait sites fall through to "Applying SpotPass..." when r0 != 0,low
+631348,FUN_00631348,NthSetBit,util,patcher §16.11: returns the bit index of the Nth set bit,high
+65f4d4,A_65f4d4,GxTexture_Bind,nw4c / GX (library),patcher §5.4: binds the allocated texture id,medium
+660498,A_660498,GxTexture_Upload,nw4c / GX (library),patcher §5.4: uploads with target 0x0DE1 (GL_TEXTURE_2D),medium
+661e80,A_661e80,GxTexture_Alloc,nw4c / GX (library),patcher §5.4: allocates a texture id,medium
+6691d0,W_6691d0,GxTexture_GetMortonConverter,nw4c / GX (library),patcher §5.4: supplies the Morton-tiling converter (mode 0x101),low
+682830,FUN_00682830,UIWindowMgr_Show,UI window manager,patcher §21.1: UIWindowMgr_Show(.. 0 2 ..) opens window index 2,medium

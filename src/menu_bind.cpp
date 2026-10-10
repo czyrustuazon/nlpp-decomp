@@ -11,20 +11,23 @@ typedef int          s32;
 struct UiContext { u32 pad[0x2CB]; void* resource; };      // resource at +0xB2C
 extern UiContext* g_UiContext;
 
-struct PaneRef { u32 w[4]; };                               // 16-byte lookup result
+// 16-byte lookup result, polymorphic: its ctor (FUN_005e8b54) runs a base ctor (FUN_005e828c) and
+// stores a vptr. A base with an inline empty virtual destructor gives BindMSelBtnIconAndText retail's
+// bare cleanup pad at 0x20ae54 (`nop; blx __cxa_end_cleanup`); key_() keeps the vtables out of the TU.
+struct PaneRefBase { virtual ~PaneRefBase() {} virtual void key_(); u32 w1, w2, w3; };
+struct PaneRef : PaneRefBase { PaneRef(); };
 struct BtnSlot { struct BtnLayout* layout; u32 unk4; };     // 8 bytes, array at menu+0x78
 struct BtnLayout { u32 unk0; u32 unk4; void* root; };       // root at +8
 
 struct MSelMenu {
     u32     unk0;
     s32     active;                  // +0x04
-    u32     pad[0x76 - 1];
+    u32     pad[0x1C];
     BtnSlot slots[4];                // +0x78
 };
 
 void UiContext_Begin(UiContext*, bool, u32);                // FUN_005c6614
 void UiContext_End(UiContext*, bool);                       // FUN_005c67dc
-void PaneRef_Init(PaneRef*);                                // FUN_005e8b54
 void FindPane(void* root, const char* name, PaneRef* out, u32 flag);   // FUN_005eba00
 void BindBclim(PaneRef*, u32, void* resource, const char* file);       // FUN_005e8720
 
@@ -32,19 +35,21 @@ void MSelMenu_Prepare(MSelMenu*, u32 count);                // FUN_0020b160
 void MSelMenu_Finish1(MSelMenu*, u32, u32);                 // FUN_005c760c
 void MSelMenu_Finish2(MSelMenu*);                           // FUN_005c7c28
 
+inline void Find(BtnLayout* l, const char* name, PaneRef* ref) { FindPane(l->root, name, ref, 0); }
+
+// --exceptions (extab entry). The inline Find puts `mov r3, #0` after the name as in retail.
+// NONMATCHING, score 9: prologue register choice only (retail copies `text` to r7 first and loads
+// `active` into r3; ours loads it into r0). handoff_drafts/FUN_0020ad74.
 void BindMSelBtnIconAndText(MSelMenu* m, s32 index, const char* icon, const char* text)
 {
-    bool act = m->active;            // a named bool loaded first: 15 -> 13 (permuter, read and kept)
+    UiContext_Begin(g_UiContext, m->active != 0, 0);
     PaneRef ref;
-    char* base = (char*)m + index * 8;
-    UiContext_Begin(g_UiContext, act, 0);
-    PaneRef_Init(&ref);
-    FindPane(((BtnSlot*)(base + 0x78))->layout->root, "Pic_Btn_Icon", &ref, 0);
+    Find(m->slots[index].layout, "Pic_Btn_Icon", &ref);
     BindBclim(&ref, 0, g_UiContext->resource, icon);
-    FindPane(((BtnSlot*)(base + 0x78))->layout->root, "Pic_Btn_Text", &ref, 0);
+    Find(m->slots[index].layout, "Pic_Btn_Text", &ref);
     BindBclim(&ref, 0, g_UiContext->resource, text);
-    // A named local for the context here (not at Begin or Bind) took this from 30 to 15: it fixes the
-    // epilogue (retail loads active straight into r1, `ldr r1,[r4,#4]; ldr r0,[r8]; cmp; movne`).
+    // A named local for the context here (not at Begin or Bind) fixes the epilogue (retail loads
+    // active straight into r1, `ldr r1,[r4,#4]; ldr r0,[r8]; cmp; movne`).
     UiContext* ce = g_UiContext;
     UiContext_End(ce, m->active != 0);
 }
@@ -65,39 +70,27 @@ void OptionMenu_BindBtnTextures(MSelMenu* m)
 void MSelMenu_BindPlate(MSelMenu*, const char* icon, const char* obj, const char* text);  // FUN_00224d44
 void MSelMenu_SetFlag(MSelMenu*, u32);                                                    // FUN_002253e4
 
+// --exceptions (inline unwind entry). One call per slot: ARMCC cross-jumps the eight calls into one
+// `bl` and pools the shared Obj literal once. The literals sit in two islands inside the function,
+// the second running to 0x20bffc, so the size is 0x33c.
 void OptionMenu_BindPlateTextures(MSelMenu* m, s32 slot)
 {
-    const char* text;
-    const char* icon;
-    if (slot == 0) {
-        text = "Com_M_Sel_Plate_Text03_00_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_00_00.bclim";
-    } else if (slot == 1) {
-        text = "Com_M_Sel_Plate_Text03_01_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_01_00.bclim";
-    } else if (slot == 2) {
-        text = "Com_M_Sel_Plate_Text03_02_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_02_00.bclim";
-    } else if (slot == 3) {
-        text = "Com_M_Sel_Plate_Text03_03_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_03_00.bclim";
-    } else if (slot == 4) {
-        text = "Com_M_Sel_Plate_Text03_04_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_04_00.bclim";
-    } else if (slot == 5) {
-        text = "Com_M_Sel_Plate_Text03_05_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_05_00.bclim";
-    } else if (slot == 6) {
-        text = "Com_M_Sel_Plate_Text03_06_00.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_06_00.bclim";
-    } else if (slot == 7) {
-        text = "Com_M_Sel_Plate_Text03_06_01.bclim";
-        icon = "Com_M_Sel_Plate_Icon03_06_00.bclim";
-    } else {
-        goto done;
-    }
-    MSelMenu_BindPlate(m, icon, "Com_M_Sel_Plate_Obj03_00_00.bclim", text);
-done:
+    if (slot == 0)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_00_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_00_00.bclim");
+    else if (slot == 1)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_01_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_01_00.bclim");
+    else if (slot == 2)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_02_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_02_00.bclim");
+    else if (slot == 3)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_03_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_03_00.bclim");
+    else if (slot == 4)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_04_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_04_00.bclim");
+    else if (slot == 5)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_05_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_05_00.bclim");
+    else if (slot == 6)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_06_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_06_00.bclim");
+    else if (slot == 7)
+        MSelMenu_BindPlate(m, "Com_M_Sel_Plate_Icon03_06_00.bclim", "Com_M_Sel_Plate_Obj03_00_00.bclim", "Com_M_Sel_Plate_Text03_06_01.bclim");
     MSelMenu_Finish1(m, 0, 0);
     if (slot == 0)
         MSelMenu_SetFlag(m, 1);

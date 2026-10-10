@@ -50,7 +50,8 @@ bool HasPtr() { return g_flags.ptr != 0; }
 // FUN_006407a0
 struct V3 { float x, y, z; };
 extern "C" float __sqrtf(float);
-float Length(const V3* v)
+// throw() with --exceptions: the exception specification changes this function's codegen too (2026-10-10).
+float Length(const V3* v) throw()
 {
     return __sqrtf(v->x * v->x + v->y * v->y + v->z * v->z);
 }

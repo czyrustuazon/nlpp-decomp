@@ -1,0 +1,8 @@
+2026-10-10, Agent B. Plain flags (block 0x578230-0x5b1ba8). Driver: build/b/ts_var.py (git-ignored).
+Scores are (TaggedStr() 59e380, TaggedStr(const char*) 59e2f4); the committed source gives 17 / 23.
+- The 64 chars, pointer, count and flags as a member struct CharBuf with an inline ctor `flags(0)`, or with the store in the ctor body: 20 / 26
+- CharBuf ctor `chars(0), flags(0)`: 10 / 26. TaggedStr() then has an extra store, so this is not progress
+- Reset() defined out of class (inline), a FreeChars() helper, count before chars, s32 flags, a local `p` for m_chars2: 17 / 23
+- An intermediate base CharStr : Str that holds the fields and zeroes m_flags in its ctor (init list or body): 17 / 23
+- Flags: -O2 -Otime 17 / 23. -O3/-O2 -Ospace, --no_inline: 21 / 21-25, and Reset is no longer inlined. --forceinline: 17 / 23
+Conclusion: retail keeps the zero that clears the flags separate from the zero inside Reset(). It rematerializes the second one in TaggedStr() and copies it (`mov r6, r1`) in the other ctor. No source shape tried reproduces that.

@@ -5,6 +5,8 @@ Per function: fold the lifter's flag pairs into their use (`fa = X; fb = Y; if (
 declarations. A rewrite is kept only when the function still compiles to the retail bytes (score 0); otherwise
 the function falls back to dropping unused locals only, and if even that changes it, to its original text.
 Byte-identical output means the source is equivalent to retail, so the folds need no data-flow proof.
+`--round2` (2026-10-10) runs instead on already-tidied files: `(int)5u` -> `5`, and a `u32 rN = aM` copy that is
+never written again is replaced by `aM` itself (fallbacks: the constants only, then the original text).
 Run `python -m ctrdecomp relink` afterwards, as after any mass change."""
 import os, re, sys, tomllib
 sys.path.insert(0, '.')
@@ -103,12 +105,51 @@ def fold(fn, bold=False):
     return '\n'.join(L)
 
 
-def tidy_file(cfg, path, entries):
+def int_consts(fn):
+    """`(int)5u` -> `5` (and `(int)0x10u` -> `0x10`) for values that fit in a signed int."""
+    def rep(m):
+        v = int(m.group(1), 0)
+        return m.group(1) if v < 0x80000000 else m.group(0)
+    return re.sub(r'\(int\)(0x[0-9a-fA-F]+|\d+)u\b', rep, fn)
+
+
+ASSIGN = r'(?:\s*(?:[-+*/%&|^]|<<|>>)?=(?!=)|\s*\+\+|\s*--)'
+
+
+def param_direct(fn):
+    """Drop `u32 rN = aM` copies whose rN is never written again (or address-taken): use aM directly."""
+    lines = fn.split('\n')
+    h = next((k for k, l in enumerate(lines) if l.endswith('{') and not l.startswith(' ')), None)
+    if h is None or h + 1 >= len(lines): return fn
+    m = re.fullmatch(r'    u32 (.*);', lines[h + 1])
+    if not m: return fn
+    ptypes = dict((n, t) for t, n in re.findall(r'(\w+) (a\d+)\b', lines[h]))
+    body = '\n'.join(lines[h + 2:])
+    keep, subs = [], {}
+    for v in m.group(1).split(', '):
+        mm = re.fullmatch(r'(r\d+) = (a\d+)', v)
+        if (mm and ptypes.get(mm.group(2)) == 'u32'
+                and not re.search(r'\b%s\b%s' % (mm.group(1), ASSIGN), body)
+                and not re.search(r'(\+\+|--)\s*%s\b|&\s*%s\b' % (mm.group(1), mm.group(1)), body)):
+            subs[mm.group(1)] = mm.group(2)
+        else:
+            keep.append(v)
+    if not subs: return fn
+    for r, a in subs.items():
+        body = re.sub(r'\b%s\b' % r, a, body)
+    decl = ['    u32 ' + ', '.join(keep) + ';'] if keep else []
+    return '\n'.join(lines[:h + 1] + decl + body.split('\n'))
+
+
+def tidy_file(cfg, path, entries, round2=False):
     text = open(path, encoding='utf-8').read()
     head, bl = blocks(text)
     if not bl: return 0, 0, [0] * 4
     orig = [f for _, f in bl]
-    stages = [[drop_unused(fold(f, True)) for f in orig], [drop_unused(fold(f)) for f in orig], [drop_unused(f) for f in orig], orig]
+    if round2:   # on top of round 1: both rewrites, then the constant casts only, then nothing
+        stages = [[drop_unused(param_direct(int_consts(f))) for f in orig], [int_consts(f) for f in orig], orig, orig]
+    else:
+        stages = [[drop_unused(fold(f, True)) for f in orig], [drop_unused(fold(f)) for f in orig], [drop_unused(f) for f in orig], orig]
     level = [0] * len(bl)
     while True:
         cur = [stages[level[k]][k] for k in range(len(bl))]
@@ -138,8 +179,9 @@ def tidy_file(cfg, path, entries):
 if __name__ == '__main__':
     cfg = c.load()
     fns = tomllib.load(open('functions.toml', 'rb'))['function']
-    for path in sys.argv[1:]:
+    round2 = '--round2' in sys.argv
+    for path in [a for a in sys.argv[1:] if a != '--round2']:
         rel = path.replace('\\', '/')
         entries = {int(f['offset'], 16): f for f in fns if f['src'] == rel and f.get('generated') and int(f.get('score', 0)) == 0}
-        n, ch, lv = tidy_file(cfg, path, entries)
+        n, ch, lv = tidy_file(cfg, path, entries, round2)
         print(f'{rel}: {ch} of {n} functions tidied (bold/fold/decl/none {lv})', flush=True)

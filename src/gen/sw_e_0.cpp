@@ -70,8 +70,8 @@ u32 Fn_3e5468_2(u32, u32);
 
 // FUN_0005371c
 void W_05371c(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"DataManageDataImportUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"DataManageDataImportUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00804ce8);
@@ -91,8 +91,8 @@ void W_05371c(u32 a0) {
 
 // FUN_0005a518
 void W_05a518(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c8154_3(r0, ((u32)"Sequence"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c8154_3(a0, ((u32)"Sequence"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_00804fc8);
     *(u8*)(r0_1 + 100) = r1_2;
@@ -130,8 +130,8 @@ u32 W_0732c8(u32 a0, u32 a1) {
 
 // FUN_00074fc8
 void W_074fc8(u32 a0) {
-    u32 r0 = a0, r0_1;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"VRCameraEventView"), 0u);
+    u32 r0_1;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"VRCameraEventView"), 0u);
     *(u32*)(((u32)g_008bfa58)) = r0_1;
     *(u32*)(r0_1) = ((u32)g_008053cc);
     return;
@@ -182,8 +182,8 @@ void W_07580c(u32 a0) {
 
 // FUN_0007f0d0
 void W_07f0d0(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"MeetingDateUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"MeetingDateUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00805504);
@@ -199,8 +199,8 @@ void W_07f0d0(u32 a0) {
 
 // FUN_0007f480
 void W_07f480(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"MeetingTimeUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"MeetingTimeUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00805560);
@@ -213,8 +213,8 @@ void W_07f480(u32 a0) {
 
 // FUN_000e4eb0
 void W_0e4eb0(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c8154_3(r0, ((u32)"IntroQuestionSequence"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c8154_3(a0, ((u32)"IntroQuestionSequence"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_00805e04);
     *(u8*)(r0_1 + 100) = r1_2;
@@ -226,8 +226,8 @@ void W_0e4eb0(u32 a0) {
 
 // FUN_000f6e7c
 u32 W_0f6e7c(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"LoveplusModeObject"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"LoveplusModeObject"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 68) = r1_2;
     *(u32*)(r0_1) = ((u32)g_0080608c);
@@ -237,8 +237,8 @@ u32 W_0f6e7c(u32 a0) {
 
 // FUN_000ff774
 void W_0ff774(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"TouchManager"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"TouchManager"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 68) = r1_2;
     *(u32*)(r0_1) = ((u32)g_0080627c);
@@ -254,8 +254,8 @@ void W_0ff774(u32 a0) {
 
 // FUN_00106bb0
 void W_106bb0(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"CommunicationSaveSelectUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"CommunicationSaveSelectUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00806448);
@@ -293,8 +293,8 @@ u32 W_10fb90(u32 a0) {
 
 // FUN_0012ef94
 u32 W_12ef94(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"MenuBridgeProcess"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"MenuBridgeProcess"), 0u);
     r1_2 = (u32)g_00806c90;
     *(u32*)(r0_1) = r1_2;
     *(u32*)(r0_1 + 68) = (r1_2 + 88u);
@@ -330,8 +330,8 @@ void W_13ddcc(u32 a0) {
 
 // FUN_0014a31c
 u32 W_14a31c(u32 a0) {
-    u32 r0 = a0, r0_1, r2_2, r1_2, r0_3;
-    r0_1 = Fn_5c967c_3(r0, ((u32)"WebUIOperator"), 0u);
+    u32 r0_1, r2_2, r1_2, r0_3;
+    r0_1 = Fn_5c967c_3(a0, ((u32)"WebUIOperator"), 0u);
     r2_2 = (u32)g_008074a4;
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
@@ -350,8 +350,8 @@ u32 W_14a31c(u32 a0) {
 
 // FUN_0018cd4c
 u32 W_18cd4c(u32 a0) {
-    u32 r0 = a0, r0_1, r3_1, r2_2, r1_2, r4_1, r0_3;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"MenuLocalMatchingControl"), 0u);
+    u32 r0_1, r3_1, r2_2, r1_2, r4_1, r0_3;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"MenuLocalMatchingControl"), 0u);
     r3_1 = (u32)g_00807df0;
     r2_2 = 1u;
     r1_2 = 0u;
@@ -418,10 +418,10 @@ u32 W_1d5ce8(u32 a0, u32 a1, u32 a2) {
 
 // FUN_001ebe80
 void W_1ebe80(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r0_2, r0_4, r0_6, stk[129];
+    u32 r0_2, r0_4, r0_6, stk[129];
     r0_2 = Fn_1fddd8_2(((u32)stk), 512u);
-    r0_4 = Fn_000200_4(((u32)stk), 512u, ((u32)"%s"), r1);
-    r0_6 = Fn_1eb8f8_3(r0, 3u, ((u32)stk));
+    r0_4 = Fn_000200_4(((u32)stk), 512u, ((u32)"%s"), a1);
+    r0_6 = Fn_1eb8f8_3(a0, 3u, ((u32)stk));
     return;
 }
 
@@ -481,10 +481,10 @@ u32 W_206aa0(u32 a0, u32 a1, u32 a2) {
 
 // FUN_002288cc
 u32 W_2288cc(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r4, r5, fa, fb;
+    u32 r0 = a0, r1 = a1, r4, r5, fa, fb;
     r4 = r0;
-    r5 = r2;
-    r0 = Fn_1c7f68_3(r0, r1, r2);
+    r5 = a2;
+    r0 = Fn_1c7f68_3(r0, r1, a2);
     r0 = *(u32*)(r4 + 92);
     if (r0 == (0u - 1u)) goto L_228900;
     r1 = (u32)"Bod_Pop";
@@ -500,8 +500,8 @@ u32 W_2288cc(u32 a0, u32 a1, u32 a2) {
 
 // FUN_0024dfe4
 void W_24dfe4(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"CardTradeUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"CardTradeUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_00814c74);
     *(u8*)(r0_1 + 72) = r1_2;
@@ -539,8 +539,8 @@ u32 W_24ee1c(u32 a0) {
 
 // FUN_002d2e50
 void W_2d2e50(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c967c_3(r0, ((u32)"OptionAdjustTimeUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c967c_3(a0, ((u32)"OptionAdjustTimeUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_0081c6a8);
@@ -559,8 +559,8 @@ void W_2d2e50(u32 a0) {
 
 // FUN_002e2ff8
 void W_2e2ff8(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_2e3138_3(r0, ((u32)"Player Spot RTM"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_2e3138_3(a0, ((u32)"Player Spot RTM"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 92) = r1_2;
     *(u32*)(r0_1 + 88) = (~0u);
@@ -575,8 +575,8 @@ void W_2e2ff8(u32 a0) {
 
 // FUN_002e6eb8
 void W_2e6eb8(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"ScriptInputDevice"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"ScriptInputDevice"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_0081d264);
     *(u8*)(r0_1 + 68) = r1_2;
@@ -590,8 +590,8 @@ void W_2e6eb8(u32 a0) {
 
 // FUN_003118b0
 void W_3118b0(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c967c_3(r0, ((u32)"StatusUnitUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c967c_3(a0, ((u32)"StatusUnitUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_0081d9cc);
@@ -603,8 +603,8 @@ void W_3118b0(u32 a0) {
 
 // FUN_0032bb1c
 void W_32bb1c(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c8154_3(r0, ((u32)"GalleryHome"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c8154_3(a0, ((u32)"GalleryHome"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_0081dc90);
     *(u8*)(r0_1 + 100) = r1_2;
@@ -622,8 +622,8 @@ void W_32bb1c(u32 a0) {
 
 // FUN_0033fcc8
 void W_33fcc8(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_5c80f0_3(r0, ((u32)"KareshiUIOperator"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_5c80f0_3(a0, ((u32)"KareshiUIOperator"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 72) = r1_2;
     *(u32*)(r0_1) = ((u32)g_0081e298);
@@ -638,8 +638,8 @@ void W_33fcc8(u32 a0) {
 
 // FUN_0036712c
 void W_36712c(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4df510_3(r0, ((u32)"DateEditLocalCommManager"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4df510_3(a0, ((u32)"DateEditLocalCommManager"), 0u);
     *(u32*)(r0_1 + 96) = (~0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_0081ef0c);
@@ -709,8 +709,8 @@ u32 W_37a470(u32 a0) {
 
 // FUN_003a1a64
 u32 W_3a1a64(u32 a0) {
-    u32 r0 = a0, r0_1, r4_1, r1_2, r2_2, r0_4;
-    r0_1 = Fn_4df510_3(r0, ((u32)"Standby"), 0u);
+    u32 r0_1, r4_1, r1_2, r2_2, r0_4;
+    r0_1 = Fn_4df510_3(a0, ((u32)"Standby"), 0u);
     r4_1 = r0_1;
     r1_2 = 0u;
     r2_2 = 0u;
@@ -737,8 +737,8 @@ u32 W_3a1a64(u32 a0) {
 
 // FUN_003aca84
 void W_3aca84(u32 a0) {
-    u32 r0 = a0, r0_1;
-    r0_1 = Fn_5c8154_3(r0, ((u32)"PhotoExhibitionSequence"), 0u);
+    u32 r0_1;
+    r0_1 = Fn_5c8154_3(a0, ((u32)"PhotoExhibitionSequence"), 0u);
     *(u32*)(r0_1) = ((u32)g_00820b48);
     *(u8*)(r0_1 + 100) = 0u;
     return;
@@ -746,8 +746,8 @@ void W_3aca84(u32 a0) {
 
 // FUN_003ad828
 u32 W_3ad828(u32 a0) {
-    u32 r0 = a0, r0_1, r2_2;
-    r0_1 = Fn_5c8154_3(r0, ((u32)"ItemSelectSequence"), 0u);
+    u32 r0_1, r2_2;
+    r0_1 = Fn_5c8154_3(a0, ((u32)"ItemSelectSequence"), 0u);
     r2_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_00820c64);
     *(u8*)(r0_1 + 100) = r2_2;
@@ -757,8 +757,8 @@ u32 W_3ad828(u32 a0) {
 
 // FUN_003cc1c4
 u32 W_3cc1c4(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4df510_3(r0, ((u32)"AlbumPhoto"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4df510_3(a0, ((u32)"AlbumPhoto"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_008218f0);
     *(u8*)(r0_1 + 94) = r1_2;
@@ -770,8 +770,8 @@ u32 W_3cc1c4(u32 a0) {
 
 // FUN_003d2e74
 u32 W_3d2e74(u32 a0) {
-    u32 r0 = a0, r0_1, r4_1, r2_2, r0_4;
-    r0_1 = Fn_4df510_3(r0, ((u32)"Standby"), 0u);
+    u32 r0_1, r4_1, r2_2, r0_4;
+    r0_1 = Fn_4df510_3(a0, ((u32)"Standby"), 0u);
     r4_1 = r0_1;
     r2_2 = 0u;
     *(u32*)(r4_1) = ((u32)g_00821c58);
@@ -781,8 +781,8 @@ u32 W_3d2e74(u32 a0) {
 
 // FUN_003d8e54
 u32 W_3d8e54(u32 a0) {
-    u32 r0 = a0, r0_1, r2_2;
-    r0_1 = Fn_3d729c_3(r0, ((u32)"TownMapSpot"), 0u);
+    u32 r0_1, r2_2;
+    r0_1 = Fn_3d729c_3(a0, ((u32)"TownMapSpot"), 0u);
     r2_2 = 0u;
     *(u32*)(r0_1) = ((u32)g_00821ed8);
     *(u8*)(r0_1 + 340) = r2_2;
@@ -792,8 +792,8 @@ u32 W_3d8e54(u32 a0) {
 
 // FUN_003e48c4
 void W_3e48c4(u32 a0) {
-    u32 r0 = a0, r0_1, r1_2;
-    r0_1 = Fn_4df510_3(r0, ((u32)"GameMode"), 0u);
+    u32 r0_1, r1_2;
+    r0_1 = Fn_4df510_3(a0, ((u32)"GameMode"), 0u);
     r1_2 = 0u;
     *(u32*)(r0_1 + 96) = r1_2;
     *(u32*)(r0_1) = ((u32)g_00822b58);
@@ -803,8 +803,8 @@ void W_3e48c4(u32 a0) {
 
 // FUN_003e561c
 void W_3e561c(u32 a0) {
-    u32 r0 = a0, r0_1;
-    r0_1 = Fn_3e5468_2(r0, ((u32)"ExecEventTown"));
+    u32 r0_1;
+    r0_1 = Fn_3e5468_2(a0, ((u32)"ExecEventTown"));
     *(u32*)(r0_1 + 136) = 0u;
     *(u32*)(r0_1) = ((u32)g_00822c74);
     return;

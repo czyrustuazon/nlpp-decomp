@@ -200,8 +200,8 @@ u32 W_38b2d4(u32 a0) {
 
 // FUN_0038dc08
 u32 W_38dc08(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
-    switch (r1) { case 0: goto L_38dc30; case 1: goto L_38dc38; case 2: goto L_38dc40; case 3: goto L_38dc48; case 4: goto L_38dc50; case 5: goto L_38dc58; case 6: goto L_38dc60; default: goto L_38dc68; }
+    u32 r0 = a0;
+    switch (a1) { case 0: goto L_38dc30; case 1: goto L_38dc38; case 2: goto L_38dc40; case 3: goto L_38dc48; case 4: goto L_38dc50; case 5: goto L_38dc58; case 6: goto L_38dc60; default: goto L_38dc68; }
     goto L_38dc68;
     L_38dc30:;
     r0 = *(u32*)(r0 + 12);
@@ -514,10 +514,10 @@ u32 W_3f3b8c(u32 a0, u32 a1) {
 
 // FUN_00406fcc
 u32 W_406fcc(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r0_1;
-    r0_1 = Fn_4e0128_3(r0, ((u32)"texloadcheck"), 0u);
+    u32 r0_1;
+    r0_1 = Fn_4e0128_3(a0, ((u32)"texloadcheck"), 0u);
     *(u32*)(r0_1) = ((u32)g_00823c8c);
-    *(u32*)(r0_1 + 68) = r1;
+    *(u32*)(r0_1 + 68) = a1;
     return r0_1;
 }
 
@@ -537,21 +537,21 @@ void W_40ae5c(u32 a0) {
 
 // FUN_0040b214
 void W_40b214(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
-    r2 = r0 + r1;
+    u32 r2;
+    r2 = a0 + a1;
     r2 = *(u8*)(r2 + 341);
     if (r2 == 0u) goto L_40b230;
     r2 = 1u;
-    switch (r1) { case 0: goto L_40b258; case 1: goto L_40b250; case 2: goto L_40b258; case 3: goto L_40b260; case 4: goto L_40b260; case 5: goto L_40b260; case 6: goto L_40b260; }
+    switch (a1) { case 0: goto L_40b258; case 1: goto L_40b250; case 2: goto L_40b258; case 3: goto L_40b260; case 4: goto L_40b260; case 5: goto L_40b260; case 6: goto L_40b260; }
     L_40b230:;
     return;
     L_40b250:;
-    *(u8*)(r0 + 340) = r2;
+    *(u8*)(a0 + 340) = r2;
     return;
     L_40b258:;
-    { Fn_3ea238_2(r0, r1); return; }
+    { Fn_3ea238_2(a0, a1); return; }
     L_40b260:;
-    *(u8*)(r0 + 332) = r2;
+    *(u8*)(a0 + 332) = r2;
     return;
 }
 
@@ -668,21 +668,21 @@ u32 W_40ce94(u32 a0, u32 a1) {
 
 // FUN_0042ef2c
 void W_42ef2c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r4, r5, r6;
-    r5 = r0 + r1;
+    u32 r0 = a0, r4, r5, r6;
+    r5 = r0 + a1;
     r4 = r0;
     r0 = *(u8*)(r5 + 355);
     if (r0 == 0u) goto L_42efb0;
     r6 = 1u;
     r0 = r4 + 256u;
-    switch (r1) { case 0: goto L_42ef6c; case 1: goto L_42ef8c; case 2: goto L_42ef78; case 3: goto L_42ef9c; case 4: goto L_42ef9c; default: goto L_42ef78; }
+    switch (a1) { case 0: goto L_42ef6c; case 1: goto L_42ef8c; case 2: goto L_42ef78; case 3: goto L_42ef9c; case 4: goto L_42ef9c; default: goto L_42ef78; }
     goto L_42ef78;
     L_42ef6c:;
     r0 = *(u8*)(r0 + 98);
     if (r0 == 0u) goto L_42efa8;
     L_42ef78:;
     r0 = r4;
-    r0 = Fn_3ea238_2(r0, r1);
+    r0 = Fn_3ea238_2(r0, a1);
     goto L_42efa8;
     L_42ef8c:;
     r0 = *(u8*)(r0 + 96);
@@ -846,12 +846,12 @@ u32 W_49ef88() {
 
 // FUN_00572058
 void W_572058(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4, stk[2];
+    u32 r0 = a0, r1 = a1, r4, stk[2];
     r4 = r0;
-    r0 = r2 + (r2 << 2);
+    r0 = a2 + (a2 << 2);
     r0 = r1 + (r0 << 2);
     r0 = r0 + 172u;
-    r0 = r0 + r3;
+    r0 = r0 + a3;
     r0 = *(u8*)(r0 + 6);
     switch (r0) { case 0: goto L_572104; case 1: goto L_5720bc; case 2: goto L_5720c4; case 3: goto L_5720cc; case 4: goto L_5720d4; case 5: goto L_5720dc; case 6: goto L_572104; case 7: goto L_572104; case 8: goto L_5720e4; case 9: goto L_5720ec; case 10: goto L_572104; case 11: goto L_572104; case 12: goto L_5720f4; case 13: goto L_5720fc; default: goto L_572104; }
     goto L_572104;
@@ -886,7 +886,7 @@ void W_572058(u32 a0, u32 a1, u32 a2, u32 a3) {
     r1 = 0u;
     L_572108:;
     r0 = (u32)stk;
-    r0 = Fn_5a1010_4(r0, r1, r2, r3);
+    r0 = Fn_5a1010_4(r0, r1, a2, a3);
     u64 t64 = *(u64*)(r0); r0 = (u32)t64; r1 = (u32)(t64 >> 32);
     *(u64*)(r4) = (u64)r0 | ((u64)r1 << 32);
     return;
@@ -936,12 +936,12 @@ void W_572288(u32 a0, u32 a1, u32 a2, u32 a3) {
 
 // FUN_00572328
 void W_572328(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4, stk[2];
+    u32 r0 = a0, r1 = a1, r4, stk[2];
     r4 = r0;
-    r0 = r2 + (r2 << 2);
+    r0 = a2 + (a2 << 2);
     r0 = r1 + (r0 << 2);
     r0 = r0 + 172u;
-    r0 = r0 + r3;
+    r0 = r0 + a3;
     r0 = *(u8*)(r0 + 12);
     switch (r0) { case 0: goto L_5723dc; case 1: goto L_572394; case 2: goto L_57239c; case 3: goto L_5723a4; case 4: goto L_5723ac; case 5: goto L_5723b4; case 6: goto L_5723bc; case 7: goto L_5723dc; case 8: goto L_5723dc; case 9: goto L_5723dc; case 10: goto L_5723dc; case 11: goto L_5723dc; case 12: goto L_5723dc; case 13: goto L_5723c4; case 14: goto L_5723cc; case 15: goto L_5723d4; default: goto L_5723dc; }
     goto L_5723dc;
@@ -976,7 +976,7 @@ void W_572328(u32 a0, u32 a1, u32 a2, u32 a3) {
     r1 = 0u;
     L_5723e0:;
     r0 = (u32)stk;
-    r0 = Fn_5a1010_4(r0, r1, r2, r3);
+    r0 = Fn_5a1010_4(r0, r1, a2, a3);
     u64 t64 = *(u64*)(r0); r0 = (u32)t64; r1 = (u32)(t64 >> 32);
     *(u64*)(r4) = (u64)r0 | ((u64)r1 << 32);
     return;
@@ -1099,12 +1099,12 @@ float W_5a21b0() {
 
 // FUN_005d040c
 void W_5d040c(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r12;
+    u32 r0 = a0, r12;
     r12 = (u32)g_0089a330;
     *(u8*)(r12 + 2) = r0;
-    if (r1 != 0u) *(u32*)(r12 + 148) = r1;
-    if (r2 != 0u) *(u32*)(r12 + 152) = r2;
-    switch (r3) { case 0: goto L_5d0504; case 1: goto L_5d050c; case 2: goto L_5d0514; case 3: goto L_5d0504; case 4: goto L_5d050c; case 5: goto L_5d0514; case 6: goto L_5d0504; case 7: goto L_5d050c; case 8: goto L_5d0514; case 9: goto L_5d0504; case 10: goto L_5d050c; case 11: goto L_5d0514; case 12: goto L_5d051c; case 13: goto L_5d051c; case 14: goto L_5d051c; case 15: goto L_5d051c; case 16: goto L_5d051c; case 17: goto L_5d051c; case 18: goto L_5d0524; case 19: goto L_5d051c; case 20: goto L_5d0504; case 21: goto L_5d050c; case 22: goto L_5d0514; case 23: goto L_5d0524; case 24: goto L_5d051c; case 25: goto L_5d051c; case 26: goto L_5d051c; case 27: goto L_5d051c; case 28: goto L_5d051c; case 29: goto L_5d051c; case 30: goto L_5d0524; case 31: goto L_5d0524; case 32: goto L_5d0524; case 33: goto L_5d052c; case 34: goto L_5d052c; case 35: goto L_5d052c; case 36: goto L_5d052c; case 37: goto L_5d052c; case 38: goto L_5d052c; case 39: goto L_5d052c; case 40: goto L_5d052c; case 41: goto L_5d051c; case 42: goto L_5d051c; case 43: goto L_5d051c; case 44: goto L_5d051c; case 45: goto L_5d051c; case 46: goto L_5d051c; case 47: goto L_5d051c; case 48: goto L_5d051c; case 49: goto L_5d051c; case 50: goto L_5d051c; case 51: goto L_5d051c; case 52: goto L_5d051c; default: goto L_5d052c; }
+    if (a1 != 0u) *(u32*)(r12 + 148) = a1;
+    if (a2 != 0u) *(u32*)(r12 + 152) = a2;
+    switch (a3) { case 0: goto L_5d0504; case 1: goto L_5d050c; case 2: goto L_5d0514; case 3: goto L_5d0504; case 4: goto L_5d050c; case 5: goto L_5d0514; case 6: goto L_5d0504; case 7: goto L_5d050c; case 8: goto L_5d0514; case 9: goto L_5d0504; case 10: goto L_5d050c; case 11: goto L_5d0514; case 12: goto L_5d051c; case 13: goto L_5d051c; case 14: goto L_5d051c; case 15: goto L_5d051c; case 16: goto L_5d051c; case 17: goto L_5d051c; case 18: goto L_5d0524; case 19: goto L_5d051c; case 20: goto L_5d0504; case 21: goto L_5d050c; case 22: goto L_5d0514; case 23: goto L_5d0524; case 24: goto L_5d051c; case 25: goto L_5d051c; case 26: goto L_5d051c; case 27: goto L_5d051c; case 28: goto L_5d051c; case 29: goto L_5d051c; case 30: goto L_5d0524; case 31: goto L_5d0524; case 32: goto L_5d0524; case 33: goto L_5d052c; case 34: goto L_5d052c; case 35: goto L_5d052c; case 36: goto L_5d052c; case 37: goto L_5d052c; case 38: goto L_5d052c; case 39: goto L_5d052c; case 40: goto L_5d052c; case 41: goto L_5d051c; case 42: goto L_5d051c; case 43: goto L_5d051c; case 44: goto L_5d051c; case 45: goto L_5d051c; case 46: goto L_5d051c; case 47: goto L_5d051c; case 48: goto L_5d051c; case 49: goto L_5d051c; case 50: goto L_5d051c; case 51: goto L_5d051c; case 52: goto L_5d051c; default: goto L_5d052c; }
     goto L_5d052c;
     L_5d0504:;
     r0 = 8u;
@@ -1130,8 +1130,8 @@ void W_5d040c(u32 a0, u32 a1, u32 a2, u32 a3) {
 
 // FUN_005d191c
 void W_5d191c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
+    u32 r1 = a1, r2;
     r2 = r1;
     r1 = (u32)"\343\203\241\343\203\203\343\202\273\343\203\274\343\202\270\351\200\237\345\272\246\343\203\206\343\202\271\343\203\210\343\201\247\343\201\231\343\200\202";
-    { Fn_01026c_3(r0, r1, r2); return; }
+    { Fn_01026c_3(a0, r1, r2); return; }
 }

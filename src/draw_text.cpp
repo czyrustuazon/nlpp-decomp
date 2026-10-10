@@ -1,12 +1,13 @@
 // DrawTextToPane (FUN_0054b880): lays out a UTF-8 string into a pane, one glyph at a time.
-// First draft from the Ghidra decompile (build/dtp.c). technical.md §6.1.
+// Built with --exceptions (its exidx entry is extab). The cleanup pad after it (0x54c068)
+// destroys the TaggedStr at sp+0x138 and the Str at sp+0x568, so both are real RAII locals.
+// technical.md 6.1; attempts in handoff_drafts/FUN_0054b880.
 //
-// Structure recovered so far:
-//   * Str (src/str.cpp) decodes the source text; a second Str-derived "TaggedStr" (0x228 bytes)
-//     expands <..> tags into a StrChar list at +0x218 (count at +0x21C).
-//   * Pass 1 splits that list into lines (max 32): line start indices, line widths.
-//   * Pass 2 walks the characters again and draws each one at (x, y), advancing by the glyph
-//     width, or by the font height for an "icon" char (kind == 1).
+//   * Str decodes the source text; TaggedStr expands <IMG =XXXX> tags into a StrChar list
+//     (+0x218, count +0x21C).
+//   * SplitLines splits that list into lines (max 32): characters and glyph columns per line.
+//   * The main loop draws each character at (x, y), advancing by the glyph columns times half
+//     the font height, or by the full font height for an icon (kind == 1).
 
 typedef unsigned int   u32;
 typedef unsigned short u16;
@@ -15,17 +16,24 @@ typedef signed int     s32;
 
 struct StrChar { u32 code; u32 kind; StrChar() { code = 0; kind = 0; } };
 
-extern "C" int __cxa_guard_acquire_stub(void*);   // FUN_00203d64
+class Str {
+public:
+    void* m_buf; char* m_text; void* m_chars; s32 m_size; s32 m_count; s32 m_capacity;
+    Str(const char*);       // FUN_005a1ec8
+    ~Str();                 // FUN_005a2024
+};
+class TaggedStr : public Str {
+public:
+    StrChar  m_inline[64];
+    StrChar* m_chars2;      // +0x218
+    s32      m_count2;      // +0x21C
+    u32      m_flags;
+    TaggedStr();            // FUN_0059e380 (sizeof 0x224: the frame puts the next local at +0x224)
+    ~TaggedStr();           // FUN_005a1fd0
+    bool Parse(const char*);  // FUN_0059dfc4
+};
 
-class Str { public: char pad[0x18]; Str(const char*); };
-class TaggedStr { public: u8 pad[0x218]; StrChar* m_chars; s32 m_count; u32 m_flags; };
-
-void TaggedStr_Init(TaggedStr*);                      // FUN_0059e380
-void TaggedStr_Parse(TaggedStr*, const char*);        // FUN_0059dfc4
-void TaggedStr_Free(TaggedStr*);                      // FUN_005a1fd0
-void Str_Free(Str*);                                  // FUN_005a2024
-void Memset(void*, int, u32);                         // FUN_001fddd8
-void Memcpy(void*, const void*, u32);                 // FUN_0020004c
+extern "C" void MemZero(void*, u32);                  // FUN_001fddd8 (src/crt_asm.s)
 void MemcpyN(void*, const void*, u32);                // FUN_0001026c
 s32  GlyphColumns(const char*);                       // FUN_005c0748
 s32  GlyphAdvance(void* font, u32 code);              // FUN_00641a70
@@ -34,7 +42,7 @@ s32  FontLineHeight(void* font);                      // FUN_006419e4
 void DrawIcon(void* font, s32 x, s32 y, u32 code);    // FUN_005b2550
 void DrawGlyph(void* font, s32 x, s32 y, s32 glyph);  // FUN_005b2578
 
-struct Lines { u32 count[32]; s32 cols[32]; s32 n; };
+struct Lines { s32 count[32]; s32 cols[32]; s32 n; };
 
 struct Pane {
     u8   pad0[0x13C];
@@ -51,86 +59,99 @@ struct Pane {
 inline const StrChar& CharAt(const TaggedStr& s, s32 i)
 {
     static StrChar empty;
-    if (i >= 0 && i < s.m_count && s.m_chars != 0) return s.m_chars[i];
+    if (i >= 0 && s.m_count2 > i && s.m_chars2 != 0) return s.m_chars2[i];
     return empty;
 }
 
-// Encode a decoded code point as up to 4 bytes, most significant non-zero byte first.
-inline void Encode(char* out, u32* tmp, u32 code)
+// The `break` plus inner copy loop is what ARMCC unrolls into retail's five shift steps.
+// UTF-8 bytes of a decoded code point, most significant first, NUL-terminated.
+inline void Encode(char* out, s32 code)
 {
-    tmp[0] = 0; tmp[1] = 0;
-    char* p = (char*)tmp;
-    if ((code >> 24) != 0)      { p[0] = code >> 24; p[1] = code >> 16; p[2] = code >> 8; p[3] = code; }
-    else if ((code >> 16 & 0xFF) != 0) { p[0] = code >> 16; p[1] = code >> 8; p[2] = code; }
-    else if ((code >> 8 & 0xFF) != 0)  { p[0] = code >> 8; p[1] = code; }
-    else                        { p[0] = code; }
-    MemcpyN(out, tmp, 8);
+    signed char b[8];
+    *(u32*)&b[0] = 0; *(u32*)&b[4] = 0;
+    b[0] = code >> 24; b[1] = code >> 16; b[2] = code >> 8; b[3] = code; b[4] = 0;
+    for (s32 k = 0; k < 5; k++) {
+        if (b[0] != 0) break;
+        for (s32 j = 0; j < 4; j++) b[j] = b[j + 1];
+    }
+    MemcpyN(out, b, 8);
 }
 
-inline s32 AlignOffset(u8 align, s32 room, s32 lines, s32 width, s32 spacing, s32 cell)
+// Returned by value: retail spills the hidden result pointer and copies the result twice with
+// __aeabi_memcpy4 (FUN_0020004c), once into the temporary and once into L.
+inline Lines SplitLines(const TaggedStr& ts, u32 maxLine)
 {
-    s32 used = (lines - 1) * spacing + cell * width;
-    switch (align) {
-    case 1: return (room - used) / 2;
-    case 2: return room - used;
-    default: return 0;
+    Lines l;
+    l.n = 0;
+    MemZero(l.count, 0x80);
+    MemZero(l.cols, 0x80);
+    s32 n = ts.m_count2;
+    u32 col = 0;
+    for (s32 i = 0; i < n; i++) {
+        u32 ch = CharAt(ts, i).code;
+        if (ch == 0 || ch == 10 || col == maxLine) {
+            l.count[l.n] = col;
+            col = 0;
+            l.n++;
+        } else {
+            u32 out[2];
+            out[0] = 0; out[1] = 0;
+            Encode((char*)out, ch);
+            col++;
+            l.cols[l.n] += GlyphColumns((char*)out);
+        }
     }
+    if (col != 0) {
+        l.count[l.n] = col;
+        l.n++;
+    }
+    return l;
+}
+
+// Retail computes fontH / 2 inside the case, so the helper takes the raw height.
+inline s32 AlignX(u8 align, s32 room, s32 count, s32 cols, s32 fontH, s32 spacing)
+{
+    switch (align) {
+    case 0: return 0;
+    case 1: return (room - (fontH / 2 * cols + (count - 1) * spacing)) / 2;
+    case 2: return room - (fontH / 2 * cols + (count - 1) * spacing);
+    }
+    return 0;
+}
+
+inline s32 AlignY(u8 align, s32 room, s32 lines, s32 rowH, s32 spacing)
+{
+    switch (align) {
+    case 0: return 0;
+    case 1: return (room - (lines * rowH + (lines - 1) * spacing)) / 2;
+    case 2: return room - (lines * rowH + (lines - 1) * spacing);
+    }
+    return 0;
 }
 
 // FUN_0054b880
 u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
 {
     u32 ok = 1;
-    char buf[8];
-    u32 tmp[2];
     if (maxLine == 0) maxLine = 10000;
-
     Str str((const char*)src[1]);
     TaggedStr ts;
-    TaggedStr_Init(&ts);
-    TaggedStr_Parse(&ts, (const char*)((s32*)&str)[5]);
+    ts.Parse(str.m_text);
+    Lines L = SplitLines(ts, maxLine);
 
-    Lines built;
-    built.n = 0;
-    Memset(built.count, 0, 0x80);
-    Memset(built.cols, 0, 0x80);
-
-    s32 n = ts.m_count;
-    u32 col = 0, next = 0;
-    if (n > 0) {
-        for (s32 i = 0; i < n; i++) {
-            u32 ch = CharAt(ts, i).code;
-            if (ch == 0 || ch == 10 || col == maxLine) {
-                next = 0;
-                built.count[built.n++] = col;
-            } else {
-                Encode(buf, tmp, ch);
-                next = col + 1;
-                built.cols[built.n] += GlyphColumns(buf);
-            }
-            col = next;
-        }
-        if (next != 0) built.count[built.n++] = next;
-    }
-
-    Lines ret, L;
-    Memcpy(&ret, &built, 0x104);
-    Memcpy(&L, &ret, 0x104);
-    s32 nLines = L.n;
-
-    s32 paneW = pane->width, paneH = pane->height;
     s32 rectW = pane->layout->rect->w, rectH = pane->layout->rect->h;
-    s32 cell = FontHeight(pane->font) / 2;
-    s32 rowH = FontLineHeight(pane->font);
+    s32 paneW = pane->width, paneH = pane->height;
     s32 padX = (rectW - paneW) / 2;
+    s32 padY = (rectH - paneH) / 2;
+    s32 fontH = FontHeight(pane->font);
+    s32 rowH = FontLineHeight(pane->font);
 
     s32 line = 0;
-    s32 x = AlignOffset(pane->hAlign, paneW, L.count[0], L.cols[0], pane->charSpacing, cell) + x0 + padX;
-    s32 y = (rectH - paneH) / 2 + AlignOffset(pane->vAlign, paneH, nLines, rowH, pane->lineSpacing, 1) + y0;
-
-    s32 end = n;
-    if (limit != 0 && (s32)limit < n) end = limit;
+    s32 x = AlignX(pane->hAlign, paneW, L.count[0], L.cols[0], fontH, pane->charSpacing) + x0 + padX;
+    s32 y = padY + (AlignY(pane->vAlign, paneH, L.n, rowH, pane->lineSpacing) + y0);
     u32 drawn = 0;
+    s32 end = ts.m_count2;
+    if (limit != 0 && end > limit) end = limit;
     for (s32 i = 0; i < end; i++) {
         u32 ch = CharAt(ts, i).code;
         bool icon = CharAt(ts, i).kind == 1;
@@ -138,19 +159,21 @@ u32 DrawTextToPane(Pane* pane, s32 x0, s32 y0, s32* src, u32 limit, u32 maxLine)
         if (ch == 10 || drawn == maxLine) {
             line++;
             drawn = 0;
-            x = AlignOffset(pane->hAlign, paneW, L.count[line], L.cols[line], pane->charSpacing, cell) + x0 + padX;
-            y += pane->lineSpacing + rowH;
+            x = AlignX(pane->hAlign, paneW, L.count[line], L.cols[line], fontH, pane->charSpacing) + x0 + padX;
+            y = pane->lineSpacing + (rowH + y);
             if (ch == 10) continue;
         }
-        if (ok) ok = GlyphAdvance(pane->font, ch) != 0;
-        if (CharAt(ts, i).kind == 1) DrawIcon(pane->font, x, y, CharAt(ts, i).code);
-        else DrawGlyph(pane->font, x, y, GlyphAdvance(pane->font, CharAt(ts, i).code));
-        Encode(buf, tmp, ch);
-        if (!icon) x += GlyphColumns(buf) * cell + pane->charSpacing;
-        else       x += pane->charSpacing + FontHeight(pane->font);
+        s32 adv = GlyphAdvance(pane->font, ch);
+        if (ok) ok = adv != 0;
+        const StrChar& c = CharAt(ts, i);
+        if (c.kind == 1) DrawIcon(pane->font, x, y, c.code);
+        else DrawGlyph(pane->font, x, y, GlyphAdvance(pane->font, c.code));
+        u32 out[2];
+        out[0] = 0; out[1] = 0;
+        Encode((char*)out, ch);
+        if (icon) x = pane->charSpacing + (x + fontH);
+        else      x = GlyphColumns((char*)out) * (fontH / 2) + pane->charSpacing + x;
         drawn++;
     }
-    TaggedStr_Free(&ts);
-    Str_Free(&str);
     return ok;
 }

@@ -160,9 +160,9 @@ void W_06a954(u32 a0) {
     *(u32*)(r4 + 12) = r7;
     L_6aa18:;
     r6 = r6 + 1u;
-    if ((int)r6 < (int)2u) goto L_6a968;
+    if ((int)r6 < 2) goto L_6a968;
     r0 = *(u32*)(r5 + 84);
-    if ((int)r0 < (int)0u) goto L_6aa68;
+    if ((int)r0 < 0) goto L_6aa68;
     r1 = (u32)g_00790f80;
     r0 = r1 + (r0 << 3);
     r1 = *(u32*)(r5 + 76);
@@ -948,7 +948,7 @@ u32 W_21ba9c(u32 a0, u32 a1) {
     r1 = 3u;
     r0 = Fn_5c31cc_4(r0, r1, r2, r3);
     r4 = r4 + 1u;
-    if ((int)r4 < (int)7u) goto L_21bb58;
+    if ((int)r4 < 7) goto L_21bb58;
     L_21bb84:;
     r1 = 1u;
     *(u8*)(r5 + 58) = r1;

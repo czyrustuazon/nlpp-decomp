@@ -134,10 +134,10 @@ u32 W_0dd730(u32 a0) {
 
 // FUN_000ddd58
 void W_0ddd58(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r0_2, r0_3, r1_1, r0_4, r0_5, r0_6, r0_7;
+    u32 r4_1, r0_1, r0_2, r0_3, r1_1, r0_4, r0_5, r0_6, r0_7;
     float f0_1;
-    r4_1 = r0;
-    r0_1 = *(u32*)(r0 + 252);
+    r4_1 = a0;
+    r0_1 = *(u32*)(a0 + 252);
     r0_2 = *(u32*)(r0_1 + 108);
     r0_3 = Fn_0fe7c4_1(r0_2);
     r1_1 = 0u;
@@ -190,26 +190,26 @@ void W_0de3e0(u32 a0, u32 a1, u32 a2) {
 
 // FUN_000fcfe8
 void W_0fcfe8(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4;
+    u32 r0 = a0, r4;
     float f0;
     r4 = *(u32*)(r0 + 72);
     if (r4 == 0u) goto L_fd024;
-    *(u32*)(r4 + 396) = r1;
-    if ((int)r3 > (int)0u) goto L_fd028;
+    *(u32*)(r4 + 396) = a1;
+    if ((int)a3 > 0) goto L_fd028;
     r0 = *(u32*)(r4 + 368);
     if (r0 == 0u) goto L_fd01c;
-    f0 = u2f(r2);
+    f0 = u2f(a2);
     f0 = (float)(int)f2u(f0);
-    r0 = Fn_4b8a94_4f1(r0, r1, r2, r3, f0);
+    r0 = Fn_4b8a94_4f1(r0, a1, a2, a3, f0);
     L_fd01c:;
     r0 = 0u;
     *(u8*)(r4 + 468) = r0;
     L_fd024:;
     return;
     L_fd028:;
-    f0 = u2f(r2);
+    f0 = u2f(a2);
     r0 = 1u;
-    *(u32*)(r4 + 400) = r3;
+    *(u32*)(r4 + 400) = a3;
     *(u8*)(r4 + 468) = r0;
     f0 = (float)(int)f2u(f0);
     *(float*)(r4 + 404) = f0;
@@ -218,26 +218,26 @@ void W_0fcfe8(u32 a0, u32 a1, u32 a2, u32 a3) {
 
 // FUN_000fd054
 void W_0fd054(u32 a0, u32 a1, u32 a2, u32 a3) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3 = a3, r4;
+    u32 r0 = a0, r4;
     float f0;
     r4 = *(u32*)(r0 + 72);
     if (r4 == 0u) goto L_fd090;
-    *(u32*)(r4 + 384) = r1;
-    if ((int)r3 > (int)0u) goto L_fd094;
+    *(u32*)(r4 + 384) = a1;
+    if ((int)a3 > 0) goto L_fd094;
     r0 = *(u32*)(r4 + 368);
     if (r0 == 0u) goto L_fd088;
-    f0 = u2f(r2);
+    f0 = u2f(a2);
     f0 = (float)(int)f2u(f0);
-    r0 = Fn_4b8b10_4f1(r0, r1, r2, r3, f0);
+    r0 = Fn_4b8b10_4f1(r0, a1, a2, a3, f0);
     L_fd088:;
     r0 = 0u;
     *(u8*)(r4 + 467) = r0;
     L_fd090:;
     return;
     L_fd094:;
-    f0 = u2f(r2);
+    f0 = u2f(a2);
     r0 = 1u;
-    *(u32*)(r4 + 388) = r3;
+    *(u32*)(r4 + 388) = a3;
     *(u8*)(r4 + 467) = r0;
     f0 = (float)(int)f2u(f0);
     *(float*)(r4 + 392) = f0;
@@ -289,26 +289,26 @@ void W_12dd68(float p0) {
 
 // FUN_0012dff0
 void W_12dff0(u32 a0, float p0) {
-    u32 r0 = a0, r1, r2, fa, fb;
+    u32 r1, r2, fa, fb;
     float f0 = p0;
     r1 = (u32)g_008bfa78;
     r1 = *(u32*)(r1);
     if (r1 == 0u) goto L_12e040;
     r2 = *(u32*)(r1 + 96);
     fa = r2; fb = 0u;
-    if (fa != fb) *(u32*)(r2 + 552) = r0;
+    if (fa != fb) *(u32*)(r2 + 552) = a0;
     if (fa != fb) *(float*)(r2 + 556) = f0;
     r2 = *(u32*)(r1 + 100);
     fa = r2; fb = 0u;
-    if (fa != fb) *(u32*)(r2 + 552) = r0;
+    if (fa != fb) *(u32*)(r2 + 552) = a0;
     if (fa != fb) *(float*)(r2 + 556) = f0;
     r2 = *(u32*)(r1 + 104);
     fa = r2; fb = 0u;
-    if (fa != fb) *(u32*)(r2 + 552) = r0;
+    if (fa != fb) *(u32*)(r2 + 552) = a0;
     if (fa != fb) *(float*)(r2 + 556) = f0;
     r1 = *(u32*)(r1 + 108);
     fa = r1; fb = 0u;
-    if (fa != fb) *(u32*)(r1 + 552) = r0;
+    if (fa != fb) *(u32*)(r1 + 552) = a0;
     if (fa != fb) *(float*)(r1 + 556) = f0;
     L_12e040:;
     return;
@@ -385,7 +385,7 @@ void W_13e880(u32 a0, float p0) {
     if (ffa < ffb) f0 = f1;
     if (ffa < ffb) goto L_13e8a0;
     r1 = f2u(f0);
-    if ((int)r1 > (int)1065353216u) f0 = 1.0f;
+    if ((int)r1 > 1065353216) f0 = 1.0f;
     L_13e8a0:;
     r0 = *(u32*)(r0 + 192);
     if (r0 != 0u) *(float*)(r0 + 32) = f0;
@@ -434,7 +434,7 @@ void W_143200(u32 a0, float p0) {
     if (ffa < ffb) f0 = f1;
     if (ffa < ffb) goto L_143220;
     r1 = f2u(f0);
-    if ((int)r1 > (int)1065353216u) f0 = 1.0f;
+    if ((int)r1 > 1065353216) f0 = 1.0f;
     L_143220:;
     r1 = 0u;
     L_143224:;
@@ -442,7 +442,7 @@ void W_143200(u32 a0, float p0) {
     r1 = r1 + 1u;
     r2 = *(u32*)(r2 + 92);
     if (r2 != 0u) *(float*)(r2 + 32) = f0;
-    if ((int)r1 < (int)11u) goto L_143224;
+    if ((int)r1 < 11) goto L_143224;
     r0 = *(u32*)(r0 + 136);
     if (r0 == 0u) goto L_143250;
     { Fn_5c2a00_3f2(r0, r1, r2, f0, f1); return; }
@@ -452,17 +452,17 @@ void W_143200(u32 a0, float p0) {
 
 // FUN_00146c2c
 void W_146c2c(u32 a0) {
-    u32 r0 = a0, r1, fa, fb;
+    u32 r1, fa, fb;
     float f0;
-    r1 = *(u32*)(r0 + 152);
+    r1 = *(u32*)(a0 + 152);
     f0 = 10000.0f;
-    *(float*)(r0 + 168) = f0;
-    if ((int)r1 >= (int)1065353216u) goto L_146c58;
-    r1 = *(u8*)(r0 + 68);
+    *(float*)(a0 + 168) = f0;
+    if ((int)r1 >= 1065353216) goto L_146c58;
+    r1 = *(u8*)(a0 + 68);
     if (r1 < 2u) goto L_146c58;
     fa = r1; fb = 3u;
     if (fa != fb) r1 = 3u;
-    if (fa != fb) *(u8*)(r0 + 68) = r1;
+    if (fa != fb) *(u8*)(a0 + 68) = r1;
     L_146c58:;
     return;
 }
@@ -489,10 +489,10 @@ void W_167b5c(u32 a0, float p0) {
 
 // FUN_001930f8
 void W_1930f8(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r0_2, r0_3;
+    u32 r4_1, r0_1, r0_2, r0_3;
     float f0_1;
-    r4_1 = r0;
-    r0_1 = Fn_1c7e68_1(r0);
+    r4_1 = a0;
+    r0_1 = Fn_1c7e68_1(a0);
     r0_2 = r4_1 + 196u;
     r0_3 = Fn_5c4b44_1(r0_2);
     f0_1 = 0.0f;
@@ -531,31 +531,31 @@ void W_193f64(u32 a0, u32 a1) {
 
 // FUN_0019675c
 void W_19675c(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3;
+    u32 r0 = a0, r1 = a1, r3;
     r0 = *(u32*)(r0 + 68);
     if (r0 == 0u) goto L_196780;
     r3 = (u32)g_007c6f00;
     r0 = *(u32*)(r0 + 20);
     r1 = r3 + (r1 << 1);
     r1 = *(u16*)(r1);
-    r1 = r1 + r2;
-    { Fn_3850c0_4(r0, r1, r2, r3); return; }
+    r1 = r1 + a2;
+    { Fn_3850c0_4(r0, r1, a2, r3); return; }
     L_196780:;
     return;
 }
 
 // FUN_00196818
 void W_196818(u32 a0, u32 a1, u32 a2) {
-    u32 r0 = a0, r1 = a1, r2 = a2, r3;
-    if ((int)r1 >= (int)36u) goto L_196844;
+    u32 r0 = a0, r1 = a1, r3;
+    if ((int)r1 >= 36) goto L_196844;
     r0 = *(u32*)(r0 + 68);
     if (r0 == 0u) goto L_196844;
     r3 = (u32)g_007c6f12;
     r0 = *(u32*)(r0 + 20);
     r1 = r3 + (r1 << 1);
     r1 = *(u16*)(r1);
-    r1 = r1 + r2;
-    { Fn_3850ec_4(r0, r1, r2, r3); return; }
+    r1 = r1 + a2;
+    { Fn_3850ec_4(r0, r1, a2, r3); return; }
     L_196844:;
     return;
 }
@@ -577,15 +577,15 @@ void W_1a0698(u32 a0) {
 
 // FUN_001a619c
 u32 W_1a619c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r4;
+    u32 r0 = a0, r4;
     float f0, f1;
     r4 = r0;
-    if (r1 == 0u) goto L_1a61b4;
+    if (a1 == 0u) goto L_1a61b4;
     L_1a61ac:;
     r0 = 0u;
     return r0;
     L_1a61b4:;
-    r0 = Fn_1a43ac_2(r0, r1);
+    r0 = Fn_1a43ac_2(r0, a1);
     f1 = 1000.0f;
     f0 = 0.0f;
     r0 = r4;
@@ -607,9 +607,9 @@ void W_1d59ec(u32 a0) {
 
 // FUN_001d6498
 void W_1d6498(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    r3 = *(u32*)(r0);
+    r3 = *(u32*)(a0);
     fa = r1; fb = 0u;
     if (fa == fb) r2 = ~89u;
     if (fa != fb) r2 = 0u;
@@ -617,15 +617,15 @@ void W_1d6498(u32 a0, u32 a1) {
     r3 = r1;
     f0 = 1.0f;
     r1 = 10u;
-    { ((u32(*)(u32, u32, u32, u32, float))r12)(r0, r1, r2, r3, f0); return; }
+    { ((u32(*)(u32, u32, u32, u32, float))r12)(a0, r1, r2, r3, f0); return; }
 }
 
 // FUN_001d8b00
 void W_1d8b00(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    *(u32*)(r0 + 100) = r1;
-    r3 = *(u32*)(r0);
+    *(u32*)(a0 + 100) = r1;
+    r3 = *(u32*)(a0);
     fa = r1; fb = 0u;
     if (fa == fb) r2 = ~89u;
     if (fa != fb) r2 = 0u;
@@ -633,14 +633,14 @@ void W_1d8b00(u32 a0, u32 a1) {
     r3 = r1;
     f0 = 1.0f;
     r1 = 0u;
-    { ((u32(*)(u32, u32, u32, u32, float))r12)(r0, r1, r2, r3, f0); return; }
+    { ((u32(*)(u32, u32, u32, u32, float))r12)(a0, r1, r2, r3, f0); return; }
 }
 
 // FUN_001ede14
 void W_1ede14(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    r3 = *(u32*)(r0);
+    r3 = *(u32*)(a0);
     fa = r1; fb = 0u;
     if (fa == fb) r2 = ~89u;
     if (fa != fb) r2 = 0u;
@@ -648,7 +648,7 @@ void W_1ede14(u32 a0, u32 a1) {
     r3 = r1;
     f0 = 1.0f;
     r1 = 0u;
-    { ((u32(*)(u32, u32, u32, u32, float))r12)(r0, r1, r2, r3, f0); return; }
+    { ((u32(*)(u32, u32, u32, u32, float))r12)(a0, r1, r2, r3, f0); return; }
 }
 
 // FUN_0020e908
@@ -672,9 +672,9 @@ void W_20e908(u32 a0, u32 a1) {
 
 // FUN_00210e64
 void W_210e64(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    r3 = *(u32*)(r0);
+    r3 = *(u32*)(a0);
     fa = r1; fb = 0u;
     if (fa == fb) r2 = ~89u;
     if (fa != fb) r2 = 0u;
@@ -682,14 +682,14 @@ void W_210e64(u32 a0, u32 a1) {
     r3 = r1;
     f0 = 1.0f;
     r1 = 10u;
-    { ((u32(*)(u32, u32, u32, u32, float))r12)(r0, r1, r2, r3, f0); return; }
+    { ((u32(*)(u32, u32, u32, u32, float))r12)(a0, r1, r2, r3, f0); return; }
 }
 
 // FUN_00214e50
 void W_214e50(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    r2 = *(u32*)(r0 + 108);
+    r2 = *(u32*)(a0 + 108);
     if ((int)r2 < (int)r1) goto L_214ea4;
     r3 = r2 - r1;
     r2 = r3 - 1u;
@@ -700,26 +700,26 @@ void W_214e50(u32 a0, u32 a1) {
     L_214e74:;
     r12 = r1 + r2;
     r3 = r3 - 1u;
-    r12 = r0 + (r12 << 2);
+    r12 = a0 + (r12 << 2);
     r2 = r2 + 1u;
     f0 = *(float*)(r12 + 116);
     *(float*)(r12 + 112) = f0;
     if (r3 != 0) goto L_214e74;
     L_214e90:;
-    r1 = *(u32*)(r0 + 108);
+    r1 = *(u32*)(a0 + 108);
     r1 = r1 - 1u;
-    *(u32*)(r0 + 108) = r1;
-    r1 = r0 + 108u;
-    { Fn_214f64_4f1(r0, r1, r2, r3, f0); return; }
+    *(u32*)(a0 + 108) = r1;
+    r1 = a0 + 108u;
+    { Fn_214f64_4f1(a0, r1, r2, r3, f0); return; }
     L_214ea4:;
     return;
 }
 
 // FUN_0021b398
 void W_21b398(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    r3 = *(u32*)(r0);
+    r3 = *(u32*)(a0);
     fa = r1; fb = 0u;
     if (fa == fb) r2 = ~89u;
     if (fa != fb) r2 = 0u;
@@ -727,23 +727,23 @@ void W_21b398(u32 a0, u32 a1) {
     r3 = r1;
     f0 = 1.0f;
     r1 = 0u;
-    { ((u32(*)(u32, u32, u32, u32, float))r12)(r0, r1, r2, r3, f0); return; }
+    { ((u32(*)(u32, u32, u32, u32, float))r12)(a0, r1, r2, r3, f0); return; }
 }
 
 // FUN_00221378
 void W_221378(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
+    u32 r0 = a0;
     float f0, f1, f2;
     r0 = *(u32*)(r0 + 44);
     if (r0 == 0u) goto L_2213a4;
-    f0 = u2f(r1);
+    f0 = u2f(a1);
     f1 = 0.0174532924f;
     r0 = r0 + 248u;
     f0 = (float)(int)f2u(f0);
     f2 = f0 * f1;
     f0 = 0.0f;
     f1 = f0;
-    { Fn_59cb30_2f3(r0, r1, f0, f1, f2); return; }
+    { Fn_59cb30_2f3(r0, a1, f0, f1, f2); return; }
     L_2213a4:;
     return;
 }
@@ -765,9 +765,9 @@ void W_23d9d8(u32 a0) {
 
 // FUN_00240e1c
 void W_240e1c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12, fa, fb;
+    u32 r1 = a1, r2, r3, r12, fa, fb;
     float f0;
-    r3 = *(u32*)(r0);
+    r3 = *(u32*)(a0);
     fa = r1; fb = 0u;
     if (fa == fb) r2 = ~89u;
     if (fa != fb) r2 = 0u;
@@ -775,32 +775,32 @@ void W_240e1c(u32 a0, u32 a1) {
     r3 = r1;
     f0 = 1.0f;
     r1 = 0u;
-    { ((u32(*)(u32, u32, u32, u32, float))r12)(r0, r1, r2, r3, f0); return; }
+    { ((u32(*)(u32, u32, u32, u32, float))r12)(a0, r1, r2, r3, f0); return; }
 }
 
 // FUN_002507d0
 void W_2507d0(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1;
+    u32 r0 = a0;
     float f0, f1, f2;
     r0 = *(u32*)(r0 + 56);
     if (r0 == 0u) goto L_2507fc;
-    f0 = u2f(r1);
+    f0 = u2f(a1);
     f1 = 0.0174532924f;
     r0 = r0 + 248u;
     f0 = (float)(int)f2u(f0);
     f2 = f0 * f1;
     f0 = 0.0f;
     f1 = f0;
-    { Fn_59cb30_2f3(r0, r1, f0, f1, f2); return; }
+    { Fn_59cb30_2f3(r0, a1, f0, f1, f2); return; }
     L_2507fc:;
     return;
 }
 
 // FUN_0027a1cc
 u32 W_27a1cc(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r1_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6;
+    u32 r4_1, r0_1, r1_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6;
     float f0_1;
-    r4_1 = r0;
+    r4_1 = a0;
     r0_1 = 0u;
     *(u8*)(r4_1 + 1057) = r0_1;
     r1_1 = r0_1;
@@ -820,9 +820,9 @@ u32 W_27a1cc(u32 a0) {
 
 // FUN_0027a9cc
 u32 W_27a9cc(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r1_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6, r1_3;
+    u32 r4_1, r0_1, r1_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6, r1_3;
     float f0_1;
-    r4_1 = r0;
+    r4_1 = a0;
     r0_1 = 0u;
     *(u8*)(r4_1 + 1060) = r0_1;
     r1_1 = r0_1;
@@ -845,9 +845,9 @@ u32 W_27a9cc(u32 a0) {
 
 // FUN_0027aa20
 u32 W_27aa20(u32 a0) {
-    u32 r0 = a0, r4_1, r1_1, r0_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6;
+    u32 r4_1, r1_1, r0_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6;
     float f0_1;
-    r4_1 = r0;
+    r4_1 = a0;
     r1_1 = 0u;
     r0_1 = 1u;
     *(u8*)(r4_1 + 1060) = r1_1;
@@ -867,9 +867,9 @@ u32 W_27aa20(u32 a0) {
 
 // FUN_0027b9b8
 u32 W_27b9b8(u32 a0) {
-    u32 r0 = a0, r4_1, r1_1, r0_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6, r1_3;
+    u32 r4_1, r1_1, r0_1, r0_2, r0_3, r0_4, r1_2, r2_1, r0_5, r0_6, r1_3;
     float f0_1, f0_2;
-    r4_1 = r0;
+    r4_1 = a0;
     r1_1 = 0u;
     r0_1 = 1u;
     *(u8*)(r4_1 + 1057) = r1_1;
@@ -938,30 +938,30 @@ u32 W_2b768c(u32 a0) {
 
 // FUN_003f2ddc
 void W_3f2ddc(u32 a0) {
-    u32 r0 = a0, r1;
+    u32 r1;
     float f0, f1, f2;
-    r1 = *(u32*)(r0 + 40);
-    if ((int)r1 <= (int)0u) goto L_3f2e2c;
-    r1 = *(u32*)(r0 + 36);
+    r1 = *(u32*)(a0 + 40);
+    if ((int)r1 <= 0) goto L_3f2e2c;
+    r1 = *(u32*)(a0 + 36);
     f0 = 4.0f;
     if (r1 == 0u) goto L_3f2e04;
     if (r1 == 1u) goto L_3f2e18;
     goto L_3f2e2c;
     L_3f2e04:;
-    f2 = *(float*)(r0 + 44);
-    f1 = *(float*)(r0 + 16);
+    f2 = *(float*)(a0 + 44);
+    f1 = *(float*)(a0 + 16);
     f2 = (float)(int)f2u(f2);
     f1 = f1 + f2 * f0;
     goto L_3f2e28;
     L_3f2e18:;
-    f2 = *(float*)(r0 + 44);
-    f1 = *(float*)(r0 + 16);
+    f2 = *(float*)(a0 + 44);
+    f1 = *(float*)(a0 + 16);
     f2 = (float)(int)f2u(f2);
     f1 = f1 - f2 * f0;
     L_3f2e28:;
-    *(float*)(r0 + 16) = f1;
+    *(float*)(a0 + 16) = f1;
     L_3f2e2c:;
-    { Fn_3fa630_2f3(r0, r1, f0, f1, f2); return; }
+    { Fn_3fa630_2f3(a0, r1, f0, f1, f2); return; }
 }
 
 // FUN_003f8cb8

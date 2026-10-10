@@ -7942,3 +7942,8 @@ Fn_3023d0 = 0x004023D0
 Fn_4e79a0 = 0x005E79A0
 
 # lib/nw4c/zone.s callees
+# Runtime 4-byte-aligned memcpy (src/crt_asm.s MemCopyAligned); ARMCC emits it for struct copies (DrawTextToPane)
+__aeabi_memcpy4 = 0x0030004C
+# OptionMenu_BindPlateTextures callees (FUN_00224d44 / FUN_002253e4; src/menu_bind.cpp)
+_Z18MSelMenu_BindPlateP8MSelMenuPKcS2_S2_ = 0x00324D44
+_Z16MSelMenu_SetFlagP8MSelMenuj = 0x003253E4

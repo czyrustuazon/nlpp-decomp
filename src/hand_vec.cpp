@@ -25,7 +25,8 @@ Vec3 GetVec(VecHolder* h)
 // FUN_00542230: insert node n before pos in a counted circular list, return n
 struct LNode { LNode* next; LNode* prev; };
 struct LList { s32 count; };
-LNode* ListInsert(LList* l, LNode* pos, LNode* n)
+// throw() with --exceptions: the exception specification changes this function's codegen too (2026-10-10).
+LNode* ListInsert(LList* l, LNode* pos, LNode* n) throw()
 {
     LNode* prev = pos->prev;
     n->next = pos;

@@ -34,10 +34,10 @@ void W_0325c0() {
 
 // FUN_0004c53c
 u32 W_04c53c(u32 a0, float p0, float p1, float p2, float p3) {
-    u32 r0 = a0, r1_1, r0_1;
+    u32 r1_1, r0_1;
     float f0 = p0, f1 = p1, f2 = p2, f3 = p3;
-    r1_1 = r0 + 528u;
-    r0_1 = r0 + 540u;
+    r1_1 = a0 + 528u;
+    r0_1 = a0 + 540u;
     *(float*)(r1_1 + 0) = f0;
     *(float*)(r1_1 + 4) = f1;
     *(float*)(r0_1 + 0) = f2;
@@ -77,9 +77,9 @@ void W_06a950() {
 
 // FUN_0006dd44
 void W_06dd44(u32 a0, float p0, float p1) {
-    u32 r0 = a0, r0_1;
+    u32 r0_1;
     float f0 = p0, f1 = p1;
-    r0_1 = r0 + 60u;
+    r0_1 = a0 + 60u;
     *(float*)(r0_1 + 0) = f0;
     *(float*)(r0_1 + 4) = f1;
     return;
@@ -87,10 +87,10 @@ void W_06dd44(u32 a0, float p0, float p1) {
 
 // FUN_0006e504
 void W_06e504(u32 a0) {
-    u32 r0 = a0, r1;
+    u32 r1;
     r1 = 1u;
-    *(u8*)(r0 + 16) = r1;
-    { WeakCall2(r0, r1); return; }
+    *(u8*)(a0 + 16) = r1;
+    { WeakCall2(a0, r1); return; }
 }
 
 // FUN_00075c9c
@@ -105,8 +105,8 @@ void W_0771ec() {
 
 // FUN_000dc910
 void W_0dc910(u32 a0) {
-    u32 r0 = a0, r4_1, r0_1, r0_2, r1_1, r0_3, r0_4, r0_5, r0_6, stk[96];
-    r4_1 = r0;
+    u32 r4_1, r0_1, r0_2, r1_1, r0_3, r0_4, r0_5, r0_6, stk[96];
+    r4_1 = a0;
     r0_1 = (u32)stk;
     r0_2 = Fn_0dccdc_1(r0_1);
     r1_1 = (u32)stk;
@@ -144,32 +144,32 @@ u32 W_0e34b4(u32 a0) {
 
 // FUN_000e4a40
 u32 W_0e4a40(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2, r3, r12;
-    r3 = *(u32*)(r0);
+    u32 r1 = a1, r2, r3, r12;
+    r3 = *(u32*)(a0);
     r2 = r1;
     r1 = 5u;
     r12 = *(u32*)(r3 + 84);
     r3 = 0u;
-    return ((u32(*)(u32, u32, u32, u32))r12)(r0, r1, r2, r3);
+    return ((u32(*)(u32, u32, u32, u32))r12)(a0, r1, r2, r3);
 }
 
 // FUN_000e4d6c
 void W_0e4d6c(u32 a0) {
-    u32 r0 = a0, r1_1, r3_1, r2_1, r12_1, r1_2;
-    r1_1 = *(u32*)(r0);
+    u32 r1_1, r3_1, r2_1, r12_1, r1_2;
+    r1_1 = *(u32*)(a0);
     r3_1 = 0u;
     r2_1 = r3_1;
     r12_1 = *(u32*)(r1_1 + 84);
     r1_2 = 1u;
-    { ((u32(*)(u32, u32, u32, u32))r12_1)(r0, r1_2, r2_1, r3_1); return; }
+    { ((u32(*)(u32, u32, u32, u32))r12_1)(a0, r1_2, r2_1, r3_1); return; }
 }
 
 // FUN_000f4f1c
 u32 W_0f4f1c(u32 a0, u32 a1) {
-    u32 r0 = a0, r1 = a1, r2;
+    u32 r0 = a0, r2;
     r0 = *(u8*)(r0 + 70);
     r2 = 1u;
-    r0 = r1 & (r2 << (r0 & 255));
+    r0 = a1 & (r2 << (r0 & 255));
     if (r0 != 0) r0 = 1u;
     return r0;
 }

@@ -85,22 +85,26 @@ void UiUseH(void* unused, u32 arg)
 }
 
 // ---- child flag setters -----------------------------------------------------------------------
-struct Sub { u8 m_on; u8 pad[3]; Child* m_child4; u32 pad2[4]; Child* m_slot[8]; };   // m_on at +0, slot[0] at +0x18
+// m_on at +0, slot[0] at +0x18. The Panel setters below are inlined calls to these members: retail
+// moves idx/flag into place before testing m_on, which only an inline callee's arguments explain.
+struct Sub {
+    u8 m_on; u8 pad[3]; Child* m_child4; u32 pad2[4]; Child* m_slot[8];
+    void SetSlot(u32 idx, u32 flag) { if (m_on != 0) Child_SetFlag(m_slot[idx], flag); }
+    void SetFirst(u32 idx, u32 flag) { if (m_on != 0) { if (idx == 1) Child_SetFlag(m_child4, flag); } }
+};
 
-// FUN_0061a664 (score 12: retail does NOT tail-call and keeps the compares unpredicated, push {r4,lr}/bl/pop;
-// every spelling tried, and a non-void callee, still tail-calls): if the sub-object at +4 exists and is on, set the flag on its slot[idx] (at +0x18).
+// FUN_0061a664 / FUN_0061b364, built with --exceptions (inline unwind entries): with it the last call
+// is a `bl` inside push {r4, lr} / pop, not a tail call. If the sub-object at +4 exists and is on, set
+// the flag on its slot[idx] (at +0x18), or (SetFirst) on the child at +4 when idx == 1.
 struct Panel { u32 pad; Sub* m_sub; void SetSlot(u32 idx, u32 flag); void SetFirst(u32 idx, u32 flag); };
 void Panel::SetSlot(u32 idx, u32 flag)
 {
-    if (m_sub != 0 && m_sub->m_on != 0) Child_SetFlag(m_sub->m_slot[idx], flag);
+    if (m_sub != 0) m_sub->SetSlot(idx, flag);
 }
 
-// FUN_0061b364: only when idx == 1, on the child at +4 of the sub-object.
 void Panel::SetFirst(u32 idx, u32 flag)
 {
-    if (m_sub != 0 && m_sub->m_on != 0) {
-        if (idx == 1) Child_SetFlag(m_sub->m_child4, flag);
-    }
+    if (m_sub != 0) m_sub->SetFirst(idx, flag);
 }
 
 // FUN_0013cc7c: store the flag, apply it to the child at +0x50, then re-apply the stored (signed
