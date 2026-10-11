@@ -87,6 +87,47 @@ Tools: `tools/handmatch/` (see its README). It holds `ready.py` (candidate list;
 
 Commit procedure: stage only B's files. If Agent A has uncommitted rows in `functions.toml`, `externs.toml`, `technical.md` or `AGENT_HANDOFF.md`, build HEAD plus B's changes and stage that with `git hash-object -w --path=<f>` and `git update-index --cacheinfo`. Commits are GPG-signed; the user unlocks the key.
 
+**AGENT A: RESUME HERE (written 2026-10-10 evening; A's work is committed as `3702c01` and `ff0a42f`, `relink` identical).**
+
+Done so far (details in `technical.md` §8, "Exception cleanups", items 1-6):
+- Tasks 1-2: `compare`, `check` and `relink` handle `clean = "<offset>"` (the function's `.clean` section). `exidx --apply` moves the 3,027 cleanup pads out of `symbols/code.bin.csv` into `symbols/cleanup_pads.csv`, and `progress_chart.py` adds pad bytes to their parent.
+- Task 3: `C_06a908::~C_06a908` (`src/gen/eh_0.cpp`).
+- Task 4: `tools/wrapgen/dtorgen.py` generates exception-aware destructors: 78 in `src/gen/dt_0.cpp` (stages 1-2: members and bases, inline destructors lifted from the pads' out-of-line copies) and 31 in `src/gen/dt_1.cpp` (stage 3: destructors with a body).
+- Progress after these: 14,997 of 33,353 functions (45.0%), 1,082 KiB (17.4%).
+
+Next, in order:
+1. Constructors. The pad destroys the bases and members built so far. Open problem: 0x304d04 has a pad that destroys the base (`~Base` 0x305c5c) although nothing after the base constructor can throw. A plain body gives no pad, and an inlined setter `Set(1)` gives only a bare one. The setter idea fits retail's `mov r0, r4` before the `strb`; try other ways to make the base's cleanup region survive.
+2. Array members destroyed through `__aeabi_vec_dtor` (`blx 0x68` in body and pad, e.g. 0x7c0d8).
+3. Non-destructor functions with bare pads (937 in all): the lifter with `LIFT_GUARD=none,ptop,pcall,pcall1`, `--exceptions` and `CLEAN=1` (`gen2.py`). It matched 0 of 40 as free functions; try the guard inside more statement shapes, or as a stack object instead of a block.
+4. Stage 3 misses that lift but score 4-12: sample them as `dtorgen.py run3` with `DTDEBUG=1`.
+
+What worked, in order of payoff:
+1. Cleanup pads never inline. A pad call to a target the body never calls is an inline destructor's out-of-line copy, and that copy's code is the destructor's body (the shared inline zone 0x630000-0x690000 is full of them).
+2. Bare pads (`nop; blx __cxa_end_cleanup`) come from an object whose class has an inline empty *virtual* destructor. A non-virtual empty destructor, or an empty base in a destructor, leaves no pad.
+3. Destructor bodies must be written directly in `~C()` (not in an inline helper), with accesses through `this` as typed members, and with flag pairs folded. Each of the three was worth 4-6 points on its own.
+4. A class needs an undefined `virtual void key_();` declared first, so its vtable is not emitted. Its vptr then relocates against `_ZTV<C>` = retail vtable - 8.
+5. Destruction order: members in reverse offset order, then bases in reverse declaration order. Try every order of the `+0` items and let the compiler decide.
+
+Pitfalls:
+- `compare` masks relocations, so a wrong pad callee scores 0. Only `relink` catches it (16 destructors were dropped for that).
+- Placeholder type names derived from addresses can clash with existing externs (`M_06a908` was weak in `eh_0.cpp`). `dtorgen.py apply` now stops on a clash.
+- Lifted callees must take Thumb-ness from `symbols/code.bin.csv`, not from address alignment (0x202758 is Thumb).
+- Results are written only at the end of a run. A crash loses the shard (it happened once, on a `None` sort key), so rerun only that `PART`.
+
+Commands (`TMP`/`TEMP` set to `build/a/tmp`):
+- `python tools/wrapgen/dtorgen.py run|run2|run3 OUT.json [ONLY.csv]`, sharded with `PART=i NPARTS=n`. `run3` also takes `DT_MAX=<hex size>`, `DTDEBUG=1` and `DT_GUARDS`.
+- `python tools/wrapgen/dtorgen.py merge OUT.json STAGE1.json STAGE2.json..` and `dtorgen.py apply OUT.json src/gen/dt_<n>.cpp`.
+- Before applying: rescore every result inside the one combined file (see `build/a/dt_1_dry.cpp`). After applying: `relink`.
+- Scratch helpers (git-ignored): `build/a/dbg.py OFF` (lifted variants of one function, with scores), `build/a/objdump.py SRC [flags]` (disassembly of every section, including `.clean`), `build/a/padsurvey.py` (pad shapes), `build/a/ctorsurvey.py`.
+
+Commit procedure: stage only A's files. For `functions.toml` and `externs.toml`, build HEAD plus A's rows (A's rows are those whose `src` is an A file, plus A's `# src/gen/dt_<n>.cpp` externs block), write the blob with `git hash-object -w --path=<file>`, and stage it with `git update-index --cacheinfo`. Then check that every undefined symbol of the new objects resolves from the staged tomls alone.
+
+**LATEST (Agent A, 2026-10-10).** Tasks 1-3 are done. `compare`, `check` and `relink` handle `.clean` (`clean = "<offset>"`). The 3,027 cleanup pads are out of the function list (`symbols/cleanup_pads.csv`, 33,353 functions, 44.6% by count). 0x6a908 is matched with RAII source and its pad. `relink` is identical. Next: generate RAII destructors from pads (members of `this`), then local objects. Details: `technical.md` §8, "Exception cleanups". Correction to task 1 above: the 240 matched parents do not get their pads for free; their lifted C has no destructor objects, so they need the RAII rewrite too.
+
+**LATEST (Agent A, 2026-10-10 afternoon).** Task 4 started: `tools/wrapgen/dtorgen.py` generates exception-aware destructors (class, polymorphic base, members with out-of-line destructors, and inline destructors lifted from the pad's out-of-line copies) and keeps only matches of function plus `.clean`. 78 are in `src/gen/dt_0.cpp`. `relink` is identical, `errors: []` (`build/a/relink3.out`). Progress 14,965 of 33,353 functions (44.9%), 1,080 KiB (17.4%). Key fact: cleanup pads never inline, so a pad call to a target the body never calls is an inline destructor's out-of-line copy. Pitfall: `compare` masks pad call targets, so only `relink` catches a wrong pad callee (16 dropped). Next: constructors (pads destroy the bases and members built so far), then locals with polymorphic classes (bare pads, 937 functions). Details: `technical.md` §8, "Exception cleanups".
+
+**LATEST (Agent A, 2026-10-10 evening).** Stage 3 (`dtorgen.py run3`) handles destructors with a body. The body is lifted directly into `~C()`, with typed members and folded flag pairs. Bare pads come from a polymorphic local (`lift2.py` `LIFT_GUARD=pcall` etc.). 31 more are in `src/gen/dt_1.cpp`. `relink` is identical, `errors: []` (`build/a/relink4.out`). Progress 14,997 of 33,353 functions (45.0%), 1,082 KiB (17.4%). Open: constructors (0x304d04: retail's pad destroys the base although nothing after the base constructor can throw) and array members (`__aeabi_vec_dtor`). Details: `technical.md` §8, "Exception cleanups" (6).
+
 ## RESUME HERE (written 2026-10-03 night; the machine is hibernating, work continues the next day)
 
 **Repo state.** Weak-call lifting is committed through `src/gen/w8_0.cpp` (163 + 78 + 6 + 2 matches; `relink16` byte-identical, `errors: []`). The VFP lifter round (`vpush`/`vpop` skipped, `vldmia`/`vstmia` of `s` lists, `s16`+ live across calls, float returns after direct calls) lifts 779 weak-call functions up to 0xc8 bytes but only 8 of the 0x80-0xc8 ones matched: float code lifts correctly and misses on scheduling/regalloc (0xcec0: score 22). Treat those as hand-match candidates (`technical.md` §8, last paragraph). Not pushed (the user pushes). Commits are GPG-signed; if signing fails ask the user to unlock the key.
