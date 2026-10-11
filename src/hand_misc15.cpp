@@ -46,7 +46,8 @@ struct Hook { u8 armed; char p0[7]; void (*fn)(); };
 extern Hook g_hook;                     // VA 0x008BB5F0
 bool RunHook(u32 go)
 {
-    if (g_hook.armed == 0 || g_hook.fn == 0 || go == 0) return false;
+    if (g_hook.armed == 0 || g_hook.fn == 0) return false;   // `go` in its own test: retail clears r0
+    if (go == 0) return false;                               // (moveq) before testing it
     g_hook.fn();
     return true;
 }

@@ -85090,7 +85090,7 @@ offset = "6242d8"
 size = "34"
 src = "src/hand_misc15.cpp"
 symbol = "_Z7RunHookj"
-score = 2   # NONMATCHING
+score = 0
 
 [[function]]
 name = "StrNLen"
@@ -136608,6 +136608,14 @@ generated = true
 score = 0
 
 [[function]]
+name = "RecRef::Create"
+offset = "5b08b8"
+size = "16c"
+src = "src/rec_block.cpp"
+symbol = "_ZN6RecRef6CreateEj"
+score = 13   # NONMATCHING: register rotation only (n/vptr/this in r4/r5/r6 vs retail r6/r4/r5)
+
+[[function]]
 name = "C_07f79c::~C_07f79c"
 offset = "7f79c"
 size = "38"
@@ -136947,3 +136955,54 @@ symbol = "_ZN8C_39eeb0D1Ev"
 clean = "39eee8"
 generated = true
 score = 0
+
+[[function]]
+name = "RayHitsBox"
+offset = "5b7534"
+size = "1ac"
+src = "src/ray_box.cpp"
+symbol = "_Z10RayHitsBoxP4Vec3PfPK3RayPK4OBox"
+score = 72   # NONMATCHING: float register choice (h/e/f kept in s18-s20 in retail)
+
+[[function]]
+name = "ApplyGroups"
+offset = "27f4dc"
+size = "108"
+src = "src/group_apply.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+symbol = "_Z11ApplyGroupsP5Ownerj"
+score = 20   # NONMATCHING: arg and the list node pointer swap r4/r5
+
+[[function]]
+name = "Cursor::Select"
+offset = "3945b0"
+size = "16c"
+src = "src/cursor_select.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+symbol = "_ZN6Cursor6SelectEjj"
+score = 0
+
+[[function]]
+name = "Cursor::Pick"
+offset = "39471c"
+size = "16c"
+src = "src/cursor_select.cpp"
+flags = ["--cpu=MPCore", "--arm", "-O3", "-Otime", "--split_sections", "--exceptions"]
+symbol = "_ZN6Cursor4PickEjj"
+score = 0
+
+[[function]]
+name = "ArrHolder_Push"
+offset = "4356a4"
+size = "108"
+src = "src/ptr_array.cpp"
+symbol = "_Z14ArrHolder_PushP9ArrHolderj"
+score = 36   # NONMATCHING: loop end caching and store order around m_cap
+
+[[function]]
+name = "SlotPool::Alloc"
+offset = "2a457c"
+size = "130"
+src = "src/slot_pool.cpp"
+symbol = "_ZN8SlotPool5AllocEv"
+score = 45   # NONMATCHING: exit block order (register use matches via permuter copies)

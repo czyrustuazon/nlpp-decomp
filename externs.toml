@@ -8200,6 +8200,17 @@ _ZTV8C_5fb910 = 0x0082F2B0
 _ZTV8C_5fb94c = 0x0082F2B0
 _ZTV8C_61cad4 = 0x0082FC50
 _ZTV8C_61cb14 = 0x0082FC50
+# src/rec_block.cpp (RecRef::Create 0x5b08b8)
+_Z8ObjAllocjjj = 0x00116D5C
+__aeabi_vec_delete = 0x00302759
+__aeabi_atexit = "weak"
+__dso_handle = 0x00100000
+_ZTV8RecBlock = 0x0082DE4C
+_ZGVZN6RecRef8SetEmptyEvE7s_empty = 0x008AB490
+_ZZN6RecRef8SetEmptyEvE7s_empty = 0x009A51B0
+_ZN5Rec12C1Ev = 0x006B5A88
+_ZN5Rec12D1Ev = 0x006B5AAC
+_ZN8RecBlockD1Ev = 0x006B0B40
 
 # src/gen/dt_1.cpp destructors, vtables
 _Z11Fn_1fcd88_0v = 0x002FCD88
