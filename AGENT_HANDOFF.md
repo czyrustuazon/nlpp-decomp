@@ -117,8 +117,8 @@ Pitfalls:
 Commands (`TMP`/`TEMP` set to `build/a/tmp`):
 - `python tools/wrapgen/dtorgen.py run|run2|run3 OUT.json [ONLY.csv]`, sharded with `PART=i NPARTS=n`. `run3` also takes `DT_MAX=<hex size>`, `DTDEBUG=1` and `DT_GUARDS`.
 - `python tools/wrapgen/dtorgen.py merge OUT.json STAGE1.json STAGE2.json..` and `dtorgen.py apply OUT.json src/gen/dt_<n>.cpp`.
-- Before applying: rescore every result inside the one combined file (see `build/a/dt_1_dry.cpp`). After applying: `relink`.
-- Scratch helpers (git-ignored): `build/a/dbg.py OFF` (lifted variants of one function, with scores), `build/a/objdump.py SRC [flags]` (disassembly of every section, including `.clean`), `build/a/padsurvey.py` (pad shapes), `build/a/ctorsurvey.py`.
+- Before applying: rescore every result inside the one combined file. After applying: `relink`.
+- Helpers in `tools/eh/` (README there): `objdump.py SRC [plain|exc]` (disassembly of every section, `.clean` included), `liftvars.py OFF` (lifted variants of one function, scored with the pad), `padsurvey.py` (pad shapes), `ctorsurvey.py` (constructor-shaped parents). Scratch output goes to `$EH_SCRATCH`, default `build/eh/`.
 
 Commit procedure: stage only A's files. For `functions.toml` and `externs.toml`, build HEAD plus A's rows (A's rows are those whose `src` is an A file, plus A's `# src/gen/dt_<n>.cpp` externs block), write the blob with `git hash-object -w --path=<file>`, and stage it with `git update-index --cacheinfo`. Then check that every undefined symbol of the new objects resolves from the staged tomls alone.
 
